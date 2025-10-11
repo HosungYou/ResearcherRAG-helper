@@ -1,5 +1,6 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
+import Mermaid from '@/components/Mermaid'
 
 export default function IntroductionPage() {
   return (
@@ -105,16 +106,19 @@ export default function IntroductionPage() {
         <li><strong>Inclusion</strong>: Final set of papers for your RAG knowledge base</li>
       </ul>
 
-      <div className="bg-gray-50 border border-border rounded-lg p-6 my-8">
-        <p className="text-sm font-semibold mb-3 text-muted-foreground">Example PRISMA Flow</p>
-        <pre className="text-xs bg-transparent text-foreground mb-0 font-mono"><code>{`Records identified (n = 1,247)
-    ↓
-Records screened (n = 1,247)
-    ├─ Excluded (n = 983): Not relevant
-    └─ Full-text assessed (n = 264)
-        ├─ Excluded (n = 127): Wrong methodology
-        └─ Studies included (n = 137) → RAG Knowledge Base`}</code></pre>
-      </div>
+      <Mermaid chart={`
+graph TD
+    A[Records Identified<br/>n = 1,247] --> B[Records Screened<br/>n = 1,247]
+    B --> C[Excluded<br/>n = 983<br/>Not Relevant]
+    B --> D[Full-text Assessed<br/>n = 264]
+    D --> E[Excluded<br/>n = 127<br/>Wrong Methodology]
+    D --> F[Studies Included<br/>n = 137]
+    F --> G[RAG Knowledge Base]
+
+    style A fill:#e0e7ff
+    style F fill:#dcfce7
+    style G fill:#fef3c7
+      `} />
 
       <h3 id="rag">2. RAG (Retrieval-Augmented Generation)</h3>
 
@@ -136,6 +140,22 @@ Records screened (n = 1,247)
       <p>
         ResearcherRAG breaks down the complex process into 5 conversational stages with Claude Code:
       </p>
+
+      <Mermaid chart={`
+graph LR
+    A[Stage 1<br/>Research Domain<br/>15 min] --> B[Stage 2<br/>Query Strategy<br/>10 min]
+    B --> C[Stage 3<br/>PRISMA Config<br/>20 min + 2 hrs]
+    C --> D[Stage 4<br/>RAG Design<br/>15 min]
+    D --> E[Stage 5<br/>Execution<br/>3-4 hrs]
+    E --> F[Your RAG System]
+
+    style A fill:#e0e7ff
+    style B fill:#ddd6fe
+    style C fill:#fce7f3
+    style D fill:#fef3c7
+    style E fill:#dcfce7
+    style F fill:#bbf7d0
+      `} />
 
       <div className="space-y-4 my-8">
         {[
