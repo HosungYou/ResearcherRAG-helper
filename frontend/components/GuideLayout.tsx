@@ -3,170 +3,143 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { BookOpen, Menu, X, ChevronRight, ChevronDown, Github, Home } from 'lucide-react'
+import { Github, Menu, X, ChevronRight } from 'lucide-react'
 
 interface Chapter {
   number: number
   title: string
   href: string
-  sections?: { title: string; id: string }[]
+}
+
+interface TOCItem {
+  id: string
+  text: string
+  level: number
 }
 
 const chapters: Chapter[] = [
-  { number: 1, title: 'Introduction to ResearcherRAG', href: '/guide/01-introduction' },
-  { number: 2, title: '5-Stage Workflow Deep Dive', href: '/guide/02-workflow' },
-  { number: 3, title: 'PRISMA Configuration Guide', href: '/guide/03-prisma' },
-  { number: 4, title: 'RAG System Design Patterns', href: '/guide/04-rag-design' },
-  { number: 5, title: 'Case Studies', href: '/guide/05-case-studies' },
-  { number: 6, title: 'Troubleshooting & FAQ', href: '/guide/06-troubleshooting' },
-  { number: 7, title: 'Advanced Topics', href: '/guide/07-advanced' },
+  { number: 1, title: 'Introduction', href: '/guide/01-introduction' },
+  { number: 2, title: 'Getting Started', href: '/guide/02-getting-started' },
+  { number: 3, title: 'Core Concepts', href: '/guide/03-core-concepts' },
+  { number: 4, title: 'Implementation Guide', href: '/guide/04-implementation' },
+  { number: 5, title: 'Advanced Topics', href: '/guide/05-advanced' },
+  { number: 6, title: 'Best Practices', href: '/guide/06-best-practices' },
+  { number: 7, title: 'Troubleshooting', href: '/guide/07-troubleshooting' },
 ]
 
 export default function GuideLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [expandedChapter, setExpandedChapter] = useState<number | null>(null)
+  const [tocItems, setTocItems] = useState<TOCItem[]>([])
+  const [activeId, setActiveId] = useState<string>('')
   const pathname = usePathname()
 
-  // Auto-generate TOC from content
+  // Extract TOC from content
   useEffect(() => {
-    const headings = document.querySelectorAll('h2, h3')
-    const currentChapter = chapters.find(c => pathname?.includes(c.href))
+    const headings = document.querySelectorAll('article h2, article h3')
+    const items: TOCItem[] = Array.from(headings).map((heading) => ({
+      id: heading.id,
+      text: heading.textContent || '',
+      level: heading.tagName === 'H2' ? 2 : 3,
+    }))
+    setTocItems(items)
 
-    if (currentChapter && headings.length > 0) {
-      const sections = Array.from(headings).map((h) => ({
-        title: h.textContent || '',
-        id: h.id || h.textContent?.toLowerCase().replace(/\s+/g, '-') || '',
-      }))
+    // Intersection Observer for active heading
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-100px 0px -66% 0px' }
+    )
 
-      // Update chapter with sections
-      currentChapter.sections = sections
-      setExpandedChapter(currentChapter.number)
-    }
-  }, [pathname])
+    headings.forEach((heading) => observer.observe(heading))
+    return () => observer.disconnect()
+  }, [pathname, children])
 
-  const currentChapterIndex = chapters.findIndex(c => pathname?.includes(c.href))
+  const currentChapterIndex = chapters.findIndex((c) => pathname?.includes(c.href))
   const prevChapter = currentChapterIndex > 0 ? chapters[currentChapterIndex - 1] : null
   const nextChapter = currentChapterIndex < chapters.length - 1 ? chapters[currentChapterIndex + 1] : null
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Top Header */}
-      <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            {/* Mobile menu button */}
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+        <div className="max-w-[1800px] mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-8">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
-              aria-label="Toggle sidebar"
+              className="lg:hidden p-2 hover:bg-gray-100 rounded-md"
             >
               {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
-
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="p-1.5 bg-gradient-to-br from-primary-500 to-purple-600 rounded-lg">
-                <BookOpen className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-lg bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
-                ResearcherRAG
-              </span>
+            <Link href="/" className="text-lg font-medium">
+              RAG.lab
+            </Link>
+            <Link href="/guide" className="text-sm text-muted hover:text-foreground hidden md:block">
+              Documentation
             </Link>
           </div>
-
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 flex items-center gap-1">
-              <Home className="w-4 h-4" />
-              Home
-            </Link>
-            <Link href="/chat" className="text-sm text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">
+          <div className="flex items-center gap-6">
+            <Link href="/chat" className="text-sm text-muted hover:text-foreground hidden md:block">
               Chatbot
             </Link>
-            <Link href="/resources" className="text-sm text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400">
-              Resources
-            </Link>
-            <a href="https://github.com/HosungYou/ResearcherRAG-helper" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg">
-              <Github className="w-4 h-4" />
+            <a
+              href="https://github.com/HosungYou/ResearcherRAG"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted hover:text-foreground"
+            >
+              <Github className="w-5 h-5" />
             </a>
-          </nav>
+          </div>
         </div>
       </header>
 
-      <div className="flex">
-        {/* Sidebar */}
+      <div className="max-w-[1800px] mx-auto flex">
+        {/* Left Sidebar - Chapter TOC */}
         <aside
           className={`
-            fixed lg:sticky top-[73px] left-0 bottom-0 z-40
-            w-72 bg-gray-50 dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700
-            overflow-y-auto transition-transform duration-300
+            fixed lg:sticky top-16 bottom-0 z-40 w-64
+            border-r border-border bg-background
+            overflow-y-auto transition-transform
             ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
           `}
         >
-          <nav className="p-6 space-y-2">
+          <nav className="p-6 space-y-1">
             <Link
               href="/guide"
-              className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`block px-3 py-2 text-sm rounded-md transition-colors ${
                 pathname === '/guide'
-                  ? 'bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300'
-                  : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
+                  ? 'bg-gray-100 font-medium'
+                  : 'text-muted hover:bg-gray-50 hover:text-foreground'
               }`}
             >
               Overview
             </Link>
-
             {chapters.map((chapter) => {
               const isActive = pathname?.includes(chapter.href)
-              const isExpanded = expandedChapter === chapter.number
-
               return (
-                <div key={chapter.number}>
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => setExpandedChapter(isExpanded ? null : chapter.number)}
-                      className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
-                      aria-label={isExpanded ? 'Collapse' : 'Expand'}
-                    >
-                      {isExpanded ? (
-                        <ChevronDown className="w-4 h-4 text-gray-500" />
-                      ) : (
-                        <ChevronRight className="w-4 h-4 text-gray-500" />
-                      )}
-                    </button>
-                    <Link
-                      href={chapter.href}
-                      className={`flex-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                        isActive
-                          ? 'bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300'
-                          : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'
-                      }`}
-                    >
-                      <span className="text-gray-500 dark:text-gray-400 mr-2">{chapter.number}.</span>
-                      {chapter.title}
-                    </Link>
-                  </div>
-
-                  {/* Sub-sections (TOC) */}
-                  {isExpanded && chapter.sections && chapter.sections.length > 0 && (
-                    <div className="ml-10 mt-1 space-y-1">
-                      {chapter.sections.map((section) => (
-                        <a
-                          key={section.id}
-                          href={`#${section.id}`}
-                          className="block px-3 py-1.5 text-xs text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                        >
-                          {section.title}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <Link
+                  key={chapter.number}
+                  href={chapter.href}
+                  className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                    isActive
+                      ? 'bg-gray-100 font-medium'
+                      : 'text-muted hover:bg-gray-50 hover:text-foreground'
+                  }`}
+                >
+                  <span className="text-muted-foreground mr-2 text-xs">{chapter.number}.</span>
+                  {chapter.title}
+                </Link>
               )
             })}
           </nav>
         </aside>
 
-        {/* Overlay for mobile */}
+        {/* Mobile overlay */}
         {sidebarOpen && (
           <div
             className="fixed inset-0 bg-black/50 z-30 lg:hidden"
@@ -176,42 +149,73 @@ export default function GuideLayout({ children }: { children: React.ReactNode })
 
         {/* Main Content */}
         <main className="flex-1 min-w-0">
-          <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            {children}
+          <div className="max-w-5xl mx-auto lg:flex lg:gap-12">
+            <article className="flex-1 px-6 py-12 min-w-0">
+              {children}
 
-            {/* Navigation buttons */}
-            <div className="flex justify-between items-center mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-              {prevChapter ? (
-                <Link
-                  href={prevChapter.href}
-                  className="group flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
-                >
-                  <ChevronRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" />
-                  <div className="text-left">
-                    <div className="text-xs text-gray-500">Previous</div>
-                    <div>{prevChapter.title}</div>
-                  </div>
-                </Link>
-              ) : (
-                <div />
+              {/* Navigation */}
+              {(prevChapter || nextChapter) && (
+                <div className="flex justify-between items-center mt-16 pt-8 border-t border-border">
+                  {prevChapter ? (
+                    <Link
+                      href={prevChapter.href}
+                      className="group flex items-center gap-2 text-sm text-muted hover:text-foreground"
+                    >
+                      <ChevronRight className="w-4 h-4 rotate-180 group-hover:-translate-x-1 transition-transform" />
+                      <div>
+                        <div className="text-xs text-muted-foreground">Previous</div>
+                        <div className="font-medium">{prevChapter.title}</div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div />
+                  )}
+                  {nextChapter ? (
+                    <Link
+                      href={nextChapter.href}
+                      className="group flex items-center gap-2 text-sm text-muted hover:text-foreground text-right"
+                    >
+                      <div>
+                        <div className="text-xs text-muted-foreground">Next</div>
+                        <div className="font-medium">{nextChapter.title}</div>
+                      </div>
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  ) : (
+                    <div />
+                  )}
+                </div>
               )}
+            </article>
 
-              {nextChapter ? (
-                <Link
-                  href={nextChapter.href}
-                  className="group flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-600 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-400"
-                >
-                  <div className="text-right">
-                    <div className="text-xs text-gray-500">Next</div>
-                    <div>{nextChapter.title}</div>
-                  </div>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              ) : (
-                <div />
-              )}
-            </div>
-          </article>
+            {/* Right Sidebar - Page TOC */}
+            {tocItems.length > 0 && (
+              <aside className="hidden xl:block w-64 py-12 pr-6">
+                <div className="sticky top-28">
+                  <h3 className="text-xs font-semibold text-foreground mb-4 uppercase tracking-wider">
+                    On This Page
+                  </h3>
+                  <nav className="space-y-2">
+                    {tocItems.map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className={`block text-xs transition-colors ${
+                          item.level === 3 ? 'pl-4' : ''
+                        } ${
+                          activeId === item.id
+                            ? 'text-foreground font-medium'
+                            : 'text-muted hover:text-foreground'
+                        }`}
+                      >
+                        {item.text}
+                      </a>
+                    ))}
+                  </nav>
+                </div>
+              </aside>
+            )}
+          </div>
         </main>
       </div>
     </div>
