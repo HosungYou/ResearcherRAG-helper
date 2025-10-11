@@ -17,6 +17,12 @@ interface TOCItem {
   level: number
 }
 
+interface GuideLayoutProps {
+  children: React.ReactNode
+  githubUrl?: string
+  githubLabel?: string
+}
+
 const chapters: Chapter[] = [
   { number: 1, title: 'Introduction', href: '/guide/01-introduction' },
   { number: 2, title: 'Getting Started', href: '/guide/02-getting-started' },
@@ -27,7 +33,7 @@ const chapters: Chapter[] = [
   { number: 7, title: 'Troubleshooting', href: '/guide/07-troubleshooting' },
 ]
 
-export default function GuideLayout({ children }: { children: React.ReactNode }) {
+export default function GuideLayout({ children, githubUrl, githubLabel = "View on GitHub" }: GuideLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [tocItems, setTocItems] = useState<TOCItem[]>([])
   const [activeId, setActiveId] = useState<string>('')
@@ -151,6 +157,22 @@ export default function GuideLayout({ children }: { children: React.ReactNode })
         <main className="flex-1 min-w-0">
           <div className="max-w-5xl mx-auto lg:flex lg:gap-12">
             <article className="flex-1 px-6 py-12 min-w-0">
+              {githubUrl && (
+                <div className="mb-8 pb-6 border-b border-border flex items-center justify-between">
+                  <div className="text-sm text-muted-foreground">
+                    This chapter corresponds to code in the researcherRAG repository
+                  </div>
+                  <a
+                    href={githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary-600 transition-colors group"
+                  >
+                    <Github className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                    {githubLabel}
+                  </a>
+                </div>
+              )}
               {children}
 
               {/* Navigation */}

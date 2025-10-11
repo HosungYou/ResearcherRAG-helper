@@ -4,7 +4,10 @@ import Mermaid from '@/components/Mermaid'
 
 export default function ImplementationGuidePage() {
   return (
-    <GuideLayout>
+    <GuideLayout
+      githubUrl="https://github.com/HosungYou/researcherRAG/tree/main/prompts"
+      githubLabel="View Stages 1-5 Prompts"
+    >
       <h1>Implementation Guide</h1>
 
       <p className="text-xl text-muted-foreground leading-relaxed mb-8">
