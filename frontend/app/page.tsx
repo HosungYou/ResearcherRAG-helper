@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, MessageCircle, Download, Video, Github, ArrowRight, Sparkles, Zap, Shield } from 'lucide-react'
+import { BookOpen, MessageCircle, Download, Video, Github, ArrowRight, Sparkles, Zap, Shield, Layers } from 'lucide-react'
 import ChatWidget from '@/components/ChatWidget'
+import TypeWriter from '@/components/TypeWriter'
 
 export default function HomePage() {
   return (
@@ -19,13 +20,17 @@ export default function HomePage() {
       {/* Header */}
       <header className="relative z-10 backdrop-blur-sm bg-white/70 border-b border-gray-200/50">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="p-2 bg-gradient-to-br from-primary-500 to-purple-600 rounded-lg">
-              <BookOpen className="w-6 h-6 text-white" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative p-2.5 bg-gradient-to-br from-primary-500 via-purple-600 to-pink-500 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+              <Layers className="w-6 h-6 text-white" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-purple-500 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity -z-10"></div>
             </div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
-              ResearcherRAG Helper
-            </h1>
+            <div>
+              <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">
+                RAG.lab
+              </h1>
+              <p className="text-[10px] text-gray-500 font-medium tracking-wider uppercase">Research AI Platform</p>
+            </div>
           </Link>
           <nav className="hidden md:flex gap-8 items-center">
             <Link href="/guide" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">Guide</Link>
@@ -54,7 +59,12 @@ export default function HomePage() {
           <h2 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-in">
             Build Your Own{' '}
             <span className="bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Research RAG System
+              <TypeWriter
+                words={['Research RAG System', 'AI Literature Assistant', 'Smart Research Tool', 'Academic AI Platform']}
+                typingSpeed={80}
+                deletingSpeed={40}
+                pauseDuration={2500}
+              />
             </span>
           </h2>
 
@@ -97,6 +107,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="container mx-auto px-4">
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      </div>
 
       {/* Features - Glassmorphism Cards */}
       <section className="relative container mx-auto px-4 py-20">
@@ -141,6 +156,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="container mx-auto px-4">
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      </div>
+
       {/* Quick Start - Glass Card */}
       <section className="relative container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
@@ -148,8 +168,8 @@ export default function HomePage() {
             {/* Glow effect */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
 
-            {/* Card */}
-            <div className="relative bg-white/80 backdrop-blur-xl border border-white/20 rounded-2xl p-8 md:p-12 shadow-xl">
+            {/* Card with subtle border */}
+            <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 md:p-12 shadow-xl">
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 bg-gradient-to-br from-primary-500 to-purple-600 rounded-xl">
                   <Zap className="w-6 h-6 text-white" />
@@ -177,6 +197,11 @@ code .`}</code>
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="container mx-auto px-4">
+        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+      </div>
 
       {/* CTA Section */}
       <section className="relative container mx-auto px-4 py-20">
@@ -228,8 +253,8 @@ function FeatureCard({ icon, title, description, href, color }: {
       {/* Hover glow */}
       <div className={`absolute -inset-0.5 bg-gradient-to-r ${color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`}></div>
 
-      {/* Glass card */}
-      <div className="relative h-full bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1">
+      {/* Glass card with gradient border */}
+      <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-200/50">
         <div className={`inline-flex p-3 bg-gradient-to-br ${color} rounded-xl mb-4 text-white`}>
           {icon}
         </div>
