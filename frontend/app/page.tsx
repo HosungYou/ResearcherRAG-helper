@@ -1,46 +1,32 @@
 'use client'
 
 import Link from 'next/link'
-import { BookOpen, MessageCircle, Download, Video, Github, ArrowRight, Sparkles, Zap, Shield, Layers } from 'lucide-react'
-import ChatWidget from '@/components/ChatWidget'
-import TypeWriter from '@/components/TypeWriter'
+import { ArrowRight, Github, ExternalLink } from 'lucide-react'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-purple-50/30 to-blue-50">
-      <ChatWidget />
-
-      {/* Animated background blobs */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float"></div>
-        <div className="absolute top-0 -right-4 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float animation-delay-2000"></div>
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-float animation-delay-4000"></div>
-      </div>
-
-      {/* Header */}
-      <header className="relative z-10 backdrop-blur-sm bg-white/70 border-b border-gray-200/50">
-        <div className="container mx-auto px-4 py-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative p-2.5 bg-gradient-to-br from-primary-500 via-purple-600 to-pink-500 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
-              <Layers className="w-6 h-6 text-white" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-400 to-purple-500 rounded-xl blur opacity-50 group-hover:opacity-75 transition-opacity -z-10"></div>
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 bg-clip-text text-transparent tracking-tight">
-                RAG.lab
-              </h1>
-              <p className="text-[10px] text-gray-500 font-medium tracking-wider uppercase">Research AI Platform</p>
-            </div>
+    <div className="min-h-screen bg-background">
+      {/* Header - Minimal */}
+      <header className="border-b border-border">
+        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="text-lg font-medium tracking-tight">RAG.lab</div>
           </Link>
-          <nav className="hidden md:flex gap-8 items-center">
-            <Link href="/guide" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">Guide</Link>
-            <Link href="/chat" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">Chatbot</Link>
-            <Link href="/resources" className="text-gray-700 hover:text-primary-600 font-medium transition-colors">Resources</Link>
+          <nav className="hidden md:flex gap-8 items-center text-sm">
+            <Link href="/guide" className="text-muted hover:text-foreground transition-colors">
+              Documentation
+            </Link>
+            <Link href="/chat" className="text-muted hover:text-foreground transition-colors">
+              Chatbot
+            </Link>
+            <Link href="/resources" className="text-muted hover:text-foreground transition-colors">
+              Resources
+            </Link>
             <a
               href="https://github.com/HosungYou/ResearcherRAG"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="text-muted hover:text-foreground transition-colors"
             >
               <Github className="w-5 h-5" />
             </a>
@@ -48,243 +34,218 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative container mx-auto px-4 py-24 md:py-32">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/70 backdrop-blur-sm border border-primary-200 rounded-full mb-8 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-primary-600" />
-            <span className="text-sm font-medium text-primary-700">AI-Powered Research Assistant</span>
+      {/* Hero - Large Typography */}
+      <section className="max-w-7xl mx-auto px-6 pt-32 pb-24">
+        <div className="max-w-4xl">
+          <h1 className="text-[clamp(3rem,8vw,5.5rem)] font-bold tracking-tighter leading-[0.95] mb-8">
+            Build AI-Powered
+            <br />
+            Research Systems
+          </h1>
+          <p className="text-xl text-muted leading-relaxed mb-10 max-w-2xl">
+            An open-source platform for creating RAG-based literature review tools.
+            From academic papers to systematic research in hours, not weeks.
+          </p>
+          <div className="flex gap-4">
+            <Link
+              href="/guide"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
+            >
+              Get Started
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/chat"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-border-strong transition-colors"
+            >
+              Try Demo
+            </Link>
           </div>
+        </div>
+      </section>
 
-          <h2 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight animate-fade-in">
-            Build Your Own{' '}
-            <span className="bg-gradient-to-r from-primary-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              <TypeWriter
-                words={['Research RAG System', 'AI Literature Assistant', 'Smart Research Tool', 'Academic AI Platform']}
-                typingSpeed={80}
-                deletingSpeed={40}
-                pauseDuration={2500}
-              />
-            </span>
+      {/* Stats Grid */}
+      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+        <div className="grid grid-cols-3 gap-12">
+          <div>
+            <div className="text-4xl font-bold tracking-tight mb-2">3 hrs</div>
+            <div className="text-sm text-muted">Setup to deployment</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold tracking-tight mb-2">75%</div>
+            <div className="text-sm text-muted">Time saved on review</div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold tracking-tight mb-2">5 steps</div>
+            <div className="text-sm text-muted">From zero to production</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features - Grid Table */}
+      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+        <h2 className="text-3xl font-bold tracking-tight mb-12">Everything you need</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-lg overflow-hidden">
+          <FeatureCell
+            title="Interactive Documentation"
+            description="Step-by-step guides with code examples and best practices for building RAG systems"
+            href="/guide"
+          />
+          <FeatureCell
+            title="AI-Powered Chatbot"
+            description="Get instant answers about ResearcherRAG with Claude 3.5 Sonnet integration"
+            href="/chat"
+          />
+          <FeatureCell
+            title="Ready-to-Use Templates"
+            description="Pre-configured workflows for PRISMA reviews, meta-analysis, and systematic research"
+            href="/resources"
+          />
+          <FeatureCell
+            title="Video Tutorials"
+            description="Visual walkthroughs of the complete 5-stage research workflow"
+            href="/resources#videos"
+          />
+        </div>
+      </section>
+
+      {/* Quick Start */}
+      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+        <h2 className="text-3xl font-bold tracking-tight mb-8">Quick Start</h2>
+        <div className="border border-border rounded-lg p-8 bg-gray-50">
+          <ol className="space-y-4 mb-8 text-sm">
+            <li className="flex gap-3">
+              <span className="text-muted font-mono">01</span>
+              <span>Clone the repository and install dependencies</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-muted font-mono">02</span>
+              <span>Configure your API keys and environment</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-muted font-mono">03</span>
+              <span>Follow the 5-stage workflow in VS Code</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-muted font-mono">04</span>
+              <span>Deploy your custom RAG system</span>
+            </li>
+          </ol>
+          <div className="bg-foreground text-background p-6 rounded-md font-mono text-sm overflow-x-auto">
+            <div className="text-gray-400"># Install ResearcherRAG</div>
+            <div>git clone https://github.com/HosungYou/ResearcherRAG.git</div>
+            <div>cd ResearcherRAG</div>
+            <div>pip install -r requirements.txt</div>
+            <div className="mt-4 text-gray-400"># Open in VS Code</div>
+            <div>code .</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+        <h2 className="text-3xl font-bold tracking-tight mb-8">Built with modern tools</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-lg overflow-hidden">
+          <TechCell name="Claude 3.5" description="Sonnet API" />
+          <TechCell name="ChromaDB" description="Vector database" />
+          <TechCell name="LangChain" description="RAG framework" />
+          <TechCell name="Python" description="Backend stack" />
+          <TechCell name="Next.js" description="Frontend" />
+          <TechCell name="Tailwind CSS" description="Styling" />
+          <TechCell name="Vercel" description="Deployment" />
+          <TechCell name="TypeScript" description="Type safety" />
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl font-bold tracking-tight mb-4">
+            Ready to transform your research workflow?
           </h2>
-
-          <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-            Interactive platform for learning ResearcherRAG - the conversational AI-guided system
-            for academic literature review and systematic research
+          <p className="text-lg text-muted mb-8">
+            Join researchers worldwide saving 67-75% of literature review time with AI-powered tools.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
+          <div className="flex gap-4">
             <Link
               href="/guide"
-              className="group px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg shadow-primary-500/50 hover:shadow-xl hover:shadow-primary-500/60 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
             >
-              Start Learning
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Start Building
+              <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link
-              href="/chat"
-              className="px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-800 rounded-xl font-semibold hover:bg-white hover:border-primary-300 transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+            <a
+              href="https://github.com/HosungYou/ResearcherRAG"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-border-strong transition-colors"
             >
-              <MessageCircle className="w-5 h-5" />
-              Try Chatbot
-            </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-20 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">3hrs</div>
-              <div className="text-sm text-gray-600 mt-1">Setup Time</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">75%</div>
-              <div className="text-sm text-gray-600 mt-1">Time Saved</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">5</div>
-              <div className="text-sm text-gray-600 mt-1">Easy Steps</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="container mx-auto px-4">
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-      </div>
-
-      {/* Features - Glassmorphism Cards */}
-      <section className="relative container mx-auto px-4 py-20">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Everything You Need
-          </h3>
-          <p className="text-gray-600 text-center mb-12 text-lg">
-            Powerful tools to accelerate your research workflow
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <FeatureCard
-              icon={<BookOpen className="w-10 h-10" />}
-              title="Interactive Guide"
-              description="Step-by-step tutorials with code examples and best practices"
-              href="/guide"
-              color="from-blue-500 to-cyan-500"
-            />
-            <FeatureCard
-              icon={<MessageCircle className="w-10 h-10" />}
-              title="AI Chatbot"
-              description="Get instant answers with RAG-powered assistance"
-              href="/chat"
-              color="from-purple-500 to-pink-500"
-            />
-            <FeatureCard
-              icon={<Download className="w-10 h-10" />}
-              title="Templates"
-              description="Ready-to-use templates and example projects"
-              href="/resources"
-              color="from-green-500 to-emerald-500"
-            />
-            <FeatureCard
-              icon={<Video className="w-10 h-10" />}
-              title="Tutorials"
-              description="Video walkthroughs of the 5-stage workflow"
-              href="/resources#videos"
-              color="from-orange-500 to-red-500"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="container mx-auto px-4">
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-      </div>
-
-      {/* Quick Start - Glass Card */}
-      <section className="relative container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="relative group">
-            {/* Glow effect */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-
-            {/* Card with subtle border */}
-            <div className="relative bg-white/80 backdrop-blur-xl border border-gray-200/50 rounded-2xl p-8 md:p-12 shadow-xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-gradient-to-br from-primary-500 to-purple-600 rounded-xl">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold">Quick Start</h3>
-              </div>
-
-              <ol className="space-y-4 mb-8">
-                <QuickStartStep number={1} text="Clone the ResearcherRAG repository" href="https://github.com/HosungYou/ResearcherRAG" />
-                <QuickStartStep number={2} text="Open in VS Code with Claude Code extension" />
-                <QuickStartStep number={3} text="Follow the 5-stage workflow" href="/guide" />
-                <QuickStartStep number={4} text="Build your custom RAG system in 3 hours!" />
-              </ol>
-
-              <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl blur-sm"></div>
-                <pre className="relative bg-gray-900 text-gray-100 p-6 rounded-xl overflow-x-auto border border-gray-700 font-mono text-sm">
-                  <code>{`git clone https://github.com/HosungYou/ResearcherRAG.git
-cd ResearcherRAG
-pip install -r requirements.txt
-code .`}</code>
-                </pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="container mx-auto px-4">
-        <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-      </div>
-
-      {/* CTA Section */}
-      <section className="relative container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-r from-primary-600 to-purple-600 rounded-3xl p-12 md:p-16 shadow-2xl">
-            <Shield className="w-16 h-16 text-white mx-auto mb-6" />
-            <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Transform Your Research?
-            </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Join researchers worldwide who are saving 67-75% of their literature review time
-            </p>
-            <Link
-              href="/guide"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary-600 rounded-xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Get Started Free
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+              View on GitHub
+              <ExternalLink className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-gray-200/50 backdrop-blur-sm bg-white/50 mt-20">
-        <div className="container mx-auto px-4 py-8 text-center text-gray-600">
-          <p className="font-medium">Built with ❤️ for researchers, by researchers</p>
-          <p className="mt-2 text-sm">
-            Powered by{' '}
-            <a href="https://nextjs.org" className="text-primary-600 hover:text-primary-700 font-medium">Next.js</a>
-            {' '}+{' '}
-            <a href="https://anthropic.com" className="text-primary-600 hover:text-primary-700 font-medium">Claude 3.5 Sonnet</a>
-          </p>
+      <footer className="border-t border-border mt-20">
+        <div className="max-w-7xl mx-auto px-6 py-12">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <div className="font-medium mb-2">RAG.lab</div>
+              <p className="text-sm text-muted">
+                Open-source research AI platform
+              </p>
+            </div>
+            <div className="flex gap-6 text-sm text-muted">
+              <Link href="/guide" className="hover:text-foreground transition-colors">
+                Documentation
+              </Link>
+              <a
+                href="https://github.com/HosungYou/ResearcherRAG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground transition-colors"
+              >
+                GitHub
+              </a>
+              <Link href="/resources" className="hover:text-foreground transition-colors">
+                Resources
+              </Link>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-border text-xs text-muted">
+            Built with Next.js, Tailwind CSS, and Claude AI. Deployed on Vercel.
+          </div>
         </div>
       </footer>
     </div>
   )
 }
 
-function FeatureCard({ icon, title, description, href, color }: {
-  icon: React.ReactNode
-  title: string
-  description: string
-  href: string
-  color: string
-}) {
+function FeatureCell({ title, description, href }: { title: string; description: string; href: string }) {
   return (
-    <Link href={href} className="group relative">
-      {/* Hover glow */}
-      <div className={`absolute -inset-0.5 bg-gradient-to-r ${color} rounded-2xl blur opacity-0 group-hover:opacity-30 transition duration-500`}></div>
-
-      {/* Glass card with gradient border */}
-      <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform group-hover:-translate-y-1 border border-gray-200/50">
-        <div className={`inline-flex p-3 bg-gradient-to-br ${color} rounded-xl mb-4 text-white`}>
-          {icon}
-        </div>
-        <h4 className="text-xl font-bold mb-2 group-hover:text-primary-600 transition-colors">{title}</h4>
-        <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
-        <div className="mt-4 flex items-center text-primary-600 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-          Learn more
-          <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
-        </div>
+    <Link
+      href={href}
+      className="bg-background p-8 hover:bg-gray-50 transition-colors group"
+    >
+      <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors">
+        {title}
+      </h3>
+      <p className="text-sm text-muted leading-relaxed">{description}</p>
+      <div className="mt-4 flex items-center gap-1 text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+        Learn more
+        <ArrowRight className="w-3 h-3" />
       </div>
     </Link>
   )
 }
 
-function QuickStartStep({ number, text, href }: { number: number; text: string; href?: string }) {
-  const content = (
-    <div className="flex gap-4 items-start group cursor-pointer">
-      <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-purple-600 text-white font-bold flex items-center justify-center text-sm shadow-lg">
-        {number}
-      </div>
-      <span className="text-gray-700 font-medium group-hover:text-primary-600 transition-colors flex-1">
-        {text}
-        {href && <span className="text-primary-500 ml-1">→</span>}
-      </span>
+function TechCell({ name, description }: { name: string; description: string }) {
+  return (
+    <div className="bg-background p-6 hover:bg-gray-50 transition-colors">
+      <div className="font-medium text-sm mb-1">{name}</div>
+      <div className="text-xs text-muted">{description}</div>
     </div>
   )
-
-  if (href) {
-    return <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}>{content}</a>
-  }
-
-  return content
 }
