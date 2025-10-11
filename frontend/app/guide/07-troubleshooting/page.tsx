@@ -214,19 +214,58 @@ graph TD
 
       <h3 id="generate-diagram">Generate Your PRISMA Diagram</h3>
 
-      <p className="text-sm mb-3">Use this script to create a publication-ready PRISMA diagram:</p>
+      <p className="text-sm mb-3">
+        The easiest way to create a publication-ready PRISMA diagram is using <strong>Mermaid Live Editor</strong>:
+      </p>
 
-      <pre className="bg-muted p-3 rounded text-sm my-4"><code>{`python generate_prisma_diagram.py \\
-  --identified 1247 \\
-  --duplicates 58 \\
-  --screened 1189 \\
-  --excluded_abstract 925 \\
-  --fulltext_assessed 264 \\
-  --excluded_fulltext 127 \\
-  --included 137 \\
-  --output prisma_flow.png
+      <div className="border rounded-lg my-6">
+        <div className="border-b p-4 bg-muted/30">
+          <h4 className="font-semibold">📊 Steps to Create Your PRISMA Diagram</h4>
+        </div>
+        <div className="p-4 space-y-4">
+          <div>
+            <p className="font-semibold text-sm mb-2">Step 1: Copy the Mermaid code above</p>
+            <p className="text-sm text-muted-foreground">
+              Select the PRISMA flow diagram code shown in the example above
+            </p>
+          </div>
 
-# Generates a 300 DPI PNG suitable for publication`}</code></pre>
+          <div>
+            <p className="font-semibold text-sm mb-2">Step 2: Open Mermaid Live Editor</p>
+            <p className="text-sm text-muted-foreground mb-2">
+              Visit <a href="https://mermaid.live" target="_blank" rel="noopener" className="text-blue-600 underline">https://mermaid.live</a>
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold text-sm mb-2">Step 3: Paste and edit with your numbers</p>
+            <p className="text-sm text-muted-foreground">
+              Replace the example numbers with your actual counts:
+            </p>
+            <pre className="bg-muted p-3 rounded text-xs mt-2"><code>{`A[Records Identified<br/>n = YOUR_NUMBER]
+B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
+...`}</code></pre>
+          </div>
+
+          <div>
+            <p className="font-semibold text-sm mb-2">Step 4: Export as PNG or SVG</p>
+            <p className="text-sm text-muted-foreground">
+              Click "Actions" → "PNG" or "SVG" to download. SVG is recommended for publications (scalable, 300+ DPI quality).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">💡 Pro Tip: Automate with Python (Advanced)</p>
+        <p className="text-sm mb-2">
+          If you need to generate many PRISMA diagrams programmatically, you can use Python with the Graphviz or Matplotlib libraries.
+          However, for most researchers, the Mermaid Live Editor approach above is simpler and produces publication-quality results.
+        </p>
+        <p className="text-sm mb-0">
+          See <a href="https://github.com/HosungYou/researcherRAG/tree/main/examples" target="_blank" rel="noopener" className="text-blue-600 underline">GitHub examples/</a> for Python automation scripts.
+        </p>
+      </div>
 
       <h2 id="bibliography">Citation & Bibliography Management</h2>
 

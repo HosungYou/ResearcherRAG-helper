@@ -98,13 +98,35 @@ export default function ResearchConversationPage() {
       </div>
 
       <div className="callout callout-warning">
-        <p className="font-semibold mb-2">🔐 How to Ensure RAG Usage</p>
-        <ol className="text-sm space-y-1">
-          <li>1. <strong>Always run the interface script first:</strong> <code>python interfaces/claude_code_interface.py</code></li>
-          <li>2. <strong>Look for explicit paper listings:</strong> System shows "Found X relevant papers"</li>
-          <li>3. <strong>Check for citations:</strong> Answers should include [Author, Year] format</li>
-          <li>4. <strong>Test with specific questions:</strong> "Do I have any papers by [author]?"</li>
-        </ol>
+        <p className="font-semibold mb-2">🔐 How to Run the RAG Interface</p>
+        <div className="space-y-3">
+          <p className="text-sm"><strong>Step 1: Open your terminal</strong> and navigate to your project:</p>
+          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>cd /path/to/your/researcherRAG-project</code></pre>
+
+          <p className="text-sm"><strong>Step 2: Run the interface script:</strong></p>
+          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>python interfaces/claude_code_interface.py</code></pre>
+
+          <p className="text-sm"><strong>Step 3: You'll see this prompt:</strong></p>
+          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>{`📂 Loading Vector DB from ./chroma_db...
+✅ Loaded 137 papers from collection 'papers'
+✅ Connected to Claude API
+
+Type your questions (or 'exit' to quit)
+
+You: `}</code></pre>
+
+          <p className="text-sm"><strong>Step 4: Ask questions!</strong></p>
+          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>{`You: What are the main adoption barriers?
+You: Show me papers from 2023
+You: exit  # when done`}</code></pre>
+
+          <p className="text-sm mt-3"><strong>✓ How to verify it's using YOUR papers:</strong></p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>• System shows "📚 Found X relevant papers"</li>
+            <li>• Answers include [Author, Year] citations</li>
+            <li>• Can query specific papers you know are in your DB</li>
+          </ul>
+        </div>
       </div>
 
       <h2 id="query-strategies">Effective Query Strategies</h2>
