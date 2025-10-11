@@ -10,8 +10,7 @@ export default function HomePage() {
       <header className="border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="text-lg font-semibold tracking-tight">ResearcherRAG</div>
-            <div className="text-xs text-muted-foreground font-normal">Helper</div>
+            <div className="text-lg font-medium tracking-tight">RAG.lab</div>
           </Link>
           <nav className="hidden md:flex gap-8 items-center text-sm">
             <Link href="/guide" className="text-muted hover:text-foreground transition-colors">

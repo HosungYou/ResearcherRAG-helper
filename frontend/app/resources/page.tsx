@@ -8,8 +8,7 @@ export default function ResourcesPage() {
       <header className="border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="text-xl font-semibold tracking-tight">ResearcherRAG</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Helper</div>
+            <div className="text-xl font-medium tracking-tight">RAG.lab</div>
           </Link>
           <nav className="flex gap-6">
             <Link href="/" className="hover:text-primary-600">Home</Link>
