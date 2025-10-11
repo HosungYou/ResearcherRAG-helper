@@ -28,7 +28,7 @@ const chapters: Chapter[] = [
   { number: 2, title: 'Getting Started', href: '/guide/02-getting-started' },
   { number: 3, title: 'Core Concepts', href: '/guide/03-core-concepts' },
   { number: 4, title: 'Implementation Guide', href: '/guide/04-implementation' },
-  { number: 5, title: 'Advanced Topics', href: '/guide/05-advanced' },
+  { number: 5, title: 'Advanced Topics', href: '/guide/05-advanced-topics' },
   { number: 6, title: 'Research Conversation', href: '/guide/06-best-practices' },
   { number: 7, title: 'Documentation & Writing', href: '/guide/07-troubleshooting' },
 ]
