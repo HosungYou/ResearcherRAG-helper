@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BookOpen, Download, FileText, Github, Package } from 'lucide-react'
+import { BookOpen, Download, FileText, Github, Package, Terminal, Globe, FileCode } from 'lucide-react'
 
 export default function ResourcesPage() {
   return (
@@ -8,8 +8,8 @@ export default function ResourcesPage() {
       <header className="border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <BookOpen className="w-8 h-8 text-primary-600" />
-            <h1 className="text-2xl font-bold">ResearcherRAG Helper</h1>
+            <div className="text-xl font-semibold tracking-tight">ResearcherRAG</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Helper</div>
           </Link>
           <nav className="flex gap-6">
             <Link href="/" className="hover:text-primary-600">Home</Link>
@@ -34,6 +34,105 @@ export default function ResourcesPage() {
 
         {/* Resources Grid */}
         <div className="max-w-6xl mx-auto space-y-12">
+          {/* Chat Interfaces - NEW! */}
+          <section>
+            <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <Terminal className="w-6 h-6 text-primary-600" />
+              Chat Interfaces (After Building Your RAG)
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+              After completing Stages 1-5, use these interfaces to interact with your research papers
+            </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="card p-6 hover:shadow-lg transition-all border-l-4 border-blue-600">
+                <div className="flex items-center gap-2 mb-3">
+                  <FileCode className="w-5 h-5 text-blue-600" />
+                  <h4 className="font-bold">Claude Code Interface</h4>
+                </div>
+                <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mb-3">
+                  Recommended
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Run directly in Claude Code. No setup needed. Best for iterative research.
+                </p>
+                <div className="space-y-1 mb-4 text-xs text-gray-600 dark:text-gray-400">
+                  <div>✓ CLI interactive mode</div>
+                  <div>✓ Single query mode</div>
+                  <div>✓ Real-time citations</div>
+                </div>
+                <a
+                  href="https://github.com/HosungYou/researcherRAG/blob/main/interfaces/claude_code_interface.py"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-blue-600 hover:underline flex items-center gap-1"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Script
+                </a>
+              </div>
+
+              <div className="card p-6 hover:shadow-lg transition-all border-l-4 border-purple-600">
+                <div className="flex items-center gap-2 mb-3">
+                  <Globe className="w-5 h-5 text-purple-600" />
+                  <h4 className="font-bold">Streamlit Interface</h4>
+                </div>
+                <div className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded mb-3">
+                  Visual UI
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Web GUI with chat history, export features, and paper statistics.
+                </p>
+                <div className="space-y-1 mb-4 text-xs text-gray-600 dark:text-gray-400">
+                  <div>✓ Chat history export</div>
+                  <div>✓ Citation tracking</div>
+                  <div>✓ Statistics dashboard</div>
+                </div>
+                <a
+                  href="https://github.com/HosungYou/researcherRAG/blob/main/interfaces/streamlit_app.py"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-purple-600 hover:underline flex items-center gap-1"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Script
+                </a>
+              </div>
+
+              <div className="card p-6 hover:shadow-lg transition-all border-l-4 border-green-600">
+                <div className="flex items-center gap-2 mb-3">
+                  <FileCode className="w-5 h-5 text-green-600" />
+                  <h4 className="font-bold">FastAPI Server</h4>
+                </div>
+                <div className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded mb-3">
+                  Production
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  REST API server for building custom frontends. Full documentation.
+                </p>
+                <div className="space-y-1 mb-4 text-xs text-gray-600 dark:text-gray-400">
+                  <div>✓ REST API endpoints</div>
+                  <div>✓ Custom frontend</div>
+                  <div>✓ OpenAPI docs</div>
+                </div>
+                <a
+                  href="https://github.com/HosungYou/researcherRAG/blob/main/interfaces/fastapi_server.py"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-green-600 hover:underline flex items-center gap-1"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Script
+                </a>
+              </div>
+            </div>
+            <div className="mt-6 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                <strong>📚 Note:</strong> These interfaces require a Vector DB built using ResearcherRAG Stages 1-5.
+                See the <Link href="/guide/04-implementation" className="underline font-medium">Implementation Guide</Link> to get started.
+              </p>
+            </div>
+          </section>
+
           {/* Templates */}
           <section>
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
