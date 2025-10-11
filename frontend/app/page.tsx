@@ -1,9 +1,11 @@
 import Link from 'next/link'
 import { BookOpen, MessageCircle, Download, Video, Github } from 'lucide-react'
+import ChatWidget from '@/components/ChatWidget'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+      <ChatWidget />
       {/* Header */}
       <header className="border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
