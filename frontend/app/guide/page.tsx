@@ -8,8 +8,8 @@ export default function GuidePage() {
       <header className="border-b border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <BookOpen className="w-8 h-8 text-primary-600" />
-            <h1 className="text-2xl font-bold">ResearcherRAG Helper</h1>
+            <div className="text-xl font-semibold tracking-tight">ResearcherRAG</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">Helper</div>
           </Link>
           <nav className="flex gap-6">
             <Link href="/" className="hover:text-primary-600">Home</Link>
@@ -37,51 +37,56 @@ export default function GuidePage() {
           <GuideChapter
             number={1}
             title="Introduction to ResearcherRAG"
-            description="What is ResearcherRAG? Why use it for literature review? Key concepts and benefits."
+            description="What is ResearcherRAG? PRISMA methodology, 5-stage workflow overview, and benefits for researchers."
             href="/guide/01-introduction"
             status="available"
+            github="https://github.com/HosungYou/researcherRAG/tree/main/prompts"
           />
           <GuideChapter
             number={2}
-            title="5-Stage Workflow Deep Dive"
-            description="Understand each stage: Research Domain, Query Strategy, PRISMA, RAG Design, Execution"
-            href="/guide/02-workflow"
+            title="Getting Started"
+            description="Installation guide, system requirements, API key setup, and your first workflow walkthrough."
+            href="/guide/02-getting-started"
             status="available"
+            github="https://github.com/HosungYou/researcherRAG#installation"
           />
           <GuideChapter
             number={3}
-            title="PRISMA Configuration Guide"
-            description="Multi-dimensional screening, relevance scoring, and paper selection strategies"
-            href="/guide/03-prisma"
+            title="Core Concepts"
+            description="Deep dive into PRISMA, RAG architecture, vector databases, embeddings, and chunking strategies."
+            href="/guide/03-core-concepts"
             status="available"
+            github="https://github.com/HosungYou/researcherRAG#core-concepts"
           />
           <GuideChapter
             number={4}
-            title="RAG System Design Patterns"
-            description="Vector databases, embeddings, chunking strategies, and prompt engineering"
-            href="/guide/04-rag-design"
+            title="Implementation Guide"
+            description="Complete 5-stage workflow: Research Domain, Query Strategy, PRISMA Config, RAG Design, Execution."
+            href="/guide/04-implementation"
             status="available"
+            github="https://github.com/HosungYou/researcherRAG/tree/main/prompts"
           />
           <GuideChapter
             number={5}
-            title="Case Studies"
-            description="Real-world examples: Education, Medicine, Psychology research projects"
-            href="/guide/05-case-studies"
+            title="Advanced Topics"
+            description="Custom embeddings, multi-language support, hybrid search, caching, and production optimization."
+            href="/guide/05-advanced-topics"
             status="available"
+            github="https://github.com/HosungYou/researcherRAG/tree/main/interfaces"
           />
           <GuideChapter
             number={6}
-            title="Troubleshooting & FAQ"
-            description="Common issues, debugging tips, and frequently asked questions"
-            href="/guide/06-troubleshooting"
+            title="Best Practices"
+            description="Research methodology, citation management, reproducibility guidelines, and ethical considerations."
+            href="/guide/06-best-practices"
             status="available"
           />
           <GuideChapter
             number={7}
-            title="Advanced Topics"
-            description="Meta-analysis, citation graphs, multi-lingual RAG, and automation"
-            href="/guide/07-advanced"
-            status="coming-soon"
+            title="Troubleshooting & FAQ"
+            description="Common issues, debugging strategies, installation problems, and comprehensive FAQ section."
+            href="/guide/07-troubleshooting"
+            status="available"
           />
         </div>
 
@@ -120,12 +125,13 @@ export default function GuidePage() {
   )
 }
 
-function GuideChapter({ number, title, description, href, status }: {
+function GuideChapter({ number, title, description, href, status, github }: {
   number: number
   title: string
   description: string
   href: string
   status: 'available' | 'coming-soon'
+  github?: string
 }) {
   if (status === 'coming-soon') {
     return (
@@ -145,20 +151,33 @@ function GuideChapter({ number, title, description, href, status }: {
   }
 
   return (
-    <Link href={href} className="card p-6 hover:shadow-lg transition-all">
+    <div className="card p-6 hover:shadow-lg transition-all">
       <div className="flex items-start gap-4">
         <div className="bg-primary-600 text-white rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
           {number}
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-bold mb-2 group-hover:text-primary-600">{title}</h3>
+          <h3 className="text-lg font-bold mb-2">{title}</h3>
           <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{description}</p>
-          <div className="flex items-center text-primary-600 text-sm font-medium">
-            Read Chapter
-            <ArrowRight className="w-4 h-4 ml-1" />
+          <div className="flex items-center gap-3">
+            <Link href={href} className="flex items-center text-primary-600 text-sm font-medium hover:underline">
+              Read Chapter
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Link>
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-gray-600 dark:text-gray-400 text-sm hover:text-primary-600"
+              >
+                <Github className="w-4 h-4 mr-1" />
+                Code
+              </a>
+            )}
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
