@@ -1,0 +1,985 @@
+import GuideLayout from '@/components/GuideLayout'
+import Link from 'next/link'
+import Mermaid from '@/components/Mermaid'
+
+export default function ImplementationGuidePage() {
+  return (
+    <GuideLayout>
+      <h1>Implementation Guide</h1>
+
+      <p className="text-xl text-muted-foreground leading-relaxed mb-8">
+        This chapter walks you through the complete implementation process of ResearcherRAG, from initial setup to final deployment. We'll cover all five stages in detail with real-world examples, practical tips, and troubleshooting advice to help you build your own systematic literature review RAG system.
+      </p>
+
+      <Mermaid chart={`
+graph LR
+    A[🎯 Stage 1<br/>Research Domain] --> B[🔍 Stage 2<br/>Query Strategy]
+    B --> C[📋 Stage 3<br/>PRISMA Config]
+    C --> D[🏗️ Stage 4<br/>RAG Design]
+    D --> E[⚡ Stage 5<br/>Execution]
+    E --> F[✅ Your RAG System]
+
+    style A fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
+    style B fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px
+    style C fill:#fce7f3,stroke:#ec4899,stroke-width:2px
+    style D fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
+    style E fill:#dcfce7,stroke:#10b981,stroke-width:2px
+    style F fill:#bbf7d0,stroke:#059669,stroke-width:3px
+`} />
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">📖 Before You Start</p>
+        <p className="mb-0">
+          Make sure you've completed the <Link href="/guide/02-getting-started">Getting Started</Link> guide and understand the <Link href="/guide/03-core-concepts">Core Concepts</Link>. This implementation guide assumes you have ResearcherRAG installed and your API keys configured.
+        </p>
+      </div>
+
+      <h2 id="overview">Implementation Overview</h2>
+
+      <p>
+        ResearcherRAG's five-stage workflow is designed to guide you through building a RAG system systematically. Each stage builds upon the previous one, and the prompts are carefully crafted to help Claude Code understand your research domain and generate appropriate code.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="border rounded-lg p-6">
+          <h3 className="text-lg font-semibold mb-2">⏱️ Total Time</h3>
+          <p className="text-sm text-muted-foreground mb-3">Expected completion time for a typical project</p>
+          <div className="space-y-2 text-sm">
+            <div className="flex justify-between">
+              <span>Planning (Stages 1-2)</span>
+              <span className="font-mono">~25 min</span>
+            </div>
+            <div className="flex justify-between">
+              <span>PRISMA (Stage 3)</span>
+              <span className="font-mono">~2-3 hrs</span>
+            </div>
+            <div className="flex justify-between">
+              <span>RAG Design (Stage 4)</span>
+              <span className="font-mono">~15 min</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Execution (Stage 5)</span>
+              <span className="font-mono">~3-4 hrs</span>
+            </div>
+            <div className="flex justify-between border-t pt-2 font-semibold">
+              <span>Total</span>
+              <span className="font-mono">~6-8 hrs</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="border rounded-lg p-6">
+          <h3 className="text-lg font-semibold mb-2">🎯 Success Metrics</h3>
+          <p className="text-sm text-muted-foreground mb-3">What to expect from your RAG system</p>
+          <ul className="text-sm space-y-2">
+            <li>✅ <strong>50-200 papers</strong> in final PRISMA dataset</li>
+            <li>✅ <strong>Sub-second</strong> query response times</li>
+            <li>✅ <strong>3-5 relevant citations</strong> per answer</li>
+            <li>✅ <strong>90%+ accuracy</strong> in source attribution</li>
+            <li>✅ <strong>Reproducible</strong> research workflow</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="stage-1">Stage 1: Research Domain Setup</h2>
+
+      <p>
+        The first stage is all about defining your research question and domain. This is the foundation of your entire project—spend time getting this right, and everything else will fall into place.
+      </p>
+
+      <h3 id="stage-1-prompt">Using the Stage 1 Prompt</h3>
+
+      <p>
+        Navigate to the <code>docs/prompts/01_research_domain_setup.md</code> file in your ResearcherRAG repository. This prompt template guides you through defining your research domain.
+      </p>
+
+      <div className="callout callout-success">
+        <p className="font-semibold mb-2">💡 Pro Tip: Be Specific</p>
+        <p className="mb-0">
+          The more specific you are about your research question, the better your RAG system will perform. Instead of "AI in education," try "The impact of large language models on personalized learning outcomes in K-12 mathematics education."
+        </p>
+      </div>
+
+      <h3 id="stage-1-example">Real-World Example</h3>
+
+      <div className="bg-muted/30 border-l-4 border-blue-500 p-4 my-6">
+        <p className="font-semibold mb-2">Research Question:</p>
+        <p className="mb-4 italic">
+          "What are the factors influencing technology adoption in healthcare organizations, and how do these factors differ across developed and developing countries?"
+        </p>
+
+        <p className="font-semibold mb-2">Domain Specification:</p>
+        <ul className="space-y-1 text-sm">
+          <li><strong>Field:</strong> Health Informatics, Technology Adoption</li>
+          <li><strong>Scope:</strong> Healthcare organizations (hospitals, clinics)</li>
+          <li><strong>Geography:</strong> Global, with comparison focus</li>
+          <li><strong>Timeframe:</strong> 2010-2024 (last 15 years)</li>
+          <li><strong>Key Concepts:</strong> Technology adoption, TAM, UTAUT, organizational readiness</li>
+        </ul>
+      </div>
+
+      <p>
+        After completing the Stage 1 prompt with Claude Code, you'll receive:
+      </p>
+
+      <ul>
+        <li>📁 A project directory structure</li>
+        <li>📝 Research domain documentation</li>
+        <li>🔑 Key concepts and terminology list</li>
+        <li>🎯 Refined research question</li>
+      </ul>
+
+      <Mermaid chart={`
+graph TD
+    A[Start Stage 1] --> B{Research Question<br/>Clear?}
+    B -->|No| C[Refine with<br/>5W1H Framework]
+    C --> B
+    B -->|Yes| D[Define Domain<br/>Boundaries]
+    D --> E[Identify Key<br/>Concepts]
+    E --> F[List Synonyms &<br/>Related Terms]
+    F --> G[Document Expected<br/>Study Types]
+    G --> H[Stage 1 Complete]
+
+    style A fill:#e0e7ff
+    style H fill:#dcfce7
+    style B fill:#fef3c7
+`} />
+
+      <h2 id="stage-2">Stage 2: Query Strategy Design</h2>
+
+      <p>
+        Stage 2 focuses on developing a comprehensive search strategy. This is where you translate your research question into effective database queries that will find all relevant papers while minimizing noise.
+      </p>
+
+      <h3 id="stage-2-components">Query Strategy Components</h3>
+
+      <div className="grid grid-cols-1 gap-4 my-6">
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+            1. Boolean Operators
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p>Use AND, OR, NOT to combine search terms:</p>
+            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`(technology OR digital OR electronic)
+AND
+(adoption OR implementation OR integration)
+AND
+(healthcare OR hospital OR clinic)
+NOT
+(veterinary OR dental)`}</code></pre>
+            <p className="text-sm text-muted-foreground">
+              This query finds papers about technology adoption in healthcare, excluding veterinary and dental studies.
+            </p>
+          </div>
+        </details>
+
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+            2. Wildcards and Phrase Search
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p>Use * for wildcards and quotes for exact phrases:</p>
+            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`"large language model*" OR "LLM"
+"technology acceptance" OR "TAM"
+adopt* (captures: adopt, adoption, adopting, adopted)`}</code></pre>
+            <p className="text-sm text-muted-foreground">
+              Wildcards help capture variations, while phrase search ensures precise matches.
+            </p>
+          </div>
+        </details>
+
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+            3. Field-Specific Search
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p>Target specific fields for precision:</p>
+            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`title:(artificial intelligence)
+abstract:(machine learning)
+keywords:(deep learning)
+author:(Smith OR Johnson)
+year:[2020 TO 2024]`}</code></pre>
+            <p className="text-sm text-muted-foreground">
+              Field-specific searches reduce false positives and improve relevance.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <h3 id="stage-2-databases">Database Selection</h3>
+
+      <p>
+        Different databases have different coverage. For technology adoption in healthcare, you might query:
+      </p>
+
+      <div className="overflow-x-auto my-6">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b">
+              <th className="text-left p-2">Database</th>
+              <th className="text-left p-2">Coverage</th>
+              <th className="text-left p-2">Best For</th>
+              <th className="text-left p-2">Access</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b">
+              <td className="p-2 font-semibold">PubMed</td>
+              <td className="p-2">35M+ biomedical papers</td>
+              <td className="p-2">Clinical studies, health informatics</td>
+              <td className="p-2">Free API</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-2 font-semibold">IEEE Xplore</td>
+              <td className="p-2">5M+ engineering papers</td>
+              <td className="p-2">Health IT systems, technical aspects</td>
+              <td className="p-2">Subscription</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-2 font-semibold">Web of Science</td>
+              <td className="p-2">Cross-disciplinary</td>
+              <td className="p-2">High-impact journals, citations</td>
+              <td className="p-2">Subscription</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-2 font-semibold">Scopus</td>
+              <td className="p-2">80M+ multidisciplinary</td>
+              <td className="p-2">Comprehensive coverage</td>
+              <td className="p-2">Subscription</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-2 font-semibold">CORE</td>
+              <td className="p-2">240M+ open access</td>
+              <td className="p-2">Free alternative, broad coverage</td>
+              <td className="p-2">Free API</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="callout callout-warning">
+        <p className="font-semibold mb-2">⚠️ Database Access Note</p>
+        <p className="mb-0">
+          Many academic databases require institutional subscriptions. If you don't have access, start with <strong>PubMed</strong> (biomedical) and <strong>CORE</strong> (open access) which offer free APIs. ResearcherRAG includes helper scripts for both.
+        </p>
+      </div>
+
+      <h3 id="stage-2-output">Stage 2 Outputs</h3>
+
+      <p>
+        After completing Stage 2, Claude Code will generate:
+      </p>
+
+      <ul>
+        <li>🔍 <code>query_strategy.md</code> - Documented search strategy</li>
+        <li>📊 <code>database_config.json</code> - Database API configurations</li>
+        <li>🐍 <code>search_executor.py</code> - Python script to run queries</li>
+        <li>📈 <code>expected_results.md</code> - Estimated paper counts per database</li>
+      </ul>
+
+      <Mermaid chart={`
+graph LR
+    A[Research Question] --> B[Extract Keywords]
+    B --> C[Find Synonyms]
+    C --> D[Build Boolean Query]
+    D --> E[Select Databases]
+    E --> F[Test Query]
+    F --> G{Results<br/>Reasonable?}
+    G -->|Too Many| H[Add Filters]
+    G -->|Too Few| I[Broaden Terms]
+    H --> F
+    I --> F
+    G -->|Just Right| J[Document Strategy]
+
+    style A fill:#e0e7ff
+    style J fill:#dcfce7
+    style G fill:#fef3c7
+`} />
+
+      <h2 id="stage-3">Stage 3: PRISMA Configuration</h2>
+
+      <p>
+        Stage 3 is the most time-intensive stage because it involves actually executing your search queries, downloading papers, and applying PRISMA screening criteria. This is where your systematic literature review takes shape.
+      </p>
+
+      <h3 id="stage-3-workflow">PRISMA Workflow</h3>
+
+      <Mermaid chart={`
+graph TB
+    subgraph Identification
+        A[Run Database Queries] --> B[Collect Results<br/>n = 1,247]
+        B --> C[Remove Duplicates<br/>n = 1,089]
+    end
+
+    subgraph Screening
+        C --> D[Title/Abstract Review<br/>n = 1,089]
+        D --> E{Inclusion<br/>Criteria?}
+        E -->|No| F[Excluded<br/>n = 825<br/>Reasons logged]
+        E -->|Yes| G[Keep for Full-Text<br/>n = 264]
+    end
+
+    subgraph Eligibility
+        G --> H[Download Full-Text PDFs<br/>n = 264]
+        H --> I[Detailed Assessment]
+        I --> J{Meets All<br/>Criteria?}
+        J -->|No| K[Excluded<br/>n = 127<br/>Document reasons]
+        J -->|Yes| L[Final Dataset<br/>n = 137]
+    end
+
+    subgraph Included
+        L --> M[Extract to Vector DB]
+        M --> N[Ready for RAG]
+    end
+
+    style A fill:#e0e7ff
+    style C fill:#ddd6fe
+    style G fill:#fce7f3
+    style L fill:#dcfce7
+    style N fill:#bbf7d0
+`} />
+
+      <h3 id="stage-3-criteria">Defining Inclusion/Exclusion Criteria</h3>
+
+      <p>
+        Clear criteria are essential for reproducibility. Here's an example for our healthcare technology adoption study:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="border rounded-lg p-6 bg-green-50 dark:bg-green-950/20">
+          <h4 className="text-lg font-semibold mb-3 text-green-800 dark:text-green-200">✅ Inclusion Criteria</h4>
+          <ul className="space-y-2 text-sm">
+            <li>✓ Empirical studies (quantitative or qualitative)</li>
+            <li>✓ Focus on healthcare organizations</li>
+            <li>✓ Technology adoption as primary topic</li>
+            <li>✓ Published 2010-2024</li>
+            <li>✓ Peer-reviewed journals or conferences</li>
+            <li>✓ English language</li>
+            <li>✓ Full-text available</li>
+          </ul>
+        </div>
+
+        <div className="border rounded-lg p-6 bg-red-50 dark:bg-red-950/20">
+          <h4 className="text-lg font-semibold mb-3 text-red-800 dark:text-red-200">❌ Exclusion Criteria</h4>
+          <ul className="space-y-2 text-sm">
+            <li>✗ Opinion pieces, editorials, reviews</li>
+            <li>✗ Non-healthcare settings (e.g., education, finance)</li>
+            <li>✗ Patient-facing consumer apps</li>
+            <li>✗ Technical papers without adoption focus</li>
+            <li>✗ Duplicate publications</li>
+            <li>✗ Conference abstracts without full paper</li>
+            <li>✗ Gray literature (reports, white papers)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 id="stage-3-automation">Automation Tools</h3>
+
+      <p>
+        ResearcherRAG provides scripts to automate parts of the PRISMA process:
+      </p>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          <code>01_fetch_papers.py</code> - Query Execution
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Queries multiple databases and collects results:</p>
+          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 01_fetch_papers.py \\
+  --config database_config.json \\
+  --output raw_results/
+
+# Output:
+# - raw_results/pubmed_results.csv
+# - raw_results/core_results.csv
+# - raw_results/combined_results.csv`}</code></pre>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          <code>02_deduplicate.py</code> - Remove Duplicates
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Identifies and removes duplicate papers using fuzzy matching:</p>
+          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 02_deduplicate.py \\
+  --input raw_results/combined_results.csv \\
+  --output deduplicated_results.csv \\
+  --threshold 0.85
+
+# Uses title similarity, DOI matching, and author overlap`}</code></pre>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          <code>03_screen_abstracts.py</code> - LLM-Assisted Screening
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Uses Claude to assess title/abstract against inclusion criteria:</p>
+          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 03_screen_abstracts.py \\
+  --input deduplicated_results.csv \\
+  --criteria inclusion_criteria.md \\
+  --output screened_results.csv
+
+# Each paper gets:
+# - Include/Exclude decision
+# - Confidence score (0-100)
+# - Reasoning explanation`}</code></pre>
+          <p className="text-sm text-muted-foreground">
+            <strong>Note:</strong> Always manually review LLM decisions, especially borderline cases (confidence 40-60%).
+          </p>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          <code>04_download_pdfs.py</code> - Full-Text Retrieval
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Downloads PDFs for papers that passed screening:</p>
+          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 04_download_pdfs.py \\
+  --input screened_results.csv \\
+  --output pdfs/ \\
+  --sources scihub,doi,open_access
+
+# Tries multiple sources in order:
+# 1. Open access repositories
+# 2. DOI resolution
+# 3. Sci-Hub (check your institution's policy)`}</code></pre>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          <code>05_full_text_review.py</code> - Eligibility Assessment
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Detailed review of full-text papers:</p>
+          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 05_full_text_review.py \\
+  --input pdfs/ \\
+  --criteria detailed_criteria.md \\
+  --output final_dataset.csv
+
+# For each paper:
+# - Extracts full text (OCR if needed)
+# - Checks all inclusion criteria
+# - Documents exclusion reasons
+# - Flags for manual review if uncertain`}</code></pre>
+        </div>
+      </details>
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">🕐 Time Estimate for Stage 3</p>
+        <p className="mb-0">
+          With ~1000 initial results: <strong>2-3 hours</strong> for automated steps + <strong>2-4 hours</strong> for manual review of borderline cases. The LLM-assisted screening dramatically reduces manual effort compared to traditional PRISMA.
+        </p>
+      </div>
+
+      <h3 id="stage-3-visualization">PRISMA Flow Diagram</h3>
+
+      <p>
+        After Stage 3, generate a PRISMA flow diagram to visualize your screening process:
+      </p>
+
+      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`python generate_prisma_diagram.py \\
+  --input final_dataset.csv \\
+  --output prisma_flow.png
+
+# Creates publication-ready PRISMA 2020 flow diagram`}</code></pre>
+
+      <h2 id="stage-4">Stage 4: RAG System Design</h2>
+
+      <p>
+        Now that you have your curated dataset, it's time to design your RAG system. Stage 4 focuses on configuring the vector database, embedding model, chunking strategy, and retrieval parameters.
+      </p>
+
+      <h3 id="stage-4-decisions">Key Design Decisions</h3>
+
+      <Mermaid chart={`
+graph TD
+    A[Start RAG Design] --> B{Vector DB Choice}
+    B -->|Local, Simple| C[ChromaDB]
+    B -->|Performance| D[FAISS]
+    B -->|Production| E[Qdrant/Pinecone]
+
+    C --> F{Embedding Model}
+    D --> F
+    E --> F
+
+    F -->|Best Quality| G[text-embedding-3-large]
+    F -->|Balanced| H[text-embedding-3-small]
+    F -->|Local/Free| I[all-MiniLM-L6-v2]
+
+    G --> J{Chunking Strategy}
+    H --> J
+    I --> J
+
+    J -->|Simple| K[Fixed 500 tokens]
+    J -->|Semantic| L[LangChain Recursive]
+    J -->|Advanced| M[Hierarchical Chunks]
+
+    K --> N[Configure Retrieval]
+    L --> N
+    M --> N
+
+    N --> O[Stage 4 Complete]
+
+    style A fill:#e0e7ff
+    style O fill:#dcfce7
+    style B fill:#fef3c7
+    style F fill:#fef3c7
+    style J fill:#fef3c7
+`} />
+
+      <h3 id="stage-4-configuration">Configuration File</h3>
+
+      <p>
+        Claude Code generates a <code>rag_config.yaml</code> file with your choices:
+      </p>
+
+      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`# rag_config.yaml
+
+vector_db:
+  type: chromadb
+  path: ./chroma_db
+  collection_name: healthcare_tech_adoption
+
+embedding:
+  model: text-embedding-3-small
+  dimensions: 1536
+  batch_size: 100
+
+chunking:
+  strategy: recursive
+  chunk_size: 500
+  chunk_overlap: 50
+  separators: ["\\n\\n", "\\n", ". ", " "]
+
+retrieval:
+  top_k: 5
+  similarity_threshold: 0.7
+  rerank: true
+  rerank_model: cross-encoder/ms-marco-MiniLM-L-6-v2
+
+llm:
+  provider: anthropic
+  model: claude-3-5-sonnet-20241022
+  max_tokens: 2048
+  temperature: 0
+
+prompts:
+  system: "You are an expert research assistant..."
+  context_template: "Based on these papers: {context}\\n\\nQuestion: {question}"
+  citation_format: "[Author, Year]"
+`}</code></pre>
+
+      <h3 id="stage-4-optimization">Optimization Tips</h3>
+
+      <div className="grid grid-cols-1 gap-4 my-6">
+        <div className="border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/20 p-4">
+          <p className="font-semibold mb-2">🎯 Chunk Size Tuning</p>
+          <p className="text-sm mb-2">
+            Start with 500 tokens, then experiment:
+          </p>
+          <ul className="text-sm space-y-1">
+            <li><strong>Larger chunks (800-1000):</strong> Better context, but less precise retrieval</li>
+            <li><strong>Smaller chunks (300-500):</strong> More precise, but may miss context</li>
+            <li><strong>Test with sample queries</strong> and measure relevance</li>
+          </ul>
+        </div>
+
+        <div className="border-l-4 border-green-500 bg-green-50 dark:bg-green-950/20 p-4">
+          <p className="font-semibold mb-2">💰 Cost Optimization</p>
+          <p className="text-sm mb-2">
+            Reduce costs without sacrificing quality:
+          </p>
+          <ul className="text-sm space-y-1">
+            <li><strong>Use text-embedding-3-small</strong> instead of large (4x cheaper)</li>
+            <li><strong>Cache embeddings</strong> to avoid re-computing</li>
+            <li><strong>Set similarity threshold</strong> to filter low-quality results</li>
+            <li><strong>Use local models</strong> for high-volume applications</li>
+          </ul>
+        </div>
+
+        <div className="border-l-4 border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20 p-4">
+          <p className="font-semibold mb-2">⚡ Performance Tuning</p>
+          <p className="text-sm mb-2">
+            Speed up queries:
+          </p>
+          <ul className="text-sm space-y-1">
+            <li><strong>Use FAISS</strong> for large datasets (&gt;10k chunks)</li>
+            <li><strong>Enable GPU</strong> for embedding generation if available</li>
+            <li><strong>Implement caching</strong> for common queries</li>
+            <li><strong>Batch process</strong> during ingestion</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="stage-5">Stage 5: Execution & Validation</h2>
+
+      <p>
+        The final stage brings everything together. You'll ingest your papers into the vector database, test the RAG system, validate results, and deploy for use.
+      </p>
+
+      <h3 id="stage-5-ingestion">Document Ingestion</h3>
+
+      <p>
+        The ingestion pipeline processes your PRISMA-selected papers:
+      </p>
+
+      <Mermaid chart={`
+sequenceDiagram
+    participant P as PDF Files
+    participant E as Extractor
+    participant C as Chunker
+    participant M as Embedding Model
+    participant V as Vector DB
+
+    P->>E: Load PDF
+    E->>E: Extract text (PyMuPDF)
+    E->>E: OCR if needed (Tesseract)
+    E->>C: Send extracted text
+    C->>C: Split into chunks
+    C->>C: Add metadata
+    loop For each chunk
+        C->>M: Generate embedding
+        M-->>C: Return vector
+        C->>V: Store chunk + vector
+    end
+    V-->>V: Build index
+    V->>V: Ready for queries
+`} />
+
+      <p>
+        Run the ingestion script:
+      </p>
+
+      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`python ingest_papers.py \\
+  --input final_dataset.csv \\
+  --pdfs pdfs/ \\
+  --config rag_config.yaml \\
+  --output chroma_db/
+
+# Progress output:
+# [1/137] Processing: Smith2020_technology_adoption.pdf
+# - Extracted 12 pages, 8,453 tokens
+# - Created 17 chunks
+# - Generated embeddings (batch 1/2)
+# - Stored in vector DB
+# ...
+# ✓ Ingestion complete: 137 papers, 2,341 chunks, 3.2M tokens`}</code></pre>
+
+      <h3 id="stage-5-testing">Testing & Validation</h3>
+
+      <p>
+        Before deploying, validate your RAG system with test queries:
+      </p>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          1. Factual Accuracy Test
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Ask questions with known answers from your dataset:</p>
+          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`Q: "What is the Technology Acceptance Model (TAM)?"
+Expected: Definition from Davis (1989) with proper citation
+
+Q: "Which factors influence EHR adoption in developing countries?"
+Expected: List of factors with citations from relevant papers`}</code></pre>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          2. Retrieval Quality Test
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Check if the most relevant papers are retrieved:</p>
+          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python test_retrieval.py \\
+  --config rag_config.yaml \\
+  --queries test_queries.txt \\
+  --output retrieval_report.html
+
+# Metrics:
+# - Precision@5: 0.87
+# - Recall@5: 0.72
+# - MRR (Mean Reciprocal Rank): 0.81
+# - Average response time: 0.43s`}</code></pre>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          3. Citation Accuracy Test
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p>Verify that citations match the source material:</p>
+          <ul className="text-sm space-y-2">
+            <li>✓ Each claim has a citation</li>
+            <li>✓ Citations are correctly formatted [Author, Year]</li>
+            <li>✓ Cited paper actually supports the claim</li>
+            <li>✓ No hallucinated citations (verify DOI/title exists)</li>
+          </ul>
+        </div>
+      </details>
+
+      <h3 id="stage-5-interface">User Interface Options</h3>
+
+      <p>
+        ResearcherRAG provides multiple interfaces for interacting with your RAG system:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+        <div className="border rounded-lg p-4">
+          <h4 className="font-semibold mb-2">💻 CLI Interface</h4>
+          <p className="text-sm text-muted-foreground mb-3">
+            Command-line interface for quick queries
+          </p>
+          <pre className="bg-muted p-2 rounded text-xs"><code>{`python cli.py \\
+  --config rag_config.yaml
+
+> What factors influence...
+[Thinking...] ✓
+Answer: ...`}</code></pre>
+        </div>
+
+        <div className="border rounded-lg p-4">
+          <h4 className="font-semibold mb-2">🌐 Web Interface</h4>
+          <p className="text-sm text-muted-foreground mb-3">
+            Streamlit app with chat UI
+          </p>
+          <pre className="bg-muted p-2 rounded text-xs"><code>{`streamlit run web_app.py
+
+# Launches at:
+# http://localhost:8501`}</code></pre>
+        </div>
+
+        <div className="border rounded-lg p-4">
+          <h4 className="font-semibold mb-2">🔌 API Server</h4>
+          <p className="text-sm text-muted-foreground mb-3">
+            FastAPI REST endpoint
+          </p>
+          <pre className="bg-muted p-2 rounded text-xs"><code>{`python api_server.py
+
+# POST /query
+# GET /papers
+# GET /health`}</code></pre>
+        </div>
+      </div>
+
+      <h3 id="stage-5-deployment">Deployment</h3>
+
+      <p>
+        Once validated, deploy your RAG system:
+      </p>
+
+      <div className="callout callout-success">
+        <p className="font-semibold mb-2">🚀 Deployment Checklist</p>
+        <ul className="text-sm space-y-1">
+          <li>✅ Test queries return accurate results with citations</li>
+          <li>✅ Response times are acceptable (&lt;2 seconds)</li>
+          <li>✅ API keys are stored securely (environment variables)</li>
+          <li>✅ Vector database is backed up</li>
+          <li>✅ Logging is configured for monitoring</li>
+          <li>✅ Documentation is complete for users</li>
+          <li>✅ Error handling is robust</li>
+        </ul>
+      </div>
+
+      <h2 id="real-world-example">Complete Real-World Example</h2>
+
+      <p>
+        Let's walk through a complete implementation from start to finish using a real research question.
+      </p>
+
+      <div className="bg-muted/30 border-l-4 border-purple-500 p-6 my-6">
+        <h3 className="text-lg font-semibold mb-3">📚 Case Study: LLM Applications in Education Research</h3>
+
+        <p className="mb-4">
+          <strong>Research Question:</strong> "How are large language models being applied in K-12 education, and what are the reported learning outcomes?"
+        </p>
+
+        <div className="space-y-4 text-sm">
+          <div>
+            <p className="font-semibold mb-1">Stage 1: Domain Setup (15 min)</p>
+            <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Defined scope: K-12 (excluding higher ed)</li>
+              <li>Key concepts: LLM, GPT, ChatGPT, prompt engineering, personalized learning</li>
+              <li>Timeframe: 2020-2024 (post-GPT-3 release)</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">Stage 2: Query Strategy (10 min)</p>
+            <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Databases: ERIC, PubMed, CORE</li>
+              <li>Query: <code>("large language model*" OR "LLM" OR "GPT" OR "ChatGPT") AND ("K-12" OR "primary education" OR "secondary education") AND ("learning outcomes" OR "student performance")</code></li>
+              <li>Expected results: 200-400 papers</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">Stage 3: PRISMA (2.5 hrs)</p>
+            <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Initial results: 347 papers</li>
+              <li>After deduplication: 289 papers</li>
+              <li>After abstract screening: 78 papers</li>
+              <li>After full-text review: 43 papers</li>
+              <li>Time breakdown: 30min query + 1hr screening + 1hr manual review</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">Stage 4: RAG Design (15 min)</p>
+            <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Vector DB: ChromaDB (sufficient for 43 papers)</li>
+              <li>Embeddings: text-embedding-3-small</li>
+              <li>Chunking: 500 tokens, 50 overlap</li>
+              <li>Retrieval: top-5, threshold 0.7</li>
+              <li>LLM: Claude 3.5 Sonnet</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">Stage 5: Execution (1.5 hrs)</p>
+            <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Ingestion: 43 papers → 487 chunks</li>
+              <li>Testing: 15 test queries, 92% accuracy</li>
+              <li>Interface: Streamlit web app deployed</li>
+              <li>Cost: $2.50 for embeddings, $0.80 for testing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-4 p-4 bg-background rounded border">
+          <p className="font-semibold mb-2">✨ Final Results:</p>
+          <ul className="text-sm space-y-1">
+            <li>✅ Total time: 4.5 hours (vs. weeks for manual literature review)</li>
+            <li>✅ Query response: &lt;1 second with citations</li>
+            <li>✅ Total cost: &lt;$5 (embeddings + testing)</li>
+            <li>✅ Reproducible workflow documented</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 id="troubleshooting">Common Implementation Issues</h2>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🔴 Issue: "Too few papers after PRISMA screening"
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p className="font-semibold">Possible causes:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>• Inclusion criteria too restrictive</li>
+            <li>• Search query too narrow</li>
+            <li>• Missing key databases</li>
+            <li>• Synonyms not fully captured</li>
+          </ul>
+          <p className="font-semibold mt-3">Solutions:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>✓ Broaden timeframe (e.g., 10→15 years)</li>
+            <li>✓ Add more synonyms to query</li>
+            <li>✓ Relax one non-essential criterion</li>
+            <li>✓ Check additional databases</li>
+          </ul>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🟡 Issue: "RAG returns irrelevant results"
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p className="font-semibold">Possible causes:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>• Similarity threshold too low</li>
+            <li>• Chunks too large (losing specificity)</li>
+            <li>• Embedding model mismatch</li>
+            <li>• Poor metadata filtering</li>
+          </ul>
+          <p className="font-semibold mt-3">Solutions:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>✓ Increase threshold from 0.7 to 0.75-0.8</li>
+            <li>✓ Reduce chunk size to 300-400 tokens</li>
+            <li>✓ Add re-ranking with cross-encoder</li>
+            <li>✓ Filter by metadata (year, journal, etc.)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🟠 Issue: "PDF extraction failing or producing garbage text"
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p className="font-semibold">Possible causes:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>• Scanned PDFs (images, not text)</li>
+            <li>• Complex layouts (two-column, tables)</li>
+            <li>• Non-standard fonts or encoding</li>
+            <li>• Protected/encrypted PDFs</li>
+          </ul>
+          <p className="font-semibold mt-3">Solutions:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>✓ Enable OCR with Tesseract for scanned PDFs</li>
+            <li>✓ Try alternative parsers (PyMuPDF → pdfplumber)</li>
+            <li>✓ Pre-process with layout detection (Unstructured)</li>
+            <li>✓ Manual extraction for problematic papers</li>
+          </ul>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🔵 Issue: "Slow query response times (&gt;5 seconds)"
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p className="font-semibold">Possible causes:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>• Vector DB not optimized</li>
+            <li>• Embedding generation on every query</li>
+            <li>• Large context sent to LLM</li>
+            <li>• Network latency (API calls)</li>
+          </ul>
+          <p className="font-semibold mt-3">Solutions:</p>
+          <ul className="text-sm space-y-1 ml-4">
+            <li>✓ Switch to FAISS for faster similarity search</li>
+            <li>✓ Cache query embeddings</li>
+            <li>✓ Reduce top_k from 10 to 5</li>
+            <li>✓ Use streaming responses for better UX</li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 id="next-steps">Next Steps</h2>
+
+      <p>
+        You now have a complete understanding of how to implement ResearcherRAG from start to finish. Here's what to do next:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <Link href="/guide/05-advanced-topics" className="border rounded-lg p-4 hover:bg-muted/30 transition-colors">
+          <h3 className="font-semibold mb-2">📚 Chapter 5: Advanced Topics</h3>
+          <p className="text-sm text-muted-foreground">
+            Explore advanced features like custom embeddings, multi-language support, and performance optimization.
+          </p>
+        </Link>
+
+        <Link href="/guide/06-best-practices" className="border rounded-lg p-4 hover:bg-muted/30 transition-colors">
+          <h3 className="font-semibold mb-2">✨ Chapter 6: Best Practices</h3>
+          <p className="text-sm text-muted-foreground">
+            Learn research best practices, citation management, and how to ensure reproducibility.
+          </p>
+        </Link>
+      </div>
+
+      <div className="callout callout-success">
+        <p className="font-semibold mb-2">🎉 Ready to Build?</p>
+        <p className="mb-0">
+          You have all the knowledge needed to implement your own ResearcherRAG system. Start with <strong>Stage 1</strong> and work through each stage systematically. Remember: the prompt templates in <code>docs/prompts/</code> are designed to guide Claude Code through each stage—use them!
+        </p>
+      </div>
+    </GuideLayout>
+  )
+}
