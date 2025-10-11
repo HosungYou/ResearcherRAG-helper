@@ -438,13 +438,291 @@ python generate_supplementary.py \\
       <h2 id="ai-disclosure">AI Disclosure Statement</h2>
 
       <p>
-        Include this in your Methods section to maintain transparency:
+        Complete transparency about AI use is essential for credibility and reproducibility. ResearcherRAG uses AI at multiple stages—disclosure should reflect this accurately.
+      </p>
+
+      <div className="callout callout-warning">
+        <p className="font-semibold mb-2">⚠️ Important: Distinguish AI Roles</p>
+        <p className="text-sm mb-2">ResearcherRAG uses AI differently across stages:</p>
+        <ul className="text-sm space-y-1">
+          <li>• <strong>Stages 1-3:</strong> AI assists protocol development (search queries, criteria)</li>
+          <li>• <strong>Stages 4-5:</strong> AI assists screening (recommendations, not decisions)</li>
+          <li>• <strong>Stages 6-7:</strong> AI assists synthesis (analysis, not interpretation)</li>
+        </ul>
+        <p className="text-sm mt-2">Your disclosure must clarify that <strong>humans made all final decisions</strong>.</p>
+      </div>
+
+      <h3 id="disclosure-template">Complete Disclosure Template</h3>
+
+      <p className="text-sm mb-3">
+        Use this comprehensive template for your Methods section. Replace bracketed text with your specifics:
       </p>
 
       <div className="bg-muted/30 border rounded p-4 my-6">
-        <p className="text-sm font-semibold mb-2">Example AI Disclosure:</p>
-        <p className="text-sm italic">
-          "We utilized a Retrieval-Augmented Generation (RAG) system built on [ChromaDB/FAISS] and [Claude 3.5 Sonnet/GPT-4] to assist with systematic screening and data extraction. The system was configured with [specify parameters]. All AI-generated decisions were validated by human reviewers [specify process]. Inclusion/exclusion decisions were made by [number] independent reviewers with [X%] agreement (Cohen's kappa = X.XX). The complete RAG system configuration and code are available at [GitHub URL] for reproducibility."
+        <p className="text-sm font-semibold mb-3">2.3 Study Selection (AI-Augmented PRISMA Screening)</p>
+        <div className="text-sm space-y-3">
+          <p>
+            We followed PRISMA 2020 guidelines with AI augmentation to enhance efficiency while maintaining methodological rigor.
+          </p>
+
+          <div>
+            <p className="font-semibold">AI System Configuration:</p>
+            <ul className="ml-4 space-y-1 text-xs">
+              <li>• <strong>Model:</strong> Claude 3.5 Sonnet (Anthropic, version 2024-10-22)</li>
+              <li>• <strong>Architecture:</strong> Retrieval-Augmented Generation (RAG) with ChromaDB vector database</li>
+              <li>• <strong>Training:</strong> System configured with pre-defined inclusion/exclusion criteria, calibrated on [20] papers jointly screened by all reviewers</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold">Screening Process:</p>
+            <p className="text-xs mt-1"><strong>1. Title/Abstract Screening (n=[1,247]):</strong></p>
+            <ul className="ml-4 space-y-1 text-xs">
+              <li>• AI provided recommendations (Include/Exclude) with justifications</li>
+              <li>• Two independent reviewers ([XX, YY]) made final decisions</li>
+              <li>• Reviewers could see AI justifications but were not bound by them</li>
+              <li>• Conservative rule: Any uncertainty → proceed to full-text</li>
+              <li>• Inter-rater reliability (human-human): Cohen's kappa = [0.87]</li>
+              <li>• AI-human agreement: [98.6%] ([18] overrides, all documented)</li>
+            </ul>
+
+            <p className="text-xs mt-2"><strong>2. Full-Text Review (n=[264]):</strong></p>
+            <ul className="ml-4 space-y-1 text-xs">
+              <li>• AI extracted relevant sections (methods, population, outcomes)</li>
+              <li>• Two reviewers independently assessed eligibility</li>
+              <li>• Conflicts resolved through discussion (n=[12]) or third reviewer (n=[3])</li>
+              <li>• Final included: n=[137]</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold">Validation:</p>
+            <ul className="ml-4 space-y-1 text-xs">
+              <li>• Manual re-screening of [100] randomly selected AI exclusions: [0] false negatives</li>
+              <li>• Blind comparison (reviewers unaware of AI recommendations): kappa = [0.89]</li>
+              <li>• Supplementary Table S7 provides complete AI-human decision comparison</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold">Data Extraction and Synthesis (Stages 6-7):</p>
+            <p className="text-xs">
+              The [137] included papers were processed using the RAG system for automated data extraction (verified by human reviewers), thematic analysis, and cross-study synthesis with citation tracking. All extracted data were spot-checked against source documents ([25%] random sample showed [98%] accuracy).
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Ethical Considerations:</p>
+            <p className="text-xs">
+              This approach was reviewed by [institution] as not involving human subjects. We maintain that AI augmentation enhances consistency, improves efficiency (~40 hours saved), maintains rigor (qualified human reviewers made all decisions), and ensures transparency (complete logs and code publicly available).
+            </p>
+          </div>
+
+          <div>
+            <p className="font-semibold">Reproducibility:</p>
+            <p className="text-xs">
+              Complete methodology including AI configuration, prompts, screening logs, and source code: <a href="https://github.com/HosungYou/researcherRAG" target="_blank" rel="noopener" className="text-blue-600 underline">https://github.com/HosungYou/researcherRAG</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="addressing-criticisms">Addressing Reviewer Criticisms</h3>
+
+      <p className="text-sm mb-4">
+        Expect these criticisms when using AI in systematic reviews. Prepare your responses:
+      </p>
+
+      <div className="space-y-4 my-6">
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-red-700 dark:text-red-400">
+            🔴 Criticism 1: "AI might miss relevant papers"
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p className="text-sm font-semibold">Your Response:</p>
+            <div className="bg-muted/30 p-3 rounded text-sm">
+              <p className="mb-2">"We implemented a conservative screening approach:</p>
+              <ul className="ml-4 space-y-1 text-xs">
+                <li>1. <strong>High recall:</strong> AI configured to flag any potentially relevant papers</li>
+                <li>2. <strong>Human verification:</strong> All AI exclusions reviewed by researchers</li>
+                <li>3. <strong>Validation:</strong> Manual check of random sample (n=100) found zero false negatives</li>
+                <li>4. <strong>Traditional backup:</strong> Two independent reviewers for all borderline cases</li>
+              </ul>
+              <p className="mt-2 text-xs">See Supplementary Table S7.2 for false negative analysis."</p>
+            </div>
+          </div>
+        </details>
+
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-orange-700 dark:text-orange-400">
+            🟠 Criticism 2: "AI has inherent biases"
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p className="text-sm font-semibold">Your Response:</p>
+            <div className="bg-muted/30 p-3 rounded text-sm">
+              <p className="mb-2">"We acknowledge this and took mitigation steps:</p>
+              <ul className="ml-4 space-y-1 text-xs">
+                <li>1. <strong>Diverse prompt testing:</strong> Multiple phrasings tested for consistency</li>
+                <li>2. <strong>Blind validation:</strong> Human reviewers blinded to AI recommendations (n=50 subset), kappa=0.89</li>
+                <li>3. <strong>Bias monitoring:</strong> Tracked AI recommendation patterns, found no systematic bias</li>
+                <li>4. <strong>Transparency:</strong> All AI decisions and justifications publicly available</li>
+              </ul>
+              <p className="mt-2 text-xs">See Supplementary Figure S7.1 for AI confidence score distribution."</p>
+            </div>
+          </div>
+        </details>
+
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-yellow-700 dark:text-yellow-400">
+            🟡 Criticism 3: "This isn't a 'real' systematic review"
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p className="text-sm font-semibold">Your Response:</p>
+            <div className="bg-muted/30 p-3 rounded text-sm">
+              <p className="mb-2">"Our approach fully adheres to PRISMA 2020:</p>
+              <ul className="ml-4 space-y-1 text-xs">
+                <li>✓ Pre-registered protocol</li>
+                <li>✓ Comprehensive search strategy</li>
+                <li>✓ Dual independent screening (humans made final decisions)</li>
+                <li>✓ Quality assessment by qualified reviewers</li>
+                <li>✓ Transparent reporting</li>
+              </ul>
+              <p className="mt-2 text-xs">
+                AI augmentation enhanced efficiency while maintaining rigor. Analogous to: spell-checkers don't invalidate writing.
+                We argue AI-augmented screening, when properly validated, improves consistency and reduces reviewer fatigue
+                while maintaining human oversight."
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-blue-700 dark:text-blue-400">
+            🔵 Criticism 4: "Results cannot be reproduced"
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p className="text-sm font-semibold">Your Response:</p>
+            <div className="bg-muted/30 p-3 rounded text-sm">
+              <p className="mb-2">"We provide complete reproducibility package:</p>
+              <ul className="ml-4 space-y-1 text-xs">
+                <li>1. <strong>Exact model:</strong> Claude 3.5 Sonnet version 2024-10-22 with API timestamp</li>
+                <li>2. <strong>Configuration:</strong> All prompts, parameters, embedding settings</li>
+                <li>3. <strong>Logs:</strong> Complete screening decisions with AI scores and human overrides</li>
+                <li>4. <strong>Code:</strong> Open-source under MIT license</li>
+                <li>5. <strong>Docker:</strong> Containerized environment for exact replication</li>
+                <li>6. <strong>Fallback:</strong> Traditional 'human-only' protocol also provided</li>
+              </ul>
+              <p className="mt-2 text-xs">Repository: <a href="https://github.com/HosungYou/researcherRAG" className="text-blue-600 underline">github.com/HosungYou/researcherRAG</a>"</p>
+            </div>
+          </div>
+        </details>
+
+        <details className="border rounded-lg">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-purple-700 dark:text-purple-400">
+            🟣 Criticism 5: "AI use raises ethical concerns"
+          </summary>
+          <div className="p-4 pt-0 border-t space-y-3">
+            <p className="text-sm font-semibold">Your Response:</p>
+            <div className="bg-muted/30 p-3 rounded text-sm">
+              <p className="mb-2">"We consulted ethics board (IRB approved as non-human-subject research). Key principles maintained:</p>
+              <ul className="ml-4 space-y-1 text-xs">
+                <li>1. <strong>Transparency:</strong> Full AI disclosure in methods</li>
+                <li>2. <strong>Accountability:</strong> Humans responsible for all decisions</li>
+                <li>3. <strong>Privacy:</strong> No patient data processed by AI</li>
+                <li>4. <strong>Fairness:</strong> AI assisted, didn't replace human judgment</li>
+                <li>5. <strong>Beneficence:</strong> Faster evidence synthesis benefits patients/policy</li>
+              </ul>
+              <p className="mt-2 text-xs">
+                We argue that NOT using validated AI assistance may be less ethical: increases researcher burden,
+                delays important findings, wastes funding on repetitive tasks."
+              </p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <h3 id="supplementary-validation">Supplementary Materials: AI Validation Tables</h3>
+
+      <p className="text-sm mb-3">
+        Include these validation tables in your supplementary materials to demonstrate AI reliability:
+      </p>
+
+      <div className="border rounded-lg my-6">
+        <div className="border-b p-4 bg-muted/30">
+          <h4 className="font-semibold">Table S7.1: AI vs Human Screening Decisions</h4>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left p-3">Screening Stage</th>
+                <th className="text-left p-3">Total</th>
+                <th className="text-left p-3">AI Include</th>
+                <th className="text-left p-3">AI Exclude</th>
+                <th className="text-left p-3">Human Override</th>
+                <th className="text-left p-3">Agreement (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="p-3">Title/Abstract</td>
+                <td className="p-3">1,247</td>
+                <td className="p-3">264</td>
+                <td className="p-3">983</td>
+                <td className="p-3">18 (1.4%)</td>
+                <td className="p-3 font-semibold text-green-600">98.6%</td>
+              </tr>
+              <tr className="border-b">
+                <td className="p-3">Full-text</td>
+                <td className="p-3">264</td>
+                <td className="p-3">142</td>
+                <td className="p-3">122</td>
+                <td className="p-3">5 (1.9%)</td>
+                <td className="p-3 font-semibold text-green-600">98.1%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="border rounded-lg my-6">
+        <div className="border-b p-4 bg-muted/30">
+          <h4 className="font-semibold">Table S7.2: False Negative Analysis</h4>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b">
+                <th className="text-left p-3">Validation Sample</th>
+                <th className="text-left p-3">Papers Checked</th>
+                <th className="text-left p-3">False Negatives</th>
+                <th className="text-left p-3">False Negative Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b">
+                <td className="p-3">Random AI exclusions</td>
+                <td className="p-3">100</td>
+                <td className="p-3 font-semibold text-green-600">0</td>
+                <td className="p-3 font-semibold text-green-600">0%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="p-4 bg-muted/10">
+          <p className="text-xs text-muted-foreground">
+            <strong>Method:</strong> Two senior researchers independently re-screened 100 randomly selected papers that AI recommended for exclusion.
+            No papers were incorrectly excluded, confirming high specificity of AI screening.
+          </p>
+        </div>
+      </div>
+
+      <div className="callout callout-success">
+        <p className="font-semibold mb-2">✅ Best Practice: Validation Strategy</p>
+        <p className="text-sm mb-0">
+          The most convincing evidence for reviewers is your validation data. Always include: (1) AI-human agreement rates,
+          (2) false negative analysis, (3) blind comparison study, and (4) confidence score distributions. This demonstrates
+          you've thoroughly validated your AI-augmented approach.
         </p>
       </div>
 
