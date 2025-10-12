@@ -41,7 +41,7 @@ graph TD
       `} />
 
       <div className="space-y-6 my-8">
-        <div className="border-l-4 border-blue-400 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
           <h4 className="font-semibold mb-2">1. Identification</h4>
           <p className="text-sm text-muted mb-2">
             Search multiple databases (PubMed, Scopus, Web of Science, etc.) using carefully designed queries. Document the number of records found from each source.
@@ -49,7 +49,7 @@ graph TD
           <p className="text-xs text-muted-foreground font-mono">Example: PubMed (450), Scopus (380), ERIC (320) → Total: 1,150 records</p>
         </div>
 
-        <div className="border-l-4 border-purple-400 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
           <h4 className="font-semibold mb-2">2. Screening</h4>
           <p className="text-sm text-muted mb-2">
             Review titles and abstracts against predefined inclusion/exclusion criteria. This is where AI assistance (like ResearcherRAG) provides the most value.
@@ -65,7 +65,7 @@ graph TD
           <p className="text-xs text-muted-foreground font-mono">Further reduces by 40-60% based on detailed assessment</p>
         </div>
 
-        <div className="border-l-4 border-green-400 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
           <h4 className="font-semibold mb-2">4. Included</h4>
           <p className="text-sm text-muted mb-2">
             Final set of papers that meet all criteria. These form your knowledge base for synthesis or meta-analysis.
@@ -169,7 +169,7 @@ sequenceDiagram
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Setup:</span>
-              <span className="font-medium text-green-600">Extremely easy</span>
+              <span className="font-medium text-foreground">Extremely easy</span>
             </div>
           </div>
         </div>
@@ -191,7 +191,7 @@ sequenceDiagram
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Setup:</span>
-              <span className="font-medium text-yellow-600">Moderate</span>
+              <span className="font-medium text-foreground">Moderate</span>
             </div>
           </div>
         </div>
@@ -213,7 +213,7 @@ sequenceDiagram
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Setup:</span>
-              <span className="font-medium text-yellow-600">Moderate</span>
+              <span className="font-medium text-foreground">Moderate</span>
             </div>
           </div>
         </div>
@@ -235,7 +235,7 @@ sequenceDiagram
             </div>
             <div className="flex justify-between">
               <span className="text-muted">Setup:</span>
-              <span className="font-medium text-red-600">Complex</span>
+              <span className="font-medium text-foreground">Complex</span>
             </div>
           </div>
         </div>
@@ -296,7 +296,7 @@ graph LR
               </td>
               <td className="p-3 font-mono text-xs">1536</td>
               <td className="p-3">
-                <span className="text-green-600 font-semibold">Excellent</span>
+                <span className="font-semibold">Excellent</span>
               </td>
               <td className="p-3 text-muted">General purpose, cost-effective</td>
             </tr>
@@ -308,7 +308,7 @@ graph LR
               </td>
               <td className="p-3 font-mono text-xs">3072</td>
               <td className="p-3">
-                <span className="text-green-600 font-semibold">Best</span>
+                <span className="font-semibold">Best</span>
               </td>
               <td className="p-3 text-muted">Maximum accuracy, research</td>
             </tr>
@@ -320,7 +320,7 @@ graph LR
               </td>
               <td className="p-3 font-mono text-xs">384</td>
               <td className="p-3">
-                <span className="text-blue-600 font-semibold">Good</span>
+                <span className="font-semibold">Good</span>
               </td>
               <td className="p-3 text-muted">Free, local, privacy-focused</td>
             </tr>
@@ -332,7 +332,7 @@ graph LR
               </td>
               <td className="p-3 font-mono text-xs">1024</td>
               <td className="p-3">
-                <span className="text-green-600 font-semibold">Excellent</span>
+                <span className="font-semibold">Excellent</span>
               </td>
               <td className="p-3 text-muted">Open-source, high quality</td>
             </tr>

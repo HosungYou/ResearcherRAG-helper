@@ -152,10 +152,10 @@ graph TD
       </p>
 
       <div className="grid grid-cols-1 gap-4 my-8">
-        <div className="border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/20 p-4">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <h4 className="font-semibold mb-2">Methods Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
-          <pre className="bg-white dark:bg-gray-900 p-3 rounded text-xs"><code>{`"Generate a Methods section for my systematic review. Include:
+          <pre className="bg-black text-white p-3 rounded text-xs"><code>{`"Generate a Methods section for my systematic review. Include:
 - Databases: [PubMed, CORE, Web of Science]
 - Search dates: [2010-01-01 to 2024-12-31]
 - Search strategy: [Your Boolean query]
@@ -166,10 +166,10 @@ graph TD
 Format in PRISMA style."`}</code></pre>
         </div>
 
-        <div className="border-l-4 border-green-500 bg-green-50 dark:bg-green-950/20 p-4">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <h4 className="font-semibold mb-2">Results Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
-          <pre className="bg-white dark:bg-gray-900 p-3 rounded text-xs"><code>{`"Synthesize findings on [specific theme]:
+          <pre className="bg-black text-white p-3 rounded text-xs"><code>{`"Synthesize findings on [specific theme]:
 1. How many papers discuss this theme?
 2. What are the main findings? (with citations)
 3. Are there contradictions or consensus?
@@ -178,10 +178,10 @@ Format in PRISMA style."`}</code></pre>
 Create a summary table with: Theme | Key Finding | Supporting Papers"`}</code></pre>
         </div>
 
-        <div className="border-l-4 border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20 p-4">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <h4 className="font-semibold mb-2">Discussion Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
-          <pre className="bg-white dark:bg-gray-900 p-3 rounded text-xs"><code>{`"Compare my findings to existing literature:
+          <pre className="bg-black text-white p-3 rounded text-xs"><code>{`"Compare my findings to existing literature:
 1. What are the main patterns across studies?
 2. Which findings are well-established (cited in 5+ papers)?
 3. Where are the contradictions or gaps?
@@ -242,7 +242,7 @@ graph TD
             <p className="text-sm text-muted-foreground">
               Replace the example numbers with your actual counts:
             </p>
-            <pre className="bg-muted p-3 rounded text-xs mt-2"><code>{`A[Records Identified<br/>n = YOUR_NUMBER]
+            <pre className="bg-black text-white p-3 rounded text-xs mt-2"><code>{`A[Records Identified<br/>n = YOUR_NUMBER]
 B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
 ...`}</code></pre>
           </div>
@@ -276,7 +276,7 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📚 Export BibTeX</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
   --format bibtex \\
   --output references.bib
 
@@ -285,7 +285,7 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📑 Export RIS</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
   --format ris \\
   --output references.ris
 
@@ -294,7 +294,7 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📄 Export APA</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
   --format apa \\
   --output references.docx
 
@@ -303,7 +303,7 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">🌐 Export HTML</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
   --format html \\
   --output references.html
 
@@ -323,42 +323,42 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
         </div>
         <div className="p-4 space-y-3">
           <div className="flex items-start gap-3">
-            <span className="text-blue-600 font-bold">📊</span>
+            <span className="font-bold">📊</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">S1: Complete Search Strategies</p>
               <p className="text-xs text-muted-foreground">Full Boolean queries for each database with dates</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-blue-600 font-bold">📋</span>
+            <span className="font-bold">📋</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">S2: Inclusion/Exclusion Criteria (Detailed)</p>
               <p className="text-xs text-muted-foreground">Full documentation with examples and edge cases</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-blue-600 font-bold">📑</span>
+            <span className="font-bold">📑</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">S3: List of Included Studies</p>
               <p className="text-xs text-muted-foreground">All papers with full citations and DOIs</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-blue-600 font-bold">📈</span>
+            <span className="font-bold">📈</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">S4: Data Extraction Forms</p>
               <p className="text-xs text-muted-foreground">Template used for extracting data from papers</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-blue-600 font-bold">⚙️</span>
+            <span className="font-bold">⚙️</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">S5: RAG System Configuration</p>
               <p className="text-xs text-muted-foreground">Document AI tools used, models, and validation process</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-blue-600 font-bold">✅</span>
+            <span className="font-bold">✅</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">S6: PRISMA Checklist (Completed)</p>
               <p className="text-xs text-muted-foreground">Official 27-item PRISMA 2020 checklist</p>
@@ -369,7 +369,7 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
 
       <h3 id="generate-supplementary">Generate Supplementary Materials</h3>
 
-      <pre className="bg-muted p-3 rounded text-sm my-4"><code>{`# Generate all supplementary files at once
+      <pre className="bg-black text-white p-3 rounded text-sm my-4"><code>{`# Generate all supplementary files at once
 python generate_supplementary.py \\
   --config rag_config.yaml \\
   --output supplementary/
@@ -388,7 +388,7 @@ python generate_supplementary.py \\
         Make your research fully reproducible by providing a complete reproducibility package:
       </p>
 
-      <div className="bg-muted/30 border-l-4 border-green-500 p-4 my-6">
+      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-6">
         <h4 className="font-semibold mb-3">📦 Reproducibility Package Contents</h4>
         <div className="space-y-2 text-sm">
           <p>✓ <strong>Code Repository:</strong> GitHub link to your RAG system setup</p>
@@ -535,7 +535,7 @@ python generate_supplementary.py \\
 
       <div className="space-y-4 my-6">
         <details className="border rounded-lg">
-          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-red-700 dark:text-red-400">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
             🔴 Criticism 1: "AI might miss relevant papers"
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
@@ -554,7 +554,7 @@ python generate_supplementary.py \\
         </details>
 
         <details className="border rounded-lg">
-          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-orange-700 dark:text-orange-400">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
             🟠 Criticism 2: "AI has inherent biases"
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
@@ -573,7 +573,7 @@ python generate_supplementary.py \\
         </details>
 
         <details className="border rounded-lg">
-          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-yellow-700 dark:text-yellow-400">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
             🟡 Criticism 3: "This isn't a 'real' systematic review"
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
@@ -597,7 +597,7 @@ python generate_supplementary.py \\
         </details>
 
         <details className="border rounded-lg">
-          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-blue-700 dark:text-blue-400">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
             🔵 Criticism 4: "Results cannot be reproduced"
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
@@ -618,7 +618,7 @@ python generate_supplementary.py \\
         </details>
 
         <details className="border rounded-lg">
-          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-purple-700 dark:text-purple-400">
+          <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
             🟣 Criticism 5: "AI use raises ethical concerns"
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
@@ -670,7 +670,7 @@ python generate_supplementary.py \\
                 <td className="p-3">264</td>
                 <td className="p-3">983</td>
                 <td className="p-3">18 (1.4%)</td>
-                <td className="p-3 font-semibold text-green-600">98.6%</td>
+                <td className="p-3 font-semibold">98.6%</td>
               </tr>
               <tr className="border-b">
                 <td className="p-3">Full-text</td>
@@ -678,7 +678,7 @@ python generate_supplementary.py \\
                 <td className="p-3">142</td>
                 <td className="p-3">122</td>
                 <td className="p-3">5 (1.9%)</td>
-                <td className="p-3 font-semibold text-green-600">98.1%</td>
+                <td className="p-3 font-semibold">98.1%</td>
               </tr>
             </tbody>
           </table>
@@ -703,8 +703,8 @@ python generate_supplementary.py \\
               <tr className="border-b">
                 <td className="p-3">Random AI exclusions</td>
                 <td className="p-3">100</td>
-                <td className="p-3 font-semibold text-green-600">0</td>
-                <td className="p-3 font-semibold text-green-600">0%</td>
+                <td className="p-3 font-semibold">0</td>
+                <td className="p-3 font-semibold">0%</td>
               </tr>
             </tbody>
           </table>
