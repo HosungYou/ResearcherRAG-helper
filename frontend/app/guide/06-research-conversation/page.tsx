@@ -30,28 +30,28 @@ export default function ResearchConversationPage() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="border border-red-300 rounded-lg p-6 bg-red-50 dark:bg-red-950/20">
-          <h3 className="text-lg font-semibold mb-3 text-red-800 dark:text-red-200">❌ WITHOUT Interface</h3>
-          <p className="text-sm mb-3">Direct Claude Code chat uses general knowledge:</p>
-          <div className="bg-white dark:bg-gray-900 rounded p-3 text-xs font-mono">
-            <p className="mb-2"><strong>You:</strong> "Which methodologies are most commonly used?"</p>
-            <p><strong>Claude:</strong> "Based on my training data, common methodologies include surveys, experiments..."</p>
-            <p className="text-red-600 mt-2">← NOT from your database!</p>
+        <div className="border-2 border-gray-300 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-950">
+          <h3 className="text-lg font-semibold mb-3">❌ WITHOUT Interface</h3>
+          <p className="text-sm mb-3 text-muted-foreground">Direct Claude Code chat uses general knowledge:</p>
+          <div className="bg-black text-white rounded p-3 text-xs font-mono">
+            <p className="mb-2"><span className="text-gray-400">You:</span> "Which methodologies are most commonly used?"</p>
+            <p className="mb-2"><span className="text-gray-400">Claude:</span> "Based on my training data, common methodologies include surveys, experiments..."</p>
+            <p className="mt-2 font-bold">← NOT from your database!</p>
           </div>
         </div>
 
-        <div className="border border-green-300 rounded-lg p-6 bg-green-50 dark:bg-green-950/20">
-          <h3 className="text-lg font-semibold mb-3 text-green-800 dark:text-green-200">✅ WITH ResearcherRAG Interface</h3>
-          <p className="text-sm mb-3">Interface searches YOUR Vector Database:</p>
-          <div className="bg-white dark:bg-gray-900 rounded p-3 text-xs font-mono">
-            <p className="mb-1"><strong>System:</strong> Loaded 150 papers from Vector DB</p>
-            <p className="mb-1"><strong>You:</strong> "Which methodologies are most commonly used?"</p>
-            <p className="mb-1"><strong>System:</strong> 📚 Found 5 relevant papers:</p>
-            <ul className="ml-4 mb-1 list-disc">
+        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-gray-50 dark:bg-gray-900">
+          <h3 className="text-lg font-semibold mb-3">✅ WITH ResearcherRAG Interface</h3>
+          <p className="text-sm mb-3 text-muted-foreground">Interface searches YOUR Vector Database:</p>
+          <div className="bg-black text-white rounded p-3 text-xs font-mono">
+            <p className="mb-1"><span className="text-gray-400">System:</span> Loaded 150 papers from Vector DB</p>
+            <p className="mb-1"><span className="text-gray-400">You:</span> "Which methodologies are most commonly used?"</p>
+            <p className="mb-1"><span className="text-gray-400">System:</span> 📚 Found 5 relevant papers:</p>
+            <ul className="ml-4 mb-1 list-disc text-gray-300">
               <li>Smith et al. (2023)</li>
               <li>Jones & Lee (2022)</li>
             </ul>
-            <p><strong>Claude:</strong> "Based on 5 papers in YOUR database: Qualitative methods: 3 papers [Smith, 2023]..."</p>
+            <p><span className="text-gray-400">Claude:</span> "Based on 5 papers in YOUR database: Qualitative methods: 3 papers [Smith, 2023]..."</p>
           </div>
         </div>
       </div>
@@ -70,28 +70,28 @@ export default function ResearchConversationPage() {
           <tbody>
             <tr className="border-b">
               <td className="p-3 font-semibold">Data Source</td>
-              <td className="p-3">General knowledge (training data)</td>
-              <td className="p-3 text-green-600 dark:text-green-400"><strong>YOUR Vector Database</strong></td>
+              <td className="p-3 text-muted-foreground">General knowledge (training data)</td>
+              <td className="p-3"><strong>YOUR Vector Database</strong></td>
             </tr>
             <tr className="border-b bg-muted/30">
               <td className="p-3 font-semibold">Transparency</td>
-              <td className="p-3">No visibility into sources</td>
-              <td className="p-3 text-green-600 dark:text-green-400"><strong>Shows which papers retrieved</strong></td>
+              <td className="p-3 text-muted-foreground">No visibility into sources</td>
+              <td className="p-3"><strong>Shows which papers retrieved</strong></td>
             </tr>
             <tr className="border-b">
               <td className="p-3 font-semibold">Citations</td>
-              <td className="p-3">No paper citations</td>
-              <td className="p-3 text-green-600 dark:text-green-400"><strong>Every claim linked to papers</strong></td>
+              <td className="p-3 text-muted-foreground">No paper citations</td>
+              <td className="p-3"><strong>Every claim linked to papers</strong></td>
             </tr>
             <tr className="border-b bg-muted/30">
               <td className="p-3 font-semibold">Verification</td>
-              <td className="p-3">Cannot verify sources</td>
-              <td className="p-3 text-green-600 dark:text-green-400"><strong>Trace back to originals</strong></td>
+              <td className="p-3 text-muted-foreground">Cannot verify sources</td>
+              <td className="p-3"><strong>Trace back to originals</strong></td>
             </tr>
             <tr className="border-b">
               <td className="p-3 font-semibold">Limitations</td>
-              <td className="p-3">Doesn't know what it doesn't have</td>
-              <td className="p-3 text-green-600 dark:text-green-400"><strong>Says "not in your database"</strong></td>
+              <td className="p-3 text-muted-foreground">Doesn't know what it doesn't have</td>
+              <td className="p-3"><strong>Says "not in your database"</strong></td>
             </tr>
           </tbody>
         </table>
@@ -148,11 +148,11 @@ graph TD
     E --> I[Compare Across<br/>Dimensions]
     F --> J[Under-researched<br/>Areas]
 
-    style A fill:#e0e7ff
-    style C fill:#dcfce7
-    style D fill:#fef3c7
-    style E fill:#fce7f3
-    style F fill:#ddd6fe
+    style A fill:#f5f5f5
+    style C fill:#e5e5e5
+    style D fill:#d4d4d4
+    style E fill:#e5e5e5
+    style F fill:#f5f5f5
       `} />
 
       <div className="grid grid-cols-1 gap-4 my-8">
@@ -162,7 +162,7 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Start broad to get an overview of your corpus:</p>
-            <pre className="bg-muted p-3 rounded text-sm"><code>{`"What are the main research themes in my corpus?"
+            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"What are the main research themes in my corpus?"
 "Which methodologies are most commonly used?"
 "Who are the key authors and their contributions?"
 "What time periods are covered?"
@@ -177,7 +177,7 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Ask focused questions about specific topics:</p>
-            <pre className="bg-muted p-3 rounded text-sm"><code>{`"What factors influence technology adoption in healthcare?"
+            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"What factors influence technology adoption in healthcare?"
 "What are the reported adoption rates in developing countries?"
 "Which theoretical frameworks are most cited?"
 "What limitations are mentioned in recent studies?"
@@ -192,7 +192,7 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Compare across different dimensions:</p>
-            <pre className="bg-muted p-3 rounded text-sm"><code>{`"How do adoption rates differ between developed and developing countries?"
+            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"How do adoption rates differ between developed and developing countries?"
 "Compare quantitative vs qualitative studies on this topic"
 "What changed in the literature before and after 2020?"
 "How do TAM and UTAUT frameworks compare?"
@@ -207,7 +207,7 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Discover under-researched areas:</p>
-            <pre className="bg-muted p-3 rounded text-sm"><code>{`"What populations or contexts are under-represented?"
+            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"What populations or contexts are under-represented?"
 "Which methods have NOT been used to study this?"
 "What gaps or limitations do authors identify?"
 "Are there contradictory findings that need resolution?"
@@ -230,18 +230,18 @@ graph LR
     C --> D[Session 4<br/>Gap Analysis<br/>1 hr]
     D --> E[Research Insights<br/>Ready for Writing]
 
-    style A fill:#e0e7ff
-    style B fill:#ddd6fe
-    style C fill:#fce7f3
-    style D fill:#fef3c7
-    style E fill:#dcfce7
+    style A fill:#f5f5f5
+    style B fill:#e5e5e5
+    style C fill:#d4d4d4
+    style D fill:#e5e5e5
+    style E fill:#f5f5f5
       `} />
 
       <h3 id="session-1">Session 1: Initial Exploration (30-60 min)</h3>
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Get familiar with your knowledge base, understand scope and coverage</p>
 
-      <div className="bg-muted/30 border-l-4 border-blue-500 p-4 my-4">
+      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
         <p className="font-semibold mb-2">Example Session Flow:</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "How many papers are in my knowledge base?"</p>
@@ -256,7 +256,7 @@ graph LR
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Investigate specific themes or topics in depth</p>
 
-      <div className="bg-muted/30 border-l-4 border-purple-500 p-4 my-4">
+      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
         <p className="font-semibold mb-2">Example: Deep Dive on "Adoption Barriers"</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "What barriers to technology adoption are mentioned?"</p>
@@ -278,7 +278,7 @@ graph LR
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Synthesize findings across multiple papers, identify patterns</p>
 
-      <div className="bg-muted/30 border-l-4 border-green-500 p-4 my-4">
+      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
         <p className="font-semibold mb-2">Example: Synthesizing Adoption Factors</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "Create a table of all adoption factors mentioned, with paper citations"</p>
@@ -293,7 +293,7 @@ graph LR
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Identify gaps, limitations, and future research directions</p>
 
-      <div className="bg-muted/30 border-l-4 border-yellow-500 p-4 my-4">
+      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
         <p className="font-semibold mb-2">Example: Finding Research Gaps</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "What limitations do authors mention in their studies?"</p>
@@ -338,35 +338,35 @@ sequenceDiagram
         </div>
         <div className="p-4 space-y-3">
           <div className="flex items-start gap-3">
-            <span className="text-green-600 font-bold">✓</span>
+            <span className="font-bold">✓</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">Every Claim Has a Citation</p>
               <p className="text-xs text-muted-foreground">No unsourced statements in your notes</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-green-600 font-bold">✓</span>
+            <span className="font-bold">✓</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">Citations Use Correct Format</p>
               <p className="text-xs text-muted-foreground">[Author, Year] or [Author et al., Year] for 3+ authors</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-green-600 font-bold">✓</span>
+            <span className="font-bold">✓</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">Paper Actually in Your Database</p>
               <p className="text-xs text-muted-foreground">No hallucinated citations</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-green-600 font-bold">✓</span>
+            <span className="font-bold">✓</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">Claim Matches Source Material</p>
               <p className="text-xs text-muted-foreground">Spot-check by reading original paper section</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="text-green-600 font-bold">✓</span>
+            <span className="font-bold">✓</span>
             <div className="flex-1">
               <p className="font-semibold text-sm">DOI or URL Accessible</p>
               <p className="text-xs text-muted-foreground">Test links to ensure readers can access papers</p>
@@ -383,7 +383,7 @@ sequenceDiagram
 
       <h3 id="documentation-template">Session Documentation Template</h3>
 
-      <pre className="bg-muted p-4 rounded text-sm my-4"><code>{`# Research Session Log
+      <pre className="bg-black text-white p-4 rounded text-sm my-4"><code>{`# Research Session Log
 
 ## Session 1: Initial Exploration
 **Date:** 2024-01-15
@@ -420,7 +420,7 @@ sequenceDiagram
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📊 Export Conversation Logs</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`# Save conversation history
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Save conversation history
 python interfaces/export_logs.py \\
   --session session1 \\
   --output research_notes.md`}</code></pre>
@@ -428,7 +428,7 @@ python interfaces/export_logs.py \\
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📑 Generate Citation List</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`# Extract all cited papers
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Extract all cited papers
 python interfaces/export_citations.py \\
   --format bibtex \\
   --output references.bib`}</code></pre>
@@ -436,14 +436,14 @@ python interfaces/export_citations.py \\
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📈 Create Summary Statistics</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`# Generate corpus statistics
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Generate corpus statistics
 python interfaces/generate_stats.py \\
   --output corpus_stats.html`}</code></pre>
         </div>
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">🔍 Find Specific Citations</h4>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`# Query specific papers
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Query specific papers
 python interfaces/claude_code_interface.py \\
   --query "Show papers by Smith"`}</code></pre>
         </div>

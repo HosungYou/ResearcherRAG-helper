@@ -12,21 +12,21 @@ export default function AdvancedTopicsPage() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
-        <div className="border rounded-lg p-4 bg-blue-50 dark:bg-blue-950/20">
+        <div className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-900">
           <div className="text-2xl mb-2">🔬</div>
           <h3 className="font-semibold mb-2">Custom Embeddings</h3>
           <p className="text-sm text-muted-foreground">
             Fine-tune domain-specific embedding models for better retrieval accuracy in specialized fields.
           </p>
         </div>
-        <div className="border rounded-lg p-4 bg-purple-50 dark:bg-purple-950/20">
+        <div className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-900">
           <div className="text-2xl mb-2">🌍</div>
           <h3 className="font-semibold mb-2">Multi-Language</h3>
           <p className="text-sm text-muted-foreground">
             Handle research papers in multiple languages with cross-lingual embeddings and translation.
           </p>
         </div>
-        <div className="border rounded-lg p-4 bg-green-50 dark:bg-green-950/20">
+        <div className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-900">
           <div className="text-2xl mb-2">⚡</div>
           <h3 className="font-semibold mb-2">Production Ready</h3>
           <p className="text-sm text-muted-foreground">
@@ -700,7 +700,7 @@ class RAGCache:
         return embedding`}</code></pre>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border rounded-lg p-4 bg-green-50 dark:bg-green-950/20">
+        <div className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-900">
           <h4 className="font-semibold mb-2">💰 Cost Savings</h4>
           <ul className="text-sm space-y-1">
             <li>• <strong>50-70% reduction</strong> in LLM costs</li>
@@ -708,7 +708,7 @@ class RAGCache:
             <li>• Especially effective for common queries</li>
           </ul>
         </div>
-        <div className="border rounded-lg p-4 bg-blue-50 dark:bg-blue-950/20">
+        <div className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-900">
           <h4 className="font-semibold mb-2">⚡ Speed Improvements</h4>
           <ul className="text-sm space-y-1">
             <li>• <strong>Exact cache:</strong> 50ms (40x faster)</li>

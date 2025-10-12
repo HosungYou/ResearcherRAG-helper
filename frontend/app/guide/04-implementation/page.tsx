@@ -105,7 +105,7 @@ graph LR
 
       <h3 id="stage-1-example">Real-World Example</h3>
 
-      <div className="bg-muted/30 border-l-4 border-blue-500 p-4 my-6">
+      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-6">
         <p className="font-semibold mb-2">Research Question:</p>
         <p className="mb-4 italic">
           "What are the factors influencing technology adoption in healthcare organizations, and how do these factors differ across developed and developing countries?"
@@ -163,7 +163,7 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p>Use AND, OR, NOT to combine search terms:</p>
-            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`(technology OR digital OR electronic)
+            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`(technology OR digital OR electronic)
 AND
 (adoption OR implementation OR integration)
 AND
@@ -182,7 +182,7 @@ NOT
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p>Use * for wildcards and quotes for exact phrases:</p>
-            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`"large language model*" OR "LLM"
+            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`"large language model*" OR "LLM"
 "technology acceptance" OR "TAM"
 adopt* (captures: adopt, adoption, adopting, adopted)`}</code></pre>
             <p className="text-sm text-muted-foreground">
@@ -197,7 +197,7 @@ adopt* (captures: adopt, adoption, adopting, adopted)`}</code></pre>
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p>Target specific fields for precision:</p>
-            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`title:(artificial intelligence)
+            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`title:(artificial intelligence)
 abstract:(machine learning)
 keywords:(deep learning)
 author:(Smith OR Johnson)
@@ -348,8 +348,8 @@ graph TB
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="border rounded-lg p-6 bg-green-50 dark:bg-green-950/20">
-          <h4 className="text-lg font-semibold mb-3 text-green-800 dark:text-green-200">✅ Inclusion Criteria</h4>
+        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-gray-50 dark:bg-gray-900">
+          <h4 className="text-lg font-semibold mb-3">✅ Inclusion Criteria</h4>
           <ul className="space-y-2 text-sm">
             <li>✓ Empirical studies (quantitative or qualitative)</li>
             <li>✓ Focus on healthcare organizations</li>
@@ -361,8 +361,8 @@ graph TB
           </ul>
         </div>
 
-        <div className="border rounded-lg p-6 bg-red-50 dark:bg-red-950/20">
-          <h4 className="text-lg font-semibold mb-3 text-red-800 dark:text-red-200">❌ Exclusion Criteria</h4>
+        <div className="border-2 border-gray-300 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-950">
+          <h4 className="text-lg font-semibold mb-3">❌ Exclusion Criteria</h4>
           <ul className="space-y-2 text-sm">
             <li>✗ Opinion pieces, editorials, reviews</li>
             <li>✗ Non-healthcare settings (e.g., education, finance)</li>
@@ -387,7 +387,7 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Queries multiple databases and collects results:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 01_fetch_papers.py \\
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 01_fetch_papers.py \\
   --config database_config.json \\
   --output raw_results/
 
@@ -404,7 +404,7 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Identifies and removes duplicate papers using fuzzy matching:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 02_deduplicate.py \\
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 02_deduplicate.py \\
   --input raw_results/combined_results.csv \\
   --output deduplicated_results.csv \\
   --threshold 0.85
@@ -419,7 +419,7 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Uses Claude to assess title/abstract against inclusion criteria:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 03_screen_abstracts.py \\
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 03_screen_abstracts.py \\
   --input deduplicated_results.csv \\
   --criteria inclusion_criteria.md \\
   --output screened_results.csv
@@ -440,7 +440,7 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Downloads PDFs for papers that passed screening:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 04_download_pdfs.py \\
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 04_download_pdfs.py \\
   --input screened_results.csv \\
   --output pdfs/ \\
   --sources scihub,doi,open_access
@@ -458,7 +458,7 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Detailed review of full-text papers:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python 05_full_text_review.py \\
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 05_full_text_review.py \\
   --input pdfs/ \\
   --criteria detailed_criteria.md \\
   --output final_dataset.csv
@@ -484,7 +484,7 @@ graph TB
         After Stage 3, generate a PRISMA flow diagram to visualize your screening process:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`python generate_prisma_diagram.py \\
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`python generate_prisma_diagram.py \\
   --input final_dataset.csv \\
   --output prisma_flow.png
 
@@ -540,7 +540,7 @@ graph TD
         Claude Code generates a <code>rag_config.yaml</code> file with your choices:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`# rag_config.yaml
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# rag_config.yaml
 
 vector_db:
   type: chromadb
@@ -579,7 +579,7 @@ prompts:
       <h3 id="stage-4-optimization">Optimization Tips</h3>
 
       <div className="grid grid-cols-1 gap-4 my-6">
-        <div className="border-l-4 border-blue-500 bg-blue-50 dark:bg-blue-950/20 p-4">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <p className="font-semibold mb-2">🎯 Chunk Size Tuning</p>
           <p className="text-sm mb-2">
             Start with 500 tokens, then experiment:
@@ -591,7 +591,7 @@ prompts:
           </ul>
         </div>
 
-        <div className="border-l-4 border-green-500 bg-green-50 dark:bg-green-950/20 p-4">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <p className="font-semibold mb-2">💰 Cost Optimization</p>
           <p className="text-sm mb-2">
             Reduce costs without sacrificing quality:
@@ -604,7 +604,7 @@ prompts:
           </ul>
         </div>
 
-        <div className="border-l-4 border-yellow-500 bg-yellow-50 dark:bg-yellow-950/20 p-4">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <p className="font-semibold mb-2">⚡ Performance Tuning</p>
           <p className="text-sm mb-2">
             Speed up queries:
@@ -657,7 +657,7 @@ sequenceDiagram
         Run the ingestion script:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`python ingest_papers.py \\
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`python ingest_papers.py \\
   --input final_dataset.csv \\
   --pdfs pdfs/ \\
   --config rag_config.yaml \\
@@ -684,7 +684,7 @@ sequenceDiagram
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Ask questions with known answers from your dataset:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`Q: "What is the Technology Acceptance Model (TAM)?"
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`Q: "What is the Technology Acceptance Model (TAM)?"
 Expected: Definition from Davis (1989) with proper citation
 
 Q: "Which factors influence EHR adoption in developing countries?"
@@ -698,7 +698,7 @@ Expected: List of factors with citations from relevant papers`}</code></pre>
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Check if the most relevant papers are retrieved:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`python test_retrieval.py \\
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python test_retrieval.py \\
   --config rag_config.yaml \\
   --queries test_queries.txt \\
   --output retrieval_report.html
@@ -738,7 +738,7 @@ Expected: List of factors with citations from relevant papers`}</code></pre>
           <p className="text-sm text-muted-foreground mb-3">
             Command-line interface for quick queries
           </p>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`python cli.py \\
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python cli.py \\
   --config rag_config.yaml
 
 > What factors influence...
@@ -751,7 +751,7 @@ Answer: ...`}</code></pre>
           <p className="text-sm text-muted-foreground mb-3">
             Streamlit app with chat UI
           </p>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`streamlit run web_app.py
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`streamlit run web_app.py
 
 # Launches at:
 # http://localhost:8501`}</code></pre>
@@ -762,7 +762,7 @@ Answer: ...`}</code></pre>
           <p className="text-sm text-muted-foreground mb-3">
             FastAPI REST endpoint
           </p>
-          <pre className="bg-muted p-2 rounded text-xs"><code>{`python api_server.py
+          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python api_server.py
 
 # POST /query
 # GET /papers
@@ -795,7 +795,7 @@ Answer: ...`}</code></pre>
         Let's walk through a complete implementation from start to finish using a real research question.
       </p>
 
-      <div className="bg-muted/30 border-l-4 border-purple-500 p-6 my-6">
+      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-6 my-6">
         <h3 className="text-lg font-semibold mb-3">📚 Case Study: LLM Applications in Education Research</h3>
 
         <p className="mb-4">
