@@ -104,7 +104,7 @@ export default function AdvancedTopicsPage() {
         To use a custom embedding model, update your <code>rag_config.yaml</code>:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`# rag_config.yaml
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# rag_config.yaml
 
 embedding:
   type: huggingface  # Changed from 'openai'
@@ -123,7 +123,7 @@ cache:
         Install the required dependencies:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`pip install sentence-transformers transformers torch
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`pip install sentence-transformers transformers torch
 
 # For GPU support (optional but recommended)
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`}</code></pre>
@@ -132,7 +132,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
         Update your embedding generation code:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`from sentence_transformers import SentenceTransformer
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`from sentence_transformers import SentenceTransformer
 
 # Load domain-specific model
 model = SentenceTransformer('allenai/specter2')
@@ -188,7 +188,7 @@ graph LR
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Create training pairs from your PRISMA dataset:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`# training_pairs.py
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# training_pairs.py
 import pandas as pd
 from sentence_transformers import InputExample
 
@@ -222,7 +222,7 @@ train_examples = positive_pairs + negative_pairs
 print(f"Created {len(train_examples)} training examples")`}</code></pre>
 
           <p>Fine-tune the model:</p>
-          <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`from sentence_transformers import SentenceTransformer, losses
+          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`from sentence_transformers import SentenceTransformer, losses
 from torch.utils.data import DataLoader
 
 # Load base model
@@ -319,7 +319,7 @@ graph TD
         For better LLM understanding, translate non-English papers to English during ingestion:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`# translation_config.yaml
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# translation_config.yaml
 
 translation:
   enabled: true
@@ -341,7 +341,7 @@ translation:
         Implement translation in your ingestion pipeline:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`import deepl
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`import deepl
 from langdetect import detect
 
 def ingest_with_translation(paper_text, metadata):
@@ -418,7 +418,7 @@ graph TD
         Implement incremental updates with a tracking database:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`# incremental_update.py
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# incremental_update.py
 import json
 from datetime import datetime, timedelta
 
@@ -469,7 +469,7 @@ def incremental_update(rag_system, config):
         Track changes to your knowledge base over time:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`# knowledge_base_versions/
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# knowledge_base_versions/
 # ├── v1.0.0_2024-01-15_137papers.snapshot
 # ├── v1.1.0_2024-02-01_143papers.snapshot
 # ├── v1.2.0_2024-03-15_156papers.snapshot
@@ -515,7 +515,7 @@ graph LR
         Implement hybrid search with reciprocal rank fusion (RRF):
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`from rank_bm25 import BM25Okapi
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`from rank_bm25 import BM25Okapi
 import numpy as np
 
 def hybrid_search(query, vector_db, bm25_index, k=5):
@@ -578,7 +578,7 @@ def hybrid_search(query, vector_db, bm25_index, k=5):
         After initial retrieval, use a cross-encoder to re-rank results for maximum relevance:
       </p>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`from sentence_transformers import CrossEncoder
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`from sentence_transformers import CrossEncoder
 
 # Load cross-encoder model
 cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
@@ -635,7 +635,7 @@ graph TD
     style J fill:#bbf7d0
 `} />
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{`import hashlib
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`import hashlib
 from redis import Redis
 from datetime import timedelta
 
@@ -732,7 +732,7 @@ class RAGCache:
             1. Query Performance Metrics
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
-            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`# Log query metrics
+            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# Log query metrics
 metrics = {
     'timestamp': datetime.now(),
     'query': query,
@@ -762,7 +762,7 @@ metrics = {
             2. Quality Metrics
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
-            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`# Track answer quality
+            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# Track answer quality
 quality_metrics = {
     'citations_count': 3,
     'citations_valid': 3,
@@ -782,7 +782,7 @@ quality_metrics = {
             3. Cost Tracking
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
-            <pre className="bg-muted p-3 rounded overflow-x-auto text-sm"><code>{`# Calculate per-query costs
+            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# Calculate per-query costs
 cost_breakdown = {
     'embedding_cost': 0.00002,  # $0.02/1M tokens
     'llm_cost': 0.0048,         # $3/1M input + $15/1M output
@@ -796,7 +796,7 @@ cost_breakdown = {
 
       <h3 id="alerting">Alerting and Anomaly Detection</h3>
 
-      <pre className="bg-muted p-3 rounded overflow-x-auto text-sm my-4"><code>{'# monitoring_rules.py\n\n' +
+      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{'# monitoring_rules.py\n\n' +
 'def check_system_health(metrics):\n' +
 '    """Alert on anomalies"""\n' +
 '\n' +
