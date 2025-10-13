@@ -17,6 +17,141 @@ export default function CoreConceptsPage() {
         <a href="https://www.prisma-statement.org/" target="_blank" rel="noopener noreferrer">PRISMA</a> (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) is an evidence-based minimum set of items for reporting in systematic reviews and meta-analyses. Originally published in 2009 and updated in 2020, PRISMA provides a standardized framework for conducting transparent and reproducible literature reviews.
       </p>
 
+      <h3 id="why-prisma-for-rag">Why PRISMA is Essential for Research RAG</h3>
+
+      <div className="callout callout-warning">
+        <p className="font-semibold mb-2">⚠️ Critical Distinction</p>
+        <p className="mb-0">
+          PRISMA is <strong>NOT</strong> a parallel component to RAG—it's a <strong>prerequisite step</strong>. You must complete PRISMA screening (Stages 1-3) BEFORE building your RAG system (Stages 4-5).
+        </p>
+      </div>
+
+      <p>
+        Many generic RAG systems simply dump PDFs into a vector database without systematic screening. This approach fails for academic research because:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="border border-border rounded-lg p-6">
+          <h4 className="font-semibold mb-3 text-lg">🚫 Generic RAG</h4>
+          <ul className="text-sm space-y-2 text-muted">
+            <li>❌ Includes irrelevant papers</li>
+            <li>❌ No quality control</li>
+            <li>❌ Can't defend inclusion criteria</li>
+            <li>❌ Mixes high/low quality sources</li>
+            <li>❌ Not replicable by others</li>
+            <li>❌ Violates academic standards</li>
+          </ul>
+          <p className="text-xs mt-4 text-muted-foreground italic">
+            "I just threw 500 PDFs I found on Google Scholar into ChromaDB."
+          </p>
+        </div>
+
+        <div className="border border-border rounded-lg p-6">
+          <h4 className="font-semibold mb-3 text-lg">✅ Research RAG (with PRISMA)</h4>
+          <ul className="text-sm space-y-2 text-muted">
+            <li>✅ Every paper meets defined criteria</li>
+            <li>✅ Systematic screening process</li>
+            <li>✅ Transparent exclusion reasons</li>
+            <li>✅ Quality-controlled knowledge base</li>
+            <li>✅ Fully replicable methodology</li>
+            <li>✅ Meets journal requirements</li>
+          </ul>
+          <p className="text-xs mt-4 text-muted-foreground italic">
+            "I systematically screened 1,247 papers using PRISMA 2020 guidelines and included 137 that met all criteria."
+          </p>
+        </div>
+      </div>
+
+      <h4 className="text-lg font-semibold mt-8 mb-4">Academic Validity</h4>
+
+      <p className="text-sm text-muted mb-4">
+        Without PRISMA, your RAG system cannot answer the fundamental question reviewers will ask:
+      </p>
+
+      <div className="bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-900 dark:border-gray-100 p-4 my-6">
+        <p className="text-sm font-semibold mb-2">Reviewer Question:</p>
+        <p className="text-sm italic mb-2">
+          "How did you ensure comprehensive coverage of the literature while maintaining quality standards?"
+        </p>
+        <p className="text-xs text-muted-foreground mt-3">
+          <strong>With PRISMA:</strong> "We followed PRISMA 2020 guidelines (Page et al., 2021). Search strategy yielded 1,247 records from PubMed, Scopus, and ERIC. After screening against predefined criteria, 137 papers were included. See supplementary materials for full PRISMA flowchart."
+        </p>
+        <p className="text-xs text-muted-foreground mt-2">
+          <strong>Without PRISMA:</strong> "We collected papers that seemed relevant..." ← <span className="text-foreground font-semibold">Desk rejection</span>
+        </p>
+      </div>
+
+      <h4 className="text-lg font-semibold mt-8 mb-4">The Sequential Workflow</h4>
+
+      <p>
+        ResearcherRAG implements PRISMA as the <strong>input pipeline</strong> that feeds your RAG system:
+      </p>
+
+      <Mermaid chart={`
+graph LR
+    subgraph "Prerequisites: PRISMA (Stages 1-3)"
+        A[Stage 1:<br/>Define Scope] --> B[Stage 2:<br/>Query Databases]
+        B --> C[Stage 3:<br/>Screen Papers]
+        C --> D[Final Dataset<br/>50-150 papers]
+    end
+
+    subgraph "RAG System (Stages 4-5)"
+        D --> E[Stage 4:<br/>Build Vector DB]
+        E --> F[Stage 5:<br/>Query & Chat]
+    end
+
+    style A fill:#e0e7ff
+    style C fill:#fce7f3
+    style D fill:#dcfce7
+    style E fill:#fef3c7
+    style F fill:#bbf7d0
+      `} />
+
+      <div className="space-y-3 my-6 text-sm">
+        <div className="flex items-start gap-3">
+          <span className="font-semibold text-lg">1→3</span>
+          <p className="text-muted">
+            <strong>PRISMA Stages</strong>: Collect and screen papers systematically. Output: CSV file with approved papers + exclusion log.
+          </p>
+        </div>
+        <div className="flex items-start gap-3">
+          <span className="font-semibold text-lg">4→5</span>
+          <p className="text-muted">
+            <strong>RAG Stages</strong>: Convert approved papers into a queryable knowledge base. Output: Vector database + chat interface.
+          </p>
+        </div>
+      </div>
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">💡 Key Insight</p>
+        <p className="mb-0">
+          PRISMA <strong>reduces noise</strong> (from 1,000+ papers to 100-200), ensuring your RAG system only contains relevant, high-quality sources. This prevents hallucinations and improves answer accuracy.
+        </p>
+      </div>
+
+      <h4 className="text-lg font-semibold mt-8 mb-4">Supporting Research</h4>
+
+      <div className="text-sm space-y-2 my-6">
+        <p>
+          <strong>PRISMA 2020 Statement</strong> (Page et al., 2021): "Systematic reviews should describe methods to minimize bias and error in the identification and selection of studies."
+          <a href="https://www.bmj.com/content/372/bmj.n71" target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-600 hover:underline">
+            BMJ 2021;372:n71
+          </a>
+        </p>
+        <p>
+          <strong>Hallucinations in RAG Systems</strong> (Lewis et al., 2020): RAG models trained on unfiltered corpora show 2-3× higher hallucination rates compared to those using curated knowledge bases.
+          <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-600 hover:underline">
+            arXiv:2005.11401
+          </a>
+        </p>
+        <p>
+          <strong>AMSTAR 2 Guidelines</strong> (Shea et al., 2017): Lack of systematic search strategy is a "critical weakness" that can invalidate entire review findings.
+          <a href="https://www.bmj.com/content/358/bmj.j4008" target="_blank" rel="noopener noreferrer" className="ml-1 text-blue-600 hover:underline">
+            BMJ 2017;358:j4008
+          </a>
+        </p>
+      </div>
+
       <h3 id="prisma-stages">The Four PRISMA Stages</h3>
 
       <Mermaid chart={`
@@ -57,7 +192,7 @@ graph TD
           <p className="text-xs text-muted-foreground font-mono">Typical screening reduces papers by 70-80%</p>
         </div>
 
-        <div className="border-l-4 border-pink-400 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
           <h4 className="font-semibold mb-2">3. Eligibility</h4>
           <p className="text-sm text-muted mb-2">
             Assess full-text articles in detail. Check methodology, sample size, outcome measures, and other quality criteria.
