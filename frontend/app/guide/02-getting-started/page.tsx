@@ -30,20 +30,127 @@ export default function GettingStartedPage() {
         <div className="border border-border rounded-lg p-6">
           <h4 className="font-semibold mb-3">Software Dependencies</h4>
           <ul className="text-sm space-y-2 mb-0">
-            <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python 3.9-3.11</a></li>
+            <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python 3.10-3.14</a></li>
             <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a> latest version</li>
             <li><a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git</a> for cloning</li>
-            <li><a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">Anthropic API key</a></li>
+            <li>AI assistant subscription (see Step 1)</li>
           </ul>
         </div>
       </div>
 
-      <div className="callout callout-warning">
-        <p className="font-semibold mb-2">⚠️ Python Version Note</p>
-        <p className="mb-0">
-          Python 3.12+ is not yet fully compatible due to some dependencies. Stick with <strong>Python 3.9-3.11</strong> for now.
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">✅ Python Version Support</p>
+        <p className="mb-2">
+          ResearcherRAG supports <strong>Python 3.10 through 3.14</strong>. The latest stable version is <strong>Python 3.14.0</strong> (released October 2025).
+        </p>
+        <p className="text-sm mb-0">
+          <strong>Recommended</strong>: Python 3.12+ for best performance and latest features. Python 3.9 and earlier are no longer supported (end of life in 2025).
         </p>
       </div>
+
+      <h2 id="python-installation">Python Installation</h2>
+
+      <p>
+        If you don't have Python installed or need to upgrade, follow these steps:
+      </p>
+
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🐍 Installing Python on macOS
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p className="text-sm"><strong>Option 1: Official Installer (Recommended)</strong></p>
+          <ol className="text-sm space-y-2">
+            <li>Visit <a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer" className="underline">python.org/downloads</a></li>
+            <li>Download <strong>Python 3.14.0</strong> (or latest 3.12+)</li>
+            <li>Run the <code>.pkg</code> installer</li>
+            <li>Follow installation wizard (use default settings)</li>
+            <li>Verify installation:
+              <CodeBlock
+                language="bash"
+                code={`python3 --version
+# Should output: Python 3.14.0`}
+                className="mt-2"
+              />
+            </li>
+          </ol>
+
+          <p className="text-sm mt-4"><strong>Option 2: Homebrew (For Advanced Users)</strong></p>
+          <CodeBlock
+            language="bash"
+            code={`# Install Homebrew (if not installed)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install Python
+brew install python@3.14
+
+# Verify
+python3 --version`}
+          />
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🪟 Installing Python on Windows
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <ol className="text-sm space-y-2">
+            <li>Visit <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener noreferrer" className="underline">python.org/downloads/windows</a></li>
+            <li>Download <strong>Python 3.14.0</strong> Windows installer (64-bit)</li>
+            <li><strong>Important</strong>: Check ☑️ "Add Python to PATH" during installation</li>
+            <li>Click <strong>Install Now</strong></li>
+            <li>Verify installation:
+              <CodeBlock
+                language="bash"
+                code={`python --version
+# Should output: Python 3.14.0
+
+# If that doesn't work, try:
+py --version`}
+                className="mt-2"
+              />
+            </li>
+          </ol>
+
+          <div className="callout callout-warning text-sm mt-3">
+            <p className="font-semibold mb-1">⚠️ PATH Not Set?</p>
+            <p className="mb-0">
+              If <code>python --version</code> doesn't work, you need to add Python to PATH manually. Search "Edit the system environment variables" in Windows, then add Python's installation directory to PATH.
+            </p>
+          </div>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🐧 Installing Python on Linux
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <p className="text-sm"><strong>Ubuntu/Debian:</strong></p>
+          <CodeBlock
+            language="bash"
+            code={`sudo apt update
+sudo apt install python3.14 python3.14-venv python3-pip
+
+# Verify
+python3 --version`}
+          />
+
+          <p className="text-sm mt-3"><strong>Fedora/RHEL:</strong></p>
+          <CodeBlock
+            language="bash"
+            code={`sudo dnf install python3.14
+
+# Verify
+python3 --version`}
+          />
+
+          <p className="text-sm text-muted-foreground mt-3">
+            💡 If Python 3.14 isn't available in your distro's repositories yet, use Python 3.12 or 3.13 instead.
+          </p>
+        </div>
+      </details>
 
       <h2 id="installation">Installation Steps</h2>
 
@@ -360,6 +467,7 @@ ls -la`}
 ├── README.md              # Project overview
 ├── QUICK_START.md         # Fast setup guide
 ├── CLAUDE.md              # Instructions for Claude Code
+├── researcherrag_cli.py   # CLI tool for project management
 ├── prompts/               # Stage 1-5 prompt templates
 │   ├── 01_research_domain_setup.md
 │   ├── 02_query_strategy.md
@@ -389,26 +497,202 @@ venv\\Scripts\\activate
 # You should see (venv) in your terminal prompt`}
       />
 
-      <p>Install required packages:</p>
+      <p>Install required packages for the CLI tool:</p>
 
       <CodeBlock
         language="bash"
         code={`# Upgrade pip first
 pip install --upgrade pip
 
-# Install dependencies (will be created during workflow)
-# For now, install basic tools:
-pip install anthropic langchain chromadb python-dotenv`}
+# Install CLI dependencies
+pip install click pyyaml
+
+# Verify CLI tool works
+python researcherrag_cli.py --help`}
       />
 
       <div className="callout callout-success">
         <p className="font-semibold mb-2">✅ Pro Tip</p>
         <p className="mb-0">
-          Keep your virtual environment activated throughout the workshop. If you close your terminal, remember to run <code>source venv/bin/activate</code> again.
+          Keep your virtual environment activated throughout the workflow. If you close your terminal, remember to run <code>source venv/bin/activate</code> again before continuing.
         </p>
       </div>
 
-      <h3 id="step5-env-file">Step 5: Configure Environment Variables (Optional)</h3>
+      <h3 id="step0-init-project">Step 0: Initialize Your Project (🆕 Required)</h3>
+
+      <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black mb-6">
+        <p className="font-semibold mb-2">🚨 Important: Create Standardized Project Structure</p>
+        <p className="text-sm mb-3">
+          Before starting any research work, you <strong>must</strong> initialize a project using the CLI tool. This ensures:
+        </p>
+        <ul className="text-sm space-y-1 mb-3">
+          <li>✅ <strong>Consistent folder structure</strong> (PRISMA 2020 compliant)</li>
+          <li>✅ <strong>Dashboard tracking</strong> - Monitor progress on the web</li>
+          <li>✅ <strong>Claude Code guidance</strong> - LLM knows where to save files</li>
+          <li>✅ <strong>Reproducibility</strong> - Share projects with collaborators easily</li>
+        </ul>
+        <p className="text-xs text-muted-foreground">
+          ⚠️ <strong>Without CLI initialization</strong>: Claude Code may create inconsistent folders, dashboard won't work, and you'll waste time fixing file locations.
+        </p>
+      </div>
+
+      <p><strong>Run the project initialization command:</strong></p>
+
+      <CodeBlock
+        language="bash"
+        code={`python researcherrag_cli.py init`}
+      />
+
+      <p>You'll be prompted to enter:</p>
+
+      <div className="border rounded-lg p-4 my-4 bg-gray-50 dark:bg-gray-900">
+        <div className="space-y-3 text-sm font-mono">
+          <div>
+            <span className="text-muted-foreground">Project name:</span> <strong>AI-Healthcare-Adoption</strong>
+            <p className="text-xs text-muted-foreground ml-4">Use hyphens, no spaces (e.g., "Teacher-Training-Analysis")</p>
+          </div>
+          <div>
+            <span className="text-muted-foreground">Research question:</span> <strong>What factors influence AI adoption in hospitals?</strong>
+            <p className="text-xs text-muted-foreground ml-4">Your main research question</p>
+          </div>
+          <div>
+            <span className="text-muted-foreground">Research domain:</span> <strong>medicine</strong>
+            <p className="text-xs text-muted-foreground ml-4">Options: education | medicine | psychology | social-science | custom</p>
+          </div>
+        </div>
+      </div>
+
+      <p><strong>What gets created:</strong></p>
+
+      <CodeBlock
+        language="bash"
+        code={`projects/2025-10-13_AI-Healthcare-Adoption/
+├── .researcherrag          ← Metadata for dashboard tracking
+├── config.yaml             ← Project settings (domains, criteria, RAG config)
+├── README.md               ← Project documentation
+├── data/
+│   ├── 01_identification/  ← Stage 1: Database search results
+│   ├── 02_screening/       ← Stage 2: PRISMA screening decisions
+│   ├── 03_full_text/       ← Stage 3: Final included papers
+│   └── pdfs/               ← Downloaded PDF files
+├── rag/
+│   └── chroma_db/          ← Vector database (created in Stage 4)
+├── outputs/                ← PRISMA flowchart, search strategy docs
+└── conversations/          ← RAG session logs (Stage 5)`}
+      />
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">📁 Understanding the Project Structure</p>
+        <div className="text-sm space-y-2 mb-0">
+          <p><strong>Why this structure?</strong></p>
+          <ul className="ml-4 space-y-1">
+            <li><code>data/01_identification/</code>: Raw search results from PubMed, Scopus, etc.</li>
+            <li><code>data/02_screening/</code>: Papers that passed title/abstract review</li>
+            <li><code>data/03_full_text/</code>: <strong>Final dataset for RAG</strong> (most important!)</li>
+            <li><code>rag/chroma_db/</code>: Vector embeddings for semantic search</li>
+            <li><code>conversations/</code>: Chat logs with citations (your research notes)</li>
+          </ul>
+          <p className="mt-3"><strong>Why date prefix?</strong></p>
+          <p className="ml-4 text-xs">
+            <code>2025-10-13_</code> prefix allows you to manage multiple projects over time, see project history, and easily sort by creation date.
+          </p>
+        </div>
+      </div>
+
+      <p className="mt-6"><strong>Verify project creation:</strong></p>
+
+      <CodeBlock
+        language="bash"
+        code={`# List all your projects
+python researcherrag_cli.py list
+
+# Check project status
+python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
+      />
+
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          📖 Example: CLI Output After Initialization
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <CodeBlock
+            language="bash"
+            code={`======================================================================
+✅ Project created successfully!
+======================================================================
+
+📂 Project Location: projects/2025-10-13_AI-Healthcare-Adoption
+
+📋 Next Steps:
+
+1️⃣  Open the project in VS Code:
+   cd projects/2025-10-13_AI-Healthcare-Adoption
+   code .
+
+2️⃣  Start Claude Code chat:
+   • Press: Cmd+Shift+P (Mac) or Ctrl+Shift+P (Windows/Linux)
+   • Type: 'Claude: Open Chat'
+   • Press Enter
+
+3️⃣  Copy-paste this prompt to Claude Code:
+   ------------------------------------------------------------------
+   I'm starting a new ResearcherRAG project: AI-Healthcare-Adoption
+   Research question: What factors influence AI adoption in hospitals?
+   Domain: medicine
+
+   Please read my config.yaml and guide me through Stage 1
+   (Research Domain Setup) using the 5-stage workflow.
+
+   Make sure to save all outputs to the correct folders:
+   - Stage 1 → data/01_identification/
+   - Stage 2 → data/02_screening/
+   - Stage 3 → data/03_full_text/
+   ------------------------------------------------------------------
+
+📖 Documentation:
+   https://researcher-rag-helper.vercel.app/guide/02-getting-started
+
+📊 Dashboard (check progress anytime):
+   https://researcher-rag-helper.vercel.app/dashboard?project=2025-10-13_AI-Healthcare-Adoption
+
+💡 Check project status anytime:
+   python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
+          />
+        </div>
+      </details>
+
+      <div className="callout callout-warning">
+        <p className="font-semibold mb-2">⚠️ Don't Skip This Step!</p>
+        <p className="text-sm mb-0">
+          You might be tempted to skip CLI initialization and just start coding with Claude Code. <strong>Don't!</strong> Without the standardized structure, you'll spend hours debugging file paths, Claude Code will create inconsistent folders, and the dashboard won't work. The 2 minutes spent on <code>researcherrag_cli.py init</code> will save you hours later.
+        </p>
+      </div>
+
+      <h3 id="step5-environment-old">Step 5: Additional Python Dependencies (Within Your Project)</h3>
+
+      <p>Now that you have a project, navigate into it and install research-specific packages:</p>
+
+      <CodeBlock
+        language="bash"
+        code={`# Navigate to your project
+cd projects/2025-10-13_AI-Healthcare-Adoption
+
+# Install additional dependencies (will be guided by Claude Code)
+# For now, install basic research tools:
+pip install anthropic langchain chromadb python-dotenv
+
+# If using OpenAI Codex:
+pip install openai`}
+      />
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">💡 About Dependencies</p>
+        <p className="text-sm mb-0">
+          You don't need to install all dependencies upfront. Claude Code will guide you to install packages as needed during each stage. The above commands are just for basic setup.
+        </p>
+      </div>
+
+      <h3 id="step6-env-file">Step 6: Configure Environment Variables (Optional)</h3>
 
       <div className="callout callout-success mb-6">
         <p className="font-semibold mb-2">✅ Using Subscription Login? You Can Skip This Step!</p>
