@@ -53,13 +53,13 @@ export default function GettingStartedPage() {
         ResearcherRAG works with multiple AI coding assistants. Choose one based on your preference—<strong>both work perfectly!</strong>
       </p>
 
-      <div className="callout callout-warning mb-6">
+      <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black mb-6">
         <p className="font-semibold mb-2">💰 Important: Use Subscription Plans, Not API Keys!</p>
         <p className="text-sm mb-2">
           <strong>Strongly recommended</strong>: Sign in with your <strong>ChatGPT Plus ($20/month)</strong> or <strong>Claude Pro ($20/month)</strong> subscription instead of using API keys. Here's why:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm my-3">
-          <div className="border border-orange-300 dark:border-orange-700 rounded p-3 bg-orange-50 dark:bg-orange-950/20">
+          <div className="border-l-4 border-gray-900 dark:border-gray-100 rounded p-3 bg-gray-50 dark:bg-gray-900">
             <p className="font-semibold mb-1">❌ API Key (Pay-as-you-go)</p>
             <ul className="text-xs space-y-1 ml-4">
               <li>Claude: $3-15 per 1M tokens</li>
@@ -68,7 +68,7 @@ export default function GettingStartedPage() {
               <li>Costs add up quickly with iterations</li>
             </ul>
           </div>
-          <div className="border border-green-300 dark:border-green-700 rounded p-3 bg-green-50 dark:bg-green-950/20">
+          <div className="border-l-4 border-gray-900 dark:border-gray-100 rounded p-3 bg-gray-50 dark:bg-gray-900">
             <p className="font-semibold mb-1">✅ Subscription (Fixed $20/month)</p>
             <ul className="text-xs space-y-1 ml-4">
               <li>ChatGPT Plus: <strong>Generous token allowance</strong></li>
@@ -84,10 +84,10 @@ export default function GettingStartedPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-8">
-        <div className="border-2 border-blue-500 dark:border-blue-400 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/20">
+        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black">
           <div className="flex items-center gap-2 mb-3">
             <h4 className="text-lg font-semibold m-0">Claude Code</h4>
-            <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded">Recommended</span>
+            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">★ Recommended</span>
           </div>
           <p className="text-sm mb-4">
             Anthropic's official VS Code extension with 200K token context window—optimized for ResearcherRAG's long prompts and academic workflows.
@@ -103,24 +103,24 @@ export default function GettingStartedPage() {
               href="https://marketplace.visualstudio.com/items?itemName=Anthropic.claude-code"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded no-underline"
+              className="block text-center bg-foreground text-background hover:bg-gray-800 dark:hover:bg-gray-200 font-semibold py-2 px-4 rounded no-underline transition-colors"
             >
               Install Claude Code →
             </a>
             <p className="text-xs text-center">
-              <strong className="text-green-700 dark:text-green-400">Recommended: </strong>
-              <a href="https://claude.ai/settings" target="_blank" rel="noopener noreferrer" className="font-semibold">Claude Pro ($20/mo)</a>
+              <strong>✓ Recommended: </strong>
+              <a href="https://claude.ai/settings" target="_blank" rel="noopener noreferrer" className="font-semibold underline">Claude Pro ($20/mo)</a>
             </p>
             <p className="text-xs text-center text-muted-foreground">
-              Alternative: <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">API key</a> (pay-as-you-go, expensive)
+              Alternative: <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer" className="underline">API key</a> (pay-as-you-go, expensive)
             </p>
           </div>
         </div>
 
-        <div className="border-2 border-gray-300 dark:border-gray-700 rounded-lg p-6">
+        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-gray-50 dark:bg-gray-950">
           <div className="flex items-center gap-2 mb-3">
             <h4 className="text-lg font-semibold m-0">OpenAI Codex</h4>
-            <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">Best Value</span>
+            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">$ Best Value</span>
           </div>
           <p className="text-sm mb-4">
             OpenAI's agentic coding assistant with powerful reasoning. <strong>Generous token limits</strong> make it ideal for heavy PRISMA workflows.
@@ -136,16 +136,16 @@ export default function GettingStartedPage() {
               href="https://developers.openai.com/codex/ide"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded no-underline"
+              className="block text-center bg-foreground text-background hover:bg-gray-800 dark:hover:bg-gray-200 font-semibold py-2 px-4 rounded no-underline transition-colors"
             >
               Install Codex Extension →
             </a>
             <p className="text-xs text-center">
-              <strong className="text-green-700 dark:text-green-400">Recommended: </strong>
-              <a href="https://chat.openai.com/settings" target="_blank" rel="noopener noreferrer" className="font-semibold">ChatGPT Plus ($20/mo)</a>
+              <strong>✓ Recommended: </strong>
+              <a href="https://chat.openai.com/settings" target="_blank" rel="noopener noreferrer" className="font-semibold underline">ChatGPT Plus ($20/mo)</a>
             </p>
             <p className="text-xs text-center text-muted-foreground">
-              Alternative: <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">API key</a> (pay-as-you-go, expensive)
+              Alternative: <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="underline">API key</a> (pay-as-you-go, expensive)
             </p>
           </div>
         </div>
@@ -239,19 +239,19 @@ export default function GettingStartedPage() {
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-6">
-        <div className="border-2 border-green-500 dark:border-green-400 rounded-lg p-4 bg-green-50 dark:bg-green-950/20">
+        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-4 bg-white dark:bg-black">
           <div className="flex items-center gap-2 mb-2">
             <h4 className="text-base font-semibold m-0">Option A: Claude Pro ($20/mo)</h4>
-            <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">Recommended</span>
+            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">★ Recommended</span>
           </div>
           <p className="text-sm mb-3">Best for single-project workflows and academic reasoning.</p>
           <ol className="text-sm space-y-2 mb-3">
-            <li><strong>Subscribe</strong>: Visit <a href="https://claude.ai/settings" target="_blank" rel="noopener noreferrer">claude.ai/settings</a> → Upgrade to Pro</li>
+            <li><strong>Subscribe</strong>: Visit <a href="https://claude.ai/settings" target="_blank" rel="noopener noreferrer" className="underline">claude.ai/settings</a> → Upgrade to Pro</li>
             <li><strong>Install Extension</strong>: Add Claude Code to VS Code (Step 1)</li>
             <li><strong>Sign In</strong>: Click Claude icon → <strong>Sign in with your Pro account</strong></li>
             <li><strong>Verify</strong>: You'll see "Pro" badge in the extension</li>
           </ol>
-          <div className="bg-white dark:bg-gray-900 border rounded p-2 text-xs">
+          <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 rounded p-2 text-xs">
             <p className="font-semibold mb-1">What you get:</p>
             <ul className="ml-4 space-y-1">
               <li>✅ ~500K tokens/month (~10-15 PRISMA projects)</li>
@@ -262,19 +262,19 @@ export default function GettingStartedPage() {
           </div>
         </div>
 
-        <div className="border-2 border-green-500 dark:border-green-400 rounded-lg p-4 bg-green-50 dark:bg-green-950/20">
+        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-4 bg-gray-50 dark:bg-gray-950">
           <div className="flex items-center gap-2 mb-2">
             <h4 className="text-base font-semibold m-0">Option B: ChatGPT Plus ($20/mo)</h4>
-            <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">Best Value</span>
+            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">$ Best Value</span>
           </div>
           <p className="text-sm mb-3">Best for heavy usage and multiple concurrent projects.</p>
           <ol className="text-sm space-y-2 mb-3">
-            <li><strong>Subscribe</strong>: Visit <a href="https://chat.openai.com/settings" target="_blank" rel="noopener noreferrer">chat.openai.com/settings</a> → Upgrade to Plus</li>
+            <li><strong>Subscribe</strong>: Visit <a href="https://chat.openai.com/settings" target="_blank" rel="noopener noreferrer" className="underline">chat.openai.com/settings</a> → Upgrade to Plus</li>
             <li><strong>Install Extension</strong>: Add Codex to your IDE (Step 1)</li>
             <li><strong>Sign In</strong>: Click Codex icon → <strong>Sign in with ChatGPT account</strong></li>
             <li><strong>Select Model</strong>: Switch to <strong>GPT-5-Codex</strong></li>
           </ol>
-          <div className="bg-white dark:bg-gray-900 border rounded p-2 text-xs">
+          <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-white dark:bg-black rounded p-2 text-xs">
             <p className="font-semibold mb-1">What you get:</p>
             <ul className="ml-4 space-y-1">
               <li>✅ <strong>More generous token limits</strong> than Claude Pro</li>
@@ -286,11 +286,11 @@ export default function GettingStartedPage() {
         </div>
       </div>
 
-      <details className="border-2 border-orange-300 dark:border-orange-700 rounded-lg my-6 bg-orange-50 dark:bg-orange-950/10">
-        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-orange-900 dark:text-orange-200">
+      <details className="border-2 border-gray-600 dark:border-gray-400 rounded-lg my-6 bg-gray-100 dark:bg-gray-900">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
           ⚠️ Alternative: API Keys (Not Recommended for Beginners)
         </summary>
-        <div className="p-4 pt-0 border-t border-orange-300 dark:border-orange-700">
+        <div className="p-4 pt-0 border-t border-gray-600 dark:border-gray-400">
           <p className="text-sm mb-3">
             <strong>Only use API keys if</strong>: You need programmatic access, are building a commercial service, or have institutional API credits. For individual research, subscriptions are far more cost-effective.
           </p>
@@ -304,7 +304,7 @@ export default function GettingStartedPage() {
                 <li>Create key → Copy (starts with <code>sk-ant-...</code>)</li>
                 <li>Add to <code>.env</code> file (Step 5)</li>
               </ol>
-              <p className="text-xs mt-2 text-orange-800 dark:text-orange-200">
+              <p className="text-xs mt-2 text-muted-foreground">
                 <strong>Cost</strong>: $3-15 per 1M tokens<br />
                 <strong>One PRISMA run</strong>: $15-50+ depending on corpus size
               </p>
@@ -313,12 +313,12 @@ export default function GettingStartedPage() {
             <div className="border rounded p-3">
               <h5 className="text-sm font-semibold mb-2">OpenAI API Key</h5>
               <ol className="text-xs space-y-1">
-                <li>Visit <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a></li>
+                <li>Visit <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" className="underline">platform.openai.com/api-keys</a></li>
                 <li>Click <strong>+ Create new secret key</strong></li>
                 <li>Copy key (starts with <code>sk-proj-...</code>)</li>
                 <li>Add to <code>.env</code> file (Step 5)</li>
               </ol>
-              <p className="text-xs mt-2 text-orange-800 dark:text-orange-200">
+              <p className="text-xs mt-2 text-muted-foreground">
                 <strong>Cost</strong>: $4-16 per 1M tokens<br />
                 <strong>One PRISMA run</strong>: $20-60+ for large datasets
               </p>
