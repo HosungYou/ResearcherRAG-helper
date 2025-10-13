@@ -53,6 +53,36 @@ export default function GettingStartedPage() {
         ResearcherRAG works with multiple AI coding assistants. Choose one based on your preference—<strong>both work perfectly!</strong>
       </p>
 
+      <div className="callout callout-warning mb-6">
+        <p className="font-semibold mb-2">💰 Important: Use Subscription Plans, Not API Keys!</p>
+        <p className="text-sm mb-2">
+          <strong>Strongly recommended</strong>: Sign in with your <strong>ChatGPT Plus ($20/month)</strong> or <strong>Claude Pro ($20/month)</strong> subscription instead of using API keys. Here's why:
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm my-3">
+          <div className="border border-orange-300 dark:border-orange-700 rounded p-3 bg-orange-50 dark:bg-orange-950/20">
+            <p className="font-semibold mb-1">❌ API Key (Pay-as-you-go)</p>
+            <ul className="text-xs space-y-1 ml-4">
+              <li>Claude: $3-15 per 1M tokens</li>
+              <li>GPT-5: $4-16 per 1M tokens</li>
+              <li><strong>One PRISMA run: $15-50+</strong></li>
+              <li>Costs add up quickly with iterations</li>
+            </ul>
+          </div>
+          <div className="border border-green-300 dark:border-green-700 rounded p-3 bg-green-50 dark:bg-green-950/20">
+            <p className="font-semibold mb-1">✅ Subscription (Fixed $20/month)</p>
+            <ul className="text-xs space-y-1 ml-4">
+              <li>ChatGPT Plus: <strong>Generous token allowance</strong></li>
+              <li>Claude Pro: <strong>~500K tokens/month</strong> (limited)</li>
+              <li>Unlimited projects within limits</li>
+              <li>Predictable budgeting</li>
+            </ul>
+          </div>
+        </div>
+        <p className="text-xs mt-2">
+          <strong>💡 Pro Tip</strong>: ChatGPT Plus ($20) offers more generous token limits than Claude Pro ($20) for heavy ResearcherRAG usage. Consider <strong>using both</strong>: Claude for Stage 1-2 (planning), Codex for Stage 3-5 (heavy processing).
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-8">
         <div className="border-2 border-blue-500 dark:border-blue-400 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/20">
           <div className="flex items-center gap-2 mb-3">
@@ -77,8 +107,12 @@ export default function GettingStartedPage() {
             >
               Install Claude Code →
             </a>
+            <p className="text-xs text-center">
+              <strong className="text-green-700 dark:text-green-400">Recommended: </strong>
+              <a href="https://claude.ai/settings" target="_blank" rel="noopener noreferrer" className="font-semibold">Claude Pro ($20/mo)</a>
+            </p>
             <p className="text-xs text-center text-muted-foreground">
-              Requires: <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">Anthropic API key</a>
+              Alternative: <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">API key</a> (pay-as-you-go, expensive)
             </p>
           </div>
         </div>
@@ -86,14 +120,14 @@ export default function GettingStartedPage() {
         <div className="border-2 border-gray-300 dark:border-gray-700 rounded-lg p-6">
           <div className="flex items-center gap-2 mb-3">
             <h4 className="text-lg font-semibold m-0">OpenAI Codex</h4>
-            <span className="text-xs bg-gray-600 text-white px-2 py-1 rounded">GPT-5-Codex</span>
+            <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">Best Value</span>
           </div>
           <p className="text-sm mb-4">
-            OpenAI's agentic coding assistant with powerful reasoning. Works in VS Code, Cursor, Windsurf, and VS Code Insiders.
+            OpenAI's agentic coding assistant with powerful reasoning. <strong>Generous token limits</strong> make it ideal for heavy PRISMA workflows.
           </p>
           <ul className="text-sm space-y-2 mb-4">
             <li>✅ GPT-5-Codex model available</li>
-            <li>✅ Adjustable reasoning effort</li>
+            <li>✅ <strong>More tokens per $20 than Claude</strong></li>
             <li>✅ Multi-IDE support (Cursor, Windsurf)</li>
             <li>✅ Agent mode for automation</li>
           </ul>
@@ -106,8 +140,12 @@ export default function GettingStartedPage() {
             >
               Install Codex Extension →
             </a>
+            <p className="text-xs text-center">
+              <strong className="text-green-700 dark:text-green-400">Recommended: </strong>
+              <a href="https://chat.openai.com/settings" target="_blank" rel="noopener noreferrer" className="font-semibold">ChatGPT Plus ($20/mo)</a>
+            </p>
             <p className="text-xs text-center text-muted-foreground">
-              Requires: <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">OpenAI API key</a> or ChatGPT account
+              Alternative: <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">API key</a> (pay-as-you-go, expensive)
             </p>
           </div>
         </div>
@@ -168,17 +206,24 @@ export default function GettingStartedPage() {
         <div className="text-sm space-y-2 mb-0">
           <p><strong>Choose Claude Code if you:</strong></p>
           <ul className="ml-4 space-y-1">
-            <li>Want the easiest setup for ResearcherRAG</li>
-            <li>Prefer Anthropic's focus on reasoning and research</li>
+            <li>Want the <strong>easiest setup</strong> for ResearcherRAG</li>
+            <li>Prefer Anthropic's focus on reasoning and academic research</li>
             <li>Need 200K token context for large systematic reviews</li>
-            <li>Value tight integration with 5-stage prompts</li>
+            <li>Are doing a <strong>single, focused</strong> PRISMA project</li>
           </ul>
           <p className="mt-3"><strong>Choose OpenAI Codex if you:</strong></p>
           <ul className="ml-4 space-y-1">
+            <li>Need <strong>more tokens per month</strong> for heavy usage</li>
+            <li>Plan to run <strong>multiple PRISMA projects</strong> concurrently</li>
             <li>Already use Cursor, Windsurf, or another VS Code fork</li>
             <li>Want adjustable reasoning effort (low/medium/high)</li>
-            <li>Prefer OpenAI's GPT-5-Codex model</li>
-            <li>Need multi-IDE flexibility</li>
+          </ul>
+          <p className="mt-3"><strong>💡 Hybrid Approach (Recommended for Power Users):</strong></p>
+          <ul className="ml-4 space-y-1">
+            <li><strong>Claude Code</strong>: Stage 1-2 (research planning, query design)</li>
+            <li><strong>OpenAI Codex</strong>: Stage 3-5 (PRISMA automation, RAG execution)</li>
+            <li>Benefit: Use Claude's reasoning for setup, Codex's generous tokens for heavy lifting</li>
+            <li><strong>Total cost</strong>: $40/month (both subscriptions) vs $50-100+ API usage</li>
           </ul>
           <p className="mt-3 font-semibold text-center">✅ Both are fully compatible with ResearcherRAG!</p>
           <p className="text-xs text-muted-foreground mt-2">
@@ -187,43 +232,109 @@ export default function GettingStartedPage() {
         </div>
       </div>
 
-      <h3 id="step2-api-key">Step 2: Obtain Your API Key</h3>
+      <h3 id="step2-authentication">Step 2: Authentication Setup</h3>
 
-      <p>Choose based on which assistant you installed in Step 1:</p>
+      <p className="mb-4">
+        <strong>Recommended approach</strong>: Sign in with your subscription account. This gives you fixed monthly costs and generous token limits.
+      </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-6">
-        <div className="border rounded-lg p-4">
-          <h4 className="text-base font-semibold mb-2">For Claude Code Users</h4>
-          <ol className="text-sm space-y-1">
-            <li>Visit <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">console.anthropic.com</a></li>
-            <li>Navigate to <strong>API Keys</strong></li>
-            <li>Click <strong>Create Key</strong> → Name it "ResearcherRAG"</li>
-            <li>Copy key (starts with <code>sk-ant-...</code>)</li>
-            <li>Store securely (you'll use it in Step 5)</li>
+        <div className="border-2 border-green-500 dark:border-green-400 rounded-lg p-4 bg-green-50 dark:bg-green-950/20">
+          <div className="flex items-center gap-2 mb-2">
+            <h4 className="text-base font-semibold m-0">Option A: Claude Pro ($20/mo)</h4>
+            <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">Recommended</span>
+          </div>
+          <p className="text-sm mb-3">Best for single-project workflows and academic reasoning.</p>
+          <ol className="text-sm space-y-2 mb-3">
+            <li><strong>Subscribe</strong>: Visit <a href="https://claude.ai/settings" target="_blank" rel="noopener noreferrer">claude.ai/settings</a> → Upgrade to Pro</li>
+            <li><strong>Install Extension</strong>: Add Claude Code to VS Code (Step 1)</li>
+            <li><strong>Sign In</strong>: Click Claude icon → <strong>Sign in with your Pro account</strong></li>
+            <li><strong>Verify</strong>: You'll see "Pro" badge in the extension</li>
           </ol>
-          <div className="bg-gray-50 dark:bg-gray-900 border rounded p-2 mt-3 text-xs">
-            <p className="font-semibold mb-1">Pricing (Jan 2025):</p>
-            <p>Claude 3.5 Sonnet: $3/1M input, $15/1M output<br />
-            <strong>Typical cost</strong>: $5-15 per literature review</p>
+          <div className="bg-white dark:bg-gray-900 border rounded p-2 text-xs">
+            <p className="font-semibold mb-1">What you get:</p>
+            <ul className="ml-4 space-y-1">
+              <li>✅ ~500K tokens/month (~10-15 PRISMA projects)</li>
+              <li>✅ Priority access during peak hours</li>
+              <li>✅ 200K context window per request</li>
+              <li>⚠️ <strong>Token limit resets monthly</strong></li>
+            </ul>
           </div>
         </div>
 
-        <div className="border rounded-lg p-4">
-          <h4 className="text-base font-semibold mb-2">For OpenAI Codex Users</h4>
-          <ol className="text-sm space-y-1">
-            <li>Visit <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a></li>
-            <li>Click <strong>+ Create new secret key</strong></li>
-            <li>Name it "ResearcherRAG" → <strong>Create</strong></li>
-            <li>Copy key (starts with <code>sk-proj-...</code>)</li>
-            <li><strong>Alternative</strong>: Sign in with ChatGPT account (no API key needed)</li>
+        <div className="border-2 border-green-500 dark:border-green-400 rounded-lg p-4 bg-green-50 dark:bg-green-950/20">
+          <div className="flex items-center gap-2 mb-2">
+            <h4 className="text-base font-semibold m-0">Option B: ChatGPT Plus ($20/mo)</h4>
+            <span className="text-xs bg-green-600 text-white px-2 py-1 rounded">Best Value</span>
+          </div>
+          <p className="text-sm mb-3">Best for heavy usage and multiple concurrent projects.</p>
+          <ol className="text-sm space-y-2 mb-3">
+            <li><strong>Subscribe</strong>: Visit <a href="https://chat.openai.com/settings" target="_blank" rel="noopener noreferrer">chat.openai.com/settings</a> → Upgrade to Plus</li>
+            <li><strong>Install Extension</strong>: Add Codex to your IDE (Step 1)</li>
+            <li><strong>Sign In</strong>: Click Codex icon → <strong>Sign in with ChatGPT account</strong></li>
+            <li><strong>Select Model</strong>: Switch to <strong>GPT-5-Codex</strong></li>
           </ol>
-          <div className="bg-gray-50 dark:bg-gray-900 border rounded p-2 mt-3 text-xs">
-            <p className="font-semibold mb-1">Pricing (Jan 2025):</p>
-            <p>GPT-5: $4/1M input, $16/1M output<br />
-            GPT-5-Codex: (Check <a href="https://openai.com/api/pricing/" target="_blank" rel="noopener noreferrer">pricing page</a>)</p>
+          <div className="bg-white dark:bg-gray-900 border rounded p-2 text-xs">
+            <p className="font-semibold mb-1">What you get:</p>
+            <ul className="ml-4 space-y-1">
+              <li>✅ <strong>More generous token limits</strong> than Claude Pro</li>
+              <li>✅ Suitable for 20-30+ PRISMA projects/month</li>
+              <li>✅ Adjustable reasoning effort (low/med/high)</li>
+              <li>✅ Better for parallel workflows</li>
+            </ul>
           </div>
         </div>
       </div>
+
+      <details className="border-2 border-orange-300 dark:border-orange-700 rounded-lg my-6 bg-orange-50 dark:bg-orange-950/10">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 text-orange-900 dark:text-orange-200">
+          ⚠️ Alternative: API Keys (Not Recommended for Beginners)
+        </summary>
+        <div className="p-4 pt-0 border-t border-orange-300 dark:border-orange-700">
+          <p className="text-sm mb-3">
+            <strong>Only use API keys if</strong>: You need programmatic access, are building a commercial service, or have institutional API credits. For individual research, subscriptions are far more cost-effective.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
+            <div className="border rounded p-3">
+              <h5 className="text-sm font-semibold mb-2">Anthropic API Key</h5>
+              <ol className="text-xs space-y-1">
+                <li>Visit <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">console.anthropic.com</a></li>
+                <li>Navigate to <strong>API Keys</strong></li>
+                <li>Create key → Copy (starts with <code>sk-ant-...</code>)</li>
+                <li>Add to <code>.env</code> file (Step 5)</li>
+              </ol>
+              <p className="text-xs mt-2 text-orange-800 dark:text-orange-200">
+                <strong>Cost</strong>: $3-15 per 1M tokens<br />
+                <strong>One PRISMA run</strong>: $15-50+ depending on corpus size
+              </p>
+            </div>
+
+            <div className="border rounded p-3">
+              <h5 className="text-sm font-semibold mb-2">OpenAI API Key</h5>
+              <ol className="text-xs space-y-1">
+                <li>Visit <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a></li>
+                <li>Click <strong>+ Create new secret key</strong></li>
+                <li>Copy key (starts with <code>sk-proj-...</code>)</li>
+                <li>Add to <code>.env</code> file (Step 5)</li>
+              </ol>
+              <p className="text-xs mt-2 text-orange-800 dark:text-orange-200">
+                <strong>Cost</strong>: $4-16 per 1M tokens<br />
+                <strong>One PRISMA run</strong>: $20-60+ for large datasets
+              </p>
+            </div>
+          </div>
+
+          <div className="callout callout-warning text-sm">
+            <p className="font-semibold mb-1">💸 Cost Comparison Example</p>
+            <p className="text-xs mb-0">
+              Running 3 PRISMA projects in a month:<br />
+              • <strong>Subscription</strong>: $20 (fixed)<br />
+              • <strong>API Pay-as-you-go</strong>: $45-150+ (variable, unpredictable)
+            </p>
+          </div>
+        </div>
+      </details>
 
       <h3 id="step3-clone">Step 3: Clone ResearcherRAG Repository</h3>
 
@@ -297,28 +408,42 @@ pip install anthropic langchain chromadb python-dotenv`}
         </p>
       </div>
 
-      <h3 id="step5-env-file">Step 5: Configure Environment Variables</h3>
+      <h3 id="step5-env-file">Step 5: Configure Environment Variables (Optional)</h3>
 
-      <p>Create a <code>.env</code> file in the project root to store your API key:</p>
+      <div className="callout callout-success mb-6">
+        <p className="font-semibold mb-2">✅ Using Subscription Login? You Can Skip This Step!</p>
+        <p className="text-sm mb-0">
+          If you signed in with <strong>Claude Pro</strong> or <strong>ChatGPT Plus</strong> in Step 2, you don't need to configure a <code>.env</code> file. The extensions authenticate directly through your subscription. <strong>Proceed to Step 6.</strong>
+        </p>
+      </div>
 
-      <CodeBlock
-        language="bash"
-        code={`# Create .env file
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          ⚙️ Advanced: API Key Configuration (For API Users Only)
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-4">
+          <p className="text-sm">
+            If you chose to use API keys instead of subscriptions, create a <code>.env</code> file:
+          </p>
+
+          <CodeBlock
+            language="bash"
+            code={`# Create .env file
 touch .env
 
 # Open in your editor
 code .env`}
-      />
+          />
 
-      <p>Add your API key based on which AI assistant you're using:</p>
+          <p className="text-sm">Add your API key based on which AI assistant you're using:</p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-6">
-        <div className="border rounded-lg p-4">
-          <h4 className="text-base font-semibold mb-2">For Claude Code</h4>
-          <CodeBlock
-            filename=".env"
-            language="bash"
-            code={`# Anthropic API Configuration
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-4">
+            <div className="border rounded p-3">
+              <h4 className="text-sm font-semibold mb-2">For Claude Code (API)</h4>
+              <CodeBlock
+                filename=".env"
+                language="bash"
+                code={`# Anthropic API Configuration
 ANTHROPIC_API_KEY=sk-ant-your-key-here
 
 # Optional: Model selection
@@ -326,15 +451,15 @@ ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
 
 # Optional: Max tokens
 ANTHROPIC_MAX_TOKENS=4096`}
-          />
-        </div>
+              />
+            </div>
 
-        <div className="border rounded-lg p-4">
-          <h4 className="text-base font-semibold mb-2">For OpenAI Codex</h4>
-          <CodeBlock
-            filename=".env"
-            language="bash"
-            code={`# OpenAI API Configuration
+            <div className="border rounded p-3">
+              <h4 className="text-sm font-semibold mb-2">For OpenAI Codex (API)</h4>
+              <CodeBlock
+                filename=".env"
+                language="bash"
+                code={`# OpenAI API Configuration
 OPENAI_API_KEY=sk-proj-your-key-here
 
 # Optional: Model selection
@@ -342,23 +467,25 @@ OPENAI_MODEL=gpt-5-codex
 
 # Optional: Max tokens
 OPENAI_MAX_TOKENS=4096`}
-          />
+              />
+            </div>
+          </div>
+
+          <div className="callout callout-info text-sm">
+            <p className="font-semibold mb-1">💡 Using Both APIs?</p>
+            <p className="mb-0">
+              You can include both API keys in your <code>.env</code> file. ResearcherRAG will use the one that matches your active AI assistant.
+            </p>
+          </div>
+
+          <div className="callout callout-warning text-sm">
+            <p className="font-semibold mb-1">🔒 Security Warning</p>
+            <p className="mb-0">
+              Never commit your <code>.env</code> file to Git! It's already in <code>.gitignore</code>, but double-check before pushing to GitHub. Treat API keys like passwords—never share them publicly.
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div className="callout callout-info">
-        <p className="font-semibold mb-2">💡 Using Both?</p>
-        <p className="text-sm mb-0">
-          You can include both API keys in your <code>.env</code> file. ResearcherRAG will use the one that matches your active AI assistant. This is useful for testing or switching between models.
-        </p>
-      </div>
-
-      <div className="callout callout-warning">
-        <p className="font-semibold mb-2">🔒 Security Warning</p>
-        <p className="mb-0">
-          Never commit your <code>.env</code> file to Git! It's already in <code>.gitignore</code>, but double-check before pushing to GitHub. Treat API keys like passwords—never share them publicly.
-        </p>
-      </div>
+      </details>
 
       <h2 id="first-workflow">Your First Workflow</h2>
 
