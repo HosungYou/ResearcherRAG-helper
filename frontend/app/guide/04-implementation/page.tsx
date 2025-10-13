@@ -2,6 +2,7 @@ import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
 import { CodeBlock } from '@/components/CodeBlock'
+import { FileTree } from '@/components/FileTree'
 
 export default function ImplementationGuidePage() {
   return (
@@ -132,6 +133,86 @@ graph LR
         <li>🔑 Key concepts and terminology list</li>
         <li>🎯 Refined research question</li>
       </ul>
+
+      <h3 id="stage-1-output">Stage 1 Output Structure</h3>
+
+      <p>
+        After Stage 1 completes, Claude will create your initial project structure. Here's what gets generated:
+      </p>
+
+      <FileTree structure={[
+        {
+          name: 'ResearcherRAG/',
+          type: 'folder',
+          children: [
+            {
+              name: 'config/',
+              type: 'folder',
+              description: 'Configuration files for your project',
+              children: [
+                {
+                  name: 'research_domain.json',
+                  type: 'file',
+                  description: 'Your research scope, questions, and domain definition',
+                  highlight: true
+                },
+                {
+                  name: 'keywords.json',
+                  type: 'file',
+                  description: 'Key concepts and terminology extracted from Stage 1'
+                }
+              ]
+            },
+            {
+              name: 'data/',
+              type: 'folder',
+              description: 'Will store papers at each PRISMA stage',
+              children: [
+                {
+                  name: '01_identification/',
+                  type: 'folder',
+                  description: 'Raw search results from databases'
+                },
+                {
+                  name: '02_screening/',
+                  type: 'folder',
+                  description: 'Papers after title/abstract screening'
+                },
+                {
+                  name: '03_full_text/',
+                  type: 'folder',
+                  description: 'Final approved papers'
+                }
+              ]
+            },
+            {
+              name: 'logs/',
+              type: 'folder',
+              description: 'Execution logs and exclusion reasons'
+            },
+            {
+              name: 'outputs/',
+              type: 'folder',
+              description: 'Generated reports and visualizations'
+            }
+          ]
+        }
+      ]} />
+
+      <div className="callout callout-info my-6">
+        <p className="font-semibold mb-2">📂 Verify Stage 1 Completion</p>
+        <p className="mb-2">Check that these files were created:</p>
+        <CodeBlock
+          language="bash"
+          code={`# Check project structure
+ls -la ResearcherRAG/
+
+# View research domain configuration
+cat config/research_domain.json
+
+# Expected output: JSON with research_question, scope, keywords, etc.`}
+        />
+      </div>
 
       <Mermaid chart={`
 graph TD
@@ -517,6 +598,129 @@ graph TB
 
 # Creates publication-ready PRISMA 2020 flow diagram`}
       />
+
+      <h3 id="stage-3-output">Stage 3 Output: PRISMA Complete</h3>
+
+      <p>
+        After completing PRISMA screening, your project structure contains the filtered dataset ready for RAG:
+      </p>
+
+      <FileTree structure={[
+        {
+          name: 'ResearcherRAG/',
+          type: 'folder',
+          children: [
+            {
+              name: 'data/',
+              type: 'folder',
+              description: 'Papers organized by PRISMA stage',
+              children: [
+                {
+                  name: '01_identification/',
+                  type: 'folder',
+                  children: [
+                    {
+                      name: 'pubmed_results.csv',
+                      type: 'file',
+                      description: '450 papers from PubMed'
+                    },
+                    {
+                      name: 'core_results.csv',
+                      type: 'file',
+                      description: '639 papers from CORE API'
+                    },
+                    {
+                      name: 'combined_results.csv',
+                      type: 'file',
+                      description: '1,089 unique papers (after deduplication)'
+                    }
+                  ]
+                },
+                {
+                  name: '02_screening/',
+                  type: 'folder',
+                  children: [
+                    {
+                      name: 'approved_papers.csv',
+                      type: 'file',
+                      description: '264 papers passing title/abstract screening',
+                      highlight: true
+                    },
+                    {
+                      name: 'excluded_papers.csv',
+                      type: 'file',
+                      description: '825 papers with exclusion reasons'
+                    }
+                  ]
+                },
+                {
+                  name: '03_full_text/',
+                  type: 'folder',
+                  children: [
+                    {
+                      name: 'final_dataset.csv',
+                      type: 'file',
+                      description: '137 papers meeting all criteria',
+                      highlight: true
+                    },
+                    {
+                      name: 'pdfs/',
+                      type: 'folder',
+                      description: 'Full-text PDFs of included papers'
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              name: 'logs/',
+              type: 'folder',
+              children: [
+                {
+                  name: 'exclusion_log.csv',
+                  type: 'file',
+                  description: 'Detailed reasons for each exclusion'
+                },
+                {
+                  name: 'screening_stats.json',
+                  type: 'file',
+                  description: 'Statistics for PRISMA diagram'
+                }
+              ]
+            },
+            {
+              name: 'outputs/',
+              type: 'folder',
+              children: [
+                {
+                  name: 'prisma_flow.png',
+                  type: 'file',
+                  description: 'PRISMA 2020 flow diagram',
+                  highlight: true
+                }
+              ]
+            }
+          ]
+        }
+      ]} />
+
+      <div className="callout callout-success my-6">
+        <p className="font-semibold mb-2">✅ Verify Stage 3 Completion</p>
+        <p className="mb-2">Check your final dataset:</p>
+        <CodeBlock
+          language="bash"
+          code={`# Count final papers
+wc -l data/03_full_text/final_dataset.csv
+# → 137 lines (136 papers + 1 header)
+
+# Preview first 5 papers
+head -5 data/03_full_text/final_dataset.csv
+
+# Check exclusion reasons distribution
+cut -d',' -f2 logs/exclusion_log.csv | sort | uniq -c | sort -rn
+# → Shows most common exclusion reasons`}
+        />
+      </div>
 
       <h2 id="stage-4">Stage 4: RAG System Design</h2>
 
