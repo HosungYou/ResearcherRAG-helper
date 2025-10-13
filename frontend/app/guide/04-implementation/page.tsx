@@ -480,7 +480,6 @@ graph TB
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
-            onClick={(e) => e.stopPropagation()}
           >
             📄 View Source
           </a>
@@ -509,7 +508,6 @@ graph TB
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
-            onClick={(e) => e.stopPropagation()}
           >
             📄 View Source
           </a>
@@ -536,7 +534,6 @@ graph TB
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
-            onClick={(e) => e.stopPropagation()}
           >
             📄 View Source
           </a>
@@ -569,7 +566,6 @@ graph TB
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
-            onClick={(e) => e.stopPropagation()}
           >
             📄 View Source
           </a>
@@ -599,7 +595,6 @@ graph TB
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
-            onClick={(e) => e.stopPropagation()}
           >
             📄 View Source
           </a>
