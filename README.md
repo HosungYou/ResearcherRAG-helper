@@ -25,7 +25,9 @@ This is a **demonstration and education platform**, not a production RAG system.
 
 ### Visit the Live Site
 
-👉 **[researcherrag-helper.vercel.app](https://researcherrag-helper.vercel.app)** (Coming soon!)
+👉 **[researcher-rag-helper.vercel.app](https://researcher-rag-helper.vercel.app)**
+
+🎓 Interactive documentation with copy-paste code examples, visual workflows, and AI chatbot support!
 
 ### Run Locally
 
@@ -214,13 +216,49 @@ Or push to GitHub and enable Vercel auto-deployment.
 
 ## 📖 Documentation Chapters
 
-1. **[Introduction](./docs/chapters/01-introduction.mdx)**: What is ResearcherRAG? Why use it?
-2. **[5-Stage Workflow](./docs/chapters/02-workflow.mdx)**: Step-by-step guide
-3. **[PRISMA Configuration](./docs/chapters/03-prisma.mdx)**: Screening setup
-4. **[RAG Design](./docs/chapters/04-rag-design.mdx)**: Vector DB, embeddings, prompts
-5. **[Case Studies](./docs/chapters/05-case-studies.mdx)**: Real-world examples
-6. **[Troubleshooting](./docs/chapters/06-troubleshooting.mdx)**: Common issues
-7. **[Advanced Topics](./docs/chapters/07-advanced.mdx)**: Meta-analysis, citations
+| Chapter | Topic | Web | Source |
+|---------|-------|-----|--------|
+| 1 | Introduction to ResearcherRAG | [View](https://researcher-rag-helper.vercel.app/guide/introduction) | [MDX](./docs/chapters/01-introduction.mdx) |
+| 2 | 5-Stage Workflow Deep Dive | [View](https://researcher-rag-helper.vercel.app/guide/workflow) | [MDX](./docs/chapters/02-workflow.mdx) |
+| 3 | PRISMA Configuration Guide | [View](https://researcher-rag-helper.vercel.app/guide/prisma) | [MDX](./docs/chapters/03-prisma.mdx) |
+| 4 | RAG System Design Patterns | [View](https://researcher-rag-helper.vercel.app/guide/rag-design) | [MDX](./docs/chapters/04-rag-design.mdx) |
+| 5 | Case Studies & Examples | [View](https://researcher-rag-helper.vercel.app/guide/case-studies) | [MDX](./docs/chapters/05-case-studies.mdx) |
+| 6 | Troubleshooting & FAQ | [View](https://researcher-rag-helper.vercel.app/guide/troubleshooting) | [MDX](./docs/chapters/06-troubleshooting.mdx) |
+| 7 | Advanced Topics | [View](https://researcher-rag-helper.vercel.app/guide/advanced) | [MDX](./docs/chapters/07-advanced.mdx) |
+
+**New Features** (Phase 2):
+- ✅ **66 Code Blocks** with copy-to-clipboard buttons
+- ✅ **FileTree Components** for project structure visualization
+- ✅ **Validation Commands** with expected results for each stage
+- ✅ **GitHub Integration** linking code examples to source files
+
+---
+
+## 🔗 GitHub-Website Integration
+
+This platform features seamless integration between the GitHub repository and live website:
+
+### From Website → GitHub
+Every code example and script in the documentation includes a **"📄 View Source"** link that takes you directly to the corresponding file in the GitHub repository. For example:
+
+- **PRISMA Scripts**: Each of the 5 automation scripts (`01_fetch_papers.py` through `05_full_text_review.py`) links to its source code
+- **Stage Prompts**: All 5 stage prompts link to the original markdown files in `docs/prompts/`
+- **Configuration Examples**: Template files link to the `/templates` directory
+
+### From GitHub → Website
+The repository README provides:
+- Direct links to interactive documentation chapters on the live site
+- Table format showing both web view and source MDX for each chapter
+- Quick access to copy-paste ready code examples
+
+### Bidirectional Learning Flow
+1. **Read the guide** on the website with visual diagrams and explanations
+2. **Copy code** using the one-click copy button
+3. **View source** on GitHub to see full implementation details
+4. **Browse examples** in the `/examples` directory
+5. **Return to website** for troubleshooting tips
+
+This integration ensures you can easily move between documentation and implementation!
 
 ---
 
