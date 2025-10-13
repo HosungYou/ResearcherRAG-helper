@@ -101,18 +101,23 @@ export default function GettingStartedPage() {
 
       <p>Open your terminal and run:</p>
 
-      <pre><code>{`# Clone the repository
+      <CodeBlock
+        language="bash"
+        code={`# Clone the repository
 git clone https://github.com/HosungYou/ResearcherRAG.git
 
 # Navigate into the directory
 cd ResearcherRAG
 
 # Verify the structure
-ls -la`}</code></pre>
+ls -la`}
+      />
 
       <p>You should see:</p>
 
-      <pre><code>{`ResearcherRAG/
+      <CodeBlock
+        language="bash"
+        code={`ResearcherRAG/
 ├── README.md              # Project overview
 ├── QUICK_START.md         # Fast setup guide
 ├── CLAUDE.md              # Instructions for Claude Code
@@ -123,7 +128,8 @@ ls -la`}</code></pre>
 │   ├── 04_rag_design.md
 │   └── 05_execution_plan.md
 ├── templates/             # Output templates
-└── workshop/              # Example workflows`}</code></pre>
+└── workshop/              # Example workflows`}
+      />
 
       <h3 id="step4-environment">Step 4: Set Up Python Environment</h3>
 
@@ -143,12 +149,15 @@ venv\\Scripts\\activate
 
       <p>Install required packages:</p>
 
-      <pre><code>{`# Upgrade pip first
+      <CodeBlock
+        language="bash"
+        code={`# Upgrade pip first
 pip install --upgrade pip
 
 # Install dependencies (will be created during workflow)
 # For now, install basic tools:
-pip install anthropic langchain chromadb python-dotenv`}</code></pre>
+pip install anthropic langchain chromadb python-dotenv`}
+      />
 
       <div className="callout callout-success">
         <p className="font-semibold mb-2">✅ Pro Tip</p>
@@ -161,22 +170,29 @@ pip install anthropic langchain chromadb python-dotenv`}</code></pre>
 
       <p>Create a <code>.env</code> file in the project root:</p>
 
-      <pre><code>{`# Create .env file
+      <CodeBlock
+        language="bash"
+        code={`# Create .env file
 touch .env
 
 # Open in VS Code
-code .env`}</code></pre>
+code .env`}
+      />
 
       <p>Add your API key:</p>
 
-      <pre><code>{`# .env file contents
+      <CodeBlock
+        filename=".env"
+        language="bash"
+        code={`# .env file contents
 ANTHROPIC_API_KEY=sk-ant-your-key-here
 
 # Optional: Specify model (defaults to claude-3-5-sonnet-20241022)
 ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
 
 # Optional: Max tokens per request
-ANTHROPIC_MAX_TOKENS=4096`}</code></pre>
+ANTHROPIC_MAX_TOKENS=4096`}
+      />
 
       <div className="callout callout-warning">
         <p className="font-semibold mb-2">🔒 Security Warning</p>
@@ -200,7 +216,9 @@ ANTHROPIC_MAX_TOKENS=4096`}</code></pre>
 
       <p>Open <code>prompts/01_research_domain_setup.md</code> and copy the template. Here's a quick example:</p>
 
-      <pre><code>{`I want to build a RAG system for my research project.
+      <CodeBlock
+        language="markdown"
+        code={`I want to build a RAG system for my research project.
 
 **My Research Topic**: Effectiveness of spaced repetition algorithms
 in vocabulary acquisition for language learners.
@@ -229,7 +247,8 @@ in vocabulary acquisition for language learners.
 - Programming experience: Basic Python
 - RAG/AI experience: First time
 
-Please help me design an effective literature search strategy.`}</code></pre>
+Please help me design an effective literature search strategy.`}
+      />
 
       <p>Paste this into Claude Code chat and press Enter. Claude will:</p>
 
@@ -274,8 +293,10 @@ Stage 5: Execution & Validation (3-4 hours automated)
 
       <p>Create a test script:</p>
 
-      <pre><code>{`# test_api.py
-import os
+      <CodeBlock
+        filename="test_api.py"
+        language="python"
+        code={`import os
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
@@ -290,15 +311,19 @@ message = client.messages.create(
 )
 
 print(message.content[0].text)
-print("✓ API connection successful!")`}</code></pre>
+print("✓ API connection successful!")`}
+      />
 
       <p>Run it:</p>
 
-      <pre><code>{`python test_api.py
+      <CodeBlock
+        language="bash"
+        code={`python test_api.py
 
 # Expected output:
 # "Hello! I'm Claude, an AI assistant..."
-# ✓ API connection successful!`}</code></pre>
+# ✓ API connection successful!`}
+      />
 
       <div className="callout callout-success">
         <p className="font-semibold mb-2">✅ Setup Complete!</p>
@@ -315,11 +340,15 @@ print("✓ API connection successful!")`}</code></pre>
           <div className="mt-3 text-sm text-muted">
             <p><strong>Error</strong>: <code>ModuleNotFoundError</code> or incompatible package versions</p>
             <p><strong>Solution</strong>: Check your Python version with <code>python --version</code>. If it's 3.12+, downgrade to 3.11:</p>
-            <pre className="text-xs mt-2"><code>{`# Using pyenv:
+            <CodeBlock
+              language="bash"
+              code={`# Using pyenv:
 pyenv install 3.11.6
 pyenv local 3.11.6
 
-# Or download from python.org and reinstall`}</code></pre>
+# Or download from python.org and reinstall`}
+              className="mt-2"
+            />
           </div>
         </details>
 
@@ -357,9 +386,9 @@ pyenv local 3.11.6
         Now that your environment is set up, you're ready to dive deeper into the concepts that power ResearcherRAG. Continue to <Link href="/guide/03-core-concepts">Chapter 3: Core Concepts</Link> to learn about PRISMA, RAG architecture, and vector databases.
       </p>
 
-      <div className="bg-gray-900 text-gray-100 rounded-lg p-6 my-8">
-        <p className="text-sm text-gray-400 mb-2">Quick reference commands:</p>
-        <pre className="mb-0 text-xs"><code>{`# Activate environment
+      <CodeBlock
+        language="bash"
+        code={`# Activate environment
 source venv/bin/activate
 
 # Start VS Code
@@ -369,8 +398,9 @@ code .
 python test_api.py
 
 # View stage prompts
-cat prompts/01_research_domain_setup.md`}</code></pre>
-      </div>
+cat prompts/01_research_domain_setup.md`}
+        className="my-8"
+      />
 
       <p className="text-sm text-muted mt-8">
         <strong>Resources</strong>: <a href="https://code.visualstudio.com/docs" target="_blank" rel="noopener noreferrer">VS Code Docs</a> · <a href="https://docs.anthropic.com/claude/docs" target="_blank" rel="noopener noreferrer">Anthropic API Docs</a> · <a href="https://github.com/HosungYou/ResearcherRAG" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
