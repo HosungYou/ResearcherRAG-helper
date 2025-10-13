@@ -47,54 +47,182 @@ export default function GettingStartedPage() {
 
       <h2 id="installation">Installation Steps</h2>
 
-      <h3 id="step1-vscode">Step 1: Install VS Code and Claude Code Extension</h3>
+      <h3 id="step1-ai-assistant">Step 1: Choose Your AI Coding Assistant</h3>
 
-      <ol>
-        <li>Download and install <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code</a></li>
-        <li>Open VS Code and navigate to Extensions (<code>Cmd/Ctrl + Shift + X</code>)</li>
-        <li>Search for "Claude Code" and click <strong>Install</strong></li>
-        <li>Sign in with your Anthropic account when prompted</li>
-      </ol>
+      <p>
+        ResearcherRAG works with multiple AI coding assistants. Choose one based on your preference—<strong>both work perfectly!</strong>
+      </p>
 
-      <div className="callout callout-info">
-        <p className="font-semibold mb-2">💡 First Time with Claude Code?</p>
-        <p className="mb-0">
-          Claude Code is an AI pair programmer that lives in VS Code. It can read your files, suggest code, and guide you through complex workflows. Learn more at <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">claude.ai/claude-code</a>.
-        </p>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-8">
+        <div className="border-2 border-blue-500 dark:border-blue-400 rounded-lg p-6 bg-blue-50 dark:bg-blue-950/20">
+          <div className="flex items-center gap-2 mb-3">
+            <h4 className="text-lg font-semibold m-0">Claude Code</h4>
+            <span className="text-xs bg-blue-600 text-white px-2 py-1 rounded">Recommended</span>
+          </div>
+          <p className="text-sm mb-4">
+            Anthropic's official VS Code extension with 200K token context window—optimized for ResearcherRAG's long prompts and academic workflows.
+          </p>
+          <ul className="text-sm space-y-2 mb-4">
+            <li>✅ Best for 5-stage PRISMA workflow</li>
+            <li>✅ Handles large literature reviews</li>
+            <li>✅ Academic research focus</li>
+            <li>✅ Seamless with Stage prompts</li>
+          </ul>
+          <div className="space-y-2">
+            <a
+              href="https://marketplace.visualstudio.com/items?itemName=Anthropic.claude-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded no-underline"
+            >
+              Install Claude Code →
+            </a>
+            <p className="text-xs text-center text-muted-foreground">
+              Requires: <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">Anthropic API key</a>
+            </p>
+          </div>
+        </div>
+
+        <div className="border-2 border-gray-300 dark:border-gray-700 rounded-lg p-6">
+          <div className="flex items-center gap-2 mb-3">
+            <h4 className="text-lg font-semibold m-0">OpenAI Codex</h4>
+            <span className="text-xs bg-gray-600 text-white px-2 py-1 rounded">GPT-5-Codex</span>
+          </div>
+          <p className="text-sm mb-4">
+            OpenAI's agentic coding assistant with powerful reasoning. Works in VS Code, Cursor, Windsurf, and VS Code Insiders.
+          </p>
+          <ul className="text-sm space-y-2 mb-4">
+            <li>✅ GPT-5-Codex model available</li>
+            <li>✅ Adjustable reasoning effort</li>
+            <li>✅ Multi-IDE support (Cursor, Windsurf)</li>
+            <li>✅ Agent mode for automation</li>
+          </ul>
+          <div className="space-y-2">
+            <a
+              href="https://developers.openai.com/codex/ide"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded no-underline"
+            >
+              Install Codex Extension →
+            </a>
+            <p className="text-xs text-center text-muted-foreground">
+              Requires: <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">OpenAI API key</a> or ChatGPT account
+            </p>
+          </div>
+        </div>
       </div>
 
-      <h3 id="step2-api-key">Step 2: Obtain Anthropic API Key</h3>
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🔍 Detailed Installation: Claude Code
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <ol className="space-y-2 text-sm">
+            <li><strong>Download VS Code</strong>: Install from <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">code.visualstudio.com</a></li>
+            <li><strong>Open Extensions</strong>: Press <code>Cmd/Ctrl + Shift + X</code></li>
+            <li><strong>Search</strong>: Type "Claude Code" by Anthropic</li>
+            <li><strong>Install</strong>: Click Install button</li>
+            <li><strong>Restart VS Code</strong>: Reload window if prompted</li>
+            <li><strong>Sign in</strong>: Click Claude icon in sidebar → Sign in with Anthropic account</li>
+            <li><strong>Verify</strong>: Claude icon appears in left sidebar, ready to chat</li>
+          </ol>
+          <p className="text-xs text-muted-foreground mt-3">
+            💡 Learn more: <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">claude.ai/claude-code</a>
+          </p>
+        </div>
+      </details>
 
-      <ol>
-        <li>Visit <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">console.anthropic.com</a> and sign up/in</li>
-        <li>Navigate to <strong>API Keys</strong> in the dashboard</li>
-        <li>Click <strong>Create Key</strong> and give it a name (e.g., "ResearcherRAG")</li>
-        <li>Copy the key (starts with <code>sk-ant-...</code>) immediately—it won't be shown again</li>
-        <li>Store it securely (we'll use it in Step 4)</li>
-      </ol>
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          🔍 Detailed Installation: OpenAI Codex (GPT-5-Codex)
+        </summary>
+        <div className="p-4 pt-0 border-t space-y-3">
+          <ol className="space-y-2 text-sm">
+            <li><strong>Choose Your IDE</strong>:
+              <ul className="ml-4 mt-1 space-y-1 text-xs">
+                <li><a href="https://marketplace.visualstudio.com/items?itemName=openai.codex" target="_blank" rel="noopener noreferrer">VS Code</a> (marketplace)</li>
+                <li><a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener noreferrer">Cursor</a> (download from docs)</li>
+                <li><a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener noreferrer">Windsurf</a> (download from docs)</li>
+                <li><a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener noreferrer">VS Code Insiders</a> (download from docs)</li>
+              </ul>
+            </li>
+            <li><strong>Install Extension</strong>: Search "Codex" in your IDE's extension marketplace</li>
+            <li><strong>Restart IDE</strong>: Reload to see Codex in sidebar</li>
+            <li><strong>Sign In</strong>: Use ChatGPT account (recommended) or API key</li>
+            <li><strong>Switch Model</strong>: Click model switcher → Select <strong>"GPT-5-Codex"</strong></li>
+            <li><strong>Set Approval Mode</strong>: Choose <strong>"Agent"</strong> for automated workflows</li>
+            <li><strong>Adjust Reasoning</strong>: Set to "Medium" or "High" for complex PRISMA tasks</li>
+          </ol>
+          <div className="callout callout-info mt-3">
+            <p className="text-xs mb-1"><strong>⚠️ Windows Users</strong>: Use WSL (Windows Subsystem for Linux) for best experience. See <a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener noreferrer">Windows setup guide</a>.</p>
+          </div>
+          <p className="text-xs text-muted-foreground mt-3">
+            💡 Learn more: <a href="https://developers.openai.com/codex/ide" target="_blank" rel="noopener noreferrer">developers.openai.com/codex/ide</a>
+          </p>
+        </div>
+      </details>
 
-      <div className="bg-gray-50 border border-border rounded-lg p-6 my-6">
-        <p className="text-sm font-semibold mb-3 text-muted-foreground">API Pricing Reference (as of 2024)</p>
-        <table className="w-full text-sm">
-          <thead className="border-b border-border">
-            <tr>
-              <th className="text-left py-2">Model</th>
-              <th className="text-left py-2">Input</th>
-              <th className="text-left py-2">Output</th>
-            </tr>
-          </thead>
-          <tbody className="text-muted">
-            <tr className="border-b border-border">
-              <td className="py-2">Claude 3.5 Sonnet</td>
-              <td>$3 / 1M tokens</td>
-              <td>$15 / 1M tokens</td>
-            </tr>
-            <tr>
-              <td className="py-2 text-muted-foreground">Typical literature review</td>
-              <td colSpan={2} className="py-2 font-semibold text-foreground">$5-15 total</td>
-            </tr>
-          </tbody>
-        </table>
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">🤔 Which Should I Choose?</p>
+        <div className="text-sm space-y-2 mb-0">
+          <p><strong>Choose Claude Code if you:</strong></p>
+          <ul className="ml-4 space-y-1">
+            <li>Want the easiest setup for ResearcherRAG</li>
+            <li>Prefer Anthropic's focus on reasoning and research</li>
+            <li>Need 200K token context for large systematic reviews</li>
+            <li>Value tight integration with 5-stage prompts</li>
+          </ul>
+          <p className="mt-3"><strong>Choose OpenAI Codex if you:</strong></p>
+          <ul className="ml-4 space-y-1">
+            <li>Already use Cursor, Windsurf, or another VS Code fork</li>
+            <li>Want adjustable reasoning effort (low/medium/high)</li>
+            <li>Prefer OpenAI's GPT-5-Codex model</li>
+            <li>Need multi-IDE flexibility</li>
+          </ul>
+          <p className="mt-3 font-semibold text-center">✅ Both are fully compatible with ResearcherRAG!</p>
+          <p className="text-xs text-muted-foreground mt-2">
+            <em>Note</em>: ResearcherRAG's prompts are LLM-agnostic, but they're optimized for Claude's long context window. Codex users may need to split Stage 3 PRISMA prompts into smaller chunks.
+          </p>
+        </div>
+      </div>
+
+      <h3 id="step2-api-key">Step 2: Obtain Your API Key</h3>
+
+      <p>Choose based on which assistant you installed in Step 1:</p>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-6">
+        <div className="border rounded-lg p-4">
+          <h4 className="text-base font-semibold mb-2">For Claude Code Users</h4>
+          <ol className="text-sm space-y-1">
+            <li>Visit <a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">console.anthropic.com</a></li>
+            <li>Navigate to <strong>API Keys</strong></li>
+            <li>Click <strong>Create Key</strong> → Name it "ResearcherRAG"</li>
+            <li>Copy key (starts with <code>sk-ant-...</code>)</li>
+            <li>Store securely (you'll use it in Step 5)</li>
+          </ol>
+          <div className="bg-gray-50 dark:bg-gray-900 border rounded p-2 mt-3 text-xs">
+            <p className="font-semibold mb-1">Pricing (Jan 2025):</p>
+            <p>Claude 3.5 Sonnet: $3/1M input, $15/1M output<br />
+            <strong>Typical cost</strong>: $5-15 per literature review</p>
+          </div>
+        </div>
+
+        <div className="border rounded-lg p-4">
+          <h4 className="text-base font-semibold mb-2">For OpenAI Codex Users</h4>
+          <ol className="text-sm space-y-1">
+            <li>Visit <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer">platform.openai.com/api-keys</a></li>
+            <li>Click <strong>+ Create new secret key</strong></li>
+            <li>Name it "ResearcherRAG" → <strong>Create</strong></li>
+            <li>Copy key (starts with <code>sk-proj-...</code>)</li>
+            <li><strong>Alternative</strong>: Sign in with ChatGPT account (no API key needed)</li>
+          </ol>
+          <div className="bg-gray-50 dark:bg-gray-900 border rounded p-2 mt-3 text-xs">
+            <p className="font-semibold mb-1">Pricing (Jan 2025):</p>
+            <p>GPT-5: $4/1M input, $16/1M output<br />
+            GPT-5-Codex: (Check <a href="https://openai.com/api/pricing/" target="_blank" rel="noopener noreferrer">pricing page</a>)</p>
+          </div>
+        </div>
       </div>
 
       <h3 id="step3-clone">Step 3: Clone ResearcherRAG Repository</h3>
@@ -171,49 +299,118 @@ pip install anthropic langchain chromadb python-dotenv`}
 
       <h3 id="step5-env-file">Step 5: Configure Environment Variables</h3>
 
-      <p>Create a <code>.env</code> file in the project root:</p>
+      <p>Create a <code>.env</code> file in the project root to store your API key:</p>
 
       <CodeBlock
         language="bash"
         code={`# Create .env file
 touch .env
 
-# Open in VS Code
+# Open in your editor
 code .env`}
       />
 
-      <p>Add your API key:</p>
+      <p>Add your API key based on which AI assistant you're using:</p>
 
-      <CodeBlock
-        filename=".env"
-        language="bash"
-        code={`# .env file contents
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-6">
+        <div className="border rounded-lg p-4">
+          <h4 className="text-base font-semibold mb-2">For Claude Code</h4>
+          <CodeBlock
+            filename=".env"
+            language="bash"
+            code={`# Anthropic API Configuration
 ANTHROPIC_API_KEY=sk-ant-your-key-here
 
-# Optional: Specify model (defaults to claude-3-5-sonnet-20241022)
+# Optional: Model selection
 ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
 
-# Optional: Max tokens per request
+# Optional: Max tokens
 ANTHROPIC_MAX_TOKENS=4096`}
-      />
+          />
+        </div>
+
+        <div className="border rounded-lg p-4">
+          <h4 className="text-base font-semibold mb-2">For OpenAI Codex</h4>
+          <CodeBlock
+            filename=".env"
+            language="bash"
+            code={`# OpenAI API Configuration
+OPENAI_API_KEY=sk-proj-your-key-here
+
+# Optional: Model selection
+OPENAI_MODEL=gpt-5-codex
+
+# Optional: Max tokens
+OPENAI_MAX_TOKENS=4096`}
+          />
+        </div>
+      </div>
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">💡 Using Both?</p>
+        <p className="text-sm mb-0">
+          You can include both API keys in your <code>.env</code> file. ResearcherRAG will use the one that matches your active AI assistant. This is useful for testing or switching between models.
+        </p>
+      </div>
 
       <div className="callout callout-warning">
         <p className="font-semibold mb-2">🔒 Security Warning</p>
         <p className="mb-0">
-          Never commit your <code>.env</code> file to Git! It's already in <code>.gitignore</code>, but double-check before pushing to GitHub.
+          Never commit your <code>.env</code> file to Git! It's already in <code>.gitignore</code>, but double-check before pushing to GitHub. Treat API keys like passwords—never share them publicly.
         </p>
       </div>
 
       <h2 id="first-workflow">Your First Workflow</h2>
 
-      <h3 id="open-claude">Opening the Project in Claude Code</h3>
+      <h3 id="open-project">Opening the Project in Your IDE</h3>
 
-      <ol>
-        <li>In VS Code, go to <strong>File → Open Folder</strong></li>
-        <li>Select the <code>ResearcherRAG</code> directory</li>
-        <li>Trust the workspace when prompted</li>
-        <li>Open the Claude Code panel (sidebar icon or <code>Cmd/Ctrl + Shift + P</code> → "Claude Code")</li>
-      </ol>
+      <p>Choose instructions based on your AI assistant:</p>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          For Claude Code Users
+        </summary>
+        <div className="p-4 pt-0 border-t">
+          <ol className="text-sm space-y-2">
+            <li>Open VS Code: <strong>File → Open Folder</strong></li>
+            <li>Select the <code>ResearcherRAG</code> directory</li>
+            <li>Click <strong>Trust Folder</strong> when prompted</li>
+            <li>Open Claude Code panel:
+              <ul className="ml-4 mt-1">
+                <li>Click Claude icon in sidebar, OR</li>
+                <li>Press <code>Cmd/Ctrl + Shift + P</code> → Type "Claude Code"</li>
+              </ul>
+            </li>
+            <li>Verify Claude is ready: You should see the chat input at the bottom</li>
+          </ol>
+        </div>
+      </details>
+
+      <details className="border rounded-lg my-4">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
+          For OpenAI Codex Users
+        </summary>
+        <div className="p-4 pt-0 border-t">
+          <ol className="text-sm space-y-2">
+            <li>Open your IDE (VS Code, Cursor, or Windsurf)</li>
+            <li><strong>File → Open Folder</strong> → Select <code>ResearcherRAG</code></li>
+            <li>Trust the workspace when prompted</li>
+            <li>Open Codex panel:
+              <ul className="ml-4 mt-1">
+                <li>Click Codex icon in sidebar (may be in "..." collapsed menu)</li>
+                <li>Pin it to right sidebar for easy access</li>
+              </ul>
+            </li>
+            <li><strong>Verify settings</strong>:
+              <ul className="ml-4 mt-1">
+                <li>Model: <strong>GPT-5-Codex</strong></li>
+                <li>Approval mode: <strong>Agent</strong></li>
+                <li>Reasoning: <strong>Medium</strong> or <strong>High</strong></li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </details>
 
       <h3 id="stage1-conversation">Starting Stage 1: Research Domain Setup</h3>
 
