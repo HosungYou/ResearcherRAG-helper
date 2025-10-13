@@ -135,7 +135,9 @@ ls -la`}
 
       <p>Create a virtual environment to isolate dependencies:</p>
 
-      <pre><code>{`# Create virtual environment
+      <CodeBlock
+        language="text"
+        code={`# Create virtual environment
 python3 -m venv venv
 
 # Activate it
@@ -145,7 +147,8 @@ source venv/bin/activate
 # On Windows:
 venv\\Scripts\\activate
 
-# You should see (venv) in your terminal prompt`}</code></pre>
+# You should see (venv) in your terminal prompt`}
+      />
 
       <p>Install required packages:</p>
 
@@ -265,7 +268,9 @@ Please help me design an effective literature search strategy.`}
       <p>The workflow follows this pattern:</p>
 
       <div className="bg-gray-50 border border-border rounded-lg p-6 my-8">
-        <pre className="text-xs bg-transparent text-foreground font-mono mb-0"><code>{`Stage 1: Research Domain Setup (15 min)
+        <CodeBlock
+        language="yaml"
+        code={`Stage 1: Research Domain Setup (15 min)
     ↓
 Stage 2: Query Strategy Design (10 min)
     ↓
@@ -275,7 +280,8 @@ Stage 4: RAG System Design (15 min)
     ↓
 Stage 5: Execution & Validation (3-4 hours automated)
     ↓
-✓ Your RAG system is ready!`}</code></pre>
+✓ Your RAG system is ready!`}
+      />
       </div>
 
       <p>Each stage builds on the previous one. Claude Code will:</p>

@@ -1,6 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
+import { CodeBlock } from '@/components/CodeBlock'
 
 export default function CoreConceptsPage() {
   return (
@@ -513,13 +514,16 @@ graph TD
           <summary className="font-semibold cursor-pointer">Fixed-Size Chunking (Simple)</summary>
           <div className="mt-3 text-sm space-y-2">
             <p className="text-muted">Split every N tokens, with optional overlap.</p>
-            <pre className="text-xs bg-gray-900 text-gray-100 p-4 rounded"><code>{`chunk_size = 500  # tokens
+            <CodeBlock
+        language="text"
+        code={`chunk_size = 500  # tokens
 overlap = 50      # overlap between chunks
 
 # Example output:
 # Chunk 1: tokens 0-500
 # Chunk 2: tokens 450-950
-# Chunk 3: tokens 900-1400`}</code></pre>
+# Chunk 3: tokens 900-1400`}
+      />
             <p className="text-muted"><strong>Best for</strong>: Quick prototyping, homogeneous texts</p>
           </div>
         </details>
@@ -528,7 +532,9 @@ overlap = 50      # overlap between chunks
           <summary className="font-semibold cursor-pointer">Semantic Chunking (Recommended)</summary>
           <div className="mt-3 text-sm space-y-2">
             <p className="text-muted">Split at paragraph boundaries, respecting sentence integrity.</p>
-            <pre className="text-xs bg-gray-900 text-gray-100 p-4 rounded"><code>{`# Pseudo-code
+            <CodeBlock
+        language="yaml"
+        code={`# Pseudo-code
 paragraphs = split_by_double_newline(text)
 chunks = []
 current_chunk = ""
@@ -538,7 +544,8 @@ for para in paragraphs:
         current_chunk += para
     else:
         chunks.append(current_chunk)
-        current_chunk = para`}</code></pre>
+        current_chunk = para`}
+      />
             <p className="text-muted"><strong>Best for</strong>: Most academic papers</p>
           </div>
         </details>

@@ -1,6 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
+import { CodeBlock } from '@/components/CodeBlock'
 
 export default function IntroductionPage() {
   return (
@@ -232,7 +233,9 @@ graph LR
 
       <div className="bg-gray-900 text-gray-100 rounded-lg p-6 my-8">
         <p className="text-sm text-gray-400 mb-2">Quick start preview:</p>
-        <pre className="mb-0"><code>{`# Clone the repository
+        <CodeBlock
+        language="bash"
+        code={`# Clone the repository
 git clone https://github.com/HosungYou/ResearcherRAG.git
 cd ResearcherRAG
 
@@ -240,7 +243,8 @@ cd ResearcherRAG
 pip install -r requirements.txt
 
 # Open in VS Code with Claude Code
-code .`}</code></pre>
+code .`}
+      />
       </div>
 
       <p className="text-sm text-muted mt-8">

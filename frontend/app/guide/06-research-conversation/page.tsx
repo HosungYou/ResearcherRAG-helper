@@ -1,6 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
+import { CodeBlock } from '@/components/CodeBlock'
 
 export default function ResearchConversationPage() {
   return (
@@ -107,18 +108,24 @@ export default function ResearchConversationPage() {
           <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>python interfaces/claude_code_interface.py</code></pre>
 
           <p className="text-sm"><strong>Step 3: You'll see this prompt:</strong></p>
-          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>{`📂 Loading Vector DB from ./chroma_db...
+          <CodeBlock
+        language="sql"
+        code={`📂 Loading Vector DB from ./chroma_db...
 ✅ Loaded 137 papers from collection 'papers'
 ✅ Connected to Claude API
 
 Type your questions (or 'exit' to quit)
 
-You: `}</code></pre>
+You: `}
+      />
 
           <p className="text-sm"><strong>Step 4: Ask questions!</strong></p>
-          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>{`You: What are the main adoption barriers?
+          <CodeBlock
+        language="sql"
+        code={`You: What are the main adoption barriers?
 You: Show me papers from 2023
-You: exit  # when done`}</code></pre>
+You: exit  # when done`}
+      />
 
           <p className="text-sm mt-3"><strong>✓ How to verify it's using YOUR papers:</strong></p>
           <ul className="text-sm space-y-1 ml-4">
@@ -162,11 +169,14 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Start broad to get an overview of your corpus:</p>
-            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"What are the main research themes in my corpus?"
+            <CodeBlock
+        language="text"
+        code={`"What are the main research themes in my corpus?"
 "Which methodologies are most commonly used?"
 "Who are the key authors and their contributions?"
 "What time periods are covered?"
-"Show me the most cited papers"`}</code></pre>
+"Show me the most cited papers"`}
+      />
             <p className="text-sm mt-3"><strong>When to use:</strong> Beginning of analysis, understanding domain coverage</p>
           </div>
         </details>
@@ -177,11 +187,14 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Ask focused questions about specific topics:</p>
-            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"What factors influence technology adoption in healthcare?"
+            <CodeBlock
+        language="text"
+        code={`"What factors influence technology adoption in healthcare?"
 "What are the reported adoption rates in developing countries?"
 "Which theoretical frameworks are most cited?"
 "What limitations are mentioned in recent studies?"
-"How is 'organizational readiness' defined?"}`}</code></pre>
+"How is 'organizational readiness' defined?"}`}
+      />
             <p className="text-sm mt-3"><strong>When to use:</strong> Targeted investigation, extracting specific data points</p>
           </div>
         </details>
@@ -192,11 +205,14 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Compare across different dimensions:</p>
-            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"How do adoption rates differ between developed and developing countries?"
+            <CodeBlock
+        language="sql"
+        code={`"How do adoption rates differ between developed and developing countries?"
 "Compare quantitative vs qualitative studies on this topic"
 "What changed in the literature before and after 2020?"
 "How do TAM and UTAUT frameworks compare?"
-"Compare findings from healthcare vs education sectors"`}</code></pre>
+"Compare findings from healthcare vs education sectors"`}
+      />
             <p className="text-sm mt-3"><strong>When to use:</strong> Identifying trends, contrasting approaches, temporal analysis</p>
           </div>
         </details>
@@ -207,11 +223,14 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p className="text-sm">Discover under-researched areas:</p>
-            <pre className="bg-black text-white p-3 rounded text-sm"><code>{`"What populations or contexts are under-represented?"
+            <CodeBlock
+        language="text"
+        code={`"What populations or contexts are under-represented?"
 "Which methods have NOT been used to study this?"
 "What gaps or limitations do authors identify?"
 "Are there contradictory findings that need resolution?"
-"What future research directions are suggested?"`}</code></pre>
+"What future research directions are suggested?"`}
+      />
             <p className="text-sm mt-3"><strong>When to use:</strong> Writing discussion/future work sections, identifying research opportunities</p>
           </div>
         </details>
@@ -383,7 +402,9 @@ sequenceDiagram
 
       <h3 id="documentation-template">Session Documentation Template</h3>
 
-      <pre className="bg-black text-white p-4 rounded text-sm my-4"><code>{`# Research Session Log
+      <CodeBlock
+        language="yaml"
+        code={`# Research Session Log
 
 ## Session 1: Initial Exploration
 **Date:** 2024-01-15
@@ -413,39 +434,52 @@ sequenceDiagram
 ### Papers to Read in Full:
 - [Smith, 2023] - Comprehensive systematic review
 - [Johnson, 2022] - Novel framework for barriers
-`}</code></pre>
+`}
+      />
 
       <h3 id="export-tools">Export & Organization Tools</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📊 Export Conversation Logs</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Save conversation history
+          <CodeBlock
+        language="bash"
+        code={`# Save conversation history
 python interfaces/export_logs.py \\
   --session session1 \\
-  --output research_notes.md`}</code></pre>
+  --output research_notes.md`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📑 Generate Citation List</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Extract all cited papers
+          <CodeBlock
+        language="bash"
+        code={`# Extract all cited papers
 python interfaces/export_citations.py \\
   --format bibtex \\
-  --output references.bib`}</code></pre>
+  --output references.bib`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📈 Create Summary Statistics</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Generate corpus statistics
+          <CodeBlock
+        language="bash"
+        code={`# Generate corpus statistics
 python interfaces/generate_stats.py \\
-  --output corpus_stats.html`}</code></pre>
+  --output corpus_stats.html`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">🔍 Find Specific Citations</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`# Query specific papers
+          <CodeBlock
+        language="bash"
+        code={`# Query specific papers
 python interfaces/claude_code_interface.py \\
-  --query "Show papers by Smith"`}</code></pre>
+  --query "Show papers by Smith"`}
+      />
         </div>
       </div>
 
