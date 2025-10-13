@@ -2,26 +2,23 @@
 
 import Link from 'next/link'
 import { ArrowRight, Github, ExternalLink } from 'lucide-react'
+import { motion } from 'framer-motion'
+import TypewriterText from '@/components/TypewriterText'
+import AnimatedCounter from '@/components/AnimatedCounter'
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header - Minimal */}
+      {/* Header - Minimal (No animation, always static) */}
       <header className="border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="text-lg font-medium tracking-tight">RAG.lab</div>
           </Link>
           <nav className="hidden md:flex gap-8 items-center text-sm">
-            <Link href="/guide" className="text-muted hover:text-foreground transition-colors">
-              Documentation
-            </Link>
-            <Link href="/chat" className="text-muted hover:text-foreground transition-colors">
-              Chatbot
-            </Link>
-            <Link href="/resources" className="text-muted hover:text-foreground transition-colors">
-              Resources
-            </Link>
+            <AnimatedLink href="/guide">Documentation</AnimatedLink>
+            <AnimatedLink href="/chat">Chatbot</AnimatedLink>
+            <AnimatedLink href="/resources">Resources</AnimatedLink>
             <a
               href="https://github.com/HosungYou/ResearcherRAG"
               target="_blank"
@@ -34,131 +31,228 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero - Large Typography */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 pb-24">
+      {/* Hero - Large Typography with Animations */}
+      <section className="max-w-7xl mx-auto px-6 pt-32 pb-24 overflow-hidden">
         <div className="max-w-4xl">
-          <h1 className="text-[clamp(3rem,8vw,5.5rem)] font-bold tracking-tighter leading-[0.95] mb-8">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-[clamp(3rem,8vw,5.5rem)] font-bold tracking-tighter leading-[0.95] mb-8"
+          >
             Build AI-Powered
             <br />
-            Research Systems
-          </h1>
-          <p className="text-xl text-muted leading-relaxed mb-10 max-w-2xl">
+            <TypewriterText
+              words={['Research Systems', 'Literature Reviews', 'Meta-Analysis', 'PRISMA Reports']}
+              typingSpeed={80}
+              deletingSpeed={50}
+              delayBetweenWords={3000}
+            />
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="text-xl text-muted leading-relaxed mb-10 max-w-2xl"
+          >
             An open-source platform for creating RAG-based literature review tools.
             From academic papers to systematic research in hours, not weeks.
-          </p>
-          <div className="flex gap-4">
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex gap-4"
+          >
             <Link
               href="/guide"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md text-sm font-medium hover:bg-gray-800 transition-all hover:scale-105"
             >
               Get Started
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/chat"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-border-strong transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-foreground hover:scale-105 transition-all"
             >
               Try Demo
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Stats Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
-        <div className="grid grid-cols-3 gap-12">
-          <div>
-            <div className="text-4xl font-bold tracking-tight mb-2">3 hrs</div>
+      {/* Stats Grid with Number Counters */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="max-w-7xl mx-auto px-6 py-20 border-t border-border"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0 }}
+            viewport={{ once: true }}
+          >
+            <AnimatedCounter
+              end={3}
+              suffix=" hrs"
+              className="text-4xl font-bold tracking-tight mb-2"
+            />
             <div className="text-sm text-muted">Setup to deployment</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold tracking-tight mb-2">75%</div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <AnimatedCounter
+              end={75}
+              suffix="%"
+              className="text-4xl font-bold tracking-tight mb-2"
+            />
             <div className="text-sm text-muted">Time saved on review</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold tracking-tight mb-2">5 steps</div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <AnimatedCounter
+              end={5}
+              suffix=" steps"
+              className="text-4xl font-bold tracking-tight mb-2"
+            />
             <div className="text-sm text-muted">From zero to production</div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features - Grid Table */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="max-w-7xl mx-auto px-6 py-20 border-t border-border"
+      >
         <h2 className="text-3xl font-bold tracking-tight mb-12">Everything you need</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border border border-border rounded-lg overflow-hidden">
           <FeatureCell
             title="Interactive Documentation"
             description="Step-by-step guides with code examples and best practices for building RAG systems"
             href="/guide"
+            delay={0}
           />
           <FeatureCell
             title="AI-Powered Chatbot"
             description="Get instant answers about ResearcherRAG with Claude 3.5 Sonnet integration"
             href="/chat"
+            delay={0.1}
           />
           <FeatureCell
             title="Ready-to-Use Templates"
             description="Pre-configured workflows for PRISMA reviews, meta-analysis, and systematic research"
             href="/resources"
+            delay={0.2}
           />
           <FeatureCell
             title="Video Tutorials"
             description="Visual walkthroughs of the complete 5-stage research workflow"
             href="/resources#videos"
+            delay={0.3}
           />
         </div>
-      </section>
+      </motion.section>
 
       {/* Quick Start */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="max-w-7xl mx-auto px-6 py-20 border-t border-border"
+      >
         <h2 className="text-3xl font-bold tracking-tight mb-8">Quick Start</h2>
-        <div className="border border-border rounded-lg p-8 bg-gray-50">
+        <div className="border border-border rounded-lg p-8 bg-gray-50 dark:bg-gray-950">
           <ol className="space-y-4 mb-8 text-sm">
-            <li className="flex gap-3">
-              <span className="text-muted font-mono">01</span>
-              <span>Clone the repository and install dependencies</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-muted font-mono">02</span>
-              <span>Configure your API keys and environment</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-muted font-mono">03</span>
-              <span>Follow the 5-stage workflow in VS Code</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-muted font-mono">04</span>
-              <span>Deploy your custom RAG system</span>
-            </li>
+            {[
+              'Clone the repository and install dependencies',
+              'Configure your API keys and environment',
+              'Follow the 5-stage workflow in VS Code',
+              'Deploy your custom RAG system'
+            ].map((step, i) => (
+              <motion.li
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="flex gap-3"
+              >
+                <span className="text-muted font-mono">0{i + 1}</span>
+                <span>{step}</span>
+              </motion.li>
+            ))}
           </ol>
-          <div className="bg-foreground text-background p-6 rounded-md font-mono text-sm overflow-x-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="bg-foreground text-background p-6 rounded-md font-mono text-sm overflow-x-auto"
+          >
             <div className="text-gray-400"># Install ResearcherRAG</div>
             <div>git clone https://github.com/HosungYou/ResearcherRAG.git</div>
             <div>cd ResearcherRAG</div>
             <div>pip install -r requirements.txt</div>
             <div className="mt-4 text-gray-400"># Open in VS Code</div>
             <div>code .</div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Technology Stack */}
-      <section className="max-w-7xl mx-auto px-6 py-20 border-t border-border">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="max-w-7xl mx-auto px-6 py-20 border-t border-border"
+      >
         <h2 className="text-3xl font-bold tracking-tight mb-8">Built with modern tools</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-lg overflow-hidden">
-          <TechCell name="Claude 3.5" description="Sonnet API" />
-          <TechCell name="ChromaDB" description="Vector database" />
-          <TechCell name="LangChain" description="RAG framework" />
-          <TechCell name="Python" description="Backend stack" />
-          <TechCell name="Next.js" description="Frontend" />
-          <TechCell name="Tailwind CSS" description="Styling" />
-          <TechCell name="Vercel" description="Deployment" />
-          <TechCell name="TypeScript" description="Type safety" />
+          {[
+            { name: 'Claude 3.5', description: 'Sonnet API' },
+            { name: 'ChromaDB', description: 'Vector database' },
+            { name: 'LangChain', description: 'RAG framework' },
+            { name: 'Python', description: 'Backend stack' },
+            { name: 'Next.js', description: 'Frontend' },
+            { name: 'Tailwind CSS', description: 'Styling' },
+            { name: 'Vercel', description: 'Deployment' },
+            { name: 'TypeScript', description: 'Type safety' }
+          ].map((tech, i) => (
+            <TechCell key={i} name={tech.name} description={tech.description} delay={i * 0.05} />
+          ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA */}
-      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-border">
+      <motion.section
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-100px" }}
+        className="max-w-7xl mx-auto px-6 py-24 border-t border-border"
+      >
         <div className="max-w-2xl">
           <h2 className="text-4xl font-bold tracking-tight mb-4">
             Ready to transform your research workflow?
@@ -169,25 +263,25 @@ export default function HomePage() {
           <div className="flex gap-4">
             <Link
               href="/guide"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md text-sm font-medium hover:bg-gray-800 transition-colors"
+              className="group inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md text-sm font-medium hover:bg-gray-800 hover:scale-105 transition-all"
             >
               Start Building
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
               href="https://github.com/HosungYou/ResearcherRAG"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-border-strong transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-foreground hover:scale-105 transition-all"
             >
               View on GitHub
               <ExternalLink className="w-4 h-4" />
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* Footer */}
+      {/* Footer (Static, no animation) */}
       <footer className="border-t border-border mt-20">
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -198,9 +292,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex gap-6 text-sm text-muted">
-              <Link href="/guide" className="hover:text-foreground transition-colors">
-                Documentation
-              </Link>
+              <AnimatedLink href="/guide">Documentation</AnimatedLink>
               <a
                 href="https://github.com/HosungYou/ResearcherRAG"
                 target="_blank"
@@ -209,9 +301,7 @@ export default function HomePage() {
               >
                 GitHub
               </a>
-              <Link href="/resources" className="hover:text-foreground transition-colors">
-                Resources
-              </Link>
+              <AnimatedLink href="/resources">Resources</AnimatedLink>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-border text-xs text-muted">
@@ -223,29 +313,55 @@ export default function HomePage() {
   )
 }
 
-function FeatureCell({ title, description, href }: { title: string; description: string; href: string }) {
+// Animated Link with underline expand effect
+function AnimatedLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link
-      href={href}
-      className="bg-background p-8 hover:bg-gray-50 transition-colors group"
-    >
-      <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors">
-        {title}
-      </h3>
-      <p className="text-sm text-muted leading-relaxed">{description}</p>
-      <div className="mt-4 flex items-center gap-1 text-sm text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-        Learn more
-        <ArrowRight className="w-3 h-3" />
-      </div>
+    <Link href={href} className="relative text-muted hover:text-foreground transition-colors group">
+      <span className="relative">
+        {children}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-300" />
+      </span>
     </Link>
   )
 }
 
-function TechCell({ name, description }: { name: string; description: string }) {
+function FeatureCell({ title, description, href, delay }: { title: string; description: string; href: string; delay: number }) {
   return (
-    <div className="bg-background p-6 hover:bg-gray-50 transition-colors">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay }}
+      viewport={{ once: true }}
+    >
+      <Link
+        href={href}
+        className="block bg-background p-8 hover:bg-gray-50 dark:hover:bg-gray-950 transition-colors group h-full"
+      >
+        <h3 className="text-lg font-semibold mb-2 relative">
+          {title}
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-300" />
+        </h3>
+        <p className="text-sm text-muted leading-relaxed">{description}</p>
+        <div className="mt-4 flex items-center gap-1 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+          Learn more
+          <ArrowRight className="w-3 h-3" />
+        </div>
+      </Link>
+    </motion.div>
+  )
+}
+
+function TechCell({ name, description, delay }: { name: string; description: string; delay: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4, delay }}
+      viewport={{ once: true }}
+      className="bg-background p-6 hover:bg-gray-50 dark:hover:bg-gray-950 transition-colors"
+    >
       <div className="font-medium text-sm mb-1">{name}</div>
       <div className="text-xs text-muted">{description}</div>
-    </div>
+    </motion.div>
   )
 }
