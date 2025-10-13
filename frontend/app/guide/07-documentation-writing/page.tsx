@@ -1,6 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
+import { CodeBlock } from '@/components/CodeBlock'
 
 export default function DocumentationWritingPage() {
   return (
@@ -155,7 +156,9 @@ graph TD
         <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <h4 className="font-semibold mb-2">Methods Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
-          <pre className="bg-black text-white p-3 rounded text-xs"><code>{`"Generate a Methods section for my systematic review. Include:
+          <CodeBlock
+        language="text"
+        code={`"Generate a Methods section for my systematic review. Include:
 - Databases: [PubMed, CORE, Web of Science]
 - Search dates: [2010-01-01 to 2024-12-31]
 - Search strategy: [Your Boolean query]
@@ -163,30 +166,37 @@ graph TD
 - Screening process: [Describe PRISMA workflow]
 - Total papers: [N identified, N screened, N included]
 
-Format in PRISMA style."`}</code></pre>
+Format in PRISMA style."`}
+      />
         </div>
 
         <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <h4 className="font-semibold mb-2">Results Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
-          <pre className="bg-black text-white p-3 rounded text-xs"><code>{`"Synthesize findings on [specific theme]:
+          <CodeBlock
+        language="text"
+        code={`"Synthesize findings on [specific theme]:
 1. How many papers discuss this theme?
 2. What are the main findings? (with citations)
 3. Are there contradictions or consensus?
 4. Organize by sub-themes if applicable.
 
-Create a summary table with: Theme | Key Finding | Supporting Papers"`}</code></pre>
+Create a summary table with: Theme | Key Finding | Supporting Papers"`}
+      />
         </div>
 
         <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
           <h4 className="font-semibold mb-2">Discussion Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
-          <pre className="bg-black text-white p-3 rounded text-xs"><code>{`"Compare my findings to existing literature:
+          <CodeBlock
+        language="sql"
+        code={`"Compare my findings to existing literature:
 1. What are the main patterns across studies?
 2. Which findings are well-established (cited in 5+ papers)?
 3. Where are the contradictions or gaps?
 4. What are the limitations mentioned by authors?
-5. What future research directions are suggested?"`}</code></pre>
+5. What future research directions are suggested?"`}
+      />
         </div>
       </div>
 
@@ -242,9 +252,12 @@ graph TD
             <p className="text-sm text-muted-foreground">
               Replace the example numbers with your actual counts:
             </p>
-            <pre className="bg-black text-white p-3 rounded text-xs mt-2"><code>{`A[Records Identified<br/>n = YOUR_NUMBER]
+            <CodeBlock
+        language="text"
+        code={`A[Records Identified<br/>n = YOUR_NUMBER]
 B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
-...`}</code></pre>
+...`}
+      />
           </div>
 
           <div>
@@ -276,38 +289,50 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📚 Export BibTeX</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <CodeBlock
+        language="bash"
+        code={`python export_bibliography.py \\
   --format bibtex \\
   --output references.bib
 
-# Import into LaTeX, Overleaf`}</code></pre>
+# Import into LaTeX, Overleaf`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📑 Export RIS</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <CodeBlock
+        language="bash"
+        code={`python export_bibliography.py \\
   --format ris \\
   --output references.ris
 
-# Import into EndNote, Zotero`}</code></pre>
+# Import into EndNote, Zotero`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">📄 Export APA</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <CodeBlock
+        language="bash"
+        code={`python export_bibliography.py \\
   --format apa \\
   --output references.docx
 
-# Word document with formatted references`}</code></pre>
+# Word document with formatted references`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
           <h4 className="font-semibold mb-2">🌐 Export HTML</h4>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python export_bibliography.py \\
+          <CodeBlock
+        language="bash"
+        code={`python export_bibliography.py \\
   --format html \\
   --output references.html
 
-# Interactive reference list with DOI links`}</code></pre>
+# Interactive reference list with DOI links`}
+      />
         </div>
       </div>
 
@@ -369,7 +394,9 @@ B[Records Screened<br/>n = YOUR_NUMBER<br/>XX duplicates removed]
 
       <h3 id="generate-supplementary">Generate Supplementary Materials</h3>
 
-      <pre className="bg-black text-white p-3 rounded text-sm my-4"><code>{`# Generate all supplementary files at once
+      <CodeBlock
+        language="bash"
+        code={`# Generate all supplementary files at once
 python generate_supplementary.py \\
   --config rag_config.yaml \\
   --output supplementary/
@@ -380,7 +407,8 @@ python generate_supplementary.py \\
 # - S3_included_studies.xlsx
 # - S4_data_extraction_form.xlsx
 # - S5_rag_system_config.pdf
-# - S6_prisma_checklist.pdf`}</code></pre>
+# - S6_prisma_checklist.pdf`}
+      />
 
       <h2 id="reproducibility">Reproducibility Package</h2>
 

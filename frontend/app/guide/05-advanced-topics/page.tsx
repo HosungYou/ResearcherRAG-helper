@@ -1,6 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
+import { CodeBlock } from '@/components/CodeBlock'
 
 export default function AdvancedTopicsPage() {
   return (
@@ -104,7 +105,9 @@ export default function AdvancedTopicsPage() {
         To use a custom embedding model, update your <code>rag_config.yaml</code>:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# rag_config.yaml
+      <CodeBlock
+        language="sql"
+        code={`# rag_config.yaml
 
 embedding:
   type: huggingface  # Changed from 'openai'
@@ -117,22 +120,28 @@ embedding:
 # Optional: Use a local model cache
 cache:
   embeddings: ./cache/embeddings/
-  models: ./cache/models/`}</code></pre>
+  models: ./cache/models/`}
+      />
 
       <p>
         Install the required dependencies:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`pip install sentence-transformers transformers torch
+      <CodeBlock
+        language="bash"
+        code={`pip install sentence-transformers transformers torch
 
 # For GPU support (optional but recommended)
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`}</code></pre>
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`}
+      />
 
       <p>
         Update your embedding generation code:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`from sentence_transformers import SentenceTransformer
+      <CodeBlock
+        language="sql"
+        code={`from sentence_transformers import SentenceTransformer
 
 # Load domain-specific model
 model = SentenceTransformer('allenai/specter2')
@@ -146,7 +155,8 @@ embeddings = model.encode(
     normalize_embeddings=True  # Important for cosine similarity
 )
 
-print(f"Generated {len(embeddings)} embeddings of dimension {embeddings[0].shape}")`}</code></pre>
+print(f"Generated {len(embeddings)} embeddings of dimension {embeddings[0].shape}")`}
+      />
 
       <div className="callout callout-info">
         <p className="font-semibold mb-2">💡 When to Use Custom Embeddings</p>
@@ -188,7 +198,9 @@ graph LR
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Create training pairs from your PRISMA dataset:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# training_pairs.py
+          <CodeBlock
+        language="sql"
+        code={`# training_pairs.py
 import pandas as pd
 from sentence_transformers import InputExample
 
@@ -219,10 +231,13 @@ for idx, paper in papers.iterrows():
         ))
 
 train_examples = positive_pairs + negative_pairs
-print(f"Created {len(train_examples)} training examples")`}</code></pre>
+print(f"Created {len(train_examples)} training examples")`}
+      />
 
           <p>Fine-tune the model:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`from sentence_transformers import SentenceTransformer, losses
+          <CodeBlock
+        language="sql"
+        code={`from sentence_transformers import SentenceTransformer, losses
 from torch.utils.data import DataLoader
 
 # Load base model
@@ -242,7 +257,8 @@ model.fit(
     output_path='./models/custom-healthcare-embeddings'
 )
 
-print("Fine-tuning complete! Model saved.")`}</code></pre>
+print("Fine-tuning complete! Model saved.")`}
+      />
 
           <p className="text-sm text-muted-foreground">
             Fine-tuning typically improves retrieval accuracy by 10-25% on domain-specific queries.
@@ -319,7 +335,9 @@ graph TD
         For better LLM understanding, translate non-English papers to English during ingestion:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# translation_config.yaml
+      <CodeBlock
+        language="yaml"
+        code={`# translation_config.yaml
 
 translation:
   enabled: true
@@ -335,13 +353,16 @@ translation:
 
   # Keep original text
   store_original: true
-  store_translation: true`}</code></pre>
+  store_translation: true`}
+      />
 
       <p>
         Implement translation in your ingestion pipeline:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`import deepl
+      <CodeBlock
+        language="sql"
+        code={`import deepl
 from langdetect import detect
 
 def ingest_with_translation(paper_text, metadata):
@@ -377,7 +398,8 @@ def ingest_with_translation(paper_text, metadata):
         metadata=chunk_metadata
     )
 
-    return chunk_metadata`}</code></pre>
+    return chunk_metadata`}
+      />
 
       <div className="callout callout-warning">
         <p className="font-semibold mb-2">⚠️ Translation Costs</p>
@@ -418,7 +440,9 @@ graph TD
         Implement incremental updates with a tracking database:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# incremental_update.py
+      <CodeBlock
+        language="sql"
+        code={`# incremental_update.py
 import json
 from datetime import datetime, timedelta
 
@@ -461,7 +485,8 @@ def incremental_update(rag_system, config):
         json.dump({'timestamp': datetime.now().isoformat()}, f)
 
     print(f"✓ Added {added_count} new papers to RAG system")
-    return added_count`}</code></pre>
+    return added_count`}
+      />
 
       <h3 id="version-control">Version Control for Knowledge Base</h3>
 
@@ -469,7 +494,9 @@ def incremental_update(rag_system, config):
         Track changes to your knowledge base over time:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# knowledge_base_versions/
+      <CodeBlock
+        language="text"
+        code={`# knowledge_base_versions/
 # ├── v1.0.0_2024-01-15_137papers.snapshot
 # ├── v1.1.0_2024-02-01_143papers.snapshot
 # ├── v1.2.0_2024-03-15_156papers.snapshot
@@ -482,7 +509,8 @@ def incremental_update(rag_system, config):
 - Updated metadata for 3 papers (DOI corrections)
 - Total papers: 156
 - Total chunks: 2,847
-- Vector DB size: 1.2 GB`}</code></pre>
+- Vector DB size: 1.2 GB`}
+      />
 
       <h2 id="hybrid-search">Hybrid Search Strategies</h2>
 
@@ -515,7 +543,9 @@ graph LR
         Implement hybrid search with reciprocal rank fusion (RRF):
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`from rank_bm25 import BM25Okapi
+      <CodeBlock
+        language="sql"
+        code={`from rank_bm25 import BM25Okapi
 import numpy as np
 
 def hybrid_search(query, vector_db, bm25_index, k=5):
@@ -560,7 +590,8 @@ def hybrid_search(query, vector_db, bm25_index, k=5):
         reverse=True
     )[:k]
 
-    return [{'id': doc_id, 'score': score} for doc_id, score in final_results]`}</code></pre>
+    return [{'id': doc_id, 'score': score} for doc_id, score in final_results]`}
+      />
 
       <div className="callout callout-success">
         <p className="font-semibold mb-2">📈 Hybrid Search Benefits</p>
@@ -578,7 +609,9 @@ def hybrid_search(query, vector_db, bm25_index, k=5):
         After initial retrieval, use a cross-encoder to re-rank results for maximum relevance:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`from sentence_transformers import CrossEncoder
+      <CodeBlock
+        language="sql"
+        code={`from sentence_transformers import CrossEncoder
 
 # Load cross-encoder model
 cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
@@ -608,7 +641,8 @@ def rerank_results(query, initial_results, top_k=3):
 # Example usage
 initial_results = hybrid_search(query, vector_db, bm25_index, k=10)
 final_results = rerank_results(query, initial_results, top_k=3)
-# Send top-3 most relevant chunks to LLM`}</code></pre>
+# Send top-3 most relevant chunks to LLM`}
+      />
 
       <h2 id="caching">Performance Optimization with Caching</h2>
 
@@ -635,7 +669,9 @@ graph TD
     style J fill:#bbf7d0
 `} />
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`import hashlib
+      <CodeBlock
+        language="sql"
+        code={`import hashlib
 from redis import Redis
 from datetime import timedelta
 
@@ -697,7 +733,8 @@ class RAGCache:
         # Generate and cache
         embedding = embed_model.encode(text)
         self.embedding_cache[cache_key] = embedding
-        return embedding`}</code></pre>
+        return embedding`}
+      />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div className="border rounded-lg p-4 bg-gray-50 dark:bg-gray-900">
@@ -732,7 +769,9 @@ class RAGCache:
             1. Query Performance Metrics
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
-            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# Log query metrics
+            <CodeBlock
+        language="yaml"
+        code={`# Log query metrics
 metrics = {
     'timestamp': datetime.now(),
     'query': query,
@@ -753,7 +792,8 @@ metrics = {
         'min_similarity': 0.71
     },
     'cache_hit': False
-}`}</code></pre>
+}`}
+      />
           </div>
         </details>
 
@@ -762,7 +802,9 @@ metrics = {
             2. Quality Metrics
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
-            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# Track answer quality
+            <CodeBlock
+        language="yaml"
+        code={`# Track answer quality
 quality_metrics = {
     'citations_count': 3,
     'citations_valid': 3,
@@ -773,7 +815,8 @@ quality_metrics = {
         'reported_issue': None
     },
     'confidence_score': 0.87  # LLM self-assessment
-}`}</code></pre>
+}`}
+      />
           </div>
         </details>
 
@@ -782,14 +825,17 @@ quality_metrics = {
             3. Cost Tracking
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
-            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`# Calculate per-query costs
+            <CodeBlock
+        language="yaml"
+        code={`# Calculate per-query costs
 cost_breakdown = {
     'embedding_cost': 0.00002,  # $0.02/1M tokens
     'llm_cost': 0.0048,         # $3/1M input + $15/1M output
     'vector_db_cost': 0.00001,  # Negligible for ChromaDB
     'total_cost': 0.00483,
     'monthly_projection': 0.00483 * queries_per_day * 30
-}`}</code></pre>
+}`}
+      />
           </div>
         </details>
       </div>

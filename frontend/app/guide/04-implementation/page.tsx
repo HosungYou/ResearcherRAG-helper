@@ -1,6 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
+import { CodeBlock } from '@/components/CodeBlock'
 
 export default function ImplementationGuidePage() {
   return (
@@ -163,13 +164,16 @@ graph TD
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p>Use AND, OR, NOT to combine search terms:</p>
-            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`(technology OR digital OR electronic)
+            <CodeBlock
+        language="sql"
+        code={`(technology OR digital OR electronic)
 AND
 (adoption OR implementation OR integration)
 AND
 (healthcare OR hospital OR clinic)
 NOT
-(veterinary OR dental)`}</code></pre>
+(veterinary OR dental)`}
+      />
             <p className="text-sm text-muted-foreground">
               This query finds papers about technology adoption in healthcare, excluding veterinary and dental studies.
             </p>
@@ -182,9 +186,12 @@ NOT
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p>Use * for wildcards and quotes for exact phrases:</p>
-            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`"large language model*" OR "LLM"
+            <CodeBlock
+        language="sql"
+        code={`"large language model*" OR "LLM"
 "technology acceptance" OR "TAM"
-adopt* (captures: adopt, adoption, adopting, adopted)`}</code></pre>
+adopt* (captures: adopt, adoption, adopting, adopted)`}
+      />
             <p className="text-sm text-muted-foreground">
               Wildcards help capture variations, while phrase search ensures precise matches.
             </p>
@@ -197,11 +204,14 @@ adopt* (captures: adopt, adoption, adopting, adopted)`}</code></pre>
           </summary>
           <div className="p-4 pt-0 border-t space-y-3">
             <p>Target specific fields for precision:</p>
-            <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`title:(artificial intelligence)
+            <CodeBlock
+        language="sql"
+        code={`title:(artificial intelligence)
 abstract:(machine learning)
 keywords:(deep learning)
 author:(Smith OR Johnson)
-year:[2020 TO 2024]`}</code></pre>
+year:[2020 TO 2024]`}
+      />
             <p className="text-sm text-muted-foreground">
               Field-specific searches reduce false positives and improve relevance.
             </p>
@@ -387,14 +397,17 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Queries multiple databases and collects results:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 01_fetch_papers.py \\
+          <CodeBlock
+        language="sql"
+        code={`python 01_fetch_papers.py \\
   --config database_config.json \\
   --output raw_results/
 
 # Output:
 # - raw_results/pubmed_results.csv
 # - raw_results/core_results.csv
-# - raw_results/combined_results.csv`}</code></pre>
+# - raw_results/combined_results.csv`}
+      />
         </div>
       </details>
 
@@ -404,12 +417,15 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Identifies and removes duplicate papers using fuzzy matching:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 02_deduplicate.py \\
+          <CodeBlock
+        language="sql"
+        code={`python 02_deduplicate.py \\
   --input raw_results/combined_results.csv \\
   --output deduplicated_results.csv \\
   --threshold 0.85
 
-# Uses title similarity, DOI matching, and author overlap`}</code></pre>
+# Uses title similarity, DOI matching, and author overlap`}
+      />
         </div>
       </details>
 
@@ -419,7 +435,9 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Uses Claude to assess title/abstract against inclusion criteria:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 03_screen_abstracts.py \\
+          <CodeBlock
+        language="sql"
+        code={`python 03_screen_abstracts.py \\
   --input deduplicated_results.csv \\
   --criteria inclusion_criteria.md \\
   --output screened_results.csv
@@ -427,7 +445,8 @@ graph TB
 # Each paper gets:
 # - Include/Exclude decision
 # - Confidence score (0-100)
-# - Reasoning explanation`}</code></pre>
+# - Reasoning explanation`}
+      />
           <p className="text-sm text-muted-foreground">
             <strong>Note:</strong> Always manually review LLM decisions, especially borderline cases (confidence 40-60%).
           </p>
@@ -440,7 +459,9 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Downloads PDFs for papers that passed screening:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 04_download_pdfs.py \\
+          <CodeBlock
+        language="sql"
+        code={`python 04_download_pdfs.py \\
   --input screened_results.csv \\
   --output pdfs/ \\
   --sources scihub,doi,open_access
@@ -448,7 +469,8 @@ graph TB
 # Tries multiple sources in order:
 # 1. Open access repositories
 # 2. DOI resolution
-# 3. Sci-Hub (check your institution's policy)`}</code></pre>
+# 3. Sci-Hub (check your institution's policy)`}
+      />
         </div>
       </details>
 
@@ -458,7 +480,9 @@ graph TB
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Detailed review of full-text papers:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python 05_full_text_review.py \\
+          <CodeBlock
+        language="sql"
+        code={`python 05_full_text_review.py \\
   --input pdfs/ \\
   --criteria detailed_criteria.md \\
   --output final_dataset.csv
@@ -467,7 +491,8 @@ graph TB
 # - Extracts full text (OCR if needed)
 # - Checks all inclusion criteria
 # - Documents exclusion reasons
-# - Flags for manual review if uncertain`}</code></pre>
+# - Flags for manual review if uncertain`}
+      />
         </div>
       </details>
 
@@ -484,11 +509,14 @@ graph TB
         After Stage 3, generate a PRISMA flow diagram to visualize your screening process:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`python generate_prisma_diagram.py \\
+      <CodeBlock
+        language="bash"
+        code={`python generate_prisma_diagram.py \\
   --input final_dataset.csv \\
   --output prisma_flow.png
 
-# Creates publication-ready PRISMA 2020 flow diagram`}</code></pre>
+# Creates publication-ready PRISMA 2020 flow diagram`}
+      />
 
       <h2 id="stage-4">Stage 4: RAG System Design</h2>
 
@@ -540,7 +568,9 @@ graph TD
         Claude Code generates a <code>rag_config.yaml</code> file with your choices:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`# rag_config.yaml
+      <CodeBlock
+        language="sql"
+        code={`# rag_config.yaml
 
 vector_db:
   type: chromadb
@@ -574,7 +604,8 @@ prompts:
   system: "You are an expert research assistant..."
   context_template: "Based on these papers: {context}\\n\\nQuestion: {question}"
   citation_format: "[Author, Year]"
-`}</code></pre>
+`}
+      />
 
       <h3 id="stage-4-optimization">Optimization Tips</h3>
 
@@ -657,7 +688,9 @@ sequenceDiagram
         Run the ingestion script:
       </p>
 
-      <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm my-4"><code>{`python ingest_papers.py \\
+      <CodeBlock
+        language="sql"
+        code={`python ingest_papers.py \\
   --input final_dataset.csv \\
   --pdfs pdfs/ \\
   --config rag_config.yaml \\
@@ -670,7 +703,8 @@ sequenceDiagram
 # - Generated embeddings (batch 1/2)
 # - Stored in vector DB
 # ...
-# ✓ Ingestion complete: 137 papers, 2,341 chunks, 3.2M tokens`}</code></pre>
+# ✓ Ingestion complete: 137 papers, 2,341 chunks, 3.2M tokens`}
+      />
 
       <h3 id="stage-5-testing">Testing & Validation</h3>
 
@@ -684,11 +718,14 @@ sequenceDiagram
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Ask questions with known answers from your dataset:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`Q: "What is the Technology Acceptance Model (TAM)?"
+          <CodeBlock
+        language="sql"
+        code={`Q: "What is the Technology Acceptance Model (TAM)?"
 Expected: Definition from Davis (1989) with proper citation
 
 Q: "Which factors influence EHR adoption in developing countries?"
-Expected: List of factors with citations from relevant papers`}</code></pre>
+Expected: List of factors with citations from relevant papers`}
+      />
         </div>
       </details>
 
@@ -698,7 +735,9 @@ Expected: List of factors with citations from relevant papers`}</code></pre>
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Check if the most relevant papers are retrieved:</p>
-          <pre className="bg-black text-white p-3 rounded overflow-x-auto text-sm"><code>{`python test_retrieval.py \\
+          <CodeBlock
+        language="sql"
+        code={`python test_retrieval.py \\
   --config rag_config.yaml \\
   --queries test_queries.txt \\
   --output retrieval_report.html
@@ -707,7 +746,8 @@ Expected: List of factors with citations from relevant papers`}</code></pre>
 # - Precision@5: 0.87
 # - Recall@5: 0.72
 # - MRR (Mean Reciprocal Rank): 0.81
-# - Average response time: 0.43s`}</code></pre>
+# - Average response time: 0.43s`}
+      />
         </div>
       </details>
 
@@ -738,12 +778,15 @@ Expected: List of factors with citations from relevant papers`}</code></pre>
           <p className="text-sm text-muted-foreground mb-3">
             Command-line interface for quick queries
           </p>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python cli.py \\
+          <CodeBlock
+        language="sql"
+        code={`python cli.py \\
   --config rag_config.yaml
 
 > What factors influence...
 [Thinking...] ✓
-Answer: ...`}</code></pre>
+Answer: ...`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
@@ -751,10 +794,13 @@ Answer: ...`}</code></pre>
           <p className="text-sm text-muted-foreground mb-3">
             Streamlit app with chat UI
           </p>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`streamlit run web_app.py
+          <CodeBlock
+        language="text"
+        code={`streamlit run web_app.py
 
 # Launches at:
-# http://localhost:8501`}</code></pre>
+# http://localhost:8501`}
+      />
         </div>
 
         <div className="border rounded-lg p-4">
@@ -762,11 +808,14 @@ Answer: ...`}</code></pre>
           <p className="text-sm text-muted-foreground mb-3">
             FastAPI REST endpoint
           </p>
-          <pre className="bg-black text-white p-2 rounded text-xs"><code>{`python api_server.py
+          <CodeBlock
+        language="bash"
+        code={`python api_server.py
 
 # POST /query
 # GET /papers
-# GET /health`}</code></pre>
+# GET /health`}
+      />
         </div>
       </div>
 
