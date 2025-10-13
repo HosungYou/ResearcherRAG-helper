@@ -475,6 +475,15 @@ graph TB
       <details className="border rounded-lg my-4">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
           <code>01_fetch_papers.py</code> - Query Execution
+          <a
+            href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/01_fetch_papers.py"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            📄 View Source
+          </a>
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Queries multiple databases and collects results:</p>
@@ -495,6 +504,15 @@ graph TB
       <details className="border rounded-lg my-4">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
           <code>02_deduplicate.py</code> - Remove Duplicates
+          <a
+            href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/02_deduplicate.py"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            📄 View Source
+          </a>
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Identifies and removes duplicate papers using fuzzy matching:</p>
@@ -513,6 +531,15 @@ graph TB
       <details className="border rounded-lg my-4">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
           <code>03_screen_abstracts.py</code> - LLM-Assisted Screening
+          <a
+            href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/03_screen_abstracts.py"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            📄 View Source
+          </a>
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Uses Claude to assess title/abstract against inclusion criteria:</p>
@@ -537,6 +564,15 @@ graph TB
       <details className="border rounded-lg my-4">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
           <code>04_download_pdfs.py</code> - Full-Text Retrieval
+          <a
+            href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/04_download_pdfs.py"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            📄 View Source
+          </a>
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Downloads PDFs for papers that passed screening:</p>
@@ -558,6 +594,15 @@ graph TB
       <details className="border rounded-lg my-4">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
           <code>05_full_text_review.py</code> - Eligibility Assessment
+          <a
+            href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/05_full_text_review.py"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            📄 View Source
+          </a>
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p>Detailed review of full-text papers:</p>
