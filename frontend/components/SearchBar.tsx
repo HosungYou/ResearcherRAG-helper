@@ -87,153 +87,168 @@ const searchIndex: SearchResult[] = [
     href: '/guide/05-advanced-topics#troubleshooting',
     excerpt: 'Common issues and solutions for ResearcherRAG'
   },
-  // Codebook - Main entry
+  // Codebook - Main pages
   {
     title: 'Codebook',
     href: '/codebook',
-    excerpt: 'Knowledge base for beginners: scripts, file formats, tools, workflow explained for researchers with no programming experience'
+    excerpt: 'Knowledge base for beginners: fundamentals, file formats, tools, workflow explained for researchers with no programming experience'
   },
 
-  // Codebook - Fundamentals Section
+  // Codebook - Fundamentals Page
+  {
+    title: 'Fundamentals',
+    href: '/codebook/fundamentals',
+    excerpt: 'Core concepts for beginners: What is a Script, Python, Terminal, API, Vector Database, RAG, PRISMA 2020'
+  },
   {
     title: 'What is a Script?',
-    href: '/codebook#fundamentals',
+    href: '/codebook/fundamentals',
     excerpt: 'Understanding Python scripts as automated recipes for research tasks'
   },
   {
     title: 'What is Python?',
-    href: '/codebook#fundamentals',
+    href: '/codebook/fundamentals',
     excerpt: 'Python programming language for research: easy to read, powerful libraries, used by researchers, free and open source'
   },
   {
     title: 'What is Terminal?',
-    href: '/codebook#fundamentals',
+    href: '/codebook/fundamentals',
     excerpt: 'Command line interface for running scripts and controlling your computer with text commands'
   },
   {
     title: 'What is an API?',
-    href: '/codebook#fundamentals',
+    href: '/codebook/fundamentals',
     excerpt: 'API keys for Claude AI, OpenAI, Semantic Scholar - understanding how programs communicate with services'
   },
   {
     title: 'What is a Vector Database?',
-    href: '/codebook#fundamentals',
+    href: '/codebook/fundamentals',
     excerpt: 'ChromaDB vector database for semantic search - finding similar papers by meaning, not keywords'
   },
   {
     title: 'What is RAG?',
-    href: '/codebook#fundamentals',
+    href: '/codebook/fundamentals',
     excerpt: 'Retrieval-Augmented Generation: retrieve relevant papers, augment with context, generate answers with citations'
   },
   {
-    title: 'PRISMA 2020 Explained',
-    href: '/codebook#fundamentals',
+    title: 'PRISMA 2020',
+    href: '/codebook/fundamentals',
     excerpt: 'Systematic review methodology: Identification → Screening → Eligibility → Included papers'
   },
 
-  // Codebook - File Formats Section
+  // Codebook - File Formats Page
   {
-    title: 'YAML Files',
-    href: '/codebook#file-formats',
-    excerpt: 'Configuration files (.yaml): human-readable settings for research projects, PRISMA criteria, AI models'
+    title: 'File Formats',
+    href: '/codebook/file-formats',
+    excerpt: 'Understanding YAML, JSON, Markdown, Python, and .env files used in ResearcherRAG'
   },
   {
-    title: 'JSON Files',
-    href: '/codebook#file-formats',
-    excerpt: 'Data storage format (.json): structured data for papers.json, screened.json, eligible.json, synthesis.json'
+    title: 'YAML Files (.yaml)',
+    href: '/codebook/file-formats',
+    excerpt: 'Configuration files: human-readable settings for research projects, PRISMA criteria, AI models'
   },
   {
-    title: 'Markdown Files',
-    href: '/codebook#file-formats',
-    excerpt: 'Documentation format (.md): simple formatting language for prompts, README, methods sections'
+    title: 'JSON Files (.json)',
+    href: '/codebook/file-formats',
+    excerpt: 'Data storage format: structured data for papers.json, screened.json, eligible.json, synthesis.json'
   },
   {
-    title: 'Python Files',
-    href: '/codebook#file-formats',
-    excerpt: 'Script files (.py): imports, configuration, functions, main execution - structure of Python programs'
+    title: 'Markdown Files (.md)',
+    href: '/codebook/file-formats',
+    excerpt: 'Documentation format: simple formatting language for prompts, README, methods sections'
   },
   {
-    title: '.env Files',
-    href: '/codebook#file-formats',
-    excerpt: 'Environment variables for API keys and secrets - NEVER share or commit to Git, use .env.example templates'
+    title: 'Python Files (.py)',
+    href: '/codebook/file-formats',
+    excerpt: 'Script files: imports, configuration, functions, main execution - structure of Python programs'
+  },
+  {
+    title: 'Environment Files (.env)',
+    href: '/codebook/file-formats',
+    excerpt: 'API keys and secrets - NEVER share or commit to Git, use .env.example templates instead'
   },
 
-  // Codebook - Tools & Technologies
+  // Codebook - Tools & Technologies Page
+  {
+    title: 'Tools & Technologies',
+    href: '/codebook/tools',
+    excerpt: 'Why ResearcherRAG uses ChromaDB, Claude AI, OpenAI, GitHub, Git, and Python libraries'
+  },
   {
     title: 'ChromaDB',
-    href: '/codebook#tools',
+    href: '/codebook/tools',
     excerpt: 'Vector database for ResearcherRAG: easy to use, runs locally, Python-friendly, fast semantic search'
   },
   {
     title: 'Claude AI',
-    href: '/codebook#tools',
+    href: '/codebook/tools',
     excerpt: 'AI screening assistant: large context window, strong reasoning, explains decisions, runs PRISMA screening'
   },
   {
     title: 'OpenAI Embeddings',
-    href: '/codebook#tools',
+    href: '/codebook/tools',
     excerpt: 'Text embedding engine: text-embedding-3-small converts papers into 1536-dimensional semantic vectors'
   },
   {
     title: 'GitHub',
-    href: '/codebook#tools',
+    href: '/codebook/tools',
     excerpt: 'Code repository platform: version control, collaboration, open source sharing, documentation'
   },
   {
-    title: 'Git Version Control',
-    href: '/codebook#tools',
-    excerpt: 'Time machine for code: track changes, create branches, commit snapshots, industry standard for developers'
+    title: 'Git',
+    href: '/codebook/tools',
+    excerpt: 'Version control system: time machine for code, track changes, create branches, industry standard'
   },
   {
     title: 'Python Libraries',
-    href: '/codebook#tools',
+    href: '/codebook/tools',
     excerpt: 'Packages for ResearcherRAG: anthropic, openai, chromadb, requests, pandas, python-dotenv'
   },
 
-  // Codebook - Scripts Workflow (Why This Order?)
+  // Codebook - Scripts Workflow Page
   {
     title: 'Scripts Workflow',
-    href: '/codebook#scripts-workflow',
-    excerpt: 'Data dependency chain: scripts must run 01→02→03→04→05→06→07 because each depends on previous output'
+    href: '/codebook/scripts-workflow',
+    excerpt: 'Why scripts run 01→02→03→04→05→06→07: data dependency chain, pipeline visualization, script breakdown'
   },
   {
     title: 'Script 01: Fetch Papers',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'Foundation step: search databases, download metadata to papers.json - needed before screening can begin'
   },
   {
     title: 'Script 02: Title/Abstract Screening',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'Quick filter: Claude reads abstracts, applies PRISMA criteria, creates screened.json - reduces 5000→500 papers'
   },
   {
     title: 'Script 03: Full-Text Screening',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'Deep dive: downloads PDFs, detailed eligibility check, creates eligible.json - filters 500→100 papers'
   },
   {
     title: 'Script 04: Build Embeddings',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'Create search index: OpenAI converts papers to vectors, stores in ChromaDB - enables semantic search'
   },
   {
     title: 'Script 05: RAG Query',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'Interactive research: ask questions, semantic search ChromaDB, Claude answers with citations from papers'
   },
   {
     title: 'Script 06: Synthesis',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'Meta-analysis: identify patterns, calculate statistics, find gaps, synthesize themes across all papers'
   },
   {
     title: 'Script 07: Documentation',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'Publication ready: generate PRISMA flowchart, methods section, results tables, bibliography'
   },
   {
     title: 'Pipeline Dependencies',
-    href: '/codebook#scripts-workflow',
+    href: '/codebook/scripts-workflow',
     excerpt: 'What happens if you skip steps: FileNotFoundError, empty databases, incomplete documentation'
   },
 ]
