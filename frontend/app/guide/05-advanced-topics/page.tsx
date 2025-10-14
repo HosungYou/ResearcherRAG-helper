@@ -168,9 +168,9 @@ Please read my config.yaml and guide me through Stage 1 (Research Domain Setup).
   domain: education
 
 databases:
-  - pubmed
-  - scopus
-  - eric
+  - semantic_scholar
+  - openalex
+  - arxiv
 
 inclusion_criteria:
   year_start: 2015
@@ -212,11 +212,12 @@ rag:
           <div className="prose prose-sm dark:prose-invert max-w-none mt-4">
             <p className="font-semibold">📊 Estimated Results (based on my knowledge):</p>
             <ul className="ml-4 space-y-1 text-sm">
-              <li>• <strong>PubMed</strong>: ~50-80 papers (health/psychology journals)</li>
-              <li>• <strong>Scopus</strong>: ~200-300 papers (broad coverage)</li>
-              <li>• <strong>ERIC</strong>: ~100-150 papers (education focus)</li>
-              <li>• <strong>After deduplication</strong>: ~400-500 papers</li>
-              <li>• <strong>After PRISMA screening</strong>: ~60-100 papers ← Your target!</li>
+              <li>• <strong>Semantic Scholar</strong>: ~200-250 papers (AI/CS/interdisciplinary)</li>
+              <li>• <strong>OpenAlex</strong>: ~150-200 papers (broad coverage, high OA rate)</li>
+              <li>• <strong>arXiv</strong>: ~15-25 papers (cutting-edge preprints)</li>
+              <li>• <strong>After deduplication</strong>: ~300-400 papers</li>
+              <li>• <strong>After screening</strong>: ~100-150 papers ← Your target!</li>
+              <li>• <strong>With PDF access</strong>: ~50-80 papers (50-60% automation rate)</li>
             </ul>
             <p className="mt-4">Ready to move to <strong>Stage 2 (Query Design)</strong>? 🚀</p>
           </div>
@@ -232,11 +233,56 @@ rag:
         />
       </div>
 
-      <h2 id="stage2-query-design">Stage 2: Query Strategy Design (10 minutes)</h2>
+      <h2 id="stage2-query-design">Stage 2: Database Selection & Query Design (10 minutes)</h2>
 
       <p>
-        Claude Code designs effective search queries tailored to different academic databases. This stage is critical—good queries = relevant papers.
+        Claude Code helps you select automation-friendly databases and design effective queries. This stage is critical—the right databases = automated PDF access.
       </p>
+
+      <div className="callout callout-info my-6">
+        <p className="font-semibold mb-2">🤖 Why These Databases?</p>
+        <p className="text-sm mb-3">
+          ResearcherRAG prioritizes <strong>automation-friendly</strong> databases that provide both metadata AND direct PDF access through APIs:
+        </p>
+        <div className="space-y-2 text-sm">
+          <div className="border-l-2 border-gray-900 dark:border-gray-100 pl-3">
+            <p className="font-semibold">Semantic Scholar</p>
+            <p className="text-xs">200M+ papers • 40% with PDF URLs • Excellent for AI/CS/interdisciplinary research</p>
+          </div>
+          <div className="border-l-2 border-gray-900 dark:border-gray-100 pl-3">
+            <p className="font-semibold">OpenAlex</p>
+            <p className="text-xs">240M+ papers • 50% open access • Comprehensive coverage across all fields</p>
+          </div>
+          <div className="border-l-2 border-gray-900 dark:border-gray-100 pl-3">
+            <p className="font-semibold">arXiv</p>
+            <p className="text-xs">2.3M+ preprints • 100% PDF access • Cutting-edge research (AI/ML/Physics)</p>
+          </div>
+        </div>
+        <details className="mt-3">
+          <summary className="text-sm cursor-pointer font-semibold">Why not PubMed/Scopus/Web of Science?</summary>
+          <div className="text-xs mt-2 space-y-2">
+            <p>
+              Traditional databases like PubMed, Scopus, and Web of Science are excellent for comprehensive literature searches,
+              but they <strong>don't provide automated PDF access</strong> through APIs.
+            </p>
+            <p className="font-semibold">What this means:</p>
+            <ul className="ml-4 space-y-1">
+              <li>• PubMed: Only 20% papers in PubMed Central (PMC) have full-text XML</li>
+              <li>• Scopus: Metadata only; PDFs require institutional subscriptions</li>
+              <li>• Result: 70-80% of papers need <strong>manual retrieval</strong> (VPN, author emails, interlibrary loan)</li>
+            </ul>
+            <p className="mt-2">
+              For ResearcherRAG's <strong>"3-hour automated setup"</strong> promise, we use databases with API-accessible PDFs.
+              This gives you <strong>50-60% automated PDF access</strong> vs. 20-30% with traditional databases.
+            </p>
+            <p className="mt-2 font-semibold">Can I still use PubMed/Scopus?</p>
+            <p>
+              Yes! You can add them for comprehensive coverage, but be prepared for lower automation rates.
+              Claude Code will guide you through this in the conversation.
+            </p>
+          </div>
+        </details>
+      </div>
 
       <div className="space-y-6 my-8">
         <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
@@ -304,54 +350,98 @@ rag:
 
         <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
           <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">👤 You:</p>
-          <p className="text-sm">Let's go with Query 2 (Focused). Can you generate database-specific formats for PubMed, Scopus, and ERIC?</p>
+          <p className="text-sm">Let's go with Query 2 (Focused). Which databases should we search?</p>
         </div>
 
         <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 dark:bg-purple-950/20">
           <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">🤖 Claude Code:</p>
           <div className="prose prose-sm dark:prose-invert max-w-none">
-            <p>Great choice! Here are the database-specific query formats:</p>
+            <p>For <strong>automated PDF access</strong> and language learning research, I recommend:</p>
+            <ul className="ml-4 space-y-1 text-sm my-3">
+              <li>• <strong>Semantic Scholar</strong>: Best for AI/education interdisciplinary papers</li>
+              <li>• <strong>OpenAlex</strong>: Comprehensive coverage, high open access rate</li>
+              <li>• <strong>arXiv</strong>: Latest AI/NLP research (if applicable to your topic)</li>
+            </ul>
+            <p className="text-sm">
+              These databases provide <strong>API access to both metadata and PDFs</strong>, enabling full automation.
+            </p>
+            <p className="mt-3">Here are the API query formats:</p>
           </div>
 
           <div className="my-4 space-y-4">
             <div>
-              <p className="font-semibold text-sm mb-2">PubMed (Medical/Psychology):</p>
+              <p className="font-semibold text-sm mb-2">Semantic Scholar API:</p>
               <CodeBlock
-                language="sql"
-                code={`(("chatbot"[Title/Abstract] OR "conversational agent"[Title/Abstract] OR "dialogue system"[Title/Abstract])
-AND ("language learning"[Title/Abstract] OR "second language"[Title/Abstract] OR "L2"[Title/Abstract] OR "ESL"[Title/Abstract])
-AND ("speaking"[Title/Abstract] OR "oral"[Title/Abstract] OR "pronunciation"[Title/Abstract] OR "fluency"[Title/Abstract])
-AND ("university"[Title/Abstract] OR "college"[Title/Abstract] OR "higher education"[Title/Abstract]))
-AND 2015:2025[pdat]`}
+                language="python"
+                code={`query = """
+(chatbot OR conversational agent OR dialogue system) AND
+(language learning OR second language OR L2 OR ESL) AND
+(speaking OR oral OR pronunciation OR fluency) AND
+(university OR college OR higher education)
+"""
+
+# API parameters
+params = {
+    'query': query,
+    'year': '2015-2025',
+    'fields': 'title,abstract,authors,year,citationCount,openAccessPdf',
+    'limit': 1000
+}`}
               />
+              <p className="text-xs text-muted mt-1">
+                ✓ Returns papers with <code>openAccessPdf.url</code> for direct download
+              </p>
             </div>
 
             <div>
-              <p className="font-semibold text-sm mb-2">Scopus (Broad Multidisciplinary):</p>
+              <p className="font-semibold text-sm mb-2">OpenAlex API:</p>
               <CodeBlock
-                language="sql"
-                code={`TITLE-ABS-KEY((chatbot OR "conversational agent" OR "dialogue system")
-AND ("language learning" OR "second language" OR L2 OR ESL)
-AND (speaking OR oral OR pronunciation OR fluency)
-AND (university OR college OR "higher education"))
-AND PUBYEAR > 2014 AND PUBYEAR < 2026`}
+                language="python"
+                code={`query = """
+(chatbot OR conversational agent) AND
+(language learning OR ESL) AND
+(speaking OR oral) AND
+(university OR college)
+"""
+
+# API filter
+filter_params = {
+    'search': query,
+    'filter': 'publication_year:2015-2025,is_oa:true',
+    'select': 'title,abstract,authorships,open_access',
+    'per_page': 200
+}`}
               />
+              <p className="text-xs text-muted mt-1">
+                ✓ <code>is_oa:true</code> ensures papers have PDF URLs in <code>open_access.oa_url</code>
+              </p>
             </div>
 
             <div>
-              <p className="font-semibold text-sm mb-2">ERIC (Education Research):</p>
+              <p className="font-semibold text-sm mb-2">arXiv API (if applicable):</p>
               <CodeBlock
-                language="sql"
-                code={`(chatbot OR "conversational agent") AND ("language learning" OR ESL)
-AND (speaking OR oral) AND (university OR college)
-publicationdate:[2015 TO 2025]`}
+                language="python"
+                code={`# For AI/NLP papers on arXiv
+query = "all:chatbot AND all:language AND all:learning"
+
+# arXiv categories
+categories = ["cs.CL", "cs.AI", "cs.LG"]  # Computation & Language, AI, ML
+
+# All arXiv papers have direct PDF access
+pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"`}
               />
+              <p className="text-xs text-muted mt-1">
+                ✓ 100% PDF access for all arXiv papers
+              </p>
             </div>
           </div>
 
           <div className="prose prose-sm dark:prose-invert max-w-none">
             <p>I've saved these queries to <code>data/01_identification/search_queries.md</code></p>
-            <p className="mt-2">Ready to proceed to <strong>Stage 3 (Database Search & PRISMA Execution)</strong>?</p>
+            <p className="mt-2">
+              <strong>Estimated results</strong>: Semantic Scholar (~200-250), OpenAlex (~150-200), arXiv (~20-30)
+            </p>
+            <p className="mt-2">Ready to proceed to <strong>Stage 3 (Automated Database Search)</strong>?</p>
           </div>
         </div>
       </div>
@@ -363,39 +453,48 @@ publicationdate:[2015 TO 2025]`}
           code={`projects/2025-10-13_AI-Chatbots-Language-Learning/
 └── data/
     └── 01_identification/
-        └── search_queries.md  (PubMed, Scopus, ERIC queries)`}
+        └── search_queries.md  (Semantic Scholar, OpenAlex, arXiv queries)`}
         />
       </div>
 
-      <h2 id="stage3-prisma">Stage 3: PRISMA Execution (2 hours, mostly automated)</h2>
+      <h2 id="stage3-prisma">Stage 3: Automated Database Search (1 hour, fully automated)</h2>
 
       <p>
-        This is where the magic happens! Claude Code guides you through database searches, deduplication, and PRISMA screening—all automated with Python scripts.
+        This is where automation shines! Claude Code generates Python scripts that search databases via APIs and automatically download PDFs.
       </p>
 
-      <h3 id="database-search">Step 3.1: Database Search (30 minutes)</h3>
+      <h3 id="database-search">Step 3.1: API-Based Search & PDF Collection (30 minutes)</h3>
 
-      <div className="callout callout-info mb-6">
-        <p className="font-semibold mb-2">💡 Manual vs. Automated Search</p>
-        <p className="text-sm">
-          You have two options: (1) <strong>Manual</strong>—copy queries to PubMed/Scopus/ERIC websites, export CSVs manually, or (2) <strong>Automated</strong>—Claude Code generates Python scripts using APIs. We'll show the automated approach here.
+      <div className="callout callout-success mb-6">
+        <p className="font-semibold mb-2">✅ Fully Automated Process</p>
+        <p className="text-sm mb-2">
+          Unlike traditional databases that require manual website visits and CSV exports,
+          <strong>Semantic Scholar/OpenAlex/arXiv provide everything through APIs</strong>:
+        </p>
+        <ul className="text-sm space-y-1 ml-4">
+          <li>✓ Metadata (title, abstract, authors, year)</li>
+          <li>✓ PDF URLs (for open access papers)</li>
+          <li>✓ Citation counts and references</li>
+        </ul>
+        <p className="text-sm mt-2">
+          The entire process runs automatically—no manual downloads, no browser interactions.
         </p>
       </div>
 
       <div className="space-y-4 my-6">
         <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
           <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">👤 You:</p>
-          <p className="text-sm">Yes, let's search the databases. Can you create API scripts for PubMed, Scopus, and ERIC?</p>
+          <p className="text-sm">Let's run the automated search. Can you create the API scripts?</p>
         </div>
 
         <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 dark:bg-purple-950/20">
           <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">🤖 Claude Code:</p>
           <div className="prose prose-sm dark:prose-invert max-w-none">
-            <p>I'll create automated search scripts. Note: You'll need API keys (all free):</p>
+            <p>I'll create the automated search script. API keys needed (all free):</p>
             <ul className="ml-4 space-y-1 text-sm">
-              <li>• <strong>PubMed</strong>: No API key needed (open access)</li>
-              <li>• <strong>Scopus</strong>: Register at dev.elsevier.com (free tier: 5000 requests/week)</li>
-              <li>• <strong>ERIC</strong>: No API key needed (open access)</li>
+              <li>• <strong>Semantic Scholar</strong>: No API key (5000 requests/5min rate limit)</li>
+              <li>• <strong>OpenAlex</strong>: No API key (polite pool: 10 req/sec with email in user-agent)</li>
+              <li>• <strong>arXiv</strong>: No API key (3 sec delay between requests recommended)</li>
             </ul>
             <p className="mt-3">I'm creating <code>scripts/01_fetch_papers.py</code>...</p>
           </div>
@@ -411,56 +510,177 @@ publicationdate:[2015 TO 2025]`}
             language="python"
             code={`import requests
 import pandas as pd
+import time
 from datetime import datetime
 
-def fetch_pubmed(query, year_start, year_end):
-    """Fetch papers from PubMed API"""
-    base_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/"
+def fetch_semantic_scholar(query, year_start, year_end):
+    """Fetch papers from Semantic Scholar API with PDF URLs"""
+    base_url = "https://api.semanticscholar.org/graph/v1/paper/search"
 
-    # Search for paper IDs
-    search_params = {
-        'db': 'pubmed',
-        'term': query,
-        'retmax': 1000,
-        'datetype': 'pdat',
-        'mindate': year_start,
-        'maxdate': year_end
-    }
-
-    search_response = requests.get(f"{base_url}esearch.fcgi", params=search_params)
-    ids = search_response.json()['esearchresult']['idlist']
-
-    print(f"Found {len(ids)} papers from PubMed")
-
-    # Fetch paper details
     papers = []
-    for pmid in ids:
-        fetch_params = {'db': 'pubmed', 'id': pmid, 'retmode': 'xml'}
-        response = requests.get(f"{base_url}efetch.fcgi", params=fetch_params)
-        # Parse XML and extract title, abstract, authors, etc.
-        # ... (parsing logic)
-        papers.append({
-            'pmid': pmid,
-            'title': title,
-            'abstract': abstract,
-            'authors': authors,
-            'year': year,
-            'journal': journal,
-            'doi': doi
-        })
+    offset = 0
+    limit = 100
 
+    while True:
+        params = {
+            'query': query,
+            'year': f'{year_start}-{year_end}',
+            'fields': 'title,abstract,authors,year,citationCount,openAccessPdf,externalIds',
+            'limit': limit,
+            'offset': offset
+        }
+
+        response = requests.get(base_url, params=params)
+        if response.status_code != 200:
+            break
+
+        data = response.json()
+        batch = data.get('data', [])
+
+        if not batch:
+            break
+
+        for paper in batch:
+            papers.append({
+                'title': paper.get('title'),
+                'abstract': paper.get('abstract'),
+                'authors': '; '.join([a['name'] for a in paper.get('authors', [])]),
+                'year': paper.get('year'),
+                'citations': paper.get('citationCount', 0),
+                'doi': paper.get('externalIds', {}).get('DOI'),
+                'pdf_url': paper.get('openAccessPdf', {}).get('url') if paper.get('openAccessPdf') else None,
+                'source': 'Semantic Scholar'
+            })
+
+        offset += limit
+        if offset >= 1000:  # Limit to 1000 papers
+            break
+
+        time.sleep(0.5)  # Rate limiting
+
+    print(f"Found {len(papers)} papers from Semantic Scholar ({sum(1 for p in papers if p['pdf_url'])} with PDF URLs)")
+    return pd.DataFrame(papers)
+
+def fetch_openalex(query, year_start, year_end):
+    """Fetch papers from OpenAlex API with open access PDFs"""
+    base_url = "https://api.openalex.org/works"
+
+    papers = []
+    page = 1
+    per_page = 200
+
+    while True:
+        params = {
+            'search': query,
+            'filter': f'publication_year:{year_start}-{year_end},is_oa:true',
+            'per_page': per_page,
+            'page': page,
+            'mailto': 'your-email@example.com'  # Polite pool access
+        }
+
+        response = requests.get(base_url, params=params)
+        if response.status_code != 200:
+            break
+
+        data = response.json()
+        results = data.get('results', [])
+
+        if not results:
+            break
+
+        for work in results:
+            papers.append({
+                'title': work.get('title'),
+                'abstract': work.get('abstract_inverted_index'),  # Needs processing
+                'authors': '; '.join([a['author']['display_name'] for a in work.get('authorships', [])]),
+                'year': work.get('publication_year'),
+                'citations': work.get('cited_by_count', 0),
+                'doi': work.get('doi', '').replace('https://doi.org/', ''),
+                'pdf_url': work.get('open_access', {}).get('oa_url'),
+                'source': 'OpenAlex'
+            })
+
+        page += 1
+        if page > 5:  # Limit to 1000 papers (5 pages × 200)
+            break
+
+    print(f"Found {len(papers)} papers from OpenAlex ({sum(1 for p in papers if p['pdf_url'])} with PDF URLs)")
+    return pd.DataFrame(papers)
+
+def fetch_arxiv(query, year_start, year_end):
+    """Fetch papers from arXiv API (100% PDF access)"""
+    import urllib.parse
+
+    base_url = "http://export.arxiv.org/api/query"
+    encoded_query = urllib.parse.quote(query)
+
+    papers = []
+    start = 0
+    max_results = 100
+
+    while True:
+        url = f"{base_url}?search_query={encoded_query}&start={start}&max_results={max_results}"
+        response = requests.get(url)
+
+        # Parse XML response
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(response.content)
+
+        entries = root.findall('{http://www.w3.org/2005/Atom}entry')
+        if not entries:
+            break
+
+        for entry in entries:
+            year = int(entry.find('{http://www.w3.org/2005/Atom}published').text[:4])
+            if year_start <= year <= year_end:
+                papers.append({
+                    'title': entry.find('{http://www.w3.org/2005/Atom}title').text.strip(),
+                    'abstract': entry.find('{http://www.w3.org/2005/Atom}summary').text.strip(),
+                    'authors': '; '.join([a.find('{http://www.w3.org/2005/Atom}name').text
+                                        for a in entry.findall('{http://www.w3.org/2005/Atom}author')]),
+                    'year': year,
+                    'citations': 0,  # arXiv doesn't provide citation counts
+                    'doi': entry.find('{http://arxiv.org/schemas/atom}doi').text if entry.find('{http://arxiv.org/schemas/atom}doi') is not None else None,
+                    'pdf_url': entry.find('{http://www.w3.org/2005/Atom}id').text.replace('abs', 'pdf') + '.pdf',
+                    'source': 'arXiv'
+                })
+
+        start += max_results
+        if start >= 500:  # Limit to 500 papers
+            break
+
+        time.sleep(3)  # arXiv requires 3-second delay
+
+    print(f"Found {len(papers)} papers from arXiv ({len(papers)} with PDF URLs)")
     return pd.DataFrame(papers)
 
 # Run searches
-pubmed_results = fetch_pubmed(
-    query="(chatbot OR conversational agent) AND language learning...",
+print("\\n🔍 Searching databases for automated PDF access...\\n")
+
+semantic_results = fetch_semantic_scholar(
+    query="(chatbot OR conversational agent OR dialogue system) AND (language learning OR second language OR ESL) AND (speaking OR pronunciation)",
     year_start=2015,
     year_end=2025
 )
 
-# Save results
-pubmed_results.to_csv('data/01_identification/pubmed_results.csv', index=False)
-print(f"✓ Saved {len(pubmed_results)} papers to pubmed_results.csv")`}
+openalex_results = fetch_openalex(
+    query="chatbot language learning speaking",
+    year_start=2015,
+    year_end=2025
+)
+
+arxiv_results = fetch_arxiv(
+    query="all:chatbot AND all:language AND all:learning",
+    year_start=2015,
+    year_end=2025
+)
+
+# Combine and save
+all_papers = pd.concat([semantic_results, openalex_results, arxiv_results], ignore_index=True)
+all_papers.to_csv('data/01_identification/all_papers.csv', index=False)
+
+print(f"\\n✓ Total papers collected: {len(all_papers)}")
+print(f"✓ Papers with PDF URLs: {all_papers['pdf_url'].notna().sum()} ({all_papers['pdf_url'].notna().sum() / len(all_papers) * 100:.1f}%)")`}
           />
         </div>
       </details>
@@ -471,19 +691,20 @@ print(f"✓ Saved {len(pubmed_results)} papers to pubmed_results.csv")`}
           language="text"
           code={`$ python scripts/01_fetch_papers.py
 
-Searching PubMed...
-Found 78 papers from PubMed
-✓ Saved to data/01_identification/pubmed_results.csv
+🔍 Searching databases for automated PDF access...
 
-Searching Scopus...
-Found 245 papers from Scopus
-✓ Saved to data/01_identification/scopus_results.csv
+Searching Semantic Scholar...
+Found 218 papers from Semantic Scholar (94 with PDF URLs)
 
-Searching ERIC...
-Found 134 papers from ERIC
-✓ Saved to data/01_identification/eric_results.csv
+Searching OpenAlex...
+Found 182 papers from OpenAlex (97 with PDF URLs)
 
-Total papers collected: 457`}
+Searching arXiv...
+Found 23 papers from arXiv (23 with PDF URLs)
+
+✓ Total papers collected: 423
+✓ Papers with PDF URLs: 214 (50.6%)
+✓ Saved to data/01_identification/all_papers.csv`}
         />
       </div>
 
@@ -499,12 +720,12 @@ Total papers collected: 457`}
           language="text"
           code={`$ python scripts/02_deduplicate.py
 
-Processing 457 papers...
-Found 115 exact DOI matches
-Found 23 title similarity matches (>95% similar)
-Found 8 author+year matches
+Processing 423 papers...
+Found 87 exact DOI matches
+Found 19 title similarity matches (>95% similar)
+Found 6 author+year matches
 
-Total duplicates removed: 146
+Total duplicates removed: 112
 Final dataset: 311 unique papers
 
 ✓ Saved to data/01_identification/deduplicated.csv`}
@@ -556,13 +777,13 @@ Top exclusion reasons:
           code={`projects/2025-10-13_AI-Chatbots-Language-Learning/
 └── data/
     ├── 01_identification/
-    │   ├── pubmed_results.csv (78 papers)
-    │   ├── scopus_results.csv (245 papers)
-    │   ├── eric_results.csv (134 papers)
-    │   └── deduplicated.csv (311 unique papers)
+    │   ├── semantic_scholar_results.csv (210 papers, 89 with PDFs)
+    │   ├── openalex_results.csv (175 papers, 91 with PDFs)
+    │   ├── arxiv_results.csv (18 papers, 18 with PDFs)
+    │   └── deduplicated.csv (338 unique papers, 198 with PDF URLs)
     └── 02_screening/
-        ├── title_abstract.csv (139 passed)
-        ├── excluded.csv (172 excluded)
+        ├── title_abstract.csv (139 passed, 68 with PDFs)
+        ├── excluded.csv (199 excluded)
         └── decisions.json (screening decisions log)`}
         />
       </div>
@@ -570,15 +791,18 @@ Top exclusion reasons:
       <h2 id="stage4-rag-setup">Stage 4: RAG System Setup (30 minutes)</h2>
 
       <p>
-        Now you have 139 papers that passed screening. Claude Code helps you build a vector database from these papers' PDFs.
+        Now you have 139 papers that passed screening (68 with direct PDF URLs from Stage 3). Claude Code downloads the PDFs and builds a vector database.
       </p>
 
-      <h3 id="pdf-download">Step 4.1: PDF Download (20 minutes)</h3>
+      <h3 id="pdf-download">Step 4.1: PDF Download (15 minutes)</h3>
 
-      <div className="callout callout-warning mb-4">
-        <p className="font-semibold mb-2">📄 PDF Availability Reality Check</p>
+      <div className="callout callout-success mb-4">
+        <p className="font-semibold mb-2">✅ API-Collected PDF URLs</p>
         <p className="text-sm">
-          Not all papers have freely available PDFs. Expect <strong>50-60% success rate</strong> for open access papers. Claude Code tries multiple sources: Unpaywall, OpenAlex, institutional access, and author websites.
+          Good news! <strong>68/139 papers (49%)</strong> already have PDF URLs collected from Semantic Scholar, OpenAlex, and arXiv APIs in Stage 3. These download automatically.
+        </p>
+        <p className="text-sm mt-2">
+          For the remaining 71 papers (51%), Claude Code tries additional sources: Unpaywall, SciHub-alternatives, and institutional access.
         </p>
       </div>
 
@@ -590,18 +814,25 @@ Top exclusion reasons:
 
 Downloading PDFs for 139 papers...
 
-Sources tried:
-  1. Unpaywall (open access): 48 found
-  2. OpenAlex (institution): 23 found
-  3. Author ResearchGate: 4 found
+✅ From API URLs (Stage 3):
+  - Semantic Scholar: 35 PDFs
+  - OpenAlex: 28 PDFs
+  - arXiv: 5 PDFs
+  Subtotal: 68 PDFs (49%) - automatic
 
-Total PDFs downloaded: 75/139 (54%)
-Missing PDFs: 64/139 (46%)
+🔍 Additional sources (71 remaining papers):
+  - Unpaywall API: 8 PDFs found
+  - Institutional access: 3 PDFs found
+  - Manual fallback: 0 PDFs
+  Subtotal: 11 PDFs (15% of remaining)
 
-For missing PDFs, consider:
-- Emailing authors directly
-- Using institutional VPN/proxy
-- Substituting with abstract-only (reduced context)
+Total PDFs downloaded: 79/139 (57%)
+Missing PDFs: 60/139 (43%)
+
+For missing PDFs, you can:
+- ✉️ Email authors directly (most respond within 2-3 days)
+- 🏛️ Try institutional VPN/proxy
+- 📝 Use abstract-only for RAG (reduced context quality)
 
 ✓ Saved PDFs to data/pdfs/
 ✓ Saved missing list to data/pdfs/missing_pdfs.txt`}
@@ -620,28 +851,28 @@ For missing PDFs, consider:
           language="text"
           code={`$ python scripts/05_build_rag.py
 
-Processing 75 PDFs...
+Processing 79 PDFs...
 
 Text Extraction:
-  PyMuPDF: 71 successful
+  PyMuPDF: 75 successful
   OCR fallback: 4 successful
   Failed: 0
 
 Chunking Strategy:
   Chunk size: 1000 tokens
   Overlap: 200 tokens
-  Total chunks: 867
+  Total chunks: 912
 
 Embedding Generation:
   Model: text-embedding-3-small
   Dimensions: 1536
-  Time: 3m 45s
-  Cost: $0.02
+  Time: 4m 15s
+  Cost: $0.03
 
 Vector Database:
   Type: ChromaDB
   Storage: rag/chroma_db/
-  Size: 45 MB
+  Size: 48 MB
 
 ✓ RAG system ready!
 Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
@@ -655,10 +886,10 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
           code={`projects/2025-10-13_AI-Chatbots-Language-Learning/
 ├── data/
 │   ├── 03_full_text/
-│   │   └── final_dataset.csv (75 papers with PDFs)
-│   └── pdfs/ (75 PDF files)
+│   │   └── final_dataset.csv (139 papers, 79 with PDFs)
+│   └── pdfs/ (79 PDF files)
 ├── rag/
-│   ├── chroma_db/ (vector database, 867 chunks)
+│   ├── chroma_db/ (vector database, 912 chunks)
 │   ├── rag_config.yaml
 │   └── ingestion_log.txt
 └── scripts/
@@ -802,25 +1033,26 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
 Creating PRISMA 2020 flowchart...
 
 Records identified through:
-  • PubMed: 78
-  • Scopus: 245
-  • ERIC: 134
-  Total: 457
+  • Semantic Scholar: 210 (89 with PDFs)
+  • OpenAlex: 175 (91 with PDFs)
+  • arXiv: 18 (18 with PDFs)
+  Total: 403 (198 with PDFs - 49%)
 
-Records after deduplication: 311
-Records screened (title/abstract): 311
-Records excluded: 172
-  - Wrong outcome: 45
-  - Wrong population: 38
-  - Wrong intervention: 32
-  - Study design: 28
-  - Other: 29
+Records after deduplication: 338 (198 with PDFs)
+Records screened (title/abstract): 338
+Records excluded: 199
+  - Wrong outcome: 52
+  - Wrong population: 45
+  - Wrong intervention: 38
+  - Study design: 34
+  - Other: 30
 
-Full-text articles assessed: 139
-Full-text articles excluded: 64
-  - PDF not available: 64
+Full-text articles assessed: 139 (68 with PDFs)
+Additional PDFs downloaded: 11 (via Unpaywall, institutional access)
+Total PDFs available: 79 (57%)
 
-Studies included: 75
+Studies included for RAG: 79 (with PDFs)
+Studies tracked but not in RAG: 60 (PDF unavailable)
 
 ✓ Generated outputs/prisma_flowchart.png
 ✓ Generated outputs/prisma_flowchart.mmd (Mermaid format)
@@ -864,11 +1096,11 @@ Studies included: 75
               <td className="p-3">Review queries, select strategy</td>
             </tr>
             <tr className="border-b bg-gray-50 dark:bg-gray-900">
-              <td className="p-3">3. PRISMA Execution</td>
-              <td className="p-3">2 hours</td>
+              <td className="p-3">3. Automated Search</td>
+              <td className="p-3">1 hour</td>
               <td className="p-3">🧑 Low</td>
-              <td className="p-3">✅ 90%</td>
-              <td className="p-3">Monitor scripts, review borderline cases</td>
+              <td className="p-3">✅ 95%</td>
+              <td className="p-3">API searches + screening, review borderline cases</td>
             </tr>
             <tr className="border-b">
               <td className="p-3">4. RAG Setup</td>
@@ -895,9 +1127,9 @@ Studies included: 75
           <tfoot>
             <tr className="border-t-2 font-semibold">
               <td className="p-3">Total</td>
-              <td className="p-3">~3 hours</td>
+              <td className="p-3">~2 hours</td>
               <td className="p-3" colSpan={3}>
-                Time saved vs. manual: <strong>~120 hours (2 weeks)</strong>
+                Time saved vs. manual: <strong>~120 hours (3 weeks)</strong>
               </td>
             </tr>
           </tfoot>
@@ -916,27 +1148,27 @@ Studies included: 75
 │
 ├── data/
 │   ├── 01_identification/
-│   │   ├── pubmed_results.csv       (78 papers)
-│   │   ├── scopus_results.csv       (245 papers)
-│   │   ├── eric_results.csv         (134 papers)
-│   │   ├── deduplicated.csv         (311 unique)
-│   │   └── search_queries.md        (database queries)
+│   │   ├── semantic_scholar_results.csv  (210 papers, 89 PDFs)
+│   │   ├── openalex_results.csv          (175 papers, 91 PDFs)
+│   │   ├── arxiv_results.csv             (18 papers, 18 PDFs)
+│   │   ├── deduplicated.csv              (338 unique, 198 PDFs)
+│   │   └── search_queries.md             (API queries)
 │   │
 │   ├── 02_screening/
-│   │   ├── title_abstract.csv       (139 passed)
-│   │   ├── excluded.csv             (172 excluded)
+│   │   ├── title_abstract.csv       (139 passed, 68 PDFs)
+│   │   ├── excluded.csv             (199 excluded)
 │   │   └── decisions.json           (screening log)
 │   │
 │   ├── 03_full_text/
-│   │   ├── final_dataset.csv        (75 included)
-│   │   └── exclusion_reasons.csv    (64 excluded)
+│   │   ├── final_dataset.csv        (139 papers, 79 with PDFs)
+│   │   └── exclusion_reasons.csv    (additional exclusions)
 │   │
-│   └── pdfs/                        (75 PDF files)
-│       └── missing_pdfs.txt         (64 unavailable)
+│   └── pdfs/                        (79 PDF files)
+│       └── missing_pdfs.txt         (60 unavailable)
 │
 ├── rag/
 │   ├── chroma_db/                   (vector database)
-│   │   └── [867 chunks, 45 MB]
+│   │   └── [912 chunks, 48 MB]
 │   ├── rag_config.yaml              (RAG settings)
 │   └── ingestion_log.txt            (processing log)
 │
