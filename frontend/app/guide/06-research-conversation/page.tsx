@@ -31,7 +31,7 @@ export default function ResearchConversationPage() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="border-2 border-gray-300 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-950">
+        <div className="border-2 border-gray-300 rounded-lg p-6 bg-white">
           <h3 className="text-lg font-semibold mb-3">❌ WITHOUT Interface</h3>
           <p className="text-sm mb-3 text-muted-foreground">Direct Claude Code chat uses general knowledge:</p>
           <div className="bg-black text-white rounded p-3 text-xs font-mono">
@@ -41,7 +41,7 @@ export default function ResearchConversationPage() {
           </div>
         </div>
 
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-gray-50 dark:bg-gray-900">
+        <div className="border-2 border-gray-900 rounded-lg p-6 bg-gray-50">
           <h3 className="text-lg font-semibold mb-3">✅ WITH ResearcherRAG Interface</h3>
           <p className="text-sm mb-3 text-muted-foreground">Interface searches YOUR Vector Database:</p>
           <div className="bg-black text-white rounded p-3 text-xs font-mono">
@@ -102,10 +102,10 @@ export default function ResearchConversationPage() {
         <p className="font-semibold mb-2">🔐 How to Run the RAG Interface</p>
         <div className="space-y-3">
           <p className="text-sm"><strong>Step 1: Open your terminal</strong> and navigate to your project:</p>
-          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>cd /path/to/your/researcherRAG-project</code></pre>
+          <pre className="bg-white p-2 rounded text-xs"><code>cd /path/to/your/researcherRAG-project</code></pre>
 
           <p className="text-sm"><strong>Step 2: Run the interface script:</strong></p>
-          <pre className="bg-white dark:bg-gray-900 p-2 rounded text-xs"><code>python interfaces/claude_code_interface.py</code></pre>
+          <pre className="bg-white p-2 rounded text-xs"><code>python interfaces/claude_code_interface.py</code></pre>
 
           <p className="text-sm"><strong>Step 3: You'll see this prompt:</strong></p>
           <CodeBlock
@@ -260,7 +260,7 @@ graph LR
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Get familiar with your knowledge base, understand scope and coverage</p>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
+      <div className="border-l-4 border-gray-900 bg-gray-50 p-4 my-4">
         <p className="font-semibold mb-2">Example Session Flow:</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "How many papers are in my knowledge base?"</p>
@@ -275,7 +275,7 @@ graph LR
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Investigate specific themes or topics in depth</p>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
+      <div className="border-l-4 border-gray-900 bg-gray-50 p-4 my-4">
         <p className="font-semibold mb-2">Example: Deep Dive on "Adoption Barriers"</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "What barriers to technology adoption are mentioned?"</p>
@@ -297,7 +297,7 @@ graph LR
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Synthesize findings across multiple papers, identify patterns</p>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
+      <div className="border-l-4 border-gray-900 bg-gray-50 p-4 my-4">
         <p className="font-semibold mb-2">Example: Synthesizing Adoption Factors</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "Create a table of all adoption factors mentioned, with paper citations"</p>
@@ -312,7 +312,7 @@ graph LR
 
       <p className="text-sm mb-3"><strong>Goal:</strong> Identify gaps, limitations, and future research directions</p>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-4">
+      <div className="border-l-4 border-gray-900 bg-gray-50 p-4 my-4">
         <p className="font-semibold mb-2">Example: Finding Research Gaps</p>
         <div className="space-y-2 text-sm">
           <p><strong>Q1:</strong> "What limitations do authors mention in their studies?"</p>
@@ -486,8 +486,8 @@ python interfaces/claude_code_interface.py \\
       <h2 id="best-practices-summary">Research Conversation Best Practices</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-        <div className="border-l-4 border-green-500 bg-green-50 dark:bg-green-950/20 p-4">
-          <h4 className="font-semibold mb-2 text-green-800 dark:text-green-200">✅ Do This</h4>
+        <div className="border-l-4 border-green-500 bg-green-50 p-4">
+          <h4 className="font-semibold mb-2 text-green-800">✅ Do This</h4>
           <ul className="text-sm space-y-1">
             <li>✓ Always use the interface scripts, not direct chat</li>
             <li>✓ Start broad, then narrow down</li>
@@ -499,8 +499,8 @@ python interfaces/claude_code_interface.py \\
           </ul>
         </div>
 
-        <div className="border-l-4 border-red-500 bg-red-50 dark:bg-red-950/20 p-4">
-          <h4 className="font-semibold mb-2 text-red-800 dark:text-red-200">❌ Avoid This</h4>
+        <div className="border-l-4 border-red-500 bg-red-50 p-4">
+          <h4 className="font-semibold mb-2 text-red-800">❌ Avoid This</h4>
           <ul className="text-sm space-y-1">
             <li>✗ Using direct Claude chat (gets general knowledge)</li>
             <li>✗ Accepting answers without verifying citations</li>

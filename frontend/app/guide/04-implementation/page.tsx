@@ -107,7 +107,7 @@ graph LR
 
       <h3 id="stage-1-example">Real-World Example</h3>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-6">
+      <div className="border-l-4 border-gray-900 bg-gray-50 p-4 my-6">
         <p className="font-semibold mb-2">Research Question:</p>
         <p className="mb-4 italic">
           "What are the factors influencing technology adoption in healthcare organizations, and how do these factors differ across developed and developing countries?"
@@ -439,7 +439,7 @@ graph TB
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-gray-50 dark:bg-gray-900">
+        <div className="border-2 border-gray-900 rounded-lg p-6 bg-gray-50">
           <h4 className="text-lg font-semibold mb-3">✅ Inclusion Criteria</h4>
           <ul className="space-y-2 text-sm">
             <li>✓ Empirical studies (quantitative or qualitative)</li>
@@ -452,7 +452,7 @@ graph TB
           </ul>
         </div>
 
-        <div className="border-2 border-gray-300 dark:border-gray-700 rounded-lg p-6 bg-white dark:bg-gray-950">
+        <div className="border-2 border-gray-300 rounded-lg p-6 bg-white">
           <h4 className="text-lg font-semibold mb-3">❌ Exclusion Criteria</h4>
           <ul className="space-y-2 text-sm">
             <li>✗ Opinion pieces, editorials, reviews</li>
@@ -479,7 +479,7 @@ graph TB
             href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/01_fetch_papers.py"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            className="text-sm text-blue-600 hover:underline ml-3"
           >
             📄 View Source
           </a>
@@ -507,7 +507,7 @@ graph TB
             href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/02_deduplicate.py"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            className="text-sm text-blue-600 hover:underline ml-3"
           >
             📄 View Source
           </a>
@@ -533,7 +533,7 @@ graph TB
             href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/03_screen_abstracts.py"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            className="text-sm text-blue-600 hover:underline ml-3"
           >
             📄 View Source
           </a>
@@ -565,7 +565,7 @@ graph TB
             href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/04_download_pdfs.py"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            className="text-sm text-blue-600 hover:underline ml-3"
           >
             📄 View Source
           </a>
@@ -594,7 +594,7 @@ graph TB
             href="https://github.com/HosungYou/researcherRAG/blob/main/scripts/05_full_text_review.py"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 dark:text-blue-400 hover:underline ml-3"
+            className="text-sm text-blue-600 hover:underline ml-3"
           >
             📄 View Source
           </a>
@@ -854,7 +854,7 @@ prompts:
       <h3 id="stage-4-optimization">Optimization Tips</h3>
 
       <div className="grid grid-cols-1 gap-4 my-6">
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <p className="font-semibold mb-2">🎯 Chunk Size Tuning</p>
           <p className="text-sm mb-2">
             Start with 500 tokens, then experiment:
@@ -866,7 +866,7 @@ prompts:
           </ul>
         </div>
 
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <p className="font-semibold mb-2">💰 Cost Optimization</p>
           <p className="text-sm mb-2">
             Reduce costs without sacrificing quality:
@@ -879,7 +879,7 @@ prompts:
           </ul>
         </div>
 
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <p className="font-semibold mb-2">⚡ Performance Tuning</p>
           <p className="text-sm mb-2">
             Speed up queries:
@@ -1088,7 +1088,7 @@ Answer: ...`}
         Let's walk through a complete implementation from start to finish using a real research question.
       </p>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-6 my-6">
+      <div className="border-l-4 border-gray-900 bg-gray-50 p-6 my-6">
         <h3 className="text-lg font-semibold mb-3">📚 Case Study: LLM Applications in Education Research</h3>
 
         <p className="mb-4">

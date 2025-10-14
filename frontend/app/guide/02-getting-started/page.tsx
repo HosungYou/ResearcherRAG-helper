@@ -160,13 +160,13 @@ python3 --version`}
         ResearcherRAG works with multiple AI coding assistants. Choose one based on your preference—<strong>both work perfectly!</strong>
       </p>
 
-      <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black mb-6">
+      <div className="border-2 border-gray-900 rounded-lg p-6 bg-white mb-6">
         <p className="font-semibold mb-2">💰 Important: Use Subscription Plans, Not API Keys!</p>
         <p className="text-sm mb-2">
           <strong>Strongly recommended</strong>: Sign in with your <strong>ChatGPT Plus ($20/month)</strong> or <strong>Claude Pro ($20/month)</strong> subscription instead of using API keys. Here's why:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm my-3">
-          <div className="border-l-4 border-gray-900 dark:border-gray-100 rounded p-3 bg-gray-50 dark:bg-gray-900">
+          <div className="border-l-4 border-gray-900 rounded p-3 bg-gray-50">
             <p className="font-semibold mb-1">❌ API Key (Pay-as-you-go)</p>
             <ul className="text-xs space-y-1 ml-4">
               <li>Claude: $3-15 per 1M tokens</li>
@@ -175,7 +175,7 @@ python3 --version`}
               <li>Costs add up quickly with iterations</li>
             </ul>
           </div>
-          <div className="border-l-4 border-gray-900 dark:border-gray-100 rounded p-3 bg-gray-50 dark:bg-gray-900">
+          <div className="border-l-4 border-gray-900 rounded p-3 bg-gray-50">
             <p className="font-semibold mb-1">✅ Subscription (Fixed $20/month)</p>
             <ul className="text-xs space-y-1 ml-4">
               <li>ChatGPT Plus: <strong>Generous token allowance</strong></li>
@@ -191,10 +191,10 @@ python3 --version`}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-8">
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black">
+        <div className="border-2 border-gray-900 rounded-lg p-6 bg-white">
           <div className="flex items-center gap-2 mb-3">
             <h4 className="text-lg font-semibold m-0">Claude Code</h4>
-            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">★ Recommended</span>
+            <span className="text-xs border border-gray-900 px-2 py-1 rounded font-semibold">★ Recommended</span>
           </div>
           <p className="text-sm mb-4">
             Anthropic's official VS Code extension with 200K token context window—optimized for ResearcherRAG's long prompts and academic workflows.
@@ -210,7 +210,7 @@ python3 --version`}
               href="https://marketplace.visualstudio.com/items?itemName=Anthropic.claude-code"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-foreground text-background hover:bg-gray-800 dark:hover:bg-gray-200 font-semibold py-2 px-4 rounded no-underline transition-colors"
+              className="block text-center bg-foreground text-background hover:bg-gray-800 font-semibold py-2 px-4 rounded no-underline transition-colors"
             >
               Install Claude Code →
             </a>
@@ -224,10 +224,10 @@ python3 --version`}
           </div>
         </div>
 
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-gray-50 dark:bg-gray-950">
+        <div className="border-2 border-gray-900 rounded-lg p-6 bg-gray-50">
           <div className="flex items-center gap-2 mb-3">
             <h4 className="text-lg font-semibold m-0">OpenAI Codex</h4>
-            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">$ Best Value</span>
+            <span className="text-xs border border-gray-900 px-2 py-1 rounded font-semibold">$ Best Value</span>
           </div>
           <p className="text-sm mb-4">
             OpenAI's agentic coding assistant with powerful reasoning. <strong>Generous token limits</strong> make it ideal for heavy PRISMA workflows.
@@ -243,7 +243,7 @@ python3 --version`}
               href="https://developers.openai.com/codex/ide"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-center bg-foreground text-background hover:bg-gray-800 dark:hover:bg-gray-200 font-semibold py-2 px-4 rounded no-underline transition-colors"
+              className="block text-center bg-foreground text-background hover:bg-gray-800 font-semibold py-2 px-4 rounded no-underline transition-colors"
             >
               Install Codex Extension →
             </a>
@@ -346,10 +346,10 @@ python3 --version`}
       </p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 my-6">
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-4 bg-white dark:bg-black">
+        <div className="border-2 border-gray-900 rounded-lg p-4 bg-white">
           <div className="flex items-center gap-2 mb-2">
             <h4 className="text-base font-semibold m-0">Option A: Claude Pro ($20/mo)</h4>
-            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">★ Recommended</span>
+            <span className="text-xs border border-gray-900 px-2 py-1 rounded font-semibold">★ Recommended</span>
           </div>
           <p className="text-sm mb-3">Best for single-project workflows and academic reasoning.</p>
           <ol className="text-sm space-y-2 mb-3">
@@ -358,7 +358,7 @@ python3 --version`}
             <li><strong>Sign In</strong>: Click Claude icon → <strong>Sign in with your Pro account</strong></li>
             <li><strong>Verify</strong>: You'll see "Pro" badge in the extension</li>
           </ol>
-          <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 rounded p-2 text-xs">
+          <div className="border-l-4 border-gray-900 bg-gray-50 rounded p-2 text-xs">
             <p className="font-semibold mb-1">What you get:</p>
             <ul className="ml-4 space-y-1">
               <li>✅ ~500K tokens/month (~10-15 PRISMA projects)</li>
@@ -369,10 +369,10 @@ python3 --version`}
           </div>
         </div>
 
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-4 bg-gray-50 dark:bg-gray-950">
+        <div className="border-2 border-gray-900 rounded-lg p-4 bg-gray-50">
           <div className="flex items-center gap-2 mb-2">
             <h4 className="text-base font-semibold m-0">Option B: ChatGPT Plus ($20/mo)</h4>
-            <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">$ Best Value</span>
+            <span className="text-xs border border-gray-900 px-2 py-1 rounded font-semibold">$ Best Value</span>
           </div>
           <p className="text-sm mb-3">Best for heavy usage and multiple concurrent projects.</p>
           <ol className="text-sm space-y-2 mb-3">
@@ -381,7 +381,7 @@ python3 --version`}
             <li><strong>Sign In</strong>: Click Codex icon → <strong>Sign in with ChatGPT account</strong></li>
             <li><strong>Select Model</strong>: Switch to <strong>GPT-5-Codex</strong></li>
           </ol>
-          <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-white dark:bg-black rounded p-2 text-xs">
+          <div className="border-l-4 border-gray-900 bg-white rounded p-2 text-xs">
             <p className="font-semibold mb-1">What you get:</p>
             <ul className="ml-4 space-y-1">
               <li>✅ <strong>More generous token limits</strong> than Claude Pro</li>
@@ -393,11 +393,11 @@ python3 --version`}
         </div>
       </div>
 
-      <details className="border-2 border-gray-600 dark:border-gray-400 rounded-lg my-6 bg-gray-100 dark:bg-gray-900">
+      <details className="border-2 border-gray-600 rounded-lg my-6 bg-gray-100">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
           ⚠️ Alternative: API Keys (Not Recommended for Beginners)
         </summary>
-        <div className="p-4 pt-0 border-t border-gray-600 dark:border-gray-400">
+        <div className="p-4 pt-0 border-t border-gray-600">
           <p className="text-sm mb-3">
             <strong>Only use API keys if</strong>: You need programmatic access, are building a commercial service, or have institutional API credits. For individual research, subscriptions are far more cost-effective.
           </p>
@@ -520,7 +520,7 @@ python researcherrag_cli.py --help`}
 
       <h3 id="step0-init-project">Step 0: Initialize Your Project (🆕 Required)</h3>
 
-      <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black mb-6">
+      <div className="border-2 border-gray-900 rounded-lg p-6 bg-white mb-6">
         <p className="font-semibold mb-2">🚨 Important: Create Standardized Project Structure</p>
         <p className="text-sm mb-3">
           Before starting any research work, you <strong>must</strong> initialize a project using the CLI tool. This ensures:
@@ -545,7 +545,7 @@ python researcherrag_cli.py --help`}
 
       <p>You'll be prompted to enter:</p>
 
-      <div className="border rounded-lg p-4 my-4 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-4 bg-gray-50">
         <div className="space-y-3 text-sm font-mono">
           <div>
             <span className="text-muted-foreground">Project name:</span> <strong>AI-Healthcare-Adoption</strong>

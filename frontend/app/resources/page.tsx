@@ -3,9 +3,9 @@ import { BookOpen, Download, FileText, Github, Package, Terminal, Globe, FileCod
 
 export default function ResourcesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Header */}
-      <header className="border-b border-gray-200 dark:border-gray-700">
+      <header className="border-b border-gray-200">
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <div className="text-xl font-medium tracking-tight">RAG.lab</div>
@@ -26,7 +26,7 @@ export default function ResourcesPage() {
         {/* Page Title */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Download Resources</h2>
-          <p className="text-gray-600 dark:text-gray-300 text-lg">
+          <p className="text-gray-600 text-lg">
             Templates, examples, and materials to get you started quickly
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function ResourcesPage() {
               <Terminal className="w-6 h-6 text-primary-600" />
               Chat Interfaces (After Building Your RAG)
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               After completing Stages 1-5, use these interfaces to interact with your research papers
             </p>
             <div className="grid md:grid-cols-3 gap-6">
@@ -48,13 +48,13 @@ export default function ResourcesPage() {
                   <FileCode className="w-5 h-5 text-blue-600" />
                   <h4 className="font-bold">Claude Code Interface</h4>
                 </div>
-                <div className="inline-block bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-xs px-2 py-1 rounded mb-3">
+                <div className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">
                   Recommended
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-sm text-gray-600 mb-4">
                   Run directly in Claude Code. No setup needed. Best for iterative research.
                 </p>
-                <div className="space-y-1 mb-4 text-xs text-gray-600 dark:text-gray-400">
+                <div className="space-y-1 mb-4 text-xs text-gray-600">
                   <div>✓ CLI interactive mode</div>
                   <div>✓ Single query mode</div>
                   <div>✓ Real-time citations</div>
@@ -75,13 +75,13 @@ export default function ResourcesPage() {
                   <Globe className="w-5 h-5 text-purple-600" />
                   <h4 className="font-bold">Streamlit Interface</h4>
                 </div>
-                <div className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-xs px-2 py-1 rounded mb-3">
+                <div className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded mb-3">
                   Visual UI
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-sm text-gray-600 mb-4">
                   Web GUI with chat history, export features, and paper statistics.
                 </p>
-                <div className="space-y-1 mb-4 text-xs text-gray-600 dark:text-gray-400">
+                <div className="space-y-1 mb-4 text-xs text-gray-600">
                   <div>✓ Chat history export</div>
                   <div>✓ Citation tracking</div>
                   <div>✓ Statistics dashboard</div>
@@ -102,13 +102,13 @@ export default function ResourcesPage() {
                   <FileCode className="w-5 h-5 text-green-600" />
                   <h4 className="font-bold">FastAPI Server</h4>
                 </div>
-                <div className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded mb-3">
+                <div className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mb-3">
                   Production
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <p className="text-sm text-gray-600 mb-4">
                   REST API server for building custom frontends. Full documentation.
                 </p>
-                <div className="space-y-1 mb-4 text-xs text-gray-600 dark:text-gray-400">
+                <div className="space-y-1 mb-4 text-xs text-gray-600">
                   <div>✓ REST API endpoints</div>
                   <div>✓ Custom frontend</div>
                   <div>✓ OpenAPI docs</div>
@@ -124,8 +124,8 @@ export default function ResourcesPage() {
                 </a>
               </div>
             </div>
-            <div className="mt-6 bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-              <p className="text-sm text-blue-800 dark:text-blue-200">
+            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <p className="text-sm text-blue-800">
                 <strong>📚 Note:</strong> These interfaces require a Vector DB built using ResearcherRAG Stages 1-5.
                 See the <Link href="/guide/04-implementation" className="underline font-medium">Implementation Guide</Link> to get started.
               </p>
@@ -250,7 +250,7 @@ export default function ResourcesPage() {
           <section className="card p-8 text-center">
             <Github className="w-12 h-12 text-primary-600 mx-auto mb-4" />
             <h3 className="text-2xl font-bold mb-3">ResearcherRAG Repository</h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-gray-600 mb-6">
               Clone the complete repository to access all resources and start building your RAG system
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg text-left overflow-x-auto mb-6">
@@ -293,9 +293,9 @@ function ResourceCard({ title, description, fileSize, format, href }: {
         <h4 className="font-bold text-lg">{title}</h4>
         <Download className="w-5 h-5 text-primary-600 flex-shrink-0" />
       </div>
-      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{description}</p>
+      <p className="text-sm text-gray-600 mb-4">{description}</p>
       <div className="flex items-center gap-4 text-xs text-gray-500">
-        <span className="bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 px-2 py-1 rounded">
+        <span className="bg-primary-100 text-primary-700 px-2 py-1 rounded">
           {format}
         </span>
         <span>{fileSize}</span>

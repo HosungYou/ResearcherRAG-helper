@@ -69,7 +69,7 @@ export default function CoreConceptsPage() {
         Without PRISMA, your RAG system cannot answer the fundamental question reviewers will ask:
       </p>
 
-      <div className="bg-gray-50 dark:bg-gray-900 border-l-4 border-gray-900 dark:border-gray-100 p-4 my-6">
+      <div className="bg-gray-50 border-l-4 border-gray-900 p-4 my-6">
         <p className="text-sm font-semibold mb-2">Reviewer Question:</p>
         <p className="text-sm italic mb-2">
           "How did you ensure comprehensive coverage of the literature while maintaining quality standards?"
@@ -177,7 +177,7 @@ graph TD
       `} />
 
       <div className="space-y-6 my-8">
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 pl-6 py-2">
           <h4 className="font-semibold mb-2">1. Identification</h4>
           <p className="text-sm text-muted mb-2">
             Search multiple databases (PubMed, Scopus, Web of Science, etc.) using carefully designed queries. Document the number of records found from each source.
@@ -185,7 +185,7 @@ graph TD
           <p className="text-xs text-muted-foreground font-mono">Example: PubMed (450), Scopus (380), ERIC (320) → Total: 1,150 records</p>
         </div>
 
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 pl-6 py-2">
           <h4 className="font-semibold mb-2">2. Screening</h4>
           <p className="text-sm text-muted mb-2">
             Review titles and abstracts against predefined inclusion/exclusion criteria. This is where AI assistance (like ResearcherRAG) provides the most value.
@@ -193,7 +193,7 @@ graph TD
           <p className="text-xs text-muted-foreground font-mono">Typical screening reduces papers by 70-80%</p>
         </div>
 
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 pl-6 py-2">
           <h4 className="font-semibold mb-2">3. Eligibility</h4>
           <p className="text-sm text-muted mb-2">
             Assess full-text articles in detail. Check methodology, sample size, outcome measures, and other quality criteria.
@@ -201,7 +201,7 @@ graph TD
           <p className="text-xs text-muted-foreground font-mono">Further reduces by 40-60% based on detailed assessment</p>
         </div>
 
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 py-2">
+        <div className="border-l-4 border-gray-900 pl-6 py-2">
           <h4 className="font-semibold mb-2">4. Included</h4>
           <p className="text-sm text-muted mb-2">
             Final set of papers that meet all criteria. These form your knowledge base for synthesis or meta-analysis.

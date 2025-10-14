@@ -182,7 +182,7 @@ export default function HomePage() {
         className="max-w-7xl mx-auto px-6 py-20 border-t border-border"
       >
         <h2 className="text-3xl font-bold tracking-tight mb-8">Quick Start</h2>
-        <div className="border border-border rounded-lg p-8 bg-gray-50 dark:bg-gray-950">
+        <div className="border border-border rounded-lg p-8 bg-gray-50">
           <ol className="space-y-4 mb-8 text-sm">
             {[
               'Clone the repository and install dependencies',
@@ -335,7 +335,7 @@ function FeatureCell({ title, description, href, delay }: { title: string; descr
     >
       <Link
         href={href}
-        className="block bg-background p-8 hover:bg-gray-50 dark:hover:bg-gray-950 transition-colors group h-full"
+        className="block bg-background p-8 hover:bg-gray-50 transition-colors group h-full"
       >
         <h3 className="text-lg font-semibold mb-2 relative">
           {title}
@@ -358,7 +358,7 @@ function TechCell({ name, description, delay }: { name: string; description: str
       whileInView={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4, delay }}
       viewport={{ once: true }}
-      className="bg-background p-6 hover:bg-gray-50 dark:hover:bg-gray-950 transition-colors"
+      className="bg-background p-6 hover:bg-gray-50 transition-colors"
     >
       <div className="font-medium text-sm mb-1">{name}</div>
       <div className="text-xs text-muted">{description}</div>
