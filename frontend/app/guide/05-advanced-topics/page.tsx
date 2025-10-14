@@ -246,16 +246,20 @@ rag:
         </p>
         <div className="space-y-2 text-sm">
           <div className="border-l-2 border-gray-900 pl-3">
-            <p className="font-semibold">Semantic Scholar</p>
-            <p className="text-xs">200M+ papers • 40% with PDF URLs • Excellent for AI/CS/interdisciplinary research</p>
+            <p className="font-semibold">Semantic Scholar 🆓</p>
+            <p className="text-xs">200M+ papers • 40% with PDF URLs • No API key needed • Excellent for AI/CS/interdisciplinary</p>
           </div>
           <div className="border-l-2 border-gray-900 pl-3">
-            <p className="font-semibold">OpenAlex</p>
-            <p className="text-xs">240M+ papers • 50% open access • Comprehensive coverage across all fields</p>
+            <p className="font-semibold">OpenAlex 🆓</p>
+            <p className="text-xs">240M+ papers • 50% open access • No API key needed • Comprehensive coverage across all fields</p>
           </div>
           <div className="border-l-2 border-gray-900 pl-3">
-            <p className="font-semibold">arXiv</p>
-            <p className="text-xs">2.3M+ preprints • 100% PDF access • Cutting-edge research (AI/ML/Physics)</p>
+            <p className="font-semibold">arXiv 🆓</p>
+            <p className="text-xs">2.3M+ preprints • 100% PDF access • No API key needed • Cutting-edge research (AI/ML/Physics)</p>
+          </div>
+          <div className="border-l-2 border-gray-900 pl-3">
+            <p className="font-semibold">CORE 🔑</p>
+            <p className="text-xs">240M+ open access papers • Free API key required • Aggregates from 10,000+ repositories worldwide</p>
           </div>
         </div>
         <details className="mt-3">
