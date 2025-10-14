@@ -129,16 +129,6 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             >
               Overview
             </Link>
-            <Link
-              href="/codebook"
-              className={`block px-3 py-2 text-sm rounded-md transition-colors ${
-                pathname === '/codebook'
-                  ? 'bg-gray-100 font-medium'
-                  : 'text-muted hover:bg-gray-50 hover:text-foreground'
-              }`}
-            >
-              📖 Codebook
-            </Link>
             {chapters.map((chapter) => {
               const isActive = pathname?.includes(chapter.href)
               return (
@@ -156,6 +146,23 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
                 </Link>
               )
             })}
+
+            {/* Codebook - Separate section after all chapters */}
+            <div className="pt-4 mt-4 border-t border-gray-200">
+              <Link
+                href="/codebook"
+                className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                  pathname === '/codebook'
+                    ? 'bg-purple-100 font-medium text-purple-900'
+                    : 'text-muted hover:bg-purple-50 hover:text-purple-900'
+                }`}
+              >
+                📖 Codebook
+              </Link>
+              <p className="px-3 py-1 text-xs text-gray-500">
+                Knowledge base for beginners
+              </p>
+            </div>
           </nav>
         </aside>
 
