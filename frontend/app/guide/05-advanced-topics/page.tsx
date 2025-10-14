@@ -246,12 +246,12 @@ rag:
         </p>
         <div className="space-y-2 text-sm">
           <div className="border-l-2 border-gray-900 pl-3">
-            <p className="font-semibold">Semantic Scholar 🆓</p>
-            <p className="text-xs">200M+ papers • 40% with PDF URLs • No API key needed • Excellent for AI/CS/interdisciplinary</p>
+            <p className="font-semibold">Semantic Scholar 🔑</p>
+            <p className="text-xs">200M+ papers • 40% with PDF URLs • Free API key (recommended for stable rate limits) • Excellent for AI/CS/interdisciplinary</p>
           </div>
           <div className="border-l-2 border-gray-900 pl-3">
             <p className="font-semibold">OpenAlex 🆓</p>
-            <p className="text-xs">240M+ papers • 50% open access • No API key needed • Comprehensive coverage across all fields</p>
+            <p className="text-xs">240M+ papers • 50% open access • No API key needed (email in polite pool recommended) • Comprehensive coverage across all fields</p>
           </div>
           <div className="border-l-2 border-gray-900 pl-3">
             <p className="font-semibold">arXiv 🆓</p>
