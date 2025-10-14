@@ -130,12 +130,12 @@ export default function ChatPage() {
                     className={`max-w-[80%] p-4 rounded-lg ${
                       message.role === 'user'
                         ? 'bg-primary-600 text-white'
-                        : 'bg-gray-100 text-gray-900
+                        : 'bg-gray-100 text-gray-900'
                     }`}
                   >
                     <div className="text-sm whitespace-pre-wrap">{message.content}</div>
                     <div className={`text-xs mt-2 ${
-                      message.role === 'user' ? 'text-primary-100' : 'text-gray-500
+                      message.role === 'user' ? 'text-primary-100' : 'text-gray-500'
                     }`}>
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </div>
