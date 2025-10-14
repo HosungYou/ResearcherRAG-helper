@@ -6,12 +6,20 @@
 :root {
   --foreground: 0 0 0;
   --background: 250 250 250;
+  --border: 229 229 229;
+  --border-strong: 212 212 212;
+  --muted: 115 115 115;
+  --muted-foreground: 163 163 163;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground: 255 255 255;
     --background: 10 10 10;
+    --border: 64 64 64;
+    --border-strong: 82 82 82;
+    --muted: 163 163 163;
+    --muted-foreground: 115 115 115;
   }
 }
 
@@ -95,19 +103,19 @@ article blockquote {
 
 /* Callout boxes */
 .callout {
-  @apply border border-border rounded-lg p-6 my-6 bg-gray-50;
+  @apply border border-border rounded-lg p-6 my-6 bg-gray-50 dark:bg-gray-900;
 }
 
 .callout-info {
-  @apply bg-blue-50/50 border-blue-200;
+  @apply bg-blue-50/50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800;
 }
 
 .callout-warning {
-  @apply bg-yellow-50/50 border-yellow-200;
+  @apply bg-yellow-50/50 dark:bg-yellow-950/30 border-yellow-200 dark:border-yellow-800;
 }
 
 .callout-success {
-  @apply bg-green-50/50 border-green-200;
+  @apply bg-green-50/50 dark:bg-green-950/30 border-green-200 dark:border-green-800;
 }
 
 /* Image captions */
