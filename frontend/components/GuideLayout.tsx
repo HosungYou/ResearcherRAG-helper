@@ -151,17 +151,58 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             <div className="pt-4 mt-4 border-t border-gray-200">
               <Link
                 href="/codebook"
-                className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                className={`block px-3 py-2 text-sm rounded-md transition-colors font-medium ${
                   pathname === '/codebook'
-                    ? 'bg-purple-100 font-medium text-purple-900'
-                    : 'text-muted hover:bg-purple-50 hover:text-purple-900'
+                    ? 'bg-gray-200 text-gray-900'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
                 }`}
               >
                 📖 Codebook
               </Link>
-              <p className="px-3 py-1 text-xs text-gray-500">
-                Knowledge base for beginners
-              </p>
+
+              {/* Codebook Subsections */}
+              <div className="ml-3 mt-1 space-y-1 border-l-2 border-gray-200 pl-3">
+                <Link
+                  href="/codebook/fundamentals"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/codebook/fundamentals'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  🌱 Fundamentals
+                </Link>
+                <Link
+                  href="/codebook/file-formats"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/codebook/file-formats'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  📄 File Formats
+                </Link>
+                <Link
+                  href="/codebook/tools"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/codebook/tools'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  🛠️ Tools
+                </Link>
+                <Link
+                  href="/codebook/scripts-workflow"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/codebook/scripts-workflow'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  🔄 Scripts Workflow
+                </Link>
+              </div>
             </div>
           </nav>
         </aside>
