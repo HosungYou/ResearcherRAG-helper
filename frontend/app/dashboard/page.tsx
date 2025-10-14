@@ -16,7 +16,7 @@ export default function DashboardPage() {
         </div>
 
         {/* Status Banner */}
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black mb-8">
+        <div className="border-2 border-gray-900 rounded-lg p-6 bg-white mb-8">
           <div className="flex items-start gap-3">
             <span className="text-3xl">🚧</span>
             <div>
@@ -72,7 +72,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
         <div className="mb-12">
           <h2 className="text-3xl font-bold mb-6">Example CLI Output</h2>
 
-          <div className="border rounded-lg p-6 bg-gray-50 dark:bg-gray-900">
+          <div className="border rounded-lg p-6 bg-gray-50">
             <CodeBlock
               language="bash"
               code={`$ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption
@@ -137,10 +137,10 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* CLI Features */}
-            <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black">
+            <div className="border-2 border-gray-900 rounded-lg p-6 bg-white">
               <div className="flex items-center gap-2 mb-4">
                 <h3 className="text-lg font-semibold">CLI Tool</h3>
-                <span className="text-xs border border-gray-900 dark:border-gray-100 px-2 py-1 rounded font-semibold">
+                <span className="text-xs border border-gray-900 px-2 py-1 rounded font-semibold">
                   ✅ Available Now
                 </span>
               </div>
@@ -157,10 +157,10 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
             </div>
 
             {/* Web Dashboard Features */}
-            <div className="border-2 border-gray-600 dark:border-gray-400 rounded-lg p-6 bg-gray-50 dark:bg-gray-950">
+            <div className="border-2 border-gray-600 rounded-lg p-6 bg-gray-50">
               <div className="flex items-center gap-2 mb-4">
                 <h3 className="text-lg font-semibold">Web Dashboard</h3>
-                <span className="text-xs border border-gray-600 dark:border-gray-400 px-2 py-1 rounded font-semibold">
+                <span className="text-xs border border-gray-600 px-2 py-1 rounded font-semibold">
                   🚧 Coming v1.3.0
                 </span>
               </div>
@@ -179,7 +179,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
         </div>
 
         {/* Quick Links */}
-        <div className="border rounded-lg p-6 bg-gray-50 dark:bg-gray-900">
+        <div className="border rounded-lg p-6 bg-gray-50">
           <h3 className="text-lg font-semibold mb-4">📚 Related Resources</h3>
           <div className="space-y-2 text-sm">
             <div>
@@ -204,7 +204,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
         </div>
 
         {/* Installation Reminder */}
-        <div className="mt-12 border-l-4 border-gray-900 dark:border-gray-100 pl-4">
+        <div className="mt-12 border-l-4 border-gray-900 pl-4">
           <p className="text-sm text-muted mb-2">
             <strong>Don't have the CLI tool yet?</strong>
           </p>
@@ -226,7 +226,7 @@ python researcherrag_cli.py --help`}
         <div className="mt-12 text-center">
           <Link
             href="/guide"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-foreground text-background rounded-md font-semibold hover:bg-gray-800 transition-colors"
           >
             ← Back to Documentation
           </Link>

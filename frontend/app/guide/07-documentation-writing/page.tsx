@@ -153,7 +153,7 @@ graph TD
       </p>
 
       <div className="grid grid-cols-1 gap-4 my-8">
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">Methods Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
           <CodeBlock
@@ -170,7 +170,7 @@ Format in PRISMA style."`}
       />
         </div>
 
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">Results Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
           <CodeBlock
@@ -185,7 +185,7 @@ Create a summary table with: Theme | Key Finding | Supporting Papers"`}
       />
         </div>
 
-        <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">Discussion Section</h4>
           <p className="text-sm mb-2">Prompt your RAG system:</p>
           <CodeBlock
@@ -416,7 +416,7 @@ python generate_supplementary.py \\
         Make your research fully reproducible by providing a complete reproducibility package:
       </p>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 bg-gray-50 dark:bg-gray-900 p-4 my-6">
+      <div className="border-l-4 border-gray-900 bg-gray-50 p-4 my-6">
         <h4 className="font-semibold mb-3">📦 Reproducibility Package Contents</h4>
         <div className="space-y-2 text-sm">
           <p>✓ <strong>Code Repository:</strong> GitHub link to your RAG system setup</p>

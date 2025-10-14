@@ -11,7 +11,7 @@ export default function PracticalGuidePage() {
         Follow a complete real-world research project from start to finish. This chapter shows actual conversations with Claude Code, generated files, and example outputs—everything you need to confidently build your own ResearcherRAG system.
       </p>
 
-      <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6 bg-white dark:bg-black mb-8">
+      <div className="border-2 border-gray-900 rounded-lg p-6 bg-white mb-8">
         <h3 className="text-lg font-semibold mb-3">📚 Example Project Overview</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div>
@@ -24,7 +24,7 @@ export default function PracticalGuidePage() {
           </div>
           <div>
             <p className="font-semibold mb-2">Research Question:</p>
-            <p className="italic border-l-4 border-gray-900 dark:border-gray-100 pl-3">
+            <p className="italic border-l-4 border-gray-900 pl-3">
               "Do AI chatbots improve speaking proficiency in university-level language learners?"
             </p>
             <p className="mt-2"><strong>Target Output</strong>: 60-80 papers for dissertation</p>
@@ -38,7 +38,7 @@ export default function PracticalGuidePage() {
         <strong>Before anything else</strong>, initialize your project with the CLI tool. This creates the standardized folder structure that Claude Code expects.
       </p>
 
-      <div className="border rounded-lg p-4 my-4 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-4 bg-gray-50">
         <p className="font-semibold text-sm mb-2">Terminal Command:</p>
         <CodeBlock
           language="bash"
@@ -88,8 +88,8 @@ Research domain: education
 
       <div className="space-y-6 my-8">
         {/* User's First Message */}
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
-          <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">👤 You (User Prompt):</p>
+        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
+          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You (User Prompt):</p>
           <CodeBlock
             language="markdown"
             code={`I'm starting a new ResearcherRAG project: AI-Chatbots-Language-Learning
@@ -101,9 +101,9 @@ Please read my config.yaml and guide me through Stage 1 (Research Domain Setup).
         </div>
 
         {/* Claude's Response */}
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 dark:bg-purple-950/20">
-          <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">🤖 Claude Code:</p>
-          <div className="prose prose-sm dark:prose-invert max-w-none">
+        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
+          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+          <div className="prose prose-sm max-w-none">
             <p>Great! I've read your config.yaml. Let me help you refine your research scope with some clarifying questions:</p>
 
             <p className="font-semibold mt-4">1. Language Type - Are you focusing on:</p>
@@ -141,8 +141,8 @@ Please read my config.yaml and guide me through Stage 1 (Research Domain Setup).
         </div>
 
         {/* User's Response */}
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
-          <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">👤 You:</p>
+        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
+          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
           <CodeBlock
             language="markdown"
             code={`1. ESL + Foreign language (both)
@@ -154,9 +154,9 @@ Please read my config.yaml and guide me through Stage 1 (Research Domain Setup).
         </div>
 
         {/* Claude's Updated Response */}
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 dark:bg-purple-950/20">
-          <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">🤖 Claude Code:</p>
-          <div className="prose prose-sm dark:prose-invert max-w-none">
+        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
+          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+          <div className="prose prose-sm max-w-none">
             <p>Perfect! I'm updating your <code>config.yaml</code> with these refined criteria:</p>
           </div>
           <CodeBlock
@@ -209,7 +209,7 @@ rag:
   embeddings: text-embedding-3-small
   llm: claude-3-5-sonnet-20241022`}
           />
-          <div className="prose prose-sm dark:prose-invert max-w-none mt-4">
+          <div className="prose prose-sm max-w-none mt-4">
             <p className="font-semibold">📊 Estimated Results (based on my knowledge):</p>
             <ul className="ml-4 space-y-1 text-sm">
               <li>• <strong>Semantic Scholar</strong>: ~200-250 papers (AI/CS/interdisciplinary)</li>
@@ -224,7 +224,7 @@ rag:
         </div>
       </div>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📁 Files Created in Stage 1:</p>
         <CodeBlock
           language="text"
@@ -245,15 +245,15 @@ rag:
           ResearcherRAG prioritizes <strong>automation-friendly</strong> databases that provide both metadata AND direct PDF access through APIs:
         </p>
         <div className="space-y-2 text-sm">
-          <div className="border-l-2 border-gray-900 dark:border-gray-100 pl-3">
+          <div className="border-l-2 border-gray-900 pl-3">
             <p className="font-semibold">Semantic Scholar</p>
             <p className="text-xs">200M+ papers • 40% with PDF URLs • Excellent for AI/CS/interdisciplinary research</p>
           </div>
-          <div className="border-l-2 border-gray-900 dark:border-gray-100 pl-3">
+          <div className="border-l-2 border-gray-900 pl-3">
             <p className="font-semibold">OpenAlex</p>
             <p className="text-xs">240M+ papers • 50% open access • Comprehensive coverage across all fields</p>
           </div>
-          <div className="border-l-2 border-gray-900 dark:border-gray-100 pl-3">
+          <div className="border-l-2 border-gray-900 pl-3">
             <p className="font-semibold">arXiv</p>
             <p className="text-xs">2.3M+ preprints • 100% PDF access • Cutting-edge research (AI/ML/Physics)</p>
           </div>
@@ -285,14 +285,14 @@ rag:
       </div>
 
       <div className="space-y-6 my-8">
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
-          <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">👤 You:</p>
+        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
+          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
           <p className="text-sm">I'm ready for Stage 2. Please design the search queries.</p>
         </div>
 
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 dark:bg-purple-950/20">
-          <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">🤖 Claude Code:</p>
-          <div className="prose prose-sm dark:prose-invert max-w-none">
+        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
+          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+          <div className="prose prose-sm max-w-none">
             <p>I've designed <strong>3 query strategies</strong> with different precision/recall tradeoffs:</p>
           </div>
 
@@ -310,7 +310,7 @@ rag:
               </div>
             </details>
 
-            <details className="border rounded p-3 border-2 border-green-500 bg-green-50 dark:bg-green-950/20">
+            <details className="border rounded p-3 border-2 border-green-500 bg-green-50">
               <summary className="font-semibold cursor-pointer">Query 2: Focused (~250 papers) ⭐ RECOMMENDED</summary>
               <div className="mt-2 text-sm space-y-2">
                 <CodeBlock
@@ -343,19 +343,19 @@ rag:
             </details>
           </div>
 
-          <div className="prose prose-sm dark:prose-invert max-w-none">
+          <div className="prose prose-sm max-w-none">
             <p className="font-semibold">Which query would you like to use?</p>
           </div>
         </div>
 
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
-          <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">👤 You:</p>
+        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
+          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
           <p className="text-sm">Let's go with Query 2 (Focused). Which databases should we search?</p>
         </div>
 
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 dark:bg-purple-950/20">
-          <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">🤖 Claude Code:</p>
-          <div className="prose prose-sm dark:prose-invert max-w-none">
+        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
+          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+          <div className="prose prose-sm max-w-none">
             <p>For <strong>automated PDF access</strong> and language learning research, I recommend:</p>
             <ul className="ml-4 space-y-1 text-sm my-3">
               <li>• <strong>Semantic Scholar</strong>: Best for AI/education interdisciplinary papers</li>
@@ -436,7 +436,7 @@ pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"`}
             </div>
           </div>
 
-          <div className="prose prose-sm dark:prose-invert max-w-none">
+          <div className="prose prose-sm max-w-none">
             <p>I've saved these queries to <code>data/01_identification/search_queries.md</code></p>
             <p className="mt-2">
               <strong>Estimated results</strong>: Semantic Scholar (~200-250), OpenAlex (~150-200), arXiv (~20-30)
@@ -446,7 +446,7 @@ pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"`}
         </div>
       </div>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📁 Files Created in Stage 2:</p>
         <CodeBlock
           language="text"
@@ -482,14 +482,14 @@ pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"`}
       </div>
 
       <div className="space-y-4 my-6">
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20">
-          <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">👤 You:</p>
+        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
+          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
           <p className="text-sm">Let's run the automated search. Can you create the API scripts?</p>
         </div>
 
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 dark:bg-purple-950/20">
-          <p className="text-sm font-semibold text-purple-900 dark:text-purple-100 mb-2">🤖 Claude Code:</p>
-          <div className="prose prose-sm dark:prose-invert max-w-none">
+        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
+          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+          <div className="prose prose-sm max-w-none">
             <p>I'll create the automated search script. API keys needed (all free):</p>
             <ul className="ml-4 space-y-1 text-sm">
               <li>• <strong>Semantic Scholar</strong>: No API key (5000 requests/5min rate limit)</li>
@@ -685,7 +685,7 @@ print(f"✓ Papers with PDF URLs: {all_papers['pdf_url'].notna().sum()} ({all_pa
         </div>
       </details>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📊 Search Results (Example Output):</p>
         <CodeBlock
           language="text"
@@ -714,7 +714,7 @@ Found 23 papers from arXiv (23 with PDF URLs)
         Many papers appear in multiple databases. Claude Code creates a deduplication script that identifies duplicates by DOI, title similarity, and author overlap.
       </p>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📊 Deduplication Results:</p>
         <CodeBlock
           language="text"
@@ -738,7 +738,7 @@ Final dataset: 311 unique papers
         Claude Code applies your inclusion/exclusion criteria from <code>config.yaml</code> to automatically screen papers based on title and abstract.
       </p>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📊 PRISMA Screening Results:</p>
         <CodeBlock
           language="text"
@@ -770,7 +770,7 @@ Top exclusion reasons:
         />
       </div>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📁 Files Created in Stage 3:</p>
         <CodeBlock
           language="text"
@@ -806,7 +806,7 @@ Top exclusion reasons:
         </p>
       </div>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📊 PDF Download Results:</p>
         <CodeBlock
           language="text"
@@ -845,7 +845,7 @@ For missing PDFs, you can:
         Claude Code extracts text from PDFs, chunks them, generates embeddings, and stores everything in ChromaDB.
       </p>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📊 RAG Ingestion Results:</p>
         <CodeBlock
           language="text"
@@ -879,7 +879,7 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
         />
       </div>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📁 Files Created in Stage 4:</p>
         <CodeBlock
           language="text"
@@ -907,15 +907,15 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
 
       <div className="space-y-8 my-8">
         {/* Query 1 */}
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6">
-          <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20 mb-4">
-            <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">🔍 Query 1:</p>
+        <div className="border-2 border-gray-900 rounded-lg p-6">
+          <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 mb-4">
+            <p className="text-sm font-semibold text-blue-900 mb-2">🔍 Query 1:</p>
             <p className="font-semibold">"What are the main effects of AI chatbots on speaking fluency?"</p>
           </div>
 
-          <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 dark:bg-green-950/20">
-            <p className="text-sm font-semibold text-green-900 dark:text-green-100 mb-3">🤖 RAG Response:</p>
-            <div className="prose prose-sm dark:prose-invert max-w-none">
+          <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50">
+            <p className="text-sm font-semibold text-green-900 mb-3">🤖 RAG Response:</p>
+            <div className="prose prose-sm max-w-none">
               <p className="mb-3">Based on <strong>8 studies</strong> in your dataset, AI chatbots show <strong>moderate to large positive effects</strong> on speaking fluency:</p>
 
               <p className="font-semibold mt-4 mb-2">1. Speaking Rate Improvements:</p>
@@ -960,15 +960,15 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
         </div>
 
         {/* Query 2 */}
-        <div className="border-2 border-gray-900 dark:border-gray-100 rounded-lg p-6">
-          <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 dark:bg-blue-950/20 mb-4">
-            <p className="text-sm font-semibold text-blue-900 dark:text-blue-100 mb-2">🔍 Query 2:</p>
+        <div className="border-2 border-gray-900 rounded-lg p-6">
+          <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 mb-4">
+            <p className="text-sm font-semibold text-blue-900 mb-2">🔍 Query 2:</p>
             <p className="font-semibold">"Which chatbot features are most effective for pronunciation improvement?"</p>
           </div>
 
-          <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50 dark:bg-green-950/20">
-            <p className="text-sm font-semibold text-green-900 dark:text-green-100 mb-3">🤖 RAG Response:</p>
-            <div className="prose prose-sm dark:prose-invert max-w-none">
+          <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50">
+            <p className="text-sm font-semibold text-green-900 mb-3">🤖 RAG Response:</p>
+            <div className="prose prose-sm max-w-none">
               <p className="mb-3">Based on <strong>5 studies</strong> comparing chatbot features:</p>
 
               <p className="font-semibold mt-4 mb-2">Top 3 Effective Features:</p>
@@ -1006,7 +1006,7 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
         </div>
       </div>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📁 Files Created in Stage 5:</p>
         <CodeBlock
           language="text"
@@ -1024,7 +1024,7 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
         Generate publication-ready PRISMA flowcharts and export your literature review data.
       </p>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <p className="font-semibold text-sm mb-2">📊 Generated Outputs:</p>
         <CodeBlock
           language="text"
@@ -1081,7 +1081,7 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
               <td className="p-3">-</td>
               <td className="p-3">Run CLI, answer prompts</td>
             </tr>
-            <tr className="border-b bg-gray-50 dark:bg-gray-900">
+            <tr className="border-b bg-gray-50">
               <td className="p-3">1. Domain Setup</td>
               <td className="p-3">15 min</td>
               <td className="p-3">🧑🧑🧑 High</td>
@@ -1095,7 +1095,7 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
               <td className="p-3">✅ 70%</td>
               <td className="p-3">Review queries, select strategy</td>
             </tr>
-            <tr className="border-b bg-gray-50 dark:bg-gray-900">
+            <tr className="border-b bg-gray-50">
               <td className="p-3">3. Automated Search</td>
               <td className="p-3">1 hour</td>
               <td className="p-3">🧑 Low</td>
@@ -1109,7 +1109,7 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
               <td className="p-3">✅ 95%</td>
               <td className="p-3">Wait for downloads, test queries</td>
             </tr>
-            <tr className="border-b bg-gray-50 dark:bg-gray-900">
+            <tr className="border-b bg-gray-50">
               <td className="p-3">5. Research Use</td>
               <td className="p-3">Ongoing</td>
               <td className="p-3">🧑🧑🧑 High</td>
@@ -1138,7 +1138,7 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
 
       <h2 id="final-structure">Final Project Structure</h2>
 
-      <div className="border rounded-lg p-4 my-6 bg-gray-50 dark:bg-gray-900">
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
         <CodeBlock
           language="text"
           code={`projects/2025-10-13_AI-Chatbots-Language-Learning/
@@ -1289,7 +1289,7 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
         </Link>
       </div>
 
-      <div className="border-l-4 border-gray-900 dark:border-gray-100 pl-6 my-12">
+      <div className="border-l-4 border-gray-900 pl-6 my-12">
         <p className="text-sm text-muted mb-2">
           <strong>Ready to start your own project?</strong>
         </p>

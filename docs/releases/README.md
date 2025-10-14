@@ -7,13 +7,19 @@ This directory contains detailed release notes for all versions of ResearcherRAG
 ## 📋 Available Releases
 
 ### Latest Release
+- **[v1.0.2](RELEASE_NOTES_v1.0.2.md)** (2025-10-13) - Theme Simplification
+  - 🎨 Disabled dark mode for design consistency
+  - 🎨 Light theme only (all users see same design)
+  - 📉 Reduced CSS bundle size by 1.3%
+  - 📝 Simplified maintenance and codebase
+
+### Previous Releases
 - **[v1.0.1](RELEASE_NOTES_v1.0.1.md)** (2025-10-13) - Dark Mode Bug Fix
   - 🐛 Critical fix for white text on white background in dark mode
   - 🎨 Added CSS variables for proper dark mode support
   - ✅ WCAG AA contrast compliance verified
   - 📝 Comprehensive technical documentation
 
-### Previous Releases
 - **[v1.0.0](RELEASE_NOTES_v1.0.0.md)** (2025-10-11) - Initial Launch
   - 🎉 First public release of ResearcherRAG Helper
   - 📚 Bookdown-style documentation platform
@@ -64,7 +70,8 @@ Each release note includes:
 
 ### Version History
 ```
-v1.0.1 (2025-10-13) - Dark Mode Bug Fix        [Current]
+v1.0.2 (2025-10-13) - Theme Simplification     [Current]
+v1.0.1 (2025-10-13) - Dark Mode Bug Fix
 v1.0.0 (2025-10-11) - Initial Launch
 ```
 
@@ -165,10 +172,10 @@ gh release create v1.x.x \
 ## 📊 Release Statistics
 
 ### v1.0.x Series
-- **Total Releases**: 2
-- **Release Frequency**: 1 every 1.5 days
+- **Total Releases**: 3
+- **Release Frequency**: 1.5 per day
 - **Bug Fixes**: 1 critical
-- **New Features**: 0 (initial series)
+- **Design Changes**: 1 (theme simplification)
 - **Breaking Changes**: 0
 
 ### Upcoming
