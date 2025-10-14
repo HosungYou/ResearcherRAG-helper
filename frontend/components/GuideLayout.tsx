@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Github, Menu, X, ChevronRight } from 'lucide-react'
+import SearchBar from './SearchBar'
 
 interface Chapter {
   number: number
@@ -89,6 +90,9 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             </Link>
           </div>
           <div className="flex items-center gap-6">
+            <div className="hidden md:block flex-1 max-w-md">
+              <SearchBar />
+            </div>
             <Link href="/chat" className="text-sm text-muted hover:text-foreground hidden md:block">
               Chatbot
             </Link>
