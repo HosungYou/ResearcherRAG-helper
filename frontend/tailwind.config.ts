@@ -6,17 +6,17 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
+  darkMode: 'media', // Automatic dark mode based on system preference
   theme: {
     extend: {
       colors: {
-        // Geist-inspired monochrome palette
-        background: '#fafafa',
-        foreground: '#000000',
-        border: '#e5e5e5',
-        'border-strong': '#d4d4d4',
-        muted: '#737373',
-        'muted-foreground': '#a3a3a3',
+        // Geist-inspired monochrome palette (using CSS variables for dark mode support)
+        background: 'rgb(var(--background) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)',
+        'border-strong': 'rgb(var(--border-strong) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        'muted-foreground': 'rgb(var(--muted-foreground) / <alpha-value>)',
         accent: {
           DEFAULT: '#0070f3',
           hover: '#0761d1',
