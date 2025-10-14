@@ -87,6 +87,77 @@ const searchIndex: SearchResult[] = [
     href: '/guide/05-advanced-topics#troubleshooting',
     excerpt: 'Common issues and solutions for ResearcherRAG'
   },
+  // Codebook entries
+  {
+    title: 'Codebook',
+    href: '/codebook',
+    excerpt: 'Technical reference for scripts, prompts, config files, data structures, CLI commands'
+  },
+  {
+    title: 'Scripts Reference',
+    href: '/codebook#scripts',
+    excerpt: '01-07.py Python scripts: fetch papers, deduplicate, screen, download PDFs, build RAG, query, generate PRISMA'
+  },
+  {
+    title: 'Prompts Guide',
+    href: '/codebook#prompts',
+    excerpt: '01-07.md conversational prompts for Claude Code: domain setup, query strategy, PRISMA config, RAG design'
+  },
+  {
+    title: 'config.yaml',
+    href: '/codebook#config',
+    excerpt: 'Configuration file structure: PRISMA criteria, RAG settings, API keys, search query'
+  },
+  {
+    title: 'Data Structures',
+    href: '/codebook#data',
+    excerpt: 'JSON formats: papers.json, prisma_results.json, rag_config.json metadata structures'
+  },
+  {
+    title: 'CLI Commands',
+    href: '/codebook#cli',
+    excerpt: 'Command line usage: run scripts, query RAG, generate PRISMA diagram, check status'
+  },
+  {
+    title: 'Folder Structure',
+    href: '/codebook#folders',
+    excerpt: 'Repository organization: prompts/, scripts/, data/, examples/, templates/'
+  },
+  {
+    title: '01_fetch_papers.py',
+    href: '/codebook#script-01',
+    excerpt: 'Fetch papers from Semantic Scholar, OpenAlex, arXiv with search query'
+  },
+  {
+    title: '02_deduplicate.py',
+    href: '/codebook#script-02',
+    excerpt: 'Remove duplicate papers by DOI, title similarity, or arXiv ID'
+  },
+  {
+    title: '03_screen_papers.py',
+    href: '/codebook#script-03',
+    excerpt: 'PRISMA screening with 6-dimension criteria: domain, method, topic, context, exclusion, title'
+  },
+  {
+    title: '04_download_pdfs.py',
+    href: '/codebook#script-04',
+    excerpt: 'Download full-text PDFs from Open Access sources: Unpaywall, CORE, arXiv'
+  },
+  {
+    title: '05_build_rag.py',
+    href: '/codebook#script-05',
+    excerpt: 'Build vector database: extract text, chunk documents, generate embeddings, store in ChromaDB'
+  },
+  {
+    title: '06_query_rag.py',
+    href: '/codebook#script-06',
+    excerpt: 'Interactive RAG querying: retrieve chunks, generate answers with citations'
+  },
+  {
+    title: '07_generate_prisma.py',
+    href: '/codebook#script-07',
+    excerpt: 'Generate PRISMA 2020 flowchart, methods section, bibliography'
+  },
 ]
 
 export default function SearchBar() {
