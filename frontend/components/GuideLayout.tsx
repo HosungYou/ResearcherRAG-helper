@@ -129,6 +129,16 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             >
               Overview
             </Link>
+            <Link
+              href="/codebook"
+              className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                pathname === '/codebook'
+                  ? 'bg-gray-100 font-medium'
+                  : 'text-muted hover:bg-gray-50 hover:text-foreground'
+              }`}
+            >
+              📖 Codebook
+            </Link>
             {chapters.map((chapter) => {
               const isActive = pathname?.includes(chapter.href)
               return (
