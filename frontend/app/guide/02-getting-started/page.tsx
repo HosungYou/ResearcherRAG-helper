@@ -524,22 +524,6 @@ ls -la`}
         </p>
       </div>
 
-      <div className="callout callout-warning my-6">
-        <p className="font-semibold mb-2">⚠️ Already Have ResearcherRAG?</p>
-        <p className="text-sm mb-2">
-          If you've already cloned the repository, skip the git clone step and update instead:
-        </p>
-        <CodeBlock
-          language="bash"
-          code={`cd ResearcherRAG
-git pull origin main
-python3 researcherrag_cli.py --help  # Verify v1.0.6+ commands`}
-        />
-        <p className="text-xs text-muted-foreground mt-2 mb-0">
-          You can also ask Claude Code: "Update my ResearcherRAG to the latest version"
-        </p>
-      </div>
-
       <h3 id="step4-environment">Step 4: Set Up Python Environment</h3>
 
       <p>Create a virtual environment to isolate dependencies:</p>
