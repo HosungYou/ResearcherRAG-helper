@@ -147,6 +147,20 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               )
             })}
 
+            {/* Prompt Library - After chapters, before Codebook */}
+            <div className="pt-4 mt-4 border-t border-gray-200">
+              <Link
+                href="/guide/prompt-library"
+                className={`block px-3 py-2 text-sm rounded-md transition-colors font-medium ${
+                  pathname?.includes('/guide/prompt-library')
+                    ? 'bg-gray-200 text-gray-900'
+                    : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+                }`}
+              >
+                💡 Prompt Library
+              </Link>
+            </div>
+
             {/* Codebook - Separate section after all chapters */}
             <div className="pt-4 mt-4 border-t border-gray-200">
               <Link

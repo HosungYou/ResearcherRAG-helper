@@ -138,6 +138,16 @@ You: exit  # when done`}
 
       <h2 id="query-strategies">Effective Query Strategies</h2>
 
+      <div className="callout callout-success mb-6">
+        <p className="font-semibold mb-2">💡 New: Ready-to-Use Prompt Library</p>
+        <p className="text-sm mb-2">
+          We've created 7 specialized prompt templates for common research scenarios. Copy, customize, and use them directly in your RAG interface.
+        </p>
+        <Link href="/guide/prompt-library" className="text-sm font-medium text-blue-600 hover:underline">
+          → Browse Prompt Library
+        </Link>
+      </div>
+
       <p>
         Different types of queries serve different research purposes. Use this framework to formulate effective questions for your literature analysis:
       </p>
