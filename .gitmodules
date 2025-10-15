@@ -1,0 +1,3 @@
+[submodule "submodules/researcherRAG"]
+	path = submodules/researcherRAG
+	url = https://github.com/HosungYou/researcherRAG.git
