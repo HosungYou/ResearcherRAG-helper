@@ -217,6 +217,222 @@ graph TD
         </p>
       </div>
 
+      <h2 id="database-apis">Database APIs for Automation</h2>
+
+      <p>
+        ResearcherRAG uses <strong>three free, API-accessible databases</strong> chosen specifically for automation, PDF availability, and comprehensive coverage. Traditional databases like PubMed, Scopus, and Web of Science require expensive institutional subscriptions and don't provide automated PDF access.
+      </p>
+
+      <h3 id="why-these-databases">Why Semantic Scholar, OpenAlex, and arXiv?</h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+        <div className="border border-border rounded-lg p-6">
+          <h4 className="font-semibold mb-3 text-lg">🚫 Traditional Databases</h4>
+          <ul className="text-sm space-y-2 text-muted">
+            <li>❌ <strong>PubMed</strong>: No direct PDF access via API</li>
+            <li>❌ <strong>Scopus</strong>: Requires expensive institutional license</li>
+            <li>❌ <strong>Web of Science</strong>: API access restricted</li>
+            <li>❌ <strong>ERIC</strong>: Limited open access PDFs (~20%)</li>
+            <li>❌ Manual download workflows required</li>
+          </ul>
+        </div>
+
+        <div className="border border-border rounded-lg p-6">
+          <h4 className="font-semibold mb-3 text-lg">✅ ResearcherRAG Databases</h4>
+          <ul className="text-sm space-y-2 text-muted">
+            <li>✅ <strong>100% free</strong> API access (no authentication for basic use)</li>
+            <li>✅ <strong>REST APIs</strong> for full automation</li>
+            <li>✅ <strong>Open access PDF links</strong> included in metadata</li>
+            <li>✅ <strong>50-60% PDF retrieval</strong> success rate combined</li>
+            <li>✅ Covers most research domains comprehensively</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 id="database-comparison">Database Comparison Table</h3>
+
+      <div className="overflow-x-auto my-8">
+        <table className="w-full text-sm border-collapse">
+          <thead className="bg-gray-50 border-b-2 border-border">
+            <tr>
+              <th className="text-left p-3">Database</th>
+              <th className="text-left p-3">Coverage</th>
+              <th className="text-left p-3">Open Access Rate</th>
+              <th className="text-left p-3">API Key</th>
+              <th className="text-left p-3">Rate Limits</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-border">
+            <tr className="hover:bg-gray-50">
+              <td className="p-3">
+                <div className="font-semibold">📚 Semantic Scholar</div>
+                <div className="text-xs text-muted">CS, Engineering, Sciences</div>
+              </td>
+              <td className="p-3 font-mono text-xs">200M+ papers</td>
+              <td className="p-3">
+                <span className="font-semibold text-foreground">~40%</span>
+                <div className="text-xs text-muted">AI-generated TL;DRs</div>
+              </td>
+              <td className="p-3">
+                <span className="text-green-600 font-semibold">Not required</span>
+              </td>
+              <td className="p-3 text-xs">100 requests/5 min</td>
+            </tr>
+            <tr className="hover:bg-gray-50">
+              <td className="p-3">
+                <div className="font-semibold">🌍 OpenAlex</div>
+                <div className="text-xs text-muted">All fields, comprehensive</div>
+              </td>
+              <td className="p-3 font-mono text-xs">250M+ works</td>
+              <td className="p-3">
+                <span className="font-semibold text-foreground">~50%</span>
+                <div className="text-xs text-muted">Rich metadata</div>
+              </td>
+              <td className="p-3">
+                <span className="text-green-600 font-semibold">Not required</span>
+              </td>
+              <td className="p-3 text-xs">10 req/sec (polite pool)</td>
+            </tr>
+            <tr className="hover:bg-gray-50">
+              <td className="p-3">
+                <div className="font-semibold">📄 arXiv</div>
+                <div className="text-xs text-muted">STEM preprints</div>
+              </td>
+              <td className="p-3 font-mono text-xs">2.4M+ preprints</td>
+              <td className="p-3">
+                <span className="font-semibold text-green-600">100%</span>
+                <div className="text-xs text-muted">All papers free</div>
+              </td>
+              <td className="p-3">
+                <span className="text-green-600 font-semibold">Not required</span>
+              </td>
+              <td className="p-3 text-xs">3-second delay</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="api-usage-examples">API Usage Examples</h3>
+
+      <div className="space-y-6 my-8">
+        <details className="border border-border rounded-lg p-4 open:bg-gray-50">
+          <summary className="font-semibold cursor-pointer">📚 Semantic Scholar API</summary>
+          <div className="mt-3 text-sm space-y-2">
+            <p className="text-muted">Search for papers and retrieve open access PDFs:</p>
+            <CodeBlock
+        language="python"
+        code={`import requests
+
+# Search query
+query = "chatbot language learning"
+url = f"https://api.semanticscholar.org/graph/v1/paper/search"
+params = {
+    "query": query,
+    "fields": "title,authors,year,abstract,openAccessPdf",
+    "limit": 100
+}
+
+response = requests.get(url, params=params)
+papers = response.json()["data"]
+
+# Extract PDF URLs
+for paper in papers:
+    if paper.get("openAccessPdf"):
+        pdf_url = paper["openAccessPdf"]["url"]
+        print(f"Title: {paper['title']}")
+        print(f"PDF: {pdf_url}\\n")`}
+      />
+            <p className="text-muted mt-3">
+              <strong>Key Features</strong>: AI-generated TL;DR summaries, citation counts, influence metrics, semantic similarity search
+            </p>
+          </div>
+        </details>
+
+        <details className="border border-border rounded-lg p-4 open:bg-gray-50">
+          <summary className="font-semibold cursor-pointer">🌍 OpenAlex API</summary>
+          <div className="mt-3 text-sm space-y-2">
+            <p className="text-muted">Query with filters and retrieve comprehensive metadata:</p>
+            <CodeBlock
+        language="python"
+        code={`import requests
+
+# Search with filters
+url = "https://api.openalex.org/works"
+params = {
+    "filter": "title.search:chatbot language learning,publication_year:2020-2024",
+    "per-page": 100,
+    "mailto": "your-email@example.com"  # Polite pool access
+}
+
+response = requests.get(url, params=params)
+works = response.json()["results"]
+
+# Extract open access PDFs
+for work in works:
+    if work.get("open_access", {}).get("oa_url"):
+        pdf_url = work["open_access"]["oa_url"]
+        print(f"Title: {work['title']}")
+        print(f"Citations: {work['cited_by_count']}")
+        print(f"PDF: {pdf_url}\\n")`}
+      />
+            <p className="text-muted mt-3">
+              <strong>Key Features</strong>: Author affiliations, funder information, citation network, concept tagging, institutional repositories
+            </p>
+          </div>
+        </details>
+
+        <details className="border border-border rounded-lg p-4 open:bg-gray-50">
+          <summary className="font-semibold cursor-pointer">📄 arXiv API</summary>
+          <div className="mt-3 text-sm space-y-2">
+            <p className="text-muted">Search preprints with 100% PDF access:</p>
+            <CodeBlock
+        language="python"
+        code={`import requests
+import time
+
+# Search arXiv
+base_url = "http://export.arxiv.org/api/query"
+query = "chatbot AND language learning"
+params = {
+    "search_query": f"all:{query}",
+    "start": 0,
+    "max_results": 100
+}
+
+response = requests.get(base_url, params=params)
+time.sleep(3)  # Required delay between requests
+
+# Parse XML response
+import xml.etree.ElementTree as ET
+root = ET.fromstring(response.content)
+
+for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
+    title = entry.find('{http://www.w3.org/2005/Atom}title').text
+    arxiv_id = entry.find('{http://www.w3.org/2005/Atom}id').text.split('/')[-1]
+    pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"
+    print(f"Title: {title}")
+    print(f"PDF: {pdf_url}\\n")`}
+      />
+            <p className="text-muted mt-3">
+              <strong>Key Features</strong>: Latest preprints (pre-publication), LaTeX source available, version tracking, cross-lists across categories
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div className="callout callout-success">
+        <p className="font-semibold mb-2">✅ Combined Strategy</p>
+        <p className="text-sm mb-2">
+          ResearcherRAG queries <strong>all three databases</strong> and deduplicates results by DOI, arXiv ID, and title similarity. This multi-source approach:
+        </p>
+        <ul className="text-sm space-y-1 mb-0">
+          <li>✓ Maximizes coverage across research domains</li>
+          <li>✓ Achieves ~50-60% PDF retrieval success rate</li>
+          <li>✓ Provides fallback when one source is incomplete</li>
+          <li>✓ Ensures comprehensive literature coverage</li>
+        </ul>
+      </div>
+
       <h2 id="rag-architecture">RAG Architecture</h2>
 
       <p>
@@ -598,7 +814,7 @@ graph TB
       <h2 id="next-steps">Next Steps</h2>
 
       <p>
-        Now that you understand the core concepts, you're ready to implement your own RAG system. Continue to <Link href="/guide/04-implementation">Chapter 4: Implementation Guide</Link> for a detailed walkthrough of all 5 stages.
+        Now that you understand the core concepts, you're ready to implement your own RAG system. Continue to <Link href="/guide/04-implementation">Chapter 4: Implementation Guide</Link> for a detailed walkthrough of all 7 stages.
       </p>
 
       <div className="bg-gray-900 text-gray-100 rounded-lg p-6 my-8">

@@ -92,6 +92,64 @@ export default function IntroductionPage() {
         </div>
       </div>
 
+      <h2 id="database-strategy">Database Strategy</h2>
+
+      <p>
+        ResearcherRAG uses <strong>three free, API-accessible databases</strong> chosen specifically for automation and PDF availability:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+        <div className="border-2 border-blue-200 rounded-lg p-5 bg-blue-50">
+          <h4 className="font-semibold mb-2 text-blue-900">📚 Semantic Scholar</h4>
+          <p className="text-sm mb-3">CS, Engineering, and General Sciences</p>
+          <ul className="text-xs space-y-1 mb-0">
+            <li>✅ 200M+ papers indexed</li>
+            <li>✅ Free API (no key needed)</li>
+            <li>✅ ~40% open access PDFs</li>
+            <li>✅ AI-generated TL;DR summaries</li>
+          </ul>
+        </div>
+        <div className="border-2 border-green-200 rounded-lg p-5 bg-green-50">
+          <h4 className="font-semibold mb-2 text-green-900">🌍 OpenAlex</h4>
+          <p className="text-sm mb-3">All fields, comprehensive metadata</p>
+          <ul className="text-xs space-y-1 mb-0">
+            <li>✅ 250M+ works catalogued</li>
+            <li>✅ Free API (unlimited)</li>
+            <li>✅ ~50% open access links</li>
+            <li>✅ Rich metadata (citations, authors)</li>
+          </ul>
+        </div>
+        <div className="border-2 border-purple-200 rounded-lg p-5 bg-purple-50">
+          <h4 className="font-semibold mb-2 text-purple-900">📄 arXiv</h4>
+          <p className="text-sm mb-3">STEM preprints</p>
+          <ul className="text-xs space-y-1 mb-0">
+            <li>✅ 2.4M+ preprints</li>
+            <li>✅ Free API (no key needed)</li>
+            <li>✅ 100% PDF access</li>
+            <li>✅ Latest research (pre-publication)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">💡 Why These Databases?</p>
+        <div className="text-sm space-y-2 mb-0">
+          <p><strong>Traditional databases</strong> (PubMed, Scopus, Web of Science) don't provide automated PDF access or require expensive institutional subscriptions.</p>
+          <p><strong>ResearcherRAG's databases</strong> were chosen because they:</p>
+          <ul className="ml-4 space-y-1">
+            <li>✅ Provide REST APIs for automation</li>
+            <li>✅ Include open access PDF links</li>
+            <li>✅ Require no authentication for basic use</li>
+            <li>✅ Cover most research domains</li>
+            <li>✅ Together achieve ~50-60% PDF retrieval success rate</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        You'll set up access to these databases in <Link href="/guide/02-getting-started#step6-database">Step 6 of Getting Started</Link>, and learn to query them effectively in <Link href="/guide/04-implementation#stage-2">Stage 2 of the workflow</Link>.
+      </p>
+
       <h2 id="core-concepts">Core Concepts</h2>
 
       <h3 id="prisma">1. PRISMA Screening</h3>
@@ -136,35 +194,41 @@ graph TD
         This architecture prevents hallucinations by ensuring every statement is backed by actual research. Learn more about RAG in our <Link href="/guide/04-implementation">Implementation Guide</Link>.
       </p>
 
-      <h3 id="workflow">3. 5-Stage Workflow</h3>
+      <h3 id="workflow">3. 7-Stage Workflow</h3>
 
       <p>
-        ResearcherRAG breaks down the complex process into 5 conversational stages with Claude Code:
+        ResearcherRAG breaks down the complex process into 7 conversational stages with Claude Code:
       </p>
 
       <Mermaid chart={`
 graph LR
     A[Stage 1<br/>Research Domain<br/>15 min] --> B[Stage 2<br/>Query Strategy<br/>10 min]
-    B --> C[Stage 3<br/>PRISMA Config<br/>20 min + 2 hrs]
+    B --> C[Stage 3<br/>PRISMA Config<br/>20 min]
     C --> D[Stage 4<br/>RAG Design<br/>15 min]
-    D --> E[Stage 5<br/>Execution<br/>3-4 hrs]
-    E --> F[Your RAG System]
+    D --> E[Stage 5<br/>Execution Plan<br/>10 min]
+    E --> F[Stage 6<br/>Research Queries<br/>2-3 hrs]
+    F --> G[Stage 7<br/>Documentation<br/>1-2 hrs]
+    G --> H[Your RAG System]
 
     style A fill:#e0e7ff
     style B fill:#ddd6fe
     style C fill:#fce7f3
     style D fill:#fef3c7
     style E fill:#dcfce7
-    style F fill:#bbf7d0
+    style F fill:#c7f3e7
+    style G fill:#f3e7c7
+    style H fill:#bbf7d0
       `} />
 
       <div className="space-y-4 my-8">
         {[
           { stage: 1, title: 'Research Domain Setup', time: '15 min', desc: 'Define your research question, scope, and objectives' },
           { stage: 2, title: 'Query Strategy Design', time: '10 min', desc: 'Craft Boolean search queries for multiple databases' },
-          { stage: 3, title: 'PRISMA Configuration', time: '20 min + 2 hrs automated', desc: 'Set inclusion criteria and screen papers' },
+          { stage: 3, title: 'PRISMA Configuration', time: '20 min', desc: 'Set inclusion criteria and screen papers automatically' },
           { stage: 4, title: 'RAG System Design', time: '15 min', desc: 'Configure vector database and embedding model' },
-          { stage: 5, title: 'Execution & Validation', time: '3-4 hrs automated', desc: 'Download PDFs, build RAG, validate results' },
+          { stage: 5, title: 'Execution Plan', time: '10 min', desc: 'Review automation pipeline before execution' },
+          { stage: 6, title: 'Research Conversation', time: '2-3 hrs automated', desc: 'Download PDFs, build RAG, run queries' },
+          { stage: 7, title: 'Documentation Writing', time: '1-2 hrs', desc: 'Generate PRISMA diagrams and research reports' },
         ].map((stage) => (
           <div key={stage.stage} className="flex gap-4 items-start border-l-2 border-border pl-4">
             <div className="text-xl font-bold text-muted-foreground w-8 flex-shrink-0">{stage.stage}</div>
