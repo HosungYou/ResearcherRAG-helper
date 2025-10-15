@@ -323,7 +323,7 @@ Include evidence citations for all cost/benefit estimates.`}
         <div className="border-l-4 border-green-500 bg-green-50 p-4">
           <h4 className="font-semibold mb-2">✅ Make It Actionable</h4>
           <p className="text-sm">
-            Every recommendation should have clear action items. Checklists > vague suggestions.
+            Every recommendation should have clear action items. Checklists &gt; vague suggestions.
           </p>
         </div>
 
