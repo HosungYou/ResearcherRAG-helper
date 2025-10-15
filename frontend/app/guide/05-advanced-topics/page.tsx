@@ -32,10 +32,10 @@ export default function PracticalGuidePage() {
         </div>
       </div>
 
-      <h2 id="stage0-initialization">Stage 0: Project Initialization (2 minutes)</h2>
+      <h2 id="project-initialization">Project Initialization (2 minutes)</h2>
 
       <p>
-        <strong>Before anything else</strong>, initialize your project with the CLI tool. This creates the standardized folder structure that Claude Code expects.
+        <strong>Before Stage 1</strong>, initialize your project with the CLI tool. This creates the standardized folder structure that Claude Code expects.
       </p>
 
       <div className="border rounded-lg p-4 my-4 bg-gray-50">
@@ -255,11 +255,7 @@ rag:
           </div>
           <div className="border-l-2 border-gray-900 pl-3">
             <p className="font-semibold">arXiv 🆓</p>
-            <p className="text-xs">2.3M+ preprints • 100% PDF access • No API key needed • Cutting-edge research (AI/ML/Physics)</p>
-          </div>
-          <div className="border-l-2 border-gray-900 pl-3">
-            <p className="font-semibold">CORE 🔑</p>
-            <p className="text-xs">240M+ open access papers • Free API key required • Aggregates from 10,000+ repositories worldwide</p>
+            <p className="text-xs">2.4M+ preprints • 100% PDF access • No API key needed • Cutting-edge research (AI/ML/Physics/STEM)</p>
           </div>
         </div>
         <details className="mt-3">
@@ -1022,7 +1018,7 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
         />
       </div>
 
-      <h2 id="stage6-documentation">Stage 6: Documentation & Export (1 hour)</h2>
+      <h2 id="stage7-documentation">Stage 7: Documentation & Export (1 hour)</h2>
 
       <p>
         Generate publication-ready PRISMA flowcharts and export your literature review data.
