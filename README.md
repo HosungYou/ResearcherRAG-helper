@@ -179,6 +179,36 @@ ResearcherRAG-helper/
 
 ---
 
+## 🔗 Git Submodule Integration
+
+This repository uses **git submodules** to reference shared code from the main ResearcherRAG repository, eliminating duplication.
+
+### What's Referenced via Submodule?
+- `researcherrag_cli.py` → CLI tool from main repo
+- `docs/prompts/` → All 7 stage prompts (01-07) from main repo
+
+### First-Time Setup
+Already done if you cloned with `--recurse-submodules` (see Quick Start above).
+
+If submodule folder is empty:
+```bash
+git submodule update --init --recursive
+```
+
+### Updating to Latest Main Repo
+```bash
+git submodule update --remote submodules/researcherRAG
+```
+
+### Detailed Guide
+See [SUBMODULE_GUIDE.md](./SUBMODULE_GUIDE.md) for:
+- How submodules work
+- Troubleshooting empty folders
+- Contributing guidelines
+- Verifying on GitHub
+
+---
+
 ## 🔧 Development
 
 ### Prerequisites
