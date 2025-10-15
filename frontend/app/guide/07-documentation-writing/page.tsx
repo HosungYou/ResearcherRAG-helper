@@ -159,7 +159,7 @@ graph TD
           <CodeBlock
         language="text"
         code={`"Generate a Methods section for my systematic review. Include:
-- Databases: [PubMed, CORE, Web of Science]
+- Databases: [Semantic Scholar, OpenAlex, arXiv]
 - Search dates: [2010-01-01 to 2024-12-31]
 - Search strategy: [Your Boolean query]
 - Inclusion criteria: [List your criteria]
