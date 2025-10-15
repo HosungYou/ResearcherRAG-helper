@@ -1,0 +1,149 @@
+# ResearcherRAG Project Configuration
+# Example Project: AI Chatbots for Language Learning
+# Generated: 2024-10-15
+
+# ===== PROJECT METADATA =====
+project_name: "AI-Chatbot-Language-Learning"
+research_question: "Do AI chatbots improve speaking proficiency in university-level language learners?"
+research_field: "education"
+research_domain: "Language Learning / Second Language Acquisition"
+researcher: "Example Researcher"
+institution: "Example University"
+date_created: "2024-10-15"
+
+# ===== RESEARCH SCOPE =====
+scope:
+  population: "University-level students (ages 18+)"
+  intervention: "AI chatbots / conversational agents"
+  comparison: "Traditional instruction, human conversation partners, control groups"
+  outcome: "Speaking proficiency (fluency, accuracy, pronunciation)"
+  study_designs: ["RCT", "quasi-experimental", "pre-post", "mixed-methods"]
+  year_range:
+    start: 2015  # Post-modern NLP era
+    end: 2024
+  languages: ["English"]  # Papers must be in English
+  publication_types: ["journal article", "conference paper", "dissertation"]
+
+# ===== DATABASE CONFIGURATION =====
+databases:
+  semantic_scholar:
+    enabled: true
+    query: >
+      (chatbot OR "conversational agent" OR "dialogue system") AND
+      ("language learning" OR "second language" OR L2 OR ESL) AND
+      (speaking OR oral OR pronunciation OR fluency) AND
+      (university OR college OR "higher education")
+    fields: ["title", "authors", "year", "abstract", "openAccessPdf", "citationCount"]
+    limit: 200
+
+  openalex:
+    enabled: true
+    query: >
+      title.search:(chatbot OR agent) AND
+      abstract.search:("language learning" AND speaking)
+    filters:
+      publication_year: "2015-2024"
+      type: "article"
+    limit: 200
+
+  arxiv:
+    enabled: true
+    query: "all:(chatbot AND \"language learning\" AND speaking)"
+    categories: ["cs.CL", "cs.AI", "cs.HC"]  # Computation & Language, AI, Human-Computer Interaction
+    limit: 50
+
+# ===== PRISMA CRITERIA =====
+inclusion_criteria:
+  - "Empirical study with quantitative or qualitative data"
+  - "University-level students (ages 18+)"
+  - "AI chatbot as primary or co-intervention"
+  - "Speaking proficiency as primary or secondary outcome"
+  - "Published between 2015-2024"
+  - "Full text available in English"
+  - "Peer-reviewed or doctoral dissertation"
+
+exclusion_criteria:
+  - "Review papers, meta-analyses, editorials, opinion pieces"
+  - "K-12 students or children (<18 years old)"
+  - "Non-chatbot technologies (VR, mobile apps without conversational AI, games)"
+  - "No speaking outcome measures (only reading, writing, listening)"
+  - "Conference abstracts without full papers"
+  - "Non-English full text"
+  - "Published before 2015"
+
+screening_method: "ai_assisted"  # Options: "manual", "ai_assisted", "automated"
+screening_llm: "claude-3-5-sonnet-20241022"
+screening_confidence_threshold: 0.75
+human_review_required: true  # Uncertain cases (confidence < 0.75) go to human reviewer
+
+# ===== RAG SYSTEM CONFIGURATION =====
+rag:
+  vector_database:
+    type: "chromadb"
+    collection_name: "chatbot_language_learning"
+    persist_directory: "./rag/chroma_db"
+    distance_metric: "cosine"
+
+  embedding:
+    model: "text-embedding-3-small"
+    provider: "openai"
+    dimensions: 1536
+    batch_size: 100
+
+  chunking:
+    strategy: "semantic"  # Options: "fixed_size", "semantic", "hierarchical"
+    chunk_size: 500  # tokens
+    chunk_overlap: 50  # tokens
+    preserve_sentences: true
+
+  retrieval:
+    top_k: 5
+    similarity_threshold: 0.7
+    rerank: false  # Set to true to use reranking (requires additional API)
+
+  generation:
+    llm_provider: "anthropic"
+    llm_model: "claude-3-5-sonnet-20241022"
+    temperature: 0.2  # Lower for more factual responses
+    max_tokens: 2048
+    system_prompt: |
+      You are an expert research assistant helping with a systematic literature review
+      on AI chatbots for language learning. Always cite sources using [Author, Year] format
+      and include page numbers when possible. Base all answers strictly on the provided papers.
+
+# ===== OUTPUT CONFIGURATION =====
+outputs:
+  data_dir: "./data"
+  rag_dir: "./rag"
+  conversations_dir: "./conversations"
+  reports_dir: "./outputs"
+  prisma_diagram:
+    format: "png"  # Options: "png", "svg", "pdf"
+    dpi: 300
+    style: "prisma_2020"
+  references:
+    format: "bibtex"  # Options: "bibtex", "ris", "endnote"
+    file: "./outputs/references.bib"
+
+# ===== API KEYS (Reference - actual keys in .env) =====
+# ANTHROPIC_API_KEY=sk-ant-...
+# OPENAI_API_KEY=sk-proj-...
+
+# ===== PROJECT NOTES =====
+notes: |
+  This is an example project demonstrating the full 7-stage ResearcherRAG workflow.
+
+  Key decisions:
+  - Limited to university-level to maintain homogeneity (K-12 learners have different needs)
+  - Focus on speaking proficiency specifically (most under-researched language skill with AI)
+  - Year range 2015-2024 captures modern NLP era (post-word2vec, pre-GPT-3 and beyond)
+  - Three databases provide good interdisciplinary coverage (education + CS + AI)
+
+  Expected outcomes:
+  - 50-80 papers in final dataset
+  - Focus on effectiveness, learner perceptions, and design features
+  - Publication target: Systematic review in CALL journal or dissertation chapter
+
+# ===== VERSION INFO =====
+researcherrag_version: "1.0.6"
+config_version: "1.0"
