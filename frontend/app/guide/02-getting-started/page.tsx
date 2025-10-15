@@ -464,18 +464,31 @@ ls -la`}
       <CodeBlock
         language="bash"
         code={`ResearcherRAG/
-├── README.md              # Project overview
-├── QUICK_START.md         # Fast setup guide
-├── CLAUDE.md              # Instructions for Claude Code
-├── researcherrag_cli.py   # CLI tool for project management
-├── prompts/               # Stage 1-5 prompt templates
+├── .claude/                # v1.0.6+ Stage automation
+│   ├── stages.yaml         # Stage definitions & commands
+│   └── context.json.example # State tracking template
+├── README.md               # Project overview
+├── CLAUDE.md               # Instructions for Claude Code
+├── researcherrag_cli.py    # CLI tool (5 commands)
+├── prompts/                # Stage 1-7 prompt templates
 │   ├── 01_research_domain_setup.md
 │   ├── 02_query_strategy.md
 │   ├── 03_prisma_configuration.md
 │   ├── 04_rag_design.md
-│   └── 05_execution_plan.md
-├── templates/             # Output templates
-└── workshop/              # Example workflows`}
+│   ├── 05_execution_plan.md
+│   ├── 06_research_conversation.md
+│   └── 07_documentation_writing.md
+├── scripts/                # 7 Python automation scripts
+│   ├── 01_fetch_papers.py
+│   ├── 02_deduplicate.py
+│   ├── 03_screen_papers.py
+│   ├── 04_download_pdfs.py
+│   ├── 05_build_rag.py
+│   ├── 06_query_rag.py
+│   └── 07_generate_prisma.py
+├── examples/               # Example projects
+├── templates/              # Output templates
+└── requirements.txt        # Python dependencies`}
       />
 
       <div className="callout callout-success my-8">
