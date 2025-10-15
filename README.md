@@ -32,9 +32,12 @@ This is a **demonstration and education platform**, not a production RAG system.
 ### Run Locally
 
 ```bash
-# 1. Clone repository
-git clone https://github.com/HosungYou/ResearcherRAG-helper.git
+# 1. Clone repository with submodules
+git clone --recurse-submodules https://github.com/HosungYou/ResearcherRAG-helper.git
 cd ResearcherRAG-helper
+
+# If you already cloned without --recurse-submodules:
+git submodule update --init --recursive
 
 # 2. Install frontend dependencies
 cd frontend
@@ -139,6 +142,15 @@ ResearcherRAG-helper/
 │   │   └── mdx.ts                # MDX processing
 │   └── public/                   # Static assets
 │
+├── submodules/                    # Git submodules
+│   └── researcherRAG/            # Main ResearcherRAG repository
+│       ├── scripts/              # 7-stage Python scripts
+│       ├── prompts/              # Stage prompts (01-07)
+│       ├── researcherrag_cli.py  # CLI tool
+│       └── requirements.txt      # Python dependencies
+│
+├── researcherrag_cli.py          # Symlink → submodules/researcherRAG/
+│
 ├── chatbot/                       # Chatbot backend (Python)
 │   ├── api/                      # FastAPI (if separate deployment)
 │   ├── rag/                      # RAG pipeline
@@ -149,7 +161,7 @@ ResearcherRAG-helper/
 │
 ├── docs/                          # Source documents (for RAG)
 │   ├── chapters/                 # Guide chapters (MDX)
-│   ├── prompts/                  # 5-stage prompts
+│   ├── prompts/                  # Symlink → submodules/researcherRAG/prompts
 │   ├── templates/                # Research profiles
 │   └── workshop/                 # Workshop materials
 │
