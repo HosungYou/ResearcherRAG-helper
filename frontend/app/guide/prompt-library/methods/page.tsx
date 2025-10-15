@@ -231,28 +231,28 @@ For each:
       <h2 id="tips">Pro Tips</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border-l-4 border-yellow-500 bg-yellow-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🎯 Justify Your Choice</h4>
           <p className="text-sm">
             Use this comparison to justify your methodology: "Based on 18 RCT studies in similar contexts [citations], this design is appropriate for..."
           </p>
         </div>
 
-        <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📊 Identify Gaps</h4>
           <p className="text-sm">
             If one methodology is underused, that's a research opportunity. "Only 5 studies used longitudinal designs, representing a gap..."
           </p>
         </div>
 
-        <div className="border-l-4 border-green-500 bg-green-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🔍 Quality Assessment</h4>
           <p className="text-sm">
             Not all RCTs are equal. Ask follow-ups about quality indicators (randomization procedure, blinding, attrition, etc.)
           </p>
         </div>
 
-        <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📖 Learn from Examples</h4>
           <p className="text-sm">
             Read the cited example papers to see how researchers executed each methodology well (or poorly).

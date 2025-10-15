@@ -159,6 +159,80 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               >
                 💡 Prompt Library
               </Link>
+
+              {/* Prompt Library Subsections */}
+              <div className="ml-3 mt-1 space-y-1 border-l-2 border-gray-200 pl-3">
+                <Link
+                  href="/guide/prompt-library/overview"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/guide/prompt-library/overview'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  🔍 Context Scanning
+                </Link>
+                <Link
+                  href="/guide/prompt-library/hypothesis"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/guide/prompt-library/hypothesis'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  🧪 Hypothesis Validation
+                </Link>
+                <Link
+                  href="/guide/prompt-library/statistics"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/guide/prompt-library/statistics'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  📊 Statistical Extraction
+                </Link>
+                <Link
+                  href="/guide/prompt-library/methods"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/guide/prompt-library/methods'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  🔬 Methodology Comparison
+                </Link>
+                <Link
+                  href="/guide/prompt-library/contradictions"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/guide/prompt-library/contradictions'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  ⚡ Contradiction Detection
+                </Link>
+                <Link
+                  href="/guide/prompt-library/policy"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/guide/prompt-library/policy'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  📋 Policy Translation
+                </Link>
+                <Link
+                  href="/guide/prompt-library/grant"
+                  className={`block px-2 py-1.5 text-xs rounded-md transition-colors ${
+                    pathname === '/guide/prompt-library/grant'
+                      ? 'bg-gray-200 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  🚀 Future Research Design
+                </Link>
+              </div>
             </div>
 
             {/* Codebook - Separate section after all chapters */}

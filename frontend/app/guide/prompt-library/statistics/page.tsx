@@ -196,28 +196,28 @@ Create a "Measurement Properties" table.`}
       <h2 id="tips">Pro Tips</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border-l-4 border-green-500 bg-green-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📋 Export to Excel</h4>
           <p className="text-sm">
             Copy the markdown table and paste into Excel for further analysis. Or ask the AI to format as CSV.
           </p>
         </div>
 
-        <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🔍 Check Missing Data</h4>
           <p className="text-sm">
             Always include "For missing values, indicate 'Not reported'" to identify studies with incomplete data.
           </p>
         </div>
 
-        <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📊 Verify Effect Sizes</h4>
           <p className="text-sm">
             Spot-check a few effect sizes by reading the original papers. AI may miscalculate if data is ambiguous.
           </p>
         </div>
 
-        <div className="border-l-4 border-orange-500 bg-orange-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">⚖️ Note Heterogeneity</h4>
           <p className="text-sm">
             If effect sizes vary widely, ask follow-up questions about moderators (age, context, duration, etc.)

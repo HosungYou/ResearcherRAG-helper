@@ -29,12 +29,12 @@ export default function HypothesisPromptPage() {
 
       <h2 id="prompt-template">Prompt Template</h2>
 
-      <p>Copy this prompt and replace <code>[여기에 가설을 입력하세요]</code> with your hypothesis:</p>
+      <p>Copy this prompt and replace <code>YOUR_HYPOTHESIS_HERE</code> with your hypothesis:</p>
 
       <div className="bg-gray-50 border-2 border-gray-300 rounded-lg p-6 my-6">
         <CodeBlock
           language="text"
-          code={`My hypothesis: "[여기에 가설을 입력하세요]"
+          code={`My hypothesis: "YOUR_HYPOTHESIS_HERE"
 
 Please:
 1. List evidence SUPPORTING this hypothesis
@@ -196,28 +196,28 @@ Then summarize:
       <h2 id="tips">Pro Tips</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">⚖️ Seek Disconfirmation</h4>
           <p className="text-sm">
             Actively look for refuting evidence. Confirmation bias is real—don't ignore contradictory findings.
           </p>
         </div>
 
-        <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📊 Compare Effect Sizes</h4>
           <p className="text-sm">
             Don't just count papers. Weight by effect size and study quality. One rigorous RCT may outweigh three weak correlational studies.
           </p>
         </div>
 
-        <div className="border-l-4 border-green-500 bg-green-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🔍 Check Moderators</h4>
           <p className="text-sm">
             If results are mixed, ask "What factors differ between supporting and refuting studies?" (sample, context, measurement)
           </p>
         </div>
 
-        <div className="border-l-4 border-orange-500 bg-orange-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">✅ Verify Claims</h4>
           <p className="text-sm">
             Read the original papers for critical claims. AI may misinterpret nuanced findings. Always spot-check.

@@ -347,28 +347,28 @@ Total timeline: 3-4 years`}
       <h2 id="tips">Pro Tips</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border-l-4 border-pink-500 bg-pink-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🎯 Start with Gaps</h4>
           <p className="text-sm">
             Use "Contradiction Detection" or "Context Scanning" prompts first to identify gaps, then design study.
           </p>
         </div>
 
-        <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📊 Be Realistic</h4>
           <p className="text-sm">
             Reference similar studies for realistic timelines, budgets, and sample sizes. Don't underestimate resources needed.
           </p>
         </div>
 
-        <div className="border-l-4 border-green-500 bg-green-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🔗 Connect to Literature</h4>
           <p className="text-sm">
             Every design choice should cite your literature: "Based on X studies showing Y, we will use Z design..."
           </p>
         </div>
 
-        <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">💡 Think Impact</h4>
           <p className="text-sm">
             Funders want to know "So what?" Clearly articulate theoretical AND practical contributions.

@@ -306,28 +306,28 @@ Include evidence citations for all cost/benefit estimates.`}
       <h2 id="tips">Pro Tips</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border-l-4 border-indigo-500 bg-indigo-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🎯 Know Your Audience</h4>
           <p className="text-sm">
             Administrators care about cost, feasibility, and risk. Adjust emphasis based on audience priorities.
           </p>
         </div>
 
-        <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📊 Use Concrete Numbers</h4>
           <p className="text-sm">
             Avoid vague claims. Use specific statistics, timelines, and budget figures from your literature.
           </p>
         </div>
 
-        <div className="border-l-4 border-green-500 bg-green-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">✅ Make It Actionable</h4>
           <p className="text-sm">
             Every recommendation should have clear action items. Checklists &gt; vague suggestions.
           </p>
         </div>
 
-        <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">⚠️ Address Risks Honestly</h4>
           <p className="text-sm">
             Don't oversell. Acknowledge limitations and challenges to build credibility with stakeholders.

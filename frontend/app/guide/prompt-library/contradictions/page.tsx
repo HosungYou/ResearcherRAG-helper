@@ -260,28 +260,28 @@ For each row:
       <h2 id="tips">Pro Tips</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border-l-4 border-red-500 bg-red-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">⚠️ Don't Ignore Conflicts</h4>
           <p className="text-sm">
             Contradictions are not flaws—they're opportunities. Address them explicitly in your discussion section.
           </p>
         </div>
 
-        <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🔍 Dig Deeper</h4>
           <p className="text-sm">
             Always ask "WHY?" when finding contradictions. The answer often reveals important moderating factors.
           </p>
         </div>
 
-        <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">📊 Weight by Quality</h4>
           <p className="text-sm">
             One rigorous study may outweigh three weak ones. Consider methodological quality when interpreting contradictions.
           </p>
         </div>
 
-        <div className="border-l-4 border-green-500 bg-green-50 p-4">
+        <div className="border-l-4 border-gray-900 bg-gray-50 p-4">
           <h4 className="font-semibold mb-2">🎯 Propose Solutions</h4>
           <p className="text-sm">
             Use contradictions to justify your own research. "To resolve this discrepancy, our study will..."
