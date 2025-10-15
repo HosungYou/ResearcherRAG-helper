@@ -8,12 +8,12 @@ export default function ImplementationGuidePage() {
   return (
     <GuideLayout
       githubUrl="https://github.com/HosungYou/researcherRAG/tree/main/prompts"
-      githubLabel="View Stages 1-5 Prompts"
+      githubLabel="View Stages 1-7 Prompts"
     >
       <h1>Implementation Guide</h1>
 
       <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-        This chapter walks you through the complete implementation process of ResearcherRAG, from initial setup to final deployment. We'll cover all five stages in detail with real-world examples, practical tips, and troubleshooting advice to help you build your own systematic literature review RAG system.
+        This chapter walks you through the complete implementation process of ResearcherRAG, from initial setup to final deployment. We'll cover all seven stages in detail with real-world examples, practical tips, and troubleshooting advice to help you build your own systematic literature review RAG system.
       </p>
 
       <Mermaid chart={`
@@ -21,15 +21,19 @@ graph LR
     A[🎯 Stage 1<br/>Research Domain] --> B[🔍 Stage 2<br/>Query Strategy]
     B --> C[📋 Stage 3<br/>PRISMA Config]
     C --> D[🏗️ Stage 4<br/>RAG Design]
-    D --> E[⚡ Stage 5<br/>Execution]
-    E --> F[✅ Your RAG System]
+    D --> E[📝 Stage 5<br/>Execution Plan]
+    E --> F[💬 Stage 6<br/>Research Queries]
+    F --> G[📄 Stage 7<br/>Documentation]
+    G --> H[✅ Your RAG System]
 
     style A fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
     style B fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px
     style C fill:#fce7f3,stroke:#ec4899,stroke-width:2px
     style D fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
     style E fill:#dcfce7,stroke:#10b981,stroke-width:2px
-    style F fill:#bbf7d0,stroke:#059669,stroke-width:3px
+    style F fill:#c7f3e7,stroke:#14b8a6,stroke-width:2px
+    style G fill:#f3e7c7,stroke:#d97706,stroke-width:2px
+    style H fill:#bbf7d0,stroke:#059669,stroke-width:3px
 `} />
 
       <div className="callout callout-info">
@@ -42,7 +46,7 @@ graph LR
       <h2 id="overview">Implementation Overview</h2>
 
       <p>
-        ResearcherRAG's five-stage workflow is designed to guide you through building a RAG system systematically. Each stage builds upon the previous one, and the prompts are carefully crafted to help Claude Code understand your research domain and generate appropriate code.
+        ResearcherRAG's seven-stage workflow is designed to guide you through building a RAG system systematically. Each stage builds upon the previous one, and the prompts are carefully crafted to help Claude Code understand your research domain and generate appropriate code.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
@@ -56,19 +60,27 @@ graph LR
             </div>
             <div className="flex justify-between">
               <span>PRISMA (Stage 3)</span>
-              <span className="font-mono">~2-3 hrs</span>
+              <span className="font-mono">~20 min</span>
             </div>
             <div className="flex justify-between">
               <span>RAG Design (Stage 4)</span>
               <span className="font-mono">~15 min</span>
             </div>
             <div className="flex justify-between">
-              <span>Execution (Stage 5)</span>
-              <span className="font-mono">~3-4 hrs</span>
+              <span>Execution Plan (Stage 5)</span>
+              <span className="font-mono">~10 min</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Research Queries (Stage 6)</span>
+              <span className="font-mono">~2-3 hrs</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Documentation (Stage 7)</span>
+              <span className="font-mono">~1-2 hrs</span>
             </div>
             <div className="flex justify-between border-t pt-2 font-semibold">
               <span>Total</span>
-              <span className="font-mono">~6-8 hrs</span>
+              <span className="font-mono">~4-7 hrs</span>
             </div>
           </div>
         </div>
@@ -893,13 +905,88 @@ prompts:
         </div>
       </div>
 
-      <h2 id="stage-5">Stage 5: Execution & Validation</h2>
+      <h2 id="stage-5">Stage 5: Execution Plan</h2>
 
       <p>
-        The final stage brings everything together. You'll ingest your papers into the vector database, test the RAG system, validate results, and deploy for use.
+        Stage 5 is where you review the complete automation pipeline before execution. This planning stage ensures all scripts, configurations, and data flows are correct before running the time-intensive PDF download and RAG building process.
       </p>
 
-      <h3 id="stage-5-ingestion">Document Ingestion</h3>
+      <h3 id="stage-5-pipeline-review">Pipeline Review</h3>
+
+      <p>
+        Review the execution sequence that will run automatically:
+      </p>
+
+      <Mermaid chart={`
+graph TD
+    A[01_fetch_papers.py] --> B[02_deduplicate.py]
+    B --> C[03_screen_papers.py]
+    C --> D[04_download_pdfs.py]
+    D --> E[05_build_rag.py]
+    E --> F[06_query_rag.py]
+    F --> G[07_generate_prisma.py]
+
+    style A fill:#e0e7ff
+    style C fill:#fce7f3
+    style E fill:#fef3c7
+    style G fill:#dcfce7
+`} />
+
+      <p className="text-sm text-muted-foreground mt-4">
+        Each script logs progress and errors. You can pause and resume at any stage if issues occur.
+      </p>
+
+      <h3 id="stage-5-validation">Pre-Execution Validation</h3>
+
+      <p>
+        Before running the pipeline, validate your configuration:
+      </p>
+
+      <CodeBlock
+        language="bash"
+        code={`# Run validation checks
+python researcherrag_cli.py validate
+
+# Expected output:
+# ✓ config.yaml found and valid
+# ✓ Database APIs configured (3/3)
+# ✓ PRISMA criteria defined
+# ✓ RAG settings complete
+# ✓ Output directories exist
+# ⚠ API key for Anthropic not set (optional)
+#
+# Ready to proceed with execution!`}
+      />
+
+      <h3 id="stage-5-execution">Starting the Automation</h3>
+
+      <p>
+        Once validated, initiate the full pipeline:
+      </p>
+
+      <CodeBlock
+        language="bash"
+        code={`# Start automated execution
+python researcherrag_cli.py run-all
+
+# Or run stages individually:
+python researcherrag_cli.py run-stage 6  # Research Conversation only`}
+      />
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">⏱️ Execution Time</p>
+        <p className="text-sm mb-0">
+          Stage 6 (automated execution) typically takes 2-3 hours for 100-200 papers. Stage 7 (documentation) takes another 1-2 hours. Plan accordingly and ensure stable internet connection.
+        </p>
+      </div>
+
+      <h2 id="stage-6">Stage 6: Research Conversation (Automated Execution)</h2>
+
+      <p>
+        Stage 6 is the automated execution phase where papers are fetched, deduplicated, screened, downloaded, and ingested into your RAG system. This stage runs largely unattended.
+      </p>
+
+      <h3 id="stage-6-ingestion">Document Ingestion Pipeline</h3>
 
       <p>
         The ingestion pipeline processes your PRISMA-selected papers:
@@ -1082,6 +1169,142 @@ Answer: ...`}
         </ul>
       </div>
 
+      <h2 id="stage-7">Stage 7: Documentation Writing</h2>
+
+      <p>
+        The final stage generates comprehensive documentation of your systematic literature review, including PRISMA 2020 flow diagrams, search strategy documentation, and research reports.
+      </p>
+
+      <h3 id="stage-7-prisma">PRISMA 2020 Flow Diagram</h3>
+
+      <p>
+        Generate the standardized PRISMA flowchart showing your screening process:
+      </p>
+
+      <CodeBlock
+        language="bash"
+        code={`# Generate PRISMA diagram
+python scripts/07_generate_prisma.py
+
+# Output: outputs/prisma_flow_diagram.png
+# Also generates: outputs/prisma_data.json (for replication)`}
+      />
+
+      <div className="border rounded-lg p-4 my-6 bg-gray-50">
+        <h4 className="font-semibold mb-2">Generated PRISMA Diagram Includes:</h4>
+        <ul className="text-sm space-y-1">
+          <li>✅ <strong>Identification</strong>: Records from each database (Semantic Scholar, OpenAlex, arXiv)</li>
+          <li>✅ <strong>Screening</strong>: Records removed before screening, after screening</li>
+          <li>✅ <strong>Included</strong>: Studies included in review with reasons for exclusion</li>
+          <li>✅ <strong>Metadata</strong>: Date of search, search terms, inclusion/exclusion criteria</li>
+        </ul>
+      </div>
+
+      <h3 id="stage-7-search-strategy">Search Strategy Documentation</h3>
+
+      <p>
+        Document your complete search strategy for reproducibility:
+      </p>
+
+      <CodeBlock
+        language="markdown"
+        code={`# Search Strategy Document (Auto-Generated)
+
+## Databases Searched
+1. **Semantic Scholar**: 450 records
+2. **OpenAlex**: 380 records
+3. **arXiv**: 120 records
+Total: 950 records
+
+## Search Terms
+((chatbot OR "conversational agent" OR "dialogue system") AND
+ ("language learning" OR "second language" OR "L2 acquisition"))
+
+## Inclusion Criteria
+- Published 2015-2024
+- Empirical studies with quantitative or qualitative data
+- Focus on speaking skills improvement
+- Full text available in English
+
+## Exclusion Criteria
+- Review papers, editorials, commentaries
+- Studies without learning outcome measures
+- Non-English publications
+
+## Date of Search
+2025-10-15`}
+      />
+
+      <h3 id="stage-7-research-report">Research Summary Report</h3>
+
+      <p>
+        Generate a summary report of findings from your RAG conversations:
+      </p>
+
+      <CodeBlock
+        language="bash"
+        code={`# Generate research summary
+python generate_report.py \\
+  --conversations conversations/ \\
+  --output outputs/research_summary.md
+
+# Includes:
+# - Key themes identified
+# - Most cited papers (top 20)
+# - Research gaps discovered
+# - Methodology distribution
+# - Geographic coverage
+# - Timeline of publications`}
+      />
+
+      <div className="callout callout-success">
+        <p className="font-semibold mb-2">📄 Documentation Deliverables</p>
+        <p className="text-sm mb-2">Stage 7 produces publication-ready documentation:</p>
+        <ul className="text-sm space-y-1 mb-0">
+          <li>✅ <strong>PRISMA diagram</strong> (PNG/SVG) for manuscript figures</li>
+          <li>✅ <strong>Search strategy</strong> (Markdown/Word) for supplementary materials</li>
+          <li>✅ <strong>Included papers list</strong> (CSV/BibTeX) for references</li>
+          <li>✅ <strong>Exclusion log</strong> (CSV) with reasons for each excluded paper</li>
+          <li>✅ <strong>Research summary</strong> (Markdown/PDF) with key findings</li>
+          <li>✅ <strong>Replication package</strong> (config.yaml + data/) for open science</li>
+        </ul>
+      </div>
+
+      <h3 id="stage-7-export">Exporting for Publication</h3>
+
+      <p>
+        Export your findings in various formats for different publication venues:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div className="border rounded-lg p-4">
+          <h4 className="font-semibold mb-2">📝 For Journal Submission</h4>
+          <ul className="text-sm space-y-1">
+            <li>• PRISMA diagram (300 DPI PNG)</li>
+            <li>• Reference list (BibTeX/RIS)</li>
+            <li>• Supplementary materials (ZIP)</li>
+            <li>• Data availability statement</li>
+          </ul>
+        </div>
+
+        <div className="border rounded-lg p-4">
+          <h4 className="font-semibold mb-2">🎓 For Thesis/Dissertation</h4>
+          <ul className="text-sm space-y-1">
+            <li>• Methodology chapter section</li>
+            <li>• Literature review synthesis</li>
+            <li>• Appendices (search terms, criteria)</li>
+            <li>• Full citation list with abstracts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="callout callout-info">
+        <p className="font-semibold mb-2">🔗 Open Science & Reproducibility</p>
+        <p className="text-sm mb-0">
+          Stage 7 documentation ensures your research is <strong>fully reproducible</strong>. Share your <code>config.yaml</code>, search strategy, and PRISMA diagram so other researchers can replicate or extend your work. This meets requirements for preregistration platforms like OSF and PROSPERO.
+        </p>
+      </div>
+
       <h2 id="real-world-example">Complete Real-World Example</h2>
 
       <p>
@@ -1108,27 +1331,26 @@ Answer: ...`}
           <div>
             <p className="font-semibold mb-1">Stage 2: Query Strategy (10 min)</p>
             <ul className="list-disc list-inside ml-2 space-y-1">
-              <li>Databases: ERIC, PubMed, CORE</li>
+              <li>Databases: Semantic Scholar, OpenAlex, arXiv</li>
               <li>Query: <code>("large language model*" OR "LLM" OR "GPT" OR "ChatGPT") AND ("K-12" OR "primary education" OR "secondary education") AND ("learning outcomes" OR "student performance")</code></li>
               <li>Expected results: 200-400 papers</li>
             </ul>
           </div>
 
           <div>
-            <p className="font-semibold mb-1">Stage 3: PRISMA (2.5 hrs)</p>
+            <p className="font-semibold mb-1">Stage 3: PRISMA Configuration (20 min)</p>
             <ul className="list-disc list-inside ml-2 space-y-1">
-              <li>Initial results: 347 papers</li>
-              <li>After deduplication: 289 papers</li>
-              <li>After abstract screening: 78 papers</li>
-              <li>After full-text review: 43 papers</li>
-              <li>Time breakdown: 30min query + 1hr screening + 1hr manual review</li>
+              <li>Defined inclusion criteria: empirical studies, quantitative data, K-12 only</li>
+              <li>Exclusion criteria: opinion pieces, higher ed, non-English</li>
+              <li>Configured AI screening with Claude API</li>
+              <li>Set up PRISMA tracking spreadsheet</li>
             </ul>
           </div>
 
           <div>
             <p className="font-semibold mb-1">Stage 4: RAG Design (15 min)</p>
             <ul className="list-disc list-inside ml-2 space-y-1">
-              <li>Vector DB: ChromaDB (sufficient for 43 papers)</li>
+              <li>Vector DB: ChromaDB (sufficient for expected ~50 papers)</li>
               <li>Embeddings: text-embedding-3-small</li>
               <li>Chunking: 500 tokens, 50 overlap</li>
               <li>Retrieval: top-5, threshold 0.7</li>
@@ -1137,12 +1359,33 @@ Answer: ...`}
           </div>
 
           <div>
-            <p className="font-semibold mb-1">Stage 5: Execution (1.5 hrs)</p>
+            <p className="font-semibold mb-1">Stage 5: Execution Plan (10 min)</p>
             <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Validated all configurations with <code>researcherrag_cli.py validate</code></li>
+              <li>Reviewed pipeline: fetch → deduplicate → screen → download → build</li>
+              <li>Confirmed disk space (5GB) and API keys set</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">Stage 6: Research Conversation (2.5 hrs automated)</p>
+            <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Fetched: 347 papers (Semantic Scholar: 180, OpenAlex: 145, arXiv: 22)</li>
+              <li>After deduplication: 289 unique papers</li>
+              <li>After AI screening: 78 papers passed</li>
+              <li>PDFs downloaded: 43 papers (55% success rate)</li>
               <li>Ingestion: 43 papers → 487 chunks</li>
               <li>Testing: 15 test queries, 92% accuracy</li>
-              <li>Interface: Streamlit web app deployed</li>
-              <li>Cost: $2.50 for embeddings, $0.80 for testing</li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="font-semibold mb-1">Stage 7: Documentation (1 hr)</p>
+            <ul className="list-disc list-inside ml-2 space-y-1">
+              <li>Generated PRISMA 2020 flow diagram (347 → 43 included)</li>
+              <li>Exported search strategy documentation</li>
+              <li>Created BibTeX file with all 43 references</li>
+              <li>Generated research summary with key themes</li>
             </ul>
           </div>
         </div>
@@ -1151,9 +1394,11 @@ Answer: ...`}
           <p className="font-semibold mb-2">✨ Final Results:</p>
           <ul className="text-sm space-y-1">
             <li>✅ Total time: 4.5 hours (vs. weeks for manual literature review)</li>
+            <li>✅ Papers retrieved: 347 → 43 included (PRISMA compliant)</li>
             <li>✅ Query response: &lt;1 second with citations</li>
-            <li>✅ Total cost: &lt;$5 (embeddings + testing)</li>
-            <li>✅ Reproducible workflow documented</li>
+            <li>✅ Total cost: &lt;$5 (embeddings + API calls)</li>
+            <li>✅ Reproducible workflow with full documentation</li>
+            <li>✅ Publication-ready PRISMA diagram and search strategy</li>
           </ul>
         </div>
       </div>
