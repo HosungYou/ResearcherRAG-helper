@@ -43,23 +43,6 @@ Organize the response hierarchically with citations and page ranges for each cat
         />
       </div>
 
-      <div className="flex gap-2 mb-6">
-        <button
-          onClick={() => {
-            navigator.clipboard.writeText(`Analyze the papers in my database and provide a structured overview of:
-1. Core themes and topics
-2. Methodological approaches
-3. Key findings and outcomes
-
-Organize the response hierarchically with citations and page ranges for each category.`)
-            alert('Prompt copied to clipboard!')
-          }}
-          className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors text-sm"
-        >
-          📋 Copy Prompt
-        </button>
-      </div>
-
       <h2 id="example-output">Expected Output Structure</h2>
 
       <p>Your RAG system should return something like this:</p>
