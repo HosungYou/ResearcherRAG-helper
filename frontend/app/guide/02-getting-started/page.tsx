@@ -186,7 +186,7 @@ python3 --version`}
           </div>
         </div>
         <p className="text-xs mt-2">
-          <strong>💡 Pro Tip</strong>: ChatGPT Plus ($20) offers more generous token limits than Claude Pro ($20) for heavy ResearcherRAG usage. Consider <strong>using both</strong>: Claude for Stage 1-2 (planning), Codex for Stage 3-5 (heavy processing).
+          <strong>💡 Pro Tip</strong>: ChatGPT Plus ($20) offers more generous token limits than Claude Pro ($20) for heavy ResearcherRAG usage. Consider <strong>using both</strong>: Claude for Stage 1-2 (planning), Codex for Stage 3-7 (PRISMA automation, RAG execution).
         </p>
       </div>
 
@@ -200,7 +200,7 @@ python3 --version`}
             Anthropic's official VS Code extension with 200K token context window—optimized for ResearcherRAG's long prompts and academic workflows.
           </p>
           <ul className="text-sm space-y-2 mb-4">
-            <li>✅ Best for 5-stage PRISMA workflow</li>
+            <li>✅ Best for 7-stage PRISMA workflow</li>
             <li>✅ Handles large literature reviews</li>
             <li>✅ Academic research focus</li>
             <li>✅ Seamless with Stage prompts</li>
@@ -328,7 +328,7 @@ python3 --version`}
           <p className="mt-3"><strong>💡 Hybrid Approach (Recommended for Power Users):</strong></p>
           <ul className="ml-4 space-y-1">
             <li><strong>Claude Code</strong>: Stage 1-2 (research planning, query design)</li>
-            <li><strong>OpenAI Codex</strong>: Stage 3-5 (PRISMA automation, RAG execution)</li>
+            <li><strong>OpenAI Codex</strong>: Stage 3-7 (PRISMA automation, RAG execution, documentation)</li>
             <li>Benefit: Use Claude's reasoning for setup, Codex's generous tokens for heavy lifting</li>
             <li><strong>Total cost</strong>: $40/month (both subscriptions) vs $50-100+ API usage</li>
           </ul>
@@ -629,7 +629,7 @@ python researcherrag_cli.py --help`}
         </p>
       </div>
 
-      <h3 id="step0-init-project">Step 0: Initialize Your Project (🆕 Required)</h3>
+      <h3 id="step5-init-project">Step 5: Initialize Your Project (🆕 Required)</h3>
 
       <div className="border-2 border-gray-900 rounded-lg p-6 bg-white mb-6">
         <p className="font-semibold mb-2">🚨 Important: Create Standardized Project Structure</p>
@@ -782,7 +782,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
         </div>
       </details>
 
-      <h3 id="step5-environment-old">Step 5: Additional Python Dependencies (Within Your Project)</h3>
+      <h3 id="step6-dependencies">Step 6: Additional Python Dependencies (Within Your Project)</h3>
 
       <p>Now that you have a project, navigate into it and install research-specific packages:</p>
 
@@ -806,12 +806,12 @@ pip install openai`}
         </p>
       </div>
 
-      <h3 id="step6-env-file">Step 6: Configure Environment Variables (Optional)</h3>
+      <h3 id="step7-env-file">Step 7: Configure Environment Variables (Optional)</h3>
 
       <div className="callout callout-success mb-6">
         <p className="font-semibold mb-2">✅ Using Subscription Login? You Can Skip This Step!</p>
         <p className="text-sm mb-0">
-          If you signed in with <strong>Claude Pro</strong> or <strong>ChatGPT Plus</strong> in Step 2, you don't need to configure a <code>.env</code> file. The extensions authenticate directly through your subscription. <strong>Proceed to Step 6.</strong>
+          If you signed in with <strong>Claude Pro</strong> or <strong>ChatGPT Plus</strong> in Step 2, you don't need to configure a <code>.env</code> file. The extensions authenticate directly through your subscription. <strong>Proceed to Your First Workflow.</strong>
         </p>
       </div>
 
