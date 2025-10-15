@@ -12,12 +12,29 @@ releases/
 ├── RELEASE_NOTES_v1.0.1.md     # Dark mode bug fix
 ├── RELEASE_NOTES_v1.0.2.md     # Theme simplification
 ├── RELEASE_NOTES_v1.0.3.md     # Python scripts & backend automation
-└── RELEASE_NOTES_v1.0.5.md     # Codebook restructure & enhanced prompts
+├── RELEASE_NOTES_v1.0.5.md     # Codebook restructure & enhanced prompts
+└── RELEASE_NOTES_v1.0.6.md     # Stage-aware automation (3-tier architecture)
 ```
 
 ## 🚀 Version Overview
 
-### [v1.0.5](RELEASE_NOTES_v1.0.5.md) - Current Release
+### [v1.0.6](RELEASE_NOTES_v1.0.6.md) - Current Release
+**Release Date**: October 21, 2025
+**Type**: Stage-Aware Automation (3-Tier Architecture)
+
+**Key Highlights**:
+- 🎯 **3-Tier Configuration Architecture** (Prompts / .claude/ / CLAUDE.md)
+- 🤖 **Stage-Aware CLI** with 4 new commands
+- 📊 **Automatic State Tracking** via context.json
+- ✅ **Prerequisite Validation** to prevent workflow errors
+- 🚀 **Zero Terminal Commands** - fully conversational workflow
+
+**Breaking Changes**: No
+**Migration Required**: No (opt-in with `researcherrag upgrade`)
+
+---
+
+### [v1.0.5](RELEASE_NOTES_v1.0.5.md)
 **Release Date**: October 14, 2025
 **Type**: Comprehensive Codebook & Enhanced Prompts
 
@@ -120,19 +137,20 @@ releases/
 
 ## 📊 Release Metrics Comparison
 
-| Metric | v1.0.0 | v1.0.1 | v1.0.2 | v1.0.3 | v1.0.5 | Latest Change |
-|--------|--------|--------|--------|--------|--------|---------------|
-| Frontend Pages | 8 | 8 | 8 | 8 | 12 | **+50%** |
-| Python Scripts | 0 | 0 | 0 | 7 | 7 | Stable |
-| Documentation Files | 12 | 14 | 16 | 21 | 25 | +19% |
-| Example Projects | 0 | 0 | 0 | 1 | 1 | Stable |
-| Database APIs | 3 | 3 | 3 | 3 | 3 | Stable |
-| Dark Mode Support | Yes | Yes | No | No | No | Removed |
-| CSS Bundle Size | 45.4KB | 45.4KB | 44.8KB | 44.8KB | 44.8KB | Stable |
-| Automation Level | 0% | 0% | 0% | 100% | 100% | **Full** |
-| CLI Commands | 1 | 1 | 1 | 3 (planned) | 3 (planned) | +200% |
-| Codebook Pages | 1 | 1 | 1 | 1 | 4 | **+300%** |
-| Search Entries | 15 | 15 | 15 | 15 | 40+ | **+167%** |
+| Metric | v1.0.0 | v1.0.1 | v1.0.2 | v1.0.3 | v1.0.5 | v1.0.6 | Latest Change |
+|--------|--------|--------|--------|--------|--------|--------|---------------|
+| Frontend Pages | 8 | 8 | 8 | 8 | 12 | 12 | Stable |
+| Python Scripts | 0 | 0 | 0 | 7 | 7 | 7 | Stable |
+| Documentation Files | 12 | 14 | 16 | 21 | 25 | 28 | +12% |
+| Example Projects | 0 | 0 | 0 | 1 | 1 | 2 | **+100%** |
+| Database APIs | 3 | 3 | 3 | 3 | 3 | 3 | Stable |
+| Dark Mode Support | Yes | Yes | No | No | No | No | Removed |
+| CSS Bundle Size | 45.4KB | 45.4KB | 44.8KB | 44.8KB | 44.8KB | 44.8KB | Stable |
+| Automation Level | 0% | 0% | 0% | 100% | 100% | 100% | **Full** |
+| CLI Commands | 1 | 1 | 1 | 3 (planned) | 3 (planned) | 5 | **+400%** |
+| Codebook Pages | 1 | 1 | 1 | 1 | 4 | 4 | Stable |
+| Search Entries | 15 | 15 | 15 | 15 | 40+ | 40+ | Stable |
+| Stage Tracking | ❌ | ❌ | ❌ | ❌ | ❌ | ✅ | **New** |
 
 ---
 
@@ -212,7 +230,16 @@ releases/
 ## 📅 Release History
 
 ```
-v1.0.5 (2025-10-14) ← Current Release
+v1.0.6 (2025-10-21) ← Current Release
+└── Stage-Aware Automation (3-Tier Architecture)
+    ├── 3-Tier Configuration (.claude/ folder)
+    ├── 4 new CLI commands (stage-status, run-stage, next, upgrade)
+    ├── Automatic state tracking (context.json)
+    ├── Prerequisite validation system
+    ├── Education AI Tutoring example project
+    └── Zero terminal commands workflow
+
+v1.0.5 (2025-10-14)
 └── Comprehensive Codebook & Enhanced Prompts
     ├── Codebook restructured into 4 subpages
     ├── Monochrome design philosophy
@@ -320,8 +347,8 @@ See [CLAUDE.md](CLAUDE.md) for detailed instructions on generating release notes
 
 **📝 Note**: Each release note contains detailed documentation, code examples, and migration guidance. Always refer to the specific version file for accurate technical details.
 
-**🔄 Last Updated**: October 14, 2025
-**📊 Current Version**: v1.0.5
+**🔄 Last Updated**: October 21, 2025
+**📊 Current Version**: v1.0.6
 **👥 Maintained By**: ResearcherRAG Development Team
 
 🤖 _This README is generated and maintained with [Claude Code](https://claude.com/claude-code)_
