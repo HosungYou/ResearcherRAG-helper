@@ -443,9 +443,61 @@ python3 --version`}
         </div>
       </details>
 
-      <h3 id="step3-clone">Step 3: Clone ResearcherRAG Repository</h3>
+      <div className="border-4 border-blue-500 rounded-lg p-6 my-8 bg-blue-50">
+        <h3 className="text-2xl font-bold mb-4 text-blue-900">🚀 One-Click Setup with Claude Code</h3>
 
-      <p>Open your terminal and run:</p>
+        <p className="mb-4 text-blue-900">
+          <strong>Skip Steps 3, 4, and 0 entirely!</strong> Copy this single message to Claude Code and let it handle everything automatically.
+        </p>
+
+        <div className="bg-white border-2 border-blue-300 rounded-lg p-4 mb-4">
+          <p className="text-sm font-semibold mb-3 text-gray-700">📋 Copy this → Paste to Claude Code → Done!</p>
+
+          <CodeBlock
+            language="text"
+            code={`Please help me set up ResearcherRAG from scratch. Here's what I need:
+
+1. Clone the repository: https://github.com/HosungYou/ResearcherRAG.git
+2. Navigate into the ResearcherRAG directory
+3. Create a Python virtual environment (venv)
+4. Activate the virtual environment
+5. Install dependencies: pip install click pyyaml
+6. Initialize a new project using: python researcherrag_cli.py init
+7. Verify everything works by showing: python researcherrag_cli.py --help
+
+Please execute these steps one by one and let me know if any issues occur.`}
+          />
+        </div>
+
+        <div className="bg-blue-100 border-l-4 border-blue-700 p-4 mb-4">
+          <p className="text-sm font-semibold text-blue-900 mb-2">✨ What Claude Code will do:</p>
+          <ul className="text-sm text-blue-800 space-y-1 mb-0">
+            <li>✅ Clone repository (or update if exists)</li>
+            <li>✅ Create and activate virtual environment</li>
+            <li>✅ Install Python dependencies</li>
+            <li>✅ Run CLI initialization</li>
+            <li>✅ Verify setup succeeded</li>
+            <li>✅ Guide you to next steps</li>
+          </ul>
+        </div>
+
+        <p className="text-xs text-blue-700 mb-0">
+          <strong>💡 Estimated time:</strong> 2-3 minutes (fully automated). You'll be prompted for project name during initialization.
+        </p>
+      </div>
+
+      <details className="border rounded-lg my-6">
+        <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30 bg-gray-50">
+          🔧 Manual Installation (Advanced Users / Without Claude Code)
+        </summary>
+        <div className="p-4 pt-0 border-t">
+          <p className="text-sm text-muted-foreground mb-4">
+            If you prefer manual control or aren't using Claude Code, follow these individual steps:
+          </p>
+
+          <h3 id="step3-clone">Step 3: Clone ResearcherRAG Repository</h3>
+
+          <p>Open your terminal and run:</p>
 
       <CodeBlock
         language="bash"
@@ -726,6 +778,9 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
           You might be tempted to skip CLI initialization and just start coding with Claude Code. <strong>Don't!</strong> Without the standardized structure, you'll spend hours debugging file paths, Claude Code will create inconsistent folders, and the dashboard won't work. The 2 minutes spent on <code>researcherrag_cli.py init</code> will save you hours later.
         </p>
       </div>
+
+        </div>
+      </details>
 
       <h3 id="step5-environment-old">Step 5: Additional Python Dependencies (Within Your Project)</h3>
 
