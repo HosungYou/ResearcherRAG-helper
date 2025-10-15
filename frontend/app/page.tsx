@@ -127,8 +127,8 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <AnimatedCounter
-              end={5}
-              suffix=" steps"
+              end={7}
+              suffix=" stages"
               className="text-4xl font-bold tracking-tight mb-2"
             />
             <div className="text-sm text-muted">From zero to production</div>
@@ -166,7 +166,7 @@ export default function HomePage() {
           />
           <FeatureCell
             title="Video Tutorials"
-            description="Visual walkthroughs of the complete 5-stage research workflow"
+            description="Visual walkthroughs of the complete 7-stage research workflow"
             href="/resources#videos"
             delay={0.3}
           />
@@ -187,7 +187,7 @@ export default function HomePage() {
             {[
               'Clone the repository and install dependencies',
               'Configure your API keys and environment',
-              'Follow the 5-stage workflow in VS Code',
+              'Follow the 7-stage workflow in VS Code',
               'Deploy your custom RAG system'
             ].map((step, i) => (
               <motion.li
