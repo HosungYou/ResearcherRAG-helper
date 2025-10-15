@@ -478,6 +478,68 @@ ls -la`}
 └── workshop/              # Example workflows`}
       />
 
+      <div className="callout callout-success my-8">
+        <h4 className="text-lg font-semibold mb-3">💬 Pro Tip: Let Claude Code Run Commands for You</h4>
+
+        <p className="mb-4">
+          <strong>Don't type these commands in your terminal!</strong> Instead, paste them to Claude Code and let it execute automatically. This is the ResearcherRAG way.
+        </p>
+
+        <div className="bg-white border border-gray-300 rounded-lg p-4 space-y-3">
+          <p className="text-sm font-semibold mb-2">Here's how:</p>
+
+          <ol className="text-sm space-y-3 mb-0">
+            <li>
+              <strong>Open Claude Code in VS Code</strong>
+              <br />
+              <code className="text-xs bg-gray-100 px-2 py-1 rounded">Cmd+Shift+P</code> → Type "Claude: Open Chat"
+            </li>
+
+            <li>
+              <strong>Copy and paste this message to Claude:</strong>
+              <CodeBlock
+                language="text"
+                code={`Please run these setup commands for me:
+
+git clone https://github.com/HosungYou/ResearcherRAG.git
+cd ResearcherRAG
+ls -la`}
+              />
+            </li>
+
+            <li>
+              <strong>Claude will automatically:</strong>
+              <ul className="ml-4 mt-2 text-xs space-y-1">
+                <li>✅ Execute all three commands</li>
+                <li>✅ Show you the output</li>
+                <li>✅ Verify the installation succeeded</li>
+                <li>✅ Tell you what to do next</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <p className="text-xs text-muted-foreground mt-3 mb-0">
+          <strong>Why this matters:</strong> Throughout the ResearcherRAG workflow (Stages 1-7), you'll paste prompts to Claude instead of typing terminal commands. This is your first practice! <strong>Zero terminal typing = zero errors.</strong>
+        </p>
+      </div>
+
+      <div className="callout callout-warning my-6">
+        <p className="font-semibold mb-2">⚠️ Already Have ResearcherRAG?</p>
+        <p className="text-sm mb-2">
+          If you've already cloned the repository, skip the git clone step and update instead:
+        </p>
+        <CodeBlock
+          language="bash"
+          code={`cd ResearcherRAG
+git pull origin main
+python3 researcherrag_cli.py --help  # Verify v1.0.6+ commands`}
+        />
+        <p className="text-xs text-muted-foreground mt-2 mb-0">
+          You can also ask Claude Code: "Update my ResearcherRAG to the latest version"
+        </p>
+      </div>
+
       <h3 id="step4-environment">Step 4: Set Up Python Environment</h3>
 
       <p>Create a virtual environment to isolate dependencies:</p>
