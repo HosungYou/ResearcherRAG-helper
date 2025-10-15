@@ -752,7 +752,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
    Domain: medicine
 
    Please read my config.yaml and guide me through Stage 1
-   (Research Domain Setup) using the 5-stage workflow.
+   (Research Domain Setup) using the 7-stage workflow.
 
    Make sure to save all outputs to the correct folders:
    - Stage 1 → data/01_identification/
