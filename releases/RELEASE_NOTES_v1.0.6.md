@@ -1,6 +1,6 @@
 # Release Notes: v1.0.6
 
-**Release Date**: 2025-10-21
+**Release Date**: 2025-10-25
 **Codename**: "Stage-Aware Automation"
 
 ---
