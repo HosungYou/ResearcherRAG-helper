@@ -5,18 +5,35 @@ This directory contains comprehensive release documentation for all versions of 
 ## 📁 Directory Structure
 
 ```
-docs/releases/
+releases/
 ├── README.md                    # This overview file
 ├── CLAUDE.md                    # Claude Code automation guide
 ├── RELEASE_NOTES_v1.0.0.md     # Initial release
 ├── RELEASE_NOTES_v1.0.1.md     # Dark mode bug fix
 ├── RELEASE_NOTES_v1.0.2.md     # Theme simplification
-└── RELEASE_NOTES_v1.0.3.md     # Python scripts & backend automation
+├── RELEASE_NOTES_v1.0.3.md     # Python scripts & backend automation
+└── RELEASE_NOTES_v1.0.5.md     # Codebook restructure & enhanced prompts
 ```
 
 ## 🚀 Version Overview
 
-### [v1.0.3](RELEASE_NOTES_v1.0.3.md) - Current Release
+### [v1.0.5](RELEASE_NOTES_v1.0.5.md) - Current Release
+**Release Date**: October 14, 2025
+**Type**: Comprehensive Codebook & Enhanced Prompts
+
+**Key Highlights**:
+- 📖 **Complete Codebook Restructure** with 4 separate subpages
+- 🎨 **Monochrome Design** for better readability
+- 📝 **Enhanced Prompts 05-07** with pipeline visualizations
+- 🔍 **40+ Search Entries** for quick concept lookup
+- 🧭 **Improved Navigation** with collapsible subsections
+
+**Breaking Changes**: No
+**Migration Required**: No
+
+---
+
+### [v1.0.3](RELEASE_NOTES_v1.0.3.md)
 **Release Date**: October 14, 2025
 **Type**: Major Backend Enhancement / Python Automation Scripts
 
@@ -103,17 +120,19 @@ docs/releases/
 
 ## 📊 Release Metrics Comparison
 
-| Metric | v1.0.0 | v1.0.1 | v1.0.2 | v1.0.3 | Latest Change |
-|--------|--------|--------|--------|--------|---------------|
-| Frontend Pages | 8 | 8 | 8 | 8 | Stable |
-| Python Scripts | 0 | 0 | 0 | 7 | **+700%** |
-| Documentation Files | 12 | 14 | 16 | 21 | +31% |
-| Example Projects | 0 | 0 | 0 | 1 | **New** |
-| Database APIs | 3 | 3 | 3 | 3 | Stable |
-| Dark Mode Support | Yes | Yes | No | No | Removed |
-| CSS Bundle Size | 45.4KB | 45.4KB | 44.8KB | 44.8KB | -1.3% |
-| Automation Level | 0% | 0% | 0% | 100% | **Full** |
-| CLI Commands | 1 | 1 | 1 | 3 (planned) | +200% |
+| Metric | v1.0.0 | v1.0.1 | v1.0.2 | v1.0.3 | v1.0.5 | Latest Change |
+|--------|--------|--------|--------|--------|--------|---------------|
+| Frontend Pages | 8 | 8 | 8 | 8 | 12 | **+50%** |
+| Python Scripts | 0 | 0 | 0 | 7 | 7 | Stable |
+| Documentation Files | 12 | 14 | 16 | 21 | 25 | +19% |
+| Example Projects | 0 | 0 | 0 | 1 | 1 | Stable |
+| Database APIs | 3 | 3 | 3 | 3 | 3 | Stable |
+| Dark Mode Support | Yes | Yes | No | No | No | Removed |
+| CSS Bundle Size | 45.4KB | 45.4KB | 44.8KB | 44.8KB | 44.8KB | Stable |
+| Automation Level | 0% | 0% | 0% | 100% | 100% | **Full** |
+| CLI Commands | 1 | 1 | 1 | 3 (planned) | 3 (planned) | +200% |
+| Codebook Pages | 1 | 1 | 1 | 1 | 4 | **+300%** |
+| Search Entries | 15 | 15 | 15 | 15 | 40+ | **+167%** |
 
 ---
 
@@ -193,7 +212,16 @@ docs/releases/
 ## 📅 Release History
 
 ```
-v1.0.3 (2025-10-14) ← Current Release
+v1.0.5 (2025-10-14) ← Current Release
+└── Comprehensive Codebook & Enhanced Prompts
+    ├── Codebook restructured into 4 subpages
+    ├── Monochrome design philosophy
+    ├── Enhanced prompts 05-07 (+850 lines)
+    ├── 40+ search entries
+    ├── Improved navigation with collapsible sections
+    └── Publication-ready documentation templates
+
+v1.0.3 (2025-10-14)
 └── Python Automation Backend
     ├── 7 automated scripts (PRISMA pipeline)
     ├── Database strategy update (S2/OpenAlex/arXiv)
@@ -266,7 +294,7 @@ See [CLAUDE.md](CLAUDE.md) for detailed instructions on generating release notes
 ### File Naming Convention
 - **Format**: `RELEASE_NOTES_vX.Y.Z.md`
 - **Examples**: `RELEASE_NOTES_v1.0.3.md`, `RELEASE_NOTES_v2.0.0.md`
-- **Location**: `docs/releases/` directory
+- **Location**: `releases/` directory (top-level)
 
 ### Version Numbering (Semantic Versioning)
 
@@ -293,7 +321,7 @@ See [CLAUDE.md](CLAUDE.md) for detailed instructions on generating release notes
 **📝 Note**: Each release note contains detailed documentation, code examples, and migration guidance. Always refer to the specific version file for accurate technical details.
 
 **🔄 Last Updated**: October 14, 2025
-**📊 Current Version**: v1.0.3
+**📊 Current Version**: v1.0.5
 **👥 Maintained By**: ResearcherRAG Development Team
 
 🤖 _This README is generated and maintained with [Claude Code](https://claude.com/claude-code)_
