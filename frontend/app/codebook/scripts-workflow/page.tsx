@@ -431,25 +431,25 @@ export default function ScriptsWorkflowPage() {
 
           <div className="space-y-4 text-sm">
             <div className="bg-gray-800 p-4 rounded border-l-4 border-white">
-              <p className="font-semibold mb-1">❌ Skip 01 (Fetch) → Run 02 (Screen)</p>
+              <p className="font-semibold mb-1 text-white">❌ Skip 01 (Fetch) → Run 02 (Screen)</p>
               <p className="text-gray-300 mb-1"><strong>Error:</strong> FileNotFoundError: data/papers.json does not exist</p>
               <p className="text-gray-400 italic text-xs">Can't screen papers that don't exist!</p>
             </div>
 
             <div className="bg-gray-800 p-4 rounded border-l-4 border-white">
-              <p className="font-semibold mb-1">❌ Skip 03 (Full-text) → Run 04 (Embeddings)</p>
+              <p className="font-semibold mb-1 text-white">❌ Skip 03 (Full-text) → Run 04 (Embeddings)</p>
               <p className="text-gray-300 mb-1"><strong>Error:</strong> FileNotFoundError: data/eligible.json does not exist</p>
               <p className="text-gray-400 italic text-xs">Can't vectorize papers that haven't been screened!</p>
             </div>
 
             <div className="bg-gray-800 p-4 rounded border-l-4 border-white">
-              <p className="font-semibold mb-1">❌ Skip 04 (Embeddings) → Run 05 (RAG)</p>
+              <p className="font-semibold mb-1 text-white">❌ Skip 04 (Embeddings) → Run 05 (RAG)</p>
               <p className="text-gray-300 mb-1"><strong>Error:</strong> ChromaDB collection is empty or doesn't exist</p>
               <p className="text-gray-400 italic text-xs">Can't search an empty vector database!</p>
             </div>
 
             <div className="bg-gray-800 p-4 rounded border-l-4 border-white">
-              <p className="font-semibold mb-1">❌ Skip 05-06 → Run 07 (Documentation)</p>
+              <p className="font-semibold mb-1 text-white">❌ Skip 05-06 → Run 07 (Documentation)</p>
               <p className="text-gray-300 mb-1"><strong>Result:</strong> Incomplete documentation with missing synthesis and insights</p>
               <p className="text-gray-400 italic text-xs">Documentation needs ALL previous outputs to be complete!</p>
             </div>
