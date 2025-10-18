@@ -19,6 +19,7 @@ export default function HomePage() {
             <AnimatedLink href="/guide">Documentation</AnimatedLink>
             <AnimatedLink href="/chat">Chatbot</AnimatedLink>
             <AnimatedLink href="/resources">Resources</AnimatedLink>
+            <AnimatedLink href="/about">About</AnimatedLink>
             <a
               href="https://github.com/HosungYou/ResearcherRAG"
               target="_blank"

@@ -1,352 +1,381 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { Github, Mail, BookOpen, Code, Database, Brain } from 'lucide-react'
 
 export default function AboutPage() {
+  const [mounted, setMounted] = useState(false)
+  const [typedText, setTypedText] = useState('')
+  const fullText = "Empowering researchers with AI-driven systematic literature reviews"
+
+  useEffect(() => {
+    setMounted(true)
+    let currentIndex = 0
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setTypedText(fullText.slice(0, currentIndex))
+        currentIndex++
+      } else {
+        clearInterval(typingInterval)
+      }
+    }, 50)
+
+    return () => clearInterval(typingInterval)
+  }, [])
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="border-b border-gray-200 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <Link href="/" className="text-xl font-bold text-gray-900">
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex justify-between items-center h-16">
+            <Link href="/" className="text-xl font-bold tracking-tight text-gray-900 hover:text-gray-600 transition-colors">
               ResearcherRAG
             </Link>
-            <div className="flex gap-6">
-              <Link href="/guide" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <div className="flex items-center gap-8">
+              <Link href="/guide" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
                 Documentation
               </Link>
-              <Link href="/about" className="text-gray-900 font-medium">
+              <Link href="/about" className="text-sm font-medium text-gray-900">
                 About
               </Link>
+              <a
+                href="https://github.com/HosungYou/ResearcherRAG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </a>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Content */}
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="space-y-12">
-          {/* Header */}
-          <div className="text-center space-y-4">
-            <h1 className="text-4xl font-bold text-gray-900">About ResearcherRAG</h1>
-            <p className="text-xl text-gray-600">
-              An open-source AI-powered system for systematic literature reviews
-            </p>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <div className={`transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h1 className="text-6xl sm:text-7xl font-bold tracking-tight mb-6">
+              <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent animate-gradient">
+                About
+              </span>
+            </h1>
+            <div className="h-16 mb-8">
+              <p className="text-xl text-gray-600 font-light">
+                {typedText}
+                <span className="animate-pulse">|</span>
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Mission */}
-          <section className="bg-white rounded-lg border border-gray-200 p-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">Our Mission</h2>
-            <p className="text-gray-700 leading-relaxed">
-              ResearcherRAG was created to democratize access to systematic literature review automation.
-              We believe that researchers should spend more time analyzing findings and less time on
-              mechanical tasks like paper screening, data extraction, and citation management.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              By combining <strong>PRISMA 2020 guidelines</strong> with modern <strong>RAG (Retrieval-Augmented Generation)</strong> technology,
-              ResearcherRAG helps PhD students, postdocs, and professors conduct rigorous systematic reviews
-              in weeks instead of months.
-            </p>
-          </section>
-
-          {/* What We Do */}
-          <section className="space-y-6">
-            <h2 className="text-2xl font-semibold text-gray-900">What ResearcherRAG Does</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 space-y-3">
-                <div className="text-3xl">🔍</div>
-                <h3 className="text-lg font-semibold text-gray-900">Automated Paper Retrieval</h3>
-                <p className="text-sm text-gray-700">
-                  Fetch papers from multiple academic databases (Semantic Scholar, OpenAlex, arXiv, and more)
-                  with comprehensive coverage and direct PDF access.
-                </p>
-              </div>
-
-              <div className="bg-green-50 border border-green-200 rounded-lg p-6 space-y-3">
-                <div className="text-3xl">📊</div>
-                <h3 className="text-lg font-semibold text-gray-900">AI-Powered PRISMA Screening</h3>
-                <p className="text-sm text-gray-700">
-                  Multi-dimensional paper evaluation using large language models with transparent criteria,
-                  confidence scoring, and optional human validation.
-                </p>
-              </div>
-
-              <div className="bg-purple-50 border border-purple-200 rounded-lg p-6 space-y-3">
-                <div className="text-3xl">🗄️</div>
-                <h3 className="text-lg font-semibold text-gray-900">Custom RAG Systems</h3>
-                <p className="text-sm text-gray-700">
-                  Build semantic search systems over your included papers using vector databases
-                  (ChromaDB, FAISS) for instant literature queries.
-                </p>
-              </div>
-
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6 space-y-3">
-                <div className="text-3xl">🤖</div>
-                <h3 className="text-lg font-semibold text-gray-900">Conversational Workflow</h3>
-                <p className="text-sm text-gray-700">
-                  Step-by-step guidance through Claude Code in VS Code, making complex systematic
-                  reviews accessible without coding expertise.
-                </p>
-              </div>
+      {/* Mission Statement */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className={`transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="border-l-2 border-gray-900 pl-8">
+              <p className="text-2xl sm:text-3xl font-light text-gray-900 leading-relaxed mb-6">
+                ResearcherRAG democratizes access to systematic literature review automation.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                We believe researchers should spend more time analyzing findings and less time on mechanical tasks.
+                By combining <span className="font-semibold text-gray-900">PRISMA 2020 guidelines</span> with modern{' '}
+                <span className="font-semibold text-gray-900">RAG technology</span>, we help academics conduct
+                rigorous reviews in weeks instead of months.
+              </p>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Technology */}
-          <section className="bg-gray-50 rounded-lg border border-gray-200 p-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">Technology Stack</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-              <div>
-                <div className="font-semibold text-gray-900 mb-1">AI Models</div>
-                <ul className="text-gray-600 space-y-1">
-                  <li>Claude 3.5 Sonnet</li>
-                  <li>GPT-4 (optional)</li>
-                  <li>Local LLMs</li>
-                </ul>
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900 mb-1">Databases</div>
-                <ul className="text-gray-600 space-y-1">
-                  <li>Semantic Scholar</li>
-                  <li>OpenAlex</li>
-                  <li>arXiv</li>
-                  <li>Scopus</li>
-                </ul>
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900 mb-1">Vector DBs</div>
-                <ul className="text-gray-600 space-y-1">
-                  <li>ChromaDB</li>
-                  <li>FAISS</li>
-                  <li>Qdrant</li>
-                </ul>
-              </div>
-              <div>
-                <div className="font-semibold text-gray-900 mb-1">Framework</div>
-                <ul className="text-gray-600 space-y-1">
-                  <li>Python 3.9+</li>
-                  <li>LangChain</li>
-                  <li>VS Code</li>
-                  <li>Claude Code</li>
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          {/* Use Cases */}
-          <section className="space-y-6">
-            <h2 className="text-2xl font-semibold text-gray-900">Who Uses ResearcherRAG?</h2>
-            <div className="space-y-4">
-              <div className="flex gap-4 items-start">
-                <div className="text-2xl flex-shrink-0">🎓</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">PhD Students</h3>
-                  <p className="text-sm text-gray-700">
-                    Dissertation literature reviews, qualifying exams, and comprehensive literature analysis
-                    for thesis proposals.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="text-2xl flex-shrink-0">🔬</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Academic Researchers</h3>
-                  <p className="text-sm text-gray-700">
-                    Meta-analysis preparation, grant proposal background sections, and systematic reviews
-                    following PRISMA 2020 guidelines.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="text-2xl flex-shrink-0">👨‍🏫</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Professors & Faculty</h3>
-                  <p className="text-sm text-gray-700">
-                    Course material updates with latest research, research synthesis for publications,
-                    and mentoring students through literature reviews.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="text-2xl flex-shrink-0">📚</div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Research Librarians</h3>
-                  <p className="text-sm text-gray-700">
-                    Systematic review consulting services, research data management workshops,
-                    and teaching evidence-based practice methods.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Open Source */}
-          <section className="bg-green-50 border border-green-200 rounded-lg p-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">Open Source & Free</h2>
-            <p className="text-gray-700 leading-relaxed">
-              ResearcherRAG is completely <strong>open source</strong> and <strong>free to use</strong>.
-              The codebase is available on GitHub under the MIT License, allowing researchers to:
-            </p>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-green-600 mt-1">✓</span>
-                <span>Use ResearcherRAG for any research purpose (academic or commercial)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-600 mt-1">✓</span>
-                <span>Customize workflows and screening criteria for specific domains</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-600 mt-1">✓</span>
-                <span>Contribute improvements and share domain-specific templates</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-green-600 mt-1">✓</span>
-                <span>Run everything locally with full control over data and privacy</span>
-              </li>
-            </ul>
-            <div className="pt-4">
-              <a
-                href="https://github.com/HosungYou/ResearcherRAG"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+      {/* Core Capabilities */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Core Capabilities</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: <Database className="w-6 h-6" />,
+                title: "Complete Retrieval",
+                description: "Fetch all available papers from multiple academic databases with comprehensive coverage and direct PDF access.",
+                metrics: "20K+ papers · 5 databases · 100% coverage"
+              },
+              {
+                icon: <Brain className="w-6 h-6" />,
+                title: "AI-PRISMA Screening",
+                description: "Multi-dimensional paper evaluation using LLMs with transparent criteria, confidence scoring, and human validation.",
+                metrics: "PICO framework · Cohen's κ · 10-20% precision"
+              },
+              {
+                icon: <Code className="w-6 h-6" />,
+                title: "Custom RAG Systems",
+                description: "Build semantic search over your papers using vector databases for instant literature queries with citations.",
+                metrics: "ChromaDB · FAISS · Contextual retrieval"
+              },
+              {
+                icon: <BookOpen className="w-6 h-6" />,
+                title: "Conversational Workflow",
+                description: "Step-by-step guidance through Claude Code in VS Code, making systematic reviews accessible without coding.",
+                metrics: "7 stages · 4-5 hours · Interactive prompts"
+              }
+            ].map((capability, index) => (
+              <div
+                key={index}
+                className={`group border border-gray-200 p-8 hover:border-gray-900 transition-all duration-300 hover:shadow-lg ${
+                  mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${400 + index * 100}ms` }}
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-                </svg>
-                View on GitHub
-              </a>
-            </div>
-          </section>
-
-          {/* Contact */}
-          <section className="bg-white rounded-lg border border-gray-200 p-8 space-y-6">
-            <h2 className="text-2xl font-semibold text-gray-900">Contact</h2>
-
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Project Maintainer</h3>
-                <p className="text-gray-700">
-                  <strong>Hosung You</strong><br />
-                  PhD Candidate, Learning, Design, and Technology<br />
-                  The Pennsylvania State University
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-gray-900 group-hover:scale-110 transition-transform">
+                    {capability.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">{capability.title}</h3>
+                </div>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {capability.description}
+                </p>
+                <p className="text-xs font-mono text-gray-400 tracking-wide">
+                  {capability.metrics}
                 </p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
+      {/* Technology Stack */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Technology</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { category: "AI Models", items: ["Claude 3.5", "GPT-4", "Local LLMs"] },
+              { category: "Databases", items: ["Semantic Scholar", "OpenAlex", "arXiv", "Scopus"] },
+              { category: "Vector Stores", items: ["ChromaDB", "FAISS", "Qdrant"] },
+              { category: "Framework", items: ["Python 3.9+", "LangChain", "VS Code"] }
+            ].map((stack, index) => (
+              <div
+                key={index}
+                className={`border border-gray-200 p-6 bg-white transition-all duration-500 ${
+                  mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${600 + index * 100}ms` }}
+              >
+                <div className="text-xs font-semibold text-gray-400 tracking-wider uppercase mb-4">
+                  {stack.category}
+                </div>
+                <ul className="space-y-2">
+                  {stack.items.map((item, i) => (
+                    <li key={i} className="text-sm text-gray-700 font-light">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research Impact */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Research Impact</h2>
+          <div className="space-y-12">
+            {[
+              {
+                role: "PhD Students",
+                use: "Dissertation literature reviews, qualifying exams, comprehensive analysis",
+                impact: "2-3 weeks vs 6-8 weeks"
+              },
+              {
+                role: "Academic Researchers",
+                use: "Meta-analysis preparation, grant proposals, PRISMA 2020 reviews",
+                impact: "67-75% time savings"
+              },
+              {
+                role: "Professors & Faculty",
+                use: "Course updates, research synthesis, student mentoring",
+                impact: "Never forget citations"
+              },
+              {
+                role: "Research Librarians",
+                use: "Systematic review consulting, evidence-based practice workshops",
+                impact: "Scalable support"
+              }
+            ].map((persona, index) => (
+              <div
+                key={index}
+                className={`flex flex-col md:flex-row gap-6 pb-12 border-b border-gray-200 last:border-0 transition-all duration-500 ${
+                  mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${700 + index * 100}ms` }}
+              >
+                <div className="md:w-48 flex-shrink-0">
+                  <h3 className="text-lg font-semibold text-gray-900">{persona.role}</h3>
+                  <p className="text-sm font-mono text-gray-400 mt-1">{persona.impact}</p>
+                </div>
+                <div className="flex-1">
+                  <p className="text-gray-600 leading-relaxed">{persona.use}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Open Source */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gray-900 text-white">
+        <div className="max-w-5xl mx-auto">
+          <div className={`transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-3xl font-bold mb-6 tracking-tight">Open Source & Free</h2>
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+              MIT Licensed · Community Driven · Fully Transparent
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+              {[
+                "Use for academic or commercial research",
+                "Customize workflows for specific domains",
+                "Contribute improvements and templates",
+                "Run locally with full data control"
+              ].map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="w-1 h-1 bg-white rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-300">{feature}</p>
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://github.com/HosungYou/ResearcherRAG"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-colors"
+            >
+              <Github className="w-5 h-5" />
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Contact</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div className={`transition-all duration-500 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">
+                Project Maintainer
+              </h3>
+              <div className="space-y-2">
+                <p className="text-xl font-semibold text-gray-900">Hosung You</p>
+                <p className="text-gray-600">PhD Candidate</p>
+                <p className="text-gray-600">Learning, Design, and Technology</p>
+                <p className="text-gray-600">The Pennsylvania State University</p>
+              </div>
+            </div>
+            <div className={`transition-all duration-500 delay-800 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">
+                Get in Touch
+              </h3>
+              <div className="space-y-4">
                 <a
                   href="mailto:hfy5138@psu.edu"
-                  className="text-blue-600 hover:text-blue-800 hover:underline font-mono"
+                  className="flex items-center gap-3 text-gray-900 hover:text-gray-600 transition-colors group"
                 >
-                  hfy5138@psu.edu
+                  <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                  <span className="font-mono">hfy5138@psu.edu</span>
                 </a>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">Questions & Support</h3>
-                <ul className="space-y-2 text-sm text-gray-700">
-                  <li>
-                    <strong>Bug reports & feature requests:</strong>{' '}
-                    <a
-                      href="https://github.com/HosungYou/ResearcherRAG/issues"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
-                    >
-                      GitHub Issues
-                    </a>
-                  </li>
-                  <li>
-                    <strong>General questions:</strong>{' '}
-                    <a
-                      href="https://github.com/HosungYou/ResearcherRAG/discussions"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:underline"
-                    >
-                      GitHub Discussions
-                    </a>
-                  </li>
-                  <li>
-                    <strong>Collaboration inquiries:</strong> Email{' '}
-                    <a href="mailto:hfy5138@psu.edu" className="text-blue-600 hover:underline">
-                      hfy5138@psu.edu
-                    </a>
-                  </li>
-                </ul>
+                <div className="pt-4 space-y-2 text-sm text-gray-600">
+                  <p><span className="font-semibold text-gray-900">Bug reports:</span> GitHub Issues</p>
+                  <p><span className="font-semibold text-gray-900">Questions:</span> GitHub Discussions</p>
+                  <p><span className="font-semibold text-gray-900">Collaboration:</span> Email</p>
+                </div>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Citation */}
-          <section className="bg-gray-50 rounded-lg border border-gray-200 p-8 space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">Citing ResearcherRAG</h2>
-            <p className="text-gray-700">
-              If you use ResearcherRAG in your research, please cite:
-            </p>
-            <pre className="bg-white border border-gray-300 rounded p-4 text-sm overflow-x-auto">
-{`@software{researcherrag2025,
+      {/* Citation */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Citation</h2>
+          <p className="text-gray-600 mb-6">If you use ResearcherRAG in your research:</p>
+          <div className="bg-white border border-gray-200 p-8 font-mono text-sm overflow-x-auto">
+            <pre className="text-gray-700">{`@software{researcherrag2025,
   author = {You, Hosung},
-  title = {ResearcherRAG: AI-Powered Systematic Literature Review Automation},
+  title = {ResearcherRAG: AI-Powered Systematic
+           Literature Review Automation},
   year = {2025},
   url = {https://github.com/HosungYou/ResearcherRAG},
-  note = {Open-source PRISMA-compliant RAG system for academic research}
-}`}
-            </pre>
-          </section>
+  note = {Open-source PRISMA-compliant RAG system}
+}`}</pre>
+          </div>
+        </div>
+      </section>
 
-          {/* Acknowledgments */}
-          <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-gray-900">Acknowledgments</h2>
-            <p className="text-gray-700 leading-relaxed">
-              ResearcherRAG was developed with support from the Learning, Design, and Technology program
-              at Penn State University. Special thanks to the research community for feedback, testing,
-              and contributions that have shaped this project.
-            </p>
-            <p className="text-sm text-gray-600">
-              Built with Claude Code by Anthropic · Powered by open-source tools and academic databases
-            </p>
-          </section>
-
-          {/* CTA */}
-          <div className="text-center pt-8 pb-4">
+      {/* Footer CTA */}
+      <section className="py-20 px-6 sm:px-8 lg:px-12 text-center">
+        <div className="max-w-3xl mx-auto">
+          <div className={`transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Ready to transform your literature review?
+            </h2>
             <Link
               href="/guide/01-introduction"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white font-semibold hover:bg-gray-800 transition-colors"
             >
-              Get Started with ResearcherRAG
+              Get Started
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </Link>
           </div>
         </div>
-      </main>
+      </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 bg-white mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center text-sm text-gray-600">
-            <p>ResearcherRAG · Open Source · MIT License</p>
-            <p className="mt-2">
-              <a href="https://github.com/HosungYou/ResearcherRAG" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900">
+      <footer className="border-t border-gray-200 py-12 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-600">
+              ResearcherRAG · Open Source · MIT License · 2025
+            </p>
+            <div className="flex items-center gap-6 text-sm text-gray-600">
+              <a href="https://github.com/HosungYou/ResearcherRAG" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors">
                 GitHub
               </a>
-              {' · '}
-              <Link href="/guide" className="hover:text-gray-900">
+              <Link href="/guide" className="hover:text-gray-900 transition-colors">
                 Documentation
               </Link>
-              {' · '}
-              <Link href="/about" className="hover:text-gray-900">
+              <Link href="/about" className="hover:text-gray-900 transition-colors">
                 About
               </Link>
-            </p>
+            </div>
           </div>
         </div>
       </footer>
+
+      <style jsx global>{`
+        @keyframes gradient {
+          0%, 100% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+        }
+
+        .animate-gradient {
+          background-size: 200% 200%;
+          animation: gradient 3s ease infinite;
+        }
+      `}</style>
     </div>
   )
 }
