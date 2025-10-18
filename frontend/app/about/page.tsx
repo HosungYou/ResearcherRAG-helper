@@ -54,7 +54,7 @@ export default function AboutPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 sm:px-8 lg:px-12">
+      <section className="pt-24 pb-12 px-6 sm:px-8 lg:px-12">
         <div className="max-w-5xl mx-auto">
           <div className={`transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h1 className="text-6xl sm:text-7xl font-bold tracking-tight mb-6">
@@ -73,7 +73,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Statement */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-gray-50">
+      <section className="py-12 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-5xl mx-auto">
           <div className={`transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="border-l-2 border-gray-900 pl-8">
@@ -92,9 +92,9 @@ export default function AboutPage() {
       </section>
 
       {/* Core Capabilities */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12">
+      <section className="py-12 px-6 sm:px-8 lg:px-12">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Core Capabilities</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Core Capabilities</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
@@ -148,9 +148,9 @@ export default function AboutPage() {
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gray-50">
+      <section className="py-12 px-6 sm:px-8 lg:px-12 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Technology</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Technology</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { category: "AI Models", items: ["Claude 3.5", "GPT-4", "Local LLMs"] },
@@ -182,10 +182,10 @@ export default function AboutPage() {
       </section>
 
       {/* Research Impact */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12">
+      <section className="py-12 px-6 sm:px-8 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Research Impact</h2>
-          <div className="space-y-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Research Impact</h2>
+          <div className="space-y-8">
             {[
               {
                 role: "PhD Students",
@@ -210,7 +210,7 @@ export default function AboutPage() {
             ].map((persona, index) => (
               <div
                 key={index}
-                className={`flex flex-col md:flex-row gap-6 pb-12 border-b border-gray-200 last:border-0 transition-all duration-500 ${
+                className={`flex flex-col md:flex-row gap-6 pb-8 border-b border-gray-200 last:border-0 transition-all duration-500 ${
                   mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
                 style={{ transitionDelay: `${700 + index * 100}ms` }}
@@ -229,14 +229,14 @@ export default function AboutPage() {
       </section>
 
       {/* Open Source */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gray-900 text-white">
+      <section className="py-12 px-6 sm:px-8 lg:px-12 bg-gray-900 text-white">
         <div className="max-w-5xl mx-auto">
           <div className={`transition-all duration-1000 delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-3xl font-bold mb-6 tracking-tight">Open Source & Free</h2>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               MIT Licensed · Community Driven · Fully Transparent
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {[
                 "Use for academic or commercial research",
                 "Customize workflows for specific domains",
@@ -263,9 +263,9 @@ export default function AboutPage() {
       </section>
 
       {/* Contact */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12">
+      <section className="py-12 px-6 sm:px-8 lg:px-12">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 tracking-tight">Contact</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Contact</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className={`transition-all duration-500 delay-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">
@@ -302,9 +302,9 @@ export default function AboutPage() {
       </section>
 
       {/* Citation */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 bg-gray-50">
+      <section className="py-12 px-6 sm:px-8 lg:px-12 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Citation</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Citation</h2>
           <p className="text-gray-600 mb-6">If you use ResearcherRAG in your research:</p>
           <div className="bg-white border border-gray-200 p-8 font-mono text-sm overflow-x-auto">
             <pre className="text-gray-700">{`@software{researcherrag2025,
@@ -320,7 +320,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-20 px-6 sm:px-8 lg:px-12 text-center">
+      <section className="py-16 px-6 sm:px-8 lg:px-12 text-center">
         <div className="max-w-3xl mx-auto">
           <div className={`transition-all duration-1000 delay-900 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -340,7 +340,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 py-12 px-6 sm:px-8 lg:px-12">
+      <footer className="border-t border-gray-200 py-8 px-6 sm:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-600">
