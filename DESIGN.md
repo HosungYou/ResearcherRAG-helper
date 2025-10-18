@@ -2,15 +2,16 @@
 
 ## Design Philosophy
 
-ResearcherRAG Helper follows a **monochrome, minimal, Geist-inspired** design philosophy. The interface prioritizes clarity, readability, and professional aesthetics suitable for academic researchers.
+ResearcherRAG Helper follows a **modern monochrome, typography-first** design philosophy inspired by contemporary researcher aesthetics. The interface prioritizes clarity, efficiency, and professional elegance suitable for academic environments.
 
 ### Core Principles
 
-1. **Monochrome First**: Use black, white, and grays as primary colors
-2. **Minimal Visual Noise**: Let content breathe with generous whitespace
-3. **Typography-Driven**: Large, bold headlines with clear hierarchy
-4. **Subtle Interactions**: Hover states and transitions, not flashy animations
-5. **Academic Professionalism**: Clean, trustworthy, research-appropriate
+1. **Strict Monochrome Palette**: Exclusive use of black, white, and gray scale (gray-50 to gray-900)
+2. **Typography Hierarchy**: Large, bold headlines with tight tracking and clear size differentiation
+3. **Minimal Animations**: Purposeful, subtle transitions (fade-in, slide-up, typing effects)
+4. **Compact Spacing**: Tighter margins (py-12 vs py-20) for modern, dense information architecture
+5. **Hover Elegance**: Scale transforms, border changes, shadow lifts on interaction
+6. **Academic Minimalism**: Clean, trustworthy, research-appropriate with no visual noise
 
 ---
 
@@ -170,16 +171,17 @@ Small:            0.875rem (14px) / text-muted-foreground
 
 ## Layout Principles
 
-### Spacing Scale
+### Spacing Scale (Compact Modern)
 ```
-xs:  0.25rem  (4px)
-sm:  0.5rem   (8px)
-md:  1rem     (16px)
-lg:  1.5rem   (24px)
-xl:  2rem     (32px)
-2xl: 3rem     (48px)
-3xl: 4rem     (64px)
+Section padding:  py-12  (3rem / 48px)    /* Reduced from py-20 */
+Section heading:  mb-8   (2rem / 32px)    /* Reduced from mb-12 */
+Hero top:         pt-24  (6rem / 96px)    /* Reduced from pt-32 */
+Hero bottom:      pb-12  (3rem / 48px)    /* Reduced from pb-20 */
+Item spacing:     space-y-8  (2rem)       /* Reduced from space-y-12 */
+Grid gaps:        gap-6 to gap-8          /* Consistent, not too wide */
 ```
+
+**Philosophy**: Tighter spacing creates a modern, information-dense layout while maintaining readability.
 
 ### Container Widths
 ```
@@ -199,16 +201,42 @@ Accent:   4px solid (left border for emphasis)
 
 ## Interaction Patterns
 
+### Animation Principles
+
+**Fade-in with Stagger**
+```tsx
+// Sequential reveal with delays
+<div className={`transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+<div className={`transition-all duration-500 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+<div style={{ transitionDelay: `${400 + index * 100}ms` }}>
+```
+
+**Typing Effect**
+```tsx
+// Character-by-character reveal
+const [typedText, setTypedText] = useState('')
+setInterval(() => setTypedText(fullText.slice(0, currentIndex++)), 50)
+```
+
+**Gradient Shimmer**
+```tsx
+// Animated gradient on hero text
+<span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent animate-gradient">
+```
+
 ### Hover States
 ```tsx
 // Links
 hover:text-foreground transition-colors
 
 // Buttons
-hover:bg-gray-800 transition-colors
+hover:bg-gray-800 hover:scale-105 transition-all
 
-// Cards
-hover:border-border-strong transition-all
+// Cards (with lift effect)
+hover:border-gray-900 hover:shadow-lg transition-all duration-300
+
+// Icons
+group-hover:scale-110 transition-transform
 ```
 
 ### Focus States
@@ -219,7 +247,8 @@ focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900
 ### Transitions
 ```css
 transition-colors: 150ms ease
-transition-all: 200ms ease
+transition-all: 300ms ease      /* Slightly slower for elegance */
+transition-transform: 200ms ease
 ```
 
 ---

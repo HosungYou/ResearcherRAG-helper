@@ -88,8 +88,8 @@ Research domain: education
 
       <div className="space-y-6 my-8">
         {/* User's First Message */}
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
-          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You (User Prompt):</p>
+        <div className="border-l-4 border-gray-900 pl-4 py-2 bg-gray-50">
+          <p className="text-sm font-semibold text-gray-900 mb-2">👤 You (User Prompt):</p>
           <CodeBlock
             language="markdown"
             code={`I'm starting a new ResearcherRAG project: AI-Chatbots-Language-Learning
@@ -101,8 +101,8 @@ Please read my config.yaml and guide me through Stage 1 (Research Domain Setup).
         </div>
 
         {/* Claude's Response */}
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
-          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+        <div className="border-l-4 border-gray-700 pl-4 py-2 bg-white">
+          <p className="text-sm font-semibold text-gray-900 mb-2">🤖 Claude Code:</p>
           <div className="prose prose-sm max-w-none">
             <p>Great! I've read your config.yaml. Let me help you refine your research scope with some clarifying questions:</p>
 
@@ -141,8 +141,8 @@ Please read my config.yaml and guide me through Stage 1 (Research Domain Setup).
         </div>
 
         {/* User's Response */}
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
-          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
+        <div className="border-l-4 border-gray-900 pl-4 py-2 bg-gray-50">
+          <p className="text-sm font-semibold text-gray-900 mb-2">👤 You:</p>
           <CodeBlock
             language="markdown"
             code={`1. ESL + Foreign language (both)
@@ -154,8 +154,8 @@ Please read my config.yaml and guide me through Stage 1 (Research Domain Setup).
         </div>
 
         {/* Claude's Updated Response */}
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
-          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+        <div className="border-l-4 border-gray-700 pl-4 py-2 bg-white">
+          <p className="text-sm font-semibold text-gray-900 mb-2">🤖 Claude Code:</p>
           <div className="prose prose-sm max-w-none">
             <p>Perfect! I'm updating your <code>config.yaml</code> with these refined criteria:</p>
           </div>
@@ -285,13 +285,13 @@ rag:
       </div>
 
       <div className="space-y-6 my-8">
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
-          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
+        <div className="border-l-4 border-gray-900 pl-4 py-2 bg-gray-50">
+          <p className="text-sm font-semibold text-gray-900 mb-2">👤 You:</p>
           <p className="text-sm">I'm ready for Stage 2. Please design the search queries.</p>
         </div>
 
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
-          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+        <div className="border-l-4 border-gray-700 pl-4 py-2 bg-white">
+          <p className="text-sm font-semibold text-gray-900 mb-2">🤖 Claude Code:</p>
           <div className="prose prose-sm max-w-none">
             <p>I've designed <strong>3 query strategies</strong> with different precision/recall tradeoffs:</p>
           </div>
@@ -310,7 +310,7 @@ rag:
               </div>
             </details>
 
-            <details className="border rounded p-3 border-2 border-green-500 bg-green-50">
+            <details className="border-2 border-gray-900 rounded p-3 bg-white">
               <summary className="font-semibold cursor-pointer">Query 2: Focused (~250 papers) ⭐ RECOMMENDED</summary>
               <div className="mt-2 text-sm space-y-2">
                 <CodeBlock
@@ -348,13 +348,13 @@ rag:
           </div>
         </div>
 
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
-          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
+        <div className="border-l-4 border-gray-900 pl-4 py-2 bg-gray-50">
+          <p className="text-sm font-semibold text-gray-900 mb-2">👤 You:</p>
           <p className="text-sm">Let's go with Query 2 (Focused). Which databases should we search?</p>
         </div>
 
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
-          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+        <div className="border-l-4 border-gray-700 pl-4 py-2 bg-white">
+          <p className="text-sm font-semibold text-gray-900 mb-2">🤖 Claude Code:</p>
           <div className="prose prose-sm max-w-none">
             <p>For <strong>automated PDF access</strong> and language learning research, I recommend:</p>
             <ul className="ml-4 space-y-1 text-sm my-3">
@@ -482,13 +482,13 @@ pdf_url = f"https://arxiv.org/pdf/{arxiv_id}.pdf"`}
       </div>
 
       <div className="space-y-4 my-6">
-        <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50">
-          <p className="text-sm font-semibold text-blue-900 mb-2">👤 You:</p>
+        <div className="border-l-4 border-gray-900 pl-4 py-2 bg-gray-50">
+          <p className="text-sm font-semibold text-gray-900 mb-2">👤 You:</p>
           <p className="text-sm">Let's run the automated search. Can you create the API scripts?</p>
         </div>
 
-        <div className="border-l-4 border-purple-500 pl-4 py-2 bg-purple-50">
-          <p className="text-sm font-semibold text-purple-900 mb-2">🤖 Claude Code:</p>
+        <div className="border-l-4 border-gray-700 pl-4 py-2 bg-white">
+          <p className="text-sm font-semibold text-gray-900 mb-2">🤖 Claude Code:</p>
           <div className="prose prose-sm max-w-none">
             <p>I'll create the automated search script. API keys needed (all free):</p>
             <ul className="ml-4 space-y-1 text-sm">
@@ -908,13 +908,13 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
       <div className="space-y-8 my-8">
         {/* Query 1 */}
         <div className="border-2 border-gray-900 rounded-lg p-6">
-          <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 mb-4">
-            <p className="text-sm font-semibold text-blue-900 mb-2">🔍 Query 1:</p>
+          <div className="border-l-4 border-gray-900 pl-4 py-2 bg-gray-50 mb-4">
+            <p className="text-sm font-semibold text-gray-900 mb-2">🔍 Query 1:</p>
             <p className="font-semibold">"What are the main effects of AI chatbots on speaking fluency?"</p>
           </div>
 
-          <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50">
-            <p className="text-sm font-semibold text-green-900 mb-3">🤖 RAG Response:</p>
+          <div className="border-l-4 border-gray-700 pl-4 py-2 bg-white">
+            <p className="text-sm font-semibold text-gray-900 mb-3">🤖 RAG Response:</p>
             <div className="prose prose-sm max-w-none">
               <p className="mb-3">Based on <strong>8 studies</strong> in your dataset, AI chatbots show <strong>moderate to large positive effects</strong> on speaking fluency:</p>
 
@@ -961,13 +961,13 @@ Test query: python scripts/06_query_rag.py "What improves speaking fluency?"`}
 
         {/* Query 2 */}
         <div className="border-2 border-gray-900 rounded-lg p-6">
-          <div className="border-l-4 border-blue-500 pl-4 py-2 bg-blue-50 mb-4">
-            <p className="text-sm font-semibold text-blue-900 mb-2">🔍 Query 2:</p>
+          <div className="border-l-4 border-gray-900 pl-4 py-2 bg-gray-50 mb-4">
+            <p className="text-sm font-semibold text-gray-900 mb-2">🔍 Query 2:</p>
             <p className="font-semibold">"Which chatbot features are most effective for pronunciation improvement?"</p>
           </div>
 
-          <div className="border-l-4 border-green-500 pl-4 py-2 bg-green-50">
-            <p className="text-sm font-semibold text-green-900 mb-3">🤖 RAG Response:</p>
+          <div className="border-l-4 border-gray-700 pl-4 py-2 bg-white">
+            <p className="text-sm font-semibold text-gray-900 mb-3">🤖 RAG Response:</p>
             <div className="prose prose-sm max-w-none">
               <p className="mb-3">Based on <strong>5 studies</strong> comparing chatbot features:</p>
 

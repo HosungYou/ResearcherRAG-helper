@@ -496,9 +496,9 @@ python interfaces/claude_code_interface.py \\
       <h2 id="best-practices-summary">Research Conversation Best Practices</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-        <div className="border-l-4 border-green-500 bg-green-50 p-4">
-          <h4 className="font-semibold mb-2 text-green-800">✅ Do This</h4>
-          <ul className="text-sm space-y-1">
+        <div className="border-l-4 border-gray-900 bg-white p-4 border rounded-lg">
+          <h4 className="font-semibold mb-2 text-gray-900">✅ Do This</h4>
+          <ul className="text-sm space-y-1 text-gray-700">
             <li>✓ Always use the interface scripts, not direct chat</li>
             <li>✓ Start broad, then narrow down</li>
             <li>✓ Ask follow-up questions to dig deeper</li>
@@ -509,8 +509,8 @@ python interfaces/claude_code_interface.py \\
           </ul>
         </div>
 
-        <div className="border-l-4 border-red-500 bg-red-50 p-4">
-          <h4 className="font-semibold mb-2 text-red-800">❌ Avoid This</h4>
+        <div className="border-l-4 border-gray-900 bg-white p-4 border rounded-lg">
+          <h4 className="font-semibold mb-2 text-gray-900">❌ Avoid This</h4>
           <ul className="text-sm space-y-1">
             <li>✗ Using direct Claude chat (gets general knowledge)</li>
             <li>✗ Accepting answers without verifying citations</li>

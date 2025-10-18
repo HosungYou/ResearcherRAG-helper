@@ -153,7 +153,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Technology</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { category: "AI Models", items: ["Claude 3.5", "GPT-4", "Local LLMs"] },
+              { category: "AI Models", items: ["Claude 3.5 Sonnet", "Claude Haiku 4.5", "GPT-4o", "GPT-4o mini"] },
               { category: "Databases", items: ["Semantic Scholar", "OpenAlex", "arXiv", "Scopus"] },
               { category: "Vector Stores", items: ["ChromaDB", "FAISS", "Qdrant"] },
               { category: "Framework", items: ["Python 3.9+", "LangChain", "VS Code"] }
@@ -177,6 +177,41 @@ export default function AboutPage() {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Efficiency */}
+      <section className="py-12 px-6 sm:px-8 lg:px-12 border-y border-gray-200">
+        <div className="max-w-5xl mx-auto">
+          <div className={`transition-all duration-500 delay-600 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">
+              Efficient AI Models
+            </h3>
+            <div className="space-y-4">
+              <p className="text-lg text-gray-900">
+                ResearcherRAG utilizes the latest cost-effective AI models optimized for coding and research tasks,
+                keeping operational costs <strong>under $20 per project</strong> for typical systematic reviews.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="border-l-2 border-gray-900 pl-4">
+                  <p className="font-semibold text-gray-900 mb-2">Claude Haiku 4.5</p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Latest release (Oct 2025) delivers frontier-level performance at 1/3 the cost and 2x the speed.
+                    Achieves 73.3% on SWE-bench Verified with exceptional token efficiency.
+                  </p>
+                  <p className="text-xs font-mono text-gray-400">$1/$5 per million tokens · 4-5x faster</p>
+                </div>
+                <div className="border-l-2 border-gray-900 pl-4">
+                  <p className="font-semibold text-gray-900 mb-2">GPT-4o mini</p>
+                  <p className="text-sm text-gray-600 mb-2">
+                    Optimized for high-frequency tasks with strong reasoning capabilities.
+                    Ideal for paper screening and metadata extraction at minimal cost.
+                  </p>
+                  <p className="text-xs font-mono text-gray-400">Cost-effective · Fast inference</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -101,30 +101,30 @@ export default function IntroductionPage() {
       <h3 className="text-lg font-semibold mt-6 mb-4">Open Access Databases (Free, No Setup Required)</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
-        <div className="border-2 border-blue-200 rounded-lg p-5 bg-blue-50">
-          <h4 className="font-semibold mb-2 text-blue-900">📚 Semantic Scholar</h4>
-          <p className="text-sm mb-3">CS, Engineering, and General Sciences</p>
-          <ul className="text-xs space-y-1 mb-0">
+        <div className="border border-gray-300 rounded-lg p-5 bg-white hover:border-gray-900 hover:shadow-lg transition-all">
+          <h4 className="font-semibold mb-2 text-gray-900">📚 Semantic Scholar</h4>
+          <p className="text-sm mb-3 text-gray-600">CS, Engineering, and General Sciences</p>
+          <ul className="text-xs space-y-1 mb-0 text-gray-700">
             <li>✅ 200M+ papers indexed</li>
             <li>✅ Free API (no key needed)</li>
             <li>✅ ~40% open access PDFs</li>
             <li>✅ AI-generated TL;DR summaries</li>
           </ul>
         </div>
-        <div className="border-2 border-green-200 rounded-lg p-5 bg-green-50">
-          <h4 className="font-semibold mb-2 text-green-900">🌍 OpenAlex</h4>
-          <p className="text-sm mb-3">All fields, comprehensive metadata</p>
-          <ul className="text-xs space-y-1 mb-0">
+        <div className="border border-gray-300 rounded-lg p-5 bg-white hover:border-gray-900 hover:shadow-lg transition-all">
+          <h4 className="font-semibold mb-2 text-gray-900">🌍 OpenAlex</h4>
+          <p className="text-sm mb-3 text-gray-600">All fields, comprehensive metadata</p>
+          <ul className="text-xs space-y-1 mb-0 text-gray-700">
             <li>✅ 250M+ works catalogued</li>
             <li>✅ Free API (unlimited)</li>
             <li>✅ ~50% open access links</li>
             <li>✅ Rich metadata (citations, authors)</li>
           </ul>
         </div>
-        <div className="border-2 border-purple-200 rounded-lg p-5 bg-purple-50">
-          <h4 className="font-semibold mb-2 text-purple-900">📄 arXiv</h4>
-          <p className="text-sm mb-3">STEM preprints</p>
-          <ul className="text-xs space-y-1 mb-0">
+        <div className="border border-gray-300 rounded-lg p-5 bg-white hover:border-gray-900 hover:shadow-lg transition-all">
+          <h4 className="font-semibold mb-2 text-gray-900">📄 arXiv</h4>
+          <p className="text-sm mb-3 text-gray-600">STEM preprints</p>
+          <ul className="text-xs space-y-1 mb-0 text-gray-700">
             <li>✅ 2.4M+ preprints</li>
             <li>✅ Free API (no key needed)</li>
             <li>✅ 100% PDF access</li>
@@ -136,20 +136,20 @@ export default function IntroductionPage() {
       <h3 className="text-lg font-semibold mt-8 mb-4">Institutional Databases (Optional, Requires Access)</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-        <div className="border-2 border-orange-200 rounded-lg p-5 bg-orange-50">
-          <h4 className="font-semibold mb-2 text-orange-900">🔬 Scopus</h4>
-          <p className="text-sm mb-3">Comprehensive multidisciplinary index</p>
-          <ul className="text-xs space-y-1 mb-0">
+        <div className="border border-gray-300 rounded-lg p-5 bg-white hover:border-gray-900 hover:shadow-lg transition-all">
+          <h4 className="font-semibold mb-2 text-gray-900">🔬 Scopus</h4>
+          <p className="text-sm mb-3 text-gray-600">Comprehensive multidisciplinary index</p>
+          <ul className="text-xs space-y-1 mb-0 text-gray-700">
             <li>✅ 87M+ records (1788-present)</li>
             <li>⚠️ Requires institutional access</li>
             <li>📊 Metadata only (no PDFs)</li>
             <li>✅ Excellent for broad coverage</li>
           </ul>
         </div>
-        <div className="border-2 border-red-200 rounded-lg p-5 bg-red-50">
-          <h4 className="font-semibold mb-2 text-red-900">📖 Web of Science</h4>
-          <p className="text-sm mb-3">High-impact research index</p>
-          <ul className="text-xs space-y-1 mb-0">
+        <div className="border border-gray-300 rounded-lg p-5 bg-white hover:border-gray-900 hover:shadow-lg transition-all">
+          <h4 className="font-semibold mb-2 text-gray-900">📖 Web of Science</h4>
+          <p className="text-sm mb-3 text-gray-600">High-impact research index</p>
+          <ul className="text-xs space-y-1 mb-0 text-gray-700">
             <li>✅ 171M+ records (1900-present)</li>
             <li>⚠️ Requires institutional subscription</li>
             <li>📊 Metadata only (no PDFs)</li>
@@ -325,9 +325,17 @@ graph LR
       </ul>
 
       <div className="callout">
-        <p className="font-semibold mb-2">📝 Note on API Costs</p>
+        <p className="font-semibold mb-2">📝 Note on API Costs & Efficiency</p>
+        <p className="mb-2">
+          ResearcherRAG supports the latest cost-effective AI models optimized for research tasks:
+        </p>
+        <ul className="text-sm space-y-1 ml-4 mb-2">
+          <li><strong>Claude Haiku 4.5</strong> (Oct 2025): Frontier performance at 1/3 cost, 4-5x faster than Sonnet</li>
+          <li><strong>Claude 3.5 Sonnet</strong>: Best for complex evaluation and human-like reasoning</li>
+          <li><strong>GPT-4o mini</strong>: Efficient for high-frequency screening tasks</li>
+        </ul>
         <p className="mb-0">
-          A typical literature review (500 papers screened, 150 included) costs approximately <strong>$5-15 in API fees</strong> using Claude 3.5 Sonnet. Compare this to weeks of manual labor!
+          A typical literature review (500 papers screened, 150 included) costs <strong>under $20 with Haiku 4.5</strong> or <strong>$5-15 with GPT-4o mini</strong>. Compare this to weeks of manual labor!
         </p>
       </div>
 

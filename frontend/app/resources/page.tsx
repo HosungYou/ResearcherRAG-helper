@@ -43,12 +43,12 @@ export default function ResourcesPage() {
               After completing Stages 1-5, use these interfaces to interact with your research papers
             </p>
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="card p-6 hover:shadow-lg transition-all border-l-4 border-blue-600">
+              <div className="card p-6 hover:shadow-lg hover:border-gray-900 transition-all border-l-4 border-gray-900">
                 <div className="flex items-center gap-2 mb-3">
-                  <FileCode className="w-5 h-5 text-blue-600" />
+                  <FileCode className="w-5 h-5 text-gray-900" />
                   <h4 className="font-bold">Claude Code Interface</h4>
                 </div>
-                <div className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-900 text-white text-xs px-2 py-1 rounded mb-3">
                   Recommended
                 </div>
                 <p className="text-sm text-gray-600 mb-4">
@@ -63,19 +63,19 @@ export default function ResourcesPage() {
                   href="https://github.com/HosungYou/researcherRAG/blob/main/interfaces/claude_code_interface.py"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-blue-600 hover:underline flex items-center gap-1"
+                  className="text-sm text-gray-900 hover:underline flex items-center gap-1 font-medium"
                 >
                   <Download className="w-4 h-4" />
                   Download Script
                 </a>
               </div>
 
-              <div className="card p-6 hover:shadow-lg transition-all border-l-4 border-purple-600">
+              <div className="card p-6 hover:shadow-lg hover:border-gray-900 transition-all border-l-4 border-gray-700">
                 <div className="flex items-center gap-2 mb-3">
-                  <Globe className="w-5 h-5 text-purple-600" />
+                  <Globe className="w-5 h-5 text-gray-900" />
                   <h4 className="font-bold">Streamlit Interface</h4>
                 </div>
-                <div className="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded mb-3">
                   Visual UI
                 </div>
                 <p className="text-sm text-gray-600 mb-4">
@@ -90,19 +90,19 @@ export default function ResourcesPage() {
                   href="https://github.com/HosungYou/researcherRAG/blob/main/interfaces/streamlit_app.py"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-purple-600 hover:underline flex items-center gap-1"
+                  className="text-sm text-gray-900 hover:underline flex items-center gap-1 font-medium"
                 >
                   <Download className="w-4 h-4" />
                   Download Script
                 </a>
               </div>
 
-              <div className="card p-6 hover:shadow-lg transition-all border-l-4 border-green-600">
+              <div className="card p-6 hover:shadow-lg hover:border-gray-900 transition-all border-l-4 border-gray-700">
                 <div className="flex items-center gap-2 mb-3">
-                  <FileCode className="w-5 h-5 text-green-600" />
+                  <FileCode className="w-5 h-5 text-gray-900" />
                   <h4 className="font-bold">FastAPI Server</h4>
                 </div>
-                <div className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mb-3">
+                <div className="inline-block bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded mb-3">
                   Production
                 </div>
                 <p className="text-sm text-gray-600 mb-4">
@@ -117,15 +117,15 @@ export default function ResourcesPage() {
                   href="https://github.com/HosungYou/researcherRAG/blob/main/interfaces/fastapi_server.py"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-green-600 hover:underline flex items-center gap-1"
+                  className="text-sm text-gray-900 hover:underline flex items-center gap-1 font-medium"
                 >
                   <Download className="w-4 h-4" />
                   Download Script
                 </a>
               </div>
             </div>
-            <div className="mt-6 bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-sm text-blue-800">
+            <div className="mt-6 bg-gray-50 border border-gray-300 rounded-lg p-4">
+              <p className="text-sm text-gray-800">
                 <strong>📚 Note:</strong> These interfaces require a Vector DB built using ResearcherRAG Stages 1-5.
                 See the <Link href="/guide/04-implementation" className="underline font-medium">Implementation Guide</Link> to get started.
               </p>
