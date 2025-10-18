@@ -1,6 +1,6 @@
-# ResearcherRAG v1.2.0 Release Notes
+# ResearcherRAG v1.1.1 Release Notes
 
-**Release Date**: 2025-10-16
+**Release Date**: 2025-10-18
 **Type**: Major Feature Release
 **Status**: Production Ready
 
@@ -8,7 +8,7 @@
 
 ## 🎉 Overview
 
-ResearcherRAG v1.2.0 introduces three major features for large-scale systematic literature reviews:
+ResearcherRAG v1.1.1 introduces three major features for large-scale systematic literature reviews:
 
 1. **Complete Retrieval System** - Fetch ALL available papers (no truncation)
 2. **AI-PRISMA Rubric** - Transparent multi-dimensional screening with human validation

@@ -1,6 +1,6 @@
-# Integration Guide: ResearcherRAG v1.2.0
+# Integration Guide: ResearcherRAG v1.1.0
 
-This guide explains how to integrate the three new v1.2.0 features into your ResearcherRAG workflow.
+This guide explains how to integrate the three new v1.1.0 features into your ResearcherRAG workflow.
 
 ---
 
@@ -9,7 +9,7 @@ This guide explains how to integrate the three new v1.2.0 features into your Res
 1. [Complete Retrieval System Integration](#1-complete-retrieval-system-integration)
 2. [AI-PRISMA Rubric Workflow](#2-ai-prisma-rubric-workflow)
 3. [Institutional Database Setup](#3-institutional-database-setup)
-4. [Migration from v1.1.x](#4-migration-from-v11x)
+4. [Migration from v1.0.x](#4-migration-from-v10x)
 
 ---
 
@@ -19,7 +19,7 @@ This guide explains how to integrate the three new v1.2.0 features into your Res
 
 The `CompleteRetrieval` class in `scripts/core/complete_retrieval.py` replaces manual pagination logic in `01_fetch_papers.py`.
 
-### Before (v1.1.x): Limited Retrieval
+### Before (v1.0.x): Limited Retrieval
 
 ```python
 # 01_fetch_papers.py (OLD)
@@ -40,7 +40,7 @@ def fetch_semantic_scholar(self, query, limit=1000):
 - No user confirmation for large datasets
 - No year-based ordering (oldest papers may be fetched first)
 
-### After (v1.2.0): Complete Retrieval
+### After (v1.1.0): Complete Retrieval
 
 ```python
 # 01_fetch_papers.py (NEW)
@@ -516,18 +516,18 @@ python scripts/02_deduplicate.py
 
 ---
 
-## 4. Migration from v1.1.x
+## 4. Migration from v1.0.x
 
 ### For Existing Projects
 
-**Option 1: Keep existing config** (v1.1.x features only)
+**Option 1: Keep existing config** (v1.0.x features only)
 
 Your project will continue to work with:
 - Limited retrieval (1000 papers max per database)
 - Keyword-based PRISMA screening
 - Open access databases only
 
-**Option 2: Upgrade to v1.2.0** (recommended)
+**Option 2: Upgrade to v1.1.0** (recommended)
 
 **Step 1**: Backup existing project
 
@@ -669,7 +669,7 @@ See `docs/INSTITUTIONAL_APIS.md` for full troubleshooting.
 
 ### Complete Retrieval
 
-| Dataset Size | Time (v1.1.x) | Time (v1.2.0) | Speedup |
+| Dataset Size | Time (v1.0.x) | Time (v1.1.0) | Speedup |
 |--------------|---------------|---------------|---------|
 | 1,000 papers | 8 min | 8 min | 1.0x |
 | 5,000 papers | N/A (limited) | 22 min | N/A |
@@ -692,12 +692,12 @@ See `docs/INSTITUTIONAL_APIS.md` for full troubleshooting.
 
 ## Next Steps
 
-1. **Test v1.2.0 features** on a small dataset (500 papers)
+1. **Test v1.1.0 features** on a small dataset (500 papers)
 2. **Validate AI-PRISMA** with human review (100 samples)
 3. **Add institutional databases** if you have access
 4. **Share rubric templates** with your research team
 
 For questions, see:
-- `RELEASE_NOTES_v1.2.0.md` - Full feature changelog
+- `RELEASE_NOTES_v1.1.1.md` - Full feature changelog
 - `docs/INSTITUTIONAL_APIS.md` - Scopus/WoS setup guide
 - GitHub Issues - Community support
