@@ -229,6 +229,46 @@ The chatbot should be aware of:
    - Keep guides in sync with main repo code
    - Version documentation appropriately
 
+5. **Content Policy - NO Developer Information on Website** (CRITICAL):
+   - ❌ **NEVER mention version numbers** (v1.2.0, v1.1.x, etc.) on user-facing website
+   - ❌ **NO release notes or changelogs** on the website
+   - ❌ **NO migration guides** on the website
+   - ❌ **NO developer terminology** (breaking changes, deprecation, API changes, etc.)
+   - ❌ **NO credential information** (API keys, tokens, institutional setup details)
+   - ✅ **Describe features naturally** as current capabilities without version context
+   - ✅ **Developer-only information** stays in `releases/` folder of GitHub repo only
+   - ✅ **User content** is evergreen and version-agnostic
+
+### What Goes Where
+
+**✅ User-Facing Website (frontend/app/)**:
+- Feature descriptions: "ResearcherRAG can fetch all available papers from multiple databases"
+- How-to guides: "Follow these steps to set up your first project"
+- Conceptual explanations: "PRISMA screening helps filter relevant papers"
+- Examples and tutorials: "Here's how to query your RAG system"
+- Contact information: hfy5138@psu.edu (on About page)
+
+**❌ Developer-Only (releases/ folder in GitHub, NOT on website)**:
+- RELEASE_NOTES_v1.2.0.md
+- INTEGRATION_GUIDE_v1.2.0.md
+- Version-specific technical details
+- Migration instructions between versions
+- API credentials setup guides (Scopus, Web of Science)
+- Breaking changes documentation
+
+### Examples
+
+**Good (User-Facing)** ✅:
+- "ResearcherRAG supports comprehensive paper retrieval from Semantic Scholar, OpenAlex, arXiv, and institutional databases"
+- "The AI-powered screening system uses multi-dimensional criteria to evaluate papers"
+- "Configure institutional database access for broader coverage"
+
+**Bad (Developer-Facing)** ❌:
+- "New in v1.2.0: Complete retrieval system"
+- "Migrating from v1.1.x: Update your config.yaml"
+- "See RELEASE_NOTES_v1.2.0.md for details"
+- "Scopus API requires X-ELS-APIKey header with institutional token"
+
 ### Common Tasks
 
 **Adding a new guide section**:

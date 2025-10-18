@@ -96,6 +96,9 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             <Link href="/chat" className="text-sm text-muted hover:text-foreground hidden md:block">
               Chatbot
             </Link>
+            <Link href="/about" className="text-sm text-muted hover:text-foreground hidden md:block">
+              About
+            </Link>
             <a
               href="https://github.com/HosungYou/ResearcherRAG"
               target="_blank"

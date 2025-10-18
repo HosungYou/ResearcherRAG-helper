@@ -121,12 +121,18 @@ python researcherrag_cli.py init`}
       <CodeBlock
         language="bash"
         code={`projects/2025-10-15_AI-Healthcare-Adoption/
-├── config.yaml             ← Project settings
+├── config.yaml             ← Project settings (with AI-PRISMA rubric)
 ├── README.md
 ├── data/
-│   ├── 01_identification/  ← Search results
-│   ├── 02_screening/       ← PRISMA screening
-│   ├── 03_full_text/       ← Final papers
+│   ├── open_access/        ← Open access database results
+│   │   ├── semantic_scholar.csv
+│   │   ├── openalex.csv
+│   │   └── arxiv.csv
+│   ├── institutional/      ← Institutional database results (optional)
+│   │   ├── scopus.csv
+│   │   └── wos.csv
+│   ├── combined/           ← Deduplicated merged results
+│   ├── prisma/             ← AI-PRISMA rubric and evaluation
 │   └── pdfs/               ← Downloaded PDFs
 ├── rag/
 │   └── chroma_db/          ← Vector database
@@ -167,28 +173,36 @@ Stage 2: Query Strategy (10 min)
     → Design Boolean queries, select databases
 
 Stage 3: PRISMA Configuration (20 min)
-    → Set up screening criteria
+    → Configure AI-PRISMA rubric with multi-dimensional criteria
 
 Stage 4: Paper Retrieval (1-2 hrs)
-    → Fetch papers from databases (automated)
+    → Fetch ALL papers from databases (complete retrieval)
+    → Interactive confirmation for large datasets
+    → Newest-first ordering with year cutoff options
 
-Stage 5: RAG Building (1-2 hrs)
-    → Build vector database (automated)
+Stage 5: Screening & Validation (30-60 min)
+    → AI-powered multi-dimensional paper evaluation
+    → Confidence-based auto-include/exclude decisions
+    → Optional human validation with agreement metrics
 
-Stage 6: Research Conversation (ongoing)
+Stage 6: RAG Building (1-2 hrs)
+    → Download PDFs, build vector database (automated)
+
+Stage 7: Research Conversation & Documentation (ongoing)
     → Query your RAG system for insights
-
-Stage 7: Documentation (30 min)
-    → Generate PRISMA diagrams, write review`}
+    → Generate PRISMA diagrams and reports`}
       />
 
       <div className="border border-gray-300 rounded-lg p-4 bg-gray-50 my-8">
-        <p className="font-semibold mb-2">💡 How It Works</p>
+        <p className="font-semibold mb-2">💡 Enhanced Features</p>
         <p className="text-sm mb-2">
-          Each stage builds on the previous one. Claude Code will create config files, run Python scripts, and validate outputs before moving to the next stage.
+          <strong>Complete Retrieval:</strong> ResearcherRAG fetches ALL available papers (no arbitrary limits), with smart pagination and user confirmation for large datasets.
+        </p>
+        <p className="text-sm mb-2">
+          <strong>AI-PRISMA Rubric:</strong> Multi-dimensional paper evaluation using large language models with transparent criteria, evidence grounding, and optional human validation.
         </p>
         <p className="text-sm mb-0">
-          <strong>Total time:</strong> ~3 hours for initial setup, then ongoing for research conversations.
+          <strong>Total time:</strong> ~4-5 hours for initial setup (including validation), then ongoing for research conversations.
         </p>
       </div>
 
