@@ -88,7 +88,7 @@ export default function IntroductionPage() {
         <div className="border border-border rounded-lg p-6 hover:border-border-strong transition-colors">
           <div className="text-2xl mb-2">🤖</div>
           <h4 className="font-semibold mb-2">Research RAG</h4>
-          <p className="text-sm text-muted mb-0">Query system powered by <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer">Claude 3.5 Sonnet</a> with paper-specific citations</p>
+          <p className="text-sm text-muted mb-0">Query system powered by <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer">Claude Sonnet 4.5</a> with paper-specific citations</p>
         </div>
       </div>
 
@@ -327,15 +327,15 @@ graph LR
       <div className="callout">
         <p className="font-semibold mb-2">📝 Note on API Costs & Efficiency</p>
         <p className="mb-2">
-          ResearcherRAG supports the latest cost-effective AI models optimized for research tasks:
+          ResearcherRAG supports the latest AI coding models optimized for research automation:
         </p>
         <ul className="text-sm space-y-1 ml-4 mb-2">
-          <li><strong>Claude Haiku 4.5</strong> (Oct 2025): Frontier performance at 1/3 cost, 4-5x faster than Sonnet</li>
-          <li><strong>Claude 3.5 Sonnet</strong>: Best for complex evaluation and human-like reasoning</li>
-          <li><strong>GPT-4o mini</strong>: Efficient for high-frequency screening tasks</li>
+          <li><strong>Claude Sonnet 4.5</strong> (Jan 2025): Currently the most effective coding model for research automation, achieving state-of-the-art performance on SWE-bench</li>
+          <li><strong>Claude Haiku 4.5</strong> (Oct 2024): Frontier performance at 1/3 cost, 4-5x faster than Sonnet 3.5 - excellent for high-volume screening tasks</li>
+          <li><strong>GPT-5-Codex</strong>: Advanced code generation model with superior reasoning for complex research workflows</li>
         </ul>
         <p className="mb-0">
-          A typical literature review (500 papers screened, 150 included) costs <strong>under $20 with Haiku 4.5</strong> or <strong>$5-15 with GPT-4o mini</strong>. Compare this to weeks of manual labor!
+          A typical literature review (500 papers screened, 150 included) costs <strong>under $20 with Haiku 4.5</strong> or <strong>$25-40 with Sonnet 4.5</strong>. Compare this to weeks of manual labor!
         </p>
       </div>
 

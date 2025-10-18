@@ -1354,7 +1354,7 @@ python generate_report.py \\
               <li>Embeddings: text-embedding-3-small</li>
               <li>Chunking: 500 tokens, 50 overlap</li>
               <li>Retrieval: top-5, threshold 0.7</li>
-              <li>LLM: Claude 3.5 Sonnet</li>
+              <li>LLM: Claude Sonnet 4.5</li>
             </ul>
           </div>
 

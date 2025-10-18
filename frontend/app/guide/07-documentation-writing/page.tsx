@@ -496,7 +496,7 @@ python generate_supplementary.py \\
           <div>
             <p className="font-semibold">AI System Configuration:</p>
             <ul className="ml-4 space-y-1 text-xs">
-              <li>• <strong>Model:</strong> Claude 3.5 Sonnet (Anthropic, version 2024-10-22)</li>
+              <li>• <strong>Model:</strong> Claude Sonnet 4.5 (Anthropic, version 2025-01-22)</li>
               <li>• <strong>Architecture:</strong> Retrieval-Augmented Generation (RAG) with ChromaDB vector database</li>
               <li>• <strong>Training:</strong> System configured with pre-defined inclusion/exclusion criteria, calibrated on [20] papers jointly screened by all reviewers</li>
             </ul>
@@ -633,7 +633,7 @@ python generate_supplementary.py \\
             <div className="bg-muted/30 p-3 rounded text-sm">
               <p className="mb-2">"We provide complete reproducibility package:</p>
               <ul className="ml-4 space-y-1 text-xs">
-                <li>1. <strong>Exact model:</strong> Claude 3.5 Sonnet version 2024-10-22 with API timestamp</li>
+                <li>1. <strong>Exact model:</strong> Claude Sonnet 4.5 version 2025-01-22 with API timestamp</li>
                 <li>2. <strong>Configuration:</strong> All prompts, parameters, embedding settings</li>
                 <li>3. <strong>Logs:</strong> Complete screening decisions with AI scores and human overrides</li>
                 <li>4. <strong>Code:</strong> Open-source under MIT license</li>

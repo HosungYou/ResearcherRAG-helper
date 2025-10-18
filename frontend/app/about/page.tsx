@@ -153,7 +153,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Technology</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { category: "AI Models", items: ["Claude 3.5 Sonnet", "Claude Haiku 4.5", "GPT-4o", "GPT-4o mini"] },
+              { category: "AI Models", items: ["Claude Sonnet 4.5", "Claude Haiku 4.5", "GPT-5-Codex"] },
               { category: "Databases", items: ["Semantic Scholar", "OpenAlex", "arXiv", "Scopus"] },
               { category: "Vector Stores", items: ["ChromaDB", "FAISS", "Qdrant"] },
               { category: "Framework", items: ["Python 3.9+", "LangChain", "VS Code"] }
@@ -186,29 +186,29 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto">
           <div className={`transition-all duration-500 delay-600 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">
-              Efficient AI Models
+              State-of-the-Art AI Coding Models
             </h3>
             <div className="space-y-4">
               <p className="text-lg text-gray-900">
-                ResearcherRAG utilizes the latest cost-effective AI models optimized for coding and research tasks,
-                keeping operational costs <strong>under $20 per project</strong> for typical systematic reviews.
+                ResearcherRAG leverages the latest AI coding models optimized for research automation,
+                keeping operational costs <strong>under $20-40 per project</strong> for typical systematic reviews.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="border-l-2 border-gray-900 pl-4">
-                  <p className="font-semibold text-gray-900 mb-2">Claude Haiku 4.5</p>
+                  <p className="font-semibold text-gray-900 mb-2">Claude Sonnet 4.5</p>
                   <p className="text-sm text-gray-600 mb-2">
-                    Latest release (Oct 2025) delivers frontier-level performance at 1/3 the cost and 2x the speed.
-                    Achieves 73.3% on SWE-bench Verified with exceptional token efficiency.
+                    Latest release (Jan 2025) - currently the most effective coding model for research automation.
+                    Achieves state-of-the-art performance on SWE-bench for complex workflow generation.
                   </p>
-                  <p className="text-xs font-mono text-gray-400">$1/$5 per million tokens · 4-5x faster</p>
+                  <p className="text-xs font-mono text-gray-400">Best for automation · Advanced reasoning</p>
                 </div>
                 <div className="border-l-2 border-gray-900 pl-4">
-                  <p className="font-semibold text-gray-900 mb-2">GPT-4o mini</p>
+                  <p className="font-semibold text-gray-900 mb-2">GPT-5-Codex</p>
                   <p className="text-sm text-gray-600 mb-2">
-                    Optimized for high-frequency tasks with strong reasoning capabilities.
-                    Ideal for paper screening and metadata extraction at minimal cost.
+                    Advanced code generation with superior reasoning for complex research workflows.
+                    Excellent for systematic review pipeline design and execution.
                   </p>
-                  <p className="text-xs font-mono text-gray-400">Cost-effective · Fast inference</p>
+                  <p className="text-xs font-mono text-gray-400">Advanced codegen · Research-optimized</p>
                 </div>
               </div>
             </div>

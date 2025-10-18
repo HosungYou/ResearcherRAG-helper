@@ -102,21 +102,21 @@ article blockquote {
   @apply border-l-4 border-border-strong pl-6 py-2 my-6 text-muted italic;
 }
 
-/* Callout boxes - Light theme only */
+/* Callout boxes - Monochrome design */
 .callout {
-  @apply border border-border rounded-lg p-6 my-6 bg-gray-50;
+  @apply border-l-4 border-gray-900 rounded-lg p-6 my-6 bg-white shadow-sm;
 }
 
 .callout-info {
-  @apply bg-blue-50/50 border-blue-200;
+  @apply bg-white border-gray-900;
 }
 
 .callout-warning {
-  @apply bg-yellow-50/50 border-yellow-200;
+  @apply bg-gray-50 border-gray-700;
 }
 
 .callout-success {
-  @apply bg-green-50/50 border-green-200;
+  @apply bg-white border-gray-900;
 }
 
 /* Image captions */
