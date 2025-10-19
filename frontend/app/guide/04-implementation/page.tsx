@@ -89,7 +89,7 @@ graph LR
           <h3 className="text-lg font-semibold mb-2">🎯 Success Metrics</h3>
           <p className="text-sm text-muted-foreground mb-3">What to expect from your RAG system</p>
           <ul className="text-sm space-y-2">
-            <li>✅ <strong>50-200 papers</strong> in final PRISMA dataset</li>
+            <li>✅ <strong>100-1,000+ papers</strong> in final dataset (depends on query breadth and use case)</li>
             <li>✅ <strong>Sub-second</strong> query response times</li>
             <li>✅ <strong>3-5 relevant citations</strong> per answer</li>
             <li>✅ <strong>90%+ accuracy</strong> in source attribution</li>
@@ -976,7 +976,7 @@ python researcherrag_cli.py run-stage 6  # Research Conversation only`}
       <div className="callout callout-info">
         <p className="font-semibold mb-2">⏱️ Execution Time</p>
         <p className="text-sm mb-0">
-          Stage 6 (automated execution) typically takes 2-3 hours for 100-200 papers. Stage 7 (documentation) takes another 1-2 hours. Plan accordingly and ensure stable internet connection.
+          Stage 6 (automated execution) typically takes 2-5 hours depending on dataset size (100-1,000+ papers). Stage 7 (documentation) takes another 1-2 hours. Plan accordingly and ensure stable internet connection.
         </p>
       </div>
 

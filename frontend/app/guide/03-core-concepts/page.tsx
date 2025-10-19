@@ -274,7 +274,10 @@ graph TD
                 <div className="text-xs text-muted">AI-generated TL;DRs</div>
               </td>
               <td className="p-3">
-                <span className="text-green-600 font-semibold">Not required</span>
+                <span className="text-orange-600 font-semibold">Required</span>
+                <div className="text-xs text-muted">
+                  <a href="https://www.semanticscholar.org/product/api" target="_blank" rel="noopener noreferrer" className="underline">Get API key</a>
+                </div>
               </td>
               <td className="p-3 text-xs">100 requests/5 min</td>
             </tr>
