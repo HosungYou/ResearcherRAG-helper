@@ -197,7 +197,7 @@ export default function AboutPage() {
                 <div className="border-l-2 border-gray-900 pl-4">
                   <p className="font-semibold text-gray-900 mb-2">Claude Sonnet 4.5</p>
                   <p className="text-sm text-gray-600 mb-2">
-                    Released September 2024 - currently the most effective coding model for research automation.
+                    Released October 22, 2024 - currently the most effective coding model for research automation.
                     Achieves state-of-the-art performance on SWE-bench for complex workflow generation.
                   </p>
                   <p className="text-xs font-mono text-gray-400">Best for automation · Advanced reasoning</p>
