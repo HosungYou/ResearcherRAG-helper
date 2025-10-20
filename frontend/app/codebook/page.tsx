@@ -135,6 +135,97 @@ export default function CodebookPage() {
 
         </div>
 
+        {/* Divider for Expert Content */}
+        <div className="border-t-2 border-gray-400 pt-10 mt-10">
+          <div className="border-l-4 border-blue-600 bg-blue-50 p-6 rounded-r-lg mb-8">
+            <p className="text-lg mb-2 text-gray-900">
+              <strong>For Developers & Contributors</strong>
+            </p>
+            <p className="text-gray-700 leading-relaxed text-sm">
+              Advanced technical documentation for those who want to <strong>understand the codebase</strong>,
+              <strong> contribute to ResearcherRAG</strong>, or <strong>review code changes</strong>.
+              Assumes programming experience.
+            </p>
+          </div>
+
+          {/* Expert Navigation Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+            {/* Architecture Card */}
+            <Link
+              href="/codebook/architecture"
+              className="block border-2 border-blue-300 rounded-lg p-6 hover:border-blue-600 hover:shadow-lg transition-all group bg-white"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl">🏗️</div>
+                <div className="flex-1">
+                  <h2 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-blue-900">
+                    Architecture
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-3">
+                    System structure and file dependencies
+                  </p>
+                  <ul className="text-xs text-gray-500 space-y-1">
+                    <li>• File dependency diagrams</li>
+                    <li>• Critical branching points</li>
+                    <li>• Config.yaml as central hub</li>
+                    <li>• Data flow stage-by-stage</li>
+                  </ul>
+                </div>
+              </div>
+            </Link>
+
+            {/* Scripts Documentation Card */}
+            <Link
+              href="/codebook/scripts"
+              className="block border-2 border-blue-300 rounded-lg p-6 hover:border-blue-600 hover:shadow-lg transition-all group bg-white"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl">📜</div>
+                <div className="flex-1">
+                  <h2 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-blue-900">
+                    Scripts Documentation
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Detailed implementation reference
+                  </p>
+                  <ul className="text-xs text-gray-500 space-y-1">
+                    <li>• Parameters & config dependencies</li>
+                    <li>• Logic flow breakdowns</li>
+                    <li>• Error handling patterns</li>
+                    <li>• Extension points for customization</li>
+                  </ul>
+                </div>
+              </div>
+            </Link>
+
+            {/* Code Review Guide Card */}
+            <Link
+              href="/codebook/code-review"
+              className="block border-2 border-blue-300 rounded-lg p-6 hover:border-blue-600 hover:shadow-lg transition-all group bg-white"
+            >
+              <div className="flex items-start gap-4">
+                <div className="text-4xl">✅</div>
+                <div className="flex-1">
+                  <h2 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-blue-900">
+                    Code Review Guide
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-3">
+                    Contribution guidelines and best practices
+                  </p>
+                  <ul className="text-xs text-gray-500 space-y-1">
+                    <li>• Code quality standards</li>
+                    <li>• Testing requirements</li>
+                    <li>• Common code smells</li>
+                    <li>• PR checklist</li>
+                  </ul>
+                </div>
+              </div>
+            </Link>
+
+          </div>
+        </div>
+
         {/* Bottom Note */}
         <div className="border-t border-gray-300 pt-6 mt-8">
           <p className="text-sm text-gray-600">
