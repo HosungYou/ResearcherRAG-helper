@@ -17,10 +17,10 @@ v1.0.6 introduces the **3-Tier Configuration Architecture**, enabling **prompt-d
 
 ### 1. **Stage-Aware CLI**
 Four new commands for automatic workflow management:
-- `researcherrag stage-status` - Show current progress
-- `researcherrag run-stage <N>` - Execute specific stage with validation
-- `researcherrag next` - Display next stage instructions
-- `researcherrag upgrade` - Add v1.0.6 features to existing projects
+- `scholarag stage-status` - Show current progress
+- `scholarag run-stage <N>` - Execute specific stage with validation
+- `scholarag next` - Display next stage instructions
+- `scholarag upgrade` - Add v1.0.6 features to existing projects
 
 ### 2. **3-Tier Configuration System**
 Clean separation of concerns:
@@ -38,7 +38,7 @@ Clean separation of concerns:
 ### 4. **Prerequisite Validation**
 Can't skip stages accidentally:
 ```bash
-$ researcherrag run-stage 4
+$ scholarag run-stage 4
 ❌ Prerequisite not met: Stage 3 not completed
    Missing: data/screened_papers.json
 ```
@@ -62,7 +62,7 @@ Central stage configuration defining:
 stages:
   1:
     name: "Research Domain Setup"
-    cli_command: "researcherrag init"
+    cli_command: "scholarag init"
     auto_execute: true
     prerequisites: []
 
@@ -102,16 +102,16 @@ Comprehensive design document explaining:
 
 ### Enhanced Files
 
-#### `researcherrag_cli.py` (+389 lines)
+#### `scholarag_cli.py` (+389 lines)
 
 **New Commands**:
 
 1. **`stage-status`** (82 lines)
    ```bash
-   $ researcherrag stage-status
+   $ scholarag stage-status
 
    ============================================================
-   📍 RESEARCHERRAG STAGE STATUS
+   📍 SCHOLARAG STAGE STATUS
    ============================================================
 
    📁 Project: AI-Chatbots-Language-Learning
@@ -130,7 +130,7 @@ Comprehensive design document explaining:
 
 2. **`run-stage <N>`** (156 lines)
    ```bash
-   $ researcherrag run-stage 2
+   $ scholarag run-stage 2
 
    🚀 Running Stage 2: Query Strategy Design
    ⏱️  Expected duration: 20-30 min
@@ -154,7 +154,7 @@ Comprehensive design document explaining:
 
 3. **`next`** (58 lines)
    ```bash
-   $ researcherrag next
+   $ scholarag next
 
    ============================================================
    ➡️  NEXT STAGE: 2 - Query Strategy Design
@@ -189,7 +189,7 @@ Excludes `.claude/context.json` from version control (runtime state)
 1. Researcher reads prompts/01_research_domain_setup.md
 2. Researcher talks to Claude Code
 3. Claude generates config.yaml
-4. ❌ Researcher must manually run: researcherrag init
+4. ❌ Researcher must manually run: scholarag init
 5. ❌ Researcher opens terminal, types command
 6. ❌ Researcher doesn't know what's next
 ```
@@ -200,7 +200,7 @@ Excludes `.claude/context.json` from version control (runtime state)
 1. Researcher reads prompts/01_research_domain_setup.md
 2. Researcher talks to Claude Code
 3. Claude generates config.yaml
-4. ✅ Claude auto-runs: researcherrag init
+4. ✅ Claude auto-runs: scholarag init
 5. ✅ Claude updates .claude/context.json (Stage 1 → completed)
 6. ✅ Claude says: "Stage 1 complete! Ready for Stage 2?"
 ```
@@ -214,7 +214,7 @@ Excludes `.claude/context.json` from version control (runtime state)
 ### Architecture
 
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── prompts/*.md              # Tier 1: Human-readable with metadata
 ├── .claude/
 │   ├── stages.yaml          # Tier 2: Execution configuration
@@ -235,7 +235,7 @@ ResearcherRAG/
 1. **Single Source of Truth**: One place to update stage commands
 2. **Clear Separation**: No mixing of concerns
 3. **Backward Compatible**: Old workflow still works
-4. **Progressive Enhancement**: Opt-in with `researcherrag upgrade`
+4. **Progressive Enhancement**: Opt-in with `scholarag upgrade`
 
 ---
 
@@ -263,7 +263,7 @@ Researcher: *copies command* *opens terminal* *pastes*
 ```
 Researcher: "What do I do next?"
 Claude: [Reads .claude/context.json]
-        [Runs: researcherrag next]
+        [Runs: scholarag next]
         "Next: Stage 2 (Query Strategy). Here's the prompt..."
 ```
 
@@ -274,18 +274,18 @@ Claude: [Reads .claude/context.json]
 ### For New Projects
 
 ```bash
-# Clone ResearcherRAG v1.0.6+
+# Clone ScholarRAG v1.0.6+
 git clone https://github.com/HosungYou/researcherRAG.git
 cd researcherRAG
 
 # Start new project (now creates .claude/ automatically)
-python researcherrag_cli.py init
+python scholarag_cli.py init
 
 # Check stage status
-python researcherrag_cli.py stage-status
+python scholarag_cli.py stage-status
 
 # Show next steps
-python researcherrag_cli.py next
+python scholarag_cli.py next
 ```
 
 ### For Existing Projects
@@ -293,11 +293,11 @@ python researcherrag_cli.py next
 ```bash
 # Upgrade to v1.0.6
 cd your-existing-project
-python researcherrag_cli.py upgrade
+python scholarag_cli.py upgrade
 
 # Test new commands
-python researcherrag_cli.py stage-status
-python researcherrag_cli.py next
+python scholarag_cli.py stage-status
+python scholarag_cli.py next
 ```
 
 ---
@@ -336,7 +336,7 @@ python researcherrag_cli.py next
 
 - Old workflow (manual script execution) still works
 - New features are additive
-- Opt-in with `researcherrag upgrade`
+- Opt-in with `scholarag upgrade`
 
 ---
 
@@ -359,15 +359,15 @@ python researcherrag_cli.py next
 ### Added
 - ✅ `.claude/stages.yaml` - Central stage configuration (263 lines)
 - ✅ `.claude/context.json.example` - State tracking template (40 lines)
-- ✅ `researcherrag stage-status` command (82 lines)
-- ✅ `researcherrag run-stage <N>` command (156 lines)
-- ✅ `researcherrag next` command (58 lines)
-- ✅ `researcherrag upgrade` command (81 lines)
+- ✅ `scholarag stage-status` command (82 lines)
+- ✅ `scholarag run-stage <N>` command (156 lines)
+- ✅ `scholarag next` command (58 lines)
+- ✅ `scholarag upgrade` command (81 lines)
 - ✅ `discussion/3-tier-configuration-architecture.md` (920 lines)
 - ✅ `.gitignore` entry for `context.json`
 
 ### Changed
-- ✅ `researcherrag_cli.py` - Added 389 lines of stage management code
+- ✅ `scholarag_cli.py` - Added 389 lines of stage management code
 
 ### Deprecated
 - None
@@ -385,7 +385,7 @@ python researcherrag_cli.py next
 
 ## 🤝 Credits
 
-**Design & Implementation**: Claude Code + ResearcherRAG Team
+**Design & Implementation**: Claude Code + ScholarRAG Team
 
 **Inspired By**:
 - Codex feedback on prompt-script integration
@@ -398,7 +398,7 @@ python researcherrag_cli.py next
 
 **Issues**: https://github.com/HosungYou/researcherRAG/issues
 **Discussions**: https://github.com/HosungYou/researcherRAG/discussions
-**Documentation**: https://researcher-rag-helper.vercel.app
+**Documentation**: https://scholar-rag-helper.vercel.app
 
 ---
 

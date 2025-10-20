@@ -15,7 +15,7 @@ export default function FileFormatsPage() {
         <h1 className="text-4xl font-bold mb-6 text-gray-900">📄 File Formats</h1>
 
         <p className="text-gray-700 mb-10 text-lg leading-relaxed">
-          ResearcherRAG uses different file formats for different purposes. Here's what each one is and why it exists.
+          ScholarRAG uses different file formats for different purposes. Here's what each one is and why it exists.
         </p>
 
         {/* YAML Files */}
@@ -109,7 +109,7 @@ max_papers: 5000`}
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ResearcherRAG:</strong>
+              <strong>💡 In ScholarRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
               JSON files store your fetched papers, screening results, and analysis outputs. They're like your research filing cabinet - organized and searchable.
@@ -171,7 +171,7 @@ max_papers: 5000`}
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ResearcherRAG:</strong>
+              <strong>💡 In ScholarRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
               All prompts (01-07.md) and documentation are written in Markdown. It's the universal language for research documentation and GitHub.

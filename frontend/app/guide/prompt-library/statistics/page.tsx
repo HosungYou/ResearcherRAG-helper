@@ -5,7 +5,7 @@ import { CodeBlock } from '@/components/CodeBlock'
 export default function StatisticsPromptPage() {
   return (
     <GuideLayout
-      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/researcherrag_cli.py#L1006-L1012"
+      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/scholarag_cli.py#L1006-L1012"
       githubLabel="View CLI Source"
     >
       <div className="flex items-center gap-3 mb-4">

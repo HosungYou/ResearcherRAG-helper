@@ -1,4 +1,4 @@
-# ResearcherRAG v1.1.1 Release Notes
+# ScholarRAG v1.1.1 Release Notes
 
 **Release Date**: 2025-10-18
 **Type**: Major Feature Release
@@ -8,7 +8,7 @@
 
 ## 🎉 Overview
 
-ResearcherRAG v1.1.1 introduces three major features for large-scale systematic literature reviews:
+ScholarRAG v1.1.1 introduces three major features for large-scale systematic literature reviews:
 
 1. **Complete Retrieval System** - Fetch ALL available papers (no truncation)
 2. **AI-PRISMA Rubric** - Transparent multi-dimensional screening with human validation
@@ -249,12 +249,12 @@ databases:
   institutional:  # NEW: Requires API keys
     scopus:
       enabled: false  # Set to true after setup
-      # Guide: https://researcherrag.io/docs/institutional-apis/scopus
+      # Guide: https://scholarag.io/docs/institutional-apis/scopus
       # Required: SCOPUS_API_KEY, SCOPUS_INST_TOKEN in .env
 
     web_of_science:
       enabled: false  # Set to true after setup
-      # Guide: https://researcherrag.io/docs/institutional-apis/wos
+      # Guide: https://scholarag.io/docs/institutional-apis/wos
       # Required: WOS_API_KEY in .env
 ```
 
@@ -553,8 +553,8 @@ ai_prisma_rubric:
 
 ```bash
 # Clone repository
-git clone https://github.com/your-repo/ResearcherRAG.git
-cd ResearcherRAG
+git clone https://github.com/your-repo/ScholarRAG.git
+cd ScholarRAG
 
 # Install dependencies
 pip install -r requirements.txt
@@ -625,9 +625,9 @@ MIT License - see `LICENSE` file
 
 ## 📞 Support
 
-- **Documentation**: https://researcherrag.io/docs
-- **GitHub Issues**: https://github.com/your-repo/ResearcherRAG/issues
-- **Email**: support@researcherrag.io
+- **Documentation**: https://scholarag.io/docs
+- **GitHub Issues**: https://github.com/your-repo/ScholarRAG/issues
+- **Email**: support@scholarag.io
 
 ---
 
@@ -647,6 +647,6 @@ MIT License - see `LICENSE` file
 
 ---
 
-**Thank you for using ResearcherRAG v1.2.0!** 🎉
+**Thank you for using ScholarRAG v1.2.0!** 🎉
 
-*For questions or feedback, please open a GitHub issue or contact us at support@researcherrag.io*
+*For questions or feedback, please open a GitHub issue or contact us at support@scholarag.io*

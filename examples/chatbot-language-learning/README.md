@@ -1,6 +1,6 @@
 # Example Project: AI Chatbots for Language Learning
 
-This is a complete example of a ResearcherRAG project following the 7-stage workflow. It demonstrates how to conduct a systematic literature review on "How AI chatbots improve speaking proficiency in university-level language learners."
+This is a complete example of a ScholarRAG project following the 7-stage workflow. It demonstrates how to conduct a systematic literature review on "How AI chatbots improve speaking proficiency in university-level language learners."
 
 ## Project Overview
 
@@ -234,7 +234,7 @@ chatbot-language-learning/
 Browse the files to understand the complete workflow and what outputs each stage produces.
 
 ### Option 2: Replicate the Project
-1. Clone ResearcherRAG repository
+1. Clone ScholarRAG repository
 2. Copy `config.yaml` to your project
 3. Modify research question and criteria for your domain
 4. Follow the 7-stage workflow
@@ -311,10 +311,10 @@ All files in this example are sufficient to replicate the study:
 
 **To replicate**:
 ```bash
-git clone https://github.com/HosungYou/ResearcherRAG.git
-cd ResearcherRAG
+git clone https://github.com/HosungYou/ScholarRAG.git
+cd ScholarRAG
 cp examples/chatbot-language-learning/config.yaml config.yaml
-python researcherrag_cli.py run-all
+python scholarag_cli.py run-all
 ```
 
 ---
@@ -324,11 +324,11 @@ python researcherrag_cli.py run-all
 If you use this example project structure, please cite:
 
 ```bibtex
-@software{researcherrag2024,
-  title={ResearcherRAG: AI-Powered Systematic Literature Review},
+@software{scholarag2024,
+  title={ScholarRAG: AI-Powered Systematic Literature Review},
   author={You, Hosung},
   year={2024},
-  url={https://github.com/HosungYou/ResearcherRAG}
+  url={https://github.com/HosungYou/ScholarRAG}
 }
 ```
 
@@ -336,6 +336,6 @@ If you use this example project structure, please cite:
 
 ## Questions?
 
-- **Documentation**: https://researcher-rag-helper.vercel.app/guide
-- **Issues**: https://github.com/HosungYou/ResearcherRAG/issues
-- **Discussions**: https://github.com/HosungYou/ResearcherRAG/discussions
+- **Documentation**: https://scholar-rag-helper.vercel.app/guide
+- **Issues**: https://github.com/HosungYou/ScholarRAG/issues
+- **Discussions**: https://github.com/HosungYou/ScholarRAG/discussions

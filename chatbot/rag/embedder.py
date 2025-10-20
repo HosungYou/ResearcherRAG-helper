@@ -1,5 +1,5 @@
 """
-Document Embedding Pipeline for ResearcherRAG Helper Chatbot
+Document Embedding Pipeline for ScholarRAG Helper Chatbot
 
 Embeds all documentation files into ChromaDB for RAG retrieval.
 """
@@ -41,8 +41,8 @@ class DocumentEmbedder:
 
         # Create or get collection
         self.collection = self.client.get_or_create_collection(
-            name="researcherrag_docs",
-            metadata={"description": "ResearcherRAG documentation for chatbot RAG"}
+            name="scholarag_docs",
+            metadata={"description": "ScholarRAG documentation for chatbot RAG"}
         )
 
     def load_documents(self) -> List[Dict[str, str]]:
@@ -182,7 +182,7 @@ def main():
     vector_db_path = project_root / "chatbot" / "vector_db"
 
     print("=" * 60)
-    print("ResearcherRAG Helper - Document Embedding Pipeline")
+    print("ScholarRAG Helper - Document Embedding Pipeline")
     print("=" * 60)
     print(f"Docs directory: {docs_dir}")
     print(f"Vector DB path: {vector_db_path}")

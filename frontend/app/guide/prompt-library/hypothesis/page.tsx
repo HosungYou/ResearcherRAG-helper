@@ -5,7 +5,7 @@ import { CodeBlock } from '@/components/CodeBlock'
 export default function HypothesisPromptPage() {
   return (
     <GuideLayout
-      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/researcherrag_cli.py#L998-L1004"
+      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/scholarag_cli.py#L998-L1004"
       githubLabel="View CLI Source"
     >
       <div className="flex items-center gap-3 mb-4">

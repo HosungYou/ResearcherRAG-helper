@@ -14,7 +14,7 @@
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │  1. researcherRAG 코드 실행                                 │ │
 │  │  2. PRISMA 완료 → status.json 생성                         │ │
-│  │  3. researcherrag sync --user hosung@example.com           │ │
+│  │  3. scholarag sync --user hosung@example.com           │ │
 │  └────────────────────────────────────────────────────────────┘ │
 └────────────────────────┬────────────────────────────────────────┘
                          │ HTTPS POST
@@ -34,7 +34,7 @@
                          ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │  Frontend (Next.js on Vercel)                                   │
-│  https://researcher-rag-helper.vercel.app/dashboard             │
+│  https://scholar-rag-helper.vercel.app/dashboard             │
 │  ┌────────────────────────────────────────────────────────────┐ │
 │  │  1. 사용자 로그인 (Google / GitHub OAuth)                   │ │
 │  │  2. 자신의 프로젝트 목록 표시                                │ │
@@ -202,7 +202,7 @@ Supabase Storage Bucket: "researcher-projects"
 
 **Storage (S3)**:
 ```
-s3://researcherrag-projects/
+s3://scholarag-projects/
 └── users/
     └── hosung@example.com/
         └── projects/
@@ -249,7 +249,7 @@ def sync_project_to_cloud(project_path: str, user_email: str, api_key: str):
     Args:
         project_path: 로컬 프로젝트 경로
         user_email: 사용자 이메일
-        api_key: ResearcherRAG API 키 (웹사이트에서 발급)
+        api_key: ScholarRAG API 키 (웹사이트에서 발급)
     """
 
     # 1. 프로젝트 메타데이터 수집
@@ -260,7 +260,7 @@ def sync_project_to_cloud(project_path: str, user_email: str, api_key: str):
     status = generate_status_json(project_path)
 
     # 3. API 엔드포인트로 전송
-    API_BASE = "https://researcher-rag-helper.vercel.app/api"
+    API_BASE = "https://scholar-rag-helper.vercel.app/api"
 
     # 3a. 프로젝트 정보 전송
     response = requests.post(
@@ -309,7 +309,7 @@ def sync_project_to_cloud(project_path: str, user_email: str, api_key: str):
             print(f"  ❌ Failed: {file_path}")
 
     print(f"\n🎉 Sync complete!")
-    print(f"View online: https://researcher-rag-helper.vercel.app/dashboard/{project_id}")
+    print(f"View online: https://scholar-rag-helper.vercel.app/dashboard/{project_id}")
 
 
 def generate_status_json(project_path: str) -> dict:
@@ -348,17 +348,17 @@ def generate_status_json(project_path: str) -> dict:
 
 ```bash
 # 1. API 키 발급 (웹사이트에서)
-# https://researcher-rag-helper.vercel.app/settings/api-keys
+# https://scholar-rag-helper.vercel.app/settings/api-keys
 # → "Create API Key" 클릭
 # → sk_live_abc123xyz... 복사
 
 # 2. 환경변수 설정
-export RESEARCHERRAG_API_KEY="sk_live_abc123xyz..."
-export RESEARCHERRAG_EMAIL="hosung@example.com"
+export SCHOLARAG_API_KEY="sk_live_abc123xyz..."
+export SCHOLARAG_EMAIL="hosung@example.com"
 
 # 3. 동기화 실행
 cd projects/2025-01-12_AI-Healthcare
-researcherrag sync
+scholarag sync
 
 # 출력:
 # 📤 Syncing to cloud...
@@ -366,14 +366,14 @@ researcherrag sync
 # ✅ Uploaded: outputs/prisma_flowchart.png
 # ✅ Uploaded: data/03_full_text/final_dataset.csv
 # 🎉 Sync complete!
-# View online: https://researcher-rag-helper.vercel.app/dashboard/proj_xyz123
+# View online: https://scholar-rag-helper.vercel.app/dashboard/proj_xyz123
 ```
 
 ---
 
 ### 4. 웹사이트 대시보드 UI
 
-**URL**: `https://researcher-rag-helper.vercel.app/dashboard`
+**URL**: `https://scholar-rag-helper.vercel.app/dashboard`
 
 #### 로그인 후 화면
 
@@ -456,7 +456,7 @@ function ProjectCard({ project }) {
 
 #### 개별 프로젝트 대시보드
 
-**URL**: `https://researcher-rag-helper.vercel.app/dashboard/proj_xyz123`
+**URL**: `https://scholar-rag-helper.vercel.app/dashboard/proj_xyz123`
 
 ```tsx
 // app/dashboard/[projectId]/page.tsx
@@ -651,7 +651,7 @@ if (file.size > MAX_FILE_SIZE) {
   - POST /api/projects/:id/files (파일 업로드)
 
 ### Week 3: CLI 동기화
-- [ ] `researcherrag sync` 명령어 (6시간)
+- [ ] `scholarag sync` 명령어 (6시간)
 - [ ] API key 생성/관리 UI (3시간)
 - [ ] 에러 처리 및 재시도 로직 (3시간)
 
@@ -672,7 +672,7 @@ if (file.size > MAX_FILE_SIZE) {
 **Architecture 요약**:
 ```
 로컬 환경 (Claude Code)
-  ↓ researcherrag sync
+  ↓ scholarag sync
 API (Vercel Edge Functions)
   ↓ 인증 확인 (Clerk)
 Database (Supabase)

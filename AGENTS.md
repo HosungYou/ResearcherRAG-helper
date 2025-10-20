@@ -1,13 +1,13 @@
-# AGENTS.md - ResearcherRAG-helper
+# AGENTS.md - ScholarRAG-helper
 
 ## 🤖 Codex Agent Instructions
 
-This file provides executable instructions for Codex and other autonomous coding agents working with the ResearcherRAG-helper homepage repository.
+This file provides executable instructions for Codex and other autonomous coding agents working with the ScholarRAG-helper homepage repository.
 
 ## 📋 Repository Context
 
 **Type**: Public-facing documentation website
-**Purpose**: Homepage, guides, and marketing for ResearcherRAG project
+**Purpose**: Homepage, guides, and marketing for ScholarRAG project
 **Technology**: Next.js 15 + TypeScript + Tailwind CSS
 **Deployment**: Vercel (auto-deploy from main branch)
 
@@ -24,7 +24,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Identify the target file:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
    find frontend/app -name "*.tsx" | grep -i "keyword"
    ```
 
@@ -50,7 +50,7 @@ This file provides executable instructions for Codex and other autonomous coding
    ```
 
 7. **Verify Vercel deployment**:
-   - Check https://vercel.com/hosung-yous-projects/researcher-rag-helper
+   - Check https://vercel.com/hosung-yous-projects/scholar-rag-helper
    - Confirm build succeeds (2-3 minutes)
 
 ---
@@ -62,7 +62,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Create page file:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper/frontend"
+   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper/frontend"
    mkdir -p app/guide/0X-chapter-name
    touch app/guide/0X-chapter-name/page.tsx
    ```
@@ -113,7 +113,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Navigate to search component:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
    code frontend/components/SearchBar.tsx
    ```
 
@@ -152,7 +152,7 @@ This file provides executable instructions for Codex and other autonomous coding
 
 1. **Check local git status**:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
    git status
    git log --oneline -5
    ```
@@ -168,7 +168,7 @@ This file provides executable instructions for Codex and other autonomous coding
    cd frontend
    vercel --version
    vercel ls
-   # Should show: researcher-rag-helper
+   # Should show: scholar-rag-helper
    ```
 
 4. **Force Vercel redeploy**:
@@ -178,7 +178,7 @@ This file provides executable instructions for Codex and other autonomous coding
    ```
 
 5. **Check build logs**:
-   - Visit https://vercel.com/hosung-yous-projects/researcher-rag-helper/deployments
+   - Visit https://vercel.com/hosung-yous-projects/scholar-rag-helper/deployments
    - Click latest deployment
    - Review build logs for errors
 
@@ -205,7 +205,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Identify subfolders:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
    find . -type d -maxdepth 2 | grep -v node_modules | grep -v .git
    ```
 
@@ -216,7 +216,7 @@ This file provides executable instructions for Codex and other autonomous coding
 # Frontend Folder - Claude Code Instructions
 
 ## Purpose
-Next.js 15 application for ResearcherRAG homepage
+Next.js 15 application for ScholarRAG homepage
 
 ## Structure
 - app/ - Next.js App Router pages
@@ -308,12 +308,12 @@ git log origin/main --oneline -3
 ```
 
 ### Vercel Deployment
-- Visit: https://vercel.com/hosung-yous-projects/researcher-rag-helper/deployments
+- Visit: https://vercel.com/hosung-yous-projects/scholar-rag-helper/deployments
 - ✓ Latest deployment should be "Ready" with green checkmark
 - ✓ Deployment timestamp should be within 5 minutes of push
 
 ### Live Website
-- Visit: https://researcher-rag-helper.vercel.app/
+- Visit: https://scholar-rag-helper.vercel.app/
 - ✓ Changes should be visible
 - ✓ Search should work (Cmd+K)
 - ✓ No console errors (F12)
@@ -326,7 +326,7 @@ git log origin/main --oneline -3
 
 ```bash
 # 1. Navigate to repo
-cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper"
+cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
 
 # 2. Edit file (via Read/Edit tools)
 # [make changes]
@@ -340,7 +340,7 @@ git add .
 git commit -m "docs: Fix typo in [page]"
 git push origin main
 
-# 5. Wait 2-3 min, verify at https://researcher-rag-helper.vercel.app/
+# 5. Wait 2-3 min, verify at https://scholar-rag-helper.vercel.app/
 ```
 
 ### Workflow 2: Add Major Feature
@@ -383,7 +383,7 @@ git log --oneline -10
 # [review prompts/, scripts/ changes]
 
 # 3. Update helper docs
-cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper"
+cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
 # [update frontend/app/guide/ pages]
 
 # 4. Update search index for new terms
@@ -516,7 +516,7 @@ cd frontend && vercel --prod --force
 
 ### Important URLs
 
-- Homepage: https://researcher-rag-helper.vercel.app/
-- Docs: https://researcher-rag-helper.vercel.app/guide
-- GitHub: https://github.com/HosungYou/ResearcherRAG-helper
-- Vercel: https://vercel.com/hosung-yous-projects/researcher-rag-helper
+- Homepage: https://scholar-rag-helper.vercel.app/
+- Docs: https://scholar-rag-helper.vercel.app/guide
+- GitHub: https://github.com/HosungYou/ScholarRAG-helper
+- Vercel: https://vercel.com/hosung-yous-projects/scholar-rag-helper

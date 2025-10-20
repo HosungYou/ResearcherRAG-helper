@@ -8,7 +8,7 @@ export default function PracticalGuidePage() {
       <h1>Practical Research Guide</h1>
 
       <p className="text-xl text-muted leading-relaxed mb-8">
-        Follow a complete real-world research project from start to finish. This chapter shows actual conversations with Claude Code, generated files, and example outputs—everything you need to confidently build your own ResearcherRAG system.
+        Follow a complete real-world research project from start to finish. This chapter shows actual conversations with Claude Code, generated files, and example outputs—everything you need to confidently build your own ScholarRAG system.
       </p>
 
       <div className="border-2 border-gray-900 rounded-lg p-6 bg-white mb-8">
@@ -42,8 +42,8 @@ export default function PracticalGuidePage() {
         <p className="font-semibold text-sm mb-2">Terminal Command:</p>
         <CodeBlock
           language="bash"
-          code={`cd ResearcherRAG
-python researcherrag_cli.py init`}
+          code={`cd ScholarRAG
+python scholarag_cli.py init`}
         />
       </div>
 
@@ -92,7 +92,7 @@ Research domain: education
           <p className="text-sm font-semibold text-gray-900 mb-2">👤 You (User Prompt):</p>
           <CodeBlock
             language="markdown"
-            code={`I'm starting a new ResearcherRAG project: AI-Chatbots-Language-Learning
+            code={`I'm starting a new ScholarRAG project: AI-Chatbots-Language-Learning
 Research question: Do AI chatbots improve speaking proficiency in university language learners?
 Domain: education
 
@@ -242,7 +242,7 @@ rag:
       <div className="callout callout-info my-6">
         <p className="font-semibold mb-2">🤖 Why These Databases?</p>
         <p className="text-sm mb-3">
-          ResearcherRAG prioritizes <strong>automation-friendly</strong> databases that provide both metadata AND direct PDF access through APIs:
+          ScholarRAG prioritizes <strong>automation-friendly</strong> databases that provide both metadata AND direct PDF access through APIs:
         </p>
         <div className="space-y-2 text-sm">
           <div className="border-l-2 border-gray-900 pl-3">
@@ -272,7 +272,7 @@ rag:
               <li>• Result: 70-80% of papers need <strong>manual retrieval</strong> (VPN, author emails, interlibrary loan)</li>
             </ul>
             <p className="mt-2">
-              For ResearcherRAG's <strong>"3-hour automated setup"</strong> promise, we use databases with API-accessible PDFs.
+              For ScholarRAG's <strong>"3-hour automated setup"</strong> promise, we use databases with API-accessible PDFs.
               This gives you <strong>50-60% automated PDF access</strong> vs. 20-30% with traditional databases.
             </p>
             <p className="mt-2 font-semibold">Can I still use PubMed/Scopus?</p>
@@ -1142,7 +1142,7 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
         <CodeBlock
           language="text"
           code={`projects/2025-10-13_AI-Chatbots-Language-Learning/
-├── .researcherrag               # Metadata for dashboard
+├── .scholarag               # Metadata for dashboard
 ├── config.yaml                  # Project configuration
 ├── README.md                    # Project documentation
 │
@@ -1203,7 +1203,7 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
             <li>• <strong>Iterate</strong>: Refine criteria after seeing initial results</li>
             <li>• <strong>Document</strong>: Save important conversations in conversations/ folder</li>
             <li>• <strong>Verify</strong>: Always check AI citations against original papers</li>
-            <li>• <strong>Use CLI</strong>: Check progress with <code>researcherrag_cli.py status</code></li>
+            <li>• <strong>Use CLI</strong>: Check progress with <code>scholarag_cli.py status</code></li>
           </ul>
         </div>
 
@@ -1241,11 +1241,11 @@ Studies tracked but not in RAG: 60 (PDF unavailable)
           "Claude Code created files in wrong folders"
         </summary>
         <div className="p-4 pt-0 border-t space-y-2 text-sm">
-          <p><strong>Cause</strong>: You didn't initialize with CLI, or Claude didn't read <code>.researcherrag</code></p>
+          <p><strong>Cause</strong>: You didn't initialize with CLI, or Claude didn't read <code>.scholarag</code></p>
           <p><strong>Fix</strong>:</p>
           <ol className="ml-4 space-y-1">
             <li>1. Stop current work</li>
-            <li>2. Run <code>python researcherrag_cli.py init</code> in a new folder</li>
+            <li>2. Run <code>python scholarag_cli.py init</code> in a new folder</li>
             <li>3. Manually move files to correct locations</li>
             <li>4. Remind Claude: "Please save to data/01_identification/ as specified in CLAUDE.md"</li>
           </ol>

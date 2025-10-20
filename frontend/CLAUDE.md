@@ -2,7 +2,7 @@
 
 ## 📁 Purpose
 
-Next.js 15 application for the ResearcherRAG homepage and documentation website.
+Next.js 15 application for the ScholarRAG homepage and documentation website.
 
 ## 🏗️ Structure
 

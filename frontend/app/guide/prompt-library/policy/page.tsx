@@ -5,7 +5,7 @@ import { CodeBlock } from '@/components/CodeBlock'
 export default function PolicyPromptPage() {
   return (
     <GuideLayout
-      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/researcherrag_cli.py#L1033-L1039"
+      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/scholarag_cli.py#L1033-L1039"
       githubLabel="View CLI Source"
     >
       <div className="flex items-center gap-3 mb-4">

@@ -1,8 +1,8 @@
-# ResearcherRAG Documentation Site Configuration
+# ScholarRAG Documentation Site Configuration
 # GitHub Pages + Jekyll
 
 # Site settings
-title: ResearcherRAG Documentation
+title: ScholarRAG Documentation
 description: "PRISMA 2020 + RAG for systematic literature reviews. Build rigorous, AI-powered research systems in days, not months."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://hosungyou.github.io/researcherRAG" # Update with your GitHub Pages URL
@@ -35,7 +35,7 @@ back_to_top: true
 back_to_top_text: "Back to top"
 
 # Footer
-footer_content: "Copyright &copy; 2025 ResearcherRAG. Built with <a href=\"https://github.com/just-the-docs/just-the-docs\">Just the Docs</a>."
+footer_content: "Copyright &copy; 2025 ScholarRAG. Built with <a href=\"https://github.com/just-the-docs/just-the-docs\">Just the Docs</a>."
 
 # Aux links (top right)
 aux_links:

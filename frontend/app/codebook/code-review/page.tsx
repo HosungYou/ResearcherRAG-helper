@@ -11,7 +11,7 @@ export default function CodeReviewPage() {
         <div className="callout callout-info mb-8">
           <p className="font-semibold mb-2">✅ For Contributors & Code Reviewers</p>
           <p className="mb-0">
-            Best practices, testing strategies, and contribution guidelines for ResearcherRAG.
+            Best practices, testing strategies, and contribution guidelines for ScholarRAG.
             Follow this guide when submitting PRs or reviewing code.
           </p>
         </div>
@@ -265,7 +265,7 @@ def validate_config(self):
 
         {/* Extension Guide */}
         <section className="mb-12">
-          <h2>How to Extend ResearcherRAG</h2>
+          <h2>How to Extend ScholarRAG</h2>
 
           <h3>Adding a New Database Source</h3>
           <ol className="space-y-3">

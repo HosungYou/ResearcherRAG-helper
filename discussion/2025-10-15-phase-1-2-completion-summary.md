@@ -25,7 +25,7 @@ Successfully completed Phases 1 and 2 of the comprehensive guide restructuring p
 
 2. **`frontend/app/guide/03-core-concepts/page.tsx`**
    - ✅ Added "Database APIs for Automation" section
-   - ✅ Comparison table: Traditional vs ResearcherRAG databases
+   - ✅ Comparison table: Traditional vs ScholarRAG databases
    - ✅ API usage examples for Semantic Scholar, OpenAlex, arXiv (Python code)
    - ✅ Updated "5 stages" → "7 stages" in Next Steps
 
@@ -214,7 +214,7 @@ The following items from the original restructuring plan were **NOT** addressed 
    - Out of scope for guide pages restructuring
 
 4. **Prompt Template Files**
-   - Actual prompt markdown files in `ResearcherRAG/prompts/` not updated
+   - Actual prompt markdown files in `ScholarRAG/prompts/` not updated
    - These are in the main repo, not the helper docs repo
 
 ---
@@ -270,7 +270,7 @@ If continuing this restructuring effort:
 - Update any promotional materials (screenshots, video thumbnails)
 
 ### Phase 4: Prompt Templates (Suggested)
-- Update actual prompt files in `ResearcherRAG/prompts/`
+- Update actual prompt files in `ScholarRAG/prompts/`
 - Ensure prompt metadata matches new 7-stage structure
 - Test prompts with Claude Code to verify they work as expected
 
@@ -285,7 +285,7 @@ If continuing this restructuring effort:
 
 Phases 1 and 2 are **complete and successful**. The guide pages now present a unified, coherent narrative:
 
-1. **Introduction** explains what ResearcherRAG is and shows the 7-stage workflow
+1. **Introduction** explains what ScholarRAG is and shows the 7-stage workflow
 2. **Getting Started** walks through setup with clear 1-7 step numbering
 3. **Core Concepts** explains PRISMA, RAG, and the chosen database APIs in depth
 4. **Implementation** provides detailed walkthrough of all 7 stages

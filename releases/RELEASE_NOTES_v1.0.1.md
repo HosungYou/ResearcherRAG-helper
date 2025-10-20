@@ -1,4 +1,4 @@
-# ResearcherRAG Helper v1.0.1 Release Notes
+# ScholarRAG Helper v1.0.1 Release Notes
 
 **Release Date**: October 13, 2025
 **Type**: Bug Fix Release
@@ -329,7 +329,7 @@ Added `dark:` variants for all callout types:
 **Commit**: `3888a8d`
 **Branch**: `main`
 **Deployed To**: Vercel (auto-deploy)
-**URL**: https://researcher-rag-helper.vercel.app
+**URL**: https://scholar-rag-helper.vercel.app
 
 ### Deployment Timeline
 - Code committed: 2025-10-13 21:55 EDT
@@ -536,7 +536,7 @@ colors: {
 1. **Hard refresh**: `Cmd+Shift+R` (Mac) or `Ctrl+Shift+R` (Windows)
 2. **Clear cache**: Browser Settings → Clear browsing data
 3. **Check system theme**: Ensure OS dark mode is enabled
-4. **Report issue**: https://github.com/HosungYou/ResearcherRAG-helper/issues
+4. **Report issue**: https://github.com/HosungYou/ScholarRAG-helper/issues
 
 ### Reporting New Dark Mode Issues
 
@@ -584,7 +584,7 @@ Please include:
 
 **Thank you for your patience during this critical fix!** 🙏
 
-_This release ensures ResearcherRAG Helper is accessible to all users, regardless of their system theme preference._
+_This release ensures ScholarRAG Helper is accessible to all users, regardless of their system theme preference._
 
 ---
 

@@ -15,7 +15,7 @@ export default function ResourcesPage() {
             <Link href="/guide" className="hover:text-primary-600">Guide</Link>
             <Link href="/chat" className="hover:text-primary-600">Chatbot</Link>
             <Link href="/resources" className="text-primary-600 font-semibold">Resources</Link>
-            <a href="https://github.com/HosungYou/ResearcherRAG-helper" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/HosungYou/ScholarRAG-helper" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5" />
             </a>
           </nav>
@@ -126,7 +126,7 @@ export default function ResourcesPage() {
             </div>
             <div className="mt-6 bg-gray-50 border border-gray-300 rounded-lg p-4">
               <p className="text-sm text-gray-800">
-                <strong>📚 Note:</strong> These interfaces require a Vector DB built using ResearcherRAG Stages 1-5.
+                <strong>📚 Note:</strong> These interfaces require a Vector DB built using ScholarRAG Stages 1-5.
                 See the <Link href="/guide/04-implementation" className="underline font-medium">Implementation Guide</Link> to get started.
               </p>
             </div>
@@ -144,21 +144,21 @@ export default function ResourcesPage() {
                 description="K-12, higher education, learning sciences, edtech research"
                 fileSize="2.3 KB"
                 format="YAML"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/templates/research_profiles/education_template.yaml"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/templates/research_profiles/education_template.yaml"
               />
               <ResourceCard
                 title="Medicine Template"
                 description="Clinical trials, EHR, public health, telemedicine"
                 fileSize="2.5 KB"
                 format="YAML"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/templates/research_profiles/medicine_template.yaml"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/templates/research_profiles/medicine_template.yaml"
               />
               <ResourceCard
                 title="Social Science Template"
                 description="Psychology, sociology, economics, political science"
                 fileSize="2.4 KB"
                 format="YAML"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/templates/research_profiles/social_science_template.yaml"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/templates/research_profiles/social_science_template.yaml"
               />
             </div>
           </section>
@@ -175,35 +175,35 @@ export default function ResourcesPage() {
                 description="Define research scope, questions, and constraints"
                 fileSize="12 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/prompts/01_research_domain_setup.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/prompts/01_research_domain_setup.md"
               />
               <ResourceCard
                 title="Stage 2: Query Strategy"
                 description="Design boolean queries, choose data sources"
                 fileSize="15 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/prompts/02_query_strategy.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/prompts/02_query_strategy.md"
               />
               <ResourceCard
                 title="Stage 3: PRISMA Configuration"
                 description="Build multi-dimensional screening criteria"
                 fileSize="18 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/prompts/03_prisma_configuration.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/prompts/03_prisma_configuration.md"
               />
               <ResourceCard
                 title="Stage 4: RAG Design"
                 description="PDF acquisition, text extraction, vector DB setup"
                 fileSize="14 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/prompts/04_rag_design.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/prompts/04_rag_design.md"
               />
               <ResourceCard
                 title="Stage 5: Execution Plan"
                 description="Run pipeline, troubleshoot, validate results"
                 fileSize="16 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/prompts/05_execution_plan.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/prompts/05_execution_plan.md"
               />
             </div>
           </section>
@@ -220,28 +220,28 @@ export default function ResourcesPage() {
                 description="Complete 18,000-word implementation guide for Claude Code"
                 fileSize="120 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/CLAUDE.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/CLAUDE.md"
               />
               <ResourceCard
                 title="Workshop Guide"
                 description="3-hour hands-on workshop curriculum"
                 fileSize="45 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/workshop/hands_on_guide.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/workshop/hands_on_guide.md"
               />
               <ResourceCard
                 title="Quick Start Guide"
                 description="Get started in 5 minutes"
                 fileSize="25 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/QUICK_START.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/QUICK_START.md"
               />
               <ResourceCard
                 title="Release Notes v1.2.0"
                 description="Latest features and changes"
                 fileSize="30 KB"
                 format="Markdown"
-                href="https://github.com/HosungYou/ResearcherRAG/blob/main/docs/RELEASE_NOTES_v1.2.0.md"
+                href="https://github.com/HosungYou/ScholarRAG/blob/main/docs/RELEASE_NOTES_v1.2.0.md"
               />
             </div>
           </section>
@@ -249,18 +249,18 @@ export default function ResourcesPage() {
           {/* Main Repository */}
           <section className="card p-8 text-center">
             <Github className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-3">ResearcherRAG Repository</h3>
+            <h3 className="text-2xl font-bold mb-3">ScholarRAG Repository</h3>
             <p className="text-gray-600 mb-6">
               Clone the complete repository to access all resources and start building your RAG system
             </p>
             <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg text-left overflow-x-auto mb-6">
-              <code>{`git clone https://github.com/HosungYou/ResearcherRAG.git
-cd ResearcherRAG
+              <code>{`git clone https://github.com/HosungYou/ScholarRAG.git
+cd ScholarRAG
 pip install -r requirements.txt
 code .`}</code>
             </pre>
             <a
-              href="https://github.com/HosungYou/ResearcherRAG"
+              href="https://github.com/HosungYou/ScholarRAG"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary inline-flex items-center gap-2"

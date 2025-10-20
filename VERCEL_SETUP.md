@@ -5,8 +5,8 @@
 ### ✅ Completed
 - Repository connected to GitHub
 - Latest commit pushed: `3e685ae` - "Simplify Vercel configuration for monorepo"
-- Vercel project created: `researcher-rag-helper`
-- Project URL: https://vercel.com/hosung-yous-projects/researcher-rag-helper
+- Vercel project created: `scholar-rag-helper`
+- Project URL: https://vercel.com/hosung-yous-projects/scholar-rag-helper
 
 ### ⚠️ Configuration Required
 
@@ -16,7 +16,7 @@ The deployment is currently failing because Vercel needs to know that this is a 
 
 ### Option 1: Vercel Dashboard (Recommended)
 
-1. Go to https://vercel.com/hosung-yous-projects/researcher-rag-helper/settings
+1. Go to https://vercel.com/hosung-yous-projects/scholar-rag-helper/settings
 2. Navigate to **General** → **Build & Development Settings**
 3. Set **Root Directory**: `frontend`
 4. Framework Preset should auto-detect as **Next.js**
@@ -27,10 +27,10 @@ The deployment is currently failing because Vercel needs to know that this is a 
 ### Option 2: Vercel CLI (Alternative)
 
 ```bash
-cd "/Volumes/External SSD/Projects/Research/ResearcherRAG-helper"
+cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
 
 # Link to the correct project
-vercel link --project researcher-rag-helper --yes
+vercel link --project scholar-rag-helper --yes
 
 # Set root directory via environment variable
 vercel env add VERCEL_ROOT_DIR production
@@ -49,17 +49,17 @@ If you want to avoid monorepo configuration, you could move all frontend files t
 After configuring the root directory:
 
 1. **Check Build Logs**:
-   - Go to https://vercel.com/hosung-yous-projects/researcher-rag-helper/deployments
+   - Go to https://vercel.com/hosung-yous-projects/scholar-rag-helper/deployments
    - Click on the latest deployment
    - Verify it shows "Detected Next.js version: 15.5.4" (not an error)
 
 2. **Test Production URL**:
-   - Visit the production URL (will be something like `https://researcher-rag-helper.vercel.app`)
+   - Visit the production URL (will be something like `https://scholar-rag-helper.vercel.app`)
    - Verify the homepage loads with:
      - Purple/blue gradient background
      - Animated floating blobs
      - Glassmorphism cards
-     - "ResearcherRAG Helper" header
+     - "ScholarRAG Helper" header
 
 3. **Test Pages**:
    - Homepage: `/`
@@ -70,8 +70,8 @@ After configuring the root directory:
 ## Expected Production URL
 
 Once configured correctly, your site will be available at:
-- **Primary**: `https://researcher-rag-helper.vercel.app`
-- **Alternative**: `https://researcherrag-helper.vercel.app` (if claimed)
+- **Primary**: `https://scholar-rag-helper.vercel.app`
+- **Alternative**: `https://scholarag-helper.vercel.app` (if claimed)
 
 ## Troubleshooting
 
@@ -96,8 +96,8 @@ Once configured correctly, your site will be available at:
 
 | Time | Deployment URL | Status | Issue |
 |------|---------------|--------|-------|
-| 16:41 | researcher-rag-helper-8oeotja2j | ❌ Error | No Next.js detected (root dir not set) |
-| 16:41 | researcher-rag-helper-ia7mx8itt | ✅ Ready | But from old config |
+| 16:41 | scholar-rag-helper-8oeotja2j | ❌ Error | No Next.js detected (root dir not set) |
+| 16:41 | scholar-rag-helper-ia7mx8itt | ✅ Ready | But from old config |
 | 16:47 | frontend-8hxae1x6q | ✅ Ready | Wrong project name (deployed from frontend/) |
 
 ## Next Steps

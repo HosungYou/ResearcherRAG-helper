@@ -8,14 +8,14 @@
 
 ## 🎯 Overview
 
-Version 1.0.3 represents a **major leap forward** for ResearcherRAG, transforming it from a documentation-only platform into a **full-stack systematic review automation system**. This release introduces 7 production-ready Python scripts that implement the complete PRISMA 2020 pipeline, comprehensive API documentation, and a fully-worked example project.
+Version 1.0.3 represents a **major leap forward** for ScholarRAG, transforming it from a documentation-only platform into a **full-stack systematic review automation system**. This release introduces 7 production-ready Python scripts that implement the complete PRISMA 2020 pipeline, comprehensive API documentation, and a fully-worked example project.
 
 **What Changed**:
 - Added 7 Python automation scripts covering the entire systematic review workflow
 - Updated database strategy from traditional (PubMed/Scopus/ERIC) to automation-focused (Semantic Scholar/OpenAlex/arXiv)
 - Created comprehensive API setup guide with cost calculators and troubleshooting
 - Built complete example project with expected results and validation checklists
-- Enhanced CLAUDE.md with ResearcherRAG-specific workflow documentation
+- Enhanced CLAUDE.md with ScholarRAG-specific workflow documentation
 
 **Why It Changed**:
 The original v1.0.0-1.0.2 releases focused on teaching concepts through documentation. However, researchers need **working automation tools**, not just guidance. v1.0.3 delivers on the core promise: **AI-powered systematic literature review automation from search to PRISMA diagram**.
@@ -48,13 +48,13 @@ The original v1.0.0-1.0.2 releases focused on teaching concepts through document
 **Commits**: Multiple commits creating automation backend
 
 **Files Added**:
-- `Research/ResearcherRAG/scripts/01_fetch_papers.py` (515 lines)
-- `Research/ResearcherRAG/scripts/02_deduplicate.py` (303 lines)
-- `Research/ResearcherRAG/scripts/03_screen_papers.py` (330 lines)
-- `Research/ResearcherRAG/scripts/04_download_pdfs.py` (308 lines)
-- `Research/ResearcherRAG/scripts/05_build_rag.py` (303 lines)
-- `Research/ResearcherRAG/scripts/06_query_rag.py` (385 lines)
-- `Research/ResearcherRAG/scripts/07_generate_prisma.py` (472 lines)
+- `Research/ScholarRAG/scripts/01_fetch_papers.py` (515 lines)
+- `Research/ScholarRAG/scripts/02_deduplicate.py` (303 lines)
+- `Research/ScholarRAG/scripts/03_screen_papers.py` (330 lines)
+- `Research/ScholarRAG/scripts/04_download_pdfs.py` (308 lines)
+- `Research/ScholarRAG/scripts/05_build_rag.py` (303 lines)
+- `Research/ScholarRAG/scripts/06_query_rag.py` (385 lines)
+- `Research/ScholarRAG/scripts/07_generate_prisma.py` (472 lines)
 
 **Implementation** (`scripts/01_fetch_papers.py:47-75`):
 ```python
@@ -227,7 +227,7 @@ databases:
 
 **What Changed**: Created 650-line guide covering all APIs, costs, and setup procedures
 
-**Location**: `ResearcherRAG-helper/docs/API_SETUP_GUIDE.md`
+**Location**: `ScholarRAG-helper/docs/API_SETUP_GUIDE.md`
 
 **Purpose**: Researchers need clear guidance on API costs, setup steps, and troubleshooting to confidently start projects
 
@@ -263,7 +263,7 @@ databases:
 1. Get Claude API key (2 minutes)
 2. Add to .env file (30 seconds)
 3. Test connection (30 seconds)
-4. Start using ResearcherRAG (immediately)
+4. Start using ScholarRAG (immediately)
 ```
 
 ---
@@ -272,7 +272,7 @@ databases:
 
 **What Changed**: Created complete worked example: "AI Chatbots for Language Learning Speaking Skills"
 
-**Location**: `ResearcherRAG/examples/ai-chatbots-language-learning/`
+**Location**: `ScholarRAG/examples/ai-chatbots-language-learning/`
 
 **Purpose**: Researchers need a reference implementation to validate their own results and understand expected outcomes
 
@@ -340,7 +340,7 @@ Your pipeline is working correctly if:
 
 **What Changed**: Created comprehensive `.env.example` with all environment variables documented
 
-**Location**: `ResearcherRAG/.env.example`
+**Location**: `ScholarRAG/.env.example`
 
 **Purpose**: New users need clear documentation of required vs. optional configuration
 
@@ -348,7 +348,7 @@ Your pipeline is working correctly if:
 
 **Implementation** (`.env.example:1-42`):
 ```bash
-# ResearcherRAG Environment Variables
+# ScholarRAG Environment Variables
 # Copy this file to .env and fill in your API keys
 
 # ============================================================
@@ -397,17 +397,17 @@ python -c "from dotenv import load_dotenv; import os; load_dotenv(); print('✓ 
 
 ---
 
-### 6) Enhanced CLAUDE.md with ResearcherRAG Workflow
+### 6) Enhanced CLAUDE.md with ScholarRAG Workflow
 
-**What Changed**: Added comprehensive ResearcherRAG section to `/Volumes/External SSD/Projects/CLAUDE.md`
+**What Changed**: Added comprehensive ScholarRAG section to `/Volumes/External SSD/Projects/CLAUDE.md`
 
-**Why**: Claude Code needs project-specific context when assisting with ResearcherRAG development
+**Why**: Claude Code needs project-specific context when assisting with ScholarRAG development
 
 **Location**: `/Volumes/External SSD/Projects/CLAUDE.md:95-155`
 
 **Implementation**:
 ```markdown
-## ResearcherRAG Systematic Review Workflow
+## ScholarRAG Systematic Review Workflow
 
 ### Database Strategy (Automation-Focused)
 
@@ -435,11 +435,11 @@ python -c "from dotenv import load_dotenv; import os; load_dotenv(); print('✓ 
 
 \`\`\`bash
 # Initialize new project
-python researcherrag_cli.py init
+python scholarag_cli.py init
 
 # Planned commands
-python researcherrag_cli.py search --query "your query"
-python researcherrag_cli.py download_pdfs
+python scholarag_cli.py search --query "your query"
+python scholarag_cli.py download_pdfs
 \`\`\`
 ```
 
@@ -498,7 +498,7 @@ python researcherrag_cli.py download_pdfs
 - Quality standards
 
 ### 5) Environment Variable Template
-**Location**: `ResearcherRAG/.env.example`
+**Location**: `ScholarRAG/.env.example`
 **Lines**: 70
 **Purpose**: Clear configuration documentation
 
@@ -545,7 +545,7 @@ matplotlib==3.8.0        # PRISMA diagrams
 ### Configuration
 - **New**: `.env` file support for API keys
 - **New**: `config.yaml` format for project configuration
-- **New**: CLI tool foundation (`researcherrag_cli.py`)
+- **New**: CLI tool foundation (`scholarag_cli.py`)
 
 ### Performance
 - **Embedding**: Local models (no API cost, ~500 papers/minute)
@@ -560,13 +560,13 @@ matplotlib==3.8.0        # PRISMA diagrams
 ### Frontend (Vercel)
 ✅ No changes required - automatically deploys from main branch
 ✅ All existing frontend functionality preserved
-✅ Documentation site remains accessible at researcherrag.vercel.app
+✅ Documentation site remains accessible at scholarag.vercel.app
 
 ### Backend (Python Scripts)
 
 #### 1. Install Python Dependencies
 ```bash
-cd ResearcherRAG
+cd ScholarRAG
 pip install -r requirements.txt
 ```
 
@@ -614,7 +614,7 @@ python ../../scripts/01_fetch_papers.py \
 ## 🧪 Verification Steps
 
 ### Frontend Verification
-1. ✅ Navigate to https://researcherrag.vercel.app
+1. ✅ Navigate to https://scholarag.vercel.app
 2. ✅ Check "Practical Guide" page loads
 3. ✅ Verify database strategy shows Semantic Scholar/OpenAlex/arXiv
 4. ✅ Check no console errors in browser DevTools
@@ -623,7 +623,7 @@ python ../../scripts/01_fetch_papers.py \
 
 #### 1. Test Script Imports
 ```bash
-cd ResearcherRAG
+cd ScholarRAG
 
 # Test each script imports successfully
 for script in scripts/*.py; do
@@ -695,7 +695,7 @@ tree data/
 
 ## 📊 Code Statistics
 
-**Backend (ResearcherRAG)**:
+**Backend (ScholarRAG)**:
 - **Files Added**: 13 files
   - 7 Python scripts (2,616 lines)
   - 4 documentation files (2,000+ lines)
@@ -703,10 +703,10 @@ tree data/
   - 1 example project (3 files)
 - **Lines Added**: 4,600+
 
-**Frontend (ResearcherRAG-helper)**:
+**Frontend (ScholarRAG-helper)**:
 - **Files Modified**: 2 files
   - `frontend/app/guide/05-advanced-topics/page.tsx` (updated database strategy)
-  - `/Volumes/External SSD/Projects/CLAUDE.md` (added ResearcherRAG section)
+  - `/Volumes/External SSD/Projects/CLAUDE.md` (added ScholarRAG section)
 - **Lines Added**: 150+
 
 **Documentation (docs/releases)**:
@@ -732,7 +732,7 @@ Plus backend commits:
 - Created 7 Python automation scripts
 - Created API setup guide and example project
 - Created .env.example template
-- Updated CLAUDE.md with ResearcherRAG workflow
+- Updated CLAUDE.md with ScholarRAG workflow
 
 **File Breakdown**:
 - Python scripts: 7 files (2,616 lines)
@@ -748,7 +748,7 @@ Plus backend commits:
 
 **Project Structure**:
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── scripts/
 │   ├── 01_fetch_papers.py       # Multi-database paper fetching
 │   ├── 02_deduplicate.py        # DOI/title deduplication
@@ -933,7 +933,7 @@ else:
 ### Known Issues
 
 1. **CLI Extensions Not Yet Implemented**:
-   - **Description**: `researcherrag_cli.py search` and `download_pdfs` commands planned but not completed
+   - **Description**: `scholarag_cli.py search` and `download_pdfs` commands planned but not completed
    - **Workaround**: Use individual Python scripts directly (`python scripts/01_fetch_papers.py ...`)
    - **Fix Planned**: v1.1.0 (November 2025)
 
@@ -985,13 +985,13 @@ else:
 **CLI Tool Completion**:
 ```bash
 # Unified command-line interface
-researcherrag init                 # Interactive project setup
-researcherrag search               # Multi-database search
-researcherrag screen               # AI-assisted screening
-researcherrag download             # PDF downloading
-researcherrag build                # RAG creation
-researcherrag query                # Interactive queries
-researcherrag prisma               # Generate diagram
+scholarag init                 # Interactive project setup
+scholarag search               # Multi-database search
+scholarag screen               # AI-assisted screening
+scholarag download             # PDF downloading
+scholarag build                # RAG creation
+scholarag query                # Interactive queries
+scholarag prisma               # Generate diagram
 ```
 
 **Progress Monitoring**:
@@ -1080,8 +1080,8 @@ This project is **self-funded** and open-source. No grants or institutional supp
 - **Release Notes**: `docs/releases/`
 
 ### Community
-- **GitHub Issues**: [https://github.com/HosungYou/ResearcherRAG/issues](https://github.com/HosungYou/ResearcherRAG/issues)
-- **GitHub Discussions**: [https://github.com/HosungYou/ResearcherRAG/discussions](https://github.com/HosungYou/ResearcherRAG/discussions)
+- **GitHub Issues**: [https://github.com/HosungYou/ScholarRAG/issues](https://github.com/HosungYou/ScholarRAG/issues)
+- **GitHub Discussions**: [https://github.com/HosungYou/ScholarRAG/discussions](https://github.com/HosungYou/ScholarRAG/discussions)
 - **Email**: newhosung@gmail.com
 
 ### Reporting Bugs
@@ -1103,7 +1103,7 @@ Open a GitHub issue with:
 
 **🚀 Happy Researching!**
 
-This release transforms ResearcherRAG from an educational platform into a **production-ready systematic review automation system**. We're excited to see the research you'll conduct!
+This release transforms ScholarRAG from an educational platform into a **production-ready systematic review automation system**. We're excited to see the research you'll conduct!
 
 **Next Steps**:
 1. ✅ Read the [API Setup Guide](../../docs/API_SETUP_GUIDE.md)
@@ -1117,4 +1117,4 @@ This release transforms ResearcherRAG from an educational platform into a **prod
 
 **📅 Release Date**: October 14, 2025
 **📊 Version**: 1.0.3
-**👥 Maintained By**: ResearcherRAG Development Team
+**👥 Maintained By**: ScholarRAG Development Team

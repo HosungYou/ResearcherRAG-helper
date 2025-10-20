@@ -1,4 +1,4 @@
-# Final Progress Report: ResearcherRAG Website Improvements
+# Final Progress Report: ScholarRAG Website Improvements
 **Date**: 2025-01-13 (Session 2 - Completion)
 **Status**: Phase 1 & Phase 2 Complete ✅
 
@@ -16,7 +16,7 @@ This session completed **TWO MAJOR PHASES** of the implementation roadmap:
 
 ### Major Achievement: PRISMA as Prerequisite
 
-Added comprehensive "Why PRISMA for RAG?" section to [Chapter 3](https://researcher-rag-helper.vercel.app/guide/03-core-concepts#why-prisma-for-rag):
+Added comprehensive "Why PRISMA for RAG?" section to [Chapter 3](https://scholar-rag-helper.vercel.app/guide/03-core-concepts#why-prisma-for-rag):
 
 **Content Added**:
 1. **Critical Distinction Callout**: PRISMA is a prerequisite, NOT parallel to RAG
@@ -67,7 +67,7 @@ Added visual folder structure diagrams to **Chapter 4: Implementation Guide**
 
 #### Stage 1 Output Structure:
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── config/
 │   ├── research_domain.json      ← Your research definition
 │   └── keywords.json
@@ -81,7 +81,7 @@ ResearcherRAG/
 
 #### Stage 3 Output Structure (PRISMA Complete):
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── data/
 │   ├── 01_identification/
 │   │   ├── pubmed_results.csv     (450 papers)
@@ -113,7 +113,7 @@ Added practical verification sections with **expected outputs**:
 #### Stage 1 Verification:
 ```bash
 # Check project structure
-ls -la ResearcherRAG/
+ls -la ScholarRAG/
 
 # View research domain configuration
 cat config/research_domain.json
@@ -212,7 +212,7 @@ cut -d',' -f2 logs/exclusion_log.csv | sort | uniq -c | sort -rn
 - [ ] Verify bidirectional cross-references work
 
 ### ⏳ Phase 4: User Dashboard (FUTURE)
-- [ ] Option 1: CLI dashboard (`researcherrag status`)
+- [ ] Option 1: CLI dashboard (`scholarag status`)
 - [ ] Option 2: Cloud sync + web dashboard (advanced)
 
 ---
@@ -224,7 +224,7 @@ cut -d',' -f2 logs/exclusion_log.csv | sort | uniq -c | sort -rn
 **1. Add GitHub Links to Website**
 Example in Chapter 4:
 ```tsx
-<a href="https://github.com/HosungYou/ResearcherRAG/blob/main/scripts/01_fetch_papers.py">
+<a href="https://github.com/HosungYou/ScholarRAG/blob/main/scripts/01_fetch_papers.py">
   📄 View 01_fetch_papers.py on GitHub →
 </a>
 ```
@@ -233,10 +233,10 @@ Example in Chapter 4:
 Add website links to each stage:
 ```markdown
 ## Stage 1: Research Domain Setup
-📚 [Read detailed guide](https://researcher-rag-helper.vercel.app/guide/04-implementation#stage-1)
+📚 [Read detailed guide](https://scholar-rag-helper.vercel.app/guide/04-implementation#stage-1)
 
 ## Stage 3: PRISMA Configuration
-📚 [Read detailed guide](https://researcher-rag-helper.vercel.app/guide/04-implementation#stage-3)
+📚 [Read detailed guide](https://scholar-rag-helper.vercel.app/guide/04-implementation#stage-3)
 ```
 
 **3. Verify Script Files Exist**
@@ -359,7 +359,7 @@ This implementation directly addresses the user's three core requirements:
 
 ## 🎬 Conclusion
 
-This session completed **Phase 1 (Conceptual Clarity)** and **Phase 2 (Practical Usability)** of the ResearcherRAG website improvements. The most critical conceptual confusion—PRISMA vs RAG relationship—has been resolved with academic backing. The website now provides practical, actionable guidance with file structures, verification commands, and copy-paste code examples.
+This session completed **Phase 1 (Conceptual Clarity)** and **Phase 2 (Practical Usability)** of the ScholarRAG website improvements. The most critical conceptual confusion—PRISMA vs RAG relationship—has been resolved with academic backing. The website now provides practical, actionable guidance with file structures, verification commands, and copy-paste code examples.
 
 **Next milestone**: Phase 3 (GitHub-Website Integration) to create bidirectional links between documentation and code.
 

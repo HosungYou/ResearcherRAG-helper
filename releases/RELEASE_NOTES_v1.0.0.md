@@ -1,26 +1,26 @@
-# ResearcherRAG Helper v1.0.0 Release Notes
+# ScholarRAG Helper v1.0.0 Release Notes
 
 **Release Date**: October 11, 2025
 **Theme**: Interactive Learning Platform Launch
 
 ---
 
-## 🎉 Welcome to ResearcherRAG Helper!
+## 🎉 Welcome to ScholarRAG Helper!
 
-This is the **inaugural release** of ResearcherRAG Helper - an interactive documentation and chatbot platform designed to help researchers learn and use [ResearcherRAG](https://github.com/HosungYou/ResearcherRAG) effectively.
+This is the **inaugural release** of ScholarRAG Helper - an interactive documentation and chatbot platform designed to help researchers learn and use [ScholarRAG](https://github.com/HosungYou/ScholarRAG) effectively.
 
 ---
 
-## 🎯 What is ResearcherRAG Helper?
+## 🎯 What is ScholarRAG Helper?
 
-ResearcherRAG Helper is a **companion platform** for ResearcherRAG that provides:
+ScholarRAG Helper is a **companion platform** for ScholarRAG that provides:
 
 1. **📚 Interactive Documentation**: Bookdown-style website with step-by-step guides
 2. **🤖 AI Chatbot**: RAG-powered Q&A using Claude 3.5 Sonnet
 3. **📥 Resource Center**: Download templates, examples, and workshop materials
 4. **🎥 Video Tutorials** (coming soon): Visual walkthroughs
 
-**Key Principle**: This is a **demonstration and education platform**, not a production RAG system. For actual RAG implementation, use the [main ResearcherRAG repository](https://github.com/HosungYou/ResearcherRAG).
+**Key Principle**: This is a **demonstration and education platform**, not a production RAG system. For actual RAG implementation, use the [main ScholarRAG repository](https://github.com/HosungYou/ScholarRAG).
 
 ---
 
@@ -38,7 +38,7 @@ Inspired by the popular [Doing Meta-Analysis in R](https://bookdown.org/MathiasH
 - **Fast Navigation**: Instant page loads with Next.js
 
 #### Planned Chapters:
-1. Introduction to ResearcherRAG
+1. Introduction to ScholarRAG
 2. 5-Stage Workflow Deep Dive
 3. PRISMA Configuration Guide
 4. RAG System Design Patterns
@@ -121,7 +121,7 @@ Inspired by the popular [Doing Meta-Analysis in R](https://bookdown.org/MathiasH
 ## 📂 Project Structure
 
 ```
-ResearcherRAG-helper/
+ScholarRAG-helper/
 ├── frontend/                      # Next.js application
 │   ├── app/                       # App Router pages
 │   │   ├── page.tsx              # Home page
@@ -162,8 +162,8 @@ ResearcherRAG-helper/
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/HosungYou/ResearcherRAG-helper.git
-cd ResearcherRAG-helper
+git clone https://github.com/HosungYou/ScholarRAG-helper.git
+cd ScholarRAG-helper
 
 # 2. Install frontend dependencies
 cd frontend
@@ -349,14 +349,14 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🔗 Related Projects
 
-- **[ResearcherRAG](https://github.com/HosungYou/ResearcherRAG)**: Main repository (prompts, templates, examples)
+- **[ScholarRAG](https://github.com/HosungYou/ScholarRAG)**: Main repository (prompts, templates, examples)
 - **[Claude Code](https://claude.com/claude-code)**: Conversational AI assistant for VS Code
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **ResearcherRAG community** for feature requests
+- **ScholarRAG community** for feature requests
 - **Bookdown project** for design inspiration
 - **Anthropic** for Claude 3.5 Sonnet API
 - **Vercel** for seamless deployment
@@ -367,9 +367,9 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 📞 Support
 
 ### Questions?
-- **GitHub Issues**: https://github.com/HosungYou/ResearcherRAG-helper/issues
-- **Discussions**: https://github.com/HosungYou/ResearcherRAG-helper/discussions
-- **Main Repo**: https://github.com/HosungYou/ResearcherRAG
+- **GitHub Issues**: https://github.com/HosungYou/ScholarRAG-helper/issues
+- **Discussions**: https://github.com/HosungYou/ScholarRAG-helper/discussions
+- **Main Repo**: https://github.com/HosungYou/ScholarRAG
 
 ---
 
@@ -418,7 +418,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Thank you for being part of the ResearcherRAG community!** 🎉
+**Thank you for being part of the ScholarRAG community!** 🎉
 
 _Built with ❤️ for researchers, by researchers_
 

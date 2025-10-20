@@ -1,4 +1,4 @@
-# ResearcherRAG Web Innovation Proposal
+# ScholarRAG Web Innovation Proposal
 ## Hybrid CLI-Web Architecture with Penn State Cloud Services
 
 **Date**: October 16, 2025
@@ -11,7 +11,7 @@
 
 **Core Philosophy**: "Local Control, Cloud Power, Public Access"
 
-Transform ResearcherRAG from a CLI-only tool into a **hybrid ecosystem** where:
+Transform ScholarRAG from a CLI-only tool into a **hybrid ecosystem** where:
 1. ✅ **Researchers maintain full autonomy** (local files, local control)
 2. ✅ **Web enables public access** (no installation, instant start)
 3. ✅ **Cloud provides infrastructure** (compute, storage, collaboration)
@@ -20,28 +20,28 @@ Transform ResearcherRAG from a CLI-only tool into a **hybrid ecosystem** where:
 
 ---
 
-## 🚀 Revolutionary Architecture: "ResearcherRAG Cloud Workspaces"
+## 🚀 Revolutionary Architecture: "ScholarRAG Cloud Workspaces"
 
 ### Concept: JupyterHub-inspired Research Platform
 
 **Inspiration**: Universities worldwide use JupyterHub (UC Berkeley, Harvard, NYU) to provide browser-based computational environments for thousands of students without sacrificing functionality.
 
-**ResearcherRAG Adaptation**:
+**ScholarRAG Adaptation**:
 ```
-[researcher-rag.psu.edu]
+[scholar-rag.psu.edu]
     ↓ Penn State SSO Login
 [Personal Research Workspace]
 ├─ Browser Terminal (xterm.js)
 ├─ File Explorer (Monaco Editor)
-├─ ResearcherRAG CLI (pre-installed)
+├─ ScholarRAG CLI (pre-installed)
 └─ Local-like Environment (WebContainer)
 ```
 
 **User Experience**:
-1. Go to `researcher-rag.psu.edu`
+1. Go to `scholar-rag.psu.edu`
 2. Log in with Penn State credentials
 3. See terminal: `researcher@workspace:~$`
-4. Run: `python researcherrag.py --init`
+4. Run: `python scholarag.py --init`
 5. All files stored in cloud, accessible via web or sync to local
 
 ---
@@ -74,18 +74,18 @@ pip install -r requirements.txt
 **Target**: Students, casual researchers, quick experiments
 
 ```
-🌐 Browser: researcher-rag.psu.edu/workspace
+🌐 Browser: scholar-rag.psu.edu/workspace
 
 Terminal (xterm.js):
 ┌──────────────────────────────────────────────┐
 │ researcher@psu-workspace:~$                  │
 │                                              │
-│ $ researcherrag init --domain "AI Education"│
+│ $ scholarag init --domain "AI Education"│
 │ ✓ Research profile created                  │
 │ ✓ Connected to PSU LLM Gateway              │
 │ ✓ Workspace ready                           │
 │                                              │
-│ $ researcherrag query --stage 2             │
+│ $ scholarag query --stage 2             │
 │ Generating search strategy...               │
 │                                              │
 │ Files created:                               │
@@ -136,7 +136,7 @@ my_research/            |  [PDF Viewer]
       ↓
 [Docker Container Pool]
   ├─ Container 1: user_abc123
-  │   ├─ Python 3.11 + ResearcherRAG
+  │   ├─ Python 3.11 + ScholarRAG
   │   ├─ Persistent volume: /home/researcher/
   │   └─ Process: bash shell
   ├─ Container 2: user_def456
@@ -164,17 +164,17 @@ my_research/            |  [PDF Viewer]
 ```bash
 # Local machine
 cd ~/my-research
-researcherrag sync --cloud psu --workspace my-ai-study
+scholarag sync --cloud psu --workspace my-ai-study
 
 # Work locally (fast, familiar)
-researcherrag query --stage 3
+scholarag query --stage 3
 vim outputs/analysis.md
 
 # Sync to cloud (backup, share, heavy processing)
-researcherrag sync --push
+scholarag sync --push
 
 # Later, on a different computer or web
-researcherrag sync --pull
+scholarag sync --pull
 # All files up-to-date
 ```
 
@@ -184,40 +184,40 @@ researcherrag sync --pull
 ```bash
 # Local: Prepare research profile (fast iteration)
 vim config.yaml
-researcherrag sync --push
+scholarag sync --push
 
 # Cloud: Run heavy processing (500 PDFs, 2 hours)
-researcherrag process --stage 4 --use-cloud-compute
+scholarag process --stage 4 --use-cloud-compute
 
 # Local: Pull results when done
-researcherrag sync --pull
+scholarag sync --pull
 ls rag_db/chromadb/  # 500 papers embedded
 ```
 
 2. **Scenario B: Multi-Device Workflow**
 ```bash
 # Office desktop (powerful)
-researcherrag init --domain "Medical AI"
-researcherrag sync --push
+scholarag init --domain "Medical AI"
+scholarag sync --push
 
 # Home laptop (evening work)
-researcherrag sync --pull
-researcherrag query "What are the ethics concerns?"
-researcherrag sync --push
+scholarag sync --pull
+scholarag query "What are the ethics concerns?"
+scholarag sync --push
 
 # Conference (Chromebook, web interface)
-# Open researcher-rag.psu.edu
+# Open scholar-rag.psu.edu
 # Continue same project in browser
 ```
 
 3. **Scenario C: Collaboration without Data Sharing**
 ```bash
 # Researcher A: Share project template
-researcherrag share --workspace my-study --template-only
+scholarag share --workspace my-study --template-only
 # Output: share-code: ABC-123-XYZ
 
 # Researcher B: Use template (no data copied)
-researcherrag clone --template ABC-123-XYZ
+scholarag clone --template ABC-123-XYZ
 # Gets: config.yaml, prompts/, scripts/
 # Does NOT get: PDFs, embeddings, results
 ```
@@ -246,7 +246,7 @@ researcherrag clone --template ABC-123-XYZ
 
 #### Institutional Tier (Universities/Libraries - $500/month)
 - Unlimited users from institution
-- Custom domain (researcherrag.institution.edu)
+- Custom domain (scholarag.institution.edu)
 - Institutional SSO integration
 - Dedicated support
 
@@ -264,7 +264,7 @@ researcherrag clone --template ABC-123-XYZ
 **Solution**: Public RAG collections with private workspaces
 
 ```
-[PSU ResearcherRAG Platform]
+[PSU ScholarRAG Platform]
 
 Public Collections (Read-Only):
 ├─ "AI in Education 2020-2025" [10M embeddings]
@@ -294,18 +294,18 @@ Personal Workspaces (Private):
 **Workflow**:
 ```bash
 # Researcher's workspace
-$ researcherrag init --domain "Active Learning in CS"
+$ scholarag init --domain "Active Learning in CS"
 
 # Use public collection (instant, no embedding cost)
-$ researcherrag collection add --public "AI-in-Education-PSU"
+$ scholarag collection add --public "AI-in-Education-PSU"
 ✓ Added 10M pre-processed papers
 
 # Add private papers
-$ researcherrag add --files my-papers/*.pdf
+$ scholarag add --files my-papers/*.pdf
 Processing 15 PDFs... ✓ Done
 
 # Query combines public + private
-$ researcherrag query "What is the effect of active learning in programming courses?"
+$ scholarag query "What is the effect of active learning in programming courses?"
 Searching:
   - PSU Public Collection: 10M papers → 50 relevant
   - Your Private Papers: 15 papers → 8 relevant
@@ -333,7 +333,7 @@ Searching:
 **Concept**: Experienced researchers publish reusable workflows
 
 ```
-[ResearcherRAG Template Library]
+[ScholarRAG Template Library]
 
 Template: "Systematic Review - Education Research"
 ├─ Author: Prof. Jane Smith (Penn State)
@@ -355,19 +355,19 @@ Template: "Meta-Analysis - Medical Interventions"
 **Usage**:
 ```bash
 # Browse templates
-$ researcherrag templates list --category "systematic-review"
+$ scholarag templates list --category "systematic-review"
 1. Systematic Review - Education Research (1,247 downloads)
 2. Rapid Review - Software Engineering (543 downloads)
 3. Scoping Review - Health Informatics (321 downloads)
 
 # Start from template
-$ researcherrag init --template 1
+$ scholarag init --template 1
 ✓ Workspace created from template
 ✓ Customize config.yaml for your study
 ✓ Ready to start at Stage 2 (query strategy)
 
 # After your research
-$ researcherrag publish --template "My Improved Workflow"
+$ scholarag publish --template "My Improved Workflow"
 ✓ Template published (pending peer review)
 ```
 
@@ -381,7 +381,7 @@ $ researcherrag publish --template "My Improved Workflow"
 
 ### Challenge: CLI Tools Typically Not Web-Compatible
 
-**Why ResearcherRAG CLI is Hard to Web-ify**:
+**Why ScholarRAG CLI is Hard to Web-ify**:
 1. File system access (`/home/user/my-research/`)
 2. Long-running processes (2 hours to process PDFs)
 3. Interactive prompts (`"Enter research domain:"`)
@@ -408,10 +408,10 @@ const container = await WebContainer.boot();
 const pyodide = await loadPyodide();
 await pyodide.loadPackage(['numpy', 'pandas']);
 
-// Run ResearcherRAG CLI (simplified version)
+// Run ScholarRAG CLI (simplified version)
 await pyodide.runPython(`
-import researcherrag
-rag = researcherrag.ResearcherRAG()
+import scholarag
+rag = scholarag.ScholarRAG()
 rag.init(domain="AI Education")
 `);
 
@@ -446,10 +446,10 @@ const files = await container.fs.readdir('/home/researcher');
   ↓
 [Container Orchestration - AWS ECS]
   ├─ Spawn container per user session
-  ├─ Container image: researcherrag:latest
+  ├─ Container image: scholarag:latest
   │   ├─ Ubuntu 22.04
   │   ├─ Python 3.11
-  │   ├─ ResearcherRAG CLI
+  │   ├─ ScholarRAG CLI
   │   ├─ Tesseract OCR
   │   └─ All dependencies
   ├─ Persistent volume: /workspace (EFS mount)
@@ -479,7 +479,7 @@ export function TerminalWorkspace() {
     });
 
     // Connect to backend WebSocket
-    const ws = new WebSocket('wss://researcher-rag.psu.edu/terminal');
+    const ws = new WebSocket('wss://scholar-rag.psu.edu/terminal');
 
     // Pipe terminal input to WebSocket
     term.onData((data) => {
@@ -622,7 +622,7 @@ export function FileExplorer({ workspaceId }) {
 **User Experience**:
 ```bash
 # In browser terminal (WebContainer)
-$ researcherrag process --pdfs papers/*.pdf
+$ scholarag process --pdfs papers/*.pdf
 
 Analyzing task...
 ⚠ This will process 500 PDFs (estimated 2 hours locally)
@@ -637,13 +637,13 @@ Use cloud processing? [Y/n]: Y
 You can close this window. We'll email you when done.
 
 # 10 minutes later
-$ researcherrag status job-abc123
+$ scholarag status job-abc123
 ✅ Job completed!
 Processed: 500 PDFs
 Embeddings: 500 generated
 Time: 8 minutes 32 seconds
 
-$ researcherrag download job-abc123
+$ scholarag download job-abc123
 ⬇️ Downloading results... ✓
 ✓ Results integrated into local RAG database
 ```
@@ -661,19 +661,19 @@ $ researcherrag download job-abc123
 ### Scenario 1: "ACLOD Innovation Summit Live Demo"
 
 **Setup** (1 week before event):
-1. PSU IT provisions: `summit.researcher-rag.psu.edu`
+1. PSU IT provisions: `summit.scholar-rag.psu.edu`
 2. Pre-configure workspace template: "Education Research Workshop"
 3. Load PSU Libraries collection: "Education Research 2020-2025"
 
 **During Workshop** (30 participants):
 ```
-Facilitator: "Everyone, open summit.researcher-rag.psu.edu"
+Facilitator: "Everyone, open summit.scholar-rag.psu.edu"
 
 Participants:
   [No installation needed, instant access]
 
 Facilitator: "You'll see a terminal. Type:
-  $ researcherrag demo
+  $ scholarag demo
 
 Follow prompts to create your first systematic review in 30 minutes"
 
@@ -691,7 +691,7 @@ At end: "Click 'Export Workspace' to download everything"
 - ✅ Zero setup time (30 min saved per person)
 - ✅ All participants successful (no install failures)
 - ✅ Workspaces persist (continue at home)
-- ✅ Public exposure to ResearcherRAG
+- ✅ Public exposure to ScholarRAG
 
 ---
 
@@ -710,7 +710,7 @@ tool helps you screen, analyze, and synthesize research literature
 following PRISMA 2020 guidelines."
 
 🚀 Get Started:
-[Launch ResearcherRAG Workspace]
+[Launch ScholarRAG Workspace]
 
 ✨ Features:
 - Pre-indexed PSU library subscriptions (JSTOR, ScienceDirect, etc.)
@@ -724,14 +724,14 @@ following PRISMA 2020 guidelines."
 # Research librarian meets with PhD student
 
 Librarian: "Let's set up your systematic review workspace"
-[Opens researcher-rag.psu.edu, creates workspace for student]
+[Opens scholar-rag.psu.edu, creates workspace for student]
 
 Librarian: "I've configured access to our education databases"
 [Pre-loads relevant collections]
 
 Student: "How do I screen 500 abstracts?"
 Librarian: "Use the PRISMA screening module:
-  $ researcherrag screen --stage 1 --ai-assist
+  $ scholarag screen --stage 1 --ai-assist
 
 The AI will help, but you make final decisions"
 
@@ -743,7 +743,7 @@ Student continues at home (same workspace, no setup)
 **Value Proposition**:
 - For Libraries: Modern service offering, increased relevance
 - For Students: Expert guidance + powerful tools
-- For ResearcherRAG: Institutional adoption, user feedback
+- For ScholarRAG: Institutional adoption, user feedback
 
 ---
 
@@ -758,17 +758,17 @@ Week 2: Install dependencies (3 students still struggling)
 Week 3: Finally start actual research (2 weeks wasted)
 ```
 
-**ResearcherRAG Approach**:
+**ScholarRAG Approach**:
 ```
 Week 1 - Day 1:
 Professor: "Open the course workspace:
-  educ597-fall2025.researcher-rag.psu.edu"
+  educ597-fall2025.scholar-rag.psu.edu"
 
 All students: [Instant access, pre-configured environment]
 
 Professor demos in shared terminal (all students see):
-  $ researcherrag init --template "Education-Systematic-Review"
-  $ researcherrag query --stage 2
+  $ scholarag init --template "Education-Systematic-Review"
+  $ scholarag query --stage 2
   [Live demonstration]
 
 Students: "Fork" professor's workspace to their own
@@ -806,13 +806,13 @@ function ProfessorDashboard() {
 **Grading Integration**:
 ```bash
 # Student submission
-$ researcherrag submit --course EDUC597 --assignment "final-review"
+$ scholarag submit --course EDUC597 --assignment "final-review"
 ✓ Workspace snapshot created
 ✓ Submitted to Canvas
 ✓ Professor can review: outputs/, rag_db/, analysis.md
 
 # Professor review
-$ researcherrag grade --student hxy123 --workspace snapshot-abc
+$ scholarag grade --student hxy123 --workspace snapshot-abc
 [Opens read-only view of student's entire workspace]
 ```
 
@@ -823,7 +823,7 @@ $ researcherrag grade --student hxy123 --workspace snapshot-abc
 **Vision**: Open-access platform for global research community
 
 ```
-[researcher-rag.org - Public Instance]
+[scholar-rag.org - Public Instance]
 
 Free Tier (Anyone, Worldwide):
 ├─ 5 GB workspace
@@ -873,7 +873,7 @@ Global Collections:
 **User Controls**:
 ```bash
 # Export everything (own your data)
-$ researcherrag export --format zip
+$ scholarag export --format zip
 ✓ Downloaded: my-research-2025-10-16.zip (5.2 GB)
   ├─ config.yaml
   ├─ All PDFs
@@ -883,12 +883,12 @@ $ researcherrag export --format zip
 
 # Import to local machine
 $ cd ~/local-machine
-$ researcherrag import my-research-2025-10-16.zip
+$ scholarag import my-research-2025-10-16.zip
 ✓ Workspace restored locally
 ✓ Can continue offline
 
 # Delete cloud data
-$ researcherrag delete --cloud --confirm
+$ scholarag delete --cloud --confirm
 ⚠ This will permanently delete your cloud workspace
 Type workspace ID to confirm: abc-123-xyz
 ✓ All cloud data deleted
@@ -1041,11 +1041,11 @@ sync_strategy:
 ```bash
 Deliverables:
 ✓ xterm.js + WebSocket terminal in browser
-✓ Docker container with ResearcherRAG pre-installed
+✓ Docker container with ScholarRAG pre-installed
 ✓ Persistent workspace storage (AWS EFS)
 ✓ Basic file explorer
 
-Demo: 10 users run `researcherrag init` in web browser
+Demo: 10 users run `scholarag init` in web browser
 ```
 
 **Milestone 1.2: PSU SSO + API Gateway** (1 month)
@@ -1076,12 +1076,12 @@ Success Criteria:
 
 **Milestone 2.1: CLI Sync Command** (1 month)
 ```bash
-# Local ResearcherRAG CLI enhancement
-$ researcherrag sync --init --cloud psu
+# Local ScholarRAG CLI enhancement
+$ scholarag sync --init --cloud psu
 ✓ Linked to cloud workspace: abc-123-xyz
 ✓ Authentication: Penn State SSO
 
-$ researcherrag sync --push
+$ scholarag sync --push
 Syncing: 127 files (43 MB)... ✓ Done
 
 Deliverables:
@@ -1092,7 +1092,7 @@ Deliverables:
 
 **Milestone 2.2: Cloud Compute Offload** (1.5 months)
 ```bash
-$ researcherrag process --pdfs *.pdf --use-cloud
+$ scholarag process --pdfs *.pdf --use-cloud
 ☁️ Offloading to cloud compute...
 ✓ Job submitted: job-789
 
@@ -1142,7 +1142,7 @@ Process:
 4. Publish with documentation
 
 Users:
-$ researcherrag collection add ACM-Education-2020-2025
+$ scholarag collection add ACM-Education-2020-2025
 ✓ Instant access to 50K papers (no processing needed)
 ```
 
@@ -1162,7 +1162,7 @@ $ researcherrag collection add ACM-Education-2020-2025
 ```bash
 ✓ Canvas LTI plugin
 ✓ Automatic workspace provisioning for enrolled students
-✓ Assignment submission via ResearcherRAG
+✓ Assignment submission via ScholarRAG
 ✓ Grade passback to Canvas
 ```
 
@@ -1187,7 +1187,7 @@ Success Criteria:
 
 **Milestone 5.1: Public Beta** (Month 12)
 ```bash
-✓ researcher-rag.org website
+✓ scholar-rag.org website
 ✓ Open registration (email verification)
 ✓ Free tier (5 GB, 10 hours compute)
 ✓ Documentation, tutorials, videos
@@ -1196,7 +1196,7 @@ Success Criteria:
 **Milestone 5.2: Institutional Partnerships** (Months 13-18)
 ```bash
 Target: 5 universities
-✓ Custom domain setup (researcherrag.uni.edu)
+✓ Custom domain setup (scholarag.uni.edu)
 ✓ SSO integration
 ✓ Usage reporting
 ✓ Dedicated support channel
@@ -1225,18 +1225,18 @@ Prospects:
 ### Academic Impact
 
 **Publications Enabled**:
-- Year 1: 10 papers using ResearcherRAG
+- Year 1: 10 papers using ScholarRAG
 - Year 3: 100 papers
 - Year 5: 500 papers
 
 **Citation Example**:
 ```
 Methods: We conducted a systematic literature review following PRISMA
-2020 guidelines, facilitated by ResearcherRAG (You, 2025), an open-
+2020 guidelines, facilitated by ScholarRAG (You, 2025), an open-
 source AI-assisted research platform. The platform enabled efficient
 screening of 1,247 abstracts and synthesis of 89 included studies.
 Our complete research workflow and data are available at:
-https://researcher-rag.psu.edu/workspace/smith-2025-active-learning
+https://scholar-rag.psu.edu/workspace/smith-2025-active-learning
 ```
 
 **Reproducibility**: Other researchers can fork your workspace, inspect methodology
@@ -1245,7 +1245,7 @@ https://researcher-rag.psu.edu/workspace/smith-2025-active-learning
 
 ### Educational Impact
 
-**Courses Using ResearcherRAG**:
+**Courses Using ScholarRAG**:
 - Year 1: 5 courses (150 students)
 - Year 3: 50 courses (1,500 students)
 - Year 5: 200 courses (6,000 students)
@@ -1266,7 +1266,7 @@ https://researcher-rag.psu.edu/workspace/smith-2025-active-learning
 - Commercial tools (Covidence, DistillerSR): $1000-5000/year
 - Barrier: Unfunded students, Global South researchers
 
-**ResearcherRAG Solution**:
+**ScholarRAG Solution**:
 - Free tier: 80% of users (PSU + external)
 - Public collections: Eliminate redundant processing
 - Web access: No powerful computer needed (Chromebook works)
@@ -1281,7 +1281,7 @@ https://researcher-rag.psu.edu/workspace/smith-2025-active-learning
 ## 🎯 Strategic Alignment with Penn State
 
 ### Penn State's Open Science Initiative
-**Alignment**: ResearcherRAG embodies open science principles
+**Alignment**: ScholarRAG embodies open science principles
 - Open-source code
 - Open methodologies
 - Open data (public collections)
@@ -1321,7 +1321,7 @@ https://researcher-rag.psu.edu/workspace/smith-2025-active-learning
 
 ### AI Co-Pilot for Research
 ```bash
-$ researcherrag chat
+$ scholarag chat
 
 You: I want to study the effect of gamification in online learning
 
@@ -1350,7 +1350,7 @@ Ready to start Stage 2?
 
 ### Collaborative RAG Networks
 ```bash
-$ researcherrag collab --invite user@example.com
+$ scholarag collab --invite user@example.com
 
 You and user@example.com now share a workspace:
 ├─ Your private papers: Only you can see
@@ -1358,7 +1358,7 @@ You and user@example.com now share a workspace:
 ├─ Shared public collection: Both can query
 └─ Shared annotations: Both can comment on papers
 
-$ researcherrag query "What are the main themes?"
+$ scholarag query "What are the main themes?"
 [AI synthesizes from combined knowledge, cites sources]
 ```
 
@@ -1441,7 +1441,7 @@ function ResearchTimeline() {
 **How it works**:
 1. User opens browser, sees terminal UI (xterm.js)
 2. Browser connects to PSU server via WebSocket
-3. PSU server spawns Docker container with full Python + ResearcherRAG
+3. PSU server spawns Docker container with full Python + ScholarRAG
 4. User types commands in browser, executed in container
 5. Files stored in persistent volume (AWS EFS)
 
@@ -1481,7 +1481,7 @@ function ResearchTimeline() {
 
 **Proposal to Rick Rhoades**:
 
-> "We propose a three-phase collaboration to transform ResearcherRAG into a
+> "We propose a three-phase collaboration to transform ScholarRAG into a
 > public research infrastructure platform hosted on Penn State Cloud Services.
 >
 > **Phase 1** (3 months): Pilot web-based workspace for 50 ACLOD Summit participants

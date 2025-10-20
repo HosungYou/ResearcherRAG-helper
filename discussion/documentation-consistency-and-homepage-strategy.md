@@ -11,7 +11,7 @@
 
 ### Initial Issues Identified
 
-Based on comprehensive analysis of ResearcherRAG system:
+Based on comprehensive analysis of ScholarRAG system:
 
 | Issue | Score | Severity | Status |
 |-------|-------|----------|--------|
@@ -57,8 +57,8 @@ Missing: Explain WHY and SHOW consequences of skipping PRISMA
 ### Problem 2: Stage Number Inconsistency (User Understanding 65/100)
 
 **Current State**:
-- Homepage (ResearcherRAG-helper): **5 stages**
-- Implementation (ResearcherRAG): **7 stages**
+- Homepage (ScholarRAG-helper): **5 stages**
+- Implementation (ScholarRAG): **7 stages**
 - Prompt files: **7 files** (01-07.md)
 
 **User Confusion Scenario**:
@@ -105,7 +105,7 @@ Current docs: No explanation of mapping
 3. Homepage doesn't link to prompts folder
 
 **Root Cause**:
-- ResearcherRAG-helper (Vercel site) and ResearcherRAG (GitHub repo) are disconnected
+- ScholarRAG-helper (Vercel site) and ScholarRAG (GitHub repo) are disconnected
 - Next.js site has "Coming Soon" placeholders that were never built
 - No clear navigation from homepage → prompts → scripts → outputs
 
@@ -113,7 +113,7 @@ Current docs: No explanation of mapping
 
 ## 💡 User's Strategic Direction
 
-### Decision 1: Keep "ResearcherRAG" Name
+### Decision 1: Keep "ScholarRAG" Name
 
 **Rationale** (from user):
 > "Researcher라는 언어가 주는 강력한 의미가 있기 때문에 남겨놓을거야."
@@ -177,7 +177,7 @@ Documentation/
 
 **Migration Plan**:
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── docs/                    # GitHub Pages source
 │   ├── index.md            # Homepage
 │   ├── overview.md
@@ -313,7 +313,7 @@ When you complete Stage 4 conversation, Claude Code automatically runs:
 ```yaml
 # docs/_config.yml
 theme: jekyll-theme-minimal
-title: ResearcherRAG Documentation
+title: ScholarRAG Documentation
 description: PRISMA 2020 + RAG for systematic literature reviews
 plugins:
   - jekyll-seo-tag
@@ -371,7 +371,7 @@ main:
 
 ### 1. Clean Navigation
 ```
-[Logo] ResearcherRAG
+[Logo] ScholarRAG
 
 Overview | Glossary | Getting Started | Stages | Reference | Search 🔍
 ```
@@ -456,9 +456,9 @@ AI system that retrieves relevant document chunks and uses LLM to generate answe
 ## 🔄 Next Steps
 
 ### Immediate (This Session)
-1. ✅ Save this discussion to `ResearcherRAG-helper/discussion/`
+1. ✅ Save this discussion to `ScholarRAG-helper/discussion/`
 2. Create glossary.md
-3. Review ResearcherRAG-helper homepage content
+3. Review ScholarRAG-helper homepage content
 4. Identify specific knowledge gaps
 
 ### This Week
@@ -509,5 +509,5 @@ AI system that retrieves relevant document chunks and uses LLM to generate answe
 **Last Updated**: 2025-10-14
 **Document Type**: Strategic Discussion & Action Plan
 **Related Files**:
-- ResearcherRAG-helper/discussion/multi-tool-context-architecture.md
-- ResearcherRAG-helper/discussion/prompt-script-integration-plan.md
+- ScholarRAG-helper/discussion/multi-tool-context-architecture.md
+- ScholarRAG-helper/discussion/prompt-script-integration-plan.md

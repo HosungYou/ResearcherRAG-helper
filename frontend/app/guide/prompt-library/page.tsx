@@ -64,7 +64,7 @@ export default function PromptLibraryPage() {
 
   return (
     <GuideLayout
-      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/researcherrag_cli.py#L969-L1081"
+      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/scholarag_cli.py#L969-L1081"
       githubLabel="View CLI Source"
     >
       <h1>Prompt Library</h1>
@@ -122,12 +122,12 @@ export default function PromptLibraryPage() {
         <CodeBlock
           language="bash"
           code={`# List all available scenarios
-researcherrag stage6-examples
+scholarag stage6-examples
 
 # Copy a specific prompt
-researcherrag stage6-prompt hypothesis
-researcherrag stage6-prompt statistics
-researcherrag stage6-prompt contradictions`}
+scholarag stage6-prompt hypothesis
+scholarag stage6-prompt statistics
+scholarag stage6-prompt contradictions`}
         />
       </div>
 

@@ -1,6 +1,6 @@
-# ResearcherRAG Release Notes
+# ScholarRAG Release Notes
 
-This directory contains comprehensive release documentation for all versions of ResearcherRAG, organized chronologically for easy navigation and reference.
+This directory contains comprehensive release documentation for all versions of ScholarRAG, organized chronologically for easy navigation and reference.
 
 ## 📁 Directory Structure
 
@@ -30,7 +30,7 @@ releases/
 - 🚀 **Zero Terminal Commands** - fully conversational workflow
 
 **Breaking Changes**: No
-**Migration Required**: No (opt-in with `researcherrag upgrade`)
+**Migration Required**: No (opt-in with `scholarag upgrade`)
 
 ---
 
@@ -349,6 +349,6 @@ See [CLAUDE.md](CLAUDE.md) for detailed instructions on generating release notes
 
 **🔄 Last Updated**: October 21, 2025
 **📊 Current Version**: v1.0.6
-**👥 Maintained By**: ResearcherRAG Development Team
+**👥 Maintained By**: ScholarRAG Development Team
 
 🤖 _This README is generated and maintained with [Claude Code](https://claude.com/claude-code)_

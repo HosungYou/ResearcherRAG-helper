@@ -14,7 +14,7 @@ export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'Hi! I\'m the ResearcherRAG Helper chatbot. I can help you with:\n\n- Understanding the 5-stage workflow\n- Query design and search strategies\n- PRISMA configuration\n- RAG system setup\n- Troubleshooting common issues\n\nWhat would you like to know?',
+      content: 'Hi! I\'m the ScholarRAG Helper chatbot. I can help you with:\n\n- Understanding the 5-stage workflow\n- Query design and search strategies\n- PRISMA configuration\n- RAG system setup\n- Troubleshooting common issues\n\nWhat would you like to know?',
       timestamp: new Date()
     }
   ])
@@ -92,14 +92,14 @@ export default function ChatPage() {
         <div className="container mx-auto px-4 py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <BookOpen className="w-8 h-8 text-primary-600" />
-            <h1 className="text-2xl font-bold">ResearcherRAG Helper</h1>
+            <h1 className="text-2xl font-bold">ScholarRAG Helper</h1>
           </Link>
           <nav className="flex gap-6">
             <Link href="/" className="hover:text-primary-600">Home</Link>
             <Link href="/guide" className="hover:text-primary-600">Guide</Link>
             <Link href="/chat" className="text-primary-600 font-semibold">Chatbot</Link>
             <Link href="/resources" className="hover:text-primary-600">Resources</Link>
-            <a href="https://github.com/HosungYou/ResearcherRAG-helper" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/HosungYou/ScholarRAG-helper" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5" />
             </a>
           </nav>
@@ -113,7 +113,7 @@ export default function ChatPage() {
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold mb-4">AI-Powered Chatbot</h2>
             <p className="text-gray-600 text-lg">
-              Get instant answers about ResearcherRAG with RAG-powered assistance
+              Get instant answers about ScholarRAG with RAG-powered assistance
             </p>
           </div>
 
@@ -162,7 +162,7 @@ export default function ChatPage() {
                   value={input}
                   onChange={e => setInput(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask about ResearcherRAG workflow, PRISMA, queries, troubleshooting..."
+                  placeholder="Ask about ScholarRAG workflow, PRISMA, queries, troubleshooting..."
                   className="flex-1 resize-none rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
                   rows={3}
                   disabled={isLoading}

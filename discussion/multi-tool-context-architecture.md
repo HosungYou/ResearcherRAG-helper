@@ -158,7 +158,7 @@ python -c "import pandas as pd; assert len(pd.read_csv('data.csv')) > 0"
 ### 2.2 Multi-Tool Support Request
 
 **User Request** (2025-10-14):
-> "그런데, 실제 /Volumes/External SSD/Projects/Research/ResearcherRAG/CLAUDE.md 만으로도 맥락을 인식하고 사용자의 프롬프트에 따라 컨트롤할 수 있니?"
+> "그런데, 실제 /Volumes/External SSD/Projects/Research/ScholarRAG/CLAUDE.md 만으로도 맥락을 인식하고 사용자의 프롬프트에 따라 컨트롤할 수 있니?"
 
 **Translation**: Can a single CLAUDE.md recognize context and control based on user prompts?
 
@@ -196,7 +196,7 @@ python -c "import pandas as pd; assert len(pd.read_csv('data.csv')) > 0"
 1. ✅ Hierarchical structure (system-level + project-specific)
 2. ✅ Deep contextual understanding for each project
 3. ✅ Support both Claude Code and OpenAI Codex
-4. ✅ Maintain shared state (`.researcherrag/context.json`)
+4. ✅ Maintain shared state (`.scholarag/context.json`)
 5. ✅ Include expected results and domain terminology
 6. ✅ Programmatic validation for Codex
 
@@ -219,13 +219,13 @@ python -c "import pandas as pd; assert len(pd.read_csv('data.csv')) > 0"
 **Decision**: Implement **parallel hierarchical system**
 
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── CLAUDE.md              # System-level (Claude Code)
 ├── AGENTS.md              # System-level (Codex)
 └── examples/ai-chatbots-language-learning/
     ├── CLAUDE.md          # Project-specific (Claude Code)
     ├── AGENTS.md          # Project-specific (Codex)
-    └── .researcherrag/
+    └── .scholarag/
         └── context.json   # Shared runtime state
 ```
 
@@ -251,7 +251,7 @@ Both tools follow the same precedence pattern:
               ↓ overrides
 ┌─────────────────────────────────────┐
 │  System-Level Context Files         │
-│  (ResearcherRAG/CLAUDE.md or        │
+│  (ScholarRAG/CLAUDE.md or        │
 │   AGENTS.md)                        │
 └─────────────────────────────────────┘
               ↓ overrides
@@ -276,14 +276,14 @@ Read System-Level File
     └─ AGENTS.md (for Codex)
     ↓
 Check Shared State
-    └─ .researcherrag/context.json
+    └─ .scholarag/context.json
     ↓
 Execute Task with Full Context
 ```
 
 ### 4.3 Shared State Management
 
-**File**: `.researcherrag/context.json`
+**File**: `.scholarag/context.json`
 
 **Purpose**: Runtime state shared between both tools
 
@@ -308,9 +308,9 @@ Execute Task with Full Context
 
 ## 5. File-by-File Implementation
 
-### 5.1 System-Level: ResearcherRAG/CLAUDE.md
+### 5.1 System-Level: ScholarRAG/CLAUDE.md
 
-**Purpose**: General workflow guidance for Claude Code across all ResearcherRAG projects
+**Purpose**: General workflow guidance for Claude Code across all ScholarRAG projects
 
 **Key Sections Implemented**:
 
@@ -318,16 +318,16 @@ Execute Task with Full Context
 ```markdown
 ## 📁 Hierarchical Context System
 
-ResearcherRAG uses **multi-level CLAUDE.md files** for optimal context:
+ScholarRAG uses **multi-level CLAUDE.md files** for optimal context:
 
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── CLAUDE.md (THIS FILE - system-level behavior)
 ├── AGENTS.md (for OpenAI Codex compatibility)
 └── examples/ai-chatbots-language-learning/
     ├── CLAUDE.md (project-specific context)
     ├── AGENTS.md (project-specific Codex instructions)
-    └── .researcherrag/context.json (runtime state)
+    └── .scholarag/context.json (runtime state)
 ```
 
 **Precedence**: Project-specific > System-level > Default behavior
@@ -346,7 +346,7 @@ ResearcherRAG/
 
 **ALWAYS check context first**:
 ```bash
-cat .researcherrag/context.json
+cat .scholarag/context.json
 ```
 
 **Example**: If `"current_stage": 2`, user wants query refinement (Stage 2).
@@ -397,9 +397,9 @@ assert len(query) > 10, "Query too short"
 
 ---
 
-### 5.2 System-Level: ResearcherRAG/AGENTS.md
+### 5.2 System-Level: ScholarRAG/AGENTS.md
 
-**Purpose**: General workflow validation for Codex across all ResearcherRAG projects
+**Purpose**: General workflow validation for Codex across all ScholarRAG projects
 
 **Key Sections Implemented**:
 
@@ -445,7 +445,7 @@ assert os.path.exists('data/01_identification/deduplicated.csv'), \
 
 ### Python Environment
 ```bash
-cd /path/to/ResearcherRAG
+cd /path/to/ScholarRAG
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -508,10 +508,10 @@ fi
 ```markdown
 ## 📍 Current Project Status
 
-**ALWAYS check `.researcherrag/context.json` FIRST**:
+**ALWAYS check `.scholarag/context.json` FIRST**:
 
 ```bash
-cat .researcherrag/context.json
+cat .scholarag/context.json
 ```
 
 **Expected content**:
@@ -753,7 +753,7 @@ print(f'   - {speaking_mentions}/{len(df)} mention speaking skills')
 ### Preparation: Environment Setup
 
 ```bash
-cd /Volumes/External\ SSD/Projects/Research/ResearcherRAG/examples/ai-chatbots-language-learning
+cd /Volumes/External\ SSD/Projects/Research/ScholarRAG/examples/ai-chatbots-language-learning
 
 # Activate environment (if not already active)
 source ../../venv/bin/activate
@@ -768,7 +768,7 @@ python -c "import os; assert os.getenv('OPENAI_API_KEY'), 'Set OPENAI_API_KEY'"
 
 **Command:**
 ```bash
-cd ../../  # From ResearcherRAG root
+cd ../../  # From ScholarRAG root
 python scripts/01_fetch_papers.py \
   --project examples/ai-chatbots-language-learning \
   --query "chatbot language learning speaking"
@@ -925,7 +925,7 @@ References:
 ### Quick Actions
 
 #### "Continue my research"
-1. Check `.researcherrag/context.json` for current stage
+1. Check `.scholarag/context.json` for current stage
 2. Read project-specific prompt (e.g., `prompts/03_screening.md`)
 3. Execute stage script if ready
 4. Update context.json with progress
@@ -1003,7 +1003,7 @@ assert duplicates == 0, f'Found {duplicates} duplicate papers'
 ### 7.1 Implementation Summary
 
 **What We Built**:
-1. **System-level context** (ResearcherRAG/CLAUDE.md + AGENTS.md)
+1. **System-level context** (ScholarRAG/CLAUDE.md + AGENTS.md)
 2. **Project-specific context** (examples/ai-chatbots-language-learning/)
 3. **Hierarchical precedence** (project > system > default)
 4. **Multi-tool support** (Claude Code + OpenAI Codex)
@@ -1021,7 +1021,7 @@ assert duplicates == 0, f'Found {duplicates} duplicate papers'
 
 1. **Shared State Architecture**:
    - Official docs don't mention cross-tool state sharing
-   - We implemented `.researcherrag/context.json` for both tools
+   - We implemented `.scholarag/context.json` for both tools
    - Enables tool-agnostic workflow
 
 2. **Domain-Specific Validation**:
@@ -1040,8 +1040,8 @@ assert duplicates == 0, f'Found {duplicates} duplicate papers'
 
 **Committed in v1.0.4**:
 
-1. `ResearcherRAG/CLAUDE.md` (updated, 250+ lines)
-2. `ResearcherRAG/AGENTS.md` (new, 180+ lines)
+1. `ScholarRAG/CLAUDE.md` (updated, 250+ lines)
+2. `ScholarRAG/AGENTS.md` (new, 180+ lines)
 3. `examples/ai-chatbots-language-learning/CLAUDE.md` (new, 380+ lines)
 4. `examples/ai-chatbots-language-learning/AGENTS.md` (new, 420+ lines)
 
@@ -1055,7 +1055,7 @@ assert duplicates == 0, f'Found {duplicates} duplicate papers'
 
 ```bash
 # Create new project
-mkdir -p examples/new-project/{data,.researcherrag}
+mkdir -p examples/new-project/{data,.scholarag}
 
 # Copy template CLAUDE.md and AGENTS.md
 cp examples/ai-chatbots-language-learning/CLAUDE.md \
@@ -1094,8 +1094,8 @@ nano examples/new-project/AGENTS.md
 ### Implementation Files
 
 1. **System-level context**:
-   - [ResearcherRAG/CLAUDE.md](../CLAUDE.md)
-   - [ResearcherRAG/AGENTS.md](../AGENTS.md)
+   - [ScholarRAG/CLAUDE.md](../CLAUDE.md)
+   - [ScholarRAG/AGENTS.md](../AGENTS.md)
 
 2. **Project-specific context**:
    - [examples/ai-chatbots-language-learning/CLAUDE.md](../examples/ai-chatbots-language-learning/CLAUDE.md)
@@ -1108,5 +1108,5 @@ nano examples/new-project/AGENTS.md
 
 **Document Version**: 1.0
 **Last Updated**: 2025-10-14
-**Author**: ResearcherRAG Development Team
+**Author**: ScholarRAG Development Team
 **Review Status**: Complete

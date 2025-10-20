@@ -1,6 +1,6 @@
-# ResearcherRAG Helper
+# ScholarRAG Helper
 
-**Interactive Documentation and Chatbot Platform for ResearcherRAG**
+**Interactive Documentation and Chatbot Platform for ScholarRAG**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
@@ -8,16 +8,16 @@
 
 ---
 
-## 🎯 What is ResearcherRAG Helper?
+## 🎯 What is ScholarRAG Helper?
 
-ResearcherRAG Helper is the **companion platform** for [ResearcherRAG](https://github.com/HosungYou/ResearcherRAG), providing:
+ScholarRAG Helper is the **companion platform** for [ScholarRAG](https://github.com/HosungYou/ScholarRAG), providing:
 
 - 📚 **Bookdown-style Documentation Site**: Interactive guides with step-by-step tutorials
 - 🤖 **AI-Powered Chatbot**: RAG-based Q&A for troubleshooting and learning
 - 📥 **Resource Downloads**: Templates, examples, and workshop materials
 - 🎥 **Video Tutorials**: Visual walkthroughs of the 5-stage workflow
 
-This is a **demonstration and education platform**, not a production RAG system. For the actual RAG implementation, see the [main ResearcherRAG repository](https://github.com/HosungYou/ResearcherRAG).
+This is a **demonstration and education platform**, not a production RAG system. For the actual RAG implementation, see the [main ScholarRAG repository](https://github.com/HosungYou/ScholarRAG).
 
 ---
 
@@ -25,7 +25,7 @@ This is a **demonstration and education platform**, not a production RAG system.
 
 ### Visit the Live Site
 
-👉 **[researcher-rag-helper.vercel.app](https://researcher-rag-helper.vercel.app)**
+👉 **[scholar-rag-helper.vercel.app](https://scholar-rag-helper.vercel.app)**
 
 🎓 Interactive documentation with copy-paste code examples, visual workflows, and AI chatbot support!
 
@@ -33,8 +33,8 @@ This is a **demonstration and education platform**, not a production RAG system.
 
 ```bash
 # 1. Clone repository with submodules
-git clone --recurse-submodules https://github.com/HosungYou/ResearcherRAG-helper.git
-cd ResearcherRAG-helper
+git clone --recurse-submodules https://github.com/HosungYou/ScholarRAG-helper.git
+cd ScholarRAG-helper
 
 # If you already cloned without --recurse-submodules:
 git submodule update --init --recursive
@@ -66,7 +66,7 @@ Bookdown-inspired design with:
 - **Responsive Design**: Works on desktop, tablet, and mobile
 
 **Chapters**:
-1. Introduction to ResearcherRAG
+1. Introduction to ScholarRAG
 2. 5-Stage Workflow Deep Dive
 3. PRISMA Configuration Guide
 4. RAG System Design Patterns
@@ -124,7 +124,7 @@ Download ready-to-use materials:
 ## 📂 Project Structure
 
 ```
-ResearcherRAG-helper/
+ScholarRAG-helper/
 ├── frontend/                      # Next.js application
 │   ├── app/                       # App Router pages
 │   │   ├── page.tsx              # Home page
@@ -143,13 +143,13 @@ ResearcherRAG-helper/
 │   └── public/                   # Static assets
 │
 ├── submodules/                    # Git submodules
-│   └── researcherRAG/            # Main ResearcherRAG repository
+│   └── researcherRAG/            # Main ScholarRAG repository
 │       ├── scripts/              # 7-stage Python scripts
 │       ├── prompts/              # Stage prompts (01-07)
-│       ├── researcherrag_cli.py  # CLI tool
+│       ├── scholarag_cli.py  # CLI tool
 │       └── requirements.txt      # Python dependencies
 │
-├── researcherrag_cli.py          # Symlink → submodules/researcherRAG/
+├── scholarag_cli.py          # Symlink → submodules/researcherRAG/
 │
 ├── chatbot/                       # Chatbot backend (Python)
 │   ├── api/                      # FastAPI (if separate deployment)
@@ -230,13 +230,13 @@ Or push to GitHub and enable Vercel auto-deployment.
 
 | Chapter | Topic | Web | Source |
 |---------|-------|-----|--------|
-| 1 | Introduction to ResearcherRAG | [View](https://researcher-rag-helper.vercel.app/guide/introduction) | [MDX](./docs/chapters/01-introduction.mdx) |
-| 2 | 5-Stage Workflow Deep Dive | [View](https://researcher-rag-helper.vercel.app/guide/workflow) | [MDX](./docs/chapters/02-workflow.mdx) |
-| 3 | PRISMA Configuration Guide | [View](https://researcher-rag-helper.vercel.app/guide/prisma) | [MDX](./docs/chapters/03-prisma.mdx) |
-| 4 | RAG System Design Patterns | [View](https://researcher-rag-helper.vercel.app/guide/rag-design) | [MDX](./docs/chapters/04-rag-design.mdx) |
-| 5 | Case Studies & Examples | [View](https://researcher-rag-helper.vercel.app/guide/case-studies) | [MDX](./docs/chapters/05-case-studies.mdx) |
-| 6 | Troubleshooting & FAQ | [View](https://researcher-rag-helper.vercel.app/guide/troubleshooting) | [MDX](./docs/chapters/06-troubleshooting.mdx) |
-| 7 | Advanced Topics | [View](https://researcher-rag-helper.vercel.app/guide/advanced) | [MDX](./docs/chapters/07-advanced.mdx) |
+| 1 | Introduction to ScholarRAG | [View](https://scholar-rag-helper.vercel.app/guide/introduction) | [MDX](./docs/chapters/01-introduction.mdx) |
+| 2 | 5-Stage Workflow Deep Dive | [View](https://scholar-rag-helper.vercel.app/guide/workflow) | [MDX](./docs/chapters/02-workflow.mdx) |
+| 3 | PRISMA Configuration Guide | [View](https://scholar-rag-helper.vercel.app/guide/prisma) | [MDX](./docs/chapters/03-prisma.mdx) |
+| 4 | RAG System Design Patterns | [View](https://scholar-rag-helper.vercel.app/guide/rag-design) | [MDX](./docs/chapters/04-rag-design.mdx) |
+| 5 | Case Studies & Examples | [View](https://scholar-rag-helper.vercel.app/guide/case-studies) | [MDX](./docs/chapters/05-case-studies.mdx) |
+| 6 | Troubleshooting & FAQ | [View](https://scholar-rag-helper.vercel.app/guide/troubleshooting) | [MDX](./docs/chapters/06-troubleshooting.mdx) |
+| 7 | Advanced Topics | [View](https://scholar-rag-helper.vercel.app/guide/advanced) | [MDX](./docs/chapters/07-advanced.mdx) |
 
 **New Features** (Phase 2):
 - ✅ **66 Code Blocks** with copy-to-clipboard buttons
@@ -280,7 +280,7 @@ We welcome contributions!
 
 ### Ways to Contribute
 - **Improve Docs**: Fix typos, clarify instructions
-- **Add Examples**: Share your ResearcherRAG projects
+- **Add Examples**: Share your ScholarRAG projects
 - **Report Bugs**: Open GitHub issues
 - **Suggest Features**: Request new chapters or chatbot improvements
 
@@ -296,15 +296,15 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## ���� Related Projects
 
-- **[ResearcherRAG](https://github.com/HosungYou/ResearcherRAG)**: Main repository (prompts, templates, examples)
+- **[ScholarRAG](https://github.com/HosungYou/ScholarRAG)**: Main repository (prompts, templates, examples)
 - **[Claude Code](https://claude.com/claude-code)**: Conversational AI assistant for VS Code
 
 ---
 
 ## 📞 Contact
 
-- **GitHub Issues**: https://github.com/HosungYou/ResearcherRAG-helper/issues
-- **Main Repository**: https://github.com/HosungYou/ResearcherRAG
+- **GitHub Issues**: https://github.com/HosungYou/ScholarRAG-helper/issues
+- **Main Repository**: https://github.com/HosungYou/ScholarRAG
 
 ---
 

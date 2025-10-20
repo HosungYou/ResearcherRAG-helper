@@ -15,7 +15,7 @@
         └── pubmed_results.csv  (450 papers)
 
 웹사이트 (Vercel):
-https://researcher-rag-helper.vercel.app/dashboard
+https://scholar-rag-helper.vercel.app/dashboard
 └── ??? 이 CSV 파일을 어떻게 읽지?
 ```
 
@@ -30,7 +30,7 @@ https://researcher-rag-helper.vercel.app/dashboard
 **구조**:
 ```bash
 # 터미널에서 실행
-researcherrag dashboard
+scholarag dashboard
 
 # 출력:
 ┌─────────────────────────────────────────────────────────────┐
@@ -107,7 +107,7 @@ def show_dashboard(project_path: str):
 **구조**:
 ```bash
 # 터미널에서 실행
-researcherrag serve --port 8080
+scholarag serve --port 8080
 
 # 브라우저에서 접속:
 http://localhost:8080/dashboard
@@ -116,7 +116,7 @@ http://localhost:8080/dashboard
 **웹 UI 예시**:
 ```
 ┌──────────────────────────────────────────────────────────┐
-│  ResearcherRAG Dashboard - Running on localhost:8080     │
+│  ScholarRAG Dashboard - Running on localhost:8080     │
 └──────────────────────────────────────────────────────────┘
 
 Select Project:
@@ -192,7 +192,7 @@ projects/2025-01-12_AI-Healthcare/
 └── summary.md
 
 Website (Vercel):
-https://researcher-rag-helper.vercel.app/dashboard?repo=HosungYou/researcherRAG
+https://scholar-rag-helper.vercel.app/dashboard?repo=HosungYou/researcherRAG
 └── GitHub API로 status.json 읽어서 표시
 ```
 
@@ -274,7 +274,7 @@ export default async function DashboardPage({ searchParams }) {
 ```
 연구자 로컬:
 1. PRISMA 완료
-2. researcherrag sync --cloud  ← 클라우드에 업로드
+2. scholarag sync --cloud  ← 클라우드에 업로드
 
 Cloud Storage (S3, Google Drive, etc):
 /users/researcher123/
@@ -284,7 +284,7 @@ Cloud Storage (S3, Google Drive, etc):
         └── prisma_flowchart.png
 
 Website:
-https://researcher-rag-helper.vercel.app/dashboard
+https://scholar-rag-helper.vercel.app/dashboard
 └── 로그인 후 자신의 프로젝트만 표시
 ```
 
@@ -309,7 +309,7 @@ https://researcher-rag-helper.vercel.app/dashboard
 #### Phase 1 (지금 당장): Option 1 - CLI 대시보드
 ```bash
 # 간단하게 시작
-researcherrag status
+scholarag status
 
 # 출력:
 ✅ Stage 1: 612 papers identified
@@ -325,7 +325,7 @@ researcherrag status
 
 #### Phase 2 (1-2주 후): Option 2 - 로컬 웹서버
 ```bash
-researcherrag serve
+scholarag serve
 
 # 브라우저에서:
 http://localhost:8080
@@ -339,10 +339,10 @@ http://localhost:8080
 #### Phase 3 (1-2개월 후, optional): Option 3 - GitHub 연동
 ```
 # 공개 프로젝트만 선택적으로 공유
-researcherrag publish --github --public
+scholarag publish --github --public
 
 # URL 생성:
-https://researcher-rag-helper.vercel.app/showcase/HosungYou/researcherRAG/2025-01-12_AI-Healthcare
+https://scholar-rag-helper.vercel.app/showcase/HosungYou/researcherRAG/2025-01-12_AI-Healthcare
 ```
 
 **이유**:
@@ -368,22 +368,22 @@ researcherRAG/
 **CLI 명령어 설계**:
 ```bash
 # 기본 상태 확인
-researcherrag status
+scholarag status
 
 # 특정 프로젝트
-researcherrag status --project 2025-01-12_AI-Healthcare
+scholarag status --project 2025-01-12_AI-Healthcare
 
 # 자세한 정보
-researcherrag status --verbose
+scholarag status --verbose
 
 # JSON 출력 (프로그래밍 용도)
-researcherrag status --json
+scholarag status --json
 ```
 
 **예시 출력**:
 ```
 ╔════════════════════════════════════════════════════════════╗
-║  ResearcherRAG Project Status                              ║
+║  ScholarRAG Project Status                              ║
 ╚════════════════════════════════════════════════════════════╝
 
 📂 Project: AI-Healthcare-Adoption
@@ -419,14 +419,14 @@ researcherrag status --json
 └─ outputs/prisma_flowchart.png ✅
 
 🔗 Quick Actions:
-• View PRISMA chart: researcherrag view-prisma
-• Open project folder: researcherrag open
-• Start RAG system: researcherrag rag start
-• Generate report: researcherrag report
+• View PRISMA chart: scholarag view-prisma
+• Open project folder: scholarag open
+• Start RAG system: scholarag rag start
+• Generate report: scholarag report
 
 💡 Next Step:
   Complete Stage 3 full-text review (122 papers remaining)
-  Then run: researcherrag rag setup
+  Then run: scholarag rag setup
 ```
 
 ### 2. 웹사이트에 "How to Check Your Progress" 섹션 추가
@@ -439,7 +439,7 @@ After each stage, you can check your progress:
 
 ### Method 1: CLI Dashboard (Recommended)
 ```bash
-researcherrag status
+scholarag status
 ```
 
 This will show you:

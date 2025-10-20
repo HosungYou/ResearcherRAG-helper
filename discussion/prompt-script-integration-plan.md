@@ -71,7 +71,7 @@ Currently, there's a **disconnection**:
 
 ```
 ┌─────────────────────────────────────────────┐
-│        ResearcherRAG Prompt System          │
+│        ScholarRAG Prompt System          │
 │  (Stage-aware, Protocol-enforcing)          │
 └──────────────────┬──────────────────────────┘
                    │
@@ -91,7 +91,7 @@ Currently, there's a **disconnection**:
 │  ├── Tracks current stage                   │
 │  ├── Validates researcher input             │
 │  ├── Generates config.yaml                  │
-│  └── ✨ Auto-runs: researcherrag init       │
+│  └── ✨ Auto-runs: scholarag init       │
 └──────────────────┬──────────────────────────┘
                    │ Seamless transition
                    ▼
@@ -129,7 +129,7 @@ previous_stage: null
 next_stage: 2
 expected_duration: "15 minutes"
 cli_commands:
-  - command: "researcherrag init"
+  - command: "scholarag init"
     when: "after config.yaml generated"
     auto_execute: true
 scripts_triggered:
@@ -192,7 +192,7 @@ Expected conversation pattern:
 3. USER answers (2-3 exchanges)
 4. CLAUDE generates config.yaml draft
 5. USER approves/modifies
-6. CLAUDE runs: `researcherrag init --config config.yaml`
+6. CLAUDE runs: `scholarag init --config config.yaml`
 7. CLAUDE confirms: "✅ Stage 1 complete. Ready for Stage 2?"
 
 Divergence handling:
@@ -239,7 +239,7 @@ Before moving to Stage 2, ensure you have:
 Update `/Volumes/External SSD/Projects/CLAUDE.md`:
 
 ```markdown
-## ResearcherRAG Stage-Based Workflow
+## ScholarRAG Stage-Based Workflow
 
 ### Stage Detection
 
@@ -260,7 +260,7 @@ When a user pastes a prompt from `prompts/*.md`, Claude Code should:
    ```python
    # After config.yaml generated in Stage 1
    if stage == 1 and config_yaml_exists:
-       run_command("researcherrag init")
+       run_command("scholarag init")
 
    # After queries designed in Stage 2
    if stage == 2 and queries_approved:
@@ -336,7 +336,7 @@ CLAUDE: Great! For Stage 2, please paste the prompt from:
 
 #### Option B: Custom VSCode Extension (Advanced, Future)
 
-Create `researcherrag-vscode` extension:
+Create `scholarag-vscode` extension:
 
 **Features**:
 1. **Stage indicator** in status bar
@@ -362,15 +362,15 @@ python scripts/01_fetch_papers.py --project my-project --query "AI chatbot"
 Enhanced:
 ```bash
 # Simpler: auto-detects project from context
-researcherrag fetch-papers
+scholarag fetch-papers
 
 # Or with conversation context
-researcherrag run-stage 2
+scholarag run-stage 2
 ```
 
 **Enhancement 2: Conversation Context File**
 
-Create `.researcherrag/context.json`:
+Create `.scholarag/context.json`:
 ```json
 {
   "current_stage": 2,
@@ -411,10 +411,10 @@ Scripts read this to:
 **New Documentation Structure**:
 
 ```
-ResearcherRAG Documentation
+ScholarRAG Documentation
 
 1. Introduction
-   ├── What is ResearcherRAG?
+   ├── What is ScholarRAG?
    └── Two Ways to Use It ← NEW
        ├── Option A: Prompt-Driven (Recommended for Researchers)
        └── Option B: Script-Driven (For Developers)
@@ -498,14 +498,14 @@ ResearcherRAG Documentation
   - [ ] Add conversation state tracking
 
 - [ ] **Task 2.2**: Create conversation context system
-  - [ ] Design `.researcherrag/context.json` schema
+  - [ ] Design `.scholarag/context.json` schema
   - [ ] Implement context writer in CLI
   - [ ] Implement context reader in scripts
 
 - [ ] **Task 2.3**: Add stage awareness to CLI
-  - [ ] `researcherrag status` (show current stage)
-  - [ ] `researcherrag next` (show next prompt)
-  - [ ] `researcherrag run-stage N` (execute stage)
+  - [ ] `scholarag status` (show current stage)
+  - [ ] `scholarag next` (show next prompt)
+  - [ ] `scholarag run-stage N` (execute stage)
 
 - [ ] **Task 2.4**: Test conversation flows
   - [ ] Happy path (no divergence)
@@ -523,7 +523,7 @@ ResearcherRAG Documentation
 ### Phase 3: Script Enhancement (Week 5-6)
 
 - [ ] **Task 3.1**: Add context awareness to scripts
-  - [ ] Read `.researcherrag/context.json`
+  - [ ] Read `.scholarag/context.json`
   - [ ] Auto-detect current stage
   - [ ] Skip completed steps
   - [ ] Update context after execution
@@ -539,9 +539,9 @@ ResearcherRAG Documentation
   - [ ] Suggest corrections for common errors
 
 - [ ] **Task 3.4**: Create unified CLI wrapper
-  - [ ] `researcherrag run-stage 1` → init project
-  - [ ] `researcherrag run-stage 2` → fetch papers
-  - [ ] `researcherrag run-stage 3` → screen papers
+  - [ ] `scholarag run-stage 1` → init project
+  - [ ] `scholarag run-stage 2` → fetch papers
+  - [ ] `scholarag run-stage 3` → screen papers
   - [ ] Auto-detect project context
 
 **Deliverables**:
@@ -593,10 +593,10 @@ ResearcherRAG Documentation
 
 **Step 1: Start Project**
 
-Researcher visits: https://researcherrag.vercel.app
+Researcher visits: https://scholarag.vercel.app
 
 ```
-Welcome to ResearcherRAG!
+Welcome to ScholarRAG!
 
 Two ways to use:
 ┌─────────────────────────────────┐
@@ -688,7 +688,7 @@ USER: Yes
 
 CLAUDE: ✅ Creating your project...
 
-        [Runs: researcherrag init]
+        [Runs: scholarag init]
 
         ✅ Stage 1 Complete!
 
@@ -889,7 +889,7 @@ Most documentation:
 - Tutorial-style → One-way communication
 - Static → Can't adapt to user
 
-ResearcherRAG (after implementation):
+ScholarRAG (after implementation):
 - **Conversational** → Two-way with Claude
 - **Adaptive** → Detects divergence, guides back
 - **Automated** → Scripts execute automatically

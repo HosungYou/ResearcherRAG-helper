@@ -11,7 +11,7 @@ export default function ArchitecturePage() {
         <div className="callout callout-info mb-8">
           <p className="font-semibold mb-2">🏗️ For Developers & Code Reviewers</p>
           <p className="mb-0">
-            This page explains how all files in ResearcherRAG connect and communicate.
+            This page explains how all files in ScholarRAG connect and communicate.
             Essential reading for contributors, code reviewers, and AI assistants.
           </p>
         </div>
@@ -26,7 +26,7 @@ export default function ArchitecturePage() {
     ↓
 prompts/*.md (Stage 1-7 conversation flows)
     ↓
-researcherrag_cli.py (Orchestration & initialization)
+scholarag_cli.py (Orchestration & initialization)
     ↓
 config.yaml (Project configuration)
     ↓
@@ -39,13 +39,13 @@ outputs/ (Final RAG system + PRISMA diagram)`}
           </div>
 
           <p>
-            ResearcherRAG follows a <strong>layered architecture</strong> where each layer has a specific responsibility:
+            ScholarRAG follows a <strong>layered architecture</strong> where each layer has a specific responsibility:
           </p>
 
           <ul>
             <li><strong>Conversation Layer</strong>: prompts/*.md guide users through decisions</li>
             <li><strong>Configuration Layer</strong>: config.yaml stores all project settings</li>
-            <li><strong>Orchestration Layer</strong>: researcherrag_cli.py coordinates script execution</li>
+            <li><strong>Orchestration Layer</strong>: scholarag_cli.py coordinates script execution</li>
             <li><strong>Execution Layer</strong>: scripts/*.py process data</li>
             <li><strong>Data Layer</strong>: data/ folders store intermediate results</li>
           </ul>
@@ -68,12 +68,12 @@ outputs/ (Final RAG system + PRISMA diagram)`}
 
     subgraph "Configuration Layer"
         CONF[config.yaml]
-        CTX[.researcherrag/context.json]
+        CTX[.scholarag/context.json]
         TMPL[templates/config_base.yaml]
     end
 
     subgraph "Orchestration Layer"
-        CLI[researcherrag_cli.py]
+        CLI[scholarag_cli.py]
     end
 
     subgraph "Execution Layer"

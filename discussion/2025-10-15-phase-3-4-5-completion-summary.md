@@ -47,10 +47,10 @@ Update landing page and navigation to reflect 7-stage workflow consistently.
 ## Phase 4: Prompt Template Files Update
 
 ### Objective
-Update prompt markdown files in main ResearcherRAG repository to use correct databases and ensure metadata matches 7-stage structure.
+Update prompt markdown files in main ScholarRAG repository to use correct databases and ensure metadata matches 7-stage structure.
 
 ### Repository
-**Location**: `/Volumes/External SSD/Projects/Research/ResearcherRAG/prompts/`
+**Location**: `/Volumes/External SSD/Projects/Research/ScholarRAG/prompts/`
 
 ### Files Reviewed
 7 prompt files already existed (01-07), confirming 7-stage structure:
@@ -112,8 +112,8 @@ Update prompt markdown files in main ResearcherRAG repository to use correct dat
 
 **No changes needed** - metadata was already correct!
 
-### Commit (ResearcherRAG repo)
-- `e0ca8d3` - "Phase 4: Update query strategy prompt to use ResearcherRAG databases"
+### Commit (ScholarRAG repo)
+- `e0ca8d3` - "Phase 4: Update query strategy prompt to use ScholarRAG databases"
 
 ### Result
 ✅ **Complete**: Prompt templates updated, metadata verified
@@ -263,10 +263,10 @@ This example is useful for:
 - ✅ **PhD students**: Dissertation literature review chapter
 - ✅ **Researchers**: Journal systematic review submission
 - ✅ **Educators**: Teaching systematic review methodology
-- ✅ **Developers**: Understanding ResearcherRAG workflow
+- ✅ **Developers**: Understanding ScholarRAG workflow
 - ✅ **New users**: Template to copy and modify
 
-### Commit (ResearcherRAG-helper repo)
+### Commit (ScholarRAG-helper repo)
 - `a155343` - "Phase 5: Add complete example project (chatbot-language-learning)"
 
 ### Result
@@ -299,7 +299,7 @@ This example is useful for:
 
 ### Commits: 3
 1. Phase 3: `9c45e84` (homepage)
-2. Phase 4: `e0ca8d3` (prompts - ResearcherRAG repo)
+2. Phase 4: `e0ca8d3` (prompts - ScholarRAG repo)
 3. Phase 5: `a155343` (examples)
 
 ### Lines Added: ~1,100+
@@ -510,7 +510,7 @@ Before marking Phases 3-5 as complete:
 
 ## Conclusion
 
-Phases 3, 4, and 5 successfully completed the comprehensive guide restructuring initiative. Combined with Phases 1-2, the documentation now presents a unified, coherent, and practical guide to using ResearcherRAG.
+Phases 3, 4, and 5 successfully completed the comprehensive guide restructuring initiative. Combined with Phases 1-2, the documentation now presents a unified, coherent, and practical guide to using ScholarRAG.
 
 **Key Achievements**:
 - ✅ 7-stage workflow consistently presented everywhere

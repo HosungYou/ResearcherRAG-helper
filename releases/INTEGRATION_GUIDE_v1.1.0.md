@@ -1,6 +1,6 @@
-# Integration Guide: ResearcherRAG v1.1.0
+# Integration Guide: ScholarRAG v1.1.0
 
-This guide explains how to integrate the three new v1.1.0 features into your ResearcherRAG workflow.
+This guide explains how to integrate the three new v1.1.0 features into your ScholarRAG workflow.
 
 ---
 

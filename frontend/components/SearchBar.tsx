@@ -17,13 +17,13 @@ const searchIndex: SearchResult[] = [
   {
     title: 'Introduction',
     href: '/guide/01-introduction',
-    excerpt: 'Learn about ResearcherRAG, PRISMA 2020, and RAG technology for systematic literature reviews',
+    excerpt: 'Learn about ScholarRAG, PRISMA 2020, and RAG technology for systematic literature reviews',
     chapter: 'Chapter 1'
   },
   {
     title: 'Getting Started',
     href: '/guide/02-getting-started',
-    excerpt: 'Installation guide, setup instructions, and first steps with ResearcherRAG',
+    excerpt: 'Installation guide, setup instructions, and first steps with ScholarRAG',
     chapter: 'Chapter 2'
   },
   {
@@ -75,7 +75,7 @@ const searchIndex: SearchResult[] = [
   {
     title: 'Installation',
     href: '/guide/02-getting-started#installation',
-    excerpt: 'Install ResearcherRAG and dependencies'
+    excerpt: 'Install ScholarRAG and dependencies'
   },
   {
     title: 'Configuration',
@@ -85,7 +85,7 @@ const searchIndex: SearchResult[] = [
   {
     title: 'Troubleshooting',
     href: '/guide/05-advanced-topics#troubleshooting',
-    excerpt: 'Common issues and solutions for ResearcherRAG'
+    excerpt: 'Common issues and solutions for ScholarRAG'
   },
   // Codebook - Main pages
   {
@@ -140,7 +140,7 @@ const searchIndex: SearchResult[] = [
   {
     title: 'File Formats',
     href: '/codebook/file-formats',
-    excerpt: 'Understanding YAML, JSON, Markdown, Python, and .env files used in ResearcherRAG'
+    excerpt: 'Understanding YAML, JSON, Markdown, Python, and .env files used in ScholarRAG'
   },
   {
     title: 'YAML Files (.yaml)',
@@ -172,12 +172,12 @@ const searchIndex: SearchResult[] = [
   {
     title: 'Tools & Technologies',
     href: '/codebook/tools',
-    excerpt: 'Why ResearcherRAG uses ChromaDB, Claude AI, OpenAI, GitHub, Git, and Python libraries'
+    excerpt: 'Why ScholarRAG uses ChromaDB, Claude AI, OpenAI, GitHub, Git, and Python libraries'
   },
   {
     title: 'ChromaDB',
     href: '/codebook/tools',
-    excerpt: 'Vector database for ResearcherRAG: easy to use, runs locally, Python-friendly, fast semantic search'
+    excerpt: 'Vector database for ScholarRAG: easy to use, runs locally, Python-friendly, fast semantic search'
   },
   {
     title: 'Claude AI',
@@ -202,7 +202,7 @@ const searchIndex: SearchResult[] = [
   {
     title: 'Python Libraries',
     href: '/codebook/tools',
-    excerpt: 'Packages for ResearcherRAG: anthropic, openai, chromadb, requests, pandas, python-dotenv'
+    excerpt: 'Packages for ScholarRAG: anthropic, openai, chromadb, requests, pandas, python-dotenv'
   },
 
   // Codebook - Scripts Workflow Page

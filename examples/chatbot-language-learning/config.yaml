@@ -1,4 +1,4 @@
-# ResearcherRAG Project Configuration
+# ScholarRAG Project Configuration
 # Example Project: AI Chatbots for Language Learning
 # Generated: 2024-10-15
 
@@ -131,7 +131,7 @@ outputs:
 
 # ===== PROJECT NOTES =====
 notes: |
-  This is an example project demonstrating the full 7-stage ResearcherRAG workflow.
+  This is an example project demonstrating the full 7-stage ScholarRAG workflow.
 
   Key decisions:
   - Limited to university-level to maintain homogeneity (K-12 learners have different needs)
@@ -145,5 +145,5 @@ notes: |
   - Publication target: Systematic review in CALL journal or dissertation chapter
 
 # ===== VERSION INFO =====
-researcherrag_version: "1.0.6"
+scholarag_version: "1.0.6"
 config_version: "1.0"

@@ -1,6 +1,6 @@
 # API Setup Guide
 
-This guide walks you through setting up all the APIs needed for ResearcherRAG.
+This guide walks you through setting up all the APIs needed for ScholarRAG.
 
 ---
 
@@ -10,14 +10,14 @@ This guide walks you through setting up all the APIs needed for ResearcherRAG.
 
 ```bash
 # 1. Get Claude API key from https://console.anthropic.com
-# 2. Create .env file in ResearcherRAG directory
-cd ResearcherRAG
+# 2. Create .env file in ScholarRAG directory
+cd ScholarRAG
 cp .env.example .env
 
 # 3. Add your Claude API key to .env
 echo "ANTHROPIC_API_KEY=sk-ant-api03-xxxxx" >> .env
 
-# 4. Done! Start using ResearcherRAG
+# 4. Done! Start using ScholarRAG
 ```
 
 **All other APIs are optional** - Semantic Scholar, OpenAlex, and arXiv work without API keys!
@@ -62,13 +62,13 @@ echo "ANTHROPIC_API_KEY=sk-ant-api03-xxxxx" >> .env
 #### Step 2: Get API Key
 1. After logging in, go to "API Keys" section
 2. Click "Create Key"
-3. Name it: "ResearcherRAG"
+3. Name it: "ScholarRAG"
 4. Copy the key (starts with `sk-ant-api03-`)
 5. **⚠️ Save it immediately** - you can't view it again!
 
 #### Step 3: Add to .env File
 ```bash
-# In ResearcherRAG directory
+# In ScholarRAG directory
 nano .env
 
 # Add this line:
@@ -140,7 +140,7 @@ mailto = "your.email@university.edu"  # Change this to your email
 
 ## 3. Embedding Models (No API Key Needed)
 
-ResearcherRAG uses **local open-source models** by default:
+ScholarRAG uses **local open-source models** by default:
 
 ### Default Model: `all-MiniLM-L6-v2`
 - Provider: Sentence Transformers (HuggingFace)
@@ -184,7 +184,7 @@ python scripts/05_build_rag.py --project projects/my-project
 
 ## 4. Vector Database (ChromaDB - No Setup Needed)
 
-ResearcherRAG uses **ChromaDB** for vector storage:
+ScholarRAG uses **ChromaDB** for vector storage:
 
 ### Why ChromaDB?
 - ✅ No server/cloud setup required
@@ -462,4 +462,4 @@ python scripts/01_fetch_papers.py --project projects/test --query "test"
 
 ---
 
-**Questions?** Open an issue at [GitHub](https://github.com/HosungYou/ResearcherRAG/issues)
+**Questions?** Open an issue at [GitHub](https://github.com/HosungYou/ScholarRAG/issues)

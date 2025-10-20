@@ -5,7 +5,7 @@ import { CodeBlock } from '@/components/CodeBlock'
 export default function GrantPromptPage() {
   return (
     <GuideLayout
-      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/researcherrag_cli.py#L1041-L1048"
+      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/scholarag_cli.py#L1041-L1048"
       githubLabel="View CLI Source"
     >
       <div className="flex items-center gap-3 mb-4">

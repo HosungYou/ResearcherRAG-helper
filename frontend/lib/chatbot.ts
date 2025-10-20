@@ -1,5 +1,5 @@
 /**
- * Chatbot RAG Logic for ResearcherRAG Helper
+ * Chatbot RAG Logic for ScholarRAG Helper
  *
  * This module provides RAG (Retrieval-Augmented Generation) functionality
  * for the chatbot using ChromaDB vector search and Claude 3.5 Sonnet.
@@ -28,12 +28,12 @@ export interface RAGContext {
 }
 
 /**
- * System prompt for the ResearcherRAG Helper chatbot
+ * System prompt for the ScholarRAG Helper chatbot
  */
-const SYSTEM_PROMPT = `You are a helpful AI assistant for ResearcherRAG - a system that helps researchers build custom RAG systems for literature review.
+const SYSTEM_PROMPT = `You are a helpful AI assistant for ScholarRAG - a system that helps researchers build custom RAG systems for literature review.
 
 Your role is to:
-1. Answer questions about ResearcherRAG's 5-stage workflow
+1. Answer questions about ScholarRAG's 5-stage workflow
 2. Explain PRISMA configuration and screening
 3. Help with query design and search strategies
 4. Troubleshoot common issues

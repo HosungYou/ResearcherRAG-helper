@@ -21,7 +21,7 @@ export default function HomePage() {
             <AnimatedLink href="/resources">Resources</AnimatedLink>
             <AnimatedLink href="/about">About</AnimatedLink>
             <a
-              href="https://github.com/HosungYou/ResearcherRAG"
+              href="https://github.com/HosungYou/ScholarRAG"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-foreground transition-colors"
@@ -155,7 +155,7 @@ export default function HomePage() {
           />
           <FeatureCell
             title="AI-Powered Chatbot"
-            description="Get instant answers about ResearcherRAG with Claude 3.5 Sonnet integration"
+            description="Get instant answers about ScholarRAG with Claude 3.5 Sonnet integration"
             href="/chat"
             delay={0.1}
           />
@@ -211,9 +211,9 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="bg-foreground text-background p-6 rounded-md font-mono text-sm overflow-x-auto"
           >
-            <div className="text-gray-400"># Install ResearcherRAG</div>
-            <div>git clone https://github.com/HosungYou/ResearcherRAG.git</div>
-            <div>cd ResearcherRAG</div>
+            <div className="text-gray-400"># Install ScholarRAG</div>
+            <div>git clone https://github.com/HosungYou/ScholarRAG.git</div>
+            <div>cd ScholarRAG</div>
             <div>pip install -r requirements.txt</div>
             <div className="mt-4 text-gray-400"># Open in VS Code</div>
             <div>code .</div>
@@ -270,7 +270,7 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <a
-              href="https://github.com/HosungYou/ResearcherRAG"
+              href="https://github.com/HosungYou/ScholarRAG"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-foreground hover:scale-105 transition-all"
@@ -295,7 +295,7 @@ export default function HomePage() {
             <div className="flex gap-6 text-sm text-muted">
               <AnimatedLink href="/guide">Documentation</AnimatedLink>
               <a
-                href="https://github.com/HosungYou/ResearcherRAG"
+                href="https://github.com/HosungYou/ScholarRAG"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-foreground transition-colors"

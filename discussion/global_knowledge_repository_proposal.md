@@ -6,7 +6,7 @@
 
 ## Problem Statement
 
-Currently, ResearcherRAG operates with **project-isolated RAG systems**:
+Currently, ScholarRAG operates with **project-isolated RAG systems**:
 
 ```
 Project A: 50 papers → Embed all 50 → Store in data/04_rag/chroma_db/
@@ -27,7 +27,7 @@ Project B: 60 papers → Embed all 60 → Store in data/04_rag/chroma_db/
 Central storage for ALL papers ever indexed:
 
 ```
-~/.researcherrag/global/
+~/.scholarag/global/
 ├── vector_db/
 │   └── chroma_global/              # Universal vector DB
 ├── pdfs/
@@ -71,7 +71,7 @@ CREATE INDEX idx_projects ON paper_projects(project_name);
 Each project stores ONLY references to global papers:
 
 ```
-ResearcherRAG/projects/ai-chatbots-language-learning/
+ScholarRAG/projects/ai-chatbots-language-learning/
 ├── config.yaml                      # Same as before
 ├── project_metadata.json            # Project scope definition
 └── paper_references.json            # ONLY paper IDs, not full data
@@ -115,7 +115,7 @@ class GlobalKnowledgeManager:
     - Track paper usage across projects
     """
 
-    def __init__(self, global_path: str = "~/.researcherrag/global"):
+    def __init__(self, global_path: str = "~/.scholarag/global"):
         self.global_path = Path(global_path).expanduser()
         self.db_path = self.global_path / "papers_registry.db"
         self.vector_db_path = self.global_path / "vector_db" / "chroma_global"
@@ -262,18 +262,18 @@ class CrossProjectAnalyzer:
 - [ ] Refactor `05_build_rag.py` to use global registry
 - [ ] Update `ProjectRAG` class to use lightweight references
 - [ ] Add CLI commands:
-  - `researcherrag global-status` (show global registry stats)
-  - `researcherrag global-search <query>` (search all papers)
-  - `researcherrag project-papers <project>` (list project's papers)
+  - `scholarag global-status` (show global registry stats)
+  - `scholarag global-search <query>` (search all papers)
+  - `scholarag project-papers <project>` (list project's papers)
 
 **Deliverables:**
 - Updated `scripts/05_build_rag.py`
 - `scripts/project_rag.py`
-- CLI updates in `researcherrag_cli.py`
+- CLI updates in `scholarag_cli.py`
 
 ### Phase 3: Cross-Project Features (v2.0.0)
 - [ ] Implement `CrossProjectAnalyzer`
-- [ ] Add CLI command: `researcherrag compare-projects <project_a> <project_b>`
+- [ ] Add CLI command: `scholarag compare-projects <project_a> <project_b>`
 - [ ] Add web interface: Global knowledge dashboard
 - [ ] Add visualization: Paper overlap across projects
 
@@ -304,10 +304,10 @@ class CrossProjectAnalyzer:
 **CLI flag:**
 ```bash
 # Use legacy isolated RAG
-researcherrag query --mode=legacy
+scholarag query --mode=legacy
 
 # Use global RAG (default in v2.0+)
-researcherrag query --mode=global
+scholarag query --mode=global
 ```
 
 ## Benefits Summary

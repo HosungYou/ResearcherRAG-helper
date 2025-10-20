@@ -466,12 +466,12 @@ python generate_supplementary.py \\
       <h2 id="ai-disclosure">AI Disclosure Statement</h2>
 
       <p>
-        Complete transparency about AI use is essential for credibility and reproducibility. ResearcherRAG uses AI at multiple stages—disclosure should reflect this accurately.
+        Complete transparency about AI use is essential for credibility and reproducibility. ScholarRAG uses AI at multiple stages—disclosure should reflect this accurately.
       </p>
 
       <div className="callout callout-warning">
         <p className="font-semibold mb-2">⚠️ Important: Distinguish AI Roles</p>
-        <p className="text-sm mb-2">ResearcherRAG uses AI differently across stages:</p>
+        <p className="text-sm mb-2">ScholarRAG uses AI differently across stages:</p>
         <ul className="text-sm space-y-1">
           <li>• <strong>Stages 1-3:</strong> AI assists protocol development (search queries, criteria)</li>
           <li>• <strong>Stages 4-5:</strong> AI assists screening (recommendations, not decisions)</li>
@@ -804,7 +804,7 @@ python generate_supplementary.py \\
       <h2 id="conclusion">Conclusion: From Research to Publication</h2>
 
       <p>
-        You've now completed the full ResearcherRAG workflow—from defining your research question (Stage 1) through building your RAG system (Stages 2-5), conducting research conversations (Stage 6), and finally writing up your findings (Stage 7).
+        You've now completed the full ScholarRAG workflow—from defining your research question (Stage 1) through building your RAG system (Stages 2-5), conducting research conversations (Stage 6), and finally writing up your findings (Stage 7).
       </p>
 
       <Mermaid chart={`

@@ -14,7 +14,7 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: 'Hi! I\'m here to help you with ResearcherRAG. Ask me anything about the 5-stage workflow, PRISMA configuration, or troubleshooting!',
+      content: 'Hi! I\'m here to help you with ScholarRAG. Ask me anything about the 5-stage workflow, PRISMA configuration, or troubleshooting!',
       timestamp: new Date()
     }
   ])
@@ -105,7 +105,7 @@ export default function ChatWidget() {
           <div className="bg-primary-600 text-white p-4 rounded-t-lg flex items-center justify-between">
             <div className="flex items-center gap-2">
               <MessageCircle className="w-5 h-5" />
-              <h3 className="font-semibold">ResearcherRAG Helper</h3>
+              <h3 className="font-semibold">ScholarRAG Helper</h3>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -158,7 +158,7 @@ export default function ChatWidget() {
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyPress={handleKeyPress}
-                placeholder="Ask about ResearcherRAG..."
+                placeholder="Ask about ScholarRAG..."
                 className="flex-1 resize-none rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
                 rows={2}
                 disabled={isLoading}

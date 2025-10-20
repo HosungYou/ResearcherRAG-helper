@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="text-xl font-bold tracking-tight text-gray-900 hover:text-gray-600 transition-colors">
-              ResearcherRAG
+              ScholarRAG
             </Link>
             <div className="flex items-center gap-8">
               <Link href="/guide" className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">
@@ -41,7 +41,7 @@ export default function AboutPage() {
                 About
               </Link>
               <a
-                href="https://github.com/HosungYou/ResearcherRAG"
+                href="https://github.com/HosungYou/ScholarRAG"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -78,7 +78,7 @@ export default function AboutPage() {
           <div className={`transition-all duration-1000 delay-300 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="border-l-2 border-gray-900 pl-8">
               <p className="text-2xl sm:text-3xl font-light text-gray-900 leading-relaxed mb-6">
-                ResearcherRAG democratizes access to systematic literature review automation.
+                ScholarRAG democratizes access to systematic literature review automation.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
                 We believe researchers should spend more time analyzing findings and less time on mechanical tasks.
@@ -190,7 +190,7 @@ export default function AboutPage() {
             </h3>
             <div className="space-y-4">
               <p className="text-lg text-gray-900">
-                ResearcherRAG leverages the latest AI coding models optimized for research automation,
+                ScholarRAG leverages the latest AI coding models optimized for research automation,
                 keeping operational costs <strong>under $20-40 per project</strong> for typical systematic reviews.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -285,7 +285,7 @@ export default function AboutPage() {
               ))}
             </div>
             <a
-              href="https://github.com/HosungYou/ResearcherRAG"
+              href="https://github.com/HosungYou/ScholarRAG"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 font-semibold hover:bg-gray-100 transition-colors"
@@ -340,14 +340,14 @@ export default function AboutPage() {
       <section className="py-12 px-6 sm:px-8 lg:px-12 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Citation</h2>
-          <p className="text-gray-600 mb-6">If you use ResearcherRAG in your research:</p>
+          <p className="text-gray-600 mb-6">If you use ScholarRAG in your research:</p>
           <div className="bg-white border border-gray-200 p-8 font-mono text-sm overflow-x-auto">
-            <pre className="text-gray-700">{`@software{researcherrag2025,
+            <pre className="text-gray-700">{`@software{scholarag2025,
   author = {You, Hosung},
-  title = {ResearcherRAG: AI-Powered Systematic
+  title = {ScholarRAG: AI-Powered Systematic
            Literature Review Automation},
   year = {2025},
-  url = {https://github.com/HosungYou/ResearcherRAG},
+  url = {https://github.com/HosungYou/ScholarRAG},
   note = {Open-source PRISMA-compliant RAG system}
 }`}</pre>
           </div>
@@ -379,10 +379,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-600">
-              ResearcherRAG · Open Source · MIT License · 2025
+              ScholarRAG · Open Source · MIT License · 2025
             </p>
             <div className="flex items-center gap-6 text-sm text-gray-600">
-              <a href="https://github.com/HosungYou/ResearcherRAG" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors">
+              <a href="https://github.com/HosungYou/ScholarRAG" target="_blank" rel="noopener noreferrer" className="hover:text-gray-900 transition-colors">
                 GitHub
               </a>
               <Link href="/guide" className="hover:text-gray-900 transition-colors">

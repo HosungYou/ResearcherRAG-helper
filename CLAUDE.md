@@ -1,11 +1,11 @@
-# CLAUDE.md - ResearcherRAG-helper
+# CLAUDE.md - ScholarRAG-helper
 
 ## 🎯 Repository Purpose
 
-**ResearcherRAG-helper** is the **public-facing homepage and documentation website** for the ResearcherRAG project.
+**ScholarRAG-helper** is the **public-facing homepage and documentation website** for the ScholarRAG project.
 
 **Key Distinction**:
-- **This repo (ResearcherRAG-helper)**: Homepage, documentation, guides, marketing content (https://researcher-rag-helper.vercel.app/)
+- **This repo (ScholarRAG-helper)**: Homepage, documentation, guides, marketing content (https://scholar-rag-helper.vercel.app/)
 - **Main repo (researcherRAG)**: Actual research automation code, prompts, scripts for researchers
 
 ## 🏗️ Architecture
@@ -21,7 +21,7 @@
 ### Project Structure
 
 ```
-ResearcherRAG-helper/
+ScholarRAG-helper/
 ├── frontend/                    # Next.js application
 │   ├── app/                    # Next.js App Router pages
 │   │   ├── page.tsx           # Homepage (marketing landing)
@@ -195,10 +195,10 @@ The chatbot should be aware of:
 
 ### Official Links
 
-- **Homepage**: https://researcher-rag-helper.vercel.app/
-- **GitHub**: https://github.com/HosungYou/ResearcherRAG-helper
+- **Homepage**: https://scholar-rag-helper.vercel.app/
+- **GitHub**: https://github.com/HosungYou/ScholarRAG-helper
 - **Main Code Repo**: https://github.com/HosungYou/researcherRAG
-- **Vercel Dashboard**: https://vercel.com/hosung-yous-projects/researcher-rag-helper
+- **Vercel Dashboard**: https://vercel.com/hosung-yous-projects/scholar-rag-helper
 
 ### Related Documentation
 
@@ -211,7 +211,7 @@ The chatbot should be aware of:
 ### When Working with This Repo
 
 1. **Don't confuse repos**:
-   - ResearcherRAG-helper = Homepage/docs (this repo)
+   - ScholarRAG-helper = Homepage/docs (this repo)
    - researcherRAG = Research code (different repo)
 
 2. **Deployment considerations**:
@@ -242,7 +242,7 @@ The chatbot should be aware of:
 ### What Goes Where
 
 **✅ User-Facing Website (frontend/app/)**:
-- Feature descriptions: "ResearcherRAG can fetch all available papers from multiple databases"
+- Feature descriptions: "ScholarRAG can fetch all available papers from multiple databases"
 - How-to guides: "Follow these steps to set up your first project"
 - Conceptual explanations: "PRISMA screening helps filter relevant papers"
 - Examples and tutorials: "Here's how to query your RAG system"
@@ -259,7 +259,7 @@ The chatbot should be aware of:
 ### Examples
 
 **Good (User-Facing)** ✅:
-- "ResearcherRAG supports comprehensive paper retrieval from Semantic Scholar, OpenAlex, arXiv, and institutional databases"
+- "ScholarRAG supports comprehensive paper retrieval from Semantic Scholar, OpenAlex, arXiv, and institutional databases"
 - "The AI-powered screening system uses multi-dimensional criteria to evaluate papers"
 - "Configure institutional database access for broader coverage"
 

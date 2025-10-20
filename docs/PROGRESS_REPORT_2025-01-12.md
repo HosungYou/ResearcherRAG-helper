@@ -1,4 +1,4 @@
-# Progress Report: ResearcherRAG Website Improvements
+# Progress Report: ScholarRAG Website Improvements
 **Date**: 2025-01-12
 **Session**: Phase 1 - Conceptual Clarity Implementation
 
@@ -81,26 +81,26 @@ Key additions:
 **Tasks**:
 1. Add GitHub links in website chapters:
    ```tsx
-   <a href="https://github.com/HosungYou/ResearcherRAG/blob/main/scripts/01_fetch_papers.py">
+   <a href="https://github.com/HosungYou/ScholarRAG/blob/main/scripts/01_fetch_papers.py">
      View script on GitHub →
    </a>
    ```
 2. Update GitHub README with website links:
    ```markdown
    ## Stage 1: Research Domain Setup
-   📚 [Read detailed guide](https://researcher-rag-helper.vercel.app/guide/04-implementation#stage1)
+   📚 [Read detailed guide](https://scholar-rag-helper.vercel.app/guide/04-implementation#stage1)
    ```
 
 ### Phase 4: User Dashboard (Future)
 **Option 1 (Immediate)**: CLI dashboard
 ```bash
-researcherrag status
+scholarag status
 # → Shows: Stage 3 completed (142 papers), Stage 4 in progress
 ```
 
 **Option 2 (Advanced)**: Cloud sync + web dashboard
 - User API key authentication
-- Sync command: `researcherrag sync`
+- Sync command: `scholarag sync`
 - Web dashboard at `/dashboard`
 
 ---

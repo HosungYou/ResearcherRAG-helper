@@ -1,4 +1,4 @@
-# ResearcherRAG v1.2.0 Release Notes
+# ScholarRAG v1.2.0 Release Notes
 
 **Release Date**: October 11, 2025
 **Theme**: Interactive Learning Platform & Repository Cleanup
@@ -7,11 +7,11 @@
 
 ## 🎉 What's New
 
-### 1. **ResearcherRAG Helper - Interactive Learning Platform**
+### 1. **ScholarRAG Helper - Interactive Learning Platform**
 
-We've launched a **companion web platform** to help researchers learn and use ResearcherRAG more effectively!
+We've launched a **companion web platform** to help researchers learn and use ScholarRAG more effectively!
 
-**Live Site**: [ResearcherRAG Helper](https://github.com/HosungYou/ResearcherRAG-helper)
+**Live Site**: [ScholarRAG Helper](https://github.com/HosungYou/ScholarRAG-helper)
 
 #### Features:
 - 📚 **Bookdown-Style Documentation**: Clean, navigable interface inspired by R Bookdown
@@ -60,7 +60,7 @@ We've **separated development files** from the main repository to make it cleane
 
 #### README.md
 - Simplified Quick Start (5 steps instead of 10)
-- Added link to ResearcherRAG Helper
+- Added link to ScholarRAG Helper
 - Removed references to deleted directories
 - Clearer roadmap section
 
@@ -83,7 +83,7 @@ docs/
 
 **Before (v1.1.0)**:
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── .archive/
 ├── 01_literature_review_rag/
 ├── 03_research_notes_rag/
@@ -98,7 +98,7 @@ ResearcherRAG/
 
 **After (v1.2.0)**:
 ```
-ResearcherRAG/
+ScholarRAG/
 ├── prompts/      # What to paste into Claude Code
 ├── templates/    # Research profile examples
 ├── workshop/     # 3-hour workshop guide
@@ -106,7 +106,7 @@ ResearcherRAG/
 └── README.md     # Start here!
 ```
 
-**Development files** → Moved to [ResearcherRAG-helper](https://github.com/HosungYou/ResearcherRAG-helper)
+**Development files** → Moved to [ScholarRAG-helper](https://github.com/HosungYou/ScholarRAG-helper)
 
 ---
 
@@ -116,8 +116,8 @@ ResearcherRAG/
 
 ```bash
 # 1. Clone the main repository
-git clone https://github.com/HosungYou/ResearcherRAG.git
-cd ResearcherRAG
+git clone https://github.com/HosungYou/ScholarRAG.git
+cd ScholarRAG
 
 # 2. Open in VS Code
 code .
@@ -127,7 +127,7 @@ code .
 
 ### For Interactive Learning
 
-1. Visit **[ResearcherRAG Helper](https://github.com/HosungYou/ResearcherRAG-helper)**
+1. Visit **[ScholarRAG Helper](https://github.com/HosungYou/ScholarRAG-helper)**
 2. Explore the **interactive guide**
 3. Ask the **chatbot** any questions
 4. Download **templates** and **examples**
@@ -142,14 +142,14 @@ No breaking changes! Your existing workflows will continue to work.
 
 **Optional Updates**:
 1. **Pull latest changes**: `git pull origin main`
-2. **Check out Helper repo** for interactive learning: https://github.com/HosungYou/ResearcherRAG-helper
+2. **Check out Helper repo** for interactive learning: https://github.com/HosungYou/ScholarRAG-helper
 3. **Update bookmarks**: Documentation is now in `docs/` instead of `release-notes/`
 
 ---
 
 ## 🛠️ Under the Hood
 
-### ResearcherRAG Helper Architecture
+### ScholarRAG Helper Architecture
 
 ```
 ┌─────────────────────────────────────┐
@@ -235,7 +235,7 @@ Special thanks to:
 ## 📖 Full Changelog
 
 ### Added
-- ✨ ResearcherRAG Helper platform (Next.js + Tailwind CSS)
+- ✨ ScholarRAG Helper platform (Next.js + Tailwind CSS)
 - 🤖 AI chatbot with RAG (Claude 3.5 Sonnet)
 - 📚 Bookdown-style interactive documentation
 - 📥 Resource download center
@@ -265,9 +265,9 @@ Special thanks to:
 ## 📞 Support
 
 ### Questions?
-- **Interactive Help**: Ask the [chatbot](https://github.com/HosungYou/ResearcherRAG-helper)
-- **GitHub Issues**: https://github.com/HosungYou/ResearcherRAG/issues
-- **Discussions**: https://github.com/HosungYou/ResearcherRAG/discussions
+- **Interactive Help**: Ask the [chatbot](https://github.com/HosungYou/ScholarRAG-helper)
+- **GitHub Issues**: https://github.com/HosungYou/ScholarRAG/issues
+- **Discussions**: https://github.com/HosungYou/ScholarRAG/discussions
 
 ---
 

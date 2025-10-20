@@ -1,10 +1,10 @@
-# ResearcherRAG Helper - Deployment Guide
+# ScholarRAG Helper - Deployment Guide
 
 ## 🚀 Live URLs
 
 - **Production**: https://frontend-izujb4zoh-hosung-yous-projects.vercel.app
-- **Repository**: https://github.com/HosungYou/ResearcherRAG-helper
-- **Main Project**: https://github.com/HosungYou/ResearcherRAG
+- **Repository**: https://github.com/HosungYou/ScholarRAG-helper
+- **Main Project**: https://github.com/HosungYou/ScholarRAG
 
 ---
 
@@ -255,7 +255,7 @@ vercel --prod --yes
 
 ### Adding a Custom Domain
 
-1. **Purchase Domain** (e.g., researcherrag-helper.com)
+1. **Purchase Domain** (e.g., scholarag-helper.com)
 
 2. **Configure in Vercel**
    - Go to Vercel Dashboard → Settings → Domains
@@ -264,7 +264,7 @@ vercel --prod --yes
 
 3. **Update Environment Variables**
    ```bash
-   NEXT_PUBLIC_SITE_URL=https://researcherrag-helper.com
+   NEXT_PUBLIC_SITE_URL=https://scholarag-helper.com
    ```
 
 4. **Redeploy**
@@ -278,7 +278,7 @@ vercel --prod --yes
 
 ### Deployment Issues
 - **Vercel Support**: https://vercel.com/support
-- **GitHub Issues**: https://github.com/HosungYou/ResearcherRAG-helper/issues
+- **GitHub Issues**: https://github.com/HosungYou/ScholarRAG-helper/issues
 - **Documentation**: https://nextjs.org/docs
 
 ### Contact
@@ -291,7 +291,7 @@ For deployment help, open an issue on GitHub with:
 
 ## 🎉 Success!
 
-Your ResearcherRAG Helper is now live and accessible to researchers worldwide!
+Your ScholarRAG Helper is now live and accessible to researchers worldwide!
 
 **Next Steps**:
 1. Share the URL with your research community

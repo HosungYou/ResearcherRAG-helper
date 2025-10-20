@@ -11,7 +11,7 @@ export default function DashboardPage() {
             Project Dashboard
           </h1>
           <p className="text-xl text-muted">
-            Monitor your ResearcherRAG projects and track PRISMA progress
+            Monitor your ScholarRAG projects and track PRISMA progress
           </p>
         </div>
 
@@ -46,11 +46,11 @@ export default function DashboardPage() {
               </p>
               <CodeBlock
                 language="bash"
-                code={`# Navigate to ResearcherRAG root directory
-cd ResearcherRAG
+                code={`# Navigate to ScholarRAG root directory
+cd ScholarRAG
 
 # Check status of a specific project
-python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
+python scholarag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
               />
             </div>
 
@@ -58,11 +58,11 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
             <div>
               <h3 className="text-xl font-semibold mb-3">📚 List All Projects</h3>
               <p className="text-sm text-muted mb-3">
-                View all your ResearcherRAG projects at a glance:
+                View all your ScholarRAG projects at a glance:
               </p>
               <CodeBlock
                 language="bash"
-                code={`python researcherrag_cli.py list`}
+                code={`python scholarag_cli.py list`}
               />
             </div>
           </div>
@@ -75,7 +75,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
           <div className="border rounded-lg p-6 bg-gray-50">
             <CodeBlock
               language="bash"
-              code={`$ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption
+              code={`$ python scholarag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption
 
 ======================================================================
 📊 Project Status: AI-Healthcare-Adoption
@@ -123,7 +123,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
   • RAG system: ⏳ Not built
 
 📊 View in Dashboard:
-   https://researcher-rag-helper.vercel.app/dashboard?project=2025-10-13_AI-Healthcare-Adoption
+   https://scholar-rag-helper.vercel.app/dashboard?project=2025-10-13_AI-Healthcare-Adoption
 
 💡 Next Action:
    Run Stage 4: Build RAG system (vector database + embeddings)`}
@@ -186,7 +186,7 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
               <Link href="/guide/02-getting-started#step0-init-project" className="text-foreground hover:underline font-semibold">
                 Getting Started: Initialize Your First Project →
               </Link>
-              <p className="text-xs text-muted ml-4">Learn how to use <code>researcherrag_cli.py init</code></p>
+              <p className="text-xs text-muted ml-4">Learn how to use <code>scholarag_cli.py init</code></p>
             </div>
             <div>
               <Link href="/guide/04-implementation" className="text-foreground hover:underline font-semibold">
@@ -210,15 +210,15 @@ python researcherrag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
           </p>
           <CodeBlock
             language="bash"
-            code={`# Clone ResearcherRAG repository
-git clone https://github.com/HosungYou/ResearcherRAG.git
-cd ResearcherRAG
+            code={`# Clone ScholarRAG repository
+git clone https://github.com/HosungYou/ScholarRAG.git
+cd ScholarRAG
 
 # Install CLI dependencies
 pip install click pyyaml
 
 # Verify installation
-python researcherrag_cli.py --help`}
+python scholarag_cli.py --help`}
           />
         </div>
 

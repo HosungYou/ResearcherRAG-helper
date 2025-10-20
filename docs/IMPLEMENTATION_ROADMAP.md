@@ -1,4 +1,4 @@
-# ResearcherRAG Helper - Implementation Roadmap
+# ScholarRAG Helper - Implementation Roadmap
 
 **Date**: 2025-01-12
 **Goal**: Conceptual Clarity + Practical Usability + GitHub-Website Integration + User Dashboard
@@ -74,7 +74,7 @@
    # README.md
    ## Stage 1: Paper Collection
 
-   📖 Detailed Guide: [Chapter 4: Stage 1](https://researcher-rag-helper.vercel.app/guide/04-implementation#stage-1)
+   📖 Detailed Guide: [Chapter 4: Stage 1](https://scholar-rag-helper.vercel.app/guide/04-implementation#stage-1)
    ```
 
 3. **실행 예시와 결과물 연결**:
@@ -114,7 +114,7 @@ def show_status(project_path: str):
 
     # 예쁘게 출력
     console = Console()
-    table = Table(title="ResearcherRAG Project Status")
+    table = Table(title="ScholarRAG Project Status")
     table.add_column("Stage", style="cyan")
     table.add_column("Status", style="green")
     table.add_column("Files", style="yellow")
@@ -132,7 +132,7 @@ def show_status(project_path: str):
 **사용법**:
 ```bash
 cd projects/2025-01-12_AI-Healthcare
-researcherrag status
+scholarag status
 
 # 출력:
 ┌─────────────────────────────────────────────────────────┐
@@ -157,7 +157,7 @@ After completing each stage, verify your work:
 
 ### Method 1: CLI Dashboard (Recommended)
 \`\`\`bash
-researcherrag status
+scholarag status
 \`\`\`
 
 ### Method 2: Manual File Check
@@ -178,7 +178,7 @@ open outputs/prisma_flowchart.png
 
 1. **API Key 발급 페이지 추가**:
    ```
-   https://researcher-rag-helper.vercel.app/settings/api-keys
+   https://scholar-rag-helper.vercel.app/settings/api-keys
 
    [Generate New API Key] 버튼
    → sk_live_abc123... 생성
@@ -187,21 +187,21 @@ open outputs/prisma_flowchart.png
 
 2. **로컬에서 동기화**:
    ```bash
-   export RESEARCHERRAG_API_KEY="sk_live_abc123..."
+   export SCHOLARAG_API_KEY="sk_live_abc123..."
 
-   researcherrag sync
+   scholarag sync
 
    # 출력:
    📤 Syncing project to cloud...
    ✅ Project uploaded: proj_xyz123
    ✅ Files synced: 5 files (2.3 MB)
    🎉 Complete! View online:
-   https://researcher-rag-helper.vercel.app/dashboard/proj_xyz123
+   https://scholar-rag-helper.vercel.app/dashboard/proj_xyz123
    ```
 
 3. **웹 대시보드에서 확인**:
    ```
-   https://researcher-rag-helper.vercel.app/dashboard
+   https://scholar-rag-helper.vercel.app/dashboard
 
    [로그인] → [My Projects]
 
@@ -229,24 +229,24 @@ open outputs/prisma_flowchart.png
 Want to view your progress from anywhere? Sync to the cloud!
 
 ### Step 1: Get Your API Key
-1. Visit https://researcher-rag-helper.vercel.app/settings/api-keys
+1. Visit https://scholar-rag-helper.vercel.app/settings/api-keys
 2. Click "Generate New API Key"
 3. Copy the key (starts with `sk_live_...`)
 
 ### Step 2: Configure Local Environment
 \`\`\`bash
-export RESEARCHERRAG_API_KEY="sk_live_abc123..."
+export SCHOLARAG_API_KEY="sk_live_abc123..."
 \`\`\`
 
 ### Step 3: Sync Your Project
 \`\`\`bash
 cd projects/2025-01-12_AI-Healthcare
-researcherrag sync
+scholarag sync
 \`\`\`
 
 ### Step 4: View Online
 Open the URL shown in the output, or visit:
-https://researcher-rag-helper.vercel.app/dashboard
+https://scholar-rag-helper.vercel.app/dashboard
 
 You can now:
 - ✅ View progress from any device
@@ -292,7 +292,7 @@ You can now:
 ### Week 3: Phase 4-1 (로컬 CLI 대시보드)
 **월요일-화요일** (8-10 hours):
 - [ ] `scripts/dashboard.py` 구현
-- [ ] `researcherrag status` CLI 명령어
+- [ ] `scholarag status` CLI 명령어
 - [ ] Rich/Beautiful 터미널 출력
 
 **수요일-목요일** (6-8 hours):
@@ -311,7 +311,7 @@ You can now:
 - [ ] API 엔드포인트 구현
 
 **목요일-금요일** (8-10 hours):
-- [ ] `researcherrag sync` 명령어
+- [ ] `scholarag sync` 명령어
 - [ ] 웹 대시보드 UI
 - [ ] API Key 관리 페이지
 
@@ -361,7 +361,7 @@ You can now:
    - Hallucination 관련 특정 논문 선호도가 있나요?
 
 3. **GitHub Repository**:
-   - ResearcherRAG GitHub repository에 직접 접근 가능한가요?
+   - ScholarRAG GitHub repository에 직접 접근 가능한가요?
    - README 수정 권한이 있나요?
 
 4. **코드 예시**:

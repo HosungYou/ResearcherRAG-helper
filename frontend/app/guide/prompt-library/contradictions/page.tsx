@@ -5,7 +5,7 @@ import { CodeBlock } from '@/components/CodeBlock'
 export default function ContradictionsPromptPage() {
   return (
     <GuideLayout
-      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/researcherrag_cli.py#L1025-L1031"
+      githubUrl="https://github.com/HosungYou/researcherRAG/blob/main/scholarag_cli.py#L1025-L1031"
       githubLabel="View CLI Source"
     >
       <div className="flex items-center gap-3 mb-4">

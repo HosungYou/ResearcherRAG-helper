@@ -2,13 +2,13 @@
 layout: default
 title: Search Guide
 nav_order: 10
-description: "How to search ResearcherRAG documentation effectively"
+description: "How to search ScholarRAG documentation effectively"
 ---
 
 # Search Guide
 {: .no_toc }
 
-Learn how to use the search feature to quickly find what you need in ResearcherRAG documentation.
+Learn how to use the search feature to quickly find what you need in ScholarRAG documentation.
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -26,7 +26,7 @@ Learn how to use the search feature to quickly find what you need in ResearcherR
 The search box is located at the **top of every page** in the navigation bar.
 
 ```
-[🔍 Search ResearcherRAG docs...]
+[🔍 Search ScholarRAG docs...]
 ```
 
 Just start typing, and results will appear instantly!
@@ -224,9 +224,9 @@ Results:
 
 ### If you want to...
 
-**Understand what ResearcherRAG is**:
+**Understand what ScholarRAG is**:
 ```
-Search: "what is researcherrag" or "overview"
+Search: "what is scholarag" or "overview"
 ```
 
 **Get started quickly**:
@@ -389,7 +389,7 @@ Search: "python scripts/05" or "config.yaml example"
 
 ### How Search Works
 
-ResearcherRAG documentation uses **Jekyll with Just the Docs theme** for search:
+ScholarRAG documentation uses **Jekyll with Just the Docs theme** for search:
 
 1. **Client-side search** - No server needed, instant results
 2. **Full-text indexing** - Every word in every page is searchable

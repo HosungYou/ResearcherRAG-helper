@@ -25,7 +25,7 @@ export default function ScriptsWorkflowPage() {
             The Data Dependency Chain
           </h2>
           <p className="text-gray-700 mb-3 leading-relaxed">
-            ResearcherRAG's scripts MUST run in order (01 → 02 → 03 → 04 → 05 → 06 → 07) because each script
+            ScholarRAG's scripts MUST run in order (01 → 02 → 03 → 04 → 05 → 06 → 07) because each script
             <strong> depends on the output of the previous one</strong>. It's like cooking - you can't frost a cake before baking it!
           </p>
           <p className="text-gray-700 leading-relaxed">
@@ -36,10 +36,10 @@ export default function ScriptsWorkflowPage() {
 
         {/* Visual Pipeline */}
         <div className="bg-white border-2 border-gray-300 p-6 rounded-lg mb-12 overflow-x-auto">
-          <p className="text-sm text-gray-600 mb-4 font-semibold">Complete ResearcherRAG Pipeline:</p>
+          <p className="text-sm text-gray-600 mb-4 font-semibold">Complete ScholarRAG Pipeline:</p>
           <pre className="text-xs leading-relaxed text-gray-800 font-mono">
 {`┌────────────────────────────────────────────────────────────────────────┐
-│                         RESEARCHERRAG PIPELINE                         │
+│                         SCHOLARAG PIPELINE                         │
 │                  Data flows DOWN through each stage                    │
 └────────────────────────────────────────────────────────────────────────┘
 

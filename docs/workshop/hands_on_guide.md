@@ -37,9 +37,9 @@ python3 --version
 mkdir ~/workshop_rag
 cd ~/workshop_rag
 
-# Clone ResearcherRAG repository
-git clone https://github.com/[your-repo]/ResearcherRAG.git
-cd ResearcherRAG
+# Clone ScholarRAG repository
+git clone https://github.com/[your-repo]/ScholarRAG.git
+cd ScholarRAG
 
 # Install dependencies
 pip3 install -r requirements.txt
@@ -831,7 +831,7 @@ answer = rag.query("How do AI and mindfulness interventions compare?")
 ### Resources
 
 **GitHub Repository**:
-- https://github.com/[your-repo]/ResearcherRAG
+- https://github.com/[your-repo]/ScholarRAG
 - All templates, scripts, and examples
 - Issue tracker for bug reports and feature requests
 

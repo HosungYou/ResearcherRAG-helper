@@ -2,7 +2,7 @@
 
 ## Deployment Status: ✅ LIVE
 
-**Latest Deployment**: https://researcher-rag-helper-25oklyy2g-hosung-yous-projects.vercel.app
+**Latest Deployment**: https://scholar-rag-helper-25oklyy2g-hosung-yous-projects.vercel.app
 **Status**: Ready (Production)
 **Build Time**: 1 minute
 **Deployed**: 2025-10-11
@@ -77,10 +77,10 @@ Route (app)                                 Size  First Load JS
 
 ## 🔗 Important URLs
 
-- **Production Site**: https://researcher-rag-helper-25oklyy2g-hosung-yous-projects.vercel.app
-- **Vercel Dashboard**: https://vercel.com/hosung-yous-projects/researcher-rag-helper
-- **GitHub Repository**: https://github.com/HosungYou/ResearcherRAG-helper
-- **Main Project**: https://github.com/HosungYou/ResearcherRAG
+- **Production Site**: https://scholar-rag-helper-25oklyy2g-hosung-yous-projects.vercel.app
+- **Vercel Dashboard**: https://vercel.com/hosung-yous-projects/scholar-rag-helper
+- **GitHub Repository**: https://github.com/HosungYou/ScholarRAG-helper
+- **Main Project**: https://github.com/HosungYou/ScholarRAG
 
 ## 📝 Commit History
 

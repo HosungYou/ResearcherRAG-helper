@@ -9,7 +9,7 @@
 
 ## 📋 Executive Summary
 
-This document outlines the **3-Tier Configuration Architecture** for ResearcherRAG, designed to enable **prompt-driven research automation** while maintaining a single source of truth and avoiding configuration duplication.
+This document outlines the **3-Tier Configuration Architecture** for ScholarRAG, designed to enable **prompt-driven research automation** while maintaining a single source of truth and avoiding configuration duplication.
 
 **Key Decision**: Use a hierarchical configuration system with clear separation of concerns:
 - **Tier 1**: Prompt Metadata (researcher-facing)
@@ -22,7 +22,7 @@ This document outlines the **3-Tier Configuration Architecture** for ResearcherR
 
 ### The Challenge
 
-ResearcherRAG aims to provide a **conversation-first research experience** where researchers:
+ScholarRAG aims to provide a **conversation-first research experience** where researchers:
 1. Read prompts from `prompts/*.md`
 2. Talk to Claude Code
 3. **Scripts execute automatically** based on conversation context
@@ -53,7 +53,7 @@ Claude Code: "Run: python scripts/01_fetch_papers.py --project ..." ❌
 ```
 Researcher (Stage 1): "I want to research AI chatbots"
 Claude Code: [Generates config.yaml] ✅
-             [Auto-runs: researcherrag init] ✅
+             [Auto-runs: scholarag init] ✅
              "✅ Stage 1 complete! Ready for Stage 2?" ✅
 ```
 
@@ -65,7 +65,7 @@ Claude Code: [Generates config.yaml] ✅
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    ResearcherRAG                        │
+│                    ScholarRAG                        │
 └─────────────────────────────────────────────────────────┘
                            │
            ┌───────────────┼───────────────┐
@@ -106,7 +106,7 @@ stage_name: "Research Domain Setup"
 stage_goal: "Define research scope and validate feasibility"
 expected_duration: "15-20 minutes"
 cli_commands:
-  - command: "researcherrag init"
+  - command: "scholarag init"
     when: "After conversation completes"
     auto_execute: true
 validation_rules:
@@ -150,7 +150,7 @@ Machine-first configuration for CLI automation and Claude Code integration.
 **Purpose**: Stage execution configuration (single source of truth)
 
 ```yaml
-# ResearcherRAG Stage Configuration
+# ScholarRAG Stage Configuration
 version: "1.0"
 
 stages:
@@ -158,7 +158,7 @@ stages:
     name: "Research Domain Setup"
     prompt_file: "prompts/01_research_domain_setup.md"
     duration: "15-20 min"
-    cli_command: "researcherrag init"
+    cli_command: "scholarag init"
     auto_execute: true
     prerequisites: []
     outputs:
@@ -213,7 +213,7 @@ divergence_rules:
     }
   ],
   "checkpoints": {
-    "last_command": "researcherrag init",
+    "last_command": "scholarag init",
     "ready_for_next_stage": true
   }
 }
@@ -248,7 +248,7 @@ CLAUDE.md  (repository root)
 
 ### Example
 ```markdown
-# ResearcherRAG: Prompt-Driven Systematic Review Assistant
+# ScholarRAG: Prompt-Driven Systematic Review Assistant
 
 ## Core Philosophy
 
@@ -279,7 +279,7 @@ IF user asks off-topic:
 ## Auto-Execution Rules
 
 **Safe to auto-execute** (no approval needed):
-- Stage 1: `researcherrag init` (creates folders only)
+- Stage 1: `scholarag init` (creates folders only)
 
 **Requires approval** (API costs or external calls):
 - Stage 2: `scripts/01_fetch_papers.py` (API calls)
@@ -320,7 +320,7 @@ metadata = parse_prompt_metadata("prompts/01_research_domain_setup.md")
 ```python
 # Claude loads execution config
 stage_config = load_stages_yaml(".claude/stages.yaml")
-# stage_config[1].cli_command = "researcherrag init"
+# stage_config[1].cli_command = "scholarag init"
 # stage_config[1].auto_execute = true
 
 # Claude checks current state
@@ -336,7 +336,7 @@ generate_config_yaml()  # Output file
 validate_outputs()      # Check requirements
 
 if stage_config[1].auto_execute:
-    run_command("researcherrag init")  # Auto-run!
+    run_command("scholarag init")  # Auto-run!
     update_context(stage=1, status="completed")  # Save state
 ```
 
@@ -409,7 +409,7 @@ CLAUDE: [Checks .claude/stages.yaml]
 ### 6. Auto-Execution
 ```python
 # Stage 1 (safe, no API calls)
-→ Auto-executes: researcherrag init
+→ Auto-executes: scholarag init
 
 # Stage 2 (API calls)
 CLAUDE: "Ready to fetch papers from Semantic Scholar?
@@ -427,13 +427,13 @@ CLAUDE: "Ready to fetch papers from Semantic Scholar?
 - ✅ `.claude/stages.yaml` created
 - ✅ `.claude/context.json.example` template
 - ⏳ CLI commands:
-  - `researcherrag status`
-  - `researcherrag run-stage <N>`
-  - `researcherrag next`
+  - `scholarag status`
+  - `scholarag run-stage <N>`
+  - `scholarag next`
 
 **Code Changes**:
 ```python
-# researcherrag_cli.py additions
+# scholarag_cli.py additions
 
 @cli.command()
 def status():
@@ -527,14 +527,14 @@ prompt = read_file(stages[current_stage]["prompt_file"])
 
 ---
 
-### Decision 2: `.claude/` folder not `.researcherrag/`
+### Decision 2: `.claude/` folder not `.scholarag/`
 
 **Rationale**:
 - `.claude/` is becoming a standard (similar to `.github/`, `.vscode/`)
 - Claude Code may auto-recognize `.claude/` in future
 - Shorter path
 
-**Alternative Considered**: `.researcherrag/`
+**Alternative Considered**: `.scholarag/`
 **Rejected Because**: Longer, non-standard
 
 ---
@@ -574,7 +574,7 @@ prompt = read_file(stages[current_stage]["prompt_file"])
 **To Opt-In**:
 ```bash
 cd my-project
-researcherrag upgrade  # Adds .claude/ folder
+scholarag upgrade  # Adds .claude/ folder
 ```
 
 ---

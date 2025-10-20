@@ -1,6 +1,6 @@
 # CLAUDE.md - Release Notes Generation Guide
 
-This file provides instructions for Claude Code to automatically generate comprehensive release notes for ResearcherRAG project deployments.
+This file provides instructions for Claude Code to automatically generate comprehensive release notes for ScholarRAG project deployments.
 
 ## Purpose
 
@@ -165,7 +165,7 @@ No changes required - automatically deploys from main branch
 ### Backend (Python Scripts)
 1. **Install Dependencies**:
    \`\`\`bash
-   cd ResearcherRAG
+   cd ScholarRAG
    pip install -r requirements.txt
    \`\`\`
 
@@ -188,7 +188,7 @@ No changes required - automatically deploys from main branch
 ## 🧪 Verification Steps
 
 ### Frontend
-1. ✅ Navigate to https://researcherrag.vercel.app
+1. ✅ Navigate to https://scholarag.vercel.app
 2. ✅ Check all guide pages load correctly
 3. ✅ Verify no console errors
 
@@ -329,7 +329,7 @@ pip install -r requirements.txt --upgrade
 ## 📞 Support
 
 For issues or questions:
-- **GitHub Issues**: [https://github.com/HosungYou/ResearcherRAG/issues](https://github.com/HosungYou/ResearcherRAG/issues)
+- **GitHub Issues**: [https://github.com/HosungYou/ScholarRAG/issues](https://github.com/HosungYou/ScholarRAG/issues)
 - **Documentation**: See `docs/` folder
 - **Email**: newhosung@gmail.com
 
@@ -388,7 +388,7 @@ For issues or questions:
 
 ```python
 def determine_version_increment(changes):
-    # For ResearcherRAG, we use patch versions for incremental features
+    # For ScholarRAG, we use patch versions for incremental features
     # because we're in early development (v1.0.x)
 
     if has_breaking_changes(changes):
@@ -421,7 +421,7 @@ def has_multiple_new_scripts(changes):
 
 **Link to GitHub** (when applicable):
 ```markdown
-[scripts/01_fetch_papers.py:42](https://github.com/HosungYou/ResearcherRAG/blob/main/scripts/01_fetch_papers.py#L42)
+[scripts/01_fetch_papers.py:42](https://github.com/HosungYou/ScholarRAG/blob/main/scripts/01_fetch_papers.py#L42)
 ```
 
 ### Python Code Examples
@@ -521,4 +521,4 @@ class PaperFetcher:
 
 **🤖 Generated with Claude Code assistance**
 **📅 Last Updated**: October 14, 2025
-**✍️ Author**: ResearcherRAG Development Team
+**✍️ Author**: ScholarRAG Development Team

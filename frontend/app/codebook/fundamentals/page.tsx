@@ -16,7 +16,7 @@ export default function FundamentalsPage() {
 
         <p className="text-gray-700 mb-10 text-lg leading-relaxed">
           If you've never written code before, start here. We explain the basic building blocks
-          of ResearcherRAG in simple, non-technical language.
+          of ScholarRAG in simple, non-technical language.
         </p>
 
         {/* What is a Script? */}
@@ -57,7 +57,7 @@ export default function FundamentalsPage() {
           </div>
 
           <p className="text-gray-700 leading-relaxed">
-            In ResearcherRAG, we have <strong>7 scripts</strong> (named{' '}
+            In ScholarRAG, we have <strong>7 scripts</strong> (named{' '}
             <code className="bg-gray-100 px-2 py-1 rounded font-mono text-sm border border-gray-300">01_fetch_papers.py</code>{' '}
             through{' '}
             <code className="bg-gray-100 px-2 py-1 rounded font-mono text-sm border border-gray-300">07_generate_prisma.py</code>).
@@ -98,10 +98,10 @@ export default function FundamentalsPage() {
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 For ResearcherRAG users:</strong>
+              <strong>💡 For ScholarRAG users:</strong>
             </p>
             <p className="text-sm text-gray-700">
-              You don't need to learn Python deeply! ResearcherRAG scripts are already written.
+              You don't need to learn Python deeply! ScholarRAG scripts are already written.
               You just need to understand <em>what they do</em>, not <em>how they work internally</em>.
             </p>
           </div>
@@ -139,7 +139,7 @@ export default function FundamentalsPage() {
           </div>
 
           <div className="bg-gray-50 border border-gray-300 p-6 rounded-lg mb-6">
-            <p className="font-semibold mb-3 text-gray-900">Common Terminal commands for ResearcherRAG:</p>
+            <p className="font-semibold mb-3 text-gray-900">Common Terminal commands for ScholarRAG:</p>
             <div className="space-y-3 text-sm font-mono">
               <div className="bg-white border border-gray-300 p-3 rounded">
                 <code className="text-gray-900">cd /path/to/project</code>
@@ -195,7 +195,7 @@ export default function FundamentalsPage() {
           </div>
 
           <p className="text-gray-700 mb-6 leading-relaxed">
-            In ResearcherRAG, APIs let your scripts communicate with external services:
+            In ScholarRAG, APIs let your scripts communicate with external services:
           </p>
 
           <div className="space-y-3 mb-6">
@@ -273,7 +273,7 @@ export default function FundamentalsPage() {
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ResearcherRAG:</strong>
+              <strong>💡 In ScholarRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
               We use <strong>ChromaDB</strong> as our vector database. It lets you ask questions in natural language
@@ -408,10 +408,10 @@ export default function FundamentalsPage() {
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ResearcherRAG:</strong>
+              <strong>💡 In ScholarRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
-              ResearcherRAG automates the PRISMA workflow! Scripts 01-03 handle Identification, Screening, and Eligibility.
+              ScholarRAG automates the PRISMA workflow! Scripts 01-03 handle Identification, Screening, and Eligibility.
               Script 07 generates the PRISMA flowchart diagram required for publication.
             </p>
           </div>

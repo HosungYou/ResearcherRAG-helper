@@ -17,7 +17,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  웹사이트 (https://researcher-rag-helper.vercel.app)        │
+│  웹사이트 (https://scholar-rag-helper.vercel.app)        │
 │                                                              │
 │  [로그인 with Google]                                        │
 │  ↓                                                           │
@@ -31,8 +31,8 @@
 ┌─────────────────────────────────────────────────────────────┐
 │  로컬 터미널                                                  │
 │                                                              │
-│  $ export RESEARCHERRAG_API_KEY="sk_live_abc123..."        │
-│  $ echo 'export RESEARCHERRAG_API_KEY="sk_live_abc123..."' \│
+│  $ export SCHOLARAG_API_KEY="sk_live_abc123..."        │
+│  $ echo 'export SCHOLARAG_API_KEY="sk_live_abc123..."' \│
 │    >> ~/.zshrc  # 영구 저장                                  │
 │                                                              │
 │  ✅ 이제 설정 끝! 더 이상 API Key 신경 쓸 필요 없음          │
@@ -54,7 +54,7 @@
 │  $ python scripts/02_deduplicate.py                         │
 │  ... (PRISMA 작업 진행)                                      │
 │                                                              │
-│  $ researcherrag sync  ← API Key 자동으로 ~/.zshrc에서 읽음 │
+│  $ scholarag sync  ← API Key 자동으로 ~/.zshrc에서 읽음 │
 │                                                              │
 │  📤 Syncing...                                               │
 │  ✅ Project synced: proj_xyz123                             │
@@ -82,7 +82,7 @@
 ┌─────────────────────────────────────────────────────────────┐
 │  다른 컴퓨터 / 핸드폰 / 회사에서...                          │
 │                                                              │
-│  https://researcher-rag-helper.vercel.app/dashboard         │
+│  https://scholar-rag-helper.vercel.app/dashboard         │
 │  ↓                                                           │
 │  [로그인 with Google]  ← API Key 필요 없음!                 │
 │  ↓                                                           │
@@ -165,7 +165,7 @@ CREATE TABLE projects (
 
 ```
 로컬에서 sync:
-  researcherrag sync
+  scholarag sync
     ↓
   API Key 전송: sk_live_abc123...
     ↓
@@ -199,12 +199,12 @@ CREATE TABLE projects (
 
 ```
 🖥️ 회사 컴퓨터:
-  $ export RESEARCHERRAG_API_KEY="sk_live_abc123..."
-  $ researcherrag sync  # 프로젝트 A 업로드
+  $ export SCHOLARAG_API_KEY="sk_live_abc123..."
+  $ scholarag sync  # 프로젝트 A 업로드
 
 💻 집 컴퓨터:
-  $ export RESEARCHERRAG_API_KEY="sk_live_abc123..."  # 같은 키
-  $ researcherrag sync  # 프로젝트 B 업로드
+  $ export SCHOLARAG_API_KEY="sk_live_abc123..."  # 같은 키
+  $ scholarag sync  # 프로젝트 B 업로드
 
 📱 핸드폰 브라우저:
   로그인 → 프로젝트 A, B 둘 다 보임 ✅
@@ -225,7 +225,7 @@ CREATE TABLE projects (
    sk_live_def456uvw...
 
 4. 로컬 업데이트:
-   $ export RESEARCHERRAG_API_KEY="sk_live_def456..."
+   $ export SCHOLARAG_API_KEY="sk_live_def456..."
 
 5. 기존 키 revoke (선택사항):
    [Revoke] 버튼 클릭 → sk_live_abc123... 비활성화
@@ -245,7 +245,7 @@ CREATE TABLE projects (
 
 방법 2: Read-Only 링크:
   웹사이트 → 프로젝트 → [Generate Public Link]
-  → https://researcher-rag-helper.vercel.app/public/proj_xyz123
+  → https://scholar-rag-helper.vercel.app/public/proj_xyz123
   → 이 링크는 누구나 볼 수 있음 (수정 불가)
 
 ❌ 하지 말아야 할 것: API Key 공유
@@ -260,10 +260,10 @@ CREATE TABLE projects (
 
 ```bash
 # 1. 웹사이트에서 로그인 & API Key 발급
-https://researcher-rag-helper.vercel.app/settings/api-keys
+https://scholar-rag-helper.vercel.app/settings/api-keys
 
 # 2. 로컬에 저장 (한번만)
-echo 'export RESEARCHERRAG_API_KEY="sk_live_abc123..."' >> ~/.zshrc
+echo 'export SCHOLARAG_API_KEY="sk_live_abc123..."' >> ~/.zshrc
 source ~/.zshrc
 
 # 끝! 이제 설정 완료
@@ -273,14 +273,14 @@ source ~/.zshrc
 
 ```bash
 # 프로젝트 작업 후 동기화 (API Key 자동으로 사용됨)
-researcherrag sync
+scholarag sync
 ```
 
 ### ✅ 웹에서 확인
 
 ```
 # 아무 컴퓨터에서 (API Key 필요 없음)
-https://researcher-rag-helper.vercel.app/dashboard
+https://scholar-rag-helper.vercel.app/dashboard
 → 로그인 → 모든 프로젝트 표시
 ```
 
@@ -310,17 +310,17 @@ https://researcher-rag-helper.vercel.app/dashboard
 ### API Key로 업로드 (로컬)
 
 ```python
-# researcherrag sync 실행 시
+# scholarag sync 실행 시
 
 import os
 import requests
 
 # 1. 환경변수에서 API Key 읽기
-api_key = os.environ.get('RESEARCHERRAG_API_KEY')
+api_key = os.environ.get('SCHOLARAG_API_KEY')
 
 if not api_key:
-    print("❌ Error: RESEARCHERRAG_API_KEY not set")
-    print("Get your key at: https://researcher-rag-helper.vercel.app/settings/api-keys")
+    print("❌ Error: SCHOLARAG_API_KEY not set")
+    print("Get your key at: https://scholar-rag-helper.vercel.app/settings/api-keys")
     exit(1)
 
 # 2. 프로젝트 데이터 준비
@@ -332,7 +332,7 @@ project_data = {
 
 # 3. API 호출
 response = requests.post(
-    "https://researcher-rag-helper.vercel.app/api/projects",
+    "https://scholar-rag-helper.vercel.app/api/projects",
     headers={
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
@@ -401,7 +401,7 @@ export default async function DashboardPage() {
   웹 로그인 → API Key 발급 → 로컬 저장
 
 이후 (평생):
-  로컬: researcherrag sync  (API Key 자동 사용)
+  로컬: scholarag sync  (API Key 자동 사용)
   웹: 로그인 → 대시보드 확인  (API Key 필요 없음)
 ```
 

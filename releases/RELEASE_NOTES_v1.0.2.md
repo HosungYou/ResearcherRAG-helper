@@ -1,4 +1,4 @@
-# ResearcherRAG Helper v1.0.2 Release Notes
+# ScholarRAG Helper v1.0.2 Release Notes
 
 **Release Date**: October 13, 2025
 **Type**: Design Decision Change
@@ -8,7 +8,7 @@
 
 ## 🎨 Theme Simplification: Light Theme Only
 
-This release **disables dark mode** and maintains a **light theme only** design. After evaluating the visual identity of ResearcherRAG Helper, we've decided that a clean, consistent light theme better suits the platform's purpose as an educational and documentation site.
+This release **disables dark mode** and maintains a **light theme only** design. After evaluating the visual identity of ScholarRAG Helper, we've decided that a clean, consistent light theme better suits the platform's purpose as an educational and documentation site.
 
 ---
 
@@ -325,7 +325,7 @@ If you're building a documentation site and considering theme options:
 
 ### Quote from Project Maintainer
 
-> "After implementing dark mode in v1.0.1, I realized it didn't align with ResearcherRAG's identity as an educational platform. Documentation sites work best with clean, consistent light themes. Dark mode was technically correct but aesthetically misaligned."
+> "After implementing dark mode in v1.0.1, I realized it didn't align with ScholarRAG's identity as an educational platform. Documentation sites work best with clean, consistent light themes. Dark mode was technically correct but aesthetically misaligned."
 >
 > — Hosung You, October 13, 2025
 
@@ -346,7 +346,7 @@ Popular documentation platforms that use **light theme only**:
 **Commit**: TBD
 **Branch**: `main`
 **Deployed To**: Vercel (auto-deploy)
-**URL**: https://researcher-rag-helper.vercel.app
+**URL**: https://scholar-rag-helper.vercel.app
 
 ### Deployment Timeline
 - Code committed: 2025-10-13 ~22:15 EDT

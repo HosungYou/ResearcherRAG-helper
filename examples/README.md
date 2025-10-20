@@ -1,6 +1,6 @@
-# ResearcherRAG Example Projects
+# ScholarRAG Example Projects
 
-This directory contains complete, real-world examples of ResearcherRAG projects demonstrating the full 7-stage workflow.
+This directory contains complete, real-world examples of ScholarRAG projects demonstrating the full 7-stage workflow.
 
 ## Available Examples
 
@@ -94,7 +94,7 @@ example-project-name/
 
 ## What Makes a Good Example?
 
-If you've completed a ResearcherRAG project and want to contribute an example, it should:
+If you've completed a ScholarRAG project and want to contribute an example, it should:
 
 ✅ **Complete**: Include all 7 stages with outputs
 ✅ **Realistic**: Use real research questions, not toy examples
@@ -108,7 +108,7 @@ If you've completed a ResearcherRAG project and want to contribute an example, i
 
 We welcome community-contributed examples! To contribute:
 
-1. **Fork** the ResearcherRAG-helper repository
+1. **Fork** the ScholarRAG-helper repository
 2. **Create** a new directory in `examples/` (e.g., `examples/medical-ai-diagnosis/`)
 3. **Follow** the structure shown above
 4. **Document** your decisions and learnings
@@ -131,14 +131,14 @@ Currently available examples:
 - 🔜 **Computer Science**: (planned)
 - 🔜 **Social Science**: (planned)
 
-Want to see an example in your domain? [Open an issue](https://github.com/HosungYou/ResearcherRAG-helper/issues) or contribute one!
+Want to see an example in your domain? [Open an issue](https://github.com/HosungYou/ScholarRAG-helper/issues) or contribute one!
 
 ---
 
 ## FAQs
 
 ### Q: Can I use these examples for my own research?
-**A**: Yes! All examples are provided under open licenses. You can copy, modify, and adapt them. Just cite ResearcherRAG if you publish.
+**A**: Yes! All examples are provided under open licenses. You can copy, modify, and adapt them. Just cite ScholarRAG if you publish.
 
 ### Q: Are these examples peer-reviewed?
 **A**: These are demonstration projects. While they follow best practices (PRISMA 2020, systematic methods), they are not peer-reviewed systematic reviews themselves.
@@ -167,7 +167,7 @@ You are free to:
 - ✅ Share with colleagues and students
 
 You must:
-- ✅ Provide attribution to ResearcherRAG
+- ✅ Provide attribution to ScholarRAG
 - ✅ Indicate if changes were made
 
 ---
@@ -177,11 +177,11 @@ You must:
 If you use these examples in your research or teaching, please cite:
 
 ```bibtex
-@software{researcherrag_examples2024,
-  title={ResearcherRAG Example Projects},
+@software{scholarag_examples2024,
+  title={ScholarRAG Example Projects},
   author={You, Hosung},
   year={2024},
-  url={https://github.com/HosungYou/ResearcherRAG-helper/tree/main/examples},
+  url={https://github.com/HosungYou/ScholarRAG-helper/tree/main/examples},
   note={Accessed: YYYY-MM-DD}
 }
 ```
@@ -190,9 +190,9 @@ If you use these examples in your research or teaching, please cite:
 
 ## Questions or Feedback?
 
-- **Documentation**: https://researcher-rag-helper.vercel.app/guide
-- **Issues**: https://github.com/HosungYou/ResearcherRAG-helper/issues
-- **Discussions**: https://github.com/HosungYou/ResearcherRAG-helper/discussions
+- **Documentation**: https://scholar-rag-helper.vercel.app/guide
+- **Issues**: https://github.com/HosungYou/ScholarRAG-helper/issues
+- **Discussions**: https://github.com/HosungYou/ScholarRAG-helper/discussions
 
 ---
 

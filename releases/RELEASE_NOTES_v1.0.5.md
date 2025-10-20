@@ -55,7 +55,7 @@ Detailed explanations of all file types:
 
 ### 3. Tools & Technologies (`/codebook/tools`)
 
-Why ResearcherRAG uses specific tools:
+Why ScholarRAG uses specific tools:
 
 - **ChromaDB** - Local vector database for semantic search
 - **Claude AI** - Large context window (200K+ tokens) for PRISMA screening
@@ -325,7 +325,7 @@ Maintained 70/30 split as designed:
 
 ## 🗂️ Files Changed
 
-### ResearcherRAG-helper Repository (Codebook)
+### ScholarRAG-helper Repository (Codebook)
 
 **Modified:**
 - `frontend/app/codebook/page.tsx` - Simplified to index with 4 navigation cards
@@ -340,7 +340,7 @@ Maintained 70/30 split as designed:
 
 **Total:** 7 files changed, 1,738 insertions, 1,390 deletions
 
-### ResearcherRAG Repository (Prompts)
+### ScholarRAG Repository (Prompts)
 
 **Enhanced:**
 - `prompts/05_execution_plan.md` (+210 lines)
@@ -356,11 +356,11 @@ Maintained 70/30 split as designed:
 All changes automatically deployed via Vercel:
 
 **Live URLs:**
-- https://researcher-rag-helper.vercel.app/codebook
-- https://researcher-rag-helper.vercel.app/codebook/fundamentals
-- https://researcher-rag-helper.vercel.app/codebook/file-formats
-- https://researcher-rag-helper.vercel.app/codebook/tools
-- https://researcher-rag-helper.vercel.app/codebook/scripts-workflow
+- https://scholar-rag-helper.vercel.app/codebook
+- https://scholar-rag-helper.vercel.app/codebook/fundamentals
+- https://scholar-rag-helper.vercel.app/codebook/file-formats
+- https://scholar-rag-helper.vercel.app/codebook/tools
+- https://scholar-rag-helper.vercel.app/codebook/scripts-workflow
 
 ---
 
@@ -373,7 +373,7 @@ This release specifically serves:
 - Analogies and visual comparisons
 - No assumed technical knowledge
 
-✅ **First-time ResearcherRAG users**
+✅ **First-time ScholarRAG users**
 - Step-by-step guidance
 - Realistic examples
 - Troubleshooting help
@@ -417,10 +417,10 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 
 ## 📦 Download
 
-- **Homepage:** https://researcher-rag-helper.vercel.app
-- **Documentation:** https://researcher-rag-helper.vercel.app/guide
-- **Codebook:** https://researcher-rag-helper.vercel.app/codebook
-- **Source Code:** https://github.com/HosungYou/ResearcherRAG-helper
+- **Homepage:** https://scholar-rag-helper.vercel.app
+- **Documentation:** https://scholar-rag-helper.vercel.app/guide
+- **Codebook:** https://scholar-rag-helper.vercel.app/codebook
+- **Source Code:** https://github.com/HosungYou/ScholarRAG-helper
 
 ---
 
