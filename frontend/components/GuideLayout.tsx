@@ -34,6 +34,10 @@ const chapters: Chapter[] = [
   { number: 7, title: 'Documentation & Writing', href: '/guide/07-documentation-writing' },
 ]
 
+const additionalPages: { title: string; href: string }[] = [
+  { title: 'Workflow Map', href: '/guide/workflow-map' },
+]
+
 export default function GuideLayout({ children, githubUrl, githubLabel = "View on GitHub" }: GuideLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [tocItems, setTocItems] = useState<TOCItem[]>([])
@@ -150,7 +154,27 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               )
             })}
 
-            {/* Prompt Library - After chapters, before Codebook */}
+            {/* Additional Pages */}
+            <div className="pt-4 mt-4 border-t border-gray-200">
+              {additionalPages.map((page) => {
+                const isActive = pathname === page.href
+                return (
+                  <Link
+                    key={page.href}
+                    href={page.href}
+                    className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                      isActive
+                        ? 'bg-gray-100 font-medium'
+                        : 'text-muted hover:bg-gray-50 hover:text-foreground'
+                    }`}
+                  >
+                    {page.title}
+                  </Link>
+                )
+              })}
+            </div>
+
+            {/* Prompt Library - After additional pages */}
             <div className="pt-4 mt-4 border-t border-gray-200">
               <Link
                 href="/guide/prompt-library"
