@@ -71,7 +71,7 @@ Currently, there's a **disconnection**:
 
 ```
 ┌─────────────────────────────────────────────┐
-│        ScholarRAG Prompt System          │
+│        ScholaRAG Prompt System          │
 │  (Stage-aware, Protocol-enforcing)          │
 └──────────────────┬──────────────────────────┘
                    │
@@ -239,7 +239,7 @@ Before moving to Stage 2, ensure you have:
 Update `/Volumes/External SSD/Projects/CLAUDE.md`:
 
 ```markdown
-## ScholarRAG Stage-Based Workflow
+## ScholaRAG Stage-Based Workflow
 
 ### Stage Detection
 
@@ -411,10 +411,10 @@ Scripts read this to:
 **New Documentation Structure**:
 
 ```
-ScholarRAG Documentation
+ScholaRAG Documentation
 
 1. Introduction
-   ├── What is ScholarRAG?
+   ├── What is ScholaRAG?
    └── Two Ways to Use It ← NEW
        ├── Option A: Prompt-Driven (Recommended for Researchers)
        └── Option B: Script-Driven (For Developers)
@@ -596,7 +596,7 @@ ScholarRAG Documentation
 Researcher visits: https://scholarag.vercel.app
 
 ```
-Welcome to ScholarRAG!
+Welcome to ScholaRAG!
 
 Two ways to use:
 ┌─────────────────────────────────┐
@@ -889,7 +889,7 @@ Most documentation:
 - Tutorial-style → One-way communication
 - Static → Can't adapt to user
 
-ScholarRAG (after implementation):
+ScholaRAG (after implementation):
 - **Conversational** → Two-way with Claude
 - **Adaptive** → Detects divergence, guides back
 - **Automated** → Scripts execute automatically

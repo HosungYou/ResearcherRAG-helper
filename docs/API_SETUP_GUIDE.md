@@ -1,6 +1,6 @@
 # API Setup Guide
 
-This guide walks you through setting up all the APIs needed for ScholarRAG.
+This guide walks you through setting up all the APIs needed for ScholaRAG.
 
 ---
 
@@ -10,14 +10,14 @@ This guide walks you through setting up all the APIs needed for ScholarRAG.
 
 ```bash
 # 1. Get Claude API key from https://console.anthropic.com
-# 2. Create .env file in ScholarRAG directory
-cd ScholarRAG
+# 2. Create .env file in ScholaRAG directory
+cd ScholaRAG
 cp .env.example .env
 
 # 3. Add your Claude API key to .env
 echo "ANTHROPIC_API_KEY=sk-ant-api03-xxxxx" >> .env
 
-# 4. Done! Start using ScholarRAG
+# 4. Done! Start using ScholaRAG
 ```
 
 **All other APIs are optional** - Semantic Scholar, OpenAlex, and arXiv work without API keys!
@@ -62,13 +62,13 @@ echo "ANTHROPIC_API_KEY=sk-ant-api03-xxxxx" >> .env
 #### Step 2: Get API Key
 1. After logging in, go to "API Keys" section
 2. Click "Create Key"
-3. Name it: "ScholarRAG"
+3. Name it: "ScholaRAG"
 4. Copy the key (starts with `sk-ant-api03-`)
 5. **⚠️ Save it immediately** - you can't view it again!
 
 #### Step 3: Add to .env File
 ```bash
-# In ScholarRAG directory
+# In ScholaRAG directory
 nano .env
 
 # Add this line:
@@ -140,7 +140,7 @@ mailto = "your.email@university.edu"  # Change this to your email
 
 ## 3. Embedding Models (No API Key Needed)
 
-ScholarRAG uses **local open-source models** by default:
+ScholaRAG uses **local open-source models** by default:
 
 ### Default Model: `all-MiniLM-L6-v2`
 - Provider: Sentence Transformers (HuggingFace)
@@ -184,7 +184,7 @@ python scripts/05_build_rag.py --project projects/my-project
 
 ## 4. Vector Database (ChromaDB - No Setup Needed)
 
-ScholarRAG uses **ChromaDB** for vector storage:
+ScholaRAG uses **ChromaDB** for vector storage:
 
 ### Why ChromaDB?
 - ✅ No server/cloud setup required
@@ -462,4 +462,4 @@ python scripts/01_fetch_papers.py --project projects/test --query "test"
 
 ---
 
-**Questions?** Open an issue at [GitHub](https://github.com/HosungYou/ScholarRAG/issues)
+**Questions?** Open an issue at [GitHub](https://github.com/HosungYou/ScholaRAG/issues)

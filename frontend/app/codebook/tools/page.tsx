@@ -15,7 +15,7 @@ export default function ToolsPage() {
         <h1 className="text-4xl font-bold mb-6 text-gray-900">🛠️ Tools & Technologies</h1>
 
         <p className="text-gray-700 mb-10 text-lg leading-relaxed">
-          Why ScholarRAG uses specific tools and technologies.
+          Why ScholaRAG uses specific tools and technologies.
         </p>
 
         {/* ChromaDB */}
@@ -39,7 +39,7 @@ export default function ToolsPage() {
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ScholarRAG:</strong>
+              <strong>💡 In ScholaRAG:</strong>
             </p>
             <p className="text-sm text-gray-700 mb-3">
               ChromaDB stores all your papers as "embeddings" (meaning vectors). When you ask a question, it finds the most relevant papers based on <strong>conceptual similarity</strong>, not keyword matching.
@@ -80,7 +80,7 @@ export default function ToolsPage() {
 
           <div className="bg-gray-50 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ScholarRAG:</strong>
+              <strong>💡 In ScholaRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
               Claude runs the 02_screening and 03_eligibility stages, applying your PRISMA criteria to hundreds of papers in minutes instead of weeks.
@@ -123,7 +123,7 @@ export default function ToolsPage() {
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ScholarRAG:</strong>
+              <strong>💡 In ScholaRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
               Script 04 uses OpenAI to create embeddings for all your papers, then stores them in ChromaDB for fast semantic search during the RAG stage.
@@ -163,10 +163,10 @@ export default function ToolsPage() {
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ScholarRAG:</strong>
+              <strong>💡 In ScholaRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
-              The ScholarRAG code lives on GitHub at{' '}
+              The ScholaRAG code lives on GitHub at{' '}
               <code className="bg-white px-2 py-1 rounded border border-gray-300 font-mono text-xs">github.com/HosungYou/researcherRAG</code>.
               You clone it to your computer, customize for your research, and can contribute improvements back to the community.
             </p>
@@ -223,7 +223,7 @@ export default function ToolsPage() {
               <strong>⚠️ For researchers:</strong>
             </p>
             <p className="text-sm text-gray-700">
-              You don't need to master Git to use ScholarRAG! Basic commands (clone, pull) are enough to get started. Think of it like using Word - you don't need to know how spell-check works internally.
+              You don't need to master Git to use ScholaRAG! Basic commands (clone, pull) are enough to get started. Think of it like using Word - you don't need to know how spell-check works internally.
             </p>
           </div>
         </section>
@@ -238,7 +238,7 @@ export default function ToolsPage() {
           </p>
 
           <div className="bg-gray-50 border border-gray-300 p-6 rounded-lg mb-6">
-            <p className="font-semibold mb-4 text-gray-900">Key libraries in ScholarRAG:</p>
+            <p className="font-semibold mb-4 text-gray-900">Key libraries in ScholaRAG:</p>
             <ul className="space-y-2 text-sm text-gray-700 ml-4 list-disc">
               <li><strong>anthropic:</strong> Communicates with Claude AI</li>
               <li><strong>openai:</strong> Creates semantic embeddings</li>
@@ -261,7 +261,7 @@ pip install anthropic openai chromadb
 
           <div className="bg-gray-100 border border-gray-300 p-5 rounded-lg">
             <p className="text-sm text-gray-800 mb-2">
-              <strong>💡 In ScholarRAG:</strong>
+              <strong>💡 In ScholaRAG:</strong>
             </p>
             <p className="text-sm text-gray-700">
               All required libraries are listed in{' '}

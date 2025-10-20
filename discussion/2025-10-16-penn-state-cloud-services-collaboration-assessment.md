@@ -1,5 +1,5 @@
 # Penn State Cloud Services Collaboration Assessment
-## ScholarRAG & RAG.lab Strategic Evaluation
+## ScholaRAG & RAG.lab Strategic Evaluation
 
 **Date**: October 16, 2025
 **Author**: Hosung You
@@ -10,15 +10,15 @@
 
 ## Executive Summary
 
-Penn State IT's Cloud Services Team has offered infrastructure support for the ScholarRAG ecosystem through their enterprise cloud partnerships (AWS, Azure, Google Cloud). This assessment evaluates the strategic value, technical benefits, and implementation roadmap for integrating institutional cloud resources into the ScholarRAG and RAG.lab platforms.
+Penn State IT's Cloud Services Team has offered infrastructure support for the ScholaRAG ecosystem through their enterprise cloud partnerships (AWS, Azure, Google Cloud). This assessment evaluates the strategic value, technical benefits, and implementation roadmap for integrating institutional cloud resources into the ScholaRAG and RAG.lab platforms.
 
-**Key Recommendation**: This collaboration presents a transformational opportunity to scale ScholarRAG from a personal research tool to an institutional research infrastructure service, with significant benefits in security, performance, cost optimization, and long-term sustainability.
+**Key Recommendation**: This collaboration presents a transformational opportunity to scale ScholaRAG from a personal research tool to an institutional research infrastructure service, with significant benefits in security, performance, cost optimization, and long-term sustainability.
 
 ---
 
 ## 1. Current Project Overview
 
-### 1.1 ScholarRAG (Core Engine)
+### 1.1 ScholaRAG (Core Engine)
 - **Purpose**: Open-source AI-powered research assistant for systematic literature reviews
 - **Architecture**: 5-stage workflow with PRISMA 2020 compliance
 - **Technology Stack**:
@@ -34,8 +34,8 @@ Penn State IT's Cloud Services Team has offered infrastructure support for the S
   - No centralized data storage
   - Limited scalability for multiple concurrent users
 
-### 1.2 RAG.lab / ScholarRAG-helper (Web Platform)
-- **Purpose**: Interactive documentation and AI chatbot for ScholarRAG implementation
+### 1.2 RAG.lab / ScholaRAG-helper (Web Platform)
+- **Purpose**: Interactive documentation and AI chatbot for ScholaRAG implementation
 - **Live URL**: https://scholar-rag-helper.vercel.app/
 - **Technology Stack**:
   - Frontend: Next.js 14, Tailwind CSS
@@ -305,7 +305,7 @@ Penn State IT's Cloud Services Team has offered infrastructure support for the S
    - Load testing with 50+ concurrent users
    - Optimize embedding generation pipeline
    - Implement caching strategy (Redis/ElastiCache)
-   - Document migration guide for ScholarRAG CLI users
+   - Document migration guide for ScholaRAG CLI users
 
 **Success Metrics**:
 - 99.9% uptime during ACLOD Innovation Summit
@@ -459,7 +459,7 @@ Penn State IT's Cloud Services Team has offered infrastructure support for the S
 
 1. **Schedule Meeting with Rick Rhoades**
    - Agenda items:
-     - Demo ScholarRAG and RAG.lab
+     - Demo ScholaRAG and RAG.lab
      - Discuss AWS account provisioning timeline
      - Clarify BAA requirements for research data
      - Introduce to Solutions Engagement Specialists
@@ -474,7 +474,7 @@ Penn State IT's Cloud Services Team has offered infrastructure support for the S
 3. **Stakeholder Engagement**
    - Identify 5-10 early adopter researchers for pilot
    - Present at ACLOD Innovation Summit with Penn State IT co-presentation
-   - Draft blog post: "Scaling ScholarRAG with Institutional Cloud Services"
+   - Draft blog post: "Scaling ScholaRAG with Institutional Cloud Services"
 
 ### 6.2 Short-term Goals (3-6 Months)
 
@@ -514,7 +514,7 @@ Penn State IT's Cloud Services Team has offered infrastructure support for the S
 
 ## 7. Conclusion
 
-The Penn State Cloud Services collaboration represents a **transformational opportunity** to evolve ScholarRAG from a personal research tool into a **institutional research infrastructure platform**.
+The Penn State Cloud Services collaboration represents a **transformational opportunity** to evolve ScholaRAG from a personal research tool into a **institutional research infrastructure platform**.
 
 **Key Value Propositions**:
 
@@ -541,7 +541,7 @@ The Penn State Cloud Services collaboration represents a **transformational oppo
    - Access to grant funding opportunities
    - Potential for external revenue generation
 
-**Recommendation**: **Proceed with full engagement** with Penn State Cloud Services Team. The technical benefits, institutional support, and long-term sustainability far outweigh the increased operational complexity. This collaboration aligns with Penn State's AI strategy and positions ScholarRAG as a flagship institutional research service.
+**Recommendation**: **Proceed with full engagement** with Penn State Cloud Services Team. The technical benefits, institutional support, and long-term sustainability far outweigh the increased operational complexity. This collaboration aligns with Penn State's AI strategy and positions ScholaRAG as a flagship institutional research service.
 
 **Next Steps**:
 1. Schedule meeting with Rick Rhoades (this week)
@@ -563,7 +563,7 @@ The Penn State Cloud Services collaboration represents a **transformational oppo
 - Penn State AI Guidelines: [Internal IT Policy]
 - AWS Bedrock for Research: https://aws.amazon.com/bedrock/
 - Azure OpenAI Service: https://azure.microsoft.com/en-us/products/ai-services/openai-service
-- ScholarRAG GitHub: https://github.com/HosungYou/researcherRAG
+- ScholaRAG GitHub: https://github.com/HosungYou/researcherRAG
 - RAG.lab: https://scholar-rag-helper.vercel.app/
 
 ### C. Related Documentation

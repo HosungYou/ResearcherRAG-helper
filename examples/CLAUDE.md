@@ -2,7 +2,7 @@
 
 ## 📁 Purpose
 
-Example projects and use cases demonstrating ScholarRAG in action.
+Example projects and use cases demonstrating ScholaRAG in action.
 
 ## 📝 Content Guidelines
 

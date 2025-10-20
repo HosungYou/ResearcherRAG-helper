@@ -11,7 +11,7 @@ export default function DashboardPage() {
             Project Dashboard
           </h1>
           <p className="text-xl text-muted">
-            Monitor your ScholarRAG projects and track PRISMA progress
+            Monitor your ScholaRAG projects and track PRISMA progress
           </p>
         </div>
 
@@ -46,8 +46,8 @@ export default function DashboardPage() {
               </p>
               <CodeBlock
                 language="bash"
-                code={`# Navigate to ScholarRAG root directory
-cd ScholarRAG
+                code={`# Navigate to ScholaRAG root directory
+cd ScholaRAG
 
 # Check status of a specific project
 python scholarag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
@@ -58,7 +58,7 @@ python scholarag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
             <div>
               <h3 className="text-xl font-semibold mb-3">📚 List All Projects</h3>
               <p className="text-sm text-muted mb-3">
-                View all your ScholarRAG projects at a glance:
+                View all your ScholaRAG projects at a glance:
               </p>
               <CodeBlock
                 language="bash"
@@ -210,9 +210,9 @@ python scholarag_cli.py status projects/2025-10-13_AI-Healthcare-Adoption`}
           </p>
           <CodeBlock
             language="bash"
-            code={`# Clone ScholarRAG repository
-git clone https://github.com/HosungYou/ScholarRAG.git
-cd ScholarRAG
+            code={`# Clone ScholaRAG repository
+git clone https://github.com/HosungYou/ScholaRAG.git
+cd ScholaRAG
 
 # Install CLI dependencies
 pip install click pyyaml

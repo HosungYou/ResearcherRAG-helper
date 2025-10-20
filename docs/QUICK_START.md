@@ -1,4 +1,4 @@
-# Quick Start Guide: ScholarRAG
+# Quick Start Guide: ScholaRAG
 
 **Get up and running in 15 minutes**
 
@@ -100,8 +100,8 @@ Same as above, but you can also:
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/your-username/ScholarRAG.git
-cd ScholarRAG
+git clone https://github.com/your-username/ScholaRAG.git
+cd ScholaRAG
 
 # 2. Create virtual environment
 python -m venv venv
@@ -213,18 +213,18 @@ python scripts/ingest_papers.py data/my_papers
 # 2. Create new Space
 # 3. Push code:
 git clone https://huggingface.co/spaces/your-username/scholarag
-cp -r /path/to/ScholarRAG/* scholarag/
+cp -r /path/to/ScholaRAG/* scholarag/
 cd scholarag
 git add .
-git commit -m "Deploy ScholarRAG"
+git commit -m "Deploy ScholaRAG"
 git push
 ```
 
 **Method 2: Deploy to University Server**
 ```bash
 # On your server:
-git clone https://github.com/your-username/ScholarRAG.git
-cd ScholarRAG
+git clone https://github.com/your-username/ScholaRAG.git
+cd ScholaRAG
 docker-compose up -d
 
 # Access at: http://your-server.edu
@@ -350,7 +350,7 @@ with get_openai_callback() as cb:
 
 ```
 Day 1: Setup
-- Deploy ScholarRAG
+- Deploy ScholaRAG
 - Upload 200 papers from Google Scholar
 - Wait for ingestion (1-2 hours)
 
@@ -378,7 +378,7 @@ Day 6: Writing
 Week 1: Data Collection
 - Conduct 30 interviews
 - Transcribe using Otter.ai or Rev.com
-- Upload transcripts to ScholarRAG
+- Upload transcripts to ScholaRAG
 
 Week 2: Initial Coding
 - Run AI-assisted coding
@@ -454,7 +454,7 @@ Step 3: Preliminary Work
 
 **Before Asking:**
 1. Check [Documentation](docs/)
-2. Search [GitHub Issues](https://github.com/your-username/ScholarRAG/issues)
+2. Search [GitHub Issues](https://github.com/your-username/ScholaRAG/issues)
 3. Try [Troubleshooting](#troubleshooting) section
 
 **How to Ask:**
@@ -477,11 +477,11 @@ Steps I tried:
 Environment:
 - MacOS 13.0
 - Python 3.11
-- ScholarRAG v1.0
+- ScholaRAG v1.0
 ```
 
 ---
 
 **Ready to start? Choose your path above and dive in!** 🚀
 
-Questions? → [Open an issue](https://github.com/your-username/ScholarRAG/issues/new)
+Questions? → [Open an issue](https://github.com/your-username/ScholaRAG/issues/new)

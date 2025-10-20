@@ -1,8 +1,8 @@
-# ScholarRAG Helper - Design System
+# ScholaRAG Helper - Design System
 
 ## Design Philosophy
 
-ScholarRAG Helper follows a **modern monochrome, typography-first** design philosophy inspired by contemporary researcher aesthetics. The interface prioritizes clarity, efficiency, and professional elegance suitable for academic environments.
+ScholaRAG Helper follows a **modern monochrome, typography-first** design philosophy inspired by contemporary researcher aesthetics. The interface prioritizes clarity, efficiency, and professional elegance suitable for academic environments.
 
 ### Core Principles
 
@@ -338,4 +338,4 @@ When creating new UI components, verify:
 ---
 
 **Last Updated:** 2025-01-11
-**Maintained by:** ScholarRAG Team
+**Maintained by:** ScholaRAG Team

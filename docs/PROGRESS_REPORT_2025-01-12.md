@@ -1,4 +1,4 @@
-# Progress Report: ScholarRAG Website Improvements
+# Progress Report: ScholaRAG Website Improvements
 **Date**: 2025-01-12
 **Session**: Phase 1 - Conceptual Clarity Implementation
 
@@ -81,7 +81,7 @@ Key additions:
 **Tasks**:
 1. Add GitHub links in website chapters:
    ```tsx
-   <a href="https://github.com/HosungYou/ScholarRAG/blob/main/scripts/01_fetch_papers.py">
+   <a href="https://github.com/HosungYou/ScholaRAG/blob/main/scripts/01_fetch_papers.py">
      View script on GitHub →
    </a>
    ```

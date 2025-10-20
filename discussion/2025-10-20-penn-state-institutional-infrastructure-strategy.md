@@ -1,4 +1,4 @@
-# Penn State Institutional Infrastructure Strategy for ScholarRAG
+# Penn State Institutional Infrastructure Strategy for ScholaRAG
 
 **Date**: 2025-10-20
 **Status**: Strategic Planning
@@ -8,10 +8,10 @@
 
 ## 📋 Executive Summary
 
-This document outlines a comprehensive strategy for developing ScholarRAG as a Penn State institutional service, analyzing available resources, collaboration models, and technical infrastructure options. The analysis considers Rick Rhoades (Cloud Services) as a key partner and explores how Penn State's existing infrastructure can support ScholarRAG deployment.
+This document outlines a comprehensive strategy for developing ScholaRAG as a Penn State institutional service, analyzing available resources, collaboration models, and technical infrastructure options. The analysis considers Rick Rhoades (Cloud Services) as a key partner and explores how Penn State's existing infrastructure can support ScholaRAG deployment.
 
 **Key Questions Addressed**:
-1. What Penn State resources can support ScholarRAG beyond Cloud Services?
+1. What Penn State resources can support ScholaRAG beyond Cloud Services?
 2. Should Claude Code API keys be centrally managed?
 3. What are the advantages of Azure Container Instances vs Lambda?
 4. Can Penn State's institutional repository provide PDF access?
@@ -19,7 +19,7 @@ This document outlines a comprehensive strategy for developing ScholarRAG as a P
 
 ---
 
-## 🎯 Part 1: Penn State Resources for ScholarRAG
+## 🎯 Part 1: Penn State Resources for ScholaRAG
 
 ### 1.1 Computing & Infrastructure Resources
 
@@ -35,14 +35,14 @@ This document outlines a comprehensive strategy for developing ScholarRAG as a P
 - **AI Hub Membership**: Access to Penn State's AI research network
   - 75+ AI researchers across 4 centers
   - Collaboration opportunities
-  - Visibility for ScholarRAG project
+  - Visibility for ScholaRAG project
 
 - **Seed Grant Programs**:
   - **Rising Researcher Collaborations**: For postdocs/early career researchers
   - **Mid-Scale Seed Grant**: $10K-$50K for interdisciplinary projects
   - Deadlines: Typically Fall/Spring (check ICDS website)
 
-**ScholarRAG Application**:
+**ScholaRAG Application**:
 ```python
 # Example: Roar-based PDF processing
 - Host ChromaDB vectorstore on Roar (instead of Vercel)
@@ -78,7 +78,7 @@ Expected outcomes:
 - FERPA-compliant data storage
 - VM hosting for web services
 
-**ScholarRAG Integration**:
+**ScholaRAG Integration**:
 - Claude API keys centrally managed → researchers avoid personal costs
 - Azure Container Instances for automated screening
 - AWS Lambda for on-demand PDF processing
@@ -107,12 +107,12 @@ Expected outcomes:
   - OA journal publishing assistance
   - Publication fee support (TOME program)
 
-**ScholarRAG Applications**:
+**ScholaRAG Applications**:
 
 1. **Dataset Publication on ScholarSphere**:
 ```
 Example Dataset:
-"Penn State ScholarRAG Usage Patterns (2025-2026)"
+"Penn State ScholaRAG Usage Patterns (2025-2026)"
 - 500 systematic reviews
 - 50,000+ AI screening decisions
 - Time savings data
@@ -124,11 +124,11 @@ DOI: 10.26207/penn-state-scholarag-2025
 ```
 
 2. **Open Access Publishing Support**:
-- Libraries can cover publication fees for ScholarRAG methods papers
+- Libraries can cover publication fees for ScholaRAG methods papers
 - Increases visibility and adoption
 
 3. **Librarian Partnership**:
-- 150+ Penn State librarians as potential ScholarRAG ambassadors
+- 150+ Penn State librarians as potential ScholaRAG ambassadors
 - Systematic reviews are librarians' expertise area
 - Joint workshops: "AI-Assisted Systematic Reviews"
 
@@ -169,41 +169,41 @@ You (Postdoc) + Librarians = Powerful Alliance
 ##### **A. CENSAI - AI Foundations & Scientific Applications** ⭐⭐⭐⭐⭐
 - **Leader**: Vasant Honavar (IST Professor)
 - **Focus**: Foundational AI + accelerating scientific discovery
-- **ScholarRAG Fit**: PERFECT MATCH
+- **ScholaRAG Fit**: PERFECT MATCH
   - Mission: "AI tools to accelerate scientific progress"
   - Systematic reviews = scientific discovery acceleration
 
 **Action Item**: Email Vasant Honavar
 ```
-Subject: AI for Scientific Discovery - ScholarRAG Collaboration
+Subject: AI for Scientific Discovery - ScholaRAG Collaboration
 
 Dear Dr. Honavar,
 
-I am developing ScholarRAG, an AI-powered systematic review platform
+I am developing ScholaRAG, an AI-powered systematic review platform
 that helps Penn State researchers accelerate literature synthesis.
 
 Given CENSAI's mission of using AI to accelerate scientific progress,
 I see strong alignment. Would you be open to discussing:
-- Potential CENSAI affiliation for ScholarRAG
+- Potential CENSAI affiliation for ScholaRAG
 - Collaboration opportunities
 - Seed grant possibilities
 
 I'm also working with Rick Rhoades (Cloud Services) on infrastructure.
 
-[Attach 1-page ScholarRAG overview]
+[Attach 1-page ScholaRAG overview]
 ```
 
 ##### **B. CSRAI - Socially Responsible AI** ⭐⭐⭐
 - Focus: Ethical AI, bias mitigation
-- ScholarRAG Relevance: Fairness in AI-assisted screening, transparency
+- ScholaRAG Relevance: Fairness in AI-assisted screening, transparency
 
 ##### **C. CAFE - AI for Engineered Systems** ⭐⭐
 - Focus: Defense & engineering applications
-- Less relevant for ScholarRAG
+- Less relevant for ScholaRAG
 
 ##### **D. AIMI - AI/ML for Industry** ⭐⭐⭐⭐
 - Focus: Industry partnerships
-- ScholarRAG Potential: Commercialization path, pharmaceutical industry needs systematic reviews
+- ScholaRAG Potential: Commercialization path, pharmaceutical industry needs systematic reviews
 
 ---
 
@@ -231,7 +231,7 @@ I'm also working with Rick Rhoades (Cloud Services) on infrastructure.
 **Eligibility**: Early-career faculty (postdocs included!)
 **Purpose**: Pilot studies for external grant proposals
 
-**ScholarRAG Proposal Example**:
+**ScholaRAG Proposal Example**:
 ```
 Title: Pilot Study - AI-Assisted Systematic Reviews at Penn State
 Budget: $5,000
@@ -297,7 +297,7 @@ Budget: $75,000
   - College-specific customizations: $20,000
   - Training & marketing: $10,000
 
-Goal: Deploy ScholarRAG to 500 users across 5 colleges
+Goal: Deploy ScholaRAG to 500 users across 5 colleges
       → Data for NSF MRI proposal ($2M infrastructure grant)
 ```
 
@@ -308,14 +308,14 @@ Goal: Deploy ScholarRAG to 500 users across 5 colleges
 **Amount**: $10K-$30K
 **Focus**: Partnerships with Minority Serving Institutions (MSIs)
 
-**ScholarRAG MSI Partnership Proposal**:
+**ScholaRAG MSI Partnership Proposal**:
 ```
 Title: Democratizing Research Tools for Under-Resourced Universities
 
 Partners: Penn State + Howard University + New Mexico State
 
 Approach:
-  - Deploy ScholarRAG at MSIs (free API via Penn State)
+  - Deploy ScholaRAG at MSIs (free API via Penn State)
   - Train 50 faculty at partner institutions
   - Study: Does AI close research productivity gaps?
 
@@ -344,17 +344,17 @@ Significance:
 - **Co-Learning Laboratory**: Technology exploration space
 - **Professional Development**: Faculty training programs
 
-**ScholarRAG Integration Opportunities**:
+**ScholaRAG Integration Opportunities**:
 
-1. **Register ScholarRAG in Ed Tech Advisor**:
+1. **Register ScholaRAG in Ed Tech Advisor**:
 ```
 Faculty searches: "Need: Literature review support"
-System recommends: "ScholarRAG by Penn State IT"
+System recommends: "ScholaRAG by Penn State IT"
 ```
 
 2. **TLT Co-Learning Lab Station**:
 ```
-Monthly "drop-in hours" for ScholarRAG
+Monthly "drop-in hours" for ScholaRAG
 Faculty hands-on experience
 You (or student) staffing 2 hours/week
 ```
@@ -364,7 +364,7 @@ You (or student) staffing 2 hours/week
 "AI-Assisted Research Skills" Certificate (30 contact hours)
 
 Module 1: Introduction to AI Research Tools (3 hrs)
-Module 2: Systematic Reviews with ScholarRAG (6 hrs)
+Module 2: Systematic Reviews with ScholaRAG (6 hrs)
 Module 3: AI-Assisted Data Analysis (6 hrs)
 Module 4: Grant Writing with AI (6 hrs)
 Module 5: Ethical Considerations (3 hrs)
@@ -390,19 +390,19 @@ Your role: Lead instructor for Modules 1-2
 - **CUBSS**: High-performance Windows server (SPSS, Stata, ArcGIS)
 - **Methodological workshops**
 
-**ScholarRAG Collaboration Strategy**:
+**ScholaRAG Collaboration Strategy**:
 
-**Proposal**: SSRI approves ScholarRAG as "official method support tool"
+**Proposal**: SSRI approves ScholaRAG as "official method support tool"
 
 ```
 SSRI Methods Support Menu:
 - Statistical consulting ✓
 - Survey design ✓
 - Qualitative analysis ✓
-- Systematic reviews ✓ ← Add ScholarRAG here!
+- Systematic reviews ✓ ← Add ScholaRAG here!
 
 Faculty request: "I need systematic review help"
-SSRI response: "Contact Hosung You (ScholarRAG specialist)"
+SSRI response: "Contact Hosung You (ScholaRAG specialist)"
 ```
 
 **Joint Workshop Series**:
@@ -410,9 +410,9 @@ SSRI response: "Contact Hosung You (ScholarRAG specialist)"
 "Rigorous Evidence Synthesis Methods" (Co-sponsored by SSRI)
 
 Session 1: Traditional systematic reviews (SSRI expert)
-Session 2: AI-assisted reviews (You + ScholarRAG)
+Session 2: AI-assisted reviews (You + ScholaRAG)
 Session 3: Meta-analysis techniques (SSRI statistician)
-Session 4: Hands-on ScholarRAG lab (You)
+Session 4: Hands-on ScholaRAG lab (You)
 
 Target: 50 social science faculty/year
 ```
@@ -446,11 +446,11 @@ Target: 50 social science faculty/year
 
 #### **Question**: Should Claude Code API keys be centrally managed by Penn State?
 
-#### **Current ScholarRAG Usage Pattern**:
+#### **Current ScholaRAG Usage Pattern**:
 
 **Pattern 1: Claude Code (Development Phase)**
 ```
-Researcher pastes ScholarRAG prompts into Claude Code
+Researcher pastes ScholaRAG prompts into Claude Code
   ↓
 Claude Code generates scripts, creates files
   ↓
@@ -459,7 +459,7 @@ API usage: Very low (~$2-5 per project)
 Duration: 1-2 hours one-time setup
 ```
 
-**Pattern 2: ScholarRAG Scripts (Production Phase)**
+**Pattern 2: ScholaRAG Scripts (Production Phase)**
 ```
 scripts/03_screen_papers.py execution
   ↓
@@ -480,7 +480,7 @@ Duration: 2 hours continuous processing
   - Adding complexity reduces adoption
   - Setup time short (1-2 hours)
 
-**For ScholarRAG Scripts (Pattern 2)**:
+**For ScholaRAG Scripts (Pattern 2)**:
 - **Need for Central Management**: ✅ **High**
 - **Reasoning**:
   - API costs significant ($50-200/project × 100 projects = $5K-20K/year)
@@ -527,7 +527,7 @@ Claude Code uses personal sub-key
 **Reality Check**: ⚠️ **Very Low Feasibility**
 - Anthropic doesn't have university enterprise program yet
 - Enterprise minimum likely $100K+
-- Penn State unlikely to commit for ScholarRAG alone
+- Penn State unlikely to commit for ScholaRAG alone
 
 ---
 
@@ -539,7 +539,7 @@ Claude Code:
   - Researchers use personal API keys (or Claude Pro subscription)
   - No Penn State cost or management
 
-ScholarRAG Scripts:
+ScholaRAG Scripts:
   - Penn State provides project-based API keys (AWS Bedrock)
   - Rick's team provisions via IAM
   - Budget: $5,000 for pilot (20 projects)
@@ -621,7 +621,7 @@ User clicks "Start Screening" on web interface
 API call to Penn State Azure
     ↓
 Azure Container Instances spins up:
-  - Docker container with ScholarRAG code
+  - Docker container with ScholaRAG code
   - 4 CPU cores, 8GB RAM
   - Runs in background
     ↓
@@ -665,7 +665,7 @@ Lambda processes papers
     ↓
 Problem: 15-minute timeout!
     ↓
-ScholarRAG screening takes 2 hours → exceeds limit
+ScholaRAG screening takes 2 hours → exceeds limit
 ```
 
 **Lambda Constraints**:
@@ -696,7 +696,7 @@ Lambda 4: Papers 1501-2000 (14 min) → Aggregates
 
 #### **Recommendation: Azure Container Instances** 🎯
 
-**Why ACI for ScholarRAG**:
+**Why ACI for ScholaRAG**:
 
 1. **Long-running jobs** (30 min - 2 hours)
    - Lambda's 15-min limit feels awkward
@@ -772,7 +772,7 @@ Phase 2 (Production, Month 7+):
 
 **Scenario 1: Penn State-Authored Papers**
 ```python
-# ScholarRAG OAI-PMH query
+# ScholaRAG OAI-PMH query
 response = harvest_oai_pmh(
   base_url="https://scholarsphere.psu.edu/oai",
   doi="10.1234/example"
@@ -815,7 +815,7 @@ pdf = requests.get(proxied, cookies=psu_auth_cookies)
 
 ---
 
-#### **Current ScholarRAG PDF Strategy (Without Penn State Subscriptions)**:
+#### **Current ScholaRAG PDF Strategy (Without Penn State Subscriptions)**:
 
 ```python
 def get_pdf_url(doi):
@@ -869,7 +869,7 @@ ScholarSphere (OAI-PMH):
   - Penn State affiliation: 100% accurate
 ```
 
-**Impact on ScholarRAG**:
+**Impact on ScholaRAG**:
 - Better metadata → better AI screening accuracy
 - Garbage metadata = garbage screening decisions
 
@@ -881,7 +881,7 @@ ScholarSphere (OAI-PMH):
 # Identify Penn State-authored papers
 psu_papers = scholarsphere_search(query="AI education")
 
-# Tag in ScholarRAG:
+# Tag in ScholaRAG:
 for paper in all_papers:
     if paper in psu_papers:
         paper['penn_state_author'] = True
@@ -910,9 +910,9 @@ Search Results: 2,000 papers on "AI education"
 **Most Important Benefit!**
 
 ```
-ScholarRAG generates valuable datasets:
+ScholaRAG generates valuable datasets:
 
-Dataset 1: "Penn State ScholarRAG Usage Patterns (2025-2026)"
+Dataset 1: "Penn State ScholaRAG Usage Patterns (2025-2026)"
   - 500 systematic reviews
   - 50,000+ AI screening decisions
   - Time savings data
@@ -932,7 +932,7 @@ Dataset 2: "AI Screening Decision Corpus"
 4. Other researchers cite your dataset!
 
 Your paper:
-"You, H., & Rhoades, R. (2026). ScholarRAG: AI-Assisted
+"You, H., & Rhoades, R. (2026). ScholaRAG: AI-Assisted
  Systematic Reviews at Scale. Journal of AI Education, 12(3).
  Dataset: https://doi.org/10.26207/penn-state-scholarag-2025"
 ```
@@ -948,7 +948,7 @@ Your paper:
 
 **Federated Search Across Universities**:
 ```
-ScholarRAG queries multiple repositories:
+ScholaRAG queries multiple repositories:
   - Penn State ScholarSphere
   - Ohio State KnowledgeBank
   - Michigan Deep Blue
@@ -989,17 +989,17 @@ def search_institutional_repos(query):
 
 ❌ **Don't Ask**:
 ```
-"Can we access Penn State subscription databases through ScholarRAG?"
+"Can we access Penn State subscription databases through ScholaRAG?"
 → Legal nightmare, Rick will say no
 ```
 
 ✅ **Do Ask**:
 ```
-"Can we integrate ScholarSphere OAI-PMH into ScholarRAG?
+"Can we integrate ScholarSphere OAI-PMH into ScholaRAG?
 
 Benefits:
   - Showcase Penn State research to our faculty
-  - Publish ScholarRAG datasets on ScholarSphere (impact!)
+  - Publish ScholaRAG datasets on ScholarSphere (impact!)
   - Connect to Big Ten repository network
   - 100% legal, no publisher conflicts
 
@@ -1047,25 +1047,25 @@ Can you introduce me to Penn State Libraries?"
 ✅ Penn State SSO (automatic authentication)
 ✅ Institutional knowledge:
    - Train on Penn State GitHub repos
-   - Learn ScholarRAG codebase
+   - Learn ScholaRAG codebase
 ```
 
-**ScholarRAG Use Case**:
+**ScholaRAG Use Case**:
 
 **Development Phase**:
 ```bash
 # Researcher laptop
-$ cd ScholarRAG
+$ cd ScholaRAG
 $ code .  # VS Code with Copilot Enterprise
 
 # Copilot automatically:
 1. Authenticates via Penn State SSO (hosung@psu.edu)
-2. Analyzes ScholarRAG codebase
+2. Analyzes ScholaRAG codebase
 3. Provides inline suggestions
 
 # Example:
 # Researcher types: "def screen_paper"
-# Copilot autocompletes entire function based on ScholarRAG patterns
+# Copilot autocompletes entire function based on ScholaRAG patterns
 ```
 
 **Chat-Based Assistance** (Similar to Claude Code):
@@ -1073,7 +1073,7 @@ $ code .  # VS Code with Copilot Enterprise
 User in VS Code: "Help me refactor scripts/03_screen_papers.py
                   for async/await"
 
-Copilot (trained on ScholarRAG):
+Copilot (trained on ScholaRAG):
 "I can help refactor to use asyncio for parallel processing.
 Plan:
 1. Convert screen_papers() to async
@@ -1196,7 +1196,7 @@ ICDS already has:
 Proposal: ICDS hosts Tabby as a service
   - Rick: Procurement, policy, user management
   - ICDS: GPU hosting, model maintenance, technical support
-  - You: Use cases, training, ScholarRAG integration
+  - You: Use cases, training, ScholaRAG integration
 ```
 
 ---
@@ -1226,14 +1226,14 @@ VS Code Extension (Codex CLI)
 Penn State SSO authentication
 ```
 
-**ScholarRAG Usage**:
+**ScholaRAG Usage**:
 ```bash
 # Researcher setup
 $ npm install -g @azure/openai-codex-cli
 $ codex login --tenant pennstate.onmicrosoft.com
 
 # Coding assistance
-$ cd ScholarRAG
+$ cd ScholaRAG
 $ codex chat
 
 Codex> Help me add async processing to screening script
@@ -1282,7 +1282,7 @@ Claude Code:
   - Or personal Anthropic API keys
   - Rick: Zero cost, zero infrastructure work
 
-ScholarRAG Scripts:
+ScholaRAG Scripts:
   - Penn State provides centralized API keys (AWS Bedrock)
   - Rick's team manages
   - Budget: $5K for 20 pilot projects
@@ -1316,7 +1316,7 @@ Decision point: Did pilot succeed?
 
 Phase 1 Goals:
   - Researchers use Claude Code with personal keys (no Penn State cost)
-  - You provide centralized API keys for ScholarRAG scripts ($5K)
+  - You provide centralized API keys for ScholaRAG scripts ($5K)
   - Zero infrastructure work for your team
   - Prove demand first
 
@@ -1341,7 +1341,7 @@ Sound reasonable?"
 ### Week 1: Low-Hanging Fruit
 - [ ] **Rick meeting**: Discuss Cloud Services support
 - [ ] **ICDS Roar account**: Apply online (1-2 week approval)
-- [ ] **ScholarSphere account**: Register, upload ScholarRAG documentation
+- [ ] **ScholarSphere account**: Register, upload ScholaRAG documentation
 
 ### Weeks 2-4: Strategic Partnerships
 - [ ] **Email Vasant Honavar** (CENSAI): Request collaboration meeting
@@ -1364,7 +1364,7 @@ Sound reasonable?"
 ### Part 1: Align on Philosophy (5 min)
 ```
 "Rick, I know Penn State IT prefers centralized control.
-For ScholarRAG, I see two layers:
+For ScholaRAG, I see two layers:
 
 Layer 1: Development tools (Claude Code)
   - Researchers' personal tools (like their laptops)
@@ -1397,7 +1397,7 @@ After pilot, we evaluate: Copilot Enterprise vs Azure Codex vs ICDS."
 
 ### Part 3: Long-Term Vision (10 min)
 ```
-"If pilot succeeds, ScholarRAG becomes flagship use case
+"If pilot succeeds, ScholaRAG becomes flagship use case
 for Penn State AI Coding Infrastructure:
 
 Potential scope:
@@ -1420,14 +1420,14 @@ I'll provide usage data to inform your decision."
   2. Penn State Libraries (ScholarSphere integration)
   3. TLT (training workshop collaboration)
 
-These partnerships increase ScholarRAG's value to Penn State."
+These partnerships increase ScholaRAG's value to Penn State."
 ```
 
 ---
 
 ## 📊 Key Takeaways
 
-1. **Penn State has extensive resources** for ScholarRAG beyond Cloud Services
+1. **Penn State has extensive resources** for ScholaRAG beyond Cloud Services
    - ICDS (compute, funding)
    - Libraries (data, outreach)
    - AI centers (research credibility)
@@ -1435,7 +1435,7 @@ These partnerships increase ScholarRAG's value to Penn State."
 
 2. **API key management** should be hybrid
    - Claude Code: personal keys (low cost, high adoption)
-   - ScholarRAG scripts: Penn State managed (high cost, needs control)
+   - ScholaRAG scripts: Penn State managed (high cost, needs control)
 
 3. **Cloud infrastructure** should wait for Phase 2
    - Pilot: local execution (proves demand)

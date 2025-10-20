@@ -1,13 +1,13 @@
-# AGENTS.md - ScholarRAG-helper
+# AGENTS.md - ScholaRAG-helper
 
 ## 🤖 Codex Agent Instructions
 
-This file provides executable instructions for Codex and other autonomous coding agents working with the ScholarRAG-helper homepage repository.
+This file provides executable instructions for Codex and other autonomous coding agents working with the ScholaRAG-helper homepage repository.
 
 ## 📋 Repository Context
 
 **Type**: Public-facing documentation website
-**Purpose**: Homepage, guides, and marketing for ScholarRAG project
+**Purpose**: Homepage, guides, and marketing for ScholaRAG project
 **Technology**: Next.js 15 + TypeScript + Tailwind CSS
 **Deployment**: Vercel (auto-deploy from main branch)
 
@@ -24,7 +24,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Identify the target file:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper"
    find frontend/app -name "*.tsx" | grep -i "keyword"
    ```
 
@@ -62,7 +62,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Create page file:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper/frontend"
+   cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper/frontend"
    mkdir -p app/guide/0X-chapter-name
    touch app/guide/0X-chapter-name/page.tsx
    ```
@@ -113,7 +113,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Navigate to search component:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper"
    code frontend/components/SearchBar.tsx
    ```
 
@@ -152,7 +152,7 @@ This file provides executable instructions for Codex and other autonomous coding
 
 1. **Check local git status**:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper"
    git status
    git log --oneline -5
    ```
@@ -205,7 +205,7 @@ This file provides executable instructions for Codex and other autonomous coding
 **Steps**:
 1. Identify subfolders:
    ```bash
-   cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
+   cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper"
    find . -type d -maxdepth 2 | grep -v node_modules | grep -v .git
    ```
 
@@ -216,7 +216,7 @@ This file provides executable instructions for Codex and other autonomous coding
 # Frontend Folder - Claude Code Instructions
 
 ## Purpose
-Next.js 15 application for ScholarRAG homepage
+Next.js 15 application for ScholaRAG homepage
 
 ## Structure
 - app/ - Next.js App Router pages
@@ -326,7 +326,7 @@ git log origin/main --oneline -3
 
 ```bash
 # 1. Navigate to repo
-cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
+cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper"
 
 # 2. Edit file (via Read/Edit tools)
 # [make changes]
@@ -383,7 +383,7 @@ git log --oneline -10
 # [review prompts/, scripts/ changes]
 
 # 3. Update helper docs
-cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
+cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper"
 # [update frontend/app/guide/ pages]
 
 # 4. Update search index for new terms
@@ -518,5 +518,5 @@ cd frontend && vercel --prod --force
 
 - Homepage: https://scholar-rag-helper.vercel.app/
 - Docs: https://scholar-rag-helper.vercel.app/guide
-- GitHub: https://github.com/HosungYou/ScholarRAG-helper
+- GitHub: https://github.com/HosungYou/ScholaRAG-helper
 - Vercel: https://vercel.com/hosung-yous-projects/scholar-rag-helper

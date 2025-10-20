@@ -1,9 +1,9 @@
-# ScholarRAG v1.1.0 Folder Structure
+# ScholaRAG v1.1.0 Folder Structure
 
 ## New Structure (Workshop-Focused)
 
 ```
-ScholarRAG/
+ScholaRAG/
 │
 ├── README.md                          # Project overview (workshop focus)
 ├── QUICK_START.md                     # 5-minute getting started guide
@@ -93,7 +93,7 @@ ScholarRAG/
 - ❌ `/improvement_discussions/Vercel-Frontend-Detailed-Strategy.md` → Move to `.archive/`
 
 ### 3. Outdated Improvement Discussions
-- ❌ `/improvement_discussions/2025-01-ScholarRAG-Review.md` → Pre-pivot discussion
+- ❌ `/improvement_discussions/2025-01-ScholaRAG-Review.md` → Pre-pivot discussion
 - ⚠️  Keep but move to `.archive/`:
   - `improvement_discussions/PRISMA-LiteratureRAG-Strategy.md`
   - `improvement_discussions/RAG-Value-Creation-Strategy.md`
@@ -152,7 +152,7 @@ mv improvement_discussions/Vercel-Frontend-Detailed-Strategy.md .archive/fronten
 mv docs/module_*.md .archive/old_modules/
 
 # Move old discussions
-mv improvement_discussions/2025-01-ScholarRAG-Review.md .archive/old_discussions/
+mv improvement_discussions/2025-01-ScholaRAG-Review.md .archive/old_discussions/
 mv improvement_discussions/PRISMA-LiteratureRAG-Strategy.md .archive/old_discussions/
 mv improvement_discussions/RAG-Value-Creation-Strategy.md .archive/old_discussions/
 

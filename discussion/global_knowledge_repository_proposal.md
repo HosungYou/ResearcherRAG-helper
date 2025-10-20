@@ -6,7 +6,7 @@
 
 ## Problem Statement
 
-Currently, ScholarRAG operates with **project-isolated RAG systems**:
+Currently, ScholaRAG operates with **project-isolated RAG systems**:
 
 ```
 Project A: 50 papers → Embed all 50 → Store in data/04_rag/chroma_db/
@@ -71,7 +71,7 @@ CREATE INDEX idx_projects ON paper_projects(project_name);
 Each project stores ONLY references to global papers:
 
 ```
-ScholarRAG/projects/ai-chatbots-language-learning/
+ScholaRAG/projects/ai-chatbots-language-learning/
 ├── config.yaml                      # Same as before
 ├── project_metadata.json            # Project scope definition
 └── paper_references.json            # ONLY paper IDs, not full data

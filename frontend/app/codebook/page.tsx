@@ -9,7 +9,7 @@ export default function CodebookPage() {
 
         <div className="border-l-4 border-gray-900 bg-gray-50 p-6 rounded-r-lg mb-8">
           <p className="text-lg mb-4 text-gray-900">
-            <strong>ScholarRAG Knowledge Base for Beginners</strong>
+            <strong>ScholaRAG Knowledge Base for Beginners</strong>
           </p>
           <p className="text-gray-700 leading-relaxed">
             This section is designed for researchers with <strong>no programming experience</strong>.
@@ -24,7 +24,7 @@ export default function CodebookPage() {
             <strong>How is Codebook different from Chapters 1-7?</strong>
           </p>
           <ul className="space-y-1 text-sm text-gray-700">
-            <li>• <strong>Chapters 1-7</strong>: "How to use ScholarRAG" (Step-by-step workflow)</li>
+            <li>• <strong>Chapters 1-7</strong>: "How to use ScholaRAG" (Step-by-step workflow)</li>
             <li>• <strong>Codebook</strong>: "What is this and why does it exist?" (Foundational knowledge)</li>
           </ul>
         </div>
@@ -143,7 +143,7 @@ export default function CodebookPage() {
             </p>
             <p className="text-gray-700 leading-relaxed text-sm">
               Advanced technical documentation for those who want to <strong>understand the codebase</strong>,
-              <strong> contribute to ScholarRAG</strong>, or <strong>review code changes</strong>.
+              <strong> contribute to ScholaRAG</strong>, or <strong>review code changes</strong>.
               Assumes programming experience.
             </p>
           </div>

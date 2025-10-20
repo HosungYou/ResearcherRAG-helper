@@ -116,7 +116,7 @@ http://localhost:8080/dashboard
 **웹 UI 예시**:
 ```
 ┌──────────────────────────────────────────────────────────┐
-│  ScholarRAG Dashboard - Running on localhost:8080     │
+│  ScholaRAG Dashboard - Running on localhost:8080     │
 └──────────────────────────────────────────────────────────┘
 
 Select Project:
@@ -383,7 +383,7 @@ scholarag status --json
 **예시 출력**:
 ```
 ╔════════════════════════════════════════════════════════════╗
-║  ScholarRAG Project Status                              ║
+║  ScholaRAG Project Status                              ║
 ╚════════════════════════════════════════════════════════════╝
 
 📂 Project: AI-Healthcare-Adoption

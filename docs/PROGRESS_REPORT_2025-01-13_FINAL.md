@@ -1,4 +1,4 @@
-# Final Progress Report: ScholarRAG Website Improvements
+# Final Progress Report: ScholaRAG Website Improvements
 **Date**: 2025-01-13 (Session 2 - Completion)
 **Status**: Phase 1 & Phase 2 Complete ✅
 
@@ -67,7 +67,7 @@ Added visual folder structure diagrams to **Chapter 4: Implementation Guide**
 
 #### Stage 1 Output Structure:
 ```
-ScholarRAG/
+ScholaRAG/
 ├── config/
 │   ├── research_domain.json      ← Your research definition
 │   └── keywords.json
@@ -81,7 +81,7 @@ ScholarRAG/
 
 #### Stage 3 Output Structure (PRISMA Complete):
 ```
-ScholarRAG/
+ScholaRAG/
 ├── data/
 │   ├── 01_identification/
 │   │   ├── pubmed_results.csv     (450 papers)
@@ -113,7 +113,7 @@ Added practical verification sections with **expected outputs**:
 #### Stage 1 Verification:
 ```bash
 # Check project structure
-ls -la ScholarRAG/
+ls -la ScholaRAG/
 
 # View research domain configuration
 cat config/research_domain.json
@@ -224,7 +224,7 @@ cut -d',' -f2 logs/exclusion_log.csv | sort | uniq -c | sort -rn
 **1. Add GitHub Links to Website**
 Example in Chapter 4:
 ```tsx
-<a href="https://github.com/HosungYou/ScholarRAG/blob/main/scripts/01_fetch_papers.py">
+<a href="https://github.com/HosungYou/ScholaRAG/blob/main/scripts/01_fetch_papers.py">
   📄 View 01_fetch_papers.py on GitHub →
 </a>
 ```
@@ -359,7 +359,7 @@ This implementation directly addresses the user's three core requirements:
 
 ## 🎬 Conclusion
 
-This session completed **Phase 1 (Conceptual Clarity)** and **Phase 2 (Practical Usability)** of the ScholarRAG website improvements. The most critical conceptual confusion—PRISMA vs RAG relationship—has been resolved with academic backing. The website now provides practical, actionable guidance with file structures, verification commands, and copy-paste code examples.
+This session completed **Phase 1 (Conceptual Clarity)** and **Phase 2 (Practical Usability)** of the ScholaRAG website improvements. The most critical conceptual confusion—PRISMA vs RAG relationship—has been resolved with academic backing. The website now provides practical, actionable guidance with file structures, verification commands, and copy-paste code examples.
 
 **Next milestone**: Phase 3 (GitHub-Website Integration) to create bidirectional links between documentation and code.
 

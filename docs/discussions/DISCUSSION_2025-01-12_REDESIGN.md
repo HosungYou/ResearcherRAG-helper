@@ -1,4 +1,4 @@
-# ScholarRAG 재설계 토론 문서
+# ScholaRAG 재설계 토론 문서
 
 **Date**: 2025-01-12
 **Participants**: Hosung You, Claude
@@ -9,7 +9,7 @@
 ## 🎯 핵심 문제 정의
 
 ### 현재 상황
-현재 ScholarRAG Helper 웹사이트는:
+현재 ScholaRAG Helper 웹사이트는:
 - ❌ **개념적 혼란**: PRISMA와 RAG의 관계가 불명확
 - ❌ **추상적 설명**: "왜 이 순서인지" 당위성 부족
 - ❌ **단절된 경험**: 웹사이트 → GitHub 코드 연결성 약함
@@ -74,7 +74,7 @@ PRISMA가 해결하는 것:
 
 ### 일반 RAG vs. 연구용 RAG
 
-| 구분 | 일반 RAG (예: ChatGPT) | ScholarRAG (PRISMA 기반) |
+| 구분 | 일반 RAG (예: ChatGPT) | ScholaRAG (PRISMA 기반) |
 |------|----------------------|--------------------------|
 | **데이터 출처** | 불명확 | 체계적 검색으로 수집 |
 | **선택 기준** | 알고리즘 기반 | 명시적 inclusion/exclusion criteria |
@@ -107,7 +107,7 @@ PRISMA 사용:
 papers = google_scholar.search("AI adoption")[:100]  # ❌ 무작위 100개
 vector_db.ingest(papers)  # ❌ 어떤 논문이 포함되었는지 불명확
 
-# ScholarRAG의 접근
+# ScholaRAG의 접근
 papers = prisma_pipeline(
     databases=["PubMed", "Scopus", "ERIC"],
     inclusion_criteria={"year": "2010-2024", "study_type": "empirical"},
@@ -209,7 +209,7 @@ cat data/01_identification/pubmed_results.csv | wc -l
 
 **Example: GitHub README.md**
 ```markdown
-# ScholarRAG
+# ScholaRAG
 
 ## Quick Start
 
@@ -321,7 +321,7 @@ import shutil
 
 def create_new_project(project_name: str, research_question: str):
     """
-    새 ScholarRAG 프로젝트 생성
+    새 ScholaRAG 프로젝트 생성
 
     Args:
         project_name: 프로젝트 이름 (예: "AI-Healthcare-Adoption")
@@ -353,7 +353,7 @@ def create_new_project(project_name: str, research_question: str):
 
 ## Project Overview
 
-This project uses ScholarRAG to conduct a systematic literature review.
+This project uses ScholaRAG to conduct a systematic literature review.
 
 ### Current Status
 - [ ] Stage 1: Identification (Paper search)
@@ -392,7 +392,7 @@ See [projects/{today}_{project_name}/data/](./data/) for all datasets.
         f.write(readme_content)
 
     # 4. config.yaml 생성
-    config_content = f"""# ScholarRAG Project Configuration
+    config_content = f"""# ScholaRAG Project Configuration
 
 project:
   name: "{project_name}"

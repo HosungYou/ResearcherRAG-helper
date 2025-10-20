@@ -1,10 +1,10 @@
-# ScholarRAG Helper - Deployment Guide
+# ScholaRAG Helper - Deployment Guide
 
 ## 🚀 Live URLs
 
 - **Production**: https://frontend-izujb4zoh-hosung-yous-projects.vercel.app
-- **Repository**: https://github.com/HosungYou/ScholarRAG-helper
-- **Main Project**: https://github.com/HosungYou/ScholarRAG
+- **Repository**: https://github.com/HosungYou/ScholaRAG-helper
+- **Main Project**: https://github.com/HosungYou/ScholaRAG
 
 ---
 
@@ -278,7 +278,7 @@ vercel --prod --yes
 
 ### Deployment Issues
 - **Vercel Support**: https://vercel.com/support
-- **GitHub Issues**: https://github.com/HosungYou/ScholarRAG-helper/issues
+- **GitHub Issues**: https://github.com/HosungYou/ScholaRAG-helper/issues
 - **Documentation**: https://nextjs.org/docs
 
 ### Contact
@@ -291,7 +291,7 @@ For deployment help, open an issue on GitHub with:
 
 ## 🎉 Success!
 
-Your ScholarRAG Helper is now live and accessible to researchers worldwide!
+Your ScholaRAG Helper is now live and accessible to researchers worldwide!
 
 **Next Steps**:
 1. Share the URL with your research community

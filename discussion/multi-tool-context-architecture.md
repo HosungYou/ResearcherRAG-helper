@@ -158,7 +158,7 @@ python -c "import pandas as pd; assert len(pd.read_csv('data.csv')) > 0"
 ### 2.2 Multi-Tool Support Request
 
 **User Request** (2025-10-14):
-> "그런데, 실제 /Volumes/External SSD/Projects/Research/ScholarRAG/CLAUDE.md 만으로도 맥락을 인식하고 사용자의 프롬프트에 따라 컨트롤할 수 있니?"
+> "그런데, 실제 /Volumes/External SSD/Projects/Research/ScholaRAG/CLAUDE.md 만으로도 맥락을 인식하고 사용자의 프롬프트에 따라 컨트롤할 수 있니?"
 
 **Translation**: Can a single CLAUDE.md recognize context and control based on user prompts?
 
@@ -219,7 +219,7 @@ python -c "import pandas as pd; assert len(pd.read_csv('data.csv')) > 0"
 **Decision**: Implement **parallel hierarchical system**
 
 ```
-ScholarRAG/
+ScholaRAG/
 ├── CLAUDE.md              # System-level (Claude Code)
 ├── AGENTS.md              # System-level (Codex)
 └── examples/ai-chatbots-language-learning/
@@ -251,7 +251,7 @@ Both tools follow the same precedence pattern:
               ↓ overrides
 ┌─────────────────────────────────────┐
 │  System-Level Context Files         │
-│  (ScholarRAG/CLAUDE.md or        │
+│  (ScholaRAG/CLAUDE.md or        │
 │   AGENTS.md)                        │
 └─────────────────────────────────────┘
               ↓ overrides
@@ -308,9 +308,9 @@ Execute Task with Full Context
 
 ## 5. File-by-File Implementation
 
-### 5.1 System-Level: ScholarRAG/CLAUDE.md
+### 5.1 System-Level: ScholaRAG/CLAUDE.md
 
-**Purpose**: General workflow guidance for Claude Code across all ScholarRAG projects
+**Purpose**: General workflow guidance for Claude Code across all ScholaRAG projects
 
 **Key Sections Implemented**:
 
@@ -318,10 +318,10 @@ Execute Task with Full Context
 ```markdown
 ## 📁 Hierarchical Context System
 
-ScholarRAG uses **multi-level CLAUDE.md files** for optimal context:
+ScholaRAG uses **multi-level CLAUDE.md files** for optimal context:
 
 ```
-ScholarRAG/
+ScholaRAG/
 ├── CLAUDE.md (THIS FILE - system-level behavior)
 ├── AGENTS.md (for OpenAI Codex compatibility)
 └── examples/ai-chatbots-language-learning/
@@ -397,9 +397,9 @@ assert len(query) > 10, "Query too short"
 
 ---
 
-### 5.2 System-Level: ScholarRAG/AGENTS.md
+### 5.2 System-Level: ScholaRAG/AGENTS.md
 
-**Purpose**: General workflow validation for Codex across all ScholarRAG projects
+**Purpose**: General workflow validation for Codex across all ScholaRAG projects
 
 **Key Sections Implemented**:
 
@@ -445,7 +445,7 @@ assert os.path.exists('data/01_identification/deduplicated.csv'), \
 
 ### Python Environment
 ```bash
-cd /path/to/ScholarRAG
+cd /path/to/ScholaRAG
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
@@ -753,7 +753,7 @@ print(f'   - {speaking_mentions}/{len(df)} mention speaking skills')
 ### Preparation: Environment Setup
 
 ```bash
-cd /Volumes/External\ SSD/Projects/Research/ScholarRAG/examples/ai-chatbots-language-learning
+cd /Volumes/External\ SSD/Projects/Research/ScholaRAG/examples/ai-chatbots-language-learning
 
 # Activate environment (if not already active)
 source ../../venv/bin/activate
@@ -768,7 +768,7 @@ python -c "import os; assert os.getenv('OPENAI_API_KEY'), 'Set OPENAI_API_KEY'"
 
 **Command:**
 ```bash
-cd ../../  # From ScholarRAG root
+cd ../../  # From ScholaRAG root
 python scripts/01_fetch_papers.py \
   --project examples/ai-chatbots-language-learning \
   --query "chatbot language learning speaking"
@@ -1003,7 +1003,7 @@ assert duplicates == 0, f'Found {duplicates} duplicate papers'
 ### 7.1 Implementation Summary
 
 **What We Built**:
-1. **System-level context** (ScholarRAG/CLAUDE.md + AGENTS.md)
+1. **System-level context** (ScholaRAG/CLAUDE.md + AGENTS.md)
 2. **Project-specific context** (examples/ai-chatbots-language-learning/)
 3. **Hierarchical precedence** (project > system > default)
 4. **Multi-tool support** (Claude Code + OpenAI Codex)
@@ -1040,8 +1040,8 @@ assert duplicates == 0, f'Found {duplicates} duplicate papers'
 
 **Committed in v1.0.4**:
 
-1. `ScholarRAG/CLAUDE.md` (updated, 250+ lines)
-2. `ScholarRAG/AGENTS.md` (new, 180+ lines)
+1. `ScholaRAG/CLAUDE.md` (updated, 250+ lines)
+2. `ScholaRAG/AGENTS.md` (new, 180+ lines)
 3. `examples/ai-chatbots-language-learning/CLAUDE.md` (new, 380+ lines)
 4. `examples/ai-chatbots-language-learning/AGENTS.md` (new, 420+ lines)
 
@@ -1094,8 +1094,8 @@ nano examples/new-project/AGENTS.md
 ### Implementation Files
 
 1. **System-level context**:
-   - [ScholarRAG/CLAUDE.md](../CLAUDE.md)
-   - [ScholarRAG/AGENTS.md](../AGENTS.md)
+   - [ScholaRAG/CLAUDE.md](../CLAUDE.md)
+   - [ScholaRAG/AGENTS.md](../AGENTS.md)
 
 2. **Project-specific context**:
    - [examples/ai-chatbots-language-learning/CLAUDE.md](../examples/ai-chatbots-language-learning/CLAUDE.md)
@@ -1108,5 +1108,5 @@ nano examples/new-project/AGENTS.md
 
 **Document Version**: 1.0
 **Last Updated**: 2025-10-14
-**Author**: ScholarRAG Development Team
+**Author**: ScholaRAG Development Team
 **Review Status**: Complete

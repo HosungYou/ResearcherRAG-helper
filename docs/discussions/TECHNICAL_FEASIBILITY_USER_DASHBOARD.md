@@ -249,7 +249,7 @@ def sync_project_to_cloud(project_path: str, user_email: str, api_key: str):
     Args:
         project_path: 로컬 프로젝트 경로
         user_email: 사용자 이메일
-        api_key: ScholarRAG API 키 (웹사이트에서 발급)
+        api_key: ScholaRAG API 키 (웹사이트에서 발급)
     """
 
     # 1. 프로젝트 메타데이터 수집

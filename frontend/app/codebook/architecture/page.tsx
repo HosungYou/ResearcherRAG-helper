@@ -11,7 +11,7 @@ export default function ArchitecturePage() {
         <div className="callout callout-info mb-8">
           <p className="font-semibold mb-2">🏗️ For Developers & Code Reviewers</p>
           <p className="mb-0">
-            This page explains how all files in ScholarRAG connect and communicate.
+            This page explains how all files in ScholaRAG connect and communicate.
             Essential reading for contributors, code reviewers, and AI assistants.
           </p>
         </div>
@@ -39,7 +39,7 @@ outputs/ (Final RAG system + PRISMA diagram)`}
           </div>
 
           <p>
-            ScholarRAG follows a <strong>layered architecture</strong> where each layer has a specific responsibility:
+            ScholaRAG follows a <strong>layered architecture</strong> where each layer has a specific responsibility:
           </p>
 
           <ul>

@@ -36,7 +36,7 @@
 ## 🏗️ Proposed Site Structure
 
 ### Homepage (index.Rmd)
-**URL**: `https://[your-domain].github.io/ScholarRAG/`
+**URL**: `https://[your-domain].github.io/ScholaRAG/`
 
 **Content**:
 - Project overview (1 paragraph)
@@ -502,7 +502,7 @@
 install.packages("bookdown")
 
 # Project structure
-ScholarRAG/
+ScholaRAG/
 └── docs_site/
     ├── index.Rmd
     ├── 01-getting-started.Rmd
@@ -537,7 +537,7 @@ Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::gitbook')"
 pip install mkdocs-material
 
 # Project structure
-ScholarRAG/
+ScholaRAG/
 └── docs_site/
     ├── docs/
     │   ├── index.md
@@ -570,7 +570,7 @@ mkdocs build
 # https://quarto.org/docs/get-started/
 
 # Project structure
-ScholarRAG/
+ScholaRAG/
 └── docs_site/
     ├── _quarto.yml
     ├── index.qmd
@@ -630,7 +630,7 @@ jobs:
           publish_dir: ./docs_site/_book
 ```
 
-**Result**: `https://[your-username].github.io/ScholarRAG/`
+**Result**: `https://[your-username].github.io/ScholaRAG/`
 
 ---
 

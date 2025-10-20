@@ -13,7 +13,7 @@
 This research proposes to establish the **academic validity and methodological rigor** of AI-assisted PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) through:
 
 1. **Dual Research Objectives**:
-   - Literature Review: Comprehensive systematic review demonstrating ScholarRAG methodology
+   - Literature Review: Comprehensive systematic review demonstrating ScholaRAG methodology
    - Methodological Innovation: Development and validation of AI-specific PRISMA metrics
 
 2. **Core Innovation**:
@@ -65,7 +65,7 @@ This research proposes to establish the **academic validity and methodological r
 
 ### Primary Objective 1: Demonstrate AI-PRISMA Methodology
 
-**Goal**: Conduct a high-quality systematic review using ScholarRAG, publishable in top-tier journals
+**Goal**: Conduct a high-quality systematic review using ScholaRAG, publishable in top-tier journals
 
 **Research Question** (Example Domain):
 > "What are the effects of AI-assisted instructional interventions on student learning outcomes in higher education? (2020-2025)"
@@ -126,7 +126,7 @@ Stage 10: Final Inclusion (150 → 100 high-quality papers)
 
 #### 1. Institutional Access Integration
 ```python
-# ScholarRAG enhancement
+# ScholaRAG enhancement
 def acquire_pdf(doi, metadata):
     # Try institutional proxy
     pdf = try_library_access(doi, institution='psu.edu')
@@ -139,11 +139,11 @@ def acquire_pdf(doi, metadata):
 ```
 
 **Workflow**:
-1. ScholarRAG extracts metadata (DOI, title, authors)
+1. ScholaRAG extracts metadata (DOI, title, authors)
 2. Attempts automated PDF retrieval via institutional access
 3. If fails → generates "Manual Download List" for researcher
 4. Researcher uses institutional credentials to download
-5. Uploads PDFs to ScholarRAG workspace
+5. Uploads PDFs to ScholaRAG workspace
 6. Process continues automatically
 
 **Transparency**: Report in Methods section
@@ -576,7 +576,7 @@ Group B (n=100): Validation
 
 #### Level 3: Prospective Validation (External Replication)
 **Process**:
-1. Publish ScholarRAG systematic review + all materials
+1. Publish ScholaRAG systematic review + all materials
 2. Invite external researchers to replicate using:
    - Same search strategy
    - Same inclusion criteria
@@ -622,7 +622,7 @@ Protocol Includes:
 ```
 /researcherRAG-study-AIED-2025/
 ├── README.md (overview)
-├── config.yaml (exact ScholarRAG configuration)
+├── config.yaml (exact ScholaRAG configuration)
 ├── prompts/
 │   ├── stage2_abstract_screening.txt
 │   ├── stage5_fulltext_screening.txt
@@ -661,7 +661,7 @@ Protocol Includes:
 ## AI Assistance Disclosure
 
 ### Tools Used
-We used ScholarRAG v2.0 (You, 2025), an open-source AI-assisted
+We used ScholaRAG v2.0 (You, 2025), an open-source AI-assisted
 systematic review platform, for screening and data extraction.
 
 ### Large Language Model
@@ -752,7 +752,7 @@ Pre-registered protocol: https://osf.io/abc123
 
 **Study Design**:
 - Methods paper focused on validation framework
-- Meta-analysis of 3-5 systematic reviews conducted with ScholarRAG
+- Meta-analysis of 3-5 systematic reviews conducted with ScholaRAG
 - Compare AI-assisted vs. traditional review quality metrics
 
 **Deliverables**:
@@ -776,7 +776,7 @@ Pre-registered protocol: https://osf.io/abc123
 - **Parallel Review Design**:
   - Research Question: "Effects of Active Learning in STEM Education"
   - Team A: Traditional systematic review (2 human reviewers)
-  - Team B: AI-assisted review (ScholarRAG)
+  - Team B: AI-assisted review (ScholaRAG)
   - Compare:
     - Time to completion
     - Cost
@@ -806,7 +806,7 @@ Pre-registered protocol: https://osf.io/abc123
 
 ### Phase 5: Community Adoption (Ongoing)
 
-**Objective**: Establish ScholarRAG as standard tool
+**Objective**: Establish ScholaRAG as standard tool
 
 **Activities**:
 1. **Documentation**:
@@ -821,7 +821,7 @@ Pre-registered protocol: https://osf.io/abc123
 
 3. **Journal Outreach**:
    - Propose AI disclosure guidelines to journal editors
-   - Submit "Registered Reports" using ScholarRAG (pre-acceptance)
+   - Submit "Registered Reports" using ScholaRAG (pre-acceptance)
    - Guest editorial: "Embracing AI in Systematic Reviews"
 
 4. **Metric Refinement**:
@@ -830,9 +830,9 @@ Pre-registered protocol: https://osf.io/abc123
    - Benchmark datasets for AI-PRISMA validation
 
 **Success Metrics**:
-- 100+ published studies using ScholarRAG (within 3 years)
+- 100+ published studies using ScholaRAG (within 3 years)
 - 5+ journals adopt AI disclosure guidelines
-- ScholarRAG cited 500+ times
+- ScholaRAG cited 500+ times
 - Community-contributed improvements (GitHub)
 
 ---
@@ -982,7 +982,7 @@ Interpretation: No significant bias detected (all p > 0.05)
 
 ### 8.2 Public Dissemination
 
-**Blog Series** (ScholarRAG website):
+**Blog Series** (ScholaRAG website):
 1. "Why AI-Assisted Systematic Reviews Are the Future"
 2. "How We Validated Our AI Screening Methodology"
 3. "Complete Transparency: Our PRISMA Study from Start to Finish"
@@ -1012,7 +1012,7 @@ Interpretation: No significant bias detected (all p > 0.05)
 
 3. **Research Libraries**:
    - Offer AI-assisted review services (like current systematic review support)
-   - Train librarians in ScholarRAG
+   - Train librarians in ScholaRAG
 
 **Advocacy**:
 - White paper: "Modernizing Systematic Review Methodology with AI"
@@ -1071,7 +1071,7 @@ Interpretation: No significant bias detected (all p > 0.05)
 
 **Q4 (Months 22-24): Consolidation**
 - ✅ Publish comparative study results
-- ✅ Release ScholarRAG v2.0 (community feedback)
+- ✅ Release ScholaRAG v2.0 (community feedback)
 - ✅ Policy brief for funding agencies
 - ✅ 100+ citations achieved
 
@@ -1117,7 +1117,7 @@ Interpretation: No significant bias detected (all p > 0.05)
 ### Short-Term Success (Year 1)
 - ✅ 2 peer-reviewed publications accepted
 - ✅ AI validation Cohen's κ ≥ 0.75
-- ✅ 50+ GitHub stars for ScholarRAG
+- ✅ 50+ GitHub stars for ScholaRAG
 - ✅ 3+ external researchers express interest in replication
 
 ### Medium-Term Success (Year 2)
@@ -1128,7 +1128,7 @@ Interpretation: No significant bias detected (all p > 0.05)
 
 ### Long-Term Success (Year 3-5)
 - ✅ 500+ citations
-- ✅ 100+ published studies using ScholarRAG
+- ✅ 100+ published studies using ScholaRAG
 - ✅ PRISMA-AI 2025 officially recognized
 - ✅ Funding agency recommendation (NSF/IES)
 - ✅ Textbook chapters on AI-assisted reviews
@@ -1316,7 +1316,7 @@ Output Format (JSON):
 - Screening: 10,000 abstracts → 500 full-texts → 100 included
 - Inter-rater reliability: Cohen's κ = 0.79
 
-**AI-Assisted Review (ScholarRAG)**:
+**AI-Assisted Review (ScholaRAG)**:
 - Time: 3-6 weeks
 - Personnel: 1 reviewer × 80 hours = 80 hours (AI handles bulk screening)
 - Cost: 80 hours × $50/hour = $4,000 + API $500 = $4,500

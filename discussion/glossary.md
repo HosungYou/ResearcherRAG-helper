@@ -2,13 +2,13 @@
 layout: default
 title: Glossary
 nav_order: 2
-description: "Searchable glossary of key terms in ScholarRAG"
+description: "Searchable glossary of key terms in ScholaRAG"
 ---
 
 # Glossary
 {: .no_toc }
 
-Searchable reference for all key terms, concepts, and components in ScholarRAG.
+Searchable reference for all key terms, concepts, and components in ScholaRAG.
 {: .fs-6 .fw-300 }
 
 ---
@@ -97,7 +97,7 @@ A rigorous, transparent, and reproducible method for identifying, screening, and
 - Reproducible process
 
 **Traditional time**: 6-8 weeks
-**With ScholarRAG**: 2-3 weeks (67-75% time savings)
+**With ScholaRAG**: 2-3 weeks (67-75% time savings)
 
 **Related terms**: [PRISMA 2020](#prisma-2020), [Meta-Analysis](#meta-analysis)
 
@@ -281,7 +281,7 @@ User Stage
 Technology
 {: .label .label-blue }
 
-Open-source vector database for storing and querying document embeddings. ScholarRAG's default vector store.
+Open-source vector database for storing and querying document embeddings. ScholaRAG's default vector store.
 
 **Purpose**: Semantic search across PRISMA-selected papers
 
@@ -303,7 +303,7 @@ Concept
 
 A database that stores **embeddings** (numerical representations of text) and enables **semantic search** (finding similar meaning, not just keyword matching).
 
-**In ScholarRAG**: Stores chunks from PRISMA-selected papers
+**In ScholaRAG**: Stores chunks from PRISMA-selected papers
 
 **Implementation**: [ChromaDB](#chromadb)
 
@@ -326,7 +326,7 @@ Concept
 
 Numerical representations of text that capture semantic meaning. Similar texts have similar embeddings.
 
-**In ScholarRAG**:
+**In ScholaRAG**:
 - Each paper chunk → 384-dimension vector (sentence-transformers) or 1536-dimension (OpenAI)
 - Vectors stored in [ChromaDB](#chromadb)
 - Semantic search uses vector similarity
@@ -398,7 +398,7 @@ Semantic search: "chatbot" also finds "conversational agent",
 PRISMA
 {: .label .label-purple }
 
-ScholarRAG's PRISMA screening system uses 6 dimensions to score paper relevance:
+ScholaRAG's PRISMA screening system uses 6 dimensions to score paper relevance:
 
 1. **Domain**: Correct research field? (e.g., Education, Medicine)
 2. **Method**: Right methodology? (e.g., Experimental, Qualitative)

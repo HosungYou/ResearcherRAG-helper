@@ -87,8 +87,8 @@ PART 1: KNOWLEDGE (Understand)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 01. Introduction
-    ├── What is ScholarRAG?
-    ├── The Problem (Traditional vs ScholarRAG)
+    ├── What is ScholaRAG?
+    ├── The Problem (Traditional vs ScholaRAG)
     ├── What You'll Build (3 components)
     ├── Database Strategy Overview (NEW)
     │   ├── Why Semantic Scholar, OpenAlex, arXiv?
@@ -128,7 +128,7 @@ PART 2: PRACTICE (Do)
     │   └── Claude Pro or ChatGPT Plus
     ├── Step 1: Install AI Assistant (Claude Code)
     ├── Step 2: Authentication Setup
-    ├── Step 3: Clone ScholarRAG
+    ├── Step 3: Clone ScholaRAG
     ├── Step 4: Python Environment Setup
     ├── Step 5: Project Initialization
     ├── Step 6: Database API Setup (NEW)
@@ -249,7 +249,7 @@ Stage 7: Documentation & PRISMA Diagram (30-60 min)
 Copy this prompt to Claude Code:
 
 ```text
-I'm working on Stage N of ScholarRAG.
+I'm working on Stage N of ScholaRAG.
 
 Context:
 - Project: [Your project name]
@@ -286,7 +286,7 @@ Claude Code will:
 ```
 Step 1: Install Claude Code Extension
 Step 2: Authentication (Claude Pro / ChatGPT Plus)
-Step 3: Clone ScholarRAG Repository
+Step 3: Clone ScholaRAG Repository
 Step 4: Python Environment Setup
 Step 5: Project Initialization (was "Step 0")
 Step 6: Database API Setup (NEW)

@@ -8,7 +8,7 @@ export default function GettingStartedPage() {
       <h1 id="getting-started">Getting Started</h1>
 
       <p className="text-xl text-muted mt-6 mb-8">
-        Set up ScholarRAG in 30 minutes. Install prerequisites, clone the repository, and start your first systematic literature review workflow.
+        Set up ScholaRAG in 30 minutes. Install prerequisites, clone the repository, and start your first systematic literature review workflow.
       </p>
 
       <h2 id="prerequisites">Step 1: Install Prerequisites</h2>
@@ -36,7 +36,7 @@ export default function GettingStartedPage() {
 
       <h3 id="install-extension">Installing Claude Code Extension</h3>
 
-      <p>ScholarRAG works best with Claude Code. Here's how to install and set it up:</p>
+      <p>ScholaRAG works best with Claude Code. Here's how to install and set it up:</p>
 
       <ol className="space-y-3 my-6">
         <li>
@@ -71,15 +71,15 @@ export default function GettingStartedPage() {
         <p className="text-xs text-muted-foreground">💡 Extension link: <a href="https://marketplace.visualstudio.com/items?itemName=Anthropic.claude-code" target="_blank" rel="noopener noreferrer" className="underline">marketplace.visualstudio.com/claude-code</a></p>
       </div>
 
-      <h2 id="setup">Step 2: Setup ScholarRAG</h2>
+      <h2 id="setup">Step 2: Setup ScholaRAG</h2>
 
       <p>Clone the repository and install dependencies using these commands:</p>
 
       <CodeBlock
         language="bash"
         code={`# Clone the repository
-git clone https://github.com/HosungYou/ScholarRAG.git
-cd ScholarRAG
+git clone https://github.com/HosungYou/ScholaRAG.git
+cd ScholaRAG
 
 # Create virtual environment
 python3 -m venv venv
@@ -157,7 +157,7 @@ code .`}
 
       <ol className="space-y-2 my-6">
         <li><strong>1. Open Claude Code</strong>: Press <code>Cmd/Ctrl + Shift + P</code> → Type "Claude: Open Chat"</li>
-        <li><strong>2. Copy Stage 1 Prompt</strong>: Open <code>prompts/01_research_domain_setup.md</code> in the ScholarRAG root folder</li>
+        <li><strong>2. Copy Stage 1 Prompt</strong>: Open <code>prompts/01_research_domain_setup.md</code> in the ScholaRAG root folder</li>
         <li><strong>3. Paste to Claude Code</strong>: Copy the entire prompt and paste into Claude chat</li>
         <li><strong>4. Follow Claude's Guidance</strong>: Answer its questions about your research scope</li>
       </ol>
@@ -196,7 +196,7 @@ Stage 7: Research Conversation & Documentation (ongoing)
       <div className="border border-gray-300 rounded-lg p-4 bg-gray-50 my-8">
         <p className="font-semibold mb-2">💡 Enhanced Features</p>
         <p className="text-sm mb-2">
-          <strong>Complete Retrieval:</strong> ScholarRAG fetches ALL available papers (no arbitrary limits), with smart pagination and user confirmation for large datasets.
+          <strong>Complete Retrieval:</strong> ScholaRAG fetches ALL available papers (no arbitrary limits), with smart pagination and user confirmation for large datasets.
         </p>
         <p className="text-sm mb-2">
           <strong>AI-PRISMA Rubric:</strong> Multi-dimensional paper evaluation using large language models with transparent criteria, evidence grounding, and optional human validation.
@@ -273,10 +273,10 @@ python scholarag_cli.py list
 
         <CodeBlock
           language="text"
-          code={`Please set up ScholarRAG for me automatically:
+          code={`Please set up ScholaRAG for me automatically:
 
-1. Clone https://github.com/HosungYou/ScholarRAG.git
-2. Navigate into ScholarRAG directory
+1. Clone https://github.com/HosungYou/ScholaRAG.git
+2. Navigate into ScholaRAG directory
 3. Create Python virtual environment (venv)
 4. Activate the virtual environment
 5. Install dependencies: pip install click pyyaml
@@ -305,7 +305,7 @@ Execute these steps one by one and let me know if any issues occur.`}
       <h2 id="next-steps" className="mt-12">Next Steps</h2>
 
       <p>
-        Now that ScholarRAG is set up, learn about the underlying concepts: <Link href="/guide/03-core-concepts" className="underline">Chapter 3: Core Concepts</Link>.
+        Now that ScholaRAG is set up, learn about the underlying concepts: <Link href="/guide/03-core-concepts" className="underline">Chapter 3: Core Concepts</Link>.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">

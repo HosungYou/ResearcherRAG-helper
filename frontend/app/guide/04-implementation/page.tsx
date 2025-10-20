@@ -13,7 +13,7 @@ export default function ImplementationGuidePage() {
       <h1>Implementation Guide</h1>
 
       <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-        This chapter walks you through the complete implementation process of ScholarRAG, from initial setup to final deployment. We'll cover all seven stages in detail with real-world examples, practical tips, and troubleshooting advice to help you build your own systematic literature review RAG system.
+        This chapter walks you through the complete implementation process of ScholaRAG, from initial setup to final deployment. We'll cover all seven stages in detail with real-world examples, practical tips, and troubleshooting advice to help you build your own systematic literature review RAG system.
       </p>
 
       <Mermaid chart={`
@@ -39,14 +39,14 @@ graph LR
       <div className="callout callout-info">
         <p className="font-semibold mb-2">📖 Before You Start</p>
         <p className="mb-0">
-          Make sure you've completed the <Link href="/guide/02-getting-started">Getting Started</Link> guide and understand the <Link href="/guide/03-core-concepts">Core Concepts</Link>. This implementation guide assumes you have ScholarRAG installed and your API keys configured.
+          Make sure you've completed the <Link href="/guide/02-getting-started">Getting Started</Link> guide and understand the <Link href="/guide/03-core-concepts">Core Concepts</Link>. This implementation guide assumes you have ScholaRAG installed and your API keys configured.
         </p>
       </div>
 
       <h2 id="overview">Implementation Overview</h2>
 
       <p>
-        ScholarRAG's seven-stage workflow is designed to guide you through building a RAG system systematically. Each stage builds upon the previous one, and the prompts are carefully crafted to help Claude Code understand your research domain and generate appropriate code.
+        ScholaRAG's seven-stage workflow is designed to guide you through building a RAG system systematically. Each stage builds upon the previous one, and the prompts are carefully crafted to help Claude Code understand your research domain and generate appropriate code.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
@@ -107,7 +107,7 @@ graph LR
       <h3 id="stage-1-prompt">Using the Stage 1 Prompt</h3>
 
       <p>
-        Navigate to the <code>docs/prompts/01_research_domain_setup.md</code> file in your ScholarRAG repository. This prompt template guides you through defining your research domain.
+        Navigate to the <code>docs/prompts/01_research_domain_setup.md</code> file in your ScholaRAG repository. This prompt template guides you through defining your research domain.
       </p>
 
       <div className="callout callout-success">
@@ -154,7 +154,7 @@ graph LR
 
       <FileTree structure={[
         {
-          name: 'ScholarRAG/',
+          name: 'ScholaRAG/',
           type: 'folder',
           children: [
             {
@@ -217,7 +217,7 @@ graph LR
         <CodeBlock
           language="bash"
           code={`# Check project structure
-ls -la ScholarRAG/
+ls -la ScholaRAG/
 
 # View research domain configuration
 cat config/research_domain.json
@@ -366,7 +366,7 @@ year:[2020 TO 2024]`}
       <div className="callout callout-warning">
         <p className="font-semibold mb-2">⚠️ Database Access Note</p>
         <p className="mb-0">
-          Many academic databases require institutional subscriptions. If you don't have access, start with <strong>PubMed</strong> (biomedical) and <strong>CORE</strong> (open access) which offer free APIs. ScholarRAG includes helper scripts for both.
+          Many academic databases require institutional subscriptions. If you don't have access, start with <strong>PubMed</strong> (biomedical) and <strong>CORE</strong> (open access) which offer free APIs. ScholaRAG includes helper scripts for both.
         </p>
       </div>
 
@@ -481,7 +481,7 @@ graph TB
       <h3 id="stage-3-automation">Automation Tools</h3>
 
       <p>
-        ScholarRAG provides scripts to automate parts of the PRISMA process:
+        ScholaRAG provides scripts to automate parts of the PRISMA process:
       </p>
 
       <details className="border rounded-lg my-4">
@@ -659,7 +659,7 @@ graph TB
 
       <FileTree structure={[
         {
-          name: 'ScholarRAG/',
+          name: 'ScholaRAG/',
           type: 'folder',
           children: [
             {
@@ -1100,7 +1100,7 @@ Expected: List of factors with citations from relevant papers`}
       <h3 id="stage-5-interface">User Interface Options</h3>
 
       <p>
-        ScholarRAG provides multiple interfaces for interacting with your RAG system:
+        ScholaRAG provides multiple interfaces for interacting with your RAG system:
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
@@ -1496,7 +1496,7 @@ python generate_report.py \\
       <h2 id="next-steps">Next Steps</h2>
 
       <p>
-        You now have a complete understanding of how to implement ScholarRAG from start to finish. Here's what to do next:
+        You now have a complete understanding of how to implement ScholaRAG from start to finish. Here's what to do next:
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
@@ -1518,7 +1518,7 @@ python generate_report.py \\
       <div className="callout callout-success">
         <p className="font-semibold mb-2">🎉 Ready to Build?</p>
         <p className="mb-0">
-          You have all the knowledge needed to implement your own ScholarRAG system. Start with <strong>Stage 1</strong> and work through each stage systematically. Remember: the prompt templates in <code>docs/prompts/</code> are designed to guide Claude Code through each stage—use them!
+          You have all the knowledge needed to implement your own ScholaRAG system. Start with <strong>Stage 1</strong> and work through each stage systematically. Remember: the prompt templates in <code>docs/prompts/</code> are designed to guide Claude Code through each stage—use them!
         </p>
       </div>
     </GuideLayout>

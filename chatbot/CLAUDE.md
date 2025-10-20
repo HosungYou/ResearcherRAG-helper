@@ -2,7 +2,7 @@
 
 ## 📁 Purpose
 
-Backend implementation for the AI chatbot assistant on the ScholarRAG homepage.
+Backend implementation for the AI chatbot assistant on the ScholaRAG homepage.
 
 ## 🏗️ Structure
 
@@ -17,7 +17,7 @@ chatbot/
 ## 🤖 Chatbot Purpose
 
 Provides real-time assistance to documentation visitors:
-- Answer questions about ScholarRAG
+- Answer questions about ScholaRAG
 - Guide users through installation
 - Explain PRISMA and RAG concepts
 - Troubleshoot common issues

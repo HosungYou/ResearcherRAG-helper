@@ -8,14 +8,14 @@
 
 ## 🎯 Overview
 
-Version 1.0.3 represents a **major leap forward** for ScholarRAG, transforming it from a documentation-only platform into a **full-stack systematic review automation system**. This release introduces 7 production-ready Python scripts that implement the complete PRISMA 2020 pipeline, comprehensive API documentation, and a fully-worked example project.
+Version 1.0.3 represents a **major leap forward** for ScholaRAG, transforming it from a documentation-only platform into a **full-stack systematic review automation system**. This release introduces 7 production-ready Python scripts that implement the complete PRISMA 2020 pipeline, comprehensive API documentation, and a fully-worked example project.
 
 **What Changed**:
 - Added 7 Python automation scripts covering the entire systematic review workflow
 - Updated database strategy from traditional (PubMed/Scopus/ERIC) to automation-focused (Semantic Scholar/OpenAlex/arXiv)
 - Created comprehensive API setup guide with cost calculators and troubleshooting
 - Built complete example project with expected results and validation checklists
-- Enhanced CLAUDE.md with ScholarRAG-specific workflow documentation
+- Enhanced CLAUDE.md with ScholaRAG-specific workflow documentation
 
 **Why It Changed**:
 The original v1.0.0-1.0.2 releases focused on teaching concepts through documentation. However, researchers need **working automation tools**, not just guidance. v1.0.3 delivers on the core promise: **AI-powered systematic literature review automation from search to PRISMA diagram**.
@@ -48,13 +48,13 @@ The original v1.0.0-1.0.2 releases focused on teaching concepts through document
 **Commits**: Multiple commits creating automation backend
 
 **Files Added**:
-- `Research/ScholarRAG/scripts/01_fetch_papers.py` (515 lines)
-- `Research/ScholarRAG/scripts/02_deduplicate.py` (303 lines)
-- `Research/ScholarRAG/scripts/03_screen_papers.py` (330 lines)
-- `Research/ScholarRAG/scripts/04_download_pdfs.py` (308 lines)
-- `Research/ScholarRAG/scripts/05_build_rag.py` (303 lines)
-- `Research/ScholarRAG/scripts/06_query_rag.py` (385 lines)
-- `Research/ScholarRAG/scripts/07_generate_prisma.py` (472 lines)
+- `Research/ScholaRAG/scripts/01_fetch_papers.py` (515 lines)
+- `Research/ScholaRAG/scripts/02_deduplicate.py` (303 lines)
+- `Research/ScholaRAG/scripts/03_screen_papers.py` (330 lines)
+- `Research/ScholaRAG/scripts/04_download_pdfs.py` (308 lines)
+- `Research/ScholaRAG/scripts/05_build_rag.py` (303 lines)
+- `Research/ScholaRAG/scripts/06_query_rag.py` (385 lines)
+- `Research/ScholaRAG/scripts/07_generate_prisma.py` (472 lines)
 
 **Implementation** (`scripts/01_fetch_papers.py:47-75`):
 ```python
@@ -227,7 +227,7 @@ databases:
 
 **What Changed**: Created 650-line guide covering all APIs, costs, and setup procedures
 
-**Location**: `ScholarRAG-helper/docs/API_SETUP_GUIDE.md`
+**Location**: `ScholaRAG-helper/docs/API_SETUP_GUIDE.md`
 
 **Purpose**: Researchers need clear guidance on API costs, setup steps, and troubleshooting to confidently start projects
 
@@ -263,7 +263,7 @@ databases:
 1. Get Claude API key (2 minutes)
 2. Add to .env file (30 seconds)
 3. Test connection (30 seconds)
-4. Start using ScholarRAG (immediately)
+4. Start using ScholaRAG (immediately)
 ```
 
 ---
@@ -272,7 +272,7 @@ databases:
 
 **What Changed**: Created complete worked example: "AI Chatbots for Language Learning Speaking Skills"
 
-**Location**: `ScholarRAG/examples/ai-chatbots-language-learning/`
+**Location**: `ScholaRAG/examples/ai-chatbots-language-learning/`
 
 **Purpose**: Researchers need a reference implementation to validate their own results and understand expected outcomes
 
@@ -340,7 +340,7 @@ Your pipeline is working correctly if:
 
 **What Changed**: Created comprehensive `.env.example` with all environment variables documented
 
-**Location**: `ScholarRAG/.env.example`
+**Location**: `ScholaRAG/.env.example`
 
 **Purpose**: New users need clear documentation of required vs. optional configuration
 
@@ -348,7 +348,7 @@ Your pipeline is working correctly if:
 
 **Implementation** (`.env.example:1-42`):
 ```bash
-# ScholarRAG Environment Variables
+# ScholaRAG Environment Variables
 # Copy this file to .env and fill in your API keys
 
 # ============================================================
@@ -397,17 +397,17 @@ python -c "from dotenv import load_dotenv; import os; load_dotenv(); print('✓ 
 
 ---
 
-### 6) Enhanced CLAUDE.md with ScholarRAG Workflow
+### 6) Enhanced CLAUDE.md with ScholaRAG Workflow
 
-**What Changed**: Added comprehensive ScholarRAG section to `/Volumes/External SSD/Projects/CLAUDE.md`
+**What Changed**: Added comprehensive ScholaRAG section to `/Volumes/External SSD/Projects/CLAUDE.md`
 
-**Why**: Claude Code needs project-specific context when assisting with ScholarRAG development
+**Why**: Claude Code needs project-specific context when assisting with ScholaRAG development
 
 **Location**: `/Volumes/External SSD/Projects/CLAUDE.md:95-155`
 
 **Implementation**:
 ```markdown
-## ScholarRAG Systematic Review Workflow
+## ScholaRAG Systematic Review Workflow
 
 ### Database Strategy (Automation-Focused)
 
@@ -498,7 +498,7 @@ python scholarag_cli.py download_pdfs
 - Quality standards
 
 ### 5) Environment Variable Template
-**Location**: `ScholarRAG/.env.example`
+**Location**: `ScholaRAG/.env.example`
 **Lines**: 70
 **Purpose**: Clear configuration documentation
 
@@ -566,7 +566,7 @@ matplotlib==3.8.0        # PRISMA diagrams
 
 #### 1. Install Python Dependencies
 ```bash
-cd ScholarRAG
+cd ScholaRAG
 pip install -r requirements.txt
 ```
 
@@ -623,7 +623,7 @@ python ../../scripts/01_fetch_papers.py \
 
 #### 1. Test Script Imports
 ```bash
-cd ScholarRAG
+cd ScholaRAG
 
 # Test each script imports successfully
 for script in scripts/*.py; do
@@ -695,7 +695,7 @@ tree data/
 
 ## 📊 Code Statistics
 
-**Backend (ScholarRAG)**:
+**Backend (ScholaRAG)**:
 - **Files Added**: 13 files
   - 7 Python scripts (2,616 lines)
   - 4 documentation files (2,000+ lines)
@@ -703,10 +703,10 @@ tree data/
   - 1 example project (3 files)
 - **Lines Added**: 4,600+
 
-**Frontend (ScholarRAG-helper)**:
+**Frontend (ScholaRAG-helper)**:
 - **Files Modified**: 2 files
   - `frontend/app/guide/05-advanced-topics/page.tsx` (updated database strategy)
-  - `/Volumes/External SSD/Projects/CLAUDE.md` (added ScholarRAG section)
+  - `/Volumes/External SSD/Projects/CLAUDE.md` (added ScholaRAG section)
 - **Lines Added**: 150+
 
 **Documentation (docs/releases)**:
@@ -732,7 +732,7 @@ Plus backend commits:
 - Created 7 Python automation scripts
 - Created API setup guide and example project
 - Created .env.example template
-- Updated CLAUDE.md with ScholarRAG workflow
+- Updated CLAUDE.md with ScholaRAG workflow
 
 **File Breakdown**:
 - Python scripts: 7 files (2,616 lines)
@@ -748,7 +748,7 @@ Plus backend commits:
 
 **Project Structure**:
 ```
-ScholarRAG/
+ScholaRAG/
 ├── scripts/
 │   ├── 01_fetch_papers.py       # Multi-database paper fetching
 │   ├── 02_deduplicate.py        # DOI/title deduplication
@@ -1080,8 +1080,8 @@ This project is **self-funded** and open-source. No grants or institutional supp
 - **Release Notes**: `docs/releases/`
 
 ### Community
-- **GitHub Issues**: [https://github.com/HosungYou/ScholarRAG/issues](https://github.com/HosungYou/ScholarRAG/issues)
-- **GitHub Discussions**: [https://github.com/HosungYou/ScholarRAG/discussions](https://github.com/HosungYou/ScholarRAG/discussions)
+- **GitHub Issues**: [https://github.com/HosungYou/ScholaRAG/issues](https://github.com/HosungYou/ScholaRAG/issues)
+- **GitHub Discussions**: [https://github.com/HosungYou/ScholaRAG/discussions](https://github.com/HosungYou/ScholaRAG/discussions)
 - **Email**: newhosung@gmail.com
 
 ### Reporting Bugs
@@ -1103,7 +1103,7 @@ Open a GitHub issue with:
 
 **🚀 Happy Researching!**
 
-This release transforms ScholarRAG from an educational platform into a **production-ready systematic review automation system**. We're excited to see the research you'll conduct!
+This release transforms ScholaRAG from an educational platform into a **production-ready systematic review automation system**. We're excited to see the research you'll conduct!
 
 **Next Steps**:
 1. ✅ Read the [API Setup Guide](../../docs/API_SETUP_GUIDE.md)
@@ -1117,4 +1117,4 @@ This release transforms ScholarRAG from an educational platform into a **product
 
 **📅 Release Date**: October 14, 2025
 **📊 Version**: 1.0.3
-**👥 Maintained By**: ScholarRAG Development Team
+**👥 Maintained By**: ScholaRAG Development Team

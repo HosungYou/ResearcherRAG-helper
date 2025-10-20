@@ -1,6 +1,6 @@
-# ScholarRAG Release Notes
+# ScholaRAG Release Notes
 
-This directory contains comprehensive release documentation for all versions of ScholarRAG, organized chronologically for easy navigation and reference.
+This directory contains comprehensive release documentation for all versions of ScholaRAG, organized chronologically for easy navigation and reference.
 
 ## 📁 Directory Structure
 
@@ -349,6 +349,6 @@ See [CLAUDE.md](CLAUDE.md) for detailed instructions on generating release notes
 
 **🔄 Last Updated**: October 21, 2025
 **📊 Current Version**: v1.0.6
-**👥 Maintained By**: ScholarRAG Development Team
+**👥 Maintained By**: ScholaRAG Development Team
 
 🤖 _This README is generated and maintained with [Claude Code](https://claude.com/claude-code)_

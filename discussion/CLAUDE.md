@@ -2,7 +2,7 @@
 
 ## 📁 Purpose
 
-Strategic planning, design discussions, and architectural decisions for the ScholarRAG project.
+Strategic planning, design discussions, and architectural decisions for the ScholaRAG project.
 
 ## 🏗️ Structure
 

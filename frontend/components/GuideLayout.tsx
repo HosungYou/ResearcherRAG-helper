@@ -104,7 +104,7 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               About
             </Link>
             <a
-              href="https://github.com/HosungYou/ScholarRAG"
+              href="https://github.com/HosungYou/ScholaRAG"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-foreground"

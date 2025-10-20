@@ -2,11 +2,11 @@
 layout: default
 title: Home
 nav_order: 1
-description: "ScholarRAG: PRISMA 2020 + RAG for systematic literature reviews"
+description: "ScholaRAG: PRISMA 2020 + RAG for systematic literature reviews"
 permalink: /
 ---
 
-# ScholarRAG
+# ScholaRAG
 {: .fs-9 }
 
 Build rigorous, AI-powered systematic literature reviews in days, not months.
@@ -17,9 +17,9 @@ Build rigorous, AI-powered systematic literature reviews in days, not months.
 
 ---
 
-## What is ScholarRAG?
+## What is ScholaRAG?
 
-ScholarRAG combines **PRISMA 2020** systematic review methodology with **RAG** (Retrieval-Augmented Generation) technology to help researchers conduct rigorous literature reviews with AI-powered analysis.
+ScholaRAG combines **PRISMA 2020** systematic review methodology with **RAG** (Retrieval-Augmented Generation) technology to help researchers conduct rigorous literature reviews with AI-powered analysis.
 
 ### Why PRISMA + RAG?
 
@@ -29,7 +29,7 @@ ScholarRAG combines **PRISMA 2020** systematic review methodology with **RAG** (
    → Full-text review of 200+ papers → Extract findings manually
    → Constantly re-read papers for citations
 
-✅ ScholarRAG (2-3 weeks):
+✅ ScholaRAG (2-3 weeks):
    3-hour setup with Claude Code → PRISMA screens 500 papers automatically
    → RAG built from 75 selected papers → Query RAG for instant answers with citations
    → Result: 67-75% time savings
@@ -139,7 +139,7 @@ What took 6-8 weeks now takes 2-3 weeks. Proven across Education, Medicine, and 
 
 ---
 
-## Why ScholarRAG?
+## Why ScholaRAG?
 
 ### For Individual Researchers
 - ✅ Complete systematic reviews 2-3x faster
@@ -211,7 +211,7 @@ MIT License - Free for academic and commercial use.
 **Citation**:
 ```bibtex
 @software{scholarag2025,
-  title = {ScholarRAG: PRISMA 2020 + RAG for Systematic Literature Reviews},
+  title = {ScholaRAG: PRISMA 2020 + RAG for Systematic Literature Reviews},
   author = {You, Hosung},
   year = {2025},
   url = {https://github.com/HosungYou/researcherRAG}

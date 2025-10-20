@@ -9,7 +9,7 @@
 
 ## 📋 Executive Summary
 
-This document outlines the **3-Tier Configuration Architecture** for ScholarRAG, designed to enable **prompt-driven research automation** while maintaining a single source of truth and avoiding configuration duplication.
+This document outlines the **3-Tier Configuration Architecture** for ScholaRAG, designed to enable **prompt-driven research automation** while maintaining a single source of truth and avoiding configuration duplication.
 
 **Key Decision**: Use a hierarchical configuration system with clear separation of concerns:
 - **Tier 1**: Prompt Metadata (researcher-facing)
@@ -22,7 +22,7 @@ This document outlines the **3-Tier Configuration Architecture** for ScholarRAG,
 
 ### The Challenge
 
-ScholarRAG aims to provide a **conversation-first research experience** where researchers:
+ScholaRAG aims to provide a **conversation-first research experience** where researchers:
 1. Read prompts from `prompts/*.md`
 2. Talk to Claude Code
 3. **Scripts execute automatically** based on conversation context
@@ -65,7 +65,7 @@ Claude Code: [Generates config.yaml] ✅
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    ScholarRAG                        │
+│                    ScholaRAG                        │
 └─────────────────────────────────────────────────────────┘
                            │
            ┌───────────────┼───────────────┐
@@ -150,7 +150,7 @@ Machine-first configuration for CLI automation and Claude Code integration.
 **Purpose**: Stage execution configuration (single source of truth)
 
 ```yaml
-# ScholarRAG Stage Configuration
+# ScholaRAG Stage Configuration
 version: "1.0"
 
 stages:
@@ -248,7 +248,7 @@ CLAUDE.md  (repository root)
 
 ### Example
 ```markdown
-# ScholarRAG: Prompt-Driven Systematic Review Assistant
+# ScholaRAG: Prompt-Driven Systematic Review Assistant
 
 ## Core Philosophy
 

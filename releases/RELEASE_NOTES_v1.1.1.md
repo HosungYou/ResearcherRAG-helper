@@ -1,4 +1,4 @@
-# ScholarRAG v1.1.1 Release Notes
+# ScholaRAG v1.1.1 Release Notes
 
 **Release Date**: 2025-10-18
 **Type**: Major Feature Release
@@ -8,7 +8,7 @@
 
 ## 🎉 Overview
 
-ScholarRAG v1.1.1 introduces three major features for large-scale systematic literature reviews:
+ScholaRAG v1.1.1 introduces three major features for large-scale systematic literature reviews:
 
 1. **Complete Retrieval System** - Fetch ALL available papers (no truncation)
 2. **AI-PRISMA Rubric** - Transparent multi-dimensional screening with human validation
@@ -553,8 +553,8 @@ ai_prisma_rubric:
 
 ```bash
 # Clone repository
-git clone https://github.com/your-repo/ScholarRAG.git
-cd ScholarRAG
+git clone https://github.com/your-repo/ScholaRAG.git
+cd ScholaRAG
 
 # Install dependencies
 pip install -r requirements.txt
@@ -626,7 +626,7 @@ MIT License - see `LICENSE` file
 ## 📞 Support
 
 - **Documentation**: https://scholarag.io/docs
-- **GitHub Issues**: https://github.com/your-repo/ScholarRAG/issues
+- **GitHub Issues**: https://github.com/your-repo/ScholaRAG/issues
 - **Email**: support@scholarag.io
 
 ---
@@ -647,6 +647,6 @@ MIT License - see `LICENSE` file
 
 ---
 
-**Thank you for using ScholarRAG v1.2.0!** 🎉
+**Thank you for using ScholaRAG v1.2.0!** 🎉
 
 *For questions or feedback, please open a GitHub issue or contact us at support@scholarag.io*

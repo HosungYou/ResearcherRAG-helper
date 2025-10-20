@@ -27,7 +27,7 @@ The deployment is currently failing because Vercel needs to know that this is a 
 ### Option 2: Vercel CLI (Alternative)
 
 ```bash
-cd "/Volumes/External SSD/Projects/Research/ScholarRAG-helper"
+cd "/Volumes/External SSD/Projects/Research/ScholaRAG-helper"
 
 # Link to the correct project
 vercel link --project scholar-rag-helper --yes
@@ -59,7 +59,7 @@ After configuring the root directory:
      - Purple/blue gradient background
      - Animated floating blobs
      - Glassmorphism cards
-     - "ScholarRAG Helper" header
+     - "ScholaRAG Helper" header
 
 3. **Test Pages**:
    - Homepage: `/`

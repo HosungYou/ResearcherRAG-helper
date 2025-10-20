@@ -1,4 +1,4 @@
-# ScholarRAG Helper - Implementation Roadmap
+# ScholaRAG Helper - Implementation Roadmap
 
 **Date**: 2025-01-12
 **Goal**: Conceptual Clarity + Practical Usability + GitHub-Website Integration + User Dashboard
@@ -114,7 +114,7 @@ def show_status(project_path: str):
 
     # 예쁘게 출력
     console = Console()
-    table = Table(title="ScholarRAG Project Status")
+    table = Table(title="ScholaRAG Project Status")
     table.add_column("Stage", style="cyan")
     table.add_column("Status", style="green")
     table.add_column("Files", style="yellow")
@@ -361,7 +361,7 @@ You can now:
    - Hallucination 관련 특정 논문 선호도가 있나요?
 
 3. **GitHub Repository**:
-   - ScholarRAG GitHub repository에 직접 접근 가능한가요?
+   - ScholaRAG GitHub repository에 직접 접근 가능한가요?
    - README 수정 권한이 있나요?
 
 4. **코드 예시**:

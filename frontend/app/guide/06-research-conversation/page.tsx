@@ -42,7 +42,7 @@ export default function ResearchConversationPage() {
         </div>
 
         <div className="border-2 border-gray-900 rounded-lg p-6 bg-gray-50">
-          <h3 className="text-lg font-semibold mb-3">✅ WITH ScholarRAG Interface</h3>
+          <h3 className="text-lg font-semibold mb-3">✅ WITH ScholaRAG Interface</h3>
           <p className="text-sm mb-3 text-muted-foreground">Interface searches YOUR Vector Database:</p>
           <div className="bg-black text-white rounded p-3 text-xs font-mono">
             <p className="mb-1"><span className="text-gray-400">System:</span> Loaded 150 papers from Vector DB</p>
@@ -65,7 +65,7 @@ export default function ResearchConversationPage() {
             <tr className="border-b-2">
               <th className="text-left p-3">Aspect</th>
               <th className="text-left p-3">Direct Claude Chat</th>
-              <th className="text-left p-3">ScholarRAG Interface</th>
+              <th className="text-left p-3">ScholaRAG Interface</th>
             </tr>
           </thead>
           <tbody>

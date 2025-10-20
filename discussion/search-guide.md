@@ -2,13 +2,13 @@
 layout: default
 title: Search Guide
 nav_order: 10
-description: "How to search ScholarRAG documentation effectively"
+description: "How to search ScholaRAG documentation effectively"
 ---
 
 # Search Guide
 {: .no_toc }
 
-Learn how to use the search feature to quickly find what you need in ScholarRAG documentation.
+Learn how to use the search feature to quickly find what you need in ScholaRAG documentation.
 {: .fs-6 .fw-300 }
 
 ## Table of contents
@@ -26,7 +26,7 @@ Learn how to use the search feature to quickly find what you need in ScholarRAG 
 The search box is located at the **top of every page** in the navigation bar.
 
 ```
-[🔍 Search ScholarRAG docs...]
+[🔍 Search ScholaRAG docs...]
 ```
 
 Just start typing, and results will appear instantly!
@@ -224,7 +224,7 @@ Results:
 
 ### If you want to...
 
-**Understand what ScholarRAG is**:
+**Understand what ScholaRAG is**:
 ```
 Search: "what is scholarag" or "overview"
 ```
@@ -389,7 +389,7 @@ Search: "python scripts/05" or "config.yaml example"
 
 ### How Search Works
 
-ScholarRAG documentation uses **Jekyll with Just the Docs theme** for search:
+ScholaRAG documentation uses **Jekyll with Just the Docs theme** for search:
 
 1. **Client-side search** - No server needed, instant results
 2. **Full-text indexing** - Every word in every page is searchable

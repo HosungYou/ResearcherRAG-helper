@@ -1,4 +1,4 @@
-# ScholarRAG Helper - Implementation Plan
+# ScholaRAG Helper - Implementation Plan
 
 ## User Feedback & Requirements
 

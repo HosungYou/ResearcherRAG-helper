@@ -214,7 +214,7 @@ Excludes `.claude/context.json` from version control (runtime state)
 ### Architecture
 
 ```
-ScholarRAG/
+ScholaRAG/
 ├── prompts/*.md              # Tier 1: Human-readable with metadata
 ├── .claude/
 │   ├── stages.yaml          # Tier 2: Execution configuration
@@ -274,7 +274,7 @@ Claude: [Reads .claude/context.json]
 ### For New Projects
 
 ```bash
-# Clone ScholarRAG v1.0.6+
+# Clone ScholaRAG v1.0.6+
 git clone https://github.com/HosungYou/researcherRAG.git
 cd researcherRAG
 
@@ -385,7 +385,7 @@ python scholarag_cli.py next
 
 ## 🤝 Credits
 
-**Design & Implementation**: Claude Code + ScholarRAG Team
+**Design & Implementation**: Claude Code + ScholaRAG Team
 
 **Inspired By**:
 - Codex feedback on prompt-script integration

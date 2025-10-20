@@ -1,6 +1,6 @@
 # Example Project: AI Chatbots for Language Learning
 
-This is a complete example of a ScholarRAG project following the 7-stage workflow. It demonstrates how to conduct a systematic literature review on "How AI chatbots improve speaking proficiency in university-level language learners."
+This is a complete example of a ScholaRAG project following the 7-stage workflow. It demonstrates how to conduct a systematic literature review on "How AI chatbots improve speaking proficiency in university-level language learners."
 
 ## Project Overview
 
@@ -234,7 +234,7 @@ chatbot-language-learning/
 Browse the files to understand the complete workflow and what outputs each stage produces.
 
 ### Option 2: Replicate the Project
-1. Clone ScholarRAG repository
+1. Clone ScholaRAG repository
 2. Copy `config.yaml` to your project
 3. Modify research question and criteria for your domain
 4. Follow the 7-stage workflow
@@ -311,8 +311,8 @@ All files in this example are sufficient to replicate the study:
 
 **To replicate**:
 ```bash
-git clone https://github.com/HosungYou/ScholarRAG.git
-cd ScholarRAG
+git clone https://github.com/HosungYou/ScholaRAG.git
+cd ScholaRAG
 cp examples/chatbot-language-learning/config.yaml config.yaml
 python scholarag_cli.py run-all
 ```
@@ -325,10 +325,10 @@ If you use this example project structure, please cite:
 
 ```bibtex
 @software{scholarag2024,
-  title={ScholarRAG: AI-Powered Systematic Literature Review},
+  title={ScholaRAG: AI-Powered Systematic Literature Review},
   author={You, Hosung},
   year={2024},
-  url={https://github.com/HosungYou/ScholarRAG}
+  url={https://github.com/HosungYou/ScholaRAG}
 }
 ```
 
@@ -337,5 +337,5 @@ If you use this example project structure, please cite:
 ## Questions?
 
 - **Documentation**: https://scholar-rag-helper.vercel.app/guide
-- **Issues**: https://github.com/HosungYou/ScholarRAG/issues
-- **Discussions**: https://github.com/HosungYou/ScholarRAG/discussions
+- **Issues**: https://github.com/HosungYou/ScholaRAG/issues
+- **Discussions**: https://github.com/HosungYou/ScholaRAG/discussions

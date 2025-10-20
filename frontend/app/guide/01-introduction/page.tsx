@@ -6,22 +6,22 @@ import { CodeBlock } from '@/components/CodeBlock'
 export default function IntroductionPage() {
   return (
     <GuideLayout>
-      <h1 id="introduction">Introduction to ScholarRAG</h1>
+      <h1 id="introduction">Introduction to ScholaRAG</h1>
 
       <p className="text-xl text-muted mt-6 mb-8">
-        Learn how ScholarRAG transforms the traditional literature review process from weeks of manual work into hours of AI-powered efficiency.
+        Learn how ScholaRAG transforms the traditional literature review process from weeks of manual work into hours of AI-powered efficiency.
       </p>
 
-      <h2 id="what-is-scholarag">What is ScholarRAG?</h2>
+      <h2 id="what-is-scholarag">What is ScholaRAG?</h2>
 
       <p>
-        ScholarRAG is an <strong>open-source, conversational AI-guided system</strong> that helps researchers build custom <a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank" rel="noopener noreferrer">RAG (Retrieval-Augmented Generation)</a> systems for academic literature review. Built on top of <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a> and <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>, it guides you through every step of creating a systematic review pipeline.
+        ScholaRAG is an <strong>open-source, conversational AI-guided system</strong> that helps researchers build custom <a href="https://www.anthropic.com/news/contextual-retrieval" target="_blank" rel="noopener noreferrer">RAG (Retrieval-Augmented Generation)</a> systems for academic literature review. Built on top of <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a> and <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>, it guides you through every step of creating a systematic review pipeline.
       </p>
 
       <div className="callout callout-info">
         <p className="font-semibold mb-2">💡 Key Insight</p>
         <p className="mb-0">
-          Unlike generic chatbots, ScholarRAG creates a <em>dedicated knowledge base</em> from your specific research domain, ensuring every answer is grounded in the papers you've screened and approved.
+          Unlike generic chatbots, ScholaRAG creates a <em>dedicated knowledge base</em> from your specific research domain, ensuring every answer is grounded in the papers you've screened and approved.
         </p>
       </div>
 
@@ -52,7 +52,7 @@ export default function IntroductionPage() {
         </p>
       </div>
 
-      <h3 id="with-scholarag">With ScholarRAG (2-3 weeks)</h3>
+      <h3 id="with-scholarag">With ScholaRAG (2-3 weeks)</h3>
 
       <ol>
         <li><strong>3-hour Setup</strong>: Build your RAG system with step-by-step Claude Code guidance</li>
@@ -64,7 +64,7 @@ export default function IntroductionPage() {
       <div className="callout callout-success">
         <p className="font-semibold mb-2">✅ Real Results</p>
         <p className="mb-0">
-          PhD students using ScholarRAG complete literature reviews in <strong>2-3 weeks instead of 6-8 weeks</strong>, spending more time on analysis and writing.
+          PhD students using ScholaRAG complete literature reviews in <strong>2-3 weeks instead of 6-8 weeks</strong>, spending more time on analysis and writing.
         </p>
       </div>
 
@@ -95,7 +95,7 @@ export default function IntroductionPage() {
       <h2 id="database-strategy">Database Strategy</h2>
 
       <p>
-        ScholarRAG supports <strong>comprehensive multi-database coverage</strong> with both free open-access sources and institutional databases for broader reach:
+        ScholaRAG supports <strong>comprehensive multi-database coverage</strong> with both free open-access sources and institutional databases for broader reach:
       </p>
 
       <h3 className="text-lg font-semibold mt-6 mb-4">Open Access Databases (Free, No Setup Required)</h3>
@@ -161,7 +161,7 @@ export default function IntroductionPage() {
       <div className="callout callout-info">
         <p className="font-semibold mb-2">💡 Complete Retrieval Strategy</p>
         <div className="text-sm space-y-2 mb-0">
-          <p><strong>ScholarRAG fetches ALL available papers</strong> from each database (no arbitrary limits):</p>
+          <p><strong>ScholaRAG fetches ALL available papers</strong> from each database (no arbitrary limits):</p>
           <ul className="ml-4 space-y-1">
             <li>✅ Comprehensive coverage - never miss relevant papers</li>
             <li>✅ Newest-first ordering - recent papers prioritized</li>
@@ -182,7 +182,7 @@ export default function IntroductionPage() {
       <h3 id="prisma">1. AI-Powered PRISMA Screening</h3>
 
       <p>
-        <a href="https://www.prisma-statement.org/" target="_blank" rel="noopener noreferrer">PRISMA</a> (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) is the gold standard for systematic reviews. ScholarRAG implements PRISMA 2020 with AI-enhanced multi-dimensional evaluation:
+        <a href="https://www.prisma-statement.org/" target="_blank" rel="noopener noreferrer">PRISMA</a> (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) is the gold standard for systematic reviews. ScholaRAG implements PRISMA 2020 with AI-enhanced multi-dimensional evaluation:
       </p>
 
       <ul>
@@ -195,7 +195,7 @@ export default function IntroductionPage() {
       <div className="callout callout-success">
         <p className="font-semibold mb-2">✅ Multi-Dimensional AI Evaluation</p>
         <div className="text-sm space-y-2 mb-0">
-          <p>ScholarRAG uses <strong>AI-PRISMA Rubric</strong> with transparent criteria:</p>
+          <p>ScholaRAG uses <strong>AI-PRISMA Rubric</strong> with transparent criteria:</p>
           <ul className="ml-4 space-y-1">
             <li><strong>Sub-criteria scoring</strong> - Population, Intervention, Comparison, Outcomes (PICO framework)</li>
             <li><strong>Evidence grounding</strong> - AI must quote abstract text to justify decisions</li>
@@ -239,7 +239,7 @@ graph TD
       <h3 id="workflow">3. 7-Stage Workflow</h3>
 
       <p>
-        ScholarRAG breaks down the complex process into 7 conversational stages with Claude Code:
+        ScholaRAG breaks down the complex process into 7 conversational stages with Claude Code:
       </p>
 
       <Mermaid chart={`
@@ -283,7 +283,7 @@ graph LR
         ))}
       </div>
 
-      <h2 id="who-should-use">Who Should Use ScholarRAG?</h2>
+      <h2 id="who-should-use">Who Should Use ScholaRAG?</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
         <div>
@@ -327,7 +327,7 @@ graph LR
       <div className="callout">
         <p className="font-semibold mb-2">📝 Note on API Costs & Efficiency</p>
         <p className="mb-2">
-          ScholarRAG supports the latest AI coding models optimized for research automation:
+          ScholaRAG supports the latest AI coding models optimized for research automation:
         </p>
         <ul className="text-sm space-y-1 ml-4 mb-2">
           <li><strong>Claude Sonnet 4.5</strong> (Oct 2025): Currently the most effective coding model for research automation, achieving state-of-the-art performance on SWE-bench</li>
@@ -342,7 +342,7 @@ graph LR
       <h2 id="next-steps">Next Steps</h2>
 
       <p>
-        Ready to start building? Head to <Link href="/guide/02-getting-started">Chapter 2: Getting Started</Link> to set up your environment and run your first ScholarRAG workflow.
+        Ready to start building? Head to <Link href="/guide/02-getting-started">Chapter 2: Getting Started</Link> to set up your environment and run your first ScholaRAG workflow.
       </p>
 
       <div className="bg-gray-900 text-gray-100 rounded-lg p-6 my-8">
@@ -350,8 +350,8 @@ graph LR
         <CodeBlock
         language="bash"
         code={`# Clone the repository
-git clone https://github.com/HosungYou/ScholarRAG.git
-cd ScholarRAG
+git clone https://github.com/HosungYou/ScholaRAG.git
+cd ScholaRAG
 
 # Install dependencies
 pip install -r requirements.txt

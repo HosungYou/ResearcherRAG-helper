@@ -55,7 +55,7 @@ Detailed explanations of all file types:
 
 ### 3. Tools & Technologies (`/codebook/tools`)
 
-Why ScholarRAG uses specific tools:
+Why ScholaRAG uses specific tools:
 
 - **ChromaDB** - Local vector database for semantic search
 - **Claude AI** - Large context window (200K+ tokens) for PRISMA screening
@@ -325,7 +325,7 @@ Maintained 70/30 split as designed:
 
 ## 🗂️ Files Changed
 
-### ScholarRAG-helper Repository (Codebook)
+### ScholaRAG-helper Repository (Codebook)
 
 **Modified:**
 - `frontend/app/codebook/page.tsx` - Simplified to index with 4 navigation cards
@@ -340,7 +340,7 @@ Maintained 70/30 split as designed:
 
 **Total:** 7 files changed, 1,738 insertions, 1,390 deletions
 
-### ScholarRAG Repository (Prompts)
+### ScholaRAG Repository (Prompts)
 
 **Enhanced:**
 - `prompts/05_execution_plan.md` (+210 lines)
@@ -373,7 +373,7 @@ This release specifically serves:
 - Analogies and visual comparisons
 - No assumed technical knowledge
 
-✅ **First-time ScholarRAG users**
+✅ **First-time ScholaRAG users**
 - Step-by-step guidance
 - Realistic examples
 - Troubleshooting help
@@ -420,7 +420,7 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 - **Homepage:** https://scholar-rag-helper.vercel.app
 - **Documentation:** https://scholar-rag-helper.vercel.app/guide
 - **Codebook:** https://scholar-rag-helper.vercel.app/codebook
-- **Source Code:** https://github.com/HosungYou/ScholarRAG-helper
+- **Source Code:** https://github.com/HosungYou/ScholaRAG-helper
 
 ---
 

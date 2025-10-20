@@ -79,8 +79,8 @@ Route (app)                                 Size  First Load JS
 
 - **Production Site**: https://scholar-rag-helper-25oklyy2g-hosung-yous-projects.vercel.app
 - **Vercel Dashboard**: https://vercel.com/hosung-yous-projects/scholar-rag-helper
-- **GitHub Repository**: https://github.com/HosungYou/ScholarRAG-helper
-- **Main Project**: https://github.com/HosungYou/ScholarRAG
+- **GitHub Repository**: https://github.com/HosungYou/ScholaRAG-helper
+- **Main Project**: https://github.com/HosungYou/ScholaRAG
 
 ## 📝 Commit History
 

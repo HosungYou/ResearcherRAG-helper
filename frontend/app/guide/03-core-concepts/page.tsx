@@ -9,7 +9,7 @@ export default function CoreConceptsPage() {
       <h1 id="core-concepts">Core Concepts</h1>
 
       <p className="text-xl text-muted mt-6 mb-8">
-        Deep dive into the fundamental technologies and methodologies that power ScholarRAG: PRISMA, RAG architecture, vector databases, and embeddings.
+        Deep dive into the fundamental technologies and methodologies that power ScholaRAG: PRISMA, RAG architecture, vector databases, and embeddings.
       </p>
 
       <h2 id="prisma-methodology">PRISMA Methodology</h2>
@@ -85,7 +85,7 @@ export default function CoreConceptsPage() {
       <h4 className="text-lg font-semibold mt-8 mb-4">The Sequential Workflow</h4>
 
       <p>
-        ScholarRAG implements PRISMA as the <strong>input pipeline</strong> that feeds your RAG system:
+        ScholaRAG implements PRISMA as the <strong>input pipeline</strong> that feeds your RAG system:
       </p>
 
       <Mermaid chart={`
@@ -188,7 +188,7 @@ graph TD
         <div className="border-l-4 border-gray-900 pl-6 py-2">
           <h4 className="font-semibold mb-2">2. Screening</h4>
           <p className="text-sm text-muted mb-2">
-            Review titles and abstracts against predefined inclusion/exclusion criteria. This is where AI assistance (like ScholarRAG) provides the most value.
+            Review titles and abstracts against predefined inclusion/exclusion criteria. This is where AI assistance (like ScholaRAG) provides the most value.
           </p>
           <p className="text-xs text-muted-foreground font-mono">Typical screening reduces papers by 70-80%</p>
         </div>
@@ -220,7 +220,7 @@ graph TD
       <h2 id="database-apis">Database APIs for Automation</h2>
 
       <p>
-        ScholarRAG uses <strong>three free, API-accessible databases</strong> chosen specifically for automation, PDF availability, and comprehensive coverage. Traditional databases like PubMed, Scopus, and Web of Science require expensive institutional subscriptions and don't provide automated PDF access.
+        ScholaRAG uses <strong>three free, API-accessible databases</strong> chosen specifically for automation, PDF availability, and comprehensive coverage. Traditional databases like PubMed, Scopus, and Web of Science require expensive institutional subscriptions and don't provide automated PDF access.
       </p>
 
       <h3 id="why-these-databases">Why Semantic Scholar, OpenAlex, and arXiv?</h3>
@@ -238,7 +238,7 @@ graph TD
         </div>
 
         <div className="border border-border rounded-lg p-6">
-          <h4 className="font-semibold mb-3 text-lg">✅ ScholarRAG Databases</h4>
+          <h4 className="font-semibold mb-3 text-lg">✅ ScholaRAG Databases</h4>
           <ul className="text-sm space-y-2 text-muted">
             <li>✅ <strong>100% free</strong> API access (no authentication for basic use)</li>
             <li>✅ <strong>REST APIs</strong> for full automation</li>
@@ -426,7 +426,7 @@ for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
       <div className="callout callout-success">
         <p className="font-semibold mb-2">✅ Combined Strategy</p>
         <p className="text-sm mb-2">
-          ScholarRAG queries <strong>all three databases</strong> and deduplicates results by DOI, arXiv ID, and title similarity. This multi-source approach:
+          ScholaRAG queries <strong>all three databases</strong> and deduplicates results by DOI, arXiv ID, and title similarity. This multi-source approach:
         </p>
         <ul className="text-sm space-y-1 mb-0">
           <li>✓ Maximizes coverage across research domains</li>
@@ -504,7 +504,7 @@ sequenceDiagram
         Vector databases store high-dimensional embeddings and enable fast similarity search. Unlike traditional databases (which use exact matching), vector databases use <strong>approximate nearest neighbor</strong> (ANN) algorithms to find semantically similar content.
       </p>
 
-      <h3 id="database-options">Popular Options for ScholarRAG</h3>
+      <h3 id="database-options">Popular Options for ScholaRAG</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
         <div className="border border-border rounded-lg p-6">
@@ -597,7 +597,7 @@ sequenceDiagram
       </div>
 
       <div className="callout">
-        <p className="font-semibold mb-2">📝 ScholarRAG Default</p>
+        <p className="font-semibold mb-2">📝 ScholaRAG Default</p>
         <p className="mb-0">
           We recommend <strong>ChromaDB</strong> for most users. It requires zero configuration, works locally, and handles typical literature review sizes (50-500 papers) with ease. You can always migrate to FAISS or Qdrant later if needed.
         </p>
@@ -782,7 +782,7 @@ for para in paragraphs:
       <h2 id="putting-it-together">Putting It All Together</h2>
 
       <p>
-        ScholarRAG combines all these concepts into a cohesive workflow:
+        ScholaRAG combines all these concepts into a cohesive workflow:
       </p>
 
       <Mermaid chart={`

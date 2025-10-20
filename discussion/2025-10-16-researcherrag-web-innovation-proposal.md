@@ -1,4 +1,4 @@
-# ScholarRAG Web Innovation Proposal
+# ScholaRAG Web Innovation Proposal
 ## Hybrid CLI-Web Architecture with Penn State Cloud Services
 
 **Date**: October 16, 2025
@@ -11,7 +11,7 @@
 
 **Core Philosophy**: "Local Control, Cloud Power, Public Access"
 
-Transform ScholarRAG from a CLI-only tool into a **hybrid ecosystem** where:
+Transform ScholaRAG from a CLI-only tool into a **hybrid ecosystem** where:
 1. ✅ **Researchers maintain full autonomy** (local files, local control)
 2. ✅ **Web enables public access** (no installation, instant start)
 3. ✅ **Cloud provides infrastructure** (compute, storage, collaboration)
@@ -20,20 +20,20 @@ Transform ScholarRAG from a CLI-only tool into a **hybrid ecosystem** where:
 
 ---
 
-## 🚀 Revolutionary Architecture: "ScholarRAG Cloud Workspaces"
+## 🚀 Revolutionary Architecture: "ScholaRAG Cloud Workspaces"
 
 ### Concept: JupyterHub-inspired Research Platform
 
 **Inspiration**: Universities worldwide use JupyterHub (UC Berkeley, Harvard, NYU) to provide browser-based computational environments for thousands of students without sacrificing functionality.
 
-**ScholarRAG Adaptation**:
+**ScholaRAG Adaptation**:
 ```
 [scholar-rag.psu.edu]
     ↓ Penn State SSO Login
 [Personal Research Workspace]
 ├─ Browser Terminal (xterm.js)
 ├─ File Explorer (Monaco Editor)
-├─ ScholarRAG CLI (pre-installed)
+├─ ScholaRAG CLI (pre-installed)
 └─ Local-like Environment (WebContainer)
 ```
 
@@ -136,7 +136,7 @@ my_research/            |  [PDF Viewer]
       ↓
 [Docker Container Pool]
   ├─ Container 1: user_abc123
-  │   ├─ Python 3.11 + ScholarRAG
+  │   ├─ Python 3.11 + ScholaRAG
   │   ├─ Persistent volume: /home/researcher/
   │   └─ Process: bash shell
   ├─ Container 2: user_def456
@@ -264,7 +264,7 @@ scholarag clone --template ABC-123-XYZ
 **Solution**: Public RAG collections with private workspaces
 
 ```
-[PSU ScholarRAG Platform]
+[PSU ScholaRAG Platform]
 
 Public Collections (Read-Only):
 ├─ "AI in Education 2020-2025" [10M embeddings]
@@ -333,7 +333,7 @@ Searching:
 **Concept**: Experienced researchers publish reusable workflows
 
 ```
-[ScholarRAG Template Library]
+[ScholaRAG Template Library]
 
 Template: "Systematic Review - Education Research"
 ├─ Author: Prof. Jane Smith (Penn State)
@@ -381,7 +381,7 @@ $ scholarag publish --template "My Improved Workflow"
 
 ### Challenge: CLI Tools Typically Not Web-Compatible
 
-**Why ScholarRAG CLI is Hard to Web-ify**:
+**Why ScholaRAG CLI is Hard to Web-ify**:
 1. File system access (`/home/user/my-research/`)
 2. Long-running processes (2 hours to process PDFs)
 3. Interactive prompts (`"Enter research domain:"`)
@@ -408,10 +408,10 @@ const container = await WebContainer.boot();
 const pyodide = await loadPyodide();
 await pyodide.loadPackage(['numpy', 'pandas']);
 
-// Run ScholarRAG CLI (simplified version)
+// Run ScholaRAG CLI (simplified version)
 await pyodide.runPython(`
 import scholarag
-rag = scholarag.ScholarRAG()
+rag = scholarag.ScholaRAG()
 rag.init(domain="AI Education")
 `);
 
@@ -449,7 +449,7 @@ const files = await container.fs.readdir('/home/researcher');
   ├─ Container image: scholarag:latest
   │   ├─ Ubuntu 22.04
   │   ├─ Python 3.11
-  │   ├─ ScholarRAG CLI
+  │   ├─ ScholaRAG CLI
   │   ├─ Tesseract OCR
   │   └─ All dependencies
   ├─ Persistent volume: /workspace (EFS mount)
@@ -691,7 +691,7 @@ At end: "Click 'Export Workspace' to download everything"
 - ✅ Zero setup time (30 min saved per person)
 - ✅ All participants successful (no install failures)
 - ✅ Workspaces persist (continue at home)
-- ✅ Public exposure to ScholarRAG
+- ✅ Public exposure to ScholaRAG
 
 ---
 
@@ -710,7 +710,7 @@ tool helps you screen, analyze, and synthesize research literature
 following PRISMA 2020 guidelines."
 
 🚀 Get Started:
-[Launch ScholarRAG Workspace]
+[Launch ScholaRAG Workspace]
 
 ✨ Features:
 - Pre-indexed PSU library subscriptions (JSTOR, ScienceDirect, etc.)
@@ -743,7 +743,7 @@ Student continues at home (same workspace, no setup)
 **Value Proposition**:
 - For Libraries: Modern service offering, increased relevance
 - For Students: Expert guidance + powerful tools
-- For ScholarRAG: Institutional adoption, user feedback
+- For ScholaRAG: Institutional adoption, user feedback
 
 ---
 
@@ -758,7 +758,7 @@ Week 2: Install dependencies (3 students still struggling)
 Week 3: Finally start actual research (2 weeks wasted)
 ```
 
-**ScholarRAG Approach**:
+**ScholaRAG Approach**:
 ```
 Week 1 - Day 1:
 Professor: "Open the course workspace:
@@ -1041,7 +1041,7 @@ sync_strategy:
 ```bash
 Deliverables:
 ✓ xterm.js + WebSocket terminal in browser
-✓ Docker container with ScholarRAG pre-installed
+✓ Docker container with ScholaRAG pre-installed
 ✓ Persistent workspace storage (AWS EFS)
 ✓ Basic file explorer
 
@@ -1076,7 +1076,7 @@ Success Criteria:
 
 **Milestone 2.1: CLI Sync Command** (1 month)
 ```bash
-# Local ScholarRAG CLI enhancement
+# Local ScholaRAG CLI enhancement
 $ scholarag sync --init --cloud psu
 ✓ Linked to cloud workspace: abc-123-xyz
 ✓ Authentication: Penn State SSO
@@ -1162,7 +1162,7 @@ $ scholarag collection add ACM-Education-2020-2025
 ```bash
 ✓ Canvas LTI plugin
 ✓ Automatic workspace provisioning for enrolled students
-✓ Assignment submission via ScholarRAG
+✓ Assignment submission via ScholaRAG
 ✓ Grade passback to Canvas
 ```
 
@@ -1225,14 +1225,14 @@ Prospects:
 ### Academic Impact
 
 **Publications Enabled**:
-- Year 1: 10 papers using ScholarRAG
+- Year 1: 10 papers using ScholaRAG
 - Year 3: 100 papers
 - Year 5: 500 papers
 
 **Citation Example**:
 ```
 Methods: We conducted a systematic literature review following PRISMA
-2020 guidelines, facilitated by ScholarRAG (You, 2025), an open-
+2020 guidelines, facilitated by ScholaRAG (You, 2025), an open-
 source AI-assisted research platform. The platform enabled efficient
 screening of 1,247 abstracts and synthesis of 89 included studies.
 Our complete research workflow and data are available at:
@@ -1245,7 +1245,7 @@ https://scholar-rag.psu.edu/workspace/smith-2025-active-learning
 
 ### Educational Impact
 
-**Courses Using ScholarRAG**:
+**Courses Using ScholaRAG**:
 - Year 1: 5 courses (150 students)
 - Year 3: 50 courses (1,500 students)
 - Year 5: 200 courses (6,000 students)
@@ -1266,7 +1266,7 @@ https://scholar-rag.psu.edu/workspace/smith-2025-active-learning
 - Commercial tools (Covidence, DistillerSR): $1000-5000/year
 - Barrier: Unfunded students, Global South researchers
 
-**ScholarRAG Solution**:
+**ScholaRAG Solution**:
 - Free tier: 80% of users (PSU + external)
 - Public collections: Eliminate redundant processing
 - Web access: No powerful computer needed (Chromebook works)
@@ -1281,7 +1281,7 @@ https://scholar-rag.psu.edu/workspace/smith-2025-active-learning
 ## 🎯 Strategic Alignment with Penn State
 
 ### Penn State's Open Science Initiative
-**Alignment**: ScholarRAG embodies open science principles
+**Alignment**: ScholaRAG embodies open science principles
 - Open-source code
 - Open methodologies
 - Open data (public collections)
@@ -1441,7 +1441,7 @@ function ResearchTimeline() {
 **How it works**:
 1. User opens browser, sees terminal UI (xterm.js)
 2. Browser connects to PSU server via WebSocket
-3. PSU server spawns Docker container with full Python + ScholarRAG
+3. PSU server spawns Docker container with full Python + ScholaRAG
 4. User types commands in browser, executed in container
 5. Files stored in persistent volume (AWS EFS)
 
@@ -1481,7 +1481,7 @@ function ResearchTimeline() {
 
 **Proposal to Rick Rhoades**:
 
-> "We propose a three-phase collaboration to transform ScholarRAG into a
+> "We propose a three-phase collaboration to transform ScholaRAG into a
 > public research infrastructure platform hosted on Penn State Cloud Services.
 >
 > **Phase 1** (3 months): Pilot web-based workspace for 50 ACLOD Summit participants
