@@ -150,7 +150,7 @@ curl -H "x-api-key: YOUR_KEY" https://api.anthropic.com/v1/messages
 
       <details className="border rounded-lg my-4">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
-          Slow query responses (>10 seconds)
+          Slow query responses (&gt;10 seconds)
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p className="text-sm"><strong>Problem:</strong> RAG queries taking too long</p>
@@ -259,7 +259,7 @@ You are a research assistant. CRITICAL RULES:
 
       <details className="border rounded-lg my-4">
         <summary className="cursor-pointer p-4 font-semibold hover:bg-muted/30">
-          Low PDF download success rate (< 30%)
+          Low PDF download success rate (&lt; 30%)
         </summary>
         <div className="p-4 pt-0 border-t space-y-3">
           <p className="text-sm"><strong>Problem:</strong> Can't find PDFs for most papers</p>
