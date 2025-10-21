@@ -530,8 +530,8 @@ python interfaces/claude_code_interface.py \\
       </p>
 
       <div className="my-6">
-        <Link href="/guide/07-troubleshooting" className="border rounded-lg p-6 block hover:bg-muted/30 transition-colors">
-          <h3 className="font-semibold mb-2">📝 Chapter 7: Documentation & Writing</h3>
+        <Link href="/guide/06-documentation-writing" className="border rounded-lg p-6 block hover:bg-muted/30 transition-colors">
+          <h3 className="font-semibold mb-2">📝 Chapter 6: Documentation & Writing</h3>
           <p className="text-sm text-muted-foreground">
             Learn how to structure your systematic review, generate PRISMA diagrams, manage bibliographies, and prepare publication-ready materials using RAG assistance.
           </p>

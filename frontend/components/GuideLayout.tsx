@@ -28,10 +28,11 @@ const chapters: Chapter[] = [
   { number: 1, title: 'Introduction', href: '/guide/01-introduction' },
   { number: 2, title: 'Getting Started', href: '/guide/02-getting-started' },
   { number: 3, title: 'Core Concepts', href: '/guide/03-core-concepts' },
-  { number: 4, title: 'Implementation Guide', href: '/guide/04-implementation' },
-  { number: 5, title: 'Practical Guide', href: '/guide/05-advanced-topics' },
-  { number: 6, title: 'Research Conversation', href: '/guide/06-research-conversation' },
-  { number: 7, title: 'Documentation & Writing', href: '/guide/07-documentation-writing' },
+  { number: 4, title: 'Implementation Part A', href: '/guide/04a-planning-prisma' },
+  { number: 4.5, title: 'Implementation Part B', href: '/guide/04b-rag-research' },
+  { number: 5, title: 'Research Conversation', href: '/guide/05-research-conversation' },
+  { number: 6, title: 'Documentation & Writing', href: '/guide/06-documentation-writing' },
+  { number: 7, title: 'Troubleshooting', href: '/guide/07-troubleshooting' },
 ]
 
 const additionalPages: { title: string; href: string }[] = [
@@ -136,43 +137,39 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             >
               Overview
             </Link>
-            {chapters.map((chapter) => {
+            {chapters.map((chapter, index) => {
               const isActive = pathname?.includes(chapter.href)
               return (
-                <Link
-                  key={chapter.number}
-                  href={chapter.href}
-                  className={`block px-3 py-2 text-sm rounded-md transition-colors ${
-                    isActive
-                      ? 'bg-gray-100 font-medium'
-                      : 'text-muted hover:bg-gray-50 hover:text-foreground'
-                  }`}
-                >
-                  <span className="text-muted-foreground mr-2 text-xs">{chapter.number}.</span>
-                  {chapter.title}
-                </Link>
-              )
-            })}
-
-            {/* Additional Pages */}
-            <div className="pt-4 mt-4 border-t border-gray-200">
-              {additionalPages.map((page) => {
-                const isActive = pathname === page.href
-                return (
+                <div key={chapter.number}>
                   <Link
-                    key={page.href}
-                    href={page.href}
+                    href={chapter.href}
                     className={`block px-3 py-2 text-sm rounded-md transition-colors ${
                       isActive
                         ? 'bg-gray-100 font-medium'
                         : 'text-muted hover:bg-gray-50 hover:text-foreground'
                     }`}
                   >
-                    {page.title}
+                    <span className="text-muted-foreground mr-2 text-xs">{chapter.number}.</span>
+                    {chapter.title}
                   </Link>
-                )
-              })}
-            </div>
+
+                  {/* Insert Workflow Map after Chapter 2 */}
+                  {chapter.number === 2 && (
+                    <Link
+                      href="/guide/workflow-map"
+                      className={`block px-3 py-2 text-sm rounded-md transition-colors mt-1 ${
+                        pathname === '/guide/workflow-map'
+                          ? 'bg-gray-100 font-medium'
+                          : 'text-muted hover:bg-gray-50 hover:text-foreground'
+                      }`}
+                    >
+                      <span className="text-muted-foreground mr-2 text-xs">📊</span>
+                      Workflow Map
+                    </Link>
+                  )}
+                </div>
+              )
+            })}
 
             {/* Prompt Library - After additional pages */}
             <div className="pt-4 mt-4 border-t border-gray-200">
