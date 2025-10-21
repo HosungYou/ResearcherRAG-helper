@@ -1,5 +1,6 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
+import Image from 'next/image'
 import Mermaid from '@/components/Mermaid'
 import { CodeBlock } from '@/components/CodeBlock'
 
@@ -23,6 +24,17 @@ export default function IntroductionPage() {
         <p className="mb-0">
           Unlike generic chatbots, ScholaRAG creates a <em>dedicated knowledge base</em> from your specific research domain, ensuring every answer is grounded in the papers you've screened and approved.
         </p>
+      </div>
+
+      <div className="my-8">
+        <Image
+          src="/ScholaRAG.png"
+          alt="ScholaRAG: The AI Knowledge Flow - Diagram showing the workflow from Academic Papers through PRISMA Filtering to RAG System and AI Assistant"
+          width={1200}
+          height={900}
+          className="rounded-lg border border-border"
+          priority
+        />
       </div>
 
       <h2 id="the-problem">The Problem It Solves</h2>
