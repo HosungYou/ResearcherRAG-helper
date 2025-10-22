@@ -1,6 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
+import FileDependencyDiagram from '@/components/diagrams/FileDependencyDiagram'
 
 export default function ArchitecturePage() {
   return (
@@ -60,6 +61,9 @@ outputs/ (Final RAG system + PRISMA diagram)`}
             Scroll horizontally to see the full flow.
           </p>
 
+          <FileDependencyDiagram />
+
+          {/* Old Mermaid diagram - kept as comment for reference
           <Mermaid
             scale={1.2}
             chart={`graph LR
@@ -147,6 +151,7 @@ outputs/ (Final RAG system + PRISMA diagram)`}
     class S3,S7 criticalStyle
     class D1,D2,D3,D4,D5 dataStyle
 `} />
+          */}
 
           <div className="callout callout-warning mt-6">
             <p className="font-semibold mb-2">🔴 Critical: project_type Branching</p>
