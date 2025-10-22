@@ -16,25 +16,7 @@ export default function ImplementationGuidePage() {
         This chapter walks you through the complete implementation process of ScholaRAG, from initial setup to final deployment. We'll cover all seven stages in detail with real-world examples, practical tips, and troubleshooting advice to help you build your own systematic literature review RAG system.
       </p>
 
-      <Mermaid chart={`
-graph LR
-    A[🎯 Stage 1<br/>Research Domain] --> B[🔍 Stage 2<br/>Query Strategy]
-    B --> C[📋 Stage 3<br/>PRISMA Config]
-    C --> D[🏗️ Stage 4<br/>RAG Design]
-    D --> E[📝 Stage 5<br/>Execution Plan]
-    E --> F[💬 Stage 6<br/>Research Queries]
-    F --> G[📄 Stage 7<br/>Documentation]
-    G --> H[✅ Your RAG System]
-
-    style A fill:#e0e7ff,stroke:#6366f1,stroke-width:2px
-    style B fill:#ddd6fe,stroke:#8b5cf6,stroke-width:2px
-    style C fill:#fce7f3,stroke:#ec4899,stroke-width:2px
-    style D fill:#fef3c7,stroke:#f59e0b,stroke-width:2px
-    style E fill:#dcfce7,stroke:#10b981,stroke-width:2px
-    style F fill:#c7f3e7,stroke:#14b8a6,stroke-width:2px
-    style G fill:#f3e7c7,stroke:#d97706,stroke-width:2px
-    style H fill:#bbf7d0,stroke:#059669,stroke-width:3px
-`} />
+      {/* Removed redundant 7 Stages diagram - users can see stages in navigation */}
 
       <div className="callout callout-info">
         <p className="font-semibold mb-2">📖 Before You Start</p>
@@ -226,7 +208,9 @@ cat config/research_domain.json
         />
       </div>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.4}
+        chart={`
 graph TD
     A[Start Stage 1] --> B{Research Question<br/>Clear?}
     B -->|No| C[Refine with<br/>5W1H Framework]
@@ -383,7 +367,9 @@ year:[2020 TO 2024]`}
         <li>📈 <code>expected_results.md</code> - Estimated paper counts per database</li>
       </ul>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.4}
+        chart={`
 graph LR
     A[Research Question] --> B[Extract Keywords]
     B --> C[Find Synonyms]
@@ -410,7 +396,9 @@ graph LR
 
       <h3 id="stage-3-workflow">PRISMA Workflow</h3>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.3}
+        chart={`
 graph TB
     subgraph Identification
         A[Run Database Queries] --> B[Collect Results<br/>n = 1,247]
@@ -782,7 +770,9 @@ cut -d',' -f2 logs/exclusion_log.csv | sort | uniq -c | sort -rn
 
       <h3 id="stage-4-decisions">Key Design Decisions</h3>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.3}
+        chart={`
 graph TD
     A[Start RAG Design] --> B{Vector DB Choice}
     B -->|Local, Simple| C[ChromaDB]
@@ -917,7 +907,9 @@ prompts:
         Review the execution sequence that will run automatically:
       </p>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.4}
+        chart={`
 graph TD
     A[01_fetch_papers.py] --> B[02_deduplicate.py]
     B --> C[03_screen_papers.py]
@@ -992,7 +984,9 @@ python scholarag_cli.py run-stage 6  # Research Conversation only`}
         The ingestion pipeline processes your PRISMA-selected papers:
       </p>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.2}
+        chart={`
 sequenceDiagram
     participant P as PDF Files
     participant E as Extractor
