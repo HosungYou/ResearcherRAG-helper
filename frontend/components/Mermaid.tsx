@@ -6,9 +6,10 @@ import mermaid from 'mermaid'
 interface MermaidProps {
   chart: string
   className?: string
+  scale?: number
 }
 
-export default function Mermaid({ chart, className = '' }: MermaidProps) {
+export default function Mermaid({ chart, className = '', scale = 1 }: MermaidProps) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -17,6 +18,11 @@ export default function Mermaid({ chart, className = '' }: MermaidProps) {
       theme: 'neutral',
       securityLevel: 'loose',
       fontFamily: 'var(--font-geist-sans)',
+      flowchart: {
+        useMaxWidth: true,
+        htmlLabels: true,
+        curve: 'basis'
+      }
     })
 
     if (ref.current) {
@@ -26,5 +32,11 @@ export default function Mermaid({ chart, className = '' }: MermaidProps) {
     }
   }, [chart])
 
-  return <div ref={ref} className={`my-8 flex justify-center ${className}`} />
+  return (
+    <div
+      ref={ref}
+      className={`my-8 flex justify-center overflow-x-auto ${className}`}
+      style={{ transform: `scale(${scale})`, transformOrigin: 'top center' }}
+    />
+  )
 }

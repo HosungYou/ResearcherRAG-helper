@@ -55,63 +55,97 @@ outputs/ (Final RAG system + PRISMA diagram)`}
         <section className="mb-12">
           <h2 id="dependency-map">File Dependency Map</h2>
 
-          <Mermaid chart={`graph TB
-    subgraph "User Input Layer"
-        U[User via Claude Code]
+          <p className="mb-6">
+            This diagram shows how files interact in ScholaRAG, following a pipeline architecture similar to Claude Code's design.
+            Scroll horizontally to see the full flow.
+          </p>
+
+          <Mermaid
+            scale={1.2}
+            chart={`graph LR
+    %% User Layer
+    User([👤 User<br/>via Claude Code])
+
+    %% Conversation Layer
+    subgraph Prompts[" 📝 Conversation Prompts "]
+        P1["Stage 1<br/>01_research_domain_setup.md"]
+        P2["Stage 2<br/>02_query_strategy.md"]
+        P3["Stage 3<br/>03_prisma_configuration.md"]
     end
 
-    subgraph "Conversation Layer"
-        P1[prompts/01_research_domain_setup.md]
-        P2[prompts/02_query_strategy.md]
-        P3[prompts/03_prisma_configuration.md]
+    %% Orchestration
+    CLI["⚙️ scholarag_cli.py<br/>(Orchestrator)"]
+
+    %% Configuration Hub
+    subgraph Config[" 🎯 Configuration Hub "]
+        TMPL["templates/<br/>config_base.yaml"]
+        CONF["config.yaml<br/>(Single Source of Truth)"]
     end
 
-    subgraph "Configuration Layer"
-        CONF[config.yaml]
-        CTX[.scholarag/context.json]
-        TMPL[templates/config_base.yaml]
+    %% Execution Scripts
+    subgraph Scripts[" 🔧 Execution Pipeline "]
+        S1["📥 01_fetch_papers.py<br/>Query databases"]
+        S2["🔄 02_deduplicate.py<br/>Remove duplicates"]
+        S3["✅ 03_screen_papers.py<br/>PRISMA screening<br/><span style='color:red'>⚠️ project_type</span>"]
+        S4["📄 04_download_pdfs.py<br/>Get full texts"]
+        S5["🗄️ 05_build_rag.py<br/>Build vector DB"]
+        S6["💬 06_query_rag.py<br/>Research queries"]
+        S7["📊 07_generate_prisma.py<br/>PRISMA diagram<br/><span style='color:red'>⚠️ project_type</span>"]
     end
 
-    subgraph "Orchestration Layer"
-        CLI[scholarag_cli.py]
+    %% Data Storage
+    subgraph Data[" 💾 Data Storage "]
+        D1["data/01_identification/<br/>*.csv"]
+        D2["data/02_screening/<br/>relevant.csv"]
+        D3["data/pdfs/<br/>*.pdf"]
+        D4["data/chroma/<br/>Vector DB"]
+        D5["outputs/<br/>prisma_diagram.png"]
     end
 
-    subgraph "Execution Layer"
-        S1[01_fetch_papers.py]
-        S2[02_deduplicate.py]
-        S3[03_screen_papers.py]
-        S5[05_build_rag.py]
-        S7[07_generate_prisma.py]
-    end
+    %% Main Flow
+    User -->|"1. Start project"| P1
+    P1 -->|"2. Initialize"| CLI
+    CLI -->|"3. Copy template"| TMPL
+    TMPL -->|"4. Create"| CONF
 
-    subgraph "Data Layer"
-        D1[data/01_identification/]
-        D2[data/02_screening/]
-        D4[data/chroma/]
-    end
+    P2 -->|"5. Add search query"| CONF
+    P3 -->|"6. Add PRISMA rules"| CONF
 
-    U -->|Conversation| P1
-    P1 -->|Triggers| CLI
-    CLI -->|Copies| TMPL
-    TMPL -->|Creates| CONF
-    P2 -->|Updates| CONF
-    P3 -->|Updates| CONF
+    CLI -->|"7. Execute Stage 1"| S1
+    S1 -->|"Papers JSON/CSV"| D1
+    D1 --> S2
+    S2 -->|"Deduplicated"| S3
 
-    CLI -->|Executes| S1
-    S1 --> S2
-    S2 --> S3
-    S3 --> S5
+    CONF -.->|"project_type:<br/>knowledge_repository<br/>or systematic_review"| S3
 
-    CONF -.project_type.-> S3
-    CONF -.project_type.-> S7
+    S3 -->|"Relevant papers"| D2
+    D2 --> S4
+    S4 -->|"PDFs"| D3
+    D3 --> S5
+    S5 -->|"Embeddings"| D4
+    D4 --> S6
+    S6 -->|"Answers + Citations"| User
 
-    S1 -->|CSV| D1
-    S3 -->|CSV| D2
-    S5 -->|ChromaDB| D4
+    CONF -.->|"project_type:<br/>changes diagram title"| S7
+    D1 & D2 & D3 --> S7
+    S7 -->|"PRISMA flowchart"| D5
 
-    style S3 fill:#ff9999
-    style S7 fill:#ff9999
-    style CONF fill:#99ff99
+    %% Styling
+    classDef userStyle fill:#e1f5ff,stroke:#01579b,stroke-width:3px
+    classDef promptStyle fill:#fff9c4,stroke:#f57f17,stroke-width:2px
+    classDef configStyle fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px
+    classDef scriptStyle fill:#f3e5f5,stroke:#6a1b9a,stroke-width:2px
+    classDef criticalStyle fill:#ffcdd2,stroke:#c62828,stroke-width:3px
+    classDef dataStyle fill:#e0e0e0,stroke:#424242,stroke-width:2px
+
+    class User userStyle
+    class P1,P2,P3 promptStyle
+    class CONF configStyle
+    class CLI configStyle
+    class TMPL promptStyle
+    class S1,S2,S4,S5,S6 scriptStyle
+    class S3,S7 criticalStyle
+    class D1,D2,D3,D4,D5 dataStyle
 `} />
 
           <div className="callout callout-warning mt-6">

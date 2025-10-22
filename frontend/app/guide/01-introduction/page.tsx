@@ -219,7 +219,9 @@ export default function IntroductionPage() {
         </div>
       </div>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.3}
+        chart={`
 graph TD
     A[Records Identified<br/>n = 1,247] --> B[Records Screened<br/>n = 1,247]
     B --> C[Excluded<br/>n = 983<br/>Not Relevant]
@@ -254,7 +256,9 @@ graph TD
         ScholaRAG breaks down the complex process into 7 conversational stages with Claude Code:
       </p>
 
-      <Mermaid chart={`
+      <Mermaid
+        scale={1.3}
+        chart={`
 graph LR
     A[Stage 1<br/>Research Domain<br/>15 min] --> B[Stage 2<br/>Query Strategy<br/>10 min]
     B --> C[Stage 3<br/>PRISMA Config<br/>20 min]
