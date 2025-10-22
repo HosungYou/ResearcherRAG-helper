@@ -63,31 +63,45 @@ outputs/ (Final RAG system + PRISMA diagram)`}
 
           <Mermaid
             scale={1.4}
-            chart={`flowchart TD
-    User["User via Claude Code"]
+            chart={`graph TD
+    classDef userNode fill:#E1F5FF,stroke:#01579B,stroke-width:3px
+    classDef promptNode fill:#FFF9C4,stroke:#F57F17,stroke-width:2px
+    classDef configNode fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px
+    classDef configHubNode fill:#A5D6A7,stroke:#2E7D32,stroke-width:5px
+    classDef scriptNode fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px
+    classDef criticalNode fill:#FFCDD2,stroke:#C62828,stroke-width:4px
+    classDef dataNode fill:#E0E0E0,stroke:#424242,stroke-width:2px
 
-    Stage1["Stage 1: Research Setup"]
-    Stage2["Stage 2: Query Strategy"]
-    Stage3["Stage 3: PRISMA Config"]
+    subgraph Layer1["LAYER 1: User and Conversation"]
+        User["User via Claude Code"]
+        Stage1["Stage 1: Research Setup"]
+        Stage2["Stage 2: Query Strategy"]
+        Stage3["Stage 3: PRISMA Config"]
+        CLI["scholarag_cli.py"]
+        BaseYAML["config_base.yaml"]
+    end
 
-    CLI["scholarag_cli.py"]
-    BaseYAML["config_base.yaml"]
+    subgraph Layer2["LAYER 2: Configuration Hub"]
+        ConfigYAML["config.yaml - Single Source of Truth"]
+    end
 
-    ConfigYAML["config.yaml<br/>Single Source of Truth"]
+    subgraph Layer3["LAYER 3: Execution Pipeline"]
+        Script01["01_fetch_papers.py"]
+        Script02["02_deduplicate.py"]
+        Script03["03_screen_papers.py - CRITICAL: project_type"]
+        Script04["04_download_pdfs.py"]
+        Script05["05_build_rag.py"]
+        Script06["06_query_rag.py"]
+        Script07["07_generate_prisma.py - CRITICAL: project_type"]
+    end
 
-    Script01["01_fetch_papers.py"]
-    Script02["02_deduplicate.py"]
-    Script03["03_screen_papers.py<br/>CRITICAL: project_type"]
-    Script04["04_download_pdfs.py"]
-    Script05["05_build_rag.py"]
-    Script06["06_query_rag.py"]
-    Script07["07_generate_prisma.py<br/>CRITICAL: project_type"]
-
-    Data01["data/01_identification/"]
-    Data02["data/02_screening/"]
-    Data03["data/pdfs/"]
-    Data04["data/chroma/"]
-    Data05["outputs/prisma.png"]
+    subgraph Layer4["LAYER 4: Data Storage"]
+        Data01["data/01_identification/"]
+        Data02["data/02_screening/"]
+        Data03["data/pdfs/"]
+        Data04["data/chroma/"]
+        Data05["outputs/prisma.png"]
+    end
 
     UserOut["User Receives Results"]
 
@@ -118,14 +132,6 @@ outputs/ (Final RAG system + PRISMA diagram)`}
     Data02 -.-> Script07
     Data03 -.-> Script07
     Script07 -.-> Data05
-
-    classDef userNode fill:#E1F5FF,stroke:#01579B,stroke-width:3px
-    classDef promptNode fill:#FFF9C4,stroke:#F57F17,stroke-width:2px
-    classDef configNode fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px
-    classDef configHubNode fill:#A5D6A7,stroke:#2E7D32,stroke-width:5px
-    classDef scriptNode fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px
-    classDef criticalNode fill:#FFCDD2,stroke:#C62828,stroke-width:4px
-    classDef dataNode fill:#E0E0E0,stroke:#424242,stroke-width:2px
 
     class User,UserOut userNode
     class Stage1,Stage2,Stage3,BaseYAML promptNode
