@@ -62,131 +62,121 @@ outputs/ (Final RAG system + PRISMA diagram)`}
           </p>
 
           <Mermaid
-            scale={1.3}
-            chart={`graph TB
-    %% ==========================================
-    %% Layer 1: User & Conversation
-    %% ==========================================
-    User([👤 User via Claude Code])
+            scale={1.4}
+            chart={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TD
+    %% --------------------------------
+    %% Style Definitions (Color Classes)
+    %% --------------------------------
+    classDef user fill:#E1F5FF,stroke:#01579B,stroke-width:2px,color:#000
+    classDef prompt fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
+    classDef cli_config_node fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#000
+    classDef configHub fill:#A5D6A7,stroke:#2E7D32,stroke-width:4px,color:#000
+    classDef script fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px,color:#000
+    classDef critical fill:#FFCDD2,stroke:#C62828,stroke-width:3px,color:#000
+    classDef data fill:#E0E0E0,stroke:#424242,stroke-width:2px,color:#000
+    classDef layer1_bg fill:#FFF9E6,stroke:#F59E0B,stroke-width:3px,stroke-dasharray: 5 5
+    classDef layer2_bg fill:#E8F5E9,stroke:#2E7D32,stroke-width:4px
+    classDef layer3_bg fill:#F3E5F5,stroke:#6A1B9A,stroke-width:3px
+    classDef layer4_bg fill:#F5F5F5,stroke:#757575,stroke-width:2px
 
-    subgraph Layer1[" 🎯 LAYER 1: User & Conversation "]
-        direction LR
-        Stage1["📝 Stage 1<br/>Research Setup<br/><small>01_research_domain_setup.md</small>"]
-        Stage2["📝 Stage 2<br/>Query Strategy<br/><small>02_query_strategy.md</small>"]
-        Stage3["📝 Stage 3<br/>PRISMA Config<br/><small>03_prisma_configuration.md</small>"]
-        CLI["⚙️ scholarag_cli.py<br/><small>Orchestrator</small>"]
-        ConfigBase["📄 config_base.yaml<br/><small>Template</small>"]
+    %% --------------------------------
+    %% Node Definitions within Layers
+    %% --------------------------------
+
+    %% LAYER 1: User & Conversation Setup
+    subgraph Layer1[" 🎯 Layer 1: User & Conversation "]
+        user[("👤 User<br/>via Claude Code")]
+        prompt1["📝 Stage 1<br/>Research Setup"]
+        prompt2["📝 Stage 2<br/>Query Strategy"]
+        prompt3["📝 Stage 3<br/>PRISMA Config"]
+        cli["⚙️ scholarag_cli.py<br/>(Orchestrator)"]
+        base["📄 config_base.yaml<br/>(Template)"]
     end
 
-    %% ==========================================
-    %% Layer 2: Configuration Hub
-    %% ==========================================
-    subgraph Layer2[" ⭐ LAYER 2: Configuration Hub "]
-        Config["🎯 config.yaml<br/><strong>Single Source of Truth</strong><br/><small>Stores all project settings</small>"]
+    %% LAYER 2: Configuration Hub
+    subgraph Layer2[" ⭐ Layer 2: Configuration Hub "]
+        conf_main["🎯 config.yaml<br/><b>Single Source of Truth</b><br/><small>Controls: project_type, queries, PRISMA</small>"]
     end
 
-    %% ==========================================
-    %% Layer 3 & 4: Execution & Data (Side by Side)
-    %% ==========================================
-    subgraph Layer3[" 🔧 LAYER 3: Execution Pipeline "]
+    %% LAYER 3: Execution Pipeline
+    subgraph Layer3[" 🔧 Layer 3: Execution Pipeline "]
         direction TB
-        S1["📥 01_fetch_papers.py<br/><small>Query APIs</small>"]
-        S2["🔄 02_deduplicate.py<br/><small>Remove duplicates</small>"]
-        S3["⚠️ 03_screen_papers.py<br/><small>AI Relevance Check</small><br/><span style='color:#c62828;font-weight:bold'>CRITICAL: project_type</span>"]
-        S4["📄 04_download_pdfs.py<br/><small>PDF Retrieval</small>"]
-        S5["🗄️ 05_build_rag.py<br/><small>Vector Embeddings</small>"]
-        S6["💬 06_query_rag.py<br/><small>Literature Q&A</small>"]
-        S7["⚠️ 07_generate_prisma.py<br/><small>PRISMA Diagram</small><br/><span style='color:#c62828;font-weight:bold'>CRITICAL: project_type</span>"]
-
-        S1 --> S2
-        S2 --> S3
-        S3 --> S4
-        S4 --> S5
-        S5 --> S6
+        script01["📥 01_fetch_papers.py<br/>Query APIs"]
+        script02["🔄 02_deduplicate.py<br/>Remove duplicates"]
+        script03["⚠️ 03_screen_papers.py<br/>AI Relevance Check<br/><b>CRITICAL: project_type</b>"]
+        script04["📄 04_download_pdfs.py<br/>Fetch PDFs"]
+        script05["🗄️ 05_build_rag.py<br/>Create Vector DB"]
+        script06["💬 06_query_rag.py<br/>Generate answers"]
+        script07["⚠️ 07_generate_prisma.py<br/>PRISMA Diagram<br/><b>CRITICAL: project_type</b>"]
     end
 
-    subgraph Layer4[" 💾 LAYER 4: Data Storage "]
+    %% LAYER 4: Data Storage
+    subgraph Layer4[" 💾 Layer 4: Data Storage "]
         direction TB
-        D1["💾 data/01_identification/<br/><small>Raw Papers CSV</small>"]
-        D2["💾 data/02_screening/<br/><small>Relevant Papers</small>"]
-        D3["💾 data/pdfs/<br/><small>PDF Files</small>"]
-        D4["💾 data/chroma/<br/><small>Vector Database</small>"]
-        D5["💾 outputs/<br/><small>prisma_diagram.png</small>"]
+        data01["💾 data/01_identification/<br/>Raw Papers CSV"]
+        data02["💾 data/02_screening/<br/>Relevant Papers"]
+        data03["💾 data/pdfs/<br/>Downloaded PDFs"]
+        data04["💾 data/chroma/<br/>Vector DB Embeddings"]
+        data05["💾 outputs/<br/>prisma_diagram.png"]
     end
 
-    %% ==========================================
-    %% Main Flow Connections
-    %% ==========================================
+    user_out[("👤 User<br/>Receiving Results")]
 
-    %% Layer 1 → Layer 2
-    User -->|"1. Start"| Stage1
-    Stage1 -->|"2. Initialize"| CLI
-    CLI -->|"3. Copy template"| ConfigBase
-    ConfigBase -->|"4. Create"| Config
-    Stage2 -->|"5. Add query"| Config
-    Stage3 -->|"6. PRISMA rules"| Config
+    %% --------------------------------
+    %% Link Definitions (Data Flow)
+    %% --------------------------------
 
-    %% Layer 2 → Layer 3
-    Config -->|"Reads config"| S1
+    %% Setup Flow (Layer 1 -> Layer 2)
+    user -->|"1. Start"| prompt1
+    prompt1 -->|"2. Initialize"| cli
+    cli -->|"3. Copy template"| base
+    base -->|"4. Create"| conf_main
+    prompt2 -->|"5. Add query"| conf_main
+    prompt3 -->|"6. PRISMA rules"| conf_main
 
-    %% Layer 3 ↔ Layer 4 (Data Flow)
-    S1 -.->|"Papers CSV"| D1
-    D1 -.->|"Load"| S2
-    S3 -.->|"Relevant only"| D2
-    D2 -.->|"URLs"| S4
-    S4 -.->|"PDFs"| D3
-    D3 -.->|"Read PDFs"| S5
-    S5 -.->|"Embeddings"| D4
-    D4 -.->|"Vector search"| S6
+    %% Main Flow (Layer 2 -> Layer 3)
+    cli -->|"Runs Pipeline"| script01
 
-    %% Critical Branching
-    Config ==>|"<strong>project_type</strong><br/>50% vs 90%"| S3
-    Config ==>|"<strong>project_type</strong><br/>Diagram title"| S7
+    %% Critical Branching (Layer 2 -> Layer 3)
+    conf_main -.->|"<b>project_type:</b> 50% vs 90%"| script03
+    conf_main -.->|"<b>project_type:</b> title"| script07
 
-    %% PRISMA Branch
-    D1 & D2 & D3 -.-> S7
-    S7 -.->|"PNG"| D5
+    %% Internal Pipeline (Layer 3)
+    script01 --> script02
+    script02 --> script03
+    script03 --> script04
+    script04 --> script05
+    script05 --> script06
 
-    %% Final Output
-    S6 -->|"Results"| User
+    %% Data Flow (Layer 3 -> Layer 4)
+    script01 -.->|"writes CSV"| data01
+    script03 -.->|"writes CSV"| data02
+    script04 -.->|"writes PDFs"| data03
+    script05 -.->|"writes Embeddings"| data04
+    script06 -->|"Answers"| user_out
 
-    %% ==========================================
-    %% Styling
-    %% ==========================================
+    %% PRISMA Branch (Data -> Script -> Data)
+    data01 -.->|"reads"| script07
+    data02 -.->|"reads"| script07
+    data03 -.->|"reads"| script07
+    script07 -.->|"writes PNG"| data05
 
-    %% Layer 1: Yellow theme
-    classDef layer1Style fill:#FFF9E6,stroke:#F59E0B,stroke-width:4px,color:#000
-    classDef userStyle fill:#E1F5FF,stroke:#01579B,stroke-width:3px,color:#000
-    classDef promptStyle fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
-    classDef configBaseStyle fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
+    %% --------------------------------
+    %% Apply Styles
+    %% --------------------------------
+    class Layer1 layer1_bg
+    class Layer2 layer2_bg
+    class Layer3 layer3_bg
+    class Layer4 layer4_bg
 
-    %% Layer 2: Green theme (highlighted)
-    classDef layer2Style fill:#E8F5E9,stroke:#2E7D32,stroke-width:4px,color:#000
-    classDef configStyle fill:#A5D6A7,stroke:#2E7D32,stroke-width:4px,color:#000,font-weight:bold
-
-    %% Layer 3: Purple theme
-    classDef layer3Style fill:#F3E5F5,stroke:#6A1B9A,stroke-width:4px,color:#000
-    classDef scriptStyle fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px,color:#000
-    classDef criticalStyle fill:#FFCDD2,stroke:#C62828,stroke-width:3px,color:#000,font-weight:bold
-
-    %% Layer 4: Gray theme
-    classDef layer4Style fill:#F5F5F5,stroke:#757575,stroke-width:4px,color:#000
-    classDef dataStyle fill:#E0E0E0,stroke:#424242,stroke-width:2px,color:#000
-
-    %% Apply styles
-    class Layer1 layer1Style
-    class Layer2 layer2Style
-    class Layer3 layer3Style
-    class Layer4 layer4Style
-
-    class User userStyle
-    class Stage1,Stage2,Stage3 promptStyle
-    class CLI configBaseStyle
-    class ConfigBase configBaseStyle
-    class Config configStyle
-    class S1,S2,S4,S5,S6 scriptStyle
-    class S3,S7 criticalStyle
-    class D1,D2,D3,D4,D5 dataStyle
+    class user,user_out user
+    class prompt1,prompt2,prompt3,base prompt
+    class cli cli_config_node
+    class conf_main configHub
+    class script01,script02,script04,script05,script06 script
+    class script03,script07 critical
+    class data01,data02,data03,data04,data05 data
 `}
           />
 
