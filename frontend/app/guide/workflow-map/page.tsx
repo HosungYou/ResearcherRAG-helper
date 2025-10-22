@@ -12,15 +12,15 @@ export default function WorkflowMapPage() {
   const getEstimates = () => {
     if (projectType === 'knowledge_repository') {
       return {
-        setupTime: '3 hours',
+        setupTime: '30 minutes',
         automatedTime: queryBreadth === 'comprehensive' ? '3-4 hours' : '2-3 hours',
-        totalTime: queryBreadth === 'comprehensive' ? '6-7 hours' : '5-6 hours',
+        totalTime: queryBreadth === 'comprehensive' ? '3.5-4.5 hours' : '2.5-3.5 hours',
         finalPapers: queryBreadth === 'comprehensive' ? '15,000-20,000' : '4,000-8,000',
         retentionRate: '80-90%',
         cost: '$20/month'
       };
     } else {
-      let setupTime = '3 hours';
+      let setupTime = '30 minutes';
       let automatedTime = '3-5 hours';
       let finalPapers = '50-300';
 

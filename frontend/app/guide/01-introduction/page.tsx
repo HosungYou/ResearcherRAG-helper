@@ -67,7 +67,7 @@ export default function IntroductionPage() {
       <h3 id="with-scholarag">With ScholaRAG (2-3 weeks)</h3>
 
       <ol>
-        <li><strong>3-hour Setup</strong>: Build your RAG system with step-by-step Claude Code guidance</li>
+        <li><strong>30-minute Setup</strong>: Build your RAG system with step-by-step Claude Code guidance</li>
         <li><strong>2-hour Screening</strong>: <a href="https://www.prisma-statement.org/" target="_blank" rel="noopener noreferrer">PRISMA</a> pipeline screens thousands of papers automatically</li>
         <li><strong>Instant Queries</strong>: Ask questions and get answers with specific paper citations</li>
         <li><strong>Never Forget</strong>: Your RAG system remembers every relevant detail across all papers</li>
@@ -83,7 +83,7 @@ export default function IntroductionPage() {
       <h2 id="what-youll-build">What You'll Build</h2>
 
       <p>
-        In approximately <strong>3 hours</strong> of active work (plus 3-4 hours of automated processing), you'll create:
+        In approximately <strong>30 minutes</strong> of active setup (plus 3-4 hours of automated processing), you'll create:
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
@@ -332,7 +332,7 @@ graph LR
         <li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VS Code</a> with <a href="https://claude.ai/claude-code" target="_blank" rel="noopener noreferrer">Claude Code extension</a> installed</li>
         <li><a href="https://www.python.org/downloads/" target="_blank" rel="noopener noreferrer">Python 3.9+</a> on your system</li>
         <li><a href="https://console.anthropic.com/" target="_blank" rel="noopener noreferrer">Anthropic API key</a> (free tier available)</li>
-        <li>3 hours for initial setup + 3-4 hours for automated processing</li>
+        <li>30 minutes for initial setup + 3-4 hours for automated processing</li>
         <li>Basic familiarity with your research domain</li>
       </ul>
 

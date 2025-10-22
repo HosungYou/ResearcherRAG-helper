@@ -19,7 +19,7 @@ export default function PracticalGuidePage() {
             <ul className="space-y-1">
               <li>• <strong>Researcher</strong>: PhD student in Applied Linguistics</li>
               <li>• <strong>Domain</strong>: Education (Language Learning)</li>
-              <li>• <strong>Time</strong>: 3 hours setup + 2 weeks analysis</li>
+              <li>• <strong>Time</strong>: 30 minutes setup + 2 weeks analysis</li>
             </ul>
           </div>
           <div>
@@ -272,7 +272,7 @@ rag:
               <li>• Result: 70-80% of papers need <strong>manual retrieval</strong> (VPN, author emails, interlibrary loan)</li>
             </ul>
             <p className="mt-2">
-              For ScholaRAG's <strong>"3-hour automated setup"</strong> promise, we use databases with API-accessible PDFs.
+              For ScholaRAG's <strong>"30-minute automated setup"</strong> promise, we use databases with API-accessible PDFs.
               This gives you <strong>50-60% automated PDF access</strong> vs. 20-30% with traditional databases.
             </p>
             <p className="mt-2 font-semibold">Can I still use PubMed/Scopus?</p>

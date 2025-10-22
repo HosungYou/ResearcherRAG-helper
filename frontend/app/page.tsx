@@ -94,8 +94,8 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <AnimatedCounter
-              end={3}
-              suffix=" hrs"
+              end={30}
+              suffix=" min"
               className="text-4xl font-bold tracking-tight mb-2"
             />
             <div className="text-sm text-muted">Setup to deployment</div>
