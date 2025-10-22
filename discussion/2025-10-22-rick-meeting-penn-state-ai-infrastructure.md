@@ -42,6 +42,25 @@ Based on Rick's role as Enterprise IT leader, he likely prefers:
 
 ### Option 1: GitHub Copilot Enterprise ⭐⭐⭐⭐⭐
 
+**IMPORTANT CLARIFICATION**: GitHub Copilot은 **IDE 기반**이며, **CLI도 있습니다**!
+
+**GitHub Copilot의 3가지 인터페이스**:
+
+1. **IDE Integration** (가장 일반적)
+   - VS Code, IntelliJ, Neovim 등에서 코드 자동완성
+   - ⌘ + I로 inline chat
+   - 코드 작성 중 실시간 제안
+
+2. **GitHub Copilot CLI** ⭐ (2025년 Public Preview)
+   - 터미널에서 직접 사용: `copilot` 명령어
+   - 자연어로 bash 명령어 생성
+   - Interactive mode: 대화형 사용
+   - Programmatic mode: `-p` 플래그로 단일 프롬프트
+   - **Claude Code와 유사한 경험** (but less autonomous)
+
+3. **GitHub.com Integration**
+   - 웹에서 코드 리뷰, PR 작성 등
+
 **Why Rick Will Love This**
 
 ✅ **Microsoft Partnership**: Penn State already has Enterprise Agreement with Microsoft
@@ -53,10 +72,11 @@ Based on Rick's role as Enterprise IT leader, he likely prefers:
 ✅ **IP Indemnity**: Legal protection for code generation
 ✅ **Penn State SSO**: Single Sign-On with Penn State credentials
 ✅ **Institutional Knowledge**: Can train on Penn State GitHub repositories
+✅ **CLI Support**: Researchers can use terminal workflow (like Claude Code)
 
 #### How It Works for ScholaRAG
 
-**Development Scenario:**
+**Scenario A: IDE-Based Development** (전통적 방식)
 
 ```bash
 # Researcher's laptop
@@ -81,21 +101,52 @@ def screen_paper(paper_metadata, rubric):
     # ... (Copilot suggests rest of code)
 ```
 
-**Chat-Based Assistance (Similar to Claude Code):**
+**Scenario B: CLI-Based Workflow** ⭐ (Claude Code와 유사)
 
 ```bash
-# In VS Code, open Copilot Chat
-User: "Help me refactor scripts/03_screen_papers.py to use async/await"
+# Terminal workflow (like Claude Code!)
+$ cd ScholaRAG
+$ npm install -g @github/copilot  # One-time setup
+$ copilot  # Launch interactive mode
 
-Copilot (trained on ScholaRAG repo):
-"I can help refactor the screening script to use asyncio for parallel
-processing. Here's the plan:
-1. Convert screen_papers() to async function
+# Copilot authenticates with Penn State SSO
+
+Copilot> Help me refactor scripts/03_screen_papers.py to use async/await
+
+Copilot:
+I'll help refactor the screening script for async processing.
+
+Plan:
+1. Convert screen_papers() to async def
 2. Use asyncio.gather() for concurrent API calls
 3. Add semaphore for rate limiting
 
-[Shows full refactored code with Penn State best practices...]"
+[Shows implementation...]
+
+Would you like me to:
+a) Write the code to a file
+b) Show you how to test it
+c) Explain the changes in detail
+
+User> a
+
+Copilot: Created async_screen_papers.py
 ```
+
+**Key Difference: Copilot CLI vs Claude Code**
+
+| Feature | GitHub Copilot CLI | Claude Code |
+|---------|-------------------|-------------|
+| **Autonomy** | ⚠️ Requires approval for each action | ✅ Fully autonomous (can edit multiple files) |
+| **Multi-file editing** | ⚠️ Limited | ✅ Excellent |
+| **Context awareness** | ⭐⭐⭐ Good | ⭐⭐⭐⭐⭐ Excellent |
+| **Model quality** | GPT-4o, o1, Claude 3.5 Sonnet (Oct 2025!) | Claude 3.5 Sonnet 4 (best for coding) |
+| **Penn State control** | ✅ Enterprise managed | ❌ Personal accounts only |
+| **Cost** | $39/user/month | $200/month (Claude Pro+) |
+
+**Important Update (October 2025)**:
+GitHub Copilot CLI now supports **Claude Sonnet 4.5** (Anthropic's best model)!
+→ Quality gap between Copilot CLI and Claude Code is narrowing.
 
 #### Rick's Control Panel
 
@@ -228,7 +279,49 @@ Win-Win:
 
 ---
 
-### Option 3: Azure OpenAI Codex (Enterprise Deployment) ⭐⭐⭐⭐
+### Bonus: Cursor vs GitHub Copilot vs Claude Code
+
+**Quick Comparison for Context**:
+
+| Tool | Interface | Autonomy | Best For |
+|------|-----------|----------|----------|
+| **Cursor** | Full AI IDE | ⭐⭐⭐⭐ High | Focus + autocomplete, built-in terminal (⌘+K) |
+| **GitHub Copilot** | IDE plugin + CLI | ⭐⭐⭐ Medium | Enterprise control, inline suggestions |
+| **Claude Code** | CLI only | ⭐⭐⭐⭐⭐ Highest | Architectural thinking, autonomous editing |
+
+**Workflow Philosophy**:
+- **Cursor**: "Typing work" (code completion, syntax fixes)
+- **GitHub Copilot**: "Suggestion layer" (helps you code faster)
+- **Claude Code**: "Thinking work" (architectural decisions, complex refactors)
+
+**Hybrid Approach** (Many developers use):
+- Use **Claude Code** inside **Cursor IDE** (best of both worlds)
+- Cursor for visualization, Claude for deep reasoning
+
+**For ScholaRAG**:
+- GitHub Copilot Enterprise = Rick's control + decent CLI
+- Claude Code = Best quality, but personal accounts only
+- Cursor = Not enterprise-friendly (no centralized management)
+
+---
+
+### Option 3: Azure OpenAI GPT-4 / o3-mini (Enterprise Deployment) ⭐⭐⭐⭐
+
+**⚠️ IMPORTANT CORRECTION**:
+
+**"Azure OpenAI Codex"는 더 이상 존재하지 않습니다:**
+- Original Codex API deprecated by OpenAI on March 23, 2023
+- Replaced by GPT-3.5 Turbo, GPT-4 Turbo for coding tasks
+
+**NEW (May 2025)**:
+- OpenAI introduced **new "Codex"** = autonomous coding agent (not API)
+- Powered by **codex-1** model (fine-tuned o3)
+- Available on Azure OpenAI as **codex-mini** (limited access)
+
+**For Penn State, the realistic option is**:
+- **Azure OpenAI GPT-4 Turbo** or **GPT-4o** (coding-optimized)
+- **o3-mini** (reasoning model, good for complex code)
+- NOT called "Codex" anymore, but same purpose (code generation)
 
 **Why This Is Rick's Comfort Zone**
 
@@ -255,31 +348,74 @@ Researchers authenticate with Penn State SSO
 
 #### ScholaRAG Usage Example
 
-```bash
-# Researcher setup (one-time)
-$ npm install -g @azure/openai-codex-cli
-$ codex login --tenant pennstate.onmicrosoft.com
-# Authenticates with Penn State credentials
+**⚠️ 주의**: Azure OpenAI에는 **공식 CLI가 없습니다**. 대신:
 
-# Daily usage
-$ cd ScholaRAG
-$ codex chat
+**Option A: Python Script로 직접 사용**
 
-Codex> Help me add async processing to screening script
+```python
+# Penn State Azure OpenAI 사용 예시
+import openai
+from azure.identity import DefaultAzureCredential
 
-Codex (connected to Azure OpenAI in Penn State tenant):
-"I'll help you refactor scripts/03_screen_papers.py for async processing.
+# Penn State Azure credentials
+openai.api_type = "azure"
+openai.api_base = "https://pennstate-openai.openai.azure.com/"
+openai.api_version = "2024-10-01"
 
-Here's the approach:
-1. Convert screen_papers() to async def
-2. Use asyncio.gather() for concurrent API calls
-3. Add rate limiting with asyncio.Semaphore
+# Penn State SSO authentication
+credential = DefaultAzureCredential()
+openai.api_key = credential.get_token("https://cognitiveservices.azure.com/.default").token
 
-[Shows complete implementation with Penn State coding standards...]"
+# ScholaRAG 사용
+response = openai.ChatCompletion.create(
+    engine="gpt-4o",  # Penn State deployed model
+    messages=[
+        {"role": "system", "content": "You are a Python expert helping with ScholaRAG."},
+        {"role": "user", "content": "Refactor scripts/03_screen_papers.py to use async/await"}
+    ]
+)
 
-# All API calls go through Penn State Azure
-# Rick can monitor usage in Azure dashboard
+print(response.choices[0].message.content)
 ```
+
+**Option B: VS Code Extension (Azure OpenAI)** (더 현실적)
+
+```bash
+# VS Code에서 Azure OpenAI 사용
+1. Install extension: "Azure OpenAI"
+2. Configure Penn State endpoint
+3. Use inline chat (Ctrl+I)
+
+# IDE 내에서 Azure OpenAI 호출
+# Rick's team이 설정한 Penn State endpoint 사용
+```
+
+**Option C: Third-Party CLI Tools** (비공식)
+
+```bash
+# Continue.dev (오픈소스 CLI, Azure OpenAI 지원)
+$ npm install -g continue
+$ continue config
+
+# config에 Penn State Azure OpenAI 설정:
+{
+  "models": [{
+    "provider": "azure",
+    "model": "gpt-4o",
+    "apiBase": "https://pennstate-openai.openai.azure.com/",
+    "apiKey": "[Penn State managed]"
+  }]
+}
+
+$ continue chat
+User> Refactor screening script for async
+[Azure OpenAI GPT-4o responds through Penn State tenant]
+```
+
+**핵심 차이점**:
+- GitHub Copilot CLI: **공식 CLI 있음** (`copilot` 명령어)
+- Azure OpenAI: **공식 CLI 없음** (Python SDK or 3rd-party tools)
+- 따라서 **Azure는 IDE extension 사용이 더 현실적**
 
 #### Pricing (Very Attractive)
 
@@ -301,23 +437,46 @@ Total: ~$50/month = $600/year
 
 **Bonus**: Azure OpenAI is likely **already included** in Penn State's Microsoft Enterprise Agreement.
 
-#### Codex CLI vs. Claude Code
+#### Azure OpenAI vs. GitHub Copilot CLI vs. Claude Code
 
-**Comparison Table**:
+**Updated Comparison Table**:
 
-| Feature | Azure Codex CLI | Claude Code |
-|---------|----------------|-------------|
-| Penn State Control | ✅ Full (Azure tenant) | ❌ External SaaS |
-| Cost | ✅ ~$50/month | ⚠️ $200+/month (per user) |
-| Integration | ✅ Azure ecosystem | ⚠️ Standalone |
-| Code Quality | ⚠️ GPT-4 (good but...) | ✅ Claude 3.5 Sonnet (excellent) |
-| User Experience | ⚠️ Less polished | ✅ Best-in-class |
-| Multi-file Editing | ⚠️ Limited | ✅ Excellent |
-| Conversation Memory | ⚠️ Basic | ✅ Advanced |
+| Feature | Azure OpenAI (GPT-4o) | GitHub Copilot CLI | Claude Code |
+|---------|----------------------|-------------------|-------------|
+| **CLI 지원** | ⚠️ 비공식 (3rd-party) | ✅ 공식 CLI (`copilot`) | ✅ Native CLI |
+| **Penn State Control** | ✅ Full (Azure tenant) | ✅ Enterprise managed | ❌ Personal only |
+| **Cost** | ✅ ~$50/month (token) | ⚠️ $39/user/month | ⚠️ $200/user/month |
+| **Integration** | ✅ Azure ecosystem | ✅ GitHub ecosystem | ⚠️ Standalone |
+| **Model Quality** | ⭐⭐⭐⭐ GPT-4o | ⭐⭐⭐⭐⭐ Claude 4.5 (Oct 2025) | ⭐⭐⭐⭐⭐ Claude 4.5 |
+| **User Experience** | ⚠️ SDK-based (less polished) | ⭐⭐⭐⭐ Good CLI | ⭐⭐⭐⭐⭐ Excellent |
+| **Multi-file Editing** | ❌ Manual scripting | ⚠️ Limited | ✅ Fully autonomous |
+| **Autonomy** | ❌ None (you write code) | ⚠️ Requires approval | ✅ Full autonomy |
+| **Conversation Memory** | ⚠️ Basic (stateless API) | ⭐⭐⭐ Good | ⭐⭐⭐⭐⭐ Excellent |
 
-**Trade-off**:
-- Rick gets **control** and **cost savings** (Azure Codex)
-- Researchers get slightly **less optimal** user experience vs. Claude Code
+**Trade-offs**:
+
+**Azure OpenAI**:
+- ✅ Rick gets maximum control, lowest cost
+- ❌ Researchers need to write Python scripts (not true CLI)
+- ❌ No autonomous multi-file editing
+
+**GitHub Copilot CLI**:
+- ✅ Rick gets enterprise control
+- ✅ Real CLI experience (similar to Claude Code)
+- ✅ Now supports Claude 4.5 model (quality gap closing)
+- ⚠️ Less autonomous than Claude Code (requires approvals)
+
+**Claude Code**:
+- ✅ Best user experience, full autonomy
+- ❌ No enterprise deployment option
+- ❌ Each researcher pays personally ($200/month)
+
+**Recommendation for Rick**:
+→ **GitHub Copilot CLI** is the sweet spot:
+  - Enterprise control ✅
+  - Real CLI workflow ✅
+  - Claude 4.5 quality ✅
+  - Reasonable cost ($39/user vs. $200)
 
 ---
 
