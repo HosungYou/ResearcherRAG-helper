@@ -63,7 +63,7 @@ outputs/ (Final RAG system + PRISMA diagram)`}
 
           <div className="my-8">
             <img
-              src="/image/Diagram-architecture.png"
+              src="/Diagram-architecture.png"
               alt="ScholaRAG Architecture Diagram"
               className="w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700"
             />
