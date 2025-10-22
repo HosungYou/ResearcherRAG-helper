@@ -74,12 +74,6 @@ export default function HomePage() {
               Get Started
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link
-              href="/chat"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-border text-foreground rounded-md text-sm font-medium hover:border-foreground hover:scale-105 transition-all"
-            >
-              Try Demo
-            </Link>
           </motion.div>
         </div>
       </section>
