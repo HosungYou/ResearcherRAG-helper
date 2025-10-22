@@ -109,8 +109,7 @@ graph TB
     Stage2 --> ConfigYAML
     Stage3 --> ConfigYAML
 
-    ConfigYAML --> CLI
-    CLI --> Script01
+    ConfigYAML --> Script01
 
     ConfigYAML ===> Script03
     ConfigYAML ===> Script07
