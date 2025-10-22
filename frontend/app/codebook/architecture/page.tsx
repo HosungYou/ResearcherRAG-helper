@@ -62,9 +62,9 @@ outputs/ (Final RAG system + PRISMA diagram)`}
           </p>
 
           <Mermaid
-            scale={1.4}
+            scale={2.2}
             chart={`%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff'}}}%%
-flowchart TD
+graph TB
  subgraph Layer1["LAYER 1: User & Conversation"]
         User["User via Claude Code"]
         Stage1["Stage 1: Research Setup"]
