@@ -61,87 +61,13 @@ outputs/ (Final RAG system + PRISMA diagram)`}
             Each layer has a specific role in the automated research pipeline.
           </p>
 
-          <Mermaid
-            scale={2.0}
-            chart={`%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#fff'}}}%%
-graph TB
-    subgraph Layer1["LAYER 1: User & Conversation"]
-        User["User via Claude Code"]
-        User --> Stage1["Stage 1: Research Setup"]
-        Stage1 --> CLI["scholarag_cli.py"]
-        CLI --> BaseYAML["config_base.yaml"]
-
-        Stage2["Stage 2: Query Strategy"]
-        Stage3["Stage 3: PRISMA Config"]
-    end
-
-    subgraph Layer2["LAYER 2: Configuration Hub"]
-        ConfigYAML["config.yaml - Single Source of Truth"]
-    end
-
-    subgraph Layer3["LAYER 3: Execution Pipeline"]
-        Script01["01_fetch_papers.py"]
-        Script02["02_deduplicate.py"]
-        Script03["03_screen_papers.py<br/>CRITICAL: project_type"]
-        Script04["04_download_pdfs.py"]
-        Script05["05_build_rag.py"]
-        Script06["06_query_rag.py"]
-        Script07["07_generate_prisma.py<br/>CRITICAL: project_type"]
-
-        Script01 --> Script02
-        Script02 --> Script03
-        Script03 --> Script04
-        Script04 --> Script05
-        Script05 --> Script06
-    end
-
-    subgraph Layer4["LAYER 4: Data Storage"]
-        Data02["data/02_screening/"]
-        Data04["data/chroma/"]
-        Data03["data/pdfs/"]
-        Data01["data/01_identification/"]
-        Data05["outputs/prisma.png"]
-    end
-
-    UserOut["User Receives Results"]
-
-    BaseYAML --> ConfigYAML
-    Stage2 --> ConfigYAML
-    Stage3 --> ConfigYAML
-
-    ConfigYAML --> Script01
-
-    ConfigYAML ===> Script03
-    ConfigYAML ===> Script07
-
-    Script01 -.-> Data01
-    Script03 -.-> Data02
-    Script04 -.-> Data03
-    Script05 -.-> Data04
-    Script06 --> UserOut
-
-    Data01 -.-> Script07
-    Data02 -.-> Script07
-    Data03 -.-> Script07
-    Script07 -.-> Data05
-
-    classDef userNode fill:#E1F5FF,stroke:#01579B,stroke-width:3px,color:#000
-    classDef promptNode fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
-    classDef configNode fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#000
-    classDef configHubNode fill:#A5D6A7,stroke:#2E7D32,stroke-width:5px,color:#000
-    classDef scriptNode fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px,color:#000
-    classDef criticalNode fill:#FFCDD2,stroke:#C62828,stroke-width:4px,color:#000
-    classDef dataNode fill:#E0E0E0,stroke:#424242,stroke-width:2px,color:#000
-
-    class User,UserOut userNode
-    class Stage1,Stage2,Stage3,BaseYAML promptNode
-    class CLI configNode
-    class ConfigYAML configHubNode
-    class Script01,Script02,Script04,Script05,Script06 scriptNode
-    class Script03,Script07 criticalNode
-    class Data01,Data02,Data03,Data04,Data05 dataNode
-`}
-          />
+          <div className="my-8">
+            <img
+              src="/image/Diagram-architecture.png"
+              alt="ScholaRAG Architecture Diagram"
+              className="w-full h-auto rounded-lg border border-gray-200 dark:border-gray-700"
+            />
+          </div>
 
           {/* Old Mermaid diagram - kept as comment for reference
           <Mermaid
