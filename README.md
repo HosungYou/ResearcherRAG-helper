@@ -309,5 +309,3 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ---
 
 **Built with ❤️ for researchers, by researchers**
-
-_Powered by [Next.js](https://nextjs.org) + [Claude 3.5 Sonnet](https://anthropic.com) 🤖_
