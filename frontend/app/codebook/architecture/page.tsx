@@ -57,11 +57,138 @@ outputs/ (Final RAG system + PRISMA diagram)`}
           <h2 id="dependency-map">File Dependency Map</h2>
 
           <p className="mb-6">
-            This interactive diagram shows how files interact in ScholaRAG.
-            You can zoom, pan, and explore the complete pipeline from user input to final outputs.
+            This diagram shows the complete file dependency flow in ScholaRAG, organized into 4 distinct layers.
+            Each layer has a specific role in the automated research pipeline.
           </p>
 
-          <ReactFlowDiagram />
+          <Mermaid
+            scale={1.3}
+            chart={`graph TB
+    %% ==========================================
+    %% Layer 1: User & Conversation
+    %% ==========================================
+    User([👤 User via Claude Code])
+
+    subgraph Layer1[" 🎯 LAYER 1: User & Conversation "]
+        direction LR
+        Stage1["📝 Stage 1<br/>Research Setup<br/><small>01_research_domain_setup.md</small>"]
+        Stage2["📝 Stage 2<br/>Query Strategy<br/><small>02_query_strategy.md</small>"]
+        Stage3["📝 Stage 3<br/>PRISMA Config<br/><small>03_prisma_configuration.md</small>"]
+        CLI["⚙️ scholarag_cli.py<br/><small>Orchestrator</small>"]
+        ConfigBase["📄 config_base.yaml<br/><small>Template</small>"]
+    end
+
+    %% ==========================================
+    %% Layer 2: Configuration Hub
+    %% ==========================================
+    subgraph Layer2[" ⭐ LAYER 2: Configuration Hub "]
+        Config["🎯 config.yaml<br/><strong>Single Source of Truth</strong><br/><small>Stores all project settings</small>"]
+    end
+
+    %% ==========================================
+    %% Layer 3 & 4: Execution & Data (Side by Side)
+    %% ==========================================
+    subgraph Layer3[" 🔧 LAYER 3: Execution Pipeline "]
+        direction TB
+        S1["📥 01_fetch_papers.py<br/><small>Query APIs</small>"]
+        S2["🔄 02_deduplicate.py<br/><small>Remove duplicates</small>"]
+        S3["⚠️ 03_screen_papers.py<br/><small>AI Relevance Check</small><br/><span style='color:#c62828;font-weight:bold'>CRITICAL: project_type</span>"]
+        S4["📄 04_download_pdfs.py<br/><small>PDF Retrieval</small>"]
+        S5["🗄️ 05_build_rag.py<br/><small>Vector Embeddings</small>"]
+        S6["💬 06_query_rag.py<br/><small>Literature Q&A</small>"]
+        S7["⚠️ 07_generate_prisma.py<br/><small>PRISMA Diagram</small><br/><span style='color:#c62828;font-weight:bold'>CRITICAL: project_type</span>"]
+
+        S1 --> S2
+        S2 --> S3
+        S3 --> S4
+        S4 --> S5
+        S5 --> S6
+    end
+
+    subgraph Layer4[" 💾 LAYER 4: Data Storage "]
+        direction TB
+        D1["💾 data/01_identification/<br/><small>Raw Papers CSV</small>"]
+        D2["💾 data/02_screening/<br/><small>Relevant Papers</small>"]
+        D3["💾 data/pdfs/<br/><small>PDF Files</small>"]
+        D4["💾 data/chroma/<br/><small>Vector Database</small>"]
+        D5["💾 outputs/<br/><small>prisma_diagram.png</small>"]
+    end
+
+    %% ==========================================
+    %% Main Flow Connections
+    %% ==========================================
+
+    %% Layer 1 → Layer 2
+    User -->|"1. Start"| Stage1
+    Stage1 -->|"2. Initialize"| CLI
+    CLI -->|"3. Copy template"| ConfigBase
+    ConfigBase -->|"4. Create"| Config
+    Stage2 -->|"5. Add query"| Config
+    Stage3 -->|"6. PRISMA rules"| Config
+
+    %% Layer 2 → Layer 3
+    Config -->|"Reads config"| S1
+
+    %% Layer 3 ↔ Layer 4 (Data Flow)
+    S1 -.->|"Papers CSV"| D1
+    D1 -.->|"Load"| S2
+    S3 -.->|"Relevant only"| D2
+    D2 -.->|"URLs"| S4
+    S4 -.->|"PDFs"| D3
+    D3 -.->|"Read PDFs"| S5
+    S5 -.->|"Embeddings"| D4
+    D4 -.->|"Vector search"| S6
+
+    %% Critical Branching
+    Config ==>|"<strong>project_type</strong><br/>50% vs 90%"| S3
+    Config ==>|"<strong>project_type</strong><br/>Diagram title"| S7
+
+    %% PRISMA Branch
+    D1 & D2 & D3 -.-> S7
+    S7 -.->|"PNG"| D5
+
+    %% Final Output
+    S6 -->|"Results"| User
+
+    %% ==========================================
+    %% Styling
+    %% ==========================================
+
+    %% Layer 1: Yellow theme
+    classDef layer1Style fill:#FFF9E6,stroke:#F59E0B,stroke-width:4px,color:#000
+    classDef userStyle fill:#E1F5FF,stroke:#01579B,stroke-width:3px,color:#000
+    classDef promptStyle fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
+    classDef configBaseStyle fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
+
+    %% Layer 2: Green theme (highlighted)
+    classDef layer2Style fill:#E8F5E9,stroke:#2E7D32,stroke-width:4px,color:#000
+    classDef configStyle fill:#A5D6A7,stroke:#2E7D32,stroke-width:4px,color:#000,font-weight:bold
+
+    %% Layer 3: Purple theme
+    classDef layer3Style fill:#F3E5F5,stroke:#6A1B9A,stroke-width:4px,color:#000
+    classDef scriptStyle fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px,color:#000
+    classDef criticalStyle fill:#FFCDD2,stroke:#C62828,stroke-width:3px,color:#000,font-weight:bold
+
+    %% Layer 4: Gray theme
+    classDef layer4Style fill:#F5F5F5,stroke:#757575,stroke-width:4px,color:#000
+    classDef dataStyle fill:#E0E0E0,stroke:#424242,stroke-width:2px,color:#000
+
+    %% Apply styles
+    class Layer1 layer1Style
+    class Layer2 layer2Style
+    class Layer3 layer3Style
+    class Layer4 layer4Style
+
+    class User userStyle
+    class Stage1,Stage2,Stage3 promptStyle
+    class CLI configBaseStyle
+    class ConfigBase configBaseStyle
+    class Config configStyle
+    class S1,S2,S4,S5,S6 scriptStyle
+    class S3,S7 criticalStyle
+    class D1,D2,D3,D4,D5 dataStyle
+`}
+          />
 
           {/* Old Mermaid diagram - kept as comment for reference
           <Mermaid
@@ -155,10 +282,14 @@ outputs/ (Final RAG system + PRISMA diagram)`}
 
           <div className="callout callout-warning mt-6">
             <p className="font-semibold mb-2">🔴 Critical: project_type Branching</p>
-            <p className="mb-0">
+            <p className="mb-2">
               Red nodes (03_screen_papers.py, 07_generate_prisma.py) read <code>project_type</code> from config.yaml
-              and adjust their behavior accordingly. This is the most important architectural decision point.
+              and adjust their behavior accordingly. Thick red arrows (==&gt;) indicate critical branching points.
             </p>
+            <ul className="text-sm space-y-1 mb-0">
+              <li><strong>03_screen_papers.py</strong>: Sets screening threshold (50% for knowledge_repository, 90% for systematic_review)</li>
+              <li><strong>07_generate_prisma.py</strong>: Changes PRISMA diagram title based on project type</li>
+            </ul>
           </div>
         </section>
 
