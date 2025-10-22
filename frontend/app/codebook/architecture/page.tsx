@@ -1,7 +1,7 @@
 import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
-import FileDependencyDiagram from '@/components/diagrams/FileDependencyDiagram'
+import ReactFlowDiagram from '@/components/diagrams/ReactFlowDiagram'
 
 export default function ArchitecturePage() {
   return (
@@ -57,11 +57,11 @@ outputs/ (Final RAG system + PRISMA diagram)`}
           <h2 id="dependency-map">File Dependency Map</h2>
 
           <p className="mb-6">
-            This diagram shows how files interact in ScholaRAG, following a pipeline architecture similar to Claude Code's design.
-            Scroll horizontally to see the full flow.
+            This interactive diagram shows how files interact in ScholaRAG.
+            You can zoom, pan, and explore the complete pipeline from user input to final outputs.
           </p>
 
-          <FileDependencyDiagram />
+          <ReactFlowDiagram />
 
           {/* Old Mermaid diagram - kept as comment for reference
           <Mermaid
