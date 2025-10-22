@@ -63,120 +63,97 @@ outputs/ (Final RAG system + PRISMA diagram)`}
 
           <Mermaid
             scale={1.4}
-            chart={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
-graph TD
-    %% --------------------------------
-    %% Style Definitions (Color Classes)
-    %% --------------------------------
-    classDef user fill:#E1F5FF,stroke:#01579B,stroke-width:2px,color:#000
-    classDef prompt fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
-    classDef cli_config_node fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#000
-    classDef configHub fill:#A5D6A7,stroke:#2E7D32,stroke-width:4px,color:#000
-    classDef script fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px,color:#000
-    classDef critical fill:#FFCDD2,stroke:#C62828,stroke-width:3px,color:#000
-    classDef data fill:#E0E0E0,stroke:#424242,stroke-width:2px,color:#000
-    classDef layer1_bg fill:#FFF9E6,stroke:#F59E0B,stroke-width:3px,stroke-dasharray: 5 5
-    classDef layer2_bg fill:#E8F5E9,stroke:#2E7D32,stroke-width:4px
-    classDef layer3_bg fill:#F3E5F5,stroke:#6A1B9A,stroke-width:3px
-    classDef layer4_bg fill:#F5F5F5,stroke:#757575,stroke-width:2px
+            chart={`graph TD
+    %% Style Definitions
+    classDef userNode fill:#E1F5FF,stroke:#01579B,stroke-width:3px,color:#000
+    classDef promptNode fill:#FFF9C4,stroke:#F57F17,stroke-width:2px,color:#000
+    classDef configNode fill:#C8E6C9,stroke:#2E7D32,stroke-width:2px,color:#000
+    classDef configHubNode fill:#A5D6A7,stroke:#2E7D32,stroke-width:5px,color:#000
+    classDef scriptNode fill:#E1BEE7,stroke:#6A1B9A,stroke-width:2px,color:#000
+    classDef criticalNode fill:#FFCDD2,stroke:#C62828,stroke-width:4px,color:#000
+    classDef dataNode fill:#E0E0E0,stroke:#424242,stroke-width:2px,color:#000
 
-    %% --------------------------------
-    %% Node Definitions within Layers
-    %% --------------------------------
-
-    %% LAYER 1: User & Conversation Setup
-    subgraph Layer1[" 🎯 Layer 1: User & Conversation "]
-        user[("👤 User<br/>via Claude Code")]
-        prompt1["📝 Stage 1<br/>Research Setup"]
-        prompt2["📝 Stage 2<br/>Query Strategy"]
-        prompt3["📝 Stage 3<br/>PRISMA Config"]
-        cli["⚙️ scholarag_cli.py<br/>(Orchestrator)"]
-        base["📄 config_base.yaml<br/>(Template)"]
+    %% Layer 1: User & Conversation
+    subgraph Layer1[" 🎯 LAYER 1: User & Conversation "]
+        User["👤 User via Claude Code"]
+        Stage1["📝 Stage 1: Research Setup"]
+        Stage2["📝 Stage 2: Query Strategy"]
+        Stage3["📝 Stage 3: PRISMA Config"]
+        CLI["⚙️ scholarag_cli.py"]
+        BaseYAML["📄 config_base.yaml"]
     end
 
-    %% LAYER 2: Configuration Hub
-    subgraph Layer2[" ⭐ Layer 2: Configuration Hub "]
-        conf_main["🎯 config.yaml<br/><b>Single Source of Truth</b><br/><small>Controls: project_type, queries, PRISMA</small>"]
+    %% Layer 2: Configuration Hub
+    subgraph Layer2[" ⭐ LAYER 2: Configuration Hub "]
+        ConfigYAML["🎯 config.yaml<br/>Single Source of Truth"]
     end
 
-    %% LAYER 3: Execution Pipeline
-    subgraph Layer3[" 🔧 Layer 3: Execution Pipeline "]
-        direction TB
-        script01["📥 01_fetch_papers.py<br/>Query APIs"]
-        script02["🔄 02_deduplicate.py<br/>Remove duplicates"]
-        script03["⚠️ 03_screen_papers.py<br/>AI Relevance Check<br/><b>CRITICAL: project_type</b>"]
-        script04["📄 04_download_pdfs.py<br/>Fetch PDFs"]
-        script05["🗄️ 05_build_rag.py<br/>Create Vector DB"]
-        script06["💬 06_query_rag.py<br/>Generate answers"]
-        script07["⚠️ 07_generate_prisma.py<br/>PRISMA Diagram<br/><b>CRITICAL: project_type</b>"]
+    %% Layer 3: Execution Pipeline
+    subgraph Layer3[" 🔧 LAYER 3: Execution Pipeline "]
+        Script01["📥 01_fetch_papers.py"]
+        Script02["🔄 02_deduplicate.py"]
+        Script03["⚠️ 03_screen_papers.py<br/>CRITICAL: project_type"]
+        Script04["📄 04_download_pdfs.py"]
+        Script05["🗄️ 05_build_rag.py"]
+        Script06["💬 06_query_rag.py"]
+        Script07["⚠️ 07_generate_prisma.py<br/>CRITICAL: project_type"]
     end
 
-    %% LAYER 4: Data Storage
-    subgraph Layer4[" 💾 Layer 4: Data Storage "]
-        direction TB
-        data01["💾 data/01_identification/<br/>Raw Papers CSV"]
-        data02["💾 data/02_screening/<br/>Relevant Papers"]
-        data03["💾 data/pdfs/<br/>Downloaded PDFs"]
-        data04["💾 data/chroma/<br/>Vector DB Embeddings"]
-        data05["💾 outputs/<br/>prisma_diagram.png"]
+    %% Layer 4: Data Storage
+    subgraph Layer4[" 💾 LAYER 4: Data Storage "]
+        Data01["💾 data/01_identification/"]
+        Data02["💾 data/02_screening/"]
+        Data03["💾 data/pdfs/"]
+        Data04["💾 data/chroma/"]
+        Data05["💾 outputs/prisma.png"]
     end
 
-    user_out[("👤 User<br/>Receiving Results")]
+    UserOut["👤 User Receives Results"]
 
-    %% --------------------------------
-    %% Link Definitions (Data Flow)
-    %% --------------------------------
+    %% Setup Flow
+    User -->|1. Start| Stage1
+    Stage1 -->|2. Initialize| CLI
+    CLI -->|3. Copy| BaseYAML
+    BaseYAML -->|4. Create| ConfigYAML
+    Stage2 -->|5. Query| ConfigYAML
+    Stage3 -->|6. PRISMA| ConfigYAML
 
-    %% Setup Flow (Layer 1 -> Layer 2)
-    user -->|"1. Start"| prompt1
-    prompt1 -->|"2. Initialize"| cli
-    cli -->|"3. Copy template"| base
-    base -->|"4. Create"| conf_main
-    prompt2 -->|"5. Add query"| conf_main
-    prompt3 -->|"6. PRISMA rules"| conf_main
+    %% Execution Flow
+    CLI -->|Run| Script01
+    Script01 --> Script02
+    Script02 --> Script03
+    Script03 --> Script04
+    Script04 --> Script05
+    Script05 --> Script06
 
-    %% Main Flow (Layer 2 -> Layer 3)
-    cli -->|"Runs Pipeline"| script01
+    %% Critical Branching
+    ConfigYAML ==>|project_type: 50% vs 90%| Script03
+    ConfigYAML ==>|project_type: title| Script07
 
-    %% Critical Branching (Layer 2 -> Layer 3)
-    conf_main -.->|"<b>project_type:</b> 50% vs 90%"| script03
-    conf_main -.->|"<b>project_type:</b> title"| script07
+    %% Data Flow
+    Script01 -.->|CSV| Data01
+    Script03 -.->|CSV| Data02
+    Script04 -.->|PDFs| Data03
+    Script05 -.->|Vectors| Data04
+    Script06 --> UserOut
 
-    %% Internal Pipeline (Layer 3)
-    script01 --> script02
-    script02 --> script03
-    script03 --> script04
-    script04 --> script05
-    script05 --> script06
+    %% PRISMA Branch
+    Data01 -.-> Script07
+    Data02 -.-> Script07
+    Data03 -.-> Script07
+    Script07 -.->|PNG| Data05
 
-    %% Data Flow (Layer 3 -> Layer 4)
-    script01 -.->|"writes CSV"| data01
-    script03 -.->|"writes CSV"| data02
-    script04 -.->|"writes PDFs"| data03
-    script05 -.->|"writes Embeddings"| data04
-    script06 -->|"Answers"| user_out
-
-    %% PRISMA Branch (Data -> Script -> Data)
-    data01 -.->|"reads"| script07
-    data02 -.->|"reads"| script07
-    data03 -.->|"reads"| script07
-    script07 -.->|"writes PNG"| data05
-
-    %% --------------------------------
     %% Apply Styles
-    %% --------------------------------
-    class Layer1 layer1_bg
-    class Layer2 layer2_bg
-    class Layer3 layer3_bg
-    class Layer4 layer4_bg
+    class User,UserOut userNode
+    class Stage1,Stage2,Stage3,BaseYAML promptNode
+    class CLI configNode
+    class ConfigYAML configHubNode
+    class Script01,Script02,Script04,Script05,Script06 scriptNode
+    class Script03,Script07 criticalNode
+    class Data01,Data02,Data03,Data04,Data05 dataNode
 
-    class user,user_out user
-    class prompt1,prompt2,prompt3,base prompt
-    class cli cli_config_node
-    class conf_main configHub
-    class script01,script02,script04,script05,script06 script
-    class script03,script07 critical
-    class data01,data02,data03,data04,data05 data
+    %% Link Styles
+    linkStyle 10,11 stroke:#C62828,stroke-width:4px
 `}
           />
 
