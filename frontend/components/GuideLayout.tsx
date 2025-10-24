@@ -277,7 +277,6 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
                   🚀 Future Research Design
                 </Link>
               </div>
-            </div>
 
               <Link
                 href="/codebook"
