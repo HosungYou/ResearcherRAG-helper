@@ -99,48 +99,56 @@ graph TD
       <h3 id="human-ai-collaboration">Human-AI Collaboration Model</h3>
 
       <p>
-        AI-PRISMA follows a <strong>hybrid workflow</strong> where AI and humans collaborate based on decision confidence:
+        AI-PRISMA follows a <strong>3-zone hybrid workflow</strong> where AI and humans collaborate based on decision confidence and task type:
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
         <div className="border rounded-lg p-4 bg-green-50">
-          <h4 className="font-semibold mb-2">✅ AI-Only Decisions</h4>
-          <p className="text-sm mb-2"><strong>High-confidence cases</strong></p>
+          <h4 className="font-semibold mb-2">✅ Zone 1: 100% AI Automation</h4>
+          <p className="text-sm mb-2"><strong>Deduplication</strong></p>
           <ul className="text-xs space-y-1">
-            <li>Score ≥ 90: Auto-include</li>
-            <li>Score ≤ 10: Auto-exclude</li>
-            <li>Clear relevance/irrelevance</li>
-            <li>No human review needed</li>
+            <li>• Exact duplicate detection (DOI, arXiv ID)</li>
+            <li>• Title similarity matching (≥90%)</li>
+            <li>• No human review needed</li>
+            <li>• Deterministic, verifiable rules</li>
           </ul>
         </div>
 
         <div className="border rounded-lg p-4 bg-yellow-50">
-          <h4 className="font-semibold mb-2">⚠️ Human Validation Required</h4>
-          <p className="text-sm mb-2"><strong>Medium-confidence cases</strong></p>
+          <h4 className="font-semibold mb-2">⚠️ Zone 2: AI-Assisted</h4>
+          <p className="text-sm mb-2"><strong>High-confidence screening</strong></p>
           <ul className="text-xs space-y-1">
-            <li>Score 11-89: Review queue</li>
-            <li>AI provides rationale</li>
-            <li>Human makes final decision</li>
-            <li>Transparent collaboration</li>
+            <li>• Score ≥90% or ≤10%: Auto-include/exclude</li>
+            <li>• 10-20% random sample validation</li>
+            <li>• Cohen's Kappa ≥ 0.61 required</li>
+            <li>• AI provides transparent rationale</li>
           </ul>
         </div>
 
-        <div className="border rounded-lg p-4 bg-blue-50">
-          <h4 className="font-semibold mb-2">👤 Human-Only Decisions</h4>
-          <p className="text-sm mb-2"><strong>Complex judgments</strong></p>
+        <div className="border rounded-lg p-4 bg-orange-50">
+          <h4 className="font-semibold mb-2">👤 Zone 3: Human-Required</h4>
+          <p className="text-sm mb-2"><strong>Borderline cases</strong></p>
           <ul className="text-xs space-y-1">
-            <li>Borderline methodology</li>
-            <li>Novel research designs</li>
-            <li>Domain-specific nuances</li>
-            <li>Final inclusion decisions</li>
+            <li>• Score 11-89%: Manual dual screening</li>
+            <li>• AI provides dimension breakdown</li>
+            <li>• Human makes final decision</li>
+            <li>• Required for Systematic Review workflow</li>
           </ul>
         </div>
+      </div>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 my-4 text-sm">
+        <strong>💡 Project Type Determines Thresholds:</strong>
+        <ul className="mt-2 space-y-1">
+          <li>• <strong>Systematic Review:</strong> 90/10 thresholds (strict) - Zone 3 human review required</li>
+          <li>• <strong>Knowledge Repository:</strong> 50/20 thresholds (lenient) - Zone 3 optional, AI-only screening acceptable</li>
+        </ul>
       </div>
 
       <h3 id="multi-dimensional-scoring">Multi-Dimensional Scoring System</h3>
 
       <p>
-        Unlike simple keyword matching, AI-PRISMA uses <strong>6 weighted dimensions</strong> to score each paper. This provides transparency and prevents arbitrary decisions.
+        Unlike simple keyword matching, AI-PRISMA uses <strong>6 weighted dimensions</strong> to score each paper. This provides transparency and prevents arbitrary decisions. Total score range: <strong>-20 to 50 points</strong>.
       </p>
 
       <div className="overflow-x-auto my-6">
@@ -161,22 +169,16 @@ graph TD
               <td className="p-3 text-xs">"language learning", "chatbot", "AI tutor"</td>
             </tr>
             <tr className="border-b">
-              <td className="p-3 font-semibold">Method</td>
-              <td className="p-3">0-5</td>
-              <td className="p-3">Study design quality</td>
-              <td className="p-3 text-xs">"RCT", "quasi-experimental", "qualitative"</td>
-            </tr>
-            <tr className="border-b">
-              <td className="p-3 font-semibold">Population</td>
-              <td className="p-3">0-5</td>
-              <td className="p-3">Target group match</td>
-              <td className="p-3 text-xs">"university students", "adult learners", "ESL"</td>
-            </tr>
-            <tr className="border-b">
               <td className="p-3 font-semibold">Intervention</td>
               <td className="p-3">0-10</td>
               <td className="p-3">Specific treatment/tool</td>
               <td className="p-3 text-xs">"conversational agent", "dialogue system", "feedback"</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-3 font-semibold">Method</td>
+              <td className="p-3">0-5</td>
+              <td className="p-3">Study design quality</td>
+              <td className="p-3 text-xs">"RCT", "quasi-experimental", "qualitative"</td>
             </tr>
             <tr className="border-b">
               <td className="p-3 font-semibold">Outcomes</td>
@@ -184,43 +186,66 @@ graph TD
               <td className="p-3">Measured results</td>
               <td className="p-3 text-xs">"speaking fluency", "pronunciation", "motivation"</td>
             </tr>
-            <tr>
+            <tr className="border-b">
               <td className="p-3 font-semibold">Exclusion</td>
               <td className="p-3">-20 to 0</td>
               <td className="p-3">Hard exclusions (penalize)</td>
               <td className="p-3 text-xs">"animal study", "K-12", "non-English"</td>
             </tr>
+            <tr>
+              <td className="p-3 font-semibold">Title Bonus</td>
+              <td className="p-3">0 or 10</td>
+              <td className="p-3">Direct title-query match</td>
+              <td className="p-3 text-xs">Title contains all query keywords</td>
+            </tr>
           </tbody>
         </table>
+      </div>
+
+      <div className="bg-gray-50 border rounded-lg p-4 my-4 text-sm">
+        <strong>🔍 Evidence Grounding:</strong> All dimension scores must be supported by direct quotes from the abstract. If the AI cannot find supporting evidence, the dimension receives 0 points. Hallucinated quotes result in a -20 confidence penalty.
       </div>
 
       <div className="bg-gray-50 border rounded-lg p-5 my-6">
         <h4 className="font-semibold mb-3">📊 Example Scoring</h4>
         <div className="space-y-3 text-sm">
           <div className="bg-white p-3 rounded border">
-            <p className="font-semibold mb-2">Paper: "AI Chatbots for Speaking Practice in EFL"</p>
+            <p className="font-semibold mb-2">Paper: "AI Chatbots for Speaking Practice in EFL Classrooms"</p>
             <div className="grid grid-cols-2 gap-2 text-xs">
-              <div>Domain: 10/10 (perfect match)</div>
-              <div>Method: 4/5 (quasi-experimental)</div>
-              <div>Population: 5/5 (university ESL students)</div>
+              <div>Domain: 10/10 (language learning)</div>
               <div>Intervention: 10/10 (conversational AI)</div>
-              <div>Outcomes: 8/10 (speaking + fluency)</div>
-              <div>Exclusion: 0 (no red flags)</div>
+              <div>Method: 4/5 (quasi-experimental)</div>
+              <div>Outcomes: 9/10 (speaking fluency)</div>
+              <div>Exclusion: 0 (no exclusion criteria)</div>
+              <div>Title Bonus: 10 (all keywords match)</div>
             </div>
-            <p className="font-bold mt-2 text-green-600">Total: 37/50 → INCLUDE (high relevance)</p>
+            <p className="font-bold mt-2 text-green-600">Total: 43/50 (86% confidence) → AUTO-INCLUDE (Zone 2)</p>
+          </div>
+
+          <div className="bg-white p-3 rounded border border-yellow-400">
+            <p className="font-semibold mb-2">Paper: "Using Mobile Apps for Pronunciation Feedback"</p>
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              <div>Domain: 7/10 (language, not chatbots)</div>
+              <div>Intervention: 5/10 (app, not conversational)</div>
+              <div>Method: 3/5 (descriptive study)</div>
+              <div>Outcomes: 8/10 (pronunciation)</div>
+              <div>Exclusion: 0 (no exclusion criteria)</div>
+              <div>Title Bonus: 0 (missing keywords)</div>
+            </div>
+            <p className="font-bold mt-2 text-yellow-600">Total: 23/50 (46% confidence) → HUMAN REVIEW (Zone 3)</p>
           </div>
 
           <div className="bg-white p-3 rounded border">
             <p className="font-semibold mb-2">Paper: "Grammar Checkers in K-12 Writing Instruction"</p>
             <div className="grid grid-cols-2 gap-2 text-xs">
-              <div>Domain: 4/10 (writing, not speaking)</div>
+              <div>Domain: 3/10 (writing, not speaking)</div>
+              <div>Intervention: 2/10 (grammar tool)</div>
               <div>Method: 3/5 (descriptive study)</div>
-              <div>Population: 0/5 (K-12, not higher ed)</div>
-              <div>Intervention: 2/10 (grammar tool, not conversational)</div>
-              <div>Outcomes: 0/10 (writing, not speaking)</div>
-              <div>Exclusion: -10 (K-12 excluded)</div>
+              <div>Outcomes: 0/10 (writing outcomes)</div>
+              <div>Exclusion: -15 (K-12 excluded)</div>
+              <div>Title Bonus: 0 (no keyword match)</div>
             </div>
-            <p className="font-bold mt-2 text-red-600">Total: -1/50 → EXCLUDE (poor match)</p>
+            <p className="font-bold mt-2 text-red-600">Total: -7/50 (-14% confidence) → AUTO-EXCLUDE (Zone 2)</p>
           </div>
         </div>
       </div>
