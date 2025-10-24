@@ -89,10 +89,214 @@ graph TD
         <strong>ScholaRAG automates</strong> the screening stages (C and D) using AI-PRISMA rubrics, saving weeks of manual work while maintaining academic rigor.
       </p>
 
-      <h2 id="why-these-databases">Why Semantic Scholar, OpenAlex, and arXiv?</h2>
+      <h2 id="ai-prisma">AI-PRISMA: Transparent Automated Screening</h2>
 
       <p>
-        Traditional databases like PubMed, Scopus, and Web of Science don't provide automated PDF access. ScholaRAG uses three open-access databases specifically chosen for their APIs and PDF availability.
+        <strong>AI-PRISMA</strong> is ScholaRAG's approach to combining PRISMA 2020 systematic review methodology with AI automation. Unlike traditional "black box" human screening, AI-PRISMA makes every decision transparent, traceable, and verifiable.
+      </p>
+
+      <h3 id="human-ai-collaboration">Human-AI Collaboration Model</h3>
+
+      <p>
+        AI-PRISMA follows a <strong>hybrid workflow</strong> where AI and humans collaborate based on decision confidence:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+        <div className="border rounded-lg p-4 bg-green-50">
+          <h4 className="font-semibold mb-2">✅ AI-Only Decisions</h4>
+          <p className="text-sm mb-2"><strong>High-confidence cases</strong></p>
+          <ul className="text-xs space-y-1">
+            <li>Score ≥ 90: Auto-include</li>
+            <li>Score ≤ 10: Auto-exclude</li>
+            <li>Clear relevance/irrelevance</li>
+            <li>No human review needed</li>
+          </ul>
+        </div>
+
+        <div className="border rounded-lg p-4 bg-yellow-50">
+          <h4 className="font-semibold mb-2">⚠️ Human Validation Required</h4>
+          <p className="text-sm mb-2"><strong>Medium-confidence cases</strong></p>
+          <ul className="text-xs space-y-1">
+            <li>Score 11-89: Review queue</li>
+            <li>AI provides rationale</li>
+            <li>Human makes final decision</li>
+            <li>Transparent collaboration</li>
+          </ul>
+        </div>
+
+        <div className="border rounded-lg p-4 bg-blue-50">
+          <h4 className="font-semibold mb-2">👤 Human-Only Decisions</h4>
+          <p className="text-sm mb-2"><strong>Complex judgments</strong></p>
+          <ul className="text-xs space-y-1">
+            <li>Borderline methodology</li>
+            <li>Novel research designs</li>
+            <li>Domain-specific nuances</li>
+            <li>Final inclusion decisions</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 id="multi-dimensional-scoring">Multi-Dimensional Scoring System</h3>
+
+      <p>
+        Unlike simple keyword matching, AI-PRISMA uses <strong>6 weighted dimensions</strong> to score each paper. This provides transparency and prevents arbitrary decisions.
+      </p>
+
+      <div className="overflow-x-auto my-6">
+        <table className="w-full text-sm border">
+          <thead className="bg-gray-100">
+            <tr>
+              <th className="text-left p-3 border-b">Dimension</th>
+              <th className="text-left p-3 border-b">Points</th>
+              <th className="text-left p-3 border-b">Evaluates</th>
+              <th className="text-left p-3 border-b">Example Keywords</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-b">
+              <td className="p-3 font-semibold">Domain</td>
+              <td className="p-3">0-10</td>
+              <td className="p-3">Core research area relevance</td>
+              <td className="p-3 text-xs">"language learning", "chatbot", "AI tutor"</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-3 font-semibold">Method</td>
+              <td className="p-3">0-5</td>
+              <td className="p-3">Study design quality</td>
+              <td className="p-3 text-xs">"RCT", "quasi-experimental", "qualitative"</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-3 font-semibold">Population</td>
+              <td className="p-3">0-5</td>
+              <td className="p-3">Target group match</td>
+              <td className="p-3 text-xs">"university students", "adult learners", "ESL"</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-3 font-semibold">Intervention</td>
+              <td className="p-3">0-10</td>
+              <td className="p-3">Specific treatment/tool</td>
+              <td className="p-3 text-xs">"conversational agent", "dialogue system", "feedback"</td>
+            </tr>
+            <tr className="border-b">
+              <td className="p-3 font-semibold">Outcomes</td>
+              <td className="p-3">0-10</td>
+              <td className="p-3">Measured results</td>
+              <td className="p-3 text-xs">"speaking fluency", "pronunciation", "motivation"</td>
+            </tr>
+            <tr>
+              <td className="p-3 font-semibold">Exclusion</td>
+              <td className="p-3">-20 to 0</td>
+              <td className="p-3">Hard exclusions (penalize)</td>
+              <td className="p-3 text-xs">"animal study", "K-12", "non-English"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="bg-gray-50 border rounded-lg p-5 my-6">
+        <h4 className="font-semibold mb-3">📊 Example Scoring</h4>
+        <div className="space-y-3 text-sm">
+          <div className="bg-white p-3 rounded border">
+            <p className="font-semibold mb-2">Paper: "AI Chatbots for Speaking Practice in EFL"</p>
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              <div>Domain: 10/10 (perfect match)</div>
+              <div>Method: 4/5 (quasi-experimental)</div>
+              <div>Population: 5/5 (university ESL students)</div>
+              <div>Intervention: 10/10 (conversational AI)</div>
+              <div>Outcomes: 8/10 (speaking + fluency)</div>
+              <div>Exclusion: 0 (no red flags)</div>
+            </div>
+            <p className="font-bold mt-2 text-green-600">Total: 37/50 → INCLUDE (high relevance)</p>
+          </div>
+
+          <div className="bg-white p-3 rounded border">
+            <p className="font-semibold mb-2">Paper: "Grammar Checkers in K-12 Writing Instruction"</p>
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              <div>Domain: 4/10 (writing, not speaking)</div>
+              <div>Method: 3/5 (descriptive study)</div>
+              <div>Population: 0/5 (K-12, not higher ed)</div>
+              <div>Intervention: 2/10 (grammar tool, not conversational)</div>
+              <div>Outcomes: 0/10 (writing, not speaking)</div>
+              <div>Exclusion: -10 (K-12 excluded)</div>
+            </div>
+            <p className="font-bold mt-2 text-red-600">Total: -1/50 → EXCLUDE (poor match)</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="transparency-validation">Transparency & Validation</h3>
+
+      <p>
+        AI-PRISMA generates <strong>detailed audit trails</strong> for every decision:
+      </p>
+
+      <ul className="space-y-2 my-4 text-sm">
+        <li>✓ <strong>Score breakdown</strong>: Which keywords matched, how many points per dimension</li>
+        <li>✓ <strong>AI rationale</strong>: Why the paper was included/excluded (generated by LLM)</li>
+        <li>✓ <strong>Confidence score</strong>: How certain is the AI (0-100%)</li>
+        <li>✓ <strong>Human override</strong>: Researchers can correct AI decisions, providing reasons</li>
+        <li>✓ <strong>Exportable reports</strong>: CSV with all scores, PRISMA flowchart with counts</li>
+      </ul>
+
+      <div className="callout callout-warning">
+        <p className="font-semibold mb-2">🔬 Academic Validation Status</p>
+        <p className="text-sm mb-2">
+          AI-PRISMA is currently <strong>under academic validation</strong>. The multi-dimensional scoring system and confidence thresholds require empirical validation for:
+        </p>
+        <ul className="text-sm space-y-1 mb-2">
+          <li>• Inter-rater reliability (AI vs. human agreement rates)</li>
+          <li>• Domain-specific weight optimization (education, medicine, etc.)</li>
+          <li>• Threshold calibration (auto-include/exclude cutoffs)</li>
+        </ul>
+        <p className="text-sm mb-0">
+          Early adopters should <strong>manually validate a sample</strong> of AI decisions (recommend 10-20% random sample) and report findings to help refine the methodology.
+        </p>
+      </div>
+
+      <h3 id="project-type-thresholds">Project Type: Different Thresholds</h3>
+
+      <p>
+        ScholaRAG adjusts AI-PRISMA thresholds based on your project type:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+        <div className="border rounded-lg p-4 bg-gray-50">
+          <h4 className="font-semibold mb-2">📚 Knowledge Repository</h4>
+          <p className="text-sm mb-3">Goal: Comprehensive domain coverage</p>
+          <ul className="text-xs space-y-1">
+            <li><strong>Threshold:</strong> 50% pass rate (lenient)</li>
+            <li><strong>Human review:</strong> Optional (spot-check only)</li>
+            <li><strong>Final papers:</strong> 10,000-20,000</li>
+            <li><strong>Use case:</strong> Exploratory research, broad Q&A</li>
+          </ul>
+        </div>
+
+        <div className="border rounded-lg p-4 bg-blue-50">
+          <h4 className="font-semibold mb-2">📄 Systematic Review</h4>
+          <p className="text-sm mb-3">Goal: Publication-quality rigor</p>
+          <ul className="text-xs space-y-1">
+            <li><strong>Threshold:</strong> 90% pass rate (strict)</li>
+            <li><strong>Human review:</strong> Required (all borderline cases)</li>
+            <li><strong>Final papers:</strong> 50-300</li>
+            <li><strong>Use case:</strong> Meta-analysis, thesis, journal article</li>
+          </ul>
+        </div>
+      </div>
+
+      <p className="text-sm text-muted">
+        <strong>Configuration:</strong> Set in Stage 1 (Research Domain Setup). The system auto-adjusts screening behavior based on your choice. See <a href="/guide/04-tutorial" className="underline">Stage 3 tutorial</a> for detailed PRISMA configuration.
+      </p>
+
+      <h2 id="database-strategy">Database Strategy: Open Access + Institutional</h2>
+
+      <p>
+        ScholaRAG supports two types of academic databases: <strong>open-access APIs</strong> (with PDFs) and <strong>institutional subscription APIs</strong> (metadata only).
+      </p>
+
+      <h3 id="open-access-databases">Open-Access Databases (Primary)</h3>
+
+      <p>
+        These databases provide <strong>direct PDF access</strong> through their APIs, enabling full automation without institutional subscriptions.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
@@ -153,6 +357,154 @@ graph TD
           <li>✓ Fallback when one source is incomplete</li>
           <li>✓ No institutional subscriptions required</li>
         </ul>
+      </div>
+
+      <h3 id="institutional-databases">Institutional Databases (Optional)</h3>
+
+      <p>
+        If your institution has subscriptions to Scopus, Web of Science, or PubMed, ScholaRAG can fetch <strong>metadata only</strong> through their APIs. PDFs must be downloaded separately.
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+        <div className="border rounded-lg p-4 bg-gray-50">
+          <h4 className="font-semibold mb-2">
+            <a href="https://dev.elsevier.com/sc_apis.html" target="_blank" rel="noopener noreferrer" className="underline">
+              Scopus
+            </a>
+          </h4>
+          <p className="text-sm text-muted mb-3">Elsevier's abstract & citation database</p>
+          <div className="space-y-1 text-xs">
+            <p><strong>Coverage:</strong> 84M+ records, all fields</p>
+            <p><strong>API Access:</strong> Requires institutional API key + Inst Token</p>
+            <p><strong>Data Available:</strong> Title, abstract, DOI, authors, citations</p>
+            <p><strong>PDFs:</strong> ❌ Not available via API (metadata only)</p>
+          </div>
+        </div>
+
+        <div className="border rounded-lg p-4 bg-gray-50">
+          <h4 className="font-semibold mb-2">
+            <a href="https://developer.clarivate.com/apis/wos" target="_blank" rel="noopener noreferrer" className="underline">
+              Web of Science
+            </a>
+          </h4>
+          <p className="text-sm text-muted mb-3">Clarivate's research database</p>
+          <div className="space-y-1 text-xs">
+            <p><strong>Coverage:</strong> 171M+ records, curated journals</p>
+            <p><strong>API Access:</strong> Requires institutional API key</p>
+            <p><strong>Data Available:</strong> Title, abstract, DOI, authors, WoS ID</p>
+            <p><strong>PDFs:</strong> ❌ Not available via API (metadata only)</p>
+          </div>
+        </div>
+
+        <div className="border rounded-lg p-4 bg-gray-50">
+          <h4 className="font-semibold mb-2">
+            <a href="https://www.ncbi.nlm.nih.gov/home/develop/api/" target="_blank" rel="noopener noreferrer" className="underline">
+              PubMed
+            </a>
+          </h4>
+          <p className="text-sm text-muted mb-3">NCBI's biomedical database</p>
+          <div className="space-y-1 text-xs">
+            <p><strong>Coverage:</strong> 36M+ biomedical literature</p>
+            <p><strong>API Access:</strong> Free (E-utilities API), no key required</p>
+            <p><strong>Data Available:</strong> Title, abstract, PMID, authors, MeSH terms</p>
+            <p><strong>PDFs:</strong> ⚠️ Some via PubMed Central (PMC), most metadata-only</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="callout callout-warning">
+        <p className="font-semibold mb-2">⚠️ Important: Metadata-Only Limitation</p>
+        <p className="text-sm mb-2">
+          Institutional APIs provide <strong>bibliographic metadata</strong> (title, abstract, DOI) but <strong>NOT PDF files</strong>. You must:
+        </p>
+        <ul className="text-sm space-y-1 mb-2">
+          <li>1. Fetch metadata via API (automated)</li>
+          <li>2. Download PDFs manually via your institution's library portal (or use DOI links)</li>
+          <li>3. Match filenames to DOIs using ScholaRAG's PDF matcher</li>
+        </ul>
+        <p className="text-sm mb-0">
+          <strong>Why metadata-only?</strong> Publisher licensing restrictions prevent API-based PDF distribution. Even with institutional access, PDFs must be accessed through authenticated library gateways (e.g., EZProxy, Shibboleth).
+        </p>
+      </div>
+
+      <h3 id="when-to-use-institutional">When to Use Institutional Databases</h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+        <div className="border rounded-lg p-4 bg-white">
+          <h4 className="font-semibold mb-3">✅ Good Use Cases</h4>
+          <ul className="text-sm space-y-2">
+            <li><strong>High-quality metadata</strong>: Need accurate citation counts, journal rankings, or curated indexes</li>
+            <li><strong>Complementary search</strong>: Combine with open-access APIs to maximize coverage</li>
+            <li><strong>Domain-specific</strong>: PubMed for medicine, Scopus for engineering</li>
+            <li><strong>Publication-ready</strong>: Scopus/WoS required for some journal submissions</li>
+          </ul>
+        </div>
+
+        <div className="border rounded-lg p-4 bg-gray-50">
+          <h4 className="font-semibold mb-3">❌ Not Ideal For</h4>
+          <ul className="text-sm space-y-2">
+            <li><strong>Full automation</strong>: Manual PDF download breaks workflow</li>
+            <li><strong>Large-scale projects</strong>: Downloading 1,000+ PDFs manually is impractical</li>
+            <li><strong>No institutional access</strong>: API keys require institutional subscription</li>
+            <li><strong>PDF-only needs</strong>: If you only need full text, stick to open-access APIs</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 id="setup-institutional">Setup Instructions (Brief)</h3>
+
+      <p className="text-sm">
+        To enable institutional databases in ScholaRAG:
+      </p>
+
+      <div className="bg-gray-50 border rounded-lg p-4 my-4">
+        <p className="text-sm font-semibold mb-2">1. Obtain API Keys</p>
+        <ul className="text-xs space-y-1 mb-3">
+          <li>• <strong>Scopus</strong>: Request from your library → Get API Key + Inst Token</li>
+          <li>• <strong>Web of Science</strong>: Contact Clarivate rep → Get API Key</li>
+          <li>• <strong>PubMed</strong>: Optional (no key required, but recommended for higher rate limits)</li>
+        </ul>
+
+        <p className="text-sm font-semibold mb-2">2. Add to <code className="text-xs">.env</code> file</p>
+        <CodeBlock language="bash" code={`SCOPUS_API_KEY=your_scopus_key_here
+SCOPUS_INST_TOKEN=your_institution_token
+WOS_API_KEY=your_wos_key_here
+PUBMED_API_KEY=your_pubmed_key  # Optional`} />
+
+        <p className="text-sm font-semibold mb-2 mt-3">3. Enable in <code className="text-xs">config.yaml</code></p>
+        <CodeBlock language="yaml" code={`databases:
+  open_access:
+    semantic_scholar: true
+    openalex: true
+    arxiv: true
+
+  institutional:  # NEW: Enable institutional APIs
+    scopus:
+      enabled: true
+    web_of_science:
+      enabled: true
+    pubmed:
+      enabled: false  # Only if needed`} />
+      </div>
+
+      <p className="text-sm text-muted">
+        <strong>Full guide:</strong> See <code className="text-xs">docs/INSTITUTIONAL_APIS.md</code> in the ScholaRAG repository for detailed setup, query syntax, and troubleshooting.
+      </p>
+
+      <h3 id="hybrid-workflow">Recommended Hybrid Workflow</h3>
+
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 my-6">
+        <h4 className="font-semibold mb-3">🎯 Best Practice: Open Access First</h4>
+        <ol className="text-sm space-y-2 ml-4">
+          <li><strong>Stage 1:</strong> Fetch from Semantic Scholar + OpenAlex + arXiv (get ~50-60% PDFs automatically)</li>
+          <li><strong>Stage 2:</strong> Run PRISMA screening on available metadata</li>
+          <li><strong>Stage 3:</strong> Identify high-priority papers missing PDFs</li>
+          <li><strong>Stage 4:</strong> Query Scopus/WoS for those specific DOIs (fill metadata gaps)</li>
+          <li><strong>Stage 5:</strong> Manually download remaining PDFs via library portal (batch ~50-200 papers, not 10,000)</li>
+        </ol>
+        <p className="text-xs text-muted mt-3">
+          This minimizes manual work while maximizing coverage. Most papers (80%+) come from open-access APIs with PDFs included.
+        </p>
       </div>
 
       <h2 id="rag-vs-chatgpt">RAG vs. Generic Chatbots: Why RAG?</h2>
