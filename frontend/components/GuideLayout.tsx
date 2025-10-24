@@ -87,7 +87,7 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
             <Link href="/" className="text-lg font-medium">
-              RAG.lab
+              ScholaRAG
             </Link>
             <Link href="/guide" className="text-sm text-muted hover:text-foreground hidden md:block">
               Documentation
