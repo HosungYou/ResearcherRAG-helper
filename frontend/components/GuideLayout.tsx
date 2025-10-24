@@ -47,11 +47,13 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
   // Extract TOC from content
   useEffect(() => {
     const headings = document.querySelectorAll('article h2, article h3')
-    const items: TOCItem[] = Array.from(headings).map((heading) => ({
-      id: heading.id,
-      text: heading.textContent || '',
-      level: heading.tagName === 'H2' ? 2 : 3,
-    }))
+    const items: TOCItem[] = Array.from(headings)
+      .filter((heading) => heading.id) // Only include headings with IDs
+      .map((heading) => ({
+        id: heading.id,
+        text: heading.textContent || '',
+        level: heading.tagName === 'H2' ? 2 : 3,
+      }))
     setTocItems(items)
 
     // Intersection Observer for active heading
