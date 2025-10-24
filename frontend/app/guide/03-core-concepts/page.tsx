@@ -2,6 +2,7 @@ import GuideLayout from '@/components/GuideLayout'
 import Link from 'next/link'
 import Mermaid from '@/components/Mermaid'
 import { CodeBlock } from '@/components/CodeBlock'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 
 export default function CoreConceptsPage() {
   return (
@@ -253,38 +254,142 @@ graph TD
         </p>
       </div>
 
-      <h3 id="project-type-thresholds">Project Type: Different Thresholds</h3>
+      <h3 id="project-type-thresholds">Project Type: Different Workflows</h3>
 
       <p>
-        ScholaRAG adjusts AI-PRISMA thresholds based on your project type:
+        ScholaRAG supports two distinct project types with different workflows, thresholds, and validation requirements. Choose based on your research goals:
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-        <div className="border rounded-lg p-4 bg-gray-50">
-          <h4 className="font-semibold mb-2">📚 Knowledge Repository</h4>
-          <p className="text-sm mb-3">Goal: Comprehensive domain coverage</p>
-          <ul className="text-xs space-y-1">
-            <li><strong>Threshold:</strong> 50% pass rate (lenient)</li>
-            <li><strong>Human review:</strong> Optional (spot-check only)</li>
-            <li><strong>Final papers:</strong> 10,000-20,000</li>
-            <li><strong>Use case:</strong> Exploratory research, broad Q&A</li>
-          </ul>
-        </div>
+      <Tabs defaultValue="systematic" className="my-6">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="systematic">📄 Systematic Review</TabsTrigger>
+          <TabsTrigger value="repository">📚 Knowledge Repository</TabsTrigger>
+        </TabsList>
 
-        <div className="border rounded-lg p-4 bg-blue-50">
-          <h4 className="font-semibold mb-2">📄 Systematic Review</h4>
-          <p className="text-sm mb-3">Goal: Publication-quality rigor</p>
-          <ul className="text-xs space-y-1">
-            <li><strong>Threshold:</strong> 90% pass rate (strict)</li>
-            <li><strong>Human review:</strong> Required (all borderline cases)</li>
-            <li><strong>Final papers:</strong> 50-300</li>
-            <li><strong>Use case:</strong> Meta-analysis, thesis, journal article</li>
+        <TabsContent value="systematic" className="space-y-4">
+          <h4 className="font-semibold text-lg">Systematic Review: Publication-Quality Rigor</h4>
+          <p className="text-sm">
+            For meta-analysis, dissertation chapters, and journal publications requiring PRISMA 2020 compliance.
+          </p>
+
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-5 my-4">
+            <h5 className="font-semibold mb-3">✅ Requirements (MANDATORY)</h5>
+            <ul className="text-sm space-y-2">
+              <li>• PICO-based 6-dimension scoring rubric</li>
+              <li>• Human validation on 10-20% random sample</li>
+              <li>• Cohen's Kappa ≥ 0.61 (substantial agreement)</li>
+              <li>• PRISMA 2020 flow diagram with AI transparency</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-lg p-4 bg-white my-4">
+            <h5 className="font-semibold mb-2">📊 Characteristics</h5>
+            <ul className="text-sm space-y-1">
+              <li><strong>Thresholds:</strong> 90/10 (strict auto-include/exclude)</li>
+              <li><strong>Human review:</strong> Required for all 11-89% confidence papers</li>
+              <li><strong>Final papers:</strong> 50-300 (highly selective)</li>
+              <li><strong>Validation:</strong> Cohen's Kappa ≥ 0.61 on 10-20% sample</li>
+              <li><strong>Output:</strong> Publication-ready systematic review + RAG chatbot</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-lg p-4 bg-gray-50 my-4">
+            <h5 className="font-semibold mb-2">🔄 Workflow Overview</h5>
+            <div className="text-xs space-y-2 font-mono">
+              <div>Stage 1-2: <span className="text-blue-600">Narrow, precise queries</span> → Target 500-2,000 papers</div>
+              <div>Stage 3: <span className="text-blue-600">Strict PICO criteria</span> → Define inclusion/exclusion rules</div>
+              <div>Stage 5: <span className="text-blue-600">AI screening (90/10 thresholds)</span> → 3-zone separation</div>
+              <div className="ml-4">→ Zone 2: Auto-include (≥90% confidence)</div>
+              <div className="ml-4">→ Zone 2: Auto-exclude (≤10% confidence)</div>
+              <div className="ml-4 text-orange-600">→ Zone 3: Human review (11-89% confidence) ⚠️</div>
+              <div>Stage 5b: <span className="text-orange-600">Human validation</span> → Expert review of borderline cases</div>
+              <div>Stage 5c: <span className="text-orange-600">Cohen's Kappa</span> → Calculate inter-rater reliability</div>
+              <div>Stage 6-7: <span className="text-green-600">RAG + PRISMA diagram</span> → Final 50-300 papers</div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border border-yellow-300 rounded-lg p-4 text-sm">
+            <strong>⚠️ Important:</strong> This path requires significant manual effort (10-50 hours for human review). Only choose if you need publication-quality output.
+          </div>
+        </TabsContent>
+
+        <TabsContent value="repository" className="space-y-4">
+          <h4 className="font-semibold text-lg">Knowledge Repository: Comprehensive Coverage</h4>
+          <p className="text-sm">
+            For exploratory research, background reading, and building broad domain RAG chatbots without publication intent.
+          </p>
+
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 my-4">
+            <h5 className="font-semibold mb-3">📊 Characteristics</h5>
+            <ul className="text-sm space-y-2">
+              <li>• Lenient thresholds (50/20 confidence)</li>
+              <li>• AI-only screening (human review optional)</li>
+              <li>• No Cohen's Kappa validation required</li>
+              <li>• Output: RAG chatbot for domain Q&A</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-lg p-4 bg-white my-4">
+            <h5 className="font-semibold mb-2">🎯 Use Cases</h5>
+            <ul className="text-sm space-y-1">
+              <li><strong>Exploratory research:</strong> "What does the literature say about X?"</li>
+              <li><strong>Background reading:</strong> Getting up to speed on a new domain</li>
+              <li><strong>Broad Q&A:</strong> Interactive chatbot for literature queries</li>
+              <li><strong>Rapid prototyping:</strong> Testing research questions before committing to systematic review</li>
+            </ul>
+          </div>
+
+          <div className="border rounded-lg p-4 bg-gray-50 my-4">
+            <h5 className="font-semibold mb-2">🔄 Workflow Overview</h5>
+            <div className="text-xs space-y-2 font-mono">
+              <div>Stage 1-2: <span className="text-purple-600">Broad queries</span> → Target 10,000-50,000 papers</div>
+              <div>Stage 3: <span className="text-purple-600">Minimal filtering</span> → Basic relevance criteria only</div>
+              <div>Stage 5: <span className="text-purple-600">AI screening (50/20 thresholds)</span> → Lenient filtering</div>
+              <div className="ml-4">→ Auto-include: ≥50% confidence (retain most papers)</div>
+              <div className="ml-4">→ Auto-exclude: ≤20% confidence (only clear mismatches)</div>
+              <div className="ml-4 text-gray-500">→ Human review: Optional spot-check only</div>
+              <div>Stage 6-7: <span className="text-green-600">RAG chatbot</span> → Final 10,000-20,000 papers</div>
+            </div>
+          </div>
+
+          <div className="bg-green-50 border border-green-300 rounded-lg p-4 text-sm">
+            <strong>✓ Advantage:</strong> Fast setup (2-5 hours total), no manual validation required. Perfect for exploratory research and rapid prototyping.
+          </div>
+
+          <div className="bg-red-50 border border-red-300 rounded-lg p-4 text-sm mt-4">
+            <strong>⛔ Not Suitable For:</strong>
+            <ul className="mt-2 space-y-1 text-xs">
+              <li>• Academic journal publication</li>
+              <li>• Meta-analysis or quantitative synthesis</li>
+              <li>• Dissertation systematic review chapter</li>
+              <li>• Any work requiring PRISMA 2020 compliance</li>
+            </ul>
+          </div>
+        </TabsContent>
+      </Tabs>
+
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 my-6">
+        <h5 className="font-semibold mb-2">💡 Decision Guide</h5>
+        <div className="text-sm space-y-2">
+          <p><strong>Choose Systematic Review if:</strong></p>
+          <ul className="ml-4 space-y-1 text-xs">
+            <li>✓ You plan to publish in academic journals (BMJ, Lancet, PLOS, etc.)</li>
+            <li>✓ You're writing a dissertation/thesis systematic review chapter</li>
+            <li>✓ You need meta-analysis or quantitative synthesis</li>
+            <li>✓ You require PRISMA 2020 compliance</li>
+          </ul>
+          <p className="mt-3"><strong>Choose Knowledge Repository if:</strong></p>
+          <ul className="ml-4 space-y-1 text-xs">
+            <li>✓ You're doing exploratory research or background reading</li>
+            <li>✓ You need comprehensive domain coverage (10,000+ papers)</li>
+            <li>✓ You want a RAG chatbot for quick literature queries</li>
+            <li>✓ You do NOT plan to publish a systematic review paper</li>
           </ul>
         </div>
       </div>
 
-      <p className="text-sm text-muted">
-        <strong>Configuration:</strong> Set in Stage 1 (Research Domain Setup). The system auto-adjusts screening behavior based on your choice. See <a href="/guide/04-tutorial" className="underline">Stage 3 tutorial</a> for detailed PRISMA configuration.
+      <p className="text-sm text-muted mt-6">
+        <strong>Configuration:</strong> Project type is set in Stage 1 (Research Domain Setup) and cannot be changed after Stage 3. The system auto-adjusts all screening behavior, thresholds, and validation requirements based on your choice. See <a href="/guide/04-tutorial" className="underline">Stage 3 tutorial</a> for detailed PRISMA configuration.
       </p>
 
       <h2 id="database-strategy">Database Strategy: Open Access + Institutional</h2>
