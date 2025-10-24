@@ -38,10 +38,6 @@ const practicalUseChapters: Chapter[] = [
 
 const chapters: Chapter[] = [...setupTheoryChapters, ...practicalUseChapters]
 
-const resourcePages: { title: string; href: string }[] = [
-  { title: 'Workflow Map', href: '/guide/workflow-map' },
-]
-
 export default function GuideLayout({ children, githubUrl, githubLabel = "View on GitHub" }: GuideLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [tocItems, setTocItems] = useState<TOCItem[]>([])
@@ -196,23 +192,6 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               <div className="px-3 py-2 text-xs font-semibold text-gray-900 uppercase tracking-wider">
                 📚 Resources
               </div>
-              {resourcePages.map((page) => {
-                const isActive = pathname === page.href
-                return (
-                  <Link
-                    key={page.href}
-                    href={page.href}
-                    className={`block px-3 py-2 text-sm rounded-md transition-colors ${
-                      isActive
-                        ? 'bg-gray-100 font-medium'
-                        : 'text-muted hover:bg-gray-50 hover:text-foreground'
-                    }`}
-                  >
-                    {page.title}
-                  </Link>
-                )
-              })}
-            </div>
 
               <Link
                 href="/guide/prompt-library"

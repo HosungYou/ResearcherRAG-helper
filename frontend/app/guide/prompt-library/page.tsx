@@ -85,10 +85,61 @@ export default function PromptLibraryPage() {
         </ol>
       </div>
 
+      <h2 id="use-case-workflows">Common Use Case Workflows</h2>
+
+      <p className="mb-6">
+        Not sure which prompts to use? Here are recommended sequences for common research scenarios:
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+        <div className="border-2 border-gray-900 rounded-lg p-5 bg-gray-50">
+          <h3 className="font-semibold mb-3 flex items-center gap-2">
+            <span className="text-2xl">📚</span>
+            PhD Dissertation
+          </h3>
+          <p className="text-xs text-gray-600 mb-3">Recommended sequence:</p>
+          <ol className="text-sm space-y-2 mb-4">
+            <li>1. <Link href="/guide/prompt-library/overview" className="underline">Context Scanning</Link></li>
+            <li>2. <Link href="/guide/prompt-library/hypothesis" className="underline">Hypothesis Validation</Link></li>
+            <li>3. <Link href="/guide/prompt-library/statistics" className="underline">Statistical Extraction</Link></li>
+            <li>4. <Link href="/guide/prompt-library/contradictions" className="underline">Contradiction Detection</Link></li>
+          </ol>
+          <p className="text-xs text-muted">⏱️ ~2-3 hours total</p>
+        </div>
+
+        <div className="border-2 border-gray-900 rounded-lg p-5 bg-gray-50">
+          <h3 className="font-semibold mb-3 flex items-center gap-2">
+            <span className="text-2xl">📊</span>
+            Meta-Analysis Paper
+          </h3>
+          <p className="text-xs text-gray-600 mb-3">Recommended sequence:</p>
+          <ol className="text-sm space-y-2 mb-4">
+            <li>1. <Link href="/guide/prompt-library/methods" className="underline">Methodology Comparison</Link></li>
+            <li>2. <Link href="/guide/prompt-library/statistics" className="underline">Statistical Extraction</Link></li>
+            <li>3. <Link href="/guide/prompt-library/contradictions" className="underline">Contradiction Detection</Link></li>
+          </ol>
+          <p className="text-xs text-muted">⏱️ ~1-2 hours total</p>
+        </div>
+
+        <div className="border-2 border-gray-900 rounded-lg p-5 bg-gray-50">
+          <h3 className="font-semibold mb-3 flex items-center gap-2">
+            <span className="text-2xl">📋</span>
+            Policy Brief
+          </h3>
+          <p className="text-xs text-gray-600 mb-3">Recommended sequence:</p>
+          <ol className="text-sm space-y-2 mb-4">
+            <li>1. <Link href="/guide/prompt-library/overview" className="underline">Context Scanning</Link></li>
+            <li>2. <Link href="/guide/prompt-library/policy" className="underline">Policy Translation</Link></li>
+            <li>3. <Link href="/guide/prompt-library/grant" className="underline">Future Research Design</Link></li>
+          </ol>
+          <p className="text-xs text-muted">⏱️ ~1 hour total</p>
+        </div>
+      </div>
+
       <h2 id="scenarios">7 Research Scenarios</h2>
 
       <p className="mb-6">
-        These prompts are optimized for systematic literature review workflows and follow PRISMA 2020 best practices. Each template includes specific instructions for citation format, evidence organization, and output structure.
+        Each prompt is optimized for systematic literature review workflows and follows PRISMA 2020 best practices. Click any card to see the full template with customization examples.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">

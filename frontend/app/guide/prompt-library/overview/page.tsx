@@ -13,6 +13,12 @@ export default function OverviewPromptPage() {
         <h1 className="mb-0">Context Scanning</h1>
       </div>
 
+      <div className="flex gap-3 mb-6 text-sm flex-wrap">
+        <span className="px-3 py-1 bg-gray-100 rounded-full">⭐ Beginner</span>
+        <span className="px-3 py-1 bg-gray-100 rounded-full">⏱️ 5-10 minutes</span>
+        <span className="px-3 py-1 bg-gray-100 rounded-full">📋 Vector DB required</span>
+      </div>
+
       <p className="text-xl text-muted-foreground leading-relaxed mb-8">
         Get a high-level overview of your literature corpus. Ideal for initial exploration when you need to understand the structure, themes, and methodological approaches in your database.
       </p>
