@@ -1,322 +1,354 @@
-# CLAUDE.md - ScholaRAG-helper
+# CLAUDE.md
 
-## 🎯 Repository Purpose
+This file provides guidance to Claude Code (claude.ai/code) when working with ScholaRAG.
 
-**ScholaRAG-helper** is the **public-facing homepage and documentation website** for the ScholaRAG project.
+## 🎓 User Profile: Researchers with Limited Coding Experience
 
-**Key Distinction**:
-- **This repo (ScholaRAG-helper)**: Homepage, documentation, guides, marketing content (https://scholar-rag-helper.vercel.app/)
-- **Main repo (researcherRAG)**: Actual research automation code, prompts, scripts for researchers
+**CRITICAL UNDERSTANDING**: Users of ScholaRAG are **researchers, not developers**. They have:
+- **Limited coding experience**: May not know how to use terminal, run commands, or debug errors
+- **Domain expertise**: Strong in their research field (education, medicine, psychology) but not in software engineering
+- **Time constraints**: Need automated workflows, not manual step-by-step instructions
+- **Expectation of assistance**: Assume Claude Code will handle technical details automatically
 
-## 🏗️ Architecture
+### How Claude Code Should Behave
 
-### Technology Stack
+**DO:**
+- ✅ **Auto-execute commands** whenever possible (don't ask "would you like me to run X?")
+- ✅ **Handle interactive inputs** automatically using echo pipes or CLI arguments
+- ✅ **Provide default values** for test/demo scenarios
+- ✅ **Run commands in sequence** without waiting for approval (unless API costs involved)
+- ✅ **Show results** after execution (e.g., "✅ Project initialized successfully!")
 
-- **Framework**: Next.js 15 with App Router
-- **Styling**: Tailwind CSS with custom design system
-- **Content**: MDX for interactive documentation
-- **Deployment**: Vercel (auto-deploys from main branch)
-- **Components**: React with TypeScript
+**DON'T:**
+- ❌ Say "You'll need to run: `python script.py`" (run it for them instead!)
+- ❌ Stop at interactive prompts (use automation techniques)
+- ❌ Assume users can debug Python/shell errors
+- ❌ Provide manual workarounds (automate the fix)
 
-### Project Structure
+### Example: Auto-Executing Interactive Commands
 
-```
-ScholaRAG-helper/
-├── frontend/                    # Next.js application
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── page.tsx           # Homepage (marketing landing)
-│   │   ├── guide/             # Documentation chapters (7 guides)
-│   │   ├── chat/              # AI chatbot interface
-│   │   ├── dashboard/         # Analytics dashboard
-│   │   └── resources/         # Additional resources
-│   ├── components/            # React components
-│   │   ├── GuideLayout.tsx   # Documentation layout with TOC
-│   │   ├── SearchBar.tsx     # Documentation search
-│   │   ├── ChatWidget.tsx    # AI assistant widget
-│   │   └── ...               # UI components
-│   └── lib/                   # Utilities and helpers
-├── docs/                       # Markdown documentation source
-├── discussion/                 # Design discussions and planning
-├── chatbot/                    # AI chatbot backend (optional)
-├── examples/                   # Example projects
-└── downloads/                  # Downloadable resources
+**Bad approach** (manual, requires user action):
+```bash
+# Don't do this:
+python scholarag_cli.py init
+# Then wait for user to type inputs manually
 ```
 
-## 🎨 Content Strategy
+**Good approach** (automated, researcher-friendly):
+```bash
+# Do this instead:
+echo -e "Test-Project\nHow does AI improve learning?\neducation\nsystematic_review" | python scholarag_cli.py init
 
-### Homepage (app/page.tsx)
+# Or use CLI arguments (recommended):
+python scholarag_cli.py init \
+  --name "Test-Project" \
+  --question "How does AI improve learning?" \
+  --domain education \
+  --project-type systematic_review
+```
 
-**Purpose**: Convert visitors into users
-- Hero section with value proposition
-- Feature showcase
-- Quick start guide
-- Social proof / testimonials
-- Call-to-action (Start Building, View Docs)
+## ScholaRAG: Production Systematic Review Automation
 
-### Documentation (app/guide/)
+**IMPORTANT**: ScholaRAG is designed for **conversation-first research automation**. Researchers interact ONLY through prompts - Claude Code reads prompt metadata and auto-executes scripts behind the scenes.
 
-**7 Comprehensive Chapters**:
-1. **Introduction**: Overview, PRISMA+RAG concept, target audience
-2. **Getting Started**: Installation, setup, first project
-3. **Core Concepts**: PRISMA methodology, RAG architecture, technical details
-4. **Implementation Guide**: Step-by-step workflow from planning to execution
-5. **Practical Guide**: Advanced topics, optimization, troubleshooting
-6. **Research Conversation**: Querying RAG, extracting insights, AI interaction
-7. **Documentation & Writing**: Report generation, PRISMA flowcharts, publication
+### When to Activate This Workflow
 
-### Search Functionality (NEW)
+**This behavior activates when:**
+1. Working directory is inside `ScholaRAG/`
+2. User provides a message that contains ScholaRAG prompt structure (starts with Stage number, has metadata comment)
+3. OR user explicitly says they're doing a systematic literature review
 
-**Implemented**: OpenAlex-style search bar
-- **Location**: Header on all documentation pages
-- **Features**:
-  - Real-time search across all guides
-  - Keyboard shortcuts (⌘K / Ctrl+K)
-  - Fuzzy matching with relevance scoring
-  - Arrow key navigation
-  - Direct navigation to sections
-- **Index**: `components/SearchBar.tsx` contains searchable content
+**Detection pattern:**
+- User message contains: "I want to conduct a PRISMA 2020 systematic literature review"
+- OR user message starts with: "I want to build a RAG system for my research project"
+- OR user asks: "Help me with Stage X of ScholaRAG"
+- OR working directory contains `prompts/*.md` files with metadata blocks
 
-## 🔧 Development Workflow
+### Core Philosophy
 
-### Local Development
+1. **Prompts are the primary interface** - Researchers never touch terminal
+2. **Scripts execute automatically** - Based on conversation completion and metadata triggers
+3. **Stage awareness** - Claude Code tracks which stage (1-7) researcher is currently in
+4. **Protocol enforcement** - Divergence detection keeps conversations on track
+
+### How It Works
+
+When a researcher copies a stage prompt and pastes it to Claude Code:
+
+1. **Claude Code reads HTML comment metadata** at the top of the prompt
+2. **Understands current stage**, expected outputs, validation rules, next steps
+3. **Has conversation** with researcher following expected patterns
+4. **Validates completion** using checklist criteria
+5. **Auto-executes scripts** when stage is complete
+6. **Updates conversation context** (`.claude/context.json`)
+7. **Shows next stage prompt** for researcher to continue
+
+### Stage-Aware Behavior
+
+**When user provides a ScholaRAG prompt, Claude Code should:**
+
+1. **Read metadata block** (HTML comment at top of prompt file)
+   - Current stage number and name
+   - Expected conversation duration
+   - Validation rules for outputs
+   - Divergence handling patterns
+   - Next stage transition conditions
+
+2. **Check conversation context** (`.claude/context.json` if exists)
+   - What stage is the researcher currently in?
+   - What decisions have been made in previous stages?
+   - Is there configuration data to reference?
+
+3. **Follow conversation flow** (from metadata `conversation_flow.typical_pattern`)
+   - Expected number of turns (e.g., 4-8 for Stage 1, 5-10 for Stage 2)
+   - User action → Claude action patterns
+   - Validate each turn against expected pattern
+
+4. **Detect divergence** (from metadata `divergence_handling.common_divergences`)
+   - Pattern: "User asks about downloading PDFs" in Stage 1
+   - Response: Redirect with "PDF downloading happens in Stage 4..."
+   - Pattern: "User wants to skip systematic review"
+   - Response: Explain PRISMA requirements or suggest alternatives
+
+5. **Validate stage completion** (from metadata `validation_checklist`)
+   - Check all required fields are complete
+   - Verify outputs meet validation rules
+   - Confirm user understands next steps
+
+6. **Execute scripts automatically** (from metadata `scripts_triggered`, `cli_commands`)
+   - Stage 1 complete → Create `config.yaml`, initialize project structure
+   - Stage 2 complete → Save query to `config.yaml`
+   - Stage 5 complete → Execute `scripts/01_fetch_papers.py`, then `02_deduplicate.py`, etc.
+
+7. **Update conversation context**
+   ```json
+   {
+     "current_stage": 2,
+     "completed_stages": [1],
+     "research_question": "How do AI chatbots improve speaking skills?",
+     "selected_databases": ["semantic_scholar", "openalex", "arxiv"],
+     "query": "(chatbot OR agent) AND language learning",
+     "last_updated": "2024-10-14T15:30:00Z"
+   }
+   ```
+
+8. **Show next stage prompt**
+   - Read from metadata `next_stage.prompt_file`
+   - Display the full prompt for researcher to copy/paste
+   - Explain what will happen in next stage
+
+### Prompt Metadata Structure
+
+All prompts in `prompts/*.md` have this metadata block:
+
+```markdown
+<!-- METADATA
+stage: 1
+stage_name: "Research Domain Setup"
+expected_duration: "15-20 minutes"
+conversation_mode: "interactive"
+outputs:
+  - research_question: "Clear, answerable research question"
+  - project_type: "knowledge_repository or systematic_review"
+validation_rules:
+  research_question:
+    required: true
+    min_length: 20
+  project_type:
+    required: true
+    allowed_values: ["knowledge_repository", "systematic_review"]
+cli_commands:
+  - command: "scholarag init"
+    auto_execute: true
+scripts_triggered:
+  - none (initialization only)
+next_stage:
+  stage: 2
+  prompt_file: "02_query_strategy.md"
+divergence_handling:
+  common_divergences:
+    - pattern: "User asks about downloading PDFs"
+      response: "PDF downloading happens in Stage 4..."
+conversation_flow:
+  expected_turns: 4-8
+  typical_pattern:
+    - turn: 1
+      user_action: "Provides research topic"
+      claude_action: "Ask clarifying questions"
+-->
+```
+
+### Example: Stage 1 Conversation Flow
+
+**Researcher** (copies from website):
+```
+I want to build a RAG system for my research project.
+
+**My Research Topic**: AI chatbots for language learning
+**Research Field**: Education
+...
+```
+
+**Claude Code** (reads metadata, knows this is Stage 1):
+- Asks clarifying questions (2-3 rounds)
+- Suggests project_type based on researcher goals
+- Validates scope is realistic
+- Recommends databases
+
+**Researcher** confirms scope is good
+
+**Claude Code** (validates against checklist):
+- ✅ Research question is specific
+- ✅ Project type chosen (knowledge_repository or systematic_review)
+- ✅ Scope constraints realistic
+- ✅ Paper count aligned with project_type
+- ✅ Databases selected
+
+**Claude Code** (auto-executes):
+```bash
+python scholarag_cli.py init \
+  --name "AI-Chatbots-Language-Learning" \
+  --question "How do AI chatbots improve speaking skills?" \
+  --domain education \
+  --project-type knowledge_repository
+```
+
+**Claude Code** (shows next prompt):
+"Stage 1 complete! Here's your Stage 2 prompt for query design:
+[Shows full prompt from 02_query_strategy.md]"
+
+### Divergence Handling Examples
+
+**Scenario 1: User jumps ahead**
+```
+USER (in Stage 1): "Can you help me download PDFs?"
+CLAUDE: "PDF downloading happens in Stage 4. Right now in Stage 1,
+let's first define your research scope, then design queries (Stage 2-3)."
+```
+
+**Scenario 2: User confused about project types**
+```
+USER (in Stage 1): "What's the difference between the two modes?"
+CLAUDE: "ScholaRAG offers two project types:
+
+**knowledge_repository**:
+- 50% threshold (lenient, removes only spam)
+- 15,000-20,000 papers output
+- For: Teaching, exploration, AI assistant
+
+**systematic_review**:
+- 90% threshold (strict, PRISMA 2020)
+- 50-300 papers output
+- For: Meta-analysis, publication
+
+Which best matches your research goals?"
+```
+
+**Scenario 3: User confused about stage**
+```
+USER: "Wait, what stage am I in?"
+CLAUDE: "You're in Stage 2 of 7: Query Strategy Design.
+[●●○○○○○] Progress: ~35-50 minutes spent, ~3-7 hours remaining"
+```
+
+## 7-Stage Pipeline
+
+ScholaRAG implements a 7-stage automated systematic literature review pipeline following PRISMA 2020 guidelines:
+
+1. **Research Domain Setup** (`scholarag init`): Define scope, choose project_type
+2. **Query Strategy** (`01_fetch_papers.py`): Fetch papers from databases
+3. **Deduplication** (`02_deduplicate.py`): Remove duplicates
+4. **Screening** (`03_screen_papers.py`): AI-assisted PRISMA screening
+5. **PDF Download & RAG Building** (`04_download_pdfs.py`, `05_build_rag.py`): Build vector database
+6. **Research Conversation** (`06_query_rag.py`): Interactive queries
+7. **Documentation** (`07_generate_prisma.py`): Generate PRISMA flowchart
+
+### Database Strategy
+
+**Primary Databases** (chosen for API access and PDF availability):
+1. **Semantic Scholar** (~40% open access PDF URLs)
+2. **OpenAlex** (~50% open access)
+3. **arXiv** (100% PDF access)
+
+**Why These Databases?**
+- Traditional databases (PubMed, Scopus, ERIC) don't provide automated PDF access
+- Semantic Scholar + OpenAlex + arXiv = ~50-60% overall PDF retrieval success
+- All three provide REST APIs with generous rate limits
+- No institutional subscriptions required
+
+## CLI Tool
+
+**IMPORTANT**: Always use echo pipes or CLI arguments to avoid interactive prompts.
 
 ```bash
-cd frontend
-npm install
-npm run dev
-# Visit http://localhost:3000
+# ✅ CORRECT: Auto-execute with echo pipe
+echo -e "Test-Project\nHow does AI improve learning?\neducation\nsystematic_review" | python scholarag_cli.py init
+
+# ✅ CORRECT: Use CLI arguments (recommended)
+python scholarag_cli.py init \
+  --name "AI-Chatbots-Learning" \
+  --question "How do AI chatbots improve language learning?" \
+  --domain education \
+  --project-type systematic_review
+
+# ❌ WRONG: Interactive mode (blocks automation)
+python scholarag_cli.py init  # Don't do this
+
+# Check project status
+python scholarag_cli.py status projects/2025-01-12_ProjectName
+
+# List all projects
+python scholarag_cli.py list
+
+# Show current stage
+python scholarag_cli.py stage-status
+
+# Show next action
+python scholarag_cli.py next
 ```
 
-### Building for Production
+## Project Types
+
+ScholaRAG supports **two project types** to serve different research goals:
+
+### 📊 knowledge_repository (Comprehensive Domain Coverage)
+- **Threshold**: 50% (lenient AI screening)
+- **Output**: 15,000-20,000 papers
+- **Use cases**: Teaching materials, AI research assistant, exploratory research, domain mapping
+- **Filtering**: Minimal - removes only spam/duplicates
+
+### 📄 systematic_review (Publication-Quality Review)
+- **Threshold**: 90% (strict PRISMA 2020)
+- **Output**: 50-300 papers
+- **Use cases**: Meta-analysis, systematic review publication, clinical guidelines, dissertation
+- **Filtering**: Strict - detailed inclusion/exclusion criteria
+
+**When to choose which:**
+- Publishing systematic review? → `systematic_review` ✅
+- Comprehensive domain coverage? → `knowledge_repository` ✅
+
+## Environment Variables
+
+Projects require these API keys:
+- `ANTHROPIC_API_KEY`: Claude API for screening (Stage 3)
+- `OPENAI_API_KEY`: OpenAI embeddings (optional, can use local models)
+
+## Testing and Development
 
 ```bash
-cd frontend
-npm run build
-npm start
+# Run full pipeline test
+python scripts/test_full_pipeline.py
+
+# Validate config
+python scripts/validate_config.py
+
+# Run validation workflow
+python scripts/run_validation_workflow.py
 ```
 
-### Deployment
+## Documentation
 
-**Automatic Deployment via Vercel**:
-1. Push to `main` branch
-2. Vercel automatically builds and deploys
-3. Preview deployments for PRs
-
-**Vercel Configuration**: `vercel.json` in root
-
-## 📝 Content Management Guidelines
-
-### Adding New Guide Chapter
-
-1. Create `frontend/app/guide/0X-chapter-name/page.tsx`
-2. Update `frontend/components/GuideLayout.tsx` chapters array
-3. Add to `frontend/components/SearchBar.tsx` searchIndex
-4. Follow existing chapter structure:
-   - Title and description
-   - Key concepts section
-   - Step-by-step walkthrough
-   - Code examples
-   - Navigation to next chapter
-
-### Updating Search Index
-
-When adding new content, update `SearchBar.tsx`:
-
-```typescript
-const searchIndex: SearchResult[] = [
-  {
-    title: 'Your New Page Title',
-    href: '/guide/new-page',
-    excerpt: 'Brief description for search results',
-    chapter: 'Chapter X' // optional
-  },
-  // ... existing entries
-]
-```
-
-### Documentation Style Guide
-
-- **Tone**: Friendly, professional, educational
-- **Audience**: Academic researchers (PhD students, postdocs, professors)
-- **Complexity**: Balance simplicity with technical accuracy
-- **Examples**: Always include practical examples
-- **Visuals**: Use diagrams, flowcharts, code blocks
-- **Cross-references**: Link to related sections
-
-## 🔍 Search Implementation Details
-
-### Search Features
-
-- **Client-side search**: No server required, instant results
-- **Fuzzy matching**: Matches partial terms
-- **Relevance scoring**: Title matches (3x) + excerpt matches (1x)
-- **Keyboard shortcuts**: ⌘K/Ctrl+K to focus, Escape to close, Arrow keys to navigate
-- **Responsive**: Works on mobile and desktop
-
-### Extending Search
-
-To add more searchable content:
-
-1. **Update searchIndex** in `SearchBar.tsx`
-2. **Add metadata** for better SEO and search discovery
-3. **Include common synonyms** in excerpt text
-
-Example:
-```typescript
-{
-  title: 'Vector Database',
-  href: '/guide/03-core-concepts#vector-database',
-  excerpt: 'ChromaDB, embeddings, semantic search, vector store, similarity search'
-}
-```
-
-## 🤖 AI Chatbot Integration
-
-### Purpose
-
-Provide real-time assistance to documentation visitors
-
-### Implementation
-
-- **Component**: `components/ChatWidget.tsx`
-- **Backend**: `chatbot/` folder (optional RAG system)
-- **API**: Anthropic Claude API for conversational AI
-
-### Chatbot Knowledge Base
-
-The chatbot should be aware of:
-- All 7 documentation chapters
-- Common troubleshooting issues
-- Installation steps
-- PRISMA and RAG concepts
-- Code repository structure
-
-## 🔗 External References
-
-### Official Links
-
-- **Homepage**: https://scholar-rag-helper.vercel.app/
-- **GitHub**: https://github.com/HosungYou/ScholaRAG-helper
-- **Main Code Repo**: https://github.com/HosungYou/researcherRAG
-- **Vercel Dashboard**: https://vercel.com/hosung-yous-projects/scholar-rag-helper
-
-### Related Documentation
-
-- OpenAlex Docs (design inspiration): https://docs.openalex.org/
-- PRISMA 2020 Guidelines: http://www.prisma-statement.org/
-- Next.js Documentation: https://nextjs.org/docs
-
-## ⚠️ Important Notes for Claude Code
-
-### When Working with This Repo
-
-1. **Don't confuse repos**:
-   - ScholaRAG-helper = Homepage/docs (this repo)
-   - researcherRAG = Research code (different repo)
-
-2. **Deployment considerations**:
-   - Changes to `frontend/` trigger Vercel rebuilds
-   - Test locally before pushing to main
-   - Vercel auto-deploys within 2-3 minutes
-
-3. **Search maintenance**:
-   - Always update `SearchBar.tsx` when adding content
-   - Test search queries manually
-   - Ensure all guide chapters are indexed
-
-4. **Content updates**:
-   - Update homepage if major features change
-   - Keep guides in sync with main repo code
-   - Version documentation appropriately
-
-5. **Content Policy - NO Developer Information on Website** (CRITICAL):
-   - ❌ **NEVER mention version numbers** (v1.2.0, v1.1.x, etc.) on user-facing website
-   - ❌ **NO release notes or changelogs** on the website
-   - ❌ **NO migration guides** on the website
-   - ❌ **NO developer terminology** (breaking changes, deprecation, API changes, etc.)
-   - ❌ **NO credential information** (API keys, tokens, institutional setup details)
-   - ✅ **Describe features naturally** as current capabilities without version context
-   - ✅ **Developer-only information** stays in `releases/` folder of GitHub repo only
-   - ✅ **User content** is evergreen and version-agnostic
-
-### What Goes Where
-
-**✅ User-Facing Website (frontend/app/)**:
-- Feature descriptions: "ScholaRAG can fetch all available papers from multiple databases"
-- How-to guides: "Follow these steps to set up your first project"
-- Conceptual explanations: "PRISMA screening helps filter relevant papers"
-- Examples and tutorials: "Here's how to query your RAG system"
-- Contact information: hfy5138@psu.edu (on About page)
-
-**❌ Developer-Only (releases/ folder in GitHub, NOT on website)**:
-- RELEASE_NOTES_v1.2.0.md
-- INTEGRATION_GUIDE_v1.2.0.md
-- Version-specific technical details
-- Migration instructions between versions
-- API credentials setup guides (Scopus, Web of Science)
-- Breaking changes documentation
-
-### Examples
-
-**Good (User-Facing)** ✅:
-- "ScholaRAG supports comprehensive paper retrieval from Semantic Scholar, OpenAlex, arXiv, and institutional databases"
-- "The AI-powered screening system uses multi-dimensional criteria to evaluate papers"
-- "Configure institutional database access for broader coverage"
-
-**Bad (Developer-Facing)** ❌:
-- "New in v1.2.0: Complete retrieval system"
-- "Migrating from v1.1.x: Update your config.yaml"
-- "See RELEASE_NOTES_v1.2.0.md for details"
-- "Scopus API requires X-ELS-APIKey header with institutional token"
-
-### Common Tasks
-
-**Adding a new guide section**:
-1. Create page in `frontend/app/guide/`
-2. Update `GuideLayout.tsx` chapters array
-3. Add to `SearchBar.tsx` index
-4. Test locally
-5. Push to main
-
-**Updating existing content**:
-1. Edit `.tsx` file directly
-2. Test locally
-3. Push to main (Vercel auto-deploys)
-
-**Fixing search**:
-1. Update `SearchBar.tsx` searchIndex
-2. Check fuzzy matching logic
-3. Test with common queries
-
-## 📊 Analytics and Metrics
-
-### Tracking
-
-- Vercel Analytics (built-in)
-- Track popular searches (potential future feature)
-- Monitor guide engagement
-
-### Success Metrics
-
-- Documentation visits
-- Search usage
-- Chatbot interactions
-- GitHub repo stars/forks
-
-## 🚀 Future Enhancements
-
-### Planned Features
-
-1. **Advanced search**: Filters by chapter, content type
-2. **Search analytics**: Track popular queries
-3. **Multilingual support**: Korean translation
-4. **Interactive examples**: Live code playground
-5. **Video tutorials**: Embedded walkthroughs
-6. **Community contributions**: Guide suggestions
-
-### Maintenance Tasks
-
-- Keep dependencies updated (`npm update`)
-- Monitor Vercel deployment logs
-- Review and respond to user feedback
-- Sync content with main repo updates
+- **Main README**: [README.md](README.md)
+- **SKILL.md**: Detailed implementation guide for AI assistants
+- **Stage Prompts**: [prompts/](prompts/) - All 7 stage conversation templates
+- **Website**: https://researcher-rag-helper.vercel.app/
