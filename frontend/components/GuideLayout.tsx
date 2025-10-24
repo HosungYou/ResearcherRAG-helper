@@ -99,9 +99,6 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             <div className="hidden md:block flex-1 max-w-md">
               <SearchBar />
             </div>
-            <Link href="/chat" className="text-sm text-muted hover:text-foreground hidden md:block">
-              Chatbot
-            </Link>
             <Link href="/about" className="text-sm text-muted hover:text-foreground hidden md:block">
               About
             </Link>

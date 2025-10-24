@@ -13,7 +13,6 @@ export default function ResourcesPage() {
           <nav className="flex gap-6">
             <Link href="/" className="hover:text-primary-600">Home</Link>
             <Link href="/guide" className="hover:text-primary-600">Guide</Link>
-            <Link href="/chat" className="hover:text-primary-600">Chatbot</Link>
             <Link href="/resources" className="text-primary-600 font-semibold">Resources</Link>
             <a href="https://github.com/HosungYou/ScholaRAG-helper" target="_blank" rel="noopener noreferrer">
               <Github className="w-5 h-5" />
