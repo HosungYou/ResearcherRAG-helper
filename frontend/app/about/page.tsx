@@ -309,7 +309,7 @@ export default function AboutPage() {
               <div className="space-y-2">
                 <p className="text-xl font-semibold text-gray-900">Hosung You</p>
                 <p className="text-gray-600">PhD Candidate</p>
-                <p className="text-gray-600">Learning, Design, and Technology</p>
+                <p className="text-gray-600">College of Education</p>
                 <p className="text-gray-600">The Pennsylvania State University</p>
               </div>
             </div>
@@ -326,8 +326,28 @@ export default function AboutPage() {
                   <span className="font-mono">hfy5138@psu.edu</span>
                 </a>
                 <div className="pt-4 space-y-2 text-sm text-gray-600">
-                  <p><span className="font-semibold text-gray-900">Bug reports:</span> GitHub Issues</p>
-                  <p><span className="font-semibold text-gray-900">Questions:</span> GitHub Discussions</p>
+                  <p>
+                    <span className="font-semibold text-gray-900">Bug reports:</span>{' '}
+                    <a
+                      href="https://github.com/HosungYou/ScholaRAG/issues"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-900 hover:text-gray-600 transition-colors underline"
+                    >
+                      GitHub Issues
+                    </a>
+                  </p>
+                  <p>
+                    <span className="font-semibold text-gray-900">Questions:</span>{' '}
+                    <a
+                      href="https://github.com/HosungYou/ScholaRAG/discussions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-900 hover:text-gray-600 transition-colors underline"
+                    >
+                      GitHub Discussions
+                    </a>
+                  </p>
                   <p><span className="font-semibold text-gray-900">Collaboration:</span> Email</p>
                 </div>
               </div>

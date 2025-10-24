@@ -17,7 +17,6 @@ export default function HomePage() {
           </Link>
           <nav className="hidden md:flex gap-8 items-center text-sm">
             <AnimatedLink href="/guide">Documentation</AnimatedLink>
-            <AnimatedLink href="/chat">Chatbot</AnimatedLink>
             <AnimatedLink href="/resources">Resources</AnimatedLink>
             <AnimatedLink href="/about">About</AnimatedLink>
             <a
@@ -167,21 +166,21 @@ export default function HomePage() {
             delay={0}
           />
           <FeatureCell
-            title="AI-Powered Chatbot"
-            description="Get instant answers about ScholaRAG with Claude 3.5 Sonnet integration"
-            href="/chat"
-            delay={0.1}
-          />
-          <FeatureCell
             title="Ready-to-Use Templates"
             description="Pre-configured workflows for PRISMA reviews, meta-analysis, and systematic research"
             href="/resources"
-            delay={0.2}
+            delay={0.1}
           />
           <FeatureCell
             title="Video Tutorials"
             description="Visual walkthroughs of the complete 7-stage research workflow"
             href="/resources#videos"
+            delay={0.2}
+          />
+          <FeatureCell
+            title="Open Source & Extensible"
+            description="MIT licensed framework you can customize and extend for your specific research needs"
+            href="https://github.com/HosungYou/ScholaRAG"
             delay={0.3}
           />
         </div>
@@ -240,7 +239,7 @@ export default function HomePage() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="max-w-7xl mx-auto px-6 py-20 border-t border-border"
+        className="relative max-w-7xl mx-auto px-6 py-16 border-t border-border"
       >
         <h2 className="text-3xl font-bold tracking-tight mb-8">Built with modern tools</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border border border-border rounded-lg overflow-hidden">
@@ -259,16 +258,15 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* CTA with 3D Animation */}
+      {/* CTA */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="relative max-w-7xl mx-auto px-6 py-24 border-t border-border min-h-[500px]"
+        className="max-w-7xl mx-auto px-6 py-20 border-t border-border"
       >
-        {/* Content (left side) */}
-        <div className="relative z-10 max-w-2xl">
+        <div className="max-w-2xl">
           <h2 className="text-4xl font-bold tracking-tight mb-4">
             Ready to transform your research workflow?
           </h2>

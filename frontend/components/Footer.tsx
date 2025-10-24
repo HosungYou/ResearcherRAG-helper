@@ -58,24 +58,51 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <div>
-            <div className="font-medium mb-2">ScholaRAG</div>
-            <p className="text-sm text-muted">
-              Open-source research AI platform
-            </p>
+          <div className="flex items-center gap-4">
+            {/* Unicorn Studio ScholaRAG Logo */}
+            <div
+              data-us-project="OiWAusXhQeButOZI2F1h"
+              style={{
+                width: '320px',
+                height: '180px',
+              }}
+            />
+            <div>
+              <p className="text-sm text-muted">
+                Open-source research AI platform
+              </p>
+              <p className="text-xs text-muted mt-1">
+                MIT License • Free to use and modify
+              </p>
+            </div>
           </div>
-          <div className="flex gap-6 text-sm text-muted">
-            <AnimatedLink href="/guide">Documentation</AnimatedLink>
-            <AnimatedLink href="https://github.com/HosungYou/ScholaRAG" external>
-              GitHub
-            </AnimatedLink>
-            <AnimatedLink href="/resources">Resources</AnimatedLink>
+          <div className="flex flex-col gap-4">
+            <div className="flex gap-6 text-sm text-muted">
+              <AnimatedLink href="/guide">Documentation</AnimatedLink>
+              <AnimatedLink href="https://github.com/HosungYou/ScholaRAG" external>
+                GitHub
+              </AnimatedLink>
+              <AnimatedLink href="/resources">Resources</AnimatedLink>
+            </div>
+            <div className="text-xs text-muted text-right">
+              <AnimatedLink href="https://newhosung.com" external>
+                newhosung.com
+              </AnimatedLink>
+              {' • '}
+              <AnimatedLink href="https://www.linkedin.com/in/newhosung/" external>
+                LinkedIn
+              </AnimatedLink>
+            </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-border text-xs text-muted">
-          Built with Next.js, Tailwind CSS, and Claude AI. Deployed on Vercel.
+        <div className="mt-4 pt-4 border-t border-border text-xs text-muted">
+          © {new Date().getFullYear()} Hosung You. All rights reserved.
+          {' • '}
+          <a href="mailto:hfy5138@psu.edu" className="hover:text-foreground transition-colors">
+            hfy5138@psu.edu
+          </a>
         </div>
       </div>
     </footer>
