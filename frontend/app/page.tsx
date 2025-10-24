@@ -198,10 +198,10 @@ export default function HomePage() {
         <div className="border border-border rounded-lg p-8 bg-gray-50">
           <ol className="space-y-4 mb-8 text-sm">
             {[
-              'Clone the repository and install dependencies',
-              'Configure your API keys and environment',
-              'Follow the 7-stage workflow in VS Code',
-              'Deploy your custom RAG system'
+              'Install VS Code + Claude Code extension',
+              'Copy-paste setup prompt to Claude Code',
+              'Answer questions about your research',
+              'Let Claude automate the entire workflow'
             ].map((step, i) => (
               <motion.li
                 key={i}
@@ -223,12 +223,12 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="bg-foreground text-background p-6 rounded-md font-mono text-sm overflow-x-auto"
           >
-            <div className="text-gray-400"># Install ScholaRAG</div>
-            <div>git clone https://github.com/HosungYou/ScholaRAG.git</div>
-            <div>cd ScholaRAG</div>
-            <div>pip install -r requirements.txt</div>
-            <div className="mt-4 text-gray-400"># Open in VS Code</div>
-            <div>code .</div>
+            <div className="text-gray-400"># Copy-paste this to Claude Code</div>
+            <div>Please set up ScholaRAG for me:</div>
+            <div className="mt-2">1. Clone https://github.com/HosungYou/ScholaRAG.git</div>
+            <div>2. Create Python virtual environment</div>
+            <div>3. Install dependencies: pip install click pyyaml</div>
+            <div>4. Initialize project: python scholarag_cli.py init</div>
           </motion.div>
         </div>
       </motion.section>

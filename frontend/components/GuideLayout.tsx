@@ -24,17 +24,21 @@ interface GuideLayoutProps {
   githubLabel?: string
 }
 
-const chapters: Chapter[] = [
+const setupTheoryChapters: Chapter[] = [
   { number: 1, title: 'Introduction', href: '/guide/01-introduction' },
   { number: 2, title: 'Getting Started', href: '/guide/02-getting-started' },
   { number: 3, title: 'Core Concepts', href: '/guide/03-core-concepts' },
-  { number: 4, title: 'Implementation Guide', href: '/guide/04-implementation' },
-  { number: 5, title: 'Practical Guide', href: '/guide/05-advanced-topics' },
-  { number: 6, title: 'Research Conversation', href: '/guide/06-research-conversation' },
-  { number: 7, title: 'Documentation & Writing', href: '/guide/07-documentation-writing' },
 ]
 
-const additionalPages: { title: string; href: string }[] = [
+const practicalUseChapters: Chapter[] = [
+  { number: 4, title: 'Complete Tutorial', href: '/guide/04-tutorial' },
+  { number: 5, title: 'Research Conversation', href: '/guide/05-research-conversation' },
+  { number: 6, title: 'Documentation & Writing', href: '/guide/06-documentation-writing' },
+]
+
+const chapters: Chapter[] = [...setupTheoryChapters, ...practicalUseChapters]
+
+const resourcePages: { title: string; href: string }[] = [
   { title: 'Workflow Map', href: '/guide/workflow-map' },
 ]
 
@@ -138,27 +142,61 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
             >
               Overview
             </Link>
-            {chapters.map((chapter) => {
-              const isActive = pathname?.includes(chapter.href)
-              return (
-                <Link
-                  key={chapter.number}
-                  href={chapter.href}
-                  className={`block px-3 py-2 text-sm rounded-md transition-colors ${
-                    isActive
-                      ? 'bg-gray-100 font-medium'
-                      : 'text-muted hover:bg-gray-50 hover:text-foreground'
-                  }`}
-                >
-                  <span className="text-muted-foreground mr-2 text-xs">{chapter.number}.</span>
-                  {chapter.title}
-                </Link>
-              )
-            })}
 
-            {/* Additional Pages */}
+            {/* Setup & Theory Section */}
+            <div className="pt-4 mt-4">
+              <div className="px-3 py-2 text-xs font-semibold text-gray-900 uppercase tracking-wider">
+                📘 Setup & Theory
+              </div>
+              {setupTheoryChapters.map((chapter) => {
+                const isActive = pathname?.includes(chapter.href)
+                return (
+                  <Link
+                    key={chapter.number}
+                    href={chapter.href}
+                    className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                      isActive
+                        ? 'bg-gray-100 font-medium'
+                        : 'text-muted hover:bg-gray-50 hover:text-foreground'
+                    }`}
+                  >
+                    <span className="text-muted-foreground mr-2 text-xs">{chapter.number}.</span>
+                    {chapter.title}
+                  </Link>
+                )
+              })}
+            </div>
+
+            {/* Practical Use Section */}
             <div className="pt-4 mt-4 border-t border-gray-200">
-              {additionalPages.map((page) => {
+              <div className="px-3 py-2 text-xs font-semibold text-gray-900 uppercase tracking-wider">
+                🔧 Practical Use
+              </div>
+              {practicalUseChapters.map((chapter) => {
+                const isActive = pathname?.includes(chapter.href)
+                return (
+                  <Link
+                    key={chapter.number}
+                    href={chapter.href}
+                    className={`block px-3 py-2 text-sm rounded-md transition-colors ${
+                      isActive
+                        ? 'bg-gray-100 font-medium'
+                        : 'text-muted hover:bg-gray-50 hover:text-foreground'
+                    }`}
+                  >
+                    <span className="text-muted-foreground mr-2 text-xs">{chapter.number}.</span>
+                    {chapter.title}
+                  </Link>
+                )
+              })}
+            </div>
+
+            {/* Resources Section */}
+            <div className="pt-4 mt-4 border-t border-gray-200">
+              <div className="px-3 py-2 text-xs font-semibold text-gray-900 uppercase tracking-wider">
+                📚 Resources
+              </div>
+              {resourcePages.map((page) => {
                 const isActive = pathname === page.href
                 return (
                   <Link
@@ -176,8 +214,6 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               })}
             </div>
 
-            {/* Prompt Library - After additional pages */}
-            <div className="pt-4 mt-4 border-t border-gray-200">
               <Link
                 href="/guide/prompt-library"
                 className={`block px-3 py-2 text-sm rounded-md transition-colors font-medium ${
@@ -264,8 +300,6 @@ export default function GuideLayout({ children, githubUrl, githubLabel = "View o
               </div>
             </div>
 
-            {/* Codebook - Separate section after all chapters */}
-            <div className="pt-4 mt-4 border-t border-gray-200">
               <Link
                 href="/codebook"
                 className={`block px-3 py-2 text-sm rounded-md transition-colors font-medium ${
