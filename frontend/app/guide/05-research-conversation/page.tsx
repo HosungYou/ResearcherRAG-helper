@@ -523,20 +523,11 @@ python interfaces/claude_code_interface.py \\
         </div>
       </div>
 
-      <h2 id="next-chapter">Next: Documentation & Writing</h2>
+      <h2 id="next-steps">Next Steps</h2>
 
       <p>
         Once you've completed your research conversations and gathered insights, you're ready to write up your findings. Continue to the next chapter to learn how to structure your literature review, generate PRISMA diagrams, and create publication-ready documentation.
       </p>
-
-      <div className="my-6">
-        <Link href="/guide/07-troubleshooting" className="border rounded-lg p-6 block hover:bg-muted/30 transition-colors">
-          <h3 className="font-semibold mb-2">📝 Chapter 7: Documentation & Writing</h3>
-          <p className="text-sm text-muted-foreground">
-            Learn how to structure your systematic review, generate PRISMA diagrams, manage bibliographies, and prepare publication-ready materials using RAG assistance.
-          </p>
-        </Link>
-      </div>
 
       <div className="callout callout-success">
         <p className="font-semibold mb-2">🎯 Ready to Start Researching?</p>

@@ -353,17 +353,6 @@ NOT (children OR "primary school" OR "elementary")`}
       <p>
         You now have a working RAG system! The real research begins in Stage 6. Explore the <Link href="/guide/prompt-library" className="underline">Prompt Library</Link> for specialized query templates, or dive into <Link href="/guide/05-research-conversation" className="underline">Research Conversation</Link> to learn advanced querying techniques.
       </p>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-        <Link href="/guide/03-core-concepts" className="border hover:border-gray-900 rounded-lg p-4 transition-colors">
-          <h4 className="font-semibold mb-2">← Core Concepts</h4>
-          <p className="text-sm text-gray-600">Understand PRISMA, RAG, and why these technologies</p>
-        </Link>
-        <Link href="/guide/05-research-conversation" className="border hover:border-gray-900 rounded-lg p-4 transition-colors">
-          <h4 className="font-semibold mb-2">Research Conversation →</h4>
-          <p className="text-sm text-gray-600">Master querying your RAG system effectively</p>
-        </Link>
-      </div>
     </GuideLayout>
   )
 }

@@ -825,12 +825,6 @@ graph LR
           You've learned how to leverage AI-assisted RAG systems for systematic literature reviews while maintaining academic rigor, transparency, and reproducibility. Your systematic review is now ready for submission. Good luck with your publication!
         </p>
       </div>
-
-      <div className="text-center my-8">
-        <Link href="/guide/01-introduction" className="inline-block border rounded-lg px-6 py-3 font-semibold hover:bg-muted/30 transition-colors">
-          ← Back to Introduction
-        </Link>
-      </div>
     </GuideLayout>
   )
 }

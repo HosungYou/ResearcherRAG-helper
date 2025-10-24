@@ -402,17 +402,6 @@ graph TD
         Now that you understand <strong>why</strong> ScholaRAG uses these technologies, you're ready to build your own system. The <Link href="/guide/04-tutorial" className="underline">Complete Tutorial</Link> walks you through all 7 stages with a real example.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
-        <Link href="/guide/02-getting-started" className="border hover:border-gray-900 rounded-lg p-4 transition-colors">
-          <h4 className="font-semibold mb-2">← Getting Started</h4>
-          <p className="text-sm text-gray-600">One-click setup and installation</p>
-        </Link>
-        <Link href="/guide/04-tutorial" className="border hover:border-gray-900 rounded-lg p-4 transition-colors">
-          <h4 className="font-semibold mb-2">Complete Tutorial →</h4>
-          <p className="text-sm text-gray-600">Build your first RAG system step-by-step</p>
-        </Link>
-      </div>
-
       <h2 id="further-reading">Learn More</h2>
 
       <div className="space-y-3 my-6 text-sm">
