@@ -33,7 +33,7 @@ export default function HomePage() {
       </header>
 
       {/* Hero - Large Typography with Animations */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 pb-24 overflow-hidden">
+      <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-24 overflow-hidden">
         <div className="max-w-4xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -75,6 +75,25 @@ export default function HomePage() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
+        </div>
+
+        {/* Unicorn Studio 3D Diamond Animation (bottom right of hero) */}
+        <div
+          className="absolute bottom-8 right-8 pointer-events-none hidden md:block"
+          style={{
+            zIndex: 1,
+            width: '350px',
+            height: '280px',
+            opacity: 0.9,
+          }}
+        >
+          <div
+            data-us-project="9BpGXKdn7qDLIOQ5StE3"
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
+          />
         </div>
       </section>
 
@@ -240,15 +259,16 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* CTA */}
+      {/* CTA with 3D Animation */}
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, margin: "-100px" }}
-        className="max-w-7xl mx-auto px-6 py-24 border-t border-border"
+        className="relative max-w-7xl mx-auto px-6 py-24 border-t border-border min-h-[500px]"
       >
-        <div className="max-w-2xl">
+        {/* Content (left side) */}
+        <div className="relative z-10 max-w-2xl">
           <h2 className="text-4xl font-bold tracking-tight mb-4">
             Ready to transform your research workflow?
           </h2>
@@ -275,48 +295,7 @@ export default function HomePage() {
           </div>
         </div>
       </motion.section>
-
-      {/* Footer (Static, no animation) */}
-      <footer className="border-t border-border mt-20">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-            <div>
-              <div className="font-medium mb-2">ScholaRAG</div>
-              <p className="text-sm text-muted">
-                Open-source research AI platform
-              </p>
-            </div>
-            <div className="flex gap-6 text-sm text-muted">
-              <AnimatedLink href="/guide">Documentation</AnimatedLink>
-              <a
-                href="https://github.com/HosungYou/ScholaRAG"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-foreground transition-colors"
-              >
-                GitHub
-              </a>
-              <AnimatedLink href="/resources">Resources</AnimatedLink>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-border text-xs text-muted">
-            Built with Next.js, Tailwind CSS, and Claude AI. Deployed on Vercel.
-          </div>
-        </div>
-      </footer>
     </div>
-  )
-}
-
-// Animated Link with underline expand effect
-function AnimatedLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <Link href={href} className="relative text-muted hover:text-foreground transition-colors group">
-      <span className="relative">
-        {children}
-        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-300" />
-      </span>
-    </Link>
   )
 }
 
@@ -358,5 +337,17 @@ function TechCell({ name, description, delay }: { name: string; description: str
       <div className="font-medium text-sm mb-1">{name}</div>
       <div className="text-xs text-muted">{description}</div>
     </motion.div>
+  )
+}
+
+// Animated Link with underline expand effect
+function AnimatedLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link href={href} className="relative text-muted hover:text-foreground transition-colors group">
+      <span className="relative">
+        {children}
+        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground group-hover:w-full transition-all duration-300" />
+      </span>
+    </Link>
   )
 }
